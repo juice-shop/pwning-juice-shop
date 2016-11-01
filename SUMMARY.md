@@ -21,5 +21,4 @@
 * [Part III - Where can you go from here?](part3/README.md)
   * [Provide feedback](part3/feedback.md)
   * [Contribute to the project](part3/contribution.md)
-* [Appendix A - Challenge Hints](appendixA/README.md)
-* [Appendix B - Challenge Solutions](appendixB/README.md)
+* [Appendix A - Challenge Solutions](appendixA/README.md)
