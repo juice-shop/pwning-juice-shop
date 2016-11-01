@@ -7,7 +7,7 @@
   * [Hacking exercise rules](part1/rules.md)
 * [Part II - Your hacking journey](part2/README.md)
   * [Walking the "Happy Path"](part2/happy-path.md)
-  * [Finding the Score Board](part2/score-board.md)
+  * [The Score Board](part2/score-board.md)
   * [Information Leakage](part2/leakage.md)
   * [Cross Site Scripting (XSS)](part2/xss.md)
   * [SQL Injection](part2/sqli.md)
