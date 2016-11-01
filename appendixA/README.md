@@ -1,2 +1,2 @@
-# Appendix A - Challenge Hints
+# Appendix A - Challenge Solutions
 
