@@ -2,10 +2,7 @@
 
 Written by [Björn Kimminich](http://kimminich.de)
 
-This is the official companion guide to the OWASP Juice Shop application.
-
-The book should not be considered a comprehensive introduction to Web Application Security in general. For every category of vulnerabilities
-present in the OWASP Juice Shop, you will instead find references to detailed attack descriptions and also possible mitigations.
+This is the official "companion guide" to the __OWASP Juice Shop__ application. Being a web application with over 30 intended security vulnerabilities, the OWASP Juice Shop is supposed to be the opposite of a _best practice_ or _template application_ for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The OWASP Juice Shop is an open-source project hosted by the non-profit [Open Web Application Security Project (OWASP)](https://owasp.org) and is developed and maintained by volunteers.
 
 The book is divided into three parts.
 
@@ -20,6 +17,9 @@ Part two gives an overview of the vulnerabilities found in the OWASP Juice Shop 
 ### Part III - Getting involved
 
 Part three shows up various ways to contribute to the OWASP Juice Shop open source project.
+
+> This book should not be considered a comprehensive introduction to Web Application Security in general. For every category of vulnerabilities
+present in the OWASP Juice Shop, you will find quotes and references of detailed attack descriptions as well as possible mitigations.
 
 ----
 
