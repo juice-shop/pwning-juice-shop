@@ -4,5 +4,5 @@
 
 | Challenge | Difficulty |
 | --------- | ---------- |
-| Access someone else's basket. | ** |
-| Post some feedback in another users name. | *** |
+| Access someone else's basket. | \*\* |
+| Post some feedback in another users name. | \*\*\* |
