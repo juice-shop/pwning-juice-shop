@@ -18,4 +18,6 @@
 | Retrieve a list of all user credentials via SQL Injection | \*\*\* |
 | Order the Christmas special offer of 2014. | \*\* |
 
+----
+
 [^1]: https://www.owasp.org/index.php/Injection_Flaws

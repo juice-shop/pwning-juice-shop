@@ -18,4 +18,6 @@
 | Forge a coupon code that gives you a discount of at least 80%. | \*\*\*\*\* |
 | Fake a continue code that solves only (the non-existent) challenge #99. | \*\*\*\*\* |
 
+----
+
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography

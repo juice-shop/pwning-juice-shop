@@ -8,4 +8,6 @@
 | --------- | ---------- |
 | Change Bender's password into _slurmCl4ssic_. | \*\* |
 
+----
+
 [^1]: https://www.owasp.org/index.php/CSRF

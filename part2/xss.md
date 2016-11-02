@@ -13,7 +13,12 @@
 | XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | \*\*\* |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | \*\*\*\* |
 
+----
+
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+
+----
+----
 
 __If you see the text `<script>alert("XSS1")</script>` below in regular text style, everything is fine. If you don't and maybe even see a Javascript popup with 'XSS1' as text, you are in trouble!__
 <script>alert("XSS1")</script>
