@@ -7,11 +7,12 @@
 * [Overview](part1/README.md)
 * [Running OWASP Juice Shop](part1/running.md)
 * [Hacking exercise rules](part1/rules.md)
-* [Walking the "Happy Path"](part1/happy-path.md)
-* [The Score Board](part1/score-board.md)
+* [Walking the "happy path"](part1/happy-path.md)
+* [Challenge tracking](part1/challenges.md)
 
 ### Part II - Challenge hunting
 * [Overview](part2/README.md)
+* [Finding the Score Board](part2/score-board.md)
 * [Information Leakage](part2/leakage.md)
 * [Cross Site Scripting (XSS)](part2/xss.md)
 * [SQL Injection](part2/sqli.md)
@@ -30,4 +31,4 @@
 * [Contribute to development](part3/contribution.md)
 
 ### Appendix
-* [Challenge Solutions](appendix/README.md)
+* [Challenge solutions](appendix/README.md)

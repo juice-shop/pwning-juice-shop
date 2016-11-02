@@ -1,4 +1,6 @@
-# The Score Board
+# Challenge tracking
+
+## The Score Board
 
 ![Partly solved Score Board](img/score-board_partly.png)
 

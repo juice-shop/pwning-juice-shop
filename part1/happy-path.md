@@ -1,2 +1,1 @@
-# Walking the "Happy Path"
-
+# Walking the "happy path"

@@ -1,1 +1,1 @@
-# Appendix - Challenge Solutions
+# Appendix - Challenge solutions
