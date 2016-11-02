@@ -1,6 +1,6 @@
 # Architecture overview
 
-![Architecture overview diagram](img/architectureDiagram.png)
+![Architecture overview diagram](img/architecture-diagram.png)
 
 ## Application Architecture
 
