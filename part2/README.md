@@ -1,1 +1,1 @@
-# Part II - Hints for hacking
+# Part II - Challenge hunting

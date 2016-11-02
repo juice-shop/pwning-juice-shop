@@ -10,7 +10,7 @@
 * [Walking the "Happy Path"](part1/happy-path.md)
 * [The Score Board](part1/score-board.md)
 
-### Part II - Hints for hacking
+### Part II - Challenge hunting
 * [Overview](part2/README.md)
 * [Information Leakage](part2/leakage.md)
 * [Cross Site Scripting (XSS)](part2/xss.md)
