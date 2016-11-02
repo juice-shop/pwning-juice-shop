@@ -9,15 +9,15 @@ present in the OWASP Juice Shop, you will instead find references to detailed at
 
 The book is divided into three parts.
 
-## Part I - Hacking preparations
+### Part I - Hacking preparations
 
 Part one helps you to get the application running and to set up optional hacking tools.
 
-## Part II - Challenge hunting
+### Part II - Challenge hunting
 
 Part two gives an overview of the vulnerabilities found in the OWASP Juice Shop including hints how to find and exploit them in the application.
 
-## Part III - Getting involved
+### Part III - Getting involved
 
 Part three shows up various ways to contribute to the OWASP Juice Shop open source project.
 

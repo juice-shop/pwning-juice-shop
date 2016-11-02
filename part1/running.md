@@ -4,8 +4,10 @@
 
 ### One-click cloud instance
 
-The quickest way to get a running instance of Juice Shop is to click the "__Deploy__ to Heroku" button in the ["Setup" section of the README.md on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno). You have to log in with your Heroku account and will then receive a single instance (or "dyno" in Heroku lingo)
-hosting the application. If you have forked the Juice Shop repository on GitHub, the "__Deploy__ to Heroku" button will deploy your forked version of the application. To deploy the latest official
+!["Deploy to Heroku" button](img/deploy-to-heroku.svg)
+
+The quickest way to get a running instance of Juice Shop is to click the "Deploy to Heroku" button in the ["Setup" section of the README.md on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno). You have to log in with your Heroku account and will then receive a single instance (or "dyno" in Heroku lingo)
+hosting the application. If you have forked the Juice Shop repository on GitHub, the "Deploy to Heroku" button will deploy your forked version of the application. To deploy the latest official
 version you must use the button of the original repository at https://github.com/bkimminich/juice-shop.
 
 As the Juice Shop is supposed to be hacked and attacked - maybe even with aggressive brute-force scripts or automated scanner software - one might think that Heroku would not allow such activities
