@@ -8,6 +8,8 @@ Development of the OWASP Juice Shop started in September 2014 when the author wa
 
 Apart from the hacker and awareness training use case, penetration testing tools and automated security scanners are invited to use Juice Shop as a "guinea pig"-application to check how well their products cope with Javascript-heavy application frontends and REST APIs.
 
+Two years after its inception, in September 2016, the Juice Shop was submitted and accepted as an _OWASP Tool Project_ by the [Open Web Application Security Project](https://owasp.org). This increased the overall visibility and outreach of the project significantly.
+
 ### Why the name "Juice Shop"?
 
 In German there is a dedicated word for "dump", i.e. a store that sells lousy wares and does not value customer satisfaction much: "Saftladen". Reverse-translating this separately as "Saft" and "Laden" yields "juice" and "shop" in English. That is where the project name comes from. The fact that the initials "JS" match with those commonly used for "Javascript" was purely coincidental and not related to the choice of implementation technology.
