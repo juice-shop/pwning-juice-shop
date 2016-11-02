@@ -1,2 +1,1 @@
-# Part I - Prepare for the trip
-
+# Part I - Hacking preparations

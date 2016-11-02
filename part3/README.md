@@ -1,2 +1,1 @@
-# Part III - Where can you go from here?
-
+# Part III - Getting involved

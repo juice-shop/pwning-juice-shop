@@ -1,2 +1,1 @@
-# Part II - Your hacking journey
-
+# Part II - Hints for hacking
