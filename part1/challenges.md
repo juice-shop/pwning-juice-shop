@@ -1,13 +1,43 @@
 # Challenge tracking
 
-## Success notifications
-
-!["Challenge solved!" push notification](img/notification.png)
-
 ## The Score Board
+
+In order to motivate users to hunt for challenges, it makes sense to give them at least an idea what challenges are available in the application. Also they should know when they actually solved a challenge successfully, so they can move on to another task. Both these cases are covered by the application's score board.
 
 ![Partly solved Score Board](img/score-board_partly.png)
 
+On the score board the user can view a list of all available challenges with a brief description. Some descriptions are very explicit hacking instructions, others are vaguely describing what to do, leaving it to the user to find out what he should do.
+
+The challenges are rated with a difficulty level between 1 and 5 stars, with more stars suggesting a higher difficulty. These ratings have been continually adjusted over time based on user feedback. Visible difficulty ratings allow the users to influence their own hacking pace and learning curve significantly. When users picks a \*\*\*\* or \*\*\*\*\* challenge they _expect_ a real challenge and will be less frustrated if they fail on it several times. On the other hand if hacking a \* oder \*\* challenge takes very long, users might realize quickly that they are on a wrong track with their chosen hacking approach.
+
+Finally, each challenge states if it is currently in _unsolved_ or _solved_ state. The current progress is calculated in a progress bar on top of the score board. Especially in group hacking sessions this adds a nice competitive edge between the participants.
+
+## Success notifications
+
+The OWASP Juice Shop employs a simple yet powerful gamification mechanism: Instant success feedback! Whenever the user solves a hacking challenge, a notification is _immediately_ shown on the user interface.
+
+!["Challenge solved!" push notification](img/notification.png)
+
+This feature makes it unnecessary to switch back and forth between the screen you are attacking and the score board to verify if you succeeded. Some challenges will force you to perform an attack outside of the Juice Shop web interface, e.g. by interacting with the REST API directly. In these cases the success notification will light up when you come back to the regular web UI the next time.
+
+To make sure you do not miss any notifications they do not disappear automatically after a timeout. The user has to dismiss them explicitly. In case a number of notifications "piled up" it is not necessary to dismiss each one individually, as a simple reload of the UI in the browser (`F5` key) will dismiss all at once.
+
 ## Continue codes
 
+The ["self-healing" feature](running.md#selfHealing) - by wiping the entire database on server start - of Juice Shop was advertised as a benefit just a few pages before. This feature comes at a cost, though: As the challenges are also part of the database schema, they will be wiped along with all the other data. This means, that after every restart the user starts with a 0% completed score board and all challenges in _unsolved_ state.
+
+To keep the resilience against data corruption but allow users to "pick up where they left off" after a server restart, the concept of _continue codes_ was introduced. The idea was taken from 80's and 90's console games, where _saving_ the state of the game was not possible on the read-only game cartridges.
+
+At the bottom of the score board the user will find a long character sequence which represents the currently _solved_ challenges:
+
 ![Continue code section of the Score Board](img/continue-code.png)
+
+ The users are encouraged to __copy or write down their latest continue code regularly__, e.g. into some text file. After a server crash, they can then simply restore their hacking progress:
+
+1. Restart the application (e.g. via `npm start` or by restarting the Docker container).
+2. Navigate to the (now wiped) score board.
+3. Scroll to the bottom and click on the _Ambulance_ button.
+4. Copy & paste (or type in) the latest continue code.
+5. Click the _Restore Progress_ button.
+
+The score board will now be restored to its prior state and - depending on how many challenges were solved up to that point - a torrent of success notifications will light up. As mentioned earlier these can be dismissed all at once by reloading the page with the `F5` key.

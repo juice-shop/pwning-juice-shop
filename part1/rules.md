@@ -51,6 +51,14 @@ The GitHub repository https://github.com/bkimminich/juice-shop is entirely off l
 
 Additionally it hosts the issue tracker of the project, which is used for idea management and task planning as well as bug tracking. You can of course submit an issue if you run into technical problems that are not covered by the [Troubleshooting section of the README.md](). You just should not read issues labeled `challenge` as they might contain spoilers or solutions.
 
+### Database table `Challenges`
+
+The challenges (and their progress) live in one database together with the rest of the application data, namely in the `Challenges` table. Of course you could "cheat" by simply editing the state of each challenge from _unsolved_ to _solved_ by setting the corresponding `solved` column to `1`. You then just have to keep your fingers crossed, that nobody ever asks to _show how_ you actually solved all the \*\*\*\* and \*\*\*\*\* so quickly.
+
+### Manipulating the Score Board HTML/CSS
+
+The Score Board and its features were covered in the [Challenge tracking](challenged.md) chapter. In the current context of "things you should not use" suffice it to say, that you could manipulate the score board in the web browser to make challenges _appear as solved_. Please be aware that this "cheat" is even easier (and more embarrassing) to uncover in a classroom training than the previously mentioned database manipulation: A simple reload of the score board will let all your local CSS changes vanish in a blink and reveals your _real_ hacking progress.
+
 ## Getting hints
 
 ### This book

@@ -45,7 +45,7 @@ You need to have [Docker](https://www.docker.com/) installed to run Juice Shop a
 3. Run `docker run -d -p 3000:3000 bkimminich/juice-shop` to launch the container with that image.
 4. Browse to http://localhost:3000. On OSX you will have to browse to http://192.168.99.100:3000 instead.
 
-## "Self-healing" feature
+## "Self-healing" feature {#selfHealing}
 
 OWASP Juice Shop was not exactly designed and built with a high availability and reactive enterprise-scale architecture in mind. It runs perfectly fine and fast when it is attacked via a browser by a human. When under attack by an automated tool - especially aggressive brute force scripts - the server might crash under the load. This could - in theory - leave the database and file system in an unpredictable state that prevents a restart of the application.
 
