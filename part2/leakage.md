@@ -6,7 +6,7 @@
 
 | Challenge | Difficulty |
 | --------- | ---------- |
-| Provoke an error that is not very gracefully handled. | \* |
+| Provoke an error that is not very gracefully handled. | 1 of 5 |
 
 ----
 

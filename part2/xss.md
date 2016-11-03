@@ -8,10 +8,10 @@
 
 | Challenge | Difficulty |
 | --------- | ---------- |
-| XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | \* |
-| XSS Tier 2: Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism. | \*\*\* |
-| XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | \*\*\* |
-| XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | \*\*\*\* |
+| XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | 1 of 5 |
+| XSS Tier 2: Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism. | 3 of 5 |
+| XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5 |
+| XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | 4 of 5 |
 
 ----
 

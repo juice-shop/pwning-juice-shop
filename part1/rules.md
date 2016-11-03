@@ -53,11 +53,11 @@ Additionally it hosts the issue tracker of the project, which is used for idea m
 
 ### Database table `Challenges`
 
-The challenges (and their progress) live in one database together with the rest of the application data, namely in the `Challenges` table. Of course you could "cheat" by simply editing the state of each challenge from _unsolved_ to _solved_ by setting the corresponding `solved` column to `1`. You then just have to keep your fingers crossed, that nobody ever asks to _show how_ you actually solved all the \*\*\*\* and \*\*\*\*\* so quickly.
+The challenges (and their progress) live in one database together with the rest of the application data, namely in the `Challenges` table. Of course you could "cheat" by simply editing the state of each challenge from _unsolved_ to _solved_ by setting the corresponding `solved` column to `1`. You then just have to keep your fingers crossed, that nobody ever asks to _show how_ you actually solved all the 4- and 5-star challenges so quickly.
 
-### Manipulating the Score Board HTML/CSS
+### Score Board HTML/CSS
 
-The Score Board and its features were covered in the [Challenge tracking](challenged.md) chapter. In the current context of "things you should not use" suffice it to say, that you could manipulate the score board in the web browser to make challenges _appear as solved_. Please be aware that this "cheat" is even easier (and more embarrassing) to uncover in a classroom training than the previously mentioned database manipulation: A simple reload of the score board will let all your local CSS changes vanish in a blink and reveals your _real_ hacking progress.
+The Score Board and its features were covered in the [Challenge tracking](challenged.md) chapter. In the current context of "things you should not use" suffice it to say, that you could manipulate the score board in the web browser to make challenges _appear as solved_. Please be aware that this "cheat" is even easier (and more embarrassing) to uncover in a classroom training than the previously mentioned database manipulation: A simple reload of the score board URL will let all your local CSS changes vanish in a blink and reveal your _real_ hacking progress.
 
 ## Getting hints
 

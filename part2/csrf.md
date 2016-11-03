@@ -6,7 +6,7 @@
 
 | Challenge | Difficulty |
 | --------- | ---------- |
-| Change Bender's password into _slurmCl4ssic_. | \*\* |
+| Change Bender's password into _slurmCl4ssic_. | 2 of 5 |
 
 ----
 

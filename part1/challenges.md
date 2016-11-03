@@ -2,15 +2,15 @@
 
 ## The Score Board
 
-In order to motivate users to hunt for challenges, it makes sense to give them at least an idea what challenges are available in the application. Also they should know when they actually solved a challenge successfully, so they can move on to another task. Both these cases are covered by the application's score board.
+In order to motivate users to hunt for vulnerabilities, it makes sense to give them at least an idea what challenges are available in the application. Also they should know when they actually solved a challenge successfully, so they can move on to another task. Both these cases are covered by the application's score board.
 
 ![Partly solved Score Board](img/score-board_partly.png)
 
 On the score board the user can view a list of all available challenges with a brief description. Some descriptions are very explicit hacking instructions, others are vaguely describing what to do, leaving it to the user to find out what he should do.
 
-The challenges are rated with a difficulty level between 1 and 5 stars, with more stars suggesting a higher difficulty. These ratings have been continually adjusted over time based on user feedback. Visible difficulty ratings allow the users to influence their own hacking pace and learning curve significantly. When users picks a \*\*\*\* or \*\*\*\*\* challenge they _expect_ a real challenge and will be less frustrated if they fail on it several times. On the other hand if hacking a \* oder \*\* challenge takes very long, users might realize quickly that they are on a wrong track with their chosen hacking approach.
+The challenges are rated with a difficulty level between 1 and 5 stars, with more stars suggesting a higher difficulty. These ratings have been continually adjusted over time based on user feedback. Visible difficulty ratings allow the users to influence their own hacking pace and learning curve significantly. When users picks a 4- or 5-star challenge they _expect_ a real challenge and will be less frustrated if they fail on it several times. On the other hand if hacking a 1- oder 2-star challenge takes very long, users might realize quickly that they are on a wrong track with their chosen hacking approach.
 
-Finally, each challenge states if it is currently in _unsolved_ or _solved_ state. The current progress is calculated in a progress bar on top of the score board. Especially in group hacking sessions this adds a nice competitive edge between the participants.
+Finally, each challenge states if it is currently _unsolved_ or _solved_. The current overall progress is represented in a progress bar on top of the score board. Especially in group hacking sessions this allows for a bit of competition between the participants.
 
 ## Success notifications
 
