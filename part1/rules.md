@@ -4,17 +4,27 @@
 
 ### Browser
 
-#### Integrated development tools
+When hacking a web application a good internet browser is mandatory. The emphasis lies on _good_ here, so you do _not_ want to use Internet Explorer. Other than that it is up to your personal preference. Chrome and Firefox both work fine from the authors experience.
 
-#### PostMan plugin
+#### Browser development toolkit
 
-#### TamperData plugin
+When choosing a browser to work with you want to pick one with good integrated (or pluggable) developer tooling. Google's Chrome comes with its own _DevTools_, Mozilla's Firefox has similar built-in tools as well as the powerful ["FireBug"](https://addons.mozilla.org/de/firefox/addon/firebug/) plugin to offer.
+
+When hacking a web application that is built is Javascript, __it is essential to your success to monitor the _Javascript Console_ permanently!__ It might leak valuable information to you through error or debugging logs!
+
+> There is a _free_ online-learning course ["Discover DevTools"](https://www.codeschool.com/courses/discover-devtools) on [Code School](https://www.codeschool.com) where you can get a hands-on introduction to Chrome's powerful developer toolkit.
+
+#### API testing plugin
+
+API testing plugins like [PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Chrome or [RESTClient](https://addons.mozilla.org/de/firefox/addon/restclient/) for Firefox allow you to communicate with the RESTful backend of a web application directly. Skipping the UI can often be useful to circumvent client-side security mechanisms or simply get certain tasks done faster. Here you can create requests for all available HTTP verbs (`GET`, `POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request headers etc.
+
+> If the command line is a second home for you, the `curl` command will work - at least - just as good.
+
+#### Request tampering plugin
 
 ### Penetration Testing Tools
 
-#### OWASP ZAP
-
-#### BurpSuite
+#### Intercepting proxies
 
 #### Kali Linux
 

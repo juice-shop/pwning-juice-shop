@@ -7,7 +7,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 
 | Challenge | Hints |
 | --------- | ----- |
-| Find the carefully hidden 'Score Board' page. | [>>>](score-board.md#scoreBoardChallenge) |
+| Find the carefully hidden 'Score Board' page. | [?](score-board.md#scoreBoardChallenge) |
 | Provoke an error that is not very gracefully handled. | |
 | XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | |
 | Get rid of all 5-star customer feedback. | |
@@ -29,7 +29,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Post some feedback in another users name. | |
 | Place an order that makes you rich. | |
 | Access a developer's forgotten backup file. | |
-| Change the `href` of the link within the O-Saft product description into _http://kimminich.de_. | |
+| Change the `href` of the link within the O-Saft product description into http://kimminich.de. | |
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment.) | |
 | Find the hidden easter egg. | |
 | Travel back in time to the golden era of web design. | |
