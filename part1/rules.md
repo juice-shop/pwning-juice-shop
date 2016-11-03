@@ -18,15 +18,35 @@ _There is a free online-learning course [Discover DevTools](https://www.codescho
 
 API testing plugins like [PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Chrome or [RESTClient](https://addons.mozilla.org/de/firefox/addon/restclient/) for Firefox allow you to communicate with the RESTful backend of a web application directly. Skipping the UI can often be useful to circumvent client-side security mechanisms or simply get certain tasks done faster. Here you can create requests for all available HTTP verbs (`GET`, `POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request headers etc.
 
-_If you feel more are home on the command line, `curl` will do the trick just a fine as the mentioned browser plugins._
+_If you feel more at home on the command line, `curl` will do the trick just as fine as the recommended browser plugins._
 
 #### Request tampering plugin
 
 ### Penetration Testing Tools
 
+You _can_ solve all challenges just using a browser and the plugins mentioned above. If you are new to web application hacking (or penetration testing in general) this is also the _recommended_ set of tools to start with. In case you have experience with professional pentesting tools, you are free to use those! And you are _completely free_ in your choice, so expensive commercial products are just as fine as open source tools. With this kind of tooling you will have a competitive advantage for some of the challenges, especially those were _brute force_ is a viable attack. But there are just as many multi-staged vulnerabilities in the OWASP Juice Shop where - at the time of this writing - automated tools would probably not help you at all.
+
+In the following sections you find some recommended pentesting tools in case you want to try one. Please be aware that the tools are not trivial to learn - let alone master. Trying to learn about the web application security basics _and_ hacking tools _at the same time_ is unlikely to get you very far in either of the two topics.
+
 #### Intercepting proxies
 
-#### Kali Linux
+An intercepting proxy is a software that is set up as _man in the middle_ between your browser and the application you want to attack. It monitors and analyzes all the HTTP traffic and typically lets you tamper, replay and fuzz HTTP requests in various ways. These tools come with lots of attack patterns built in and offer active as well as passive attacks that can be scripted automatically or while you are surfing the target application.
+
+The open-source [OWASP Zed Attack Proxy (ZAP)](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) is such a software and offers many useful hacking tools for free:
+
+> ZAP is an easy to use integrated penetration testing tool for finding vulnerabilities in web applications. It is designed to be used by people with a wide range of security experience and as such is ideal for developers and functional testers who are new to penetration testing. ZAP provides automated scanners as well as a set of tools that allow you to find security vulnerabilities manually.[^1]
+
+#### Pentesting Linux distributions
+
+Instead of installing a tool such as ZAP on your computer, why not take it, add _several hundred_ of other offensive security tools and put them all into a "ready-to-use" Linux distribution? Entering [Kali Linux](https://www.kali.org) and similar toolboxes:
+
+> Kali Linux is a Debian-based Linux distribution aimed at advanced Penetration Testing and Security Auditing. Kali contains several hundred tools aimed at various information security tasks, such as Penetration Testing, Forensics and Reverse Engineering.[^2]
+
+The keyword in the previous quote is _"advanced"_! Kali Linux is _easily overwhelming_ when beginners try to work with it, as even the Kali development states:
+
+> As the distribution’s developers, you might expect us to recommend that everyone should be using Kali Linux. The fact of the matter is, however, that Kali is a Linux distribution specifically geared towards professional penetration testers and security specialists, and given its unique nature, it is __NOT__ a recommended distribution if you’re unfamiliar with Linux [...]. Even for experienced Linux users, Kali can pose some challenges.[^3]
+
+Although there exist some more light-weight pentesting ditributions, they basically still present a high hurdle for people new to the IT security field. If you still feel up to it, give Kali Linux a try!
 
 ### Internet
 
@@ -39,7 +59,6 @@ Juice Shop is supposed to be attacked in a "black box" manner. That means you ca
 The same goes for several other implementation details, where vulnerabilities were arbitrarily programmed into the application. These would be obvious when the source code is reviewed.
 
 Finally the end-to-end test suite of Juice Shop was built hack all challenges automatically, in order to verify they can all be solved. These tests deliver then required attacks on a silver plate when reviewed.
-
 
 ### Server logfile
 
@@ -68,3 +87,9 @@ The Score Board and its features were covered in the [Challenge tracking](challe
 ### Slack channel
 
 ### Mailing list
+
+----
+
+[^1]: https://github.com/zaproxy/zap-core-help/wiki
+[^2]: http://docs.kali.org/introduction/what-is-kali-linux
+[^3]: http://docs.kali.org/introduction/should-i-use-kali-linux
