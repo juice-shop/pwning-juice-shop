@@ -8,7 +8,7 @@ When hacking a web application a good internet browser is mandatory. The emphasi
 
 #### Browser development toolkit
 
-When choosing a browser to work with you want to pick one with good integrated (or pluggable) developer tooling. Google's Chrome comes with its own _DevTools_, Mozilla's Firefox has similar built-in tools as well as the powerful ["FireBug"](https://addons.mozilla.org/de/firefox/addon/firebug/) plugin to offer.
+When choosing a browser to work with you want to pick one with good integrated (or pluggable) developer tooling. Google's Chrome comes with its own _DevTools_, Mozilla's Firefox has similar built-in tools as well as the powerful [FireBug](https://addons.mozilla.org/de/firefox/addon/firebug/) plugin to offer.
 
 When hacking a web application that is built is Javascript, __it is essential to your success to monitor the _Javascript Console_ permanently!__ It might leak valuable information to you through error or debugging logs!
 
@@ -22,7 +22,11 @@ _If you feel more at home on the command line, `curl` will do the trick just as 
 
 #### Request tampering plugin
 
-### Penetration Testing Tools
+Request tampering plugins like [TamperData](https://addons.mozilla.org/de/firefox/addon/tamper-data/) for Firefox or [Tamper Chrome](https://chrome.google.com/webstore/detail/tamper-chrome-extension/hifhgpdkfodlpnlmlnmhchnkepplebkb) let you monitor and - more importantly - modify HTTP requests _before_ they are submitted from the browser to the server.
+
+These can be crucial tools when trying to bypass certain input validation or access restriction mechanisms, that are not properly checked _on the server_ once more.
+
+### Penetration testing tools
 
 You _can_ solve all challenges just using a browser and the plugins mentioned above. If you are new to web application hacking (or penetration testing in general) this is also the _recommended_ set of tools to start with. In case you have experience with professional pentesting tools, you are free to use those! And you are _completely free_ in your choice, so expensive commercial products are just as fine as open source tools. With this kind of tooling you will have a competitive advantage for some of the challenges, especially those were _brute force_ is a viable attack. But there are just as many multi-staged vulnerabilities in the OWASP Juice Shop where - at the time of this writing - automated tools would probably not help you at all.
 
@@ -50,6 +54,8 @@ Although there exist some more light-weight pentesting ditributions, they basica
 
 ### Internet
 
+You are free to use Google during your hacking session to find helpful websites, tools or perform some necessary information gathering. The OWASP Juice Shop is leaking useful information all over the place if you know where to look, but sometimes you simply must extend your research to gain the relevant piece of intel to beat a challenge.
+
 ## Things you should not use
 
 ### Source code
@@ -66,9 +72,11 @@ The server logs each request and all database queries executed. Many challenges 
 
 ### GitHub repository
 
-The GitHub repository https://github.com/bkimminich/juice-shop is entirely off limits for hackers - except for the [README.md]() of course. First and foremost because it contains the source code (see above).
+While stated earlier that "the Internet" is fine as a helpful resource, consider the GitHub repository https://github.com/bkimminich/juice-shop as entirely off limits. First and foremost because it contains the source code (see above).
 
 Additionally it hosts the issue tracker of the project, which is used for idea management and task planning as well as bug tracking. You can of course submit an issue if you run into technical problems that are not covered by the [Troubleshooting section of the README.md](). You just should not read issues labeled `challenge` as they might contain spoilers or solutions.
+
+_Of course you are explicitly allowed to view [the repository's README.md page](https://github.com/bkimminich/juice-shop/blob/master/README.md), which contains no spoilers but merely covers project introduction, setup and troubleshooting. Just do not "dig deeper" than that into the repository files and folders._
 
 ### Database table `Challenges`
 
@@ -80,13 +88,9 @@ The Score Board and its features were covered in the [Challenge tracking](challe
 
 ## Getting hints
 
-### This book
+Frankly speaking, you are reading the _premium source of hints_ right now! Congratulations! In case you want to hack more on your own than follow the breadcrumbs through the wood of challenges in part II, the most direct way to ask for specific hints to particular challenges is the community chat on Gitter.im at https://gitter.im/bkimminich/juice-shop which is tied to your GitHub account.
 
-### Community chat
-
-### Slack channel
-
-### Mailing list
+If you prefer you can also use the project's Slack channel at https://owasp.slack.com/messages/project-juiceshop. You just need to self-invite you to OWASP's Slack first at http://owasp.herokuapp.com. If you like it a bit more nostalgic, you can also join and post to the project mailing list at https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
 ----
 

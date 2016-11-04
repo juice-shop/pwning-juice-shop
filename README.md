@@ -20,10 +20,8 @@ Part two gives an overview of the vulnerabilities found in the OWASP Juice Shop 
 
 Part three shows up various ways to contribute to the OWASP Juice Shop open source project.
 
-----
-
-Please be aware that this book is not supposed to be a comprehensive introduction to Web Application Security in general. For every category of vulnerabilities
-present in the OWASP Juice Shop you will find a brief explanation - typically by quoting existing sources on the topic. You will also find references to detailed attack descriptions as well as possible mitigations.
+_Please be aware that this book is not supposed to be a comprehensive introduction to Web Application Security in general. For every category of vulnerabilities
+present in the OWASP Juice Shop you will find a brief explanation - typically by quoting existing sources on the topic. You will also find references to detailed attack descriptions as well as possible mitigations._
 
 ----
 
@@ -32,6 +30,9 @@ __Download a .pdf, .epub, or .mobi file from:__
 
 __Contribute content, suggestions, and fixes on GitHub:__
 * https://github.com/bkimminich/pwning-juice-shop
+
+__Official project landing page on the OWASP wiki:__
+* https://www.owasp.org/index.php/OWASP_Juice_Shop_Project
 
 ----
 
