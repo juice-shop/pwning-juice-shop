@@ -3,3 +3,7 @@ _book/
 book.pdf
 book.mobi
 book.epub
+
+# IntelliJ
+.idea/
+*.iml
