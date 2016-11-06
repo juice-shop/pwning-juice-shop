@@ -48,13 +48,27 @@ There also also some secondary use cases that the OWASP Juice Shop covers. While
 
 ### Get information about the shop
 
+Like every proper enterprise, the OWASP Juice Shop has of course an `#/about` page titled _About Us_. There you find a summary of the interesting history of the shop along with a link to its official Terms of Use document. Additionally the page displays a fancy illustrated slideshow of customer feedback.
+
 ### Language selection
+
+From a dropdown menu in the navigation bar you can select a multitude of languages you want the user interface to be displayed in. On the top of the list, you find languages with complete translations, the ones below with a "flask"-icon next to them, offer only partial translation.
+
+If you want to know more about the localization of OWASP Juice Shop, please refer to the [Help with translation](part3/translation.md) chapter in part III of this book.
 
 ### Provide feedback
 
+Customers are invited to leave feedback about their shopping experience with the Juice Shop. Simply visit the `#/contact` page by clicking the _Contact Us_ button in the navigation bar. You might recognize that it is also possible to leave feedback - when not logged in - as an anonymous user. The contact form is very straightforward with a free text _Comment_ field and a _Rating_ on a 1-5 stars scale.
+
 ### Complain about problems with an order
 
+The _Complain?_ button is shown only to logged in users in the navbar. It brings you to the `#/complain` page where you can leave a free text _Message_ and also attach an _Invoice_ file. The file upload only allows .PDF files and no files greater than 100 kB - which is totally sufficient for the user case, if you remember that the order confirmation shown after checkout was just a one-page PDF file with only text in it.
+
 ### Change user password
+
+If you are currently logged in you will find the obligatory _Change Password_ button in the navigation bar. On the `#/change-password` page you can then choose a new password. To prevent abuse you have of course to supply your current password to legitimate this change.
+
+----
 
 [^1]: https://www.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
 [^2]: http://xunitpatterns.com/happy%20path.html

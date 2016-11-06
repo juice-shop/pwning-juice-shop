@@ -12,7 +12,7 @@ Two years after its inception, in September 2016, the Juice Shop was submitted a
 
 ### Why the name "Juice Shop"?
 
-In German there is a dedicated word for "dump", i.e. a store that sells lousy wares and does not value customer satisfaction much: "Saftladen". Reverse-translating this separately as "Saft" and "Laden" yields "juice" and "shop" in English. That is where the project name comes from. The fact that the initials "JS" match with those commonly used for "Javascript" was purely coincidental and not related to the choice of implementation technology.
+In German there is a dedicated word for _dump_, i.e. a store that sells lousy wares and does not value customer satisfaction much: _Saftladen_. Reverse-translating this separately as _Saft_ and _Laden_ yields _juice_ and _shop_ in English. That is where the project name comes from. The fact that the initials _JS_ match with those commonly used for _Javascript_ was purely coincidental and not related to the choice of implementation technology.
 
 ### Why yet another vulnerable web application?
 
