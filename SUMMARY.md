@@ -16,14 +16,14 @@
 * [Part II - Challenge hunting](part2/README.md)
   * [Finding the Score Board](part2/score-board.md)
   * [Information Leakage](part2/leakage.md)
-  * [Cross Site Scripting (XSS)](part2/xss.md)
   * [SQL Injection](part2/sqli.md)
   * [Broken access restrictions](part2/access.md)
-  * [Broken session management](part2/session.md)
   * [Forgotten content](part2/forgotten-content.md)
+  * [Cross Site Scripting (XSS)](part2/xss.md)
+  * [Broken session management](part2/session.md)
+  * [Cross Site Request Forgery (CSRF)](part2/csrf.md)
   * [Cryptographic issues](part2/crypto.md)
   * [Client-side-only validation](part2/client-side-validation.md)
-  * [Cross Site Request Forgery (CSRF)](part2/csrf.md)
   * [Weak security mechanisms](part2/weak-security.md)
 
 ----

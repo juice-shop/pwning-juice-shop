@@ -15,6 +15,8 @@
 
 ### XSS Tier 1: Perform a reflected XSS attack
 
+> Reflected Cross-site Scripting (XSS) occur when an attacker injects browser executable code within a single HTTP response. The injected attack is not stored within the application itself; it is non-persistent and only impacts users who open a maliciously crafted link or third-party web page. The attack string is included as part of the crafted URI or HTTP parameters, improperly processed by the application, and returned to the victim.[^2]
+
 #### Hints
 
 * Look for an input field where its content appears in the response HTML when its form is submitted.
@@ -24,20 +26,31 @@
 
 #### Hints
 
+* There are only some input fields in the Juice Shop forms that validate their input
+* Even less of these fields are persisted in a way where their content is shown on another screen
+* Bypassing client-side security can be done by
+  * either disabling it on the client
+  * or ignoring it completely by interacting with the backend instead
+
 ### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
 
 #### Hints
+
+* You might want to create a matrix of known data entities and supported HTTP verbs through the API 
+* Careless developers might have exposed API functionality that the client never actually uses
 
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 #### Hints
 
-* The _Comment_ field if the _Contact Us_ is where you want to focus on
+* The _Comment_ field if the _Contact Us_ is where you want to put your focus on
 * Try injecting the required attack payload directly, and it will be eliminated on server side
+* This challenge can be solved fastest with some research - start in the `package.json.bak` you harvested and look for possible validation-related dependencies
 
 ----
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+[^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 
 ----
 
