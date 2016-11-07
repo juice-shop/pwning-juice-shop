@@ -13,11 +13,32 @@
 | XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5 |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | 4 of 5 |
 
+### XSS Tier 1: Perform a reflected XSS attack
+
+#### Hints
+
+* Look for an input field where its content appears in the response HTML when its form is submitted.
+* Try probing for XSS vulberabilities by submitting text wrapped in an HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
+
+### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
+
+#### Hints
+
+### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
+
+#### Hints
+
+### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
+
+#### Hints
+
+* The _Comment_ field if the _Contact Us_ is where you want to focus on
+* Try injecting the required attack payload directly, and it will be eliminated on server side
+
 ----
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 
-----
 ----
 
 __If you see the text `<script>alert("XSS1")</script>` below in regular text style, everything is fine. If you don't and maybe even see a Javascript popup with 'XSS1' as text, you are in trouble!__
