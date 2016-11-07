@@ -14,7 +14,7 @@ When hacking a web application that is built is Javascript, __it is essential to
 
 _There is a free online-learning course [Discover DevTools](https://www.codeschool.com/courses/discover-devtools) on [Code School](https://www.codeschool.com) where you can get a hands-on introduction to Chrome's powerful developer toolkit._
 
-#### API testing plugin
+#### API testing plugin {#apiTestingPlugin}
 
 API testing plugins like [PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Chrome or [RESTClient](https://addons.mozilla.org/de/firefox/addon/restclient/) for Firefox allow you to communicate with the RESTful backend of a web application directly. Skipping the UI can often be useful to circumvent client-side security mechanisms or simply get certain tasks done faster. Here you can create requests for all available HTTP verbs (`GET`, `POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request headers etc.
 

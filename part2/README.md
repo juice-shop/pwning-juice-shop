@@ -9,7 +9,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | --------- | ----- |
 | Find the carefully hidden 'Score Board' page. | [>>](score-board.md#scoreBoardChallenge) |
 | Provoke an error that is not very gracefully handled. | |
-| XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | |
+| XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | [>>](xss.md#xss1Challenge) |
 | Get rid of all 5-star customer feedback. | |
 | Access a confidential document. | |
 | Access the administration section of the store. | |
@@ -23,8 +23,8 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Order the Christmas special offer of 2014. | |
 | Log in with Jim's user account. | |
 | Log in with Bender's user account. | |
-| XSS Tier 2: Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism. | |
-| XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | |
+| XSS Tier 2: Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism. | [>>](xss.md#xss2Challenge) |
+| XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | [>>](xss.md#xss3Challenge) |
 | Retrieve a list of all user credentials via SQL Injection | |
 | Post some feedback in another users name. | |
 | Place an order that makes you rich. | |
@@ -36,7 +36,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Upload a file larger than 100 kB. | |
 | Upload a file that has no .pdf extension. | |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | |
-| XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | |
+| XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | [>>](xss.md#xss4Challenge) |
 | Wherever you go, there you are. | |
 | Apply some advanced cryptanalysis to find _the real_ easter egg. | |
 | Retrieve the language file that never made it into production. | |

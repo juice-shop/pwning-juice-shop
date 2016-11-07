@@ -9,7 +9,7 @@ from the perspective of a regular customer without malicious intentions. But you
 | --------- | ---------- |
 | Find the carefully hidden 'Score Board' page. | 1 of 5 |
 
-### Find the carefully hidden 'Score Board' page. {#scoreBoardChallenge}
+### Find the carefully hidden 'Score Board' page {#scoreBoardChallenge}
 
 Why was the Score Board not visited during the "happy path" tour? Because there seemed to be no link anywhere in the application that would lead you there! You know that it must exists, which leaves two possible explanations:
 

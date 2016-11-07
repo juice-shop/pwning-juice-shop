@@ -24,33 +24,51 @@
 
 ### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
+This challenge is founded on a very common security flaw of web applications, where the developers ignored the following golden rule of input validation:
+
+> Be aware that any JavaScript input validation performed on the client can be bypassed by an attacker that disables JavaScript or uses a Web Proxy. Ensure that any input validation performed on the client is also performed on the server.[^3]
+
 #### Hints
 
-* There are only some input fields in the Juice Shop forms that validate their input
-* Even less of these fields are persisted in a way where their content is shown on another screen
-* Bypassing client-side security can be done by
-  * either disabling it on the client
-  * or ignoring it completely by interacting with the backend instead
+* There are only some input fields in the Juice Shop forms that validate their input.
+* Even less of these fields are persisted in a way where their content is shown on another screen.
+* Bypassing client-side security can typically be done by
+  * either disabling it on the client (i.e. in the browser by manipulating the DOM tree)
+  * or by ignoring it completely and interacting with the backend instead.
 
 ### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
 
+As presented in the [Architecture Overview](/introduction/architecture.md), the OWASP Juice Shop uses a Javascript client on top of a RESTful API on the server side. Even without giving this fact away in the introduction chapter, you would have quickly figured this out looking at their interaction happening on the network. Most actions on the UI result in `XMLHttpRequest` (`XHR`) objects being sent and responded to by the server.
+
+![XHR requests to the backend API](img/xhr-api_requests.png)
+
+For the XSS Tier 3 challenge it is necessary to work with the server-side API directly. You will need a command line tool like `curl` or an [API testing plugin for your browser](/part1/rules.md#apiTestingPlugin) to master this challenge.
+
 #### Hints
 
-* You might want to create a matrix of known data entities and supported HTTP verbs through the API 
-* Careless developers might have exposed API functionality that the client never actually uses
+* As a preparation you could create a matrix of known data entities and supported HTTP verbs through the API
+* Careless developers might have exposed API methods that the client does not even need
 
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
+
+This is the hardest XSS challenge, as it cannot by solved by fiddling with the client-side Javascript or bypassing the client entirely.
+Whenever there is a server-side validation or input processing involved, you should investigate how it works. Finding out implementation
+details - e.g. used libraries, modules or algorithms - should be your priority. If the application does not leak this kind of details,
+you can still go for a _blind approach_ by testing lots and lots of different attack payloads and check the reaction of the application.
+
+_When you actually understand a security mechanism you have a lot higher chance to beat or trick it somehow, than by using a trial and error approach._
 
 #### Hints
 
 * The _Comment_ field if the _Contact Us_ is where you want to put your focus on
-* Try injecting the required attack payload directly, and it will be eliminated on server side
-* This challenge can be solved fastest with some research - start in the `package.json.bak` you harvested and look for possible validation-related dependencies
+* The attack payload `<script>alert("XSS4")</script>` will _not be rejected_ by any validator but _stripped from the comment_ before persisting it
+* Look for possible dependencies related to input processing in the `package.json.bak` you harvested earlier
 
 ----
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
+[^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
 
 ----
 
