@@ -8,11 +8,11 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Challenge | Hints |
 | --------- | ----- |
 | Find the carefully hidden 'Score Board' page. | [>>](score-board.md#scoreBoardChallenge) |
-| Provoke an error that is not very gracefully handled. | |
+| Provoke an error that is not very gracefully handled. | [>>](leakage.md#errorHandlingChallenge) |
 | XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | [>>](xss.md#xss1Challenge) |
-| Get rid of all 5-star customer feedback. | |
+| Get rid of all 5-star customer feedback. | [>>](access.md#fiveStarFeedbackChallenge) |
 | Access a confidential document. | |
-| Access the administration section of the store. | |
+| Access the administration section of the store. | [>>](access.md#adminSectionChallenge) |
 | Give a devastating zero-star feedback to the store. | |
 | Log in with the administrator's user account. | |
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | |

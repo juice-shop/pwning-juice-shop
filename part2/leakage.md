@@ -8,10 +8,20 @@
 | --------- | ---------- |
 | Provoke an error that is not very gracefully handled. | 1 of 5 |
 
-### Provoke an error that is not very gracefully handled
+### Provoke an error that is not very gracefully handled  {#errorHandlingChallenge}
+
+The OWASP Juice Shop is quite forgiving when it comes to bad input, broken requests or other failure situations. It is just not very good at handling errors properly.
+You can harvest a lot of interesting information from error messages that contain too much information. Sometimes you will even see error messages that should not be visible at all.
 
 #### Hints
+
+* This challenge actually triggers from various possible error conditions.
+* You can try to submit bad input to forms to provoke an improper error handling
+* Tampering with URL paths or parameters might also trigger an unforseen error
+ 
+_If you see the success notification for this challenge but no error message on screen, the error was probably logged on the Javascript console of the browser. You were supposed to have it open all the time anyway, remember?_
 
 ----
 
 [^1]: https://www.owasp.org/index.php/Top_10_2007-Information_Leakage
+[^2]: https://en.wikipedia.org/wiki/Murphy%27s_law
