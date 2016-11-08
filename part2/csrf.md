@@ -6,7 +6,7 @@
 
 | Challenge | Difficulty |
 | --------- | ---------- |
-| Change Bender's password into _slurmCl4ssic_. | 2 of 5 |
+| Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | 4 of 5 |
 
 ### Change Bender's password into _slurmCl4ssic_
 
