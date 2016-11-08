@@ -69,9 +69,3 @@ _When you actually understand a security mechanism you have a lot higher chance 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 [^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
-
-----
-
-__If you see the text `<script>alert("XSS1")</script>` below in regular text style, everything is fine. If you don't and maybe even see a Javascript popup with 'XSS1' as text, you are in trouble!__
-<script>alert("XSS1")</script>
-__^^^^^^^^^^^^^^^^^^^^^^^^^^^^^__
