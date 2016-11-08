@@ -37,7 +37,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Upload a file that has no .pdf extension. | |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | [>>](xss.md#xss4Challenge) |
-| Wherever you go, there you are. | |
+| Wherever you go, there you are. | [>>](weak-security.md#redirectChallenge) |
 | Apply some advanced cryptanalysis to find _the real_ easter egg. | |
 | Retrieve the language file that never made it into production. | |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account. | |

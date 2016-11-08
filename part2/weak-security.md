@@ -21,7 +21,7 @@
 
 #### Hints
 
-### Wherever you go, there you are
+### Wherever you go, there you are {#redirectChallenge}
 
 This challenge is undoubtedtly the one with the most ominous description. It is actually a quote from the computer game [Diablo](http://us.blizzard.com/en-us/games/legacy/), which
 is shown on screen when the player activates a [Holy Shrine](http://diablo.gamepedia.com/Shrines_(Diablo_I)). The shrine casts the spell
