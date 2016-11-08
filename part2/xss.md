@@ -13,7 +13,7 @@
 | XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5 |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | 4 of 5 |
 
-### XSS Tier 1: Perform a reflected XSS attack
+### XSS Tier 1: Perform a reflected XSS attack {#xss1Challenge}
 
 > Reflected Cross-site Scripting (XSS) occur when an attacker injects browser executable code within a single HTTP response. The injected attack is not stored within the application itself; it is non-persistent and only impacts users who open a maliciously crafted link or third-party web page. The attack string is included as part of the crafted URI or HTTP parameters, improperly processed by the application, and returned to the victim.[^2]
 
@@ -22,7 +22,7 @@
 * Look for an input field where its content appears in the response HTML when its form is submitted.
 * Try probing for XSS vulberabilities by submitting text wrapped in an HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
-### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
+### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism {#xss2Challenge}
 
 This challenge is founded on a very common security flaw of web applications, where the developers ignored the following golden rule of input validation:
 
@@ -36,7 +36,7 @@ This challenge is founded on a very common security flaw of web applications, wh
   * either disabling it on the client (i.e. in the browser by manipulating the DOM tree)
   * or by ignoring it completely and interacting with the backend instead.
 
-### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
+### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all {#xss3Challenge}
 
 As presented in the [Architecture Overview](/introduction/architecture.md), the OWASP Juice Shop uses a Javascript client on top of a RESTful API on the server side. Even without giving this fact away in the introduction chapter, you would have quickly figured this out looking at their interaction happening on the network. Most actions on the UI result in `XMLHttpRequest` (`XHR`) objects being sent and responded to by the server.
 
@@ -49,7 +49,7 @@ For the XSS Tier 3 challenge it is necessary to work with the server-side API di
 * As a preparation you could create a matrix of known data entities and supported HTTP verbs through the API
 * Careless developers might have exposed API methods that the client does not even need
 
-### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
+### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism {#xss4Challenge}
 
 This is the hardest XSS challenge, as it cannot by solved by fiddling with the client-side Javascript or bypassing the client entirely.
 Whenever there is a server-side validation or input processing involved, you should investigate how it works. Finding out implementation
