@@ -8,3 +8,19 @@
 | Place an order that makes you rich. | 3 of 5 |
 | Upload a file larger than 100 kB. | 3 of 5 |
 | Upload a file that has no .pdf extension. | 3 of 5 |
+
+### Give a devastating zero-star feedback to the store
+
+#### Hints
+
+### Place an order that makes you rich
+
+#### Hints
+
+### Upload a file larger than 100 kB
+
+#### Hints
+
+### Upload a file that has no .pdf extension
+
+#### Hints

@@ -8,6 +8,10 @@
 | --------- | ---------- |
 | Provoke an error that is not very gracefully handled. | 1 of 5 |
 
+### Provoke an error that is not very gracefully handled
+
+#### Hints
+
 ----
 
 [^1]: https://www.owasp.org/index.php/Top_10_2007-Information_Leakage

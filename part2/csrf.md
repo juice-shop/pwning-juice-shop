@@ -8,6 +8,10 @@
 | --------- | ---------- |
 | Change Bender's password into _slurmCl4ssic_. | 2 of 5 |
 
+### Change Bender's password into _slurmCl4ssic_
+
+#### Hints
+
 ----
 
 [^1]: https://www.owasp.org/index.php/CSRF

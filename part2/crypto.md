@@ -18,6 +18,27 @@
 | Forge a coupon code that gives you a discount of at least 80%. | 5 of 5 |
 | Fake a continue code that solves only (the non-existent) challenge #99. | 5 of 5 |
 
+### Inform the shop about an algorithm or library it should definitely not use the way it does
+
+#### Hints
+
+### Inform the shop about a vulnerable library it is using.
+
+#### Hints
+
+### Apply some advanced cryptanalysis to find _the real_ easter egg
+
+#### Hints
+
+### Forge a coupon code that gives you a discount of at least 80%
+
+#### Hints
+
+### Fake a continue code that solves only challenge #99
+
+#### Hints
+
+
 ----
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
