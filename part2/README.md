@@ -11,13 +11,13 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Provoke an error that is not very gracefully handled. | [>>](leakage.md#errorHandlingChallenge) |
 | XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`. | [>>](xss.md#xss1Challenge) |
 | Get rid of all 5-star customer feedback. | [>>](access.md#fiveStarFeedbackChallenge) |
-| Access a confidential document. | |
+| Access a confidential document. | [>>]{forgotten-content.md#confidentialDocumentChallenge} |
 | Access the administration section of the store. | [>>](access.md#adminSectionChallenge) |
 | Give a devastating zero-star feedback to the store. | |
 | Log in with the administrator's user account. | |
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | |
 | Access someone else's basket. | |
-| Access a salesman's forgotten backup file. | |
+| Access a salesman's forgotten backup file. | [>>]{forgotten-content.md#forgottenBackupChallenge} |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | |
 | Inform the shop about an algorithm or library it should definitely not use the way it does. | |
 | Order the Christmas special offer of 2014. | |
@@ -28,18 +28,18 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Retrieve a list of all user credentials via SQL Injection | |
 | Post some feedback in another users name. | |
 | Place an order that makes you rich. | |
-| Access a developer's forgotten backup file. | |
-| Change the `href` of the link within the O-Saft product description into http://kimminich.de. | |
+| Access a developer's forgotten backup file. | [>>]{forgotten-content.md#forgottenDevBackupChallenge} |
+| Change the `href` of the link within the O-Saft product description into http://kimminich.de. | [>>](access.md{#changeProductChallenge}) |
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment.) | |
-| Find the hidden easter egg. | |
-| Travel back in time to the golden era of web design. | |
+| Find the hidden easter egg. | [>>]{forgotten-content.md#easterEgg1Challenge} |
+| Travel back in time to the golden era of web design. | [>>](forgotten-content.md#geocitiesThemeChallenge) |
 | Upload a file larger than 100 kB. | |
 | Upload a file that has no .pdf extension. | |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | [>>](xss.md#xss4Challenge) |
 | Wherever you go, there you are. | [>>](weak-security.md#redirectChallenge) |
-| Apply some advanced cryptanalysis to find _the real_ easter egg. | |
-| Retrieve the language file that never made it into production. | |
+| Apply some advanced cryptanalysis to find _the real_ easter egg. | [>>]{forgotten-content.md#easterEgg2Challenge} |
+| Retrieve the language file that never made it into production. | [>>]{forgotten-content.md#extraLanguageChallenge} |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account. | |
 | Forge a coupon code that gives you a discount of at least 80%. | |
 | Fake a continue code that solves only (the non-existent) challenge #99. | |

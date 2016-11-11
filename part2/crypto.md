@@ -26,7 +26,7 @@
 
 #### Hints
 
-### Apply some advanced cryptanalysis to find _the real_ easter egg
+### Apply some advanced cryptanalysis to find _the real_ easter egg {#easterEgg2Challenge}
 
 #### Hints
 

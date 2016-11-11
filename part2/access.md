@@ -24,8 +24,19 @@ If you successfully solved above [admin section challenge](#adminSectionChalleng
 
 #### Hints
 
-* Check the Javascript console for errors if nothing happens when you try to delete feedback entries
+* Nothing happens when you try to delete feedback entries? Check the Javascript console for errors!
 
-### Change the href of the link within the O-Saft product description
+### Change the href of the link within the O-Saft product description {#changeProductChallenge}
+
+The _OWASP SSL Advanced Forensic Tool (O-Saft)_ product has a link in its description that leads to that projects wiki page. In this challenge you are supposed to change that link so that it will send you to http://kimminich.de instead. It is important to exactly follow the challenge instruction to make it light up green on the score board:
+
+* Original link tag in the description: `<a href="https://www.owasp.org/index.php/O-Saft" target="_blank">More...</a>`
+* Expected link tag in the description: `<a href="http://kimminich.de" target="_blank">More...</a>`
 
 #### Hints
+
+* _Theoretically_ there are three possible ways to beat this challenge:
+  * Finding an administrative functionality in the web application that lets you change product data
+  * Looking for possible holes in the RESTful API that would allow you to update a product
+  * Attempting an SQL Injection attack that sneaks in an `UPDATE` statement on product data
+* _In practice_ two of these three ways should turn out to be dead ends

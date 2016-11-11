@@ -46,7 +46,7 @@ For the XSS Tier 3 challenge it is necessary to work with the server-side API di
 
 #### Hints
 
-* As a preparation you could create a matrix of known data entities and supported HTTP verbs through the API
+* A matrix of known data entities and their supported HTTP verbs through the API can help you here
 * Careless developers might have exposed API methods that the client does not even need
 
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism {#xss4Challenge}
