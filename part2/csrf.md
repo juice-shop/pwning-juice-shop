@@ -8,7 +8,7 @@
 | --------- | ---------- |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | 4 of 5 |
 
-### Change Bender's password into _slurmCl4ssic_
+### Change Bender's password into _slurmCl4ssic_ without using SQL Injection
 
 #### Hints
 
