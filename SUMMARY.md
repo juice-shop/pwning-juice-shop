@@ -23,7 +23,7 @@
   * [Broken session management](part2/session.md)
   * [Cross Site Request Forgery (CSRF)](part2/csrf.md)
   * [Cryptographic issues](part2/crypto.md)
-  * [Client-side-only validation](part2/client-side-validation.md)
+  * [Validation Flaws](part2/validation.md)
   * [Weak security mechanisms](part2/weak-security.md)
 
 ----

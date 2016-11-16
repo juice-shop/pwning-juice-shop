@@ -13,7 +13,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Get rid of all 5-star customer feedback. | [>>](access.md#fiveStarFeedbackChallenge) |
 | Access a confidential document. | [>>](forgotten-content.md#confidentialDocumentChallenge) |
 | Access the administration section of the store. | [>>](access.md#adminSectionChallenge) |
-| Give a devastating zero-star feedback to the store. | |
+| Give a devastating zero-star feedback to the store. | [>>](validation.md#zeroStarFeedbackChallenge) |
 | Log in with the administrator's user account. | |
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | |
 | Access someone else's basket. | |
@@ -27,14 +27,14 @@ In case you want to look up hints for a particular challenge, the following tabl
 | XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | [>>](xss.md#xss3Challenge) |
 | Retrieve a list of all user credentials via SQL Injection | |
 | Post some feedback in another users name. | |
-| Place an order that makes you rich. | |
+| Place an order that makes you rich. | [>>](validation.md#negativeOrderChallenge) |
 | Access a developer's forgotten backup file. | [>>](forgotten-content.md#forgottenDevBackupChallenge) |
 | Change the `href` of the link within the O-Saft product description into http://kimminich.de. | [>>](access.md{#changeProductChallenge}) |
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment.) | |
 | Find the hidden easter egg. | [>>](forgotten-content.md#easterEgg1Challenge) |
 | Travel back in time to the golden era of web design. | [>>](forgotten-content.md#geocitiesThemeChallenge) |
-| Upload a file larger than 100 kB. | |
-| Upload a file that has no .pdf extension. | |
+| Upload a file larger than 100 kB. | [>>](validation.md#uploadSizeChallenge) |
+| Upload a file that has no .pdf extension. | [>>](validation.md#uploadTypeChallenge) |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism. | [>>](xss.md#xss4Challenge) |
 | Wherever you go, there you are. | [>>](weak-security.md#redirectChallenge) |
