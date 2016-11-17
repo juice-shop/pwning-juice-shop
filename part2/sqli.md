@@ -17,13 +17,31 @@
 | Retrieve a list of all user credentials via SQL Injection | 3 of 5 |
 | Log in with Jim's user account. | 3 of 5 |
 
+#### Reconnaissance advice
+
+Instead of trying random attacks or go through an attack pattern list, it is a good idea to find out if and where a vulnerability exists, first. By injecting a payload that should typically _break_ an underlying SQL query (e.g. `'` or `';`) you can analyze how the behavior differs from regular use. Maybe you can even provoke an error where the application leaks details about the query structure and schema details like table or column names. Do not miss this opportunity.
+
 ### Log in with the administrator's user account
 
+What would a vulnerable web application be without an administrator user account whose (supposedly) privileged access rights a successful hacker can abuse?
+
 #### Hints
+
+* The challenge description probably gave away what form you should attack.
+* If you happen to know the email address of the admin already, you can launch a targeted attack.
+* You might be lucky with a dedicated attack pattern even if you have no clue about the admin email address.
+* If you harvested the admin's password hash, you can of course try to attack that instead of using SQL Injection.
+* Alternatively you can solve this challenge as a _combo_ with the [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](weak-security.md#weakPasswordChallenge) challenge.
 
 ### Order the Christmas special offer of 2014
 
+To solve this challenge you need _to order_ a product that is not supposed to be available any more.
+
 #### Hints
+
+* Find out how the application _hides_ deleted products from its customers.
+* Try to craft an attack string that makes deleted products visible again.
+* You need to get the deleted product into your shopping cart and trigger the _Checkout_.
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -31,7 +49,13 @@
 
 ### Log in with Jim's user account
 
+Jim is a regular customer. He prefers juice from fruits that no man has ever tasted before.
+
 #### Hints
+
+* The challenge description probably gave away what form you should attack.
+* You need to know (or smart-guess) Jim's email address so you can launch a targeted attack.
+* If you harvested Jim's password hash, you can of course try to attack that instead of SQL Injection.
 
 ----
 
