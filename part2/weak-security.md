@@ -11,7 +11,15 @@
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection {#weakPasswordChallenge}
 
+You might have already solved this challenge along with [Log in with the administrator's user account](sqli.md#loginAdminChallenge) if you chose
+not to use SQL Injection. This challenge can only be solved if you use the original password of the administrator. If you _accidentally_ changed
+the password, do not despair: The original password will _always_ be accepted to make sure you can solve this challenge.
+
 #### Hints
+
+* Guessing might work just fine.
+* If you harvested the admin's password hash, you can try to attack that.
+* In case you use some hacker tool, you can also go for a _brute force attack_ using a generic _password list_
 
 ### Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account
 

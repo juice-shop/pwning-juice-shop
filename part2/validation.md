@@ -48,4 +48,4 @@ file types are rejected.
 
 #### Hints
 
-* If you solved the [Upload a file larger than 100 kB]() challenge, you should try to apply the same solution here
+* If you solved the [Upload a file larger than 100 kB](#uploadSizeChallenge) challenge, you should try to apply the same solution here
