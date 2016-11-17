@@ -21,7 +21,7 @@
 
 Instead of trying random attacks or go through an attack pattern list, it is a good idea to find out if and where a vulnerability exists, first. By injecting a payload that should typically _break_ an underlying SQL query (e.g. `'` or `';`) you can analyze how the behavior differs from regular use. Maybe you can even provoke an error where the application leaks details about the query structure and schema details like table or column names. Do not miss this opportunity.
 
-### Log in with the administrator's user account
+### Log in with the administrator's user account {#loginAdminChallenge}
 
 What would a vulnerable web application be without an administrator user account whose (supposedly) privileged access rights a successful hacker can abuse?
 
@@ -33,7 +33,7 @@ What would a vulnerable web application be without an administrator user account
 * If you harvested the admin's password hash, you can of course try to attack that instead of using SQL Injection.
 * Alternatively you can solve this challenge as a _combo_ with the [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](weak-security.md#weakPasswordChallenge) challenge.
 
-### Order the Christmas special offer of 2014
+### Order the Christmas special offer of 2014 {#christmasSpecialChallenge}
 
 To solve this challenge you need _to order_ a product that is not supposed to be available any more.
 
@@ -43,11 +43,17 @@ To solve this challenge you need _to order_ a product that is not supposed to be
 * Try to craft an attack string that makes deleted products visible again.
 * You need to get the deleted product into your shopping cart and trigger the _Checkout_.
 
-### Retrieve a list of all user credentials via SQL Injection
+### Retrieve a list of all user credentials via SQL Injection {#unionSqlInjectionChallenge}
+
+This challenge explains how a considerable number of companies were affected by _data breaches_ without anyone breaking into the server room or sneaking out with a USB stick full of sensitive information. Given your application is vulnerable to a certain type of SQL Injection attacks, hackers can have the same effect while comfortably sitting in a café with free WiFi.
 
 #### Hints
 
-### Log in with Jim's user account
+* Try to find a page where can influence a list of data being displayed.
+* Craft a `UNION SELECT` attack string to join data from another table into the original result.
+* You might have to tackle some query syntax issues step-by-step, basically hopping from one error to the next
+
+### Log in with Jim's user account {#loginJimChallenge}
 
 Jim is a regular customer. He prefers juice from fruits that no man has ever tasted before.
 

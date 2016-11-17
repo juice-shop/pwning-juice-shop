@@ -9,7 +9,7 @@
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account. | 4 of 5 |
 | Wherever you go, there you are. | 4 of 5 |
 
-### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
+### Log in with the administrator's user credentials without previously changing them or applying SQL Injection {#weakPasswordChallenge}
 
 #### Hints
 

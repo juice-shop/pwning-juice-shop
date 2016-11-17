@@ -14,18 +14,18 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Access a confidential document. | [>>](forgotten-content.md#confidentialDocumentChallenge) |
 | Access the administration section of the store. | [>>](access.md#adminSectionChallenge) |
 | Give a devastating zero-star feedback to the store. | [>>](validation.md#zeroStarFeedbackChallenge) |
-| Log in with the administrator's user account. | |
+| Log in with the administrator's user account. | [>>](sqli.md#loginAdminChallenge) |
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | |
 | Access someone else's basket. | |
 | Access a salesman's forgotten backup file. | [>>](forgotten-content.md#forgottenBackupChallenge) |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | |
 | Inform the shop about an algorithm or library it should definitely not use the way it does. | |
-| Order the Christmas special offer of 2014. | |
-| Log in with Jim's user account. | |
+| Order the Christmas special offer of 2014. | [>>](sqli.md#christmasSpecialChallenge) |
+| Log in with Jim's user account. | [>>](sqli.md#loginJimChallenge) |
 | Log in with Bender's user account. | |
 | XSS Tier 2: Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism. | [>>](xss.md#xss2Challenge) |
 | XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | [>>](xss.md#xss3Challenge) |
-| Retrieve a list of all user credentials via SQL Injection | |
+| Retrieve a list of all user credentials via SQL Injection | [>>](sqli.md#unionSqlInjectionChallenge) |
 | Post some feedback in another users name. | |
 | Place an order that makes you rich. | [>>](validation.md#negativeOrderChallenge) |
 | Access a developer's forgotten backup file. | [>>](forgotten-content.md#forgottenDevBackupChallenge) |
