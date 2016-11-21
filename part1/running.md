@@ -13,9 +13,9 @@ hosting the application. If you have forked the Juice Shop repository on GitHub,
 version you must use the button of the original repository at https://github.com/bkimminich/juice-shop.
 
 As the Juice Shop is supposed to be hacked and attacked - maybe even with aggressive brute-force scripts or automated scanner software - one might think that Heroku would not allow such activities
-on their cloud platform. Quite the opposite! When describing the intended use of Juice Shop to the Heroku support team they analogously answered with: _"Everything except DDoS attacks is fine!"_
+on their cloud platform. Quite the opposite! When describing the intended use of Juice Shop to the Heroku support team they answered with:
 
-This means, as long as you do not use a botnet to attack your Juice Shop instance, you are free to use any tools or scripts you like!
+> That sounds like a great idea. So long as you aren't asking people to DDoS it that should be fine. People are certainly welcome to try their luck against the platform and your app so long as it's not DDoS.
 
 ### Local installation
 
