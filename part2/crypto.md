@@ -27,9 +27,9 @@ To fulfill this challenge you must identify a cryprographic algorithm (or crypto
 
 #### Hints
 
-* Use the _Contact Us_ form to submit a feedback mentioning the abused algorithm or library
-* There are four possible answers and you only need to identify one to solve the challenge
-* Cryptographic functions used in the [Apply some advanced cryptanalysis to find _the real_ easter egg](#easterEgg2Challenge) challenge _do not count_ as they are only a developer's prank and not a serious security problem
+* Use the _Contact Us_ form to submit a feedback mentioning the abused algorithm or library.
+* There are four possible answers and you only need to identify one to solve the challenge.
+* Cryptographic functions used in the [Apply some advanced cryptanalysis to find _the real_ easter egg](#easterEgg2Challenge) challenge _do not count_ as they are only a developer's prank and not a serious security problem.
 
 ### Inform the shop about a vulnerable library it is using {#knownVulnerableComponentChallenge}
 
@@ -37,10 +37,10 @@ This challenge is quite similar to [Inform the shop about an algorithm or librar
 
 #### Hints
 
-* Use the _Contact Us_ form to submit a feedback mentioning the vulnerable library including its exact version
-* There are two possible answers and you only need to identify one to solve the challenge
-* Look for possible dependencies related to security in the `package.json.bak` you harvested earlier
-* Do some research on the internet for known security issues in the most suspicious application dependencies
+* Use the _Contact Us_ form to submit a feedback mentioning the vulnerable library including its exact version.
+* There are two possible answers and you only need to identify one to solve the challenge.
+* Look for possible dependencies related to security in the `package.json.bak` you harvested earlier.
+* Do some research on the internet for known security issues in the most suspicious application dependencies.
 
 ### Apply some advanced cryptanalysis to find _the real_ easter egg {#easterEgg2Challenge}
 
@@ -48,12 +48,18 @@ Solving the [Find the hidden easter egg](forgotten-content.md#easterEgg1Challen
 
 #### Hints
 
-* Make sure you solve [Find the hidden easter egg](forgotten-content.md#easterEgg1Challenge) first
-* You might have to tailchase through several layers of encryption for this challenge
+* Make sure you solve [Find the hidden easter egg](forgotten-content.md#easterEgg1Challenge) first.
+* You might have to peel through several layers of tough-as-nails encryption for this challenge.
 
-### Forge a coupon code that gives you a discount of at least 80%
+### Forge a coupon code that gives you a discount of at least 80% {#forgeCouponChallenge}
+
+This is probably one of the hardest challenges in the OWASP Juice Shop. As you learned during [the "happy path" tour](/part1/happy-path.md), the webshop offers a _Coupon_ field to get a discount on your entire order during checkout. The challenge is to get a discount of at least 80% on an order. As no coupons with this high a discount are published, it is up to you to forge your own.
 
 #### Hints
+
+* One viable solution would be to reverse-engineer how coupon codes are generated and craft your own 80% coupon by using the same (or at least similar) implementation.
+* Another possible solution might be harvesting as many previous coupon as possible and look for patterns that might give you a leverage for a brute force attack.
+* If all else fails, you could still try to blindly brute force the coupon code field before checkout.
 
 ### Fake a continue code that solves only challenge #99
 

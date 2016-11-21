@@ -41,7 +41,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Apply some advanced cryptanalysis to find _the real_ easter egg. | [>>](forgotten-content.md#easterEgg2Challenge) |
 | Retrieve the language file that never made it into production. | [>>](forgotten-content.md#extraLanguageChallenge) |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account. | |
-| Forge a coupon code that gives you a discount of at least 80%. | |
+| Forge a coupon code that gives you a discount of at least 80%. | [>>](crypto.md#forgeCouponChallenge) |
 | Fake a continue code that solves only (the non-existent) challenge #99. | |
 
 ## Challenge Solutions
