@@ -19,7 +19,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Access someone else's basket. | |
 | Access a salesman's forgotten backup file. | [>>](forgotten-content.md#forgottenBackupChallenge) |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | |
-| Inform the shop about an algorithm or library it should definitely not use the way it does. | |
+| Inform the shop about an algorithm or library it should definitely not use the way it does. | [>>](crypto.md#weirdCryptoChallenge) |
 | Order the Christmas special offer of 2014. | [>>](sqli.md#christmasSpecialChallenge) |
 | Log in with Jim's user account. | [>>](sqli.md#loginJimChallenge) |
 | Log in with Bender's user account. | |
@@ -30,7 +30,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Place an order that makes you rich. | [>>](validation.md#negativeOrderChallenge) |
 | Access a developer's forgotten backup file. | [>>](forgotten-content.md#forgottenDevBackupChallenge) |
 | Change the `href` of the link within the O-Saft product description into http://kimminich.de. | [>>](access.md{#changeProductChallenge}) |
-| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment.) | |
+| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | [>>](crypto.md#knownVulnerableComponentChallenge) |
 | Find the hidden easter egg. | [>>](forgotten-content.md#easterEgg1Challenge) |
 | Travel back in time to the golden era of web design. | [>>](forgotten-content.md#geocitiesThemeChallenge) |
 | Upload a file larger than 100 kB. | [>>](validation.md#uploadSizeChallenge) |
