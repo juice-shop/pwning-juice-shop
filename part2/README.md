@@ -15,7 +15,7 @@ In case you want to look up hints for a particular challenge, the following tabl
 | Access the administration section of the store. | [>>](access.md#adminSectionChallenge) |
 | Give a devastating zero-star feedback to the store. | [>>](validation.md#zeroStarFeedbackChallenge) |
 | Log in with the administrator's user account. | [>>](sqli.md#loginAdminChallenge) |
-| Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | |
+| Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | [>>](weak-security.md#weakPasswordChallenge) |
 | Access someone else's basket. | |
 | Access a salesman's forgotten backup file. | [>>](forgotten-content.md#forgottenBackupChallenge) |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | |
