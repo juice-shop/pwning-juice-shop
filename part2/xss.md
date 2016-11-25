@@ -69,3 +69,7 @@ _When you actually understand a security mechanism you have a lot higher chance 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 [^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
+
+---
+
+If you see an alert here --> <script>alert("XSS")</script> <-- instead of the text `<script>alert("XSS")</script>` https://github.com/GitbookIO/gitbook/issues/1609 has not been fixed.
