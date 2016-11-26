@@ -8,9 +8,15 @@
 | --------- | ---------- |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | 4 of 5 |
 
-### Change Bender's password into _slurmCl4ssic_ without using SQL Injection
+### Change Bender's password into _slurmCl4ssic_ without using SQL Injection {#csrfChallenge}
+
+This challenge can only be solved by changing the password of user Bender into _slurmCl4ssic_. Using any sort of SQL Injection will _not_ solve the challenge, even if the password is successfully changed in the process.
 
 #### Hints
+
+* The fact that this challenge is in the CSRF category is already a huge hint.
+* It might also have been put into the [Weak security mechanisms](weak-security.md) category.
+* Bender's current password is so strong that brute force, [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table) or guessing attacks will probably not work.
 
 ----
 

@@ -16,6 +16,7 @@
 | Order the Christmas special offer of 2014. | 2 of 5 |
 | Retrieve a list of all user credentials via SQL Injection | 3 of 5 |
 | Log in with Jim's user account. | 3 of 5 |
+| Log in with Bender's user account. | 3 of 5 |
 
 #### Reconnaissance advice
 
@@ -62,6 +63,15 @@ Jim is a regular customer. He prefers juice from fruits that no man has ever tas
 * The challenge description probably gave away what form you should attack.
 * You need to know (or smart-guess) Jim's email address so you can launch a targeted attack.
 * If you harvested Jim's password hash, you can of course try to attack that instead of SQL Injection.
+
+### Log in with Bender's user account {#loginBenderChallenge}
+
+Bender is a regular customer, but mostly hangs out in the Juice Shop to troll it for its lack of alcoholic beverages.
+
+#### Hints
+
+* You should try one of the approaches you used on Jim.
+* Bender's password hash might not help you very much.
 
 ----
 
