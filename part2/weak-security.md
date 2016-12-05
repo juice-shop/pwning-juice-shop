@@ -50,9 +50,9 @@ hacking pleasure!
   analyze closely what happens behind the scenes.
 * The security flaw behind this challenge is 100% Juice Shop's fault and 0% Google's.
 
-> The unremarkable remark "__without__ hacking his Google account" in the
-  challenge description is not a joke. Please do not try to break into
-  Bjoern's or anyone else's Google account. This would be a criminal act.
+> The unremarkable side note _**without** hacking his Google account_ in the
+  challenge description is _not a joke_. Please do not try to break into
+  Bjoern's (or anyone else's) Google account. This would be a criminal act.
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account {#loginCisoChallenge}
 
@@ -71,13 +71,13 @@ of regular and special characters. Good luck brute forcing that!
 
 ### Wherever you go, there you are {#redirectChallenge}
 
-This challenge is undoubtedtly the one with the most ominous
+This challenge is undoubtedly the one with the most ominous
 description. It is actually a quote from the computer game
 [Diablo](http://us.blizzard.com/en-us/games/legacy/), which is shown on
 screen when the player activates a
-[Holy Shrine](http://diablo.gamepedia.com/Shrines_(Diablo_I)). The
+[Holy Shrine](http://diablo.gamepedia.com/Shrines_%28Diablo_I%29). The
 shrine casts the spell
-[Phasing](http://diablo.gamepedia.com/Phasing_(Diablo_I)) on the player,
+[Phasing](http://diablo.gamepedia.com/Phasing_%28Diablo_I%29) on the player,
 which results in _teleportation_ to a random location.
 
 By now you probably made the connection: This challenge is about

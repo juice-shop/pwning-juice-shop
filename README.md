@@ -43,14 +43,17 @@ possible mitigations._
 
 ----
 
-__Download a .pdf, .epub, or .mobi file from:__ *
-https://www.gitbook.com/book/bkimminich/pwning-owasp-juice-shop
+__Download a .pdf, .epub, or .mobi file from:__
 
-__Contribute content, suggestions, and fixes on GitHub:__ *
-https://github.com/bkimminich/pwning-juice-shop
+* https://www.gitbook.com/book/bkimminich/pwning-owasp-juice-shop
 
-__Official project landing page on the OWASP wiki:__ *
-https://www.owasp.org/index.php/OWASP_Juice_Shop_Project
+__Contribute content, suggestions, and fixes on GitHub:__
+
+* https://github.com/bkimminich/pwning-juice-shop
+
+__Official project landing page on the OWASP wiki:__
+
+* https://www.owasp.org/index.php/OWASP_Juice_Shop_Project
 
 ----
 
