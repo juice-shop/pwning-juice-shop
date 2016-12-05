@@ -51,7 +51,7 @@ case a number of notifications "piled up" it is not necessary to dismiss
 each one individually, as a simple reload of the UI in the browser (`F5`
 key) will dismiss all at the same time.
 
-## Continue codes
+## Continue codes {#continueCodes}
 
 The ["self-healing" feature](running.md#selfHealing) - by wiping the
 entire database on server start - of Juice Shop was advertised as a
