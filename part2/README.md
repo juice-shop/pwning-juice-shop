@@ -16,9 +16,9 @@ order as on the Score Board.
 | Find the carefully hidden 'Score Board' page.                                                                                      | [>>](score-board.md#scoreBoardChallenge)                 |
 | Provoke an error that is not very gracefully handled.                                                                              | [>>](leakage.md#errorHandlingChallenge)                  |
 | XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`.                                                  | [>>](xss.md#xss1Challenge)                               |
-| Get rid of all 5-star customer feedback.                                                                                           | [>>](access.md#fiveStarFeedbackChallenge)                |
+| Get rid of all 5-star customer feedback.                                                                                           | [>>](privilege-escalation.md#fiveStarFeedbackChallenge)  |
 | Access a confidential document.                                                                                                    | [>>](forgotten-content.md#confidentialDocumentChallenge) |
-| Access the administration section of the store.                                                                                    | [>>](access.md#adminSectionChallenge)                    |
+| Access the administration section of the store.                                                                                    | [>>](privilege-escalation.md#adminSectionChallenge)      |
 | Give a devastating zero-star feedback to the store.                                                                                | [>>](validation.md#zeroStarFeedbackChallenge)            |
 | Log in with the administrator's user account.                                                                                      | [>>](sqli.md#loginAdminChallenge)                        |
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | [>>](weak-security.md#weakPasswordChallenge)             |
@@ -35,7 +35,7 @@ order as on the Score Board.
 | Post some feedback in another users name.                                                                                          |                                                          |
 | Place an order that makes you rich.                                                                                                | [>>](validation.md#negativeOrderChallenge)               |
 | Access a developer's forgotten backup file.                                                                                        | [>>](forgotten-content.md#forgottenDevBackupChallenge)   |
-| Change the `href` of the link within the O-Saft product description into http://kimminich.de.                                      | [>>](access.md{#changeProductChallenge})                 |
+| Change the `href` of the link within the O-Saft product description into http://kimminich.de.                                      | [>>](privilege-escalation.md#changeProductChallenge)     |
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)               | [>>](crypto.md#knownVulnerableComponentChallenge)        |
 | Find the hidden easter egg.                                                                                                        | [>>](forgotten-content.md#easterEgg1Challenge)           |
 | Travel back in time to the golden era of web design.                                                                               | [>>](forgotten-content.md#geocitiesThemeChallenge)       |
