@@ -48,7 +48,8 @@ order as on the Score Board.
 | Retrieve the language file that never made it into production.                                                                     | [>>](forgotten-content.md#extraLanguageChallenge)        |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | [>>](weak-security.md#loginCisoChallenge)                |
 | Forge a coupon code that gives you a discount of at least 80%.                                                                     | [>>](crypto.md#forgeCouponChallenge)                     |
-| Fake a continue code that solves only (the non-existent) challenge #99.                                                            | [>>](crypto.md#continueCodeChallenge)                    |
+| Fake a continue code that solves only (the non-existent) challenge #99.                                                                | [>>](crypto.md#continueCodeChallenge)                    |
+| Log in with the support team's original user credentials without applying SQL Injection or any other bypass. | [>>](weak-security.md#loginSupportChallenge) |
 
 ## Challenge Solutions
 

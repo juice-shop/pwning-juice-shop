@@ -8,6 +8,7 @@
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | 3 of 5     |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | 4 of 5     |
 | Wherever you go, there you are.                                                                                                    | 4 of 5     |
+| Log in with the support team's original user credentials without applying SQL Injection or any other bypass. | 5 of 5 |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection {#weakPasswordChallenge}
 
@@ -93,6 +94,24 @@ _redirecting_ to a different location.
 
 > White list validation involves defining exactly what _is_ authorized,
 > and by definition, everything else is not authorized.[^1]
+
+### Log in with the support team's original user credentials {#loginSupportChallenge}
+
+This is another _follow-the-breadcrumbs_ challenge of the tougher sort. As a little
+background story, imagine that the OWASP Juice Shop was developed in the _classic
+style_: The development team wrote the code and then threw it over the fence to an
+operations and support team to run and troubleshoot the application. Not the slightest
+sign of [DevOps](https://en.wikipedia.org/wiki/DevOps) culture here.
+
+#### Hints
+
+* The support team is located in some low-cost country and the team structure
+  fluctuates a lot due to people leaving for jobs with even just slightly better wages.
+* To prevent abuse the password for the support team account is very strong.
+* To allow easy access during an incident, the support team utilizes a 3rd party tool
+  which every support engineer can access to get the current account password from.
+* While it is also possible to use SQL Injection to log in as the support team, this will
+  not solve the challenge.
 
 ----
 
