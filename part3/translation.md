@@ -24,7 +24,7 @@ for open source projects.[^1]
 ### How to participate?
 
 1. Create an account at Crowdin and log in.
-2. Visit the project page https://crowdin.com/project/owasp-juice-shop
+2. Visit the project invitation page <https://crowdin.com/project/owasp-juice-shop/invite>
 3. Pick a language you would like to help translate the project into
 4. In the _Files_ tab select the listed source file `en.json`
 5. Pick an untranslated label (marked with a red box) and provide a translation
@@ -55,4 +55,4 @@ Crowdin afterwards and added as a new language there as well.
 
 ----
 
-[^1]: https://crowdin.com/
+[^1]: <https://crowdin.com/>
