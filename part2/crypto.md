@@ -114,23 +114,25 @@ up to you to forge your own.
 
 ### Fake a continue code that solves only challenge #99 {#continueCodeChallenge}
 
-The OWASP Juice Shop is _so broken_ that even its convenience features that
-have nothing to do with the ecommerce use cases are designed to be vulnerable.
-One of these features is the [Continue Codes](/part1/challenges.md#continueCodes)
-that allow to restore previously achieved hacking progress after a break or server crash.
+The OWASP Juice Shop is _so broken_ that even its convenience features
+that have nothing to do with the ecommerce use cases are designed to be
+vulnerable. One of these features is the
+[Continue Codes](/part1/challenges.md#continueCodes) that allow to
+restore previously achieved hacking progress after a break or server
+crash.
 
-In order to not mess with the existing challenges accidentally the challenge
-is to fake an explicit continue code that would solve challenge #99 - which
-does not exist.
+In order to not mess with the existing challenges accidentally the
+challenge is to fake an explicit continue code that would solve
+challenge #99 - which does not exist.
 
 #### Hints
 
-* Deduce from all available information (e.g. the `package.json.bak`) how
-  the application encrypts and decrypts its continue codes.
-* Other than the passwords the continue codes involve an additional secret
-  during their encryption.
-* What would be a _really stupid_ mistake a developer might
-  make when choosing such a secret?
+* Deduce from all available information (e.g. the `package.json.bak`)
+  how the application encrypts and decrypts its continue codes.
+* Other than the passwords the continue codes involve an additional
+  secret during their encryption.
+* What would be a _really stupid_ mistake a developer might make when
+  choosing such a secret?
 
 ----
 

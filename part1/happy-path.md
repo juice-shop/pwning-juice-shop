@@ -104,9 +104,10 @@ languages you want the user interface to be displayed in. On the top of
 the list, you find languages with complete translations, the ones below
 with a "flask"-icon next to them, offer only partial translation.
 
-> If you want to know more about (or even help with) the localization of OWASP Juice Shop,
-please refer to the [Help with translation](/part3/translation.md)
-chapter in part III of this book.
+> If you want to know more about (or even help with) the localization of
+> OWASP Juice Shop, please refer to the
+> [Help with translation](/part3/translation.md) chapter in part III of
+> this book.
 
 ### Provide feedback
 

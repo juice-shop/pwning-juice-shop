@@ -34,7 +34,8 @@
 
 Just like the score board, the admin section was not part of your "happy
 path" tour because there seems to be no link to that section either. In
-case you were already [logged in with the administrator account](sqli.md#loginAdminChallenge)
+case you were already
+[logged in with the administrator account](sqli.md#loginAdminChallenge)
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
@@ -85,11 +86,11 @@ challenge instruction to make it light up green on the score board:
 ### Access someone else's basket {#accessBasketChallenge}
 
 This horizontal privilege escalation challenge demands you to access the
-shopping basket of another user. Being able to do so would give an attacker
-the opportunity to spy on the victims shopping behavior. He could also play
-a prank on the victim by manipulating the items or their quantity, hoping
-this will go unnoticed during checkout. This could lead to some arguments
-between the victim and the vendor.
+shopping basket of another user. Being able to do so would give an
+attacker the opportunity to spy on the victims shopping behavior. He
+could also play a prank on the victim by manipulating the items or their
+quantity, hoping this will go unnoticed during checkout. This could lead
+to some arguments between the victim and the vendor.
 
 #### Hints
 
@@ -99,8 +100,8 @@ between the victim and the vendor.
   can try to manipulate.
 
 > In case you manage to update the database via SQL Injection so that a
-  user is linked to another shopping basket, the application will _not_
-  notice this challenge as solved.
+> user is linked to another shopping basket, the application will _not_
+> notice this challenge as solved.
 
 ### Post some feedback in another users name {#forgedFeedbackChallenge}
 
@@ -116,8 +117,8 @@ posting a (most likely negative) feedback in his or her name!
   the communication with the RESTful backend.
 * To find the client-side leverage point, closely analyze the HTML form
   used for feedback submission.
-* The backend-side leverage point is similar to some of the [XSS challenges](xss.md)
-  found in OWASP Juice Shop.
+* The backend-side leverage point is similar to some of the
+  [XSS challenges](xss.md) found in OWASP Juice Shop.
 
 ---
 
