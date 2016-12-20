@@ -1,9 +1,13 @@
 # GitBook
 _book/
-book.pdf
-book.mobi
-book.epub
+*.pdf
+*.mobi
+*.epub
 
 # IntelliJ
 .idea/
 *.iml
+
+# NPM
+node_modules/
+npm-debug.log
