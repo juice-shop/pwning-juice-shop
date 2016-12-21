@@ -16,7 +16,7 @@
 |:------------------------------------------------------|:-----------|
 | Provoke an error that is not very gracefully handled. | 1 of 5     |
 
-### Provoke an error that is not very gracefully handled  {#errorHandlingChallenge}
+### Provoke an error that is not very gracefully handled
 
 The OWASP Juice Shop is quite forgiving when it comes to bad input,
 broken requests or other failure situations. It is just not very good at

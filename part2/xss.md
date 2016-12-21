@@ -26,7 +26,7 @@
 | XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5     |
 | XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism.    | 4 of 5     |
 
-### XSS Tier 1: Perform a reflected XSS attack {#xss1Challenge}
+### XSS Tier 1: Perform a reflected XSS attack
 
 > Reflected Cross-site Scripting (XSS) occur when an attacker injects
 > browser executable code within a single HTTP response. The injected
@@ -43,7 +43,7 @@
 * Try probing for XSS vulberabilities by submitting text wrapped in an
   HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
-### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism {#xss2Challenge}
+### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
 This challenge is founded on a very common security flaw of web
 applications, where the developers ignored the following golden rule of
@@ -66,7 +66,7 @@ input validation:
     * or by ignoring it completely and interacting with the backend
       instead.
 
-### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all {#xss3Challenge}
+### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
 
 As presented in the
 [Architecture Overview](/introduction/architecture.md), the OWASP Juice
@@ -82,7 +82,7 @@ server.
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`
 or an
-[API testing plugin for your browser](/part1/rules.md#apiTestingPlugin)
+[API testing plugin for your browser](/part1/rules.md#api-testing-plugin)
 to master this challenge.
 
 #### Hints
@@ -92,7 +92,7 @@ to master this challenge.
 * Careless developers might have exposed API methods that the client
   does not even need
 
-### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism {#xss4Challenge}
+### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 This is the hardest XSS challenge, as it cannot by solved by fiddling
 with the client-side Javascript or bypassing the client entirely.

@@ -92,7 +92,7 @@ If you are using Docker on Windows - inside a VirtualBox VM - make sure
 that you also enable port forwarding from host `127.0.0.1:3000` to
 `0.0.0.0:3000` for TCP.
 
-## "Self-healing" feature {#selfHealing}
+## "Self-healing" feature
 
 OWASP Juice Shop was not exactly designed and built with a high
 availability and reactive enterprise-scale architecture in mind. It runs

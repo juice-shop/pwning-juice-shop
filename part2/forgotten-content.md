@@ -15,7 +15,7 @@ development team.
 | Travel back in time to the golden era of web design.           | 3 of 5     |
 | Retrieve the language file that never made it into production. | 4 of 5     |
 
-### Access a confidential document {#confidentialDocumentChallenge}
+### Access a confidential document
 
 Somewhere in the application you can find a file that contains sensitive
 information about some - potentially hostile - takeovers the Juice Shop
@@ -28,7 +28,7 @@ top management has planned.
 * The file you are looking for is not protected in any way. Once you
   _found it_ you can also _access it_.
 
-### Access a salesman's forgotten backup file {#forgottenBackupChallenge}
+### Access a salesman's forgotten backup file
 
 A sales person as accidentally uploaded a list of (by now outdated)
 coupon codes to the application. Downloading this file will not only
@@ -45,7 +45,7 @@ might also prove usful in another challenge later on.
   has a valid file type.
 * For this challenge there are _two approaches_ to pull this trick.
 
-### Access a developer's forgotten backup file {#forgottenDevBackupChallenge}
+### Access a developer's forgotten backup file
 
 During an emergency incident and the hotfix that followed, a developer
 accidentally pasted an application configuration file into the wrong
@@ -63,7 +63,7 @@ crucial in several other challenges later on.
   has a valid file type.
 * For this challenge there is only _one approach_ to pull this trick.
 
-### Find the hidden easter egg {#easterEgg1Challenge}
+### Find the hidden easter egg
 
 > An Easter egg is an intentional inside joke, hidden message, or
 > feature in an interactive work such as a computer program, video game
@@ -79,9 +79,9 @@ crucial in several other challenges later on.
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found **the real** easter
 egg! Of course finding **that** is
-[a follow-up challenge](crypto.md#easterEgg2Challenge) to this one._
+[a follow-up challenge](crypto.md#apply-some-advanced-cryptanalysis-to-find-_the-real_-easter-egg) to this one._
 
-### Travel back in time to the golden era of web design {#geocitiesThemeChallenge}
+### Travel back in time to the golden era of web design
 
 You probably agree that this is one of the more ominously described
 challenges. But the description contains a very obvious hint what this
@@ -100,7 +100,7 @@ experience** where you actually put the file **in action** with some DOM
 tree manipulation! Unfortunately the nostalgic vision only lasts until
 the next time you hit `F5` in your browser._
 
-### Retrieve the language file that never made it into production {#extraLanguageChallenge}
+### Retrieve the language file that never made it into production
 
 > A project is internationalized when all of the project’s materials and
 > deliverables are consumable by an international audience. This can

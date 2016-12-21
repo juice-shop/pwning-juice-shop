@@ -38,7 +38,7 @@
 | Forge a coupon code that gives you a discount of at least 80%.                                                       | 5 of 5     |
 | Fake a continue code that solves only (the non-existent) challenge #99.                                              | 5 of 5     |
 
-### Inform the shop about an algorithm or library it should definitely not use the way it does {#weirdCryptoChallenge}
+### Inform the shop about an algorithm or library it should definitely not use the way it does
 
 To fulfill this challenge you must identify a cryprographic algorithm
 (or crypto library) that either * should not be used _at all_ * or is a
@@ -51,14 +51,14 @@ _bad choice_ for a given requirement * or is used in an _insecure way_.
 * There are four possible answers and you only need to identify one to
   solve the challenge.
 * Cryptographic functions used in the
-  [Apply some advanced cryptanalysis to find _the real_ easter egg](#easterEgg2Challenge)
+  [Apply some advanced cryptanalysis to find _the real_ easter egg](#apply-some-advanced-cryptanalysis-to-find-_the-real_-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
 
-### Inform the shop about a vulnerable library it is using {#knownVulnerableComponentChallenge}
+### Inform the shop about a vulnerable library it is using
 
 This challenge is quite similar to
-[Inform the shop about an algorithm or library it should definitely not use the way it does](#weirdCryptoChallenge)
+[Inform the shop about an algorithm or library it should definitely not use the way it does](#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)
 with the difference, that here not the _general use_ of the library is
 the issue. The application is just using _a version_ of a library that
 contains known vulnerabilities.
@@ -74,10 +74,10 @@ contains known vulnerabilities.
 * Do some research on the internet for known security issues in the most
   suspicious application dependencies.
 
-### Apply some advanced cryptanalysis to find _the real_ easter egg {#easterEgg2Challenge}
+### Apply some advanced cryptanalysis to find _the real_ easter egg
 
 Solving the
-[Find the hidden easter egg](forgotten-content.md#easterEgg1Challenge)
+[Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)
 challenge was probably no as satisfying as you had hoped. Now it is time
 to tackle the taunt of the developers and hunt down _the real_ easter
 egg. This follow-up challenge is basically about finding a secret URL
@@ -87,12 +87,12 @@ the name.
 #### Hints
 
 * Make sure you solve
-  [Find the hidden easter egg](forgotten-content.md#easterEgg1Challenge)
+  [Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)
   first.
 * You might have to peel through several layers of tough-as-nails
   encryption for this challenge.
 
-### Forge a coupon code that gives you a discount of at least 80% {#forgeCouponChallenge}
+### Forge a coupon code that gives you a discount of at least 80%
 
 This is probably one of the hardest challenges in the OWASP Juice Shop.
 As you learned during [the "happy path" tour](/part1/happy-path.md), the
@@ -112,12 +112,12 @@ up to you to forge your own.
 * If all else fails, you could still try to blindly brute force the
   coupon code field before checkout.
 
-### Fake a continue code that solves only challenge #99 {#continueCodeChallenge}
+### Fake a continue code that solves only challenge #99
 
 The OWASP Juice Shop is _so broken_ that even its convenience features
 that have nothing to do with the ecommerce use cases are designed to be
 vulnerable. One of these features is the
-[Continue Codes](/part1/challenges.md#continueCodes) that allow to
+[Continue Codes](/part1/challenges.md#continue-codes) that allow to
 restore previously achieved hacking progress after a break or server
 crash.
 

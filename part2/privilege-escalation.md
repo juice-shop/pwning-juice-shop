@@ -30,12 +30,12 @@
 | Access someone else's basket.                                                               | 2 of 5     |
 | Post some feedback in another users name.                                                   | 3 of 5     |
 
-### Access the administration section of the store {#adminSectionChallenge}
+### Access the administration section of the store
 
 Just like the score board, the admin section was not part of your "happy
 path" tour because there seems to be no link to that section either. In
 case you were already
-[logged in with the administrator account](sqli.md#loginAdminChallenge)
+[logged in with the administrator account](sqli.md#log-in-with-the-administrators-user-account)
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
@@ -47,10 +47,10 @@ option available in the main menu.
   parts of the application that are _not usually visible_ in the browser
 * It is just slightly harder to find than the score board link
 
-### Get rid of all 5-star customer feedback {#fiveStarFeedbackChallenge}
+### Get rid of all 5-star customer feedback
 
 If you successfully solved above
-[admin section challenge](#adminSectionChallenge) deleting the 5-star
+[admin section challenge](#access-the-administration-section-of-the-store) deleting the 5-star
 feedback is very easy.
 
 #### Hints
@@ -58,7 +58,7 @@ feedback is very easy.
 * Nothing happens when you try to delete feedback entries? Check the
   Javascript console for errors!
 
-### Change the href of the link within the O-Saft product description {#changeProductChallenge}
+### Change the href of the link within the O-Saft product description
 
 The _OWASP SSL Advanced Forensic Tool (O-Saft)_ product has a link in
 its description that leads to that projects wiki page. In this challenge
@@ -83,7 +83,7 @@ challenge instruction to make it light up green on the score board:
       statement on product data
 * _In practice_ two of these three ways should turn out to be dead ends
 
-### Access someone else's basket {#accessBasketChallenge}
+### Access someone else's basket
 
 This horizontal privilege escalation challenge demands you to access the
 shopping basket of another user. Being able to do so would give an
@@ -103,7 +103,7 @@ to some arguments between the victim and the vendor.
 > user is linked to another shopping basket, the application will _not_
 > notice this challenge as solved.
 
-### Post some feedback in another users name {#forgedFeedbackChallenge}
+### Post some feedback in another users name
 
 The Juice Shop allows users to provide general feedback including a star
 rating and some free text comment. When logged in, the feedback will be

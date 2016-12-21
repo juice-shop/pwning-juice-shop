@@ -12,7 +12,7 @@ Board, did you?
 |:----------------------------------------------|:-----------|
 | Find the carefully hidden 'Score Board' page. | 1 of 5     |
 
-### Find the carefully hidden 'Score Board' page {#scoreBoardChallenge}
+### Find the carefully hidden 'Score Board' page
 
 Why was the Score Board not visited during the "happy path" tour?
 Because there seemed to be no link anywhere in the application that

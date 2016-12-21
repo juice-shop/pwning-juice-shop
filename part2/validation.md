@@ -9,7 +9,7 @@
 | Upload a file larger than 100 kB.                   | 3 of 5     |
 | Upload a file that has no .pdf extension.           | 3 of 5     |
 
-### Give a devastating zero-star feedback to the store {#zeroStarFeedbackChallenge}
+### Give a devastating zero-star feedback to the store
 
 You might have realized that it is not possible to submit customer
 feedback on the _Contact Us_ screen until you entered a comment and
@@ -21,7 +21,7 @@ application into accepting a feedback with 0 stars.
 * Before you invest time bypassing the API, you might want to play
   around with the UI a bit
 
-### Place an order that makes you rich {#negativeOrderChallenge}
+### Place an order that makes you rich
 
 It is probably every web shop's nightmare that customers might figure
 out away to _receive_ money instead of _paying_ for their purchase.
@@ -32,7 +32,7 @@ out away to _receive_ money instead of _paying_ for their purchase.
 * Investigate the shopping basket closely to understand how it prevents
   you from creating orders that would fulfill the challenge
 
-### Upload a file larger than 100 kB {#uploadSizeChallenge}
+### Upload a file larger than 100 kB
 
 The Juice Shop offers its customers the chance to complain about an
 order that left them unsatisfied. One of the juice bottles might have
@@ -49,13 +49,12 @@ less.
 * With this understanding you need to find a "weak spot" in the right
   place and have to craft an exploit for it
 
-### Upload a file that has no .pdf extension {#uploadTypeChallenge}
+### Upload a file that has no .pdf extension
 
 In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
 
 #### Hints
 
-* If you solved the
-  [Upload a file larger than 100 kB](#uploadSizeChallenge) challenge,
+* If you solved the [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb) challenge,
   you should try to apply the same solution here

@@ -10,10 +10,10 @@
 | Wherever you go, there you are.                                                                                                    | 4 of 5     |
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | 5 of 5     |
 
-### Log in with the administrator's user credentials without previously changing them or applying SQL Injection {#weakPasswordChallenge}
+### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 You might have already solved this challenge along with
-[Log in with the administrator's user account](sqli.md#loginAdminChallenge)
+[Log in with the administrator's user account](sqli.md#log-in-with-the-administrators-user-account)
 if you chose not to use SQL Injection. This challenge can only be solved
 if you use the original password of the administrator. If you
 _accidentally_ changed the password, do not despair: The original
@@ -28,7 +28,7 @@ challenge.
 * In case you use some hacker tool, you can also go for a _brute force
   attack_ using a generic _password list_
 
-### Log in with Bjoern's user account {#oauthUserPasswordChallenge}
+### Log in with Bjoern's user account
 
 The author of the OWASP Juice Shop (and of this book) was bold enough to
 link his Google account to the application. His account even ended up in
@@ -60,7 +60,7 @@ hacking pleasure!
 > into Bjoern's (or anyone else's) Google account. This would be a
 > criminal act.
 
-### Exploit OAuth 2.0 to log in with the CISO's user account {#loginCisoChallenge}
+### Exploit OAuth 2.0 to log in with the CISO's user account
 
 You should expect a Chief Information Security Officer to know
 everything there is to know about password policies and best practices.
@@ -76,7 +76,7 @@ characters. Good luck brute forcing that!
   this will not solve the challenge.
 * Try to utilize a broken convenience feature in your attack.
 
-### Wherever you go, there you are {#redirectChallenge}
+### Wherever you go, there you are
 
 This challenge is undoubtedly the one with the most ominous description.
 It is actually a quote from the computer game
@@ -101,7 +101,7 @@ _redirecting_ to a different location.
 > White list validation involves defining exactly what _is_ authorized,
 > and by definition, everything else is not authorized.[^1]
 
-### Log in with the support team's original user credentials {#loginSupportChallenge}
+### Log in with the support team's original user credentials
 
 This is another _follow-the-breadcrumbs_ challenge of the tougher sort.
 As a little background story, imagine that the OWASP Juice Shop was

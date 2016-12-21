@@ -28,7 +28,7 @@ _There is a free online-learning course
 on [Code School](https://www.codeschool.com) where you can get a
 hands-on introduction to Chrome's powerful developer toolkit._
 
-#### API testing plugin {#apiTestingPlugin}
+#### API testing plugin
 
 API testing plugins like
 [PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
