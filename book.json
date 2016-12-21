@@ -1,5 +1,19 @@
 {
   "title": "Pwning OWASP Juice Shop",
   "author": "Bjoern Kimminich",
-  "language": "en"
+  "language": "en",
+  "plugins": [
+    "advanced-emoji",
+    "github-buttons"
+  ],
+  "pluginsConfig": {
+    "github-buttons": {
+      "repo": "bkimminich/juice-shop",
+      "types": [
+        "star",
+        "watch"
+      ],
+      "size": "small"
+    }
+  }
 }
