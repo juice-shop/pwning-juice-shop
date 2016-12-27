@@ -36,7 +36,7 @@
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | 3 of 5     |
 | Apply some advanced cryptanalysis to find _the real_ easter egg.                                                     | 4 of 5     |
 | Forge a coupon code that gives you a discount of at least 80%.                                                       | 5 of 5     |
-| Fake a continue code that solves only (the non-existent) challenge #99.                                              | 5 of 5     |
+| Solve challenge #99. Unfortunately, this challenge does not exist.                                                   | 5 of 5     |
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
@@ -112,28 +112,33 @@ up to you to forge your own.
 * If all else fails, you could still try to blindly brute force the
   coupon code field before checkout.
 
-### Fake a continue code that solves only challenge #99
+### Solve challenge #99
 
 The OWASP Juice Shop is _so broken_ that even its convenience features
-that have nothing to do with the ecommerce use cases are designed to be
-vulnerable. One of these features is the
-[Continue Codes](/part1/challenges.md#continue-codes) that allow to
-restore previously achieved hacking progress after a break or server
-crash.
+(which have nothing to do with the ecommerce use cases) are designed to
+be vulnerable. One of these features is the
+[Your Hacking Session](/part1/challenges.md#saving-and-restoring-hacking-progress)
+section on top of the Score Board that allows to save and restore
+previously achieved hacking progress after a server crash or a few days
+pause.
 
-In order to not mess with the existing challenges accidentally the
-challenge is to fake an explicit continue code that would solve
-challenge #99 - which does not exist.
+In order to not mess with the _real challenges_ accidentally, the
+challenge is to fake a signal to the application that you successfully
+solved challenge #99 - which does not exist.
 
 #### Hints
 
+* Find out how saving and restoring progress is done behind the scenes
 * Deduce from all available information (e.g. the `package.json.bak`)
-  how the application encrypts and decrypts its continue codes.
-* Other than the passwords the continue codes involve an additional
-  secret during their encryption.
+  how the application encrypts and decrypts your hacking progress.
+* Other than the user's passwords, the hacking progress involves an
+  additional secret during its encryption.
 * What would be a _really stupid_ mistake a developer might make when
   choosing such a secret?
 
 ----
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
+
+
+

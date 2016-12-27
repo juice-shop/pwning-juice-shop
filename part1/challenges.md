@@ -51,37 +51,35 @@ case a number of notifications "piled up" it is not necessary to dismiss
 each one individually, as a simple reload of the UI in the browser (`F5`
 key) will dismiss all at the same time.
 
-## Continue codes
+## Saving and restoring hacking progress
 
-The ["self-healing" feature](running.md#self-healing-feature) - by wiping the
-entire database on server start - of Juice Shop was advertised as a
-benefit just a few pages before. This feature comes at a cost, though:
-As the challenges are also part of the database schema, they will be
-wiped along with all the other data. This means, that after every
-restart you start with a "clean" 0% score board and all challenges in
-_unsolved_ state.
+The ["self-healing" feature](running.md#self-healing-feature) - by
+wiping the entire database on server start - of Juice Shop was
+advertised as a benefit just a few pages before. This feature comes at a
+cost, though: As the challenges are also part of the database schema,
+they will be wiped along with all the other data. This means, that after
+every restart you start with a "clean" 0% score board and all challenges
+in _unsolved_ state.
 
 To keep the resilience against data corruption but allow users to "pick
-up where they left off" after a server restart, the concept of _continue
-codes_ was introduced. The idea was taken from 80's and 90's console
-games, where _saving_ the state of the game was not possible on the
-read-only game cartridges.
+up where they left off" after a server restart, you can manually save
+your hacking progress using a button on the top of the Score Board:
 
-At the bottom of the score board you can find a long character sequence
-which represents your currently _solved_ challenges:
+![Your Hacking Session section in the Score Board](img/your-hacking-session.png)
 
-![Continue code section of the Score Board](img/continue-code.png)
+If you previously saved your hacking progress, you can restore it with
+the corresponding button up to 30 days after your previous hacking
+session.
 
-You are strongnly encouraged to __copy or write down your latest
-continue code regularly__, e.g. into some text file. After a server
-crash, you can then simply restore the previous hacking progress:
+Please be aware that __your progress is never automatically saved__, so
+it is highly recommended to __save your progress regularly__ if you want
+to avoid re-doing challenges a lot. After a server crash, you can then
+simply restore the previous hacking progress:
 
 1. Restart the application (e.g. via `npm start` or by restarting the
    Docker container).
 2. Navigate to the (now wiped) score board.
-3. Scroll to the bottom and click on the _Ambulance_ button.
-4. Copy & paste (or type in) the latest continue code.
-5. Click the _Restore Progress_ button.
+3. Click the _Restore Progress_ button.
 
 The score board will now be restored to its prior state and - depending
 on how many challenges you solved up to that point - a torrent of
