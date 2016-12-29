@@ -37,6 +37,7 @@
 | Apply some advanced cryptanalysis to find _the real_ easter egg.                                                     | 4 of 5     |
 | Forge a coupon code that gives you a discount of at least 80%.                                                       | 5 of 5     |
 | Solve challenge #99. Unfortunately, this challenge does not exist.                                                   | 5 of 5     |
+| Unlock Premium Challenge to access exclusive content.                                                                | 5 of 5     |
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
@@ -135,6 +136,45 @@ solved challenge #99 - which does not exist.
   additional secret during its encryption.
 * What would be a _really stupid_ mistake a developer might make when
   choosing such a secret?
+
+### Unlock Premium Challenge to access exclusive content.
+
+These days a lot of seeminly free software comes with hidden or
+follow-up costs to use it to its full potential. For example: In
+computer games, letting players pay for _Downloadable Content_ (DLC)
+after they purchased a full-price game, has become the norm. Often this
+is okay, because the developers actually _added_ something worth the
+costs to their game. But just as often gamers are supposed to pay for
+_just unlocking_ features that were already part of the original
+release.
+
+This hacking challenge represents the latter kind of "premium" feature.
+_It only exists to rip you hackers off!_ Of course you should never
+tolerate such a business policy, let alone support it with your precious
+Bitcoins!
+
+That is why the actual challenge here is to unlock and solve the
+"premium" challenge _bypassing the paywall_ in front of it.
+
+#### Hints
+
+* This challenge could also have been put into chapter
+  [Weak security mechanisms](weak-security.md).
+* There is no inappropriate, self-written or misconfigured cryptographic
+  library to be exploited here.
+* How much protection does a sturdy top-quality door lock add to your
+  house if you...
+    * ...put the key under the door mat?
+    * ...hide the key in the nearby plant pot?
+    * ...tape the key to the underside of the mailbox?
+* Once more: **You do not have to pay anything to unlock this
+  challenge!**
+
+> Sidenote: The Bitcoin address behind the taunting _Unlock_ button is
+> actually a valid address of the author. So, if you'd like to donate a
+> small amount for the ongoing maintenance and development of OWASP
+> Juice Shop - feel free to actually use it! More on
+> [donations in part 3](../part3/README.md#donations) of this book.
 
 ----
 
