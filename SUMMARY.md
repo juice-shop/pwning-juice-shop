@@ -31,6 +31,7 @@
     * [Provide feedback](part3/feedback.md)
     * [Help with translation](part3/translation.md)
     * [Contribute to development](part3/contribution.md)
+    * [Donations](part3/donations.md)
 
 ----
 
