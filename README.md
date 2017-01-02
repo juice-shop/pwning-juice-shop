@@ -4,8 +4,6 @@ Written by [Björn Kimminich](http://kimminich.de)
 
 ![OWASP Juice Shop logo](introduction/img/juice-shop_logo.png)
 
-## Web Application Security: Learning by Hacking
-
 This is the official companion guide to the __OWASP Juice Shop__
 application. Being a web application with well over 30 intended security
 vulnerabilities, the OWASP Juice Shop is supposed to be the opposite of
