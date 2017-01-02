@@ -28,15 +28,16 @@ spend) money on:
 
 ## How can I donate?
 
-The project gratefully accepts donations via PayPal as well as BitCoin,
-Flattr or Gratipay:
+The project gratefully accepts donations via PayPal as well as BitCoin
+and other payment options:
 
 | Provider               | Link                                                                                                                                                                                                                                                     |
 |:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PayPal** (preferred) | [![PayPal Donate Button](img/paypal_donate.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40owasp%2eorg&lc=BM&item_name=OWASP%20Juice%20Shop&item_number=OWASP%20Foundation&no_note=0&currency_code=USD&bn=PP%2dDonationsBF) |
-| BitCoin                | ![bitcoin:1FXJq5yVANLzR6ZWfqPKhJU3zWT3apnxmN](img/1FXJq5yVANLzR6ZWfqPKhJU3zWT3apnxmN.png)<br>[1FXJq5yVANLzR6ZWfqPKhJU3zWT3apnxmN](https://blockchain.info/address/1FXJq5yVANLzR6ZWfqPKhJU3zWT3apnxmN)                                                    |
+| BitCoin                | ![bitcoin:1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](img/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm.png)<br>[1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm)                                                    |
 | Gratipay               | <https://gratipay.com/juice-shop>                                                                                                                                                                                                                        |
 | Flattr                 | <https://flattr.com/thing/3856930/bkimminichjuice-shop-on-GitHub>                                                                                                                                                                                        |
+| Dash                   | ![dash:Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](img/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW.png)<br>[Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW)                                                     |
 
 Donations via PayPal are received and managed by the OWASP Foundation.
 This is the only option where an official donation receipt can be handed
