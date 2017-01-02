@@ -4,6 +4,10 @@ All URLs in the challenge solutions assume you are running the
 application locally and on the default port http://localhost:3000.
 Change the URL accordingly if you use a different root URL.
 
+Often there are multiple ways to solve a challenge. In most cases just
+one possible solution is presented here. This is typically the easiest
+or most obvious one from the authors perspective.
+
 ### Find the carefully hidden 'Score Board' page
 
 1. Open the _Source code view_ of your brower from any screen of the
@@ -31,6 +35,34 @@ Change the URL accordingly if you use a different root URL.
 </nav>
 ```
 
+### Provoke an error that is not very gracefully handled.
+
+Any request that cannot be properly handled by the server will
+eventually be passed to a global error handling component that sends an
+error page to the client that includes a stacktrace and other sensitive
+information. The restful API behaves in a similar way, passing back a
+JSON error object with sensitive data, such as SQL query strings.
+
+Here are four examples (out of many different ways) to provoke such an
+error situation and solve this challenge along the way:
+
+* Visit <http://localhost:3000/#/search?q=';>
+
+![Javascript Error](img/error-js_console.png)
+
+* Visit <http://localhost:3000/ftp/crash>
+
+![404 Error](img/error_page-404.png)
+
+* Visit <http://localhost:3000/ftp/crash.md>
+
+![403 Error](img/error_page-403.png)
+
+* Log in to the application with `'` (single-quote) as _Email_ and
+  anything as _Password_
+
+![SQL in UI Error](img/login-error_sql.png)
+
 ### XSS Tier 1: Perform a reflected XSS attack
 
 1. Paste the attack string `<script>alert("XSS1")</script>` into the
@@ -39,6 +71,56 @@ Change the URL accordingly if you use a different root URL.
 3. An alert box with the text "XSS1" should appear.
 
 ![XSS1 alert box](img/xss1_alert.png)
+
+### Get rid of all 5-star customer feedback
+
+1. Log in to the application with any user.
+2. Solve
+   [Access the administration section of the store](#access-the-administration-section-of-the-store)
+3. Delete all entries with five star rating from the _Customer Feedback_
+   table using the trashcan button
+
+![Feedback table on Administration page](img/customer_feedback-table.png)
+
+### Access a confidential document
+
+1. Follow the link to titled _Check out our boring terms of use if you
+   are interested in such lame stuff_
+   (<http://localhost:3000/ftp/legal.md?md_debug=true>) on the _About
+   Us_ page.
+2. Successfully attempt to browse the directory by changing the URL into
+   <http://localhost:3000/ftp>-
+3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
+   challenge.
+
+![FTP directory browser](img/ftp_directory.png)
+
+### Access the administration section of the store
+
+1. Open the `juice-shop.min.js` in your brower's developer tools and
+   search for "admin".
+2. Among the first entries you will find a route mapping to
+   `/administration`.
+3. Navigate to http://localhost:3000/#/administration to solve the
+   challenge.
+
+![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
+
+### Give a devastating zero-star feedback to the store
+
+1. Visit the _Contact Us_ form and put in a _Comment_ text.
+2. The _Submit_ button is **disabled** because you did not select a
+   _Rating_.
+3. Select any of the stars to set a _Rating_.
+4. The _Submit_ button is now **enabled**.
+5. Select the same star again to unset the _Rating_.
+6. Click the (still **enabled**) _Submit_ button to solve the challenge.
+7. You can verify the feedback was saved by checking the _Customer
+   Feedback_ widget on the _About Us_ page.
+
+![Zero star feedback entry](img/zero_star_feedback-form.png)
+
+![Zero star feedback entry](img/zero_star_feedback-carousel.png)
 
 ### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
@@ -58,11 +140,13 @@ Change the URL accordingly if you use a different root URL.
    string is rendered as harmless text.
 
 ![XSS2 alert box](img/xss2_alert.png)
+
 ![XSS2 user in details dialog](img/xss2_user-modal.png)
 
 ### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
 
 ![XSS3 request headers in PostMan](img/xss3_postman-header.png)
+
 ![XSS3 request body in PostMan](img/xss3_postman-body.png)
 
 1. Log in to the application with any user.
@@ -82,6 +166,7 @@ Change the URL accordingly if you use a different root URL.
 8. Another alert box with the text "XSS3" should appear.
 
 ![XSS3 alert box](img/xss3_alert.png)
+
 ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
 
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
@@ -113,4 +198,5 @@ explains the problem and gives an exploit example:
    alert (from the _Customer Feedback_ table)
 
 ![XSS4 alert box](img/xss4_alert.png)
+
 ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
