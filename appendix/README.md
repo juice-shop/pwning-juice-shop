@@ -89,7 +89,7 @@ error situation and solve this challenge along the way:
    (<http://localhost:3000/ftp/legal.md?md_debug=true>) on the _About
    Us_ page.
 2. Successfully attempt to browse the directory by changing the URL into
-   <http://localhost:3000/ftp>-
+   <http://localhost:3000/ftp>
 3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
    challenge.
 
@@ -121,6 +121,35 @@ error situation and solve this challenge along the way:
 ![Zero star feedback entry](img/zero_star_feedback-form.png)
 
 ![Zero star feedback entry](img/zero_star_feedback-carousel.png)
+
+### Log in with the administrator's user account
+
+* Log in with _Email_ `' or 1=1--` and any _Password_ which will
+  authenticate the first entry in the `Users` table which happens to be
+  the administrator
+* or log in with _Email_ `admin@juice-sh.op'--` and any _Password_ if
+  you have already harvested the email address of the admin from a
+  previous attack.
+
+### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
+
+1. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
+   which is as easy to guess as it is to brute force.
+
+### Access a salesman's forgotten backup file
+
+1. Browse to <http://localhost:3000/ftp> (like in
+   [Access a confidential document](#access-a-confidential-document).
+2. Opening <http://localhost:3000/ftp/coupons_2013.md.bak> directly will
+   fail complaining about an illegal file type.
+3. Exploit a bug in the `md_debug` parameter that was obviously not
+   supposed to go into production to bypass the filter and solve the
+   challenge:
+   <http://localhost:3000/ftp/coupons_2013.md.bak?md_debug=.md>
+
+Alternatively this challenge can also be solved via _Poison Null Byte_
+injection as in
+[Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
 
 ### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
@@ -169,6 +198,46 @@ error situation and solve this challenge along the way:
 
 ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
 
+### Access a developer's forgotten backup file
+
+1. Browse to <http://localhost:3000/ftp> (like in
+   [Access a confidential document](#access-a-confidential-document).
+2. Opening <http://localhost:3000/ftp/package.json.bak> directly will
+   fail complaining about an illegal file type.
+3. Exploiting the `md_debug` parameter like in
+   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
+   will not work here - probably because `package.json.bak` is not a
+   Markdown file.
+4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
+   only with a twist:
+    * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
+      suprisingly **not** succeed...
+    * ...because the `%` character needs to be URL-encoded (into `%25`)
+      as well in order to work its magic later during the file system
+      access.
+5. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
+   solve the challenge.
+
+> By embedding NULL Bytes/characters into applications that do not
+> handle postfix NULL terminators properly, an attacker can exploit a
+> system using techniques such as Local File Inclusion. The Poison Null
+> Byte exploit takes advantage strings with a known length that can
+> contain null bytes, and whether or not the API being attacked uses
+> null terminated strings. By placing a NULL byte in the string at a
+> certain byte, the string will terminate at that point, nulling the
+> rest of the string, such as a file extension.[^1]
+
+### Find the hidden easter egg
+
+> An Easter egg is an intentional inside joke, hidden message, or
+> feature in an interactive work such as a computer program, video game
+> or DVD menu screen. The name is used to evoke the idea of a
+> traditional Easter egg hunt.[^2]
+
+1. Use the _Poison Null Byte_ attack described in
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
+2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
+
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency
@@ -200,3 +269,8 @@ explains the problem and gives an exploit example:
 ![XSS4 alert box](img/xss4_alert.png)
 
 ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
+
+----
+
+[^1]: http://hakipedia.com/index.php/Poison_Null_Byte
+[^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
