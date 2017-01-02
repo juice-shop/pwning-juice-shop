@@ -53,8 +53,8 @@ out.
 OWASP Juice Shop adheres to the
 [Project Sponsorship Operational Guidelines](https://www.owasp.org/index.php/Project_Sponsorship_Operational_Guidelines)
 of the OWASP Foundation. In one sentence, these allow named
-acknowledgements for all monetary donations including displaying a logo
-image for amounts of least 1000 US$. You can find a list of all sponsors
-of the OWASP Juice Shop to date in the
+acknowledgements (with link) for all monetary donations. For amounts of
+least 1000 US$ a logo image (with link) can be added instead. You can
+find a list of all sponsors of the OWASP Juice Shop to date in the
 [Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
 tab of the project homepage.
