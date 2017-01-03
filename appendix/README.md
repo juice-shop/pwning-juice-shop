@@ -270,22 +270,107 @@ explains the problem and gives an exploit example:
 
 ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
 
+### Solve challenge #99
+
+1. Open the _Score Board_ and click the _Save Progress_ button
+2. Inspect the cookies in your browser to find a `continueCode` cookie
+   with 30 days lifetime
+3. The `package.json.bak` contains the library used for generating
+   continue codes: `hashid`
+4. Visit <http://hashids.org/> to get some information about the
+   mechanism
+5. Follow the link labeled _check out the demo_
+   (<http://codepen.io/ivanakimov/pen/bNmExm>)
+6. The Juice Shop simply uses the example salt (`this is my salt`) and
+   the character range
+   (`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`)
+   from that demo page
+7. Set the length from `8` to `60`
+8. Encode the value `99` instead of `1, 2, 3` to get the hash result
+   `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
+9. Overwrite your `continueCode` cookie with this value and use the
+   _Restore Progress_ button on the _Score Board_ to solve the
+   challenge.
+
+```javascript
+var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
+
+var id = hashids.encode(99);
+var numbers = hashids.decode(id);
+
+$("#input").text("["+numbers.join(", ")+"]");
+$("#output").text(id);
+```
+
+### Log in with the support team's original user credentials
+
+> Solving this challenge requires [KeePass 2.x](http://keepass.info)
+> installed on your computer. If you are using a non-Windows OS you need
+> to use some unofficial port.
+
+1. Download and install KeePass 2.x from <http://keepass.info>
+2. Get the support team's KeePass database file from
+   <http://localhost:3000/ftp/incident-support.kdbx> (note how this file
+   is _not blocked_ by the file type filter).
+3. Inspecting the DOM of the _Login_ form reveals a HTML comment in
+   Romanian language: `<!-- @echipa de suport: folosiți fișierul nostru
+   cheie a fost de acord, și lăsați-martor parola de master! -->`
+4. Running this through an online translator yields something like:
+   `support team: our key file using agreed, and leave the password
+   blank master!`
+5. You now know that the KeePass file is protected with **only a key
+   file** instead of a password!
+6. The key file must be something the support team has access to from
+   everywhere - how else would they achueve 24/7?
+7. Download the application logo
+   <http://localhost:3000/public/images/JuiceShop_Logo.svg> and use it
+   as a key file to unlock the KeePass database.
+8. Find the password for the support team user account in the `prod`
+   entry of the KeePass file.
+9. Log in with `support@juice-sh.op` as _Email_ and
+   `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
+   challenge.
+
+![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
+
+![Unlocked KeePass file](img/keepass-list.png)
+
+![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
+
 ### Unlock Premium Challenge to access exclusive content
 
 ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
 
-1. Inspecting the HTML source of the corresponding row in the _Score Board_ table reveals a HTML comment that is obviously encrypted: `<!--R9U8AvGlBbjhHXHW422jxVL2hoLBr8wflIAQ8d/jlERpKnrNlMErs1JfgT9EK/kzTtdb1GPhuWAz3i2HhomhaFMxvg4na+tvTi+8DoQoeqZH1KADoM2NJ7UOKc14b54cdRTXiYV7yFUzbPjjPVOWZFSmDcG6z+jQIPZtJuJ/tQc=-->`.
-2. This cipher came out of an AES-encryption using <http://aesencryption.net> with a 256bit key.
-3. To get the key you should run a _Forced Directory Browsing_ attack against the application. You can use OWASP ZAP for this purpose.
-    1. Of the word lists coming with OWASP ZAP only `directory-list-2.3-big.txt` and `directory-list-lowercase-2.3-big.txt` contain the directory with the key file.
-    2. The search will uncover <http://localhost:3000/encryptionkeys> as a browsable directory
-    3. Open <http://localhost:3000/encryptionkeys/premium.key> to retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
-4. The cipher and the key together can be used to retrieve the plain text on <http://aesencryption.net>: `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
-5. Visit <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us> to solve this challenge and marvel at the premium content!
+1. Inspecting the HTML source of the corresponding row in the _Score
+   Board_ table reveals a HTML comment that is obviously encrypted:
+   `<!--R9U8AvGlBbjhHXHW422jxVL2hoLBr8wflIAQ8d/jlERpKnrNlMErs1JfgT9EK/kzTtdb1GPhuWAz3i2HhomhaFMxvg4na+tvTi+8DoQoeqZH1KADoM2NJ7UOKc14b54cdRTXiYV7yFUzbPjjPVOWZFSmDcG6z+jQIPZtJuJ/tQc=-->`.
+2. This cipher came out of an AES-encryption using
+   <http://aesencryption.net> with a 256bit key.
+3. To get the key you should run a _Forced Directory Browsing_ attack
+   against the application. You can use OWASP ZAP for this purpose.
+    1. Of the word lists coming with OWASP ZAP only
+       `directory-list-2.3-big.txt` and
+       `directory-list-lowercase-2.3-big.txt` contain the directory with
+       the key file.
+    2. The search will uncover <http://localhost:3000/encryptionkeys> as
+       a browsable directory
+    3. Open <http://localhost:3000/encryptionkeys/premium.key> to
+       retrieve the AES encryption key
+       `EA99A61D92D2955B1E9285B55BF2AD42`
+4. The cipher and the key together can be used to retrieve the plain
+   text on <http://aesencryption.net>:
+   `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
+5. Visit
+   <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
+   to solve this challenge and marvel at the premium content!
 
 ![Decrypted cipher on aesencryption.net](img/aesencryption_net.png)
 
 ----
 
 [^1]: http://hakipedia.com/index.php/Poison_Null_Byte
+
+
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
+
+
