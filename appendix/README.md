@@ -270,6 +270,61 @@ explains the problem and gives an exploit example:
 
 ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
 
+### Wherever you go, there you are
+
+1. Pick one of the redirect links in the application, e.g.
+   <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
+   from the _Fork me on GitHub_-ribbon.
+2. Trying to redirect to some unrecognized URL fails due to whitelist
+   validation with `406 Error: Unrecognized target URL for redirect`.
+3. Removing the `to` parameter (<http://localhost:3000/redirect>) will
+   instead yield a `500 TypeError: Cannot read property 'indexOf' of
+   undefined` where the `indexOf` indicates a severe flaw in the way the
+   whitelist works.
+4. Craft a redirect URL so that the target-URL in `to` comes with an own
+   parameter containing a URL from the whitelist, e.g.
+   <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
+
+### Apply some advanced cryptanalysis to find _the real_ easter egg
+
+1. Get the encrypted string from the `eastere.gg` from the
+   [Find the hidden easter egg](#find-the-hidden-easter-egg) challenge:
+   `L2d1ci9xcmlmL25lci9mYi9zaGFhbC9ndXJsL3V2cS9uYS9ybmZncmUvcnR0L2p2Z3V2YS9ndXIvcm5mZ3JlL3J0dA==`
+2. Base64-decode this into
+   `/gur/qrif/ner/fb/shaal/gurl/uvq/na/rnfgre/rtt/jvguva/gur/rnfgre/rtt`
+3. Trying this as a URL will not work. Notice the reoccuring patterns
+   (`rtt`, `gur` etc.) in the above string
+4. ROT13-decode this into
+   `/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg`
+5. Visit <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
+6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet Orangeuze_!
+
+![Planet Orangeuze](img/planet_orangeuze.png)
+
+> ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple
+> letter substitution cipher that replaces a letter with the letter 13
+> letters after it in the alphabet. ROT13 is a special case of the
+> Caesar cipher, developed in ancient Rome.
+>
+> Because there are 26 letters (2×13) in the basic Latin alphabet, ROT13
+> is its own inverse; that is, to undo ROT13, the same algorithm is
+> applied, so the same action can be used for encoding and decoding. The
+> algorithm provides virtually no cryptographic security, and is often
+> cited as a canonical example of weak encryption.[^3]
+
+### Retrieve the language file that never made it into production
+
+1. Monitoring the HTTP calls to the backend when switching languages tells you how the translations are loaded:
+  * <http://localhost:3000/i18n/en.json>
+  * <http://localhost:3000/i18n/de.json>
+  * <http://localhost:3000/i18n/nl.json>
+  * etc.
+2. Brute forcing for all possible two-letter language codes (`aa`, `ab`, ..., `zy`, `zz`) will not solve the challenge.
+3. The hidden language is _Klingon_ which is represented by the three-letter code `tlh`.
+4. Request <http://localhost:3000/i18n/tlh.json> to solve the challenge. majQa'!
+
+> The Klingon language was originally created to add realism to a race of fictional aliens who inhabit the world of Star Trek, an American television and movie franchise. Although Klingons themselves have never existed, the Klingon language is real. It has developed from gibberish to a usable means of communication, complete with its own vocabulary, grammar, figures of speech, and even slang and regional dialects. Today it is spoken by humans all over the world, in many contexts.[^4]
+
 ### Solve challenge #99
 
 1. Open the _Score Board_ and click the _Save Progress_ button
@@ -369,8 +424,8 @@ $("#output").text(id);
 ----
 
 [^1]: http://hakipedia.com/index.php/Poison_Null_Byte
-
-
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
+[^3]: https://en.wikipedia.org/wiki/ROT13
+[^4]: http://www.kli.org/about-klingon/klingon-history
 
 
