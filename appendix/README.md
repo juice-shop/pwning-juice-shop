@@ -128,13 +128,20 @@ error situation and solve this challenge along the way:
   authenticate the first entry in the `Users` table which happens to be
   the administrator
 * or log in with _Email_ `admin@juice-sh.op'--` and any _Password_ if
-  you have already harvested the email address of the admin from a
-  previous attack.
+  you have already know the email address of the administrator
+* or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
+  if you looked up the administrator's password hash in a rainbow table
+  after harvesting the user data
+    * by solving
+      [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
+    * or via REST API call <http://localhost:3000/api/Users> after
+      logging in as any user (even one you registered yourself).
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 1. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
-   which is as easy to guess as it is to brute force.
+   which is as easy to guess as it is to brute force or retrieve from a
+   rainbow table.
 
 ### Access a salesman's forgotten backup file
 
@@ -150,6 +157,22 @@ error situation and solve this challenge along the way:
 Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
 [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
+
+### Log in with Jim's user account
+
+* Log in with _Email_ `jim@juice-sh.op'--` and any _Password_ if you
+  have already know Jim's email address.
+* or log in with _Email_ `jim@juice-sh.op` and _Password_ `ncc-1701` if
+  you looked up Jim's password hash in a rainbow table after harvesting
+  the user data as described in
+  [Log in with the administrator's user account](#log-in-with-the-administrators-user-account).
+
+### Log in with Bender's user account
+
+* Log in with _Email_ `bender@juice-sh.op'--` and any _Password_ if you
+  have already know Bender's email address.
+* A rainbow table attack on Bender's password will probably fail as it
+  is rather strong.
 
 ### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
@@ -197,6 +220,8 @@ injection as in
 ![XSS3 alert box](img/xss3_alert.png)
 
 ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
+
+### Retrieve a list of all user credentials via SQL Injection
 
 ### Access a developer's forgotten backup file
 
@@ -296,8 +321,10 @@ explains the problem and gives an exploit example:
    (`rtt`, `gur` etc.) in the above string
 4. ROT13-decode this into
    `/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg`
-5. Visit <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
-6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet Orangeuze_!
+5. Visit
+   <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
+6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet
+   Orangeuze_!
 
 ![Planet Orangeuze](img/planet_orangeuze.png)
 
@@ -314,16 +341,27 @@ explains the problem and gives an exploit example:
 
 ### Retrieve the language file that never made it into production
 
-1. Monitoring the HTTP calls to the backend when switching languages tells you how the translations are loaded:
-  * <http://localhost:3000/i18n/en.json>
-  * <http://localhost:3000/i18n/de.json>
-  * <http://localhost:3000/i18n/nl.json>
-  * etc.
-2. Brute forcing for all possible two-letter language codes (`aa`, `ab`, ..., `zy`, `zz`) will not solve the challenge.
-3. The hidden language is _Klingon_ which is represented by the three-letter code `tlh`.
-4. Request <http://localhost:3000/i18n/tlh.json> to solve the challenge. majQa'!
+1. Monitoring the HTTP calls to the backend when switching languages
+   tells you how the translations are loaded:
+    * <http://localhost:3000/i18n/en.json>
+    * <http://localhost:3000/i18n/de.json>
+    * <http://localhost:3000/i18n/nl.json>
+    * etc.
+2. Brute forcing for all possible two-letter language codes (`aa`, `ab`,
+   ..., `zy`, `zz`) will not solve the challenge.
+3. The hidden language is _Klingon_ which is represented by the
+   three-letter code `tlh`.
+4. Request <http://localhost:3000/i18n/tlh.json> to solve the challenge.
+   majQa'!
 
-> The Klingon language was originally created to add realism to a race of fictional aliens who inhabit the world of Star Trek, an American television and movie franchise. Although Klingons themselves have never existed, the Klingon language is real. It has developed from gibberish to a usable means of communication, complete with its own vocabulary, grammar, figures of speech, and even slang and regional dialects. Today it is spoken by humans all over the world, in many contexts.[^4]
+> The Klingon language was originally created to add realism to a race
+> of fictional aliens who inhabit the world of Star Trek, an American
+> television and movie franchise. Although Klingons themselves have
+> never existed, the Klingon language is real. It has developed from
+> gibberish to a usable means of communication, complete with its own
+> vocabulary, grammar, figures of speech, and even slang and regional
+> dialects. Today it is spoken by humans all over the world, in many
+> contexts.[^4]
 
 ### Solve challenge #99
 
@@ -424,8 +462,15 @@ $("#output").text(id);
 ----
 
 [^1]: http://hakipedia.com/index.php/Poison_Null_Byte
+
+
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
+
+
 [^3]: https://en.wikipedia.org/wiki/ROT13
+
+
 [^4]: http://www.kli.org/about-klingon/klingon-history
+
 
 

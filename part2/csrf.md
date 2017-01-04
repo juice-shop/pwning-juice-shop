@@ -32,10 +32,21 @@ process.
   hint.
 * It might also have been put into the
   [Weak security mechanisms](weak-security.md) category.
-* Bender's current password is so strong that brute force,
-  [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table) or
-  guessing attacks will probably not work.
+* Bender's current password is so strong that brute force, rainbow table
+  or guessing attacks will probably not work.
+
+> A rainbow table is a precomputed table for reversing cryptographic
+> hash functions, usually for cracking password hashes. Tables are
+> usually used in recovering a plaintext password up to a certain length
+> consisting of a limited set of characters. It is a practical example
+> of a space/time trade-off, using less computer processing time and
+> more storage than a brute-force attack which calculates a hash on
+> every attempt, but more processing time and less storage than a simple
+> lookup table with one entry per hash. Use of a key derivation function
+> that employs a salt makes this attack infeasible.[^2]
 
 ----
 
 [^1]: https://www.owasp.org/index.php/CSRF
+[^2]: https://en.wikipedia.org/wiki/Rainbow_table
+
