@@ -256,8 +256,9 @@ will get their password set to the same one we forced onto Bender!
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
 Juice Shop uses some inappropriate crypto algorithms and libraries in
-different places. While working on the following topics you will learn
-those inappropriate coices in order to exploit and solve them:
+different places. While working on the following topics (and having the
+`package.json.bak` at hand) you will learn those inappropriate coices in
+order to exploit and solve them:
 
 * [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
   exploits `z85` (Zero-MQ Base85 implementation) as the library for
@@ -273,6 +274,22 @@ those inappropriate coices in order to exploit and solve them:
 1. Visit <http://localhost:3000/#/contact>
 2. Submit your feedback with one of the following words in the comment:
    `z85`, `base85`, `base64`, `md5` or `hashid`.
+
+### Order the Christmas special offer of 2014
+
+1. Observe the Javascript console while submitting the text `';` via the
+   _Search_ field.
+2. The `error` object contains the full SQL statement used for search
+   for products.
+3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
+   product we seek.
+4. Searching for `'))--` lists all products, including the (logically
+   deleted) Christmas offer.
+5. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
+   your shopping basket.
+6. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+
+![SQL search query in Javascript error](img/search_error-js_console.png)
 
 ### Log in with Jim's user account
 
@@ -339,6 +356,27 @@ those inappropriate coices in order to exploit and solve them:
 
 ### Retrieve a list of all user credentials via SQL Injection
 
+### Post some feedback in another users name
+
+1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
+2. Inspect the DOM of the form in your browser to spot this suspicious
+   text field rigth at the top: `<input type="text" id="userId"
+   ng-model="feedback.UserId" ng-hide="true" class="ng-pristine
+   ng-untouched ng-valid ng-empty ng-hide">`
+3. In your browser's developer tools mark the entire `class` attribute
+   and delete it.
+4. The field should now be visible in your browser. Type any user's
+   database identifier in there (other than your own if you are
+   currently logged in) and submit the feedback.
+
+![Hidden text field on Contact Us form](img/hidden_textfield.png)
+
+![Spoofed feedback ready for submit](img/spoofed_feedback.png)
+
+> You can also solve this challenge by directly sending a `POST` to
+> <http://localhost:3000/api/Feedbacks> endpoint. You just need to be
+> logged out and send any `UserId` in the JSON payload.
+
 ### Access a developer's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in
@@ -367,6 +405,27 @@ those inappropriate coices in order to exploit and solve them:
 > null terminated strings. By placing a NULL byte in the string at a
 > certain byte, the string will terminate at that point, nulling the
 > rest of the string, such as a file extension.[^1]
+
+### Inform the shop about a vulnerable library it is using
+
+Juice Shop depends on some Javascript libraries with known
+vulnerabilities. Having the `package.json.bak` and using an external
+service like [Node Security Platform](https://nodesecurity.io/) makes it
+rather easy to identify them:
+
+* `sanitize-html` is pinned to version `1.4.2` which has a known bug of
+  not sanitizing recursively (see
+  [XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism](#xss-tier-4-perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
+* `sequelize` in the used version `1.7.x` has several known issues with
+  SQL Injection
+
+<!-- -->
+
+1. Visit <http://localhost:3000/#/contact>
+2. Submit your feedback with one of these two string pairs appearing
+   somewhere in the comment:
+    * `sanitize-html` and `1.4.2` or
+    * `sequelize` and `1.7`.
 
 ### Find the hidden easter egg
 
