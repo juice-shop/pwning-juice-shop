@@ -13,27 +13,27 @@ or most obvious one from the authors perspective.
 1. Open the _Source code view_ of your brower from any screen of the
    Juice Shop application.
 2. Scroll down to the end of the `<nav>` tag that defines the menu bar
-   (see code snippet below).
+
+    ```html
+       <li class="dropdown" ng-show="isLoggedIn()">
+            <a href="#/complain"><i class="fa fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
+       </li>
+       <!--
+       <li class="dropdown">
+           <a href="#/score-board">Score Board</a>
+       </li>
+       -->
+       <li class="dropdown ribbon-spacer">
+           <a href="#/about"><i class="fa fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
+       </li>
+     </ul>
+   </div>
+ </nav>
+    ```
+
 3. Notice the commented out `<li>` entry labeled "Score Board".
 4. Navigate to http://localhost:3000/#/score-board to solve the
    challenge.
-
-```html
-      <li class="dropdown" ng-show="isLoggedIn()">
-          <a href="#/complain"><i class="fa fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
-      </li>
-      <!--
-      <li class="dropdown">
-          <a href="#/score-board">Score Board</a>
-      </li>
-      -->
-      <li class="dropdown ribbon-spacer">
-          <a href="#/about"><i class="fa fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
-```
 
 ### Provoke an error that is not very gracefully handled.
 
@@ -48,20 +48,17 @@ error situation and solve this challenge along the way:
 
 * Visit <http://localhost:3000/#/search?q=';>
 
-![Javascript Error](img/error-js_console.png)
-
+    ![Javascript Error](img/error-js_console.png)
 * Visit <http://localhost:3000/ftp/crash>
 
-![404 Error](img/error_page-404.png)
-
+    ![403 Error](img/error_page-403.png)
 * Visit <http://localhost:3000/ftp/crash.md>
 
-![403 Error](img/error_page-403.png)
-
+    ![404 Error](img/error_page-404.png)
 * Log in to the application with `'` (single-quote) as _Email_ and
   anything as _Password_
 
-![SQL in UI Error](img/login-error_sql.png)
+    ![SQL in UI Error](img/login-error_sql.png)
 
 ### XSS Tier 1: Perform a reflected XSS attack
 
@@ -70,17 +67,17 @@ error situation and solve this challenge along the way:
 2. Click the _Search_ button.
 3. An alert box with the text "XSS1" should appear.
 
-![XSS1 alert box](img/xss1_alert.png)
+    ![XSS1 alert box](img/xss1_alert.png)
 
 ### Get rid of all 5-star customer feedback
 
 1. Log in to the application with any user.
 2. Solve
    [Access the administration section of the store](#access-the-administration-section-of-the-store)
+
+    ![Feedback table on Administration page](img/customer_feedback-table.png)
 3. Delete all entries with five star rating from the _Customer Feedback_
    table using the trashcan button
-
-![Feedback table on Administration page](img/customer_feedback-table.png)
 
 ### Access a confidential document
 
@@ -90,10 +87,11 @@ error situation and solve this challenge along the way:
    Us_ page.
 2. Successfully attempt to browse the directory by changing the URL into
    <http://localhost:3000/ftp>
+
+    ![FTP directory browser](img/ftp_directory.png)
 3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
    challenge.
 
-![FTP directory browser](img/ftp_directory.png)
 
 ### Access the administration section of the store
 
@@ -101,10 +99,11 @@ error situation and solve this challenge along the way:
    search for "admin".
 2. Among the first entries you will find a route mapping to
    `/administration`.
+
+    ![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
 3. Navigate to http://localhost:3000/#/administration to solve the
    challenge.
 
-![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
 
 ### Give a devastating zero-star feedback to the store
 
@@ -115,12 +114,12 @@ error situation and solve this challenge along the way:
 4. The _Submit_ button is now **enabled**.
 5. Select the same star again to unset the _Rating_.
 6. Click the (still **enabled**) _Submit_ button to solve the challenge.
+
+    ![Zero star feedback entry](img/zero_star_feedback-form.png)
 7. You can verify the feedback was saved by checking the _Customer
    Feedback_ widget on the _About Us_ page.
 
-![Zero star feedback entry](img/zero_star_feedback-form.png)
-
-![Zero star feedback entry](img/zero_star_feedback-carousel.png)
+    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
 
 ### Log in with the administrator's user account
 
@@ -149,13 +148,13 @@ error situation and solve this challenge along the way:
 2. Put some products into your shopping basket.
 3. Inspect the _Session Storage_ in your browser's developer tools to
    find a numeric `bid` value.
+
+    ![Basket ID in Session Storage](img/session_storage.png)
 4. Change the `bid`, e.g. by adding or subtracting 1 from its value.
 5. Visit <http://localhost:3000/#/basket> to solve the challenge.
 
 > If the challenge is not immediately solved, you might have to
 > `F5`-reload to relay the `bid` change to the Angular client.
-
-![Basket ID in Session Storage](img/session_storage.png)
 
 ### Access a salesman's forgotten backup file
 
@@ -201,6 +200,8 @@ injection as in
 5. Submit
    <http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic>
    to solve the challenge.
+
+#### Bonus Round: Cross Site Request Forgery
 
 If you want to craft an actual CSRF attack against
 `/rest/user/change-password` you will have to invest a bit extra work,
@@ -281,6 +282,8 @@ order to exploit and solve them:
    _Search_ field.
 2. The `error` object contains the full SQL statement used for search
    for products.
+
+    ![SQL search query in Javascript error](img/search_error-js_console.png)
 3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
    product we seek.
 4. Searching for `'))--` lists all products, including the (logically
@@ -288,8 +291,6 @@ order to exploit and solve them:
 5. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
    your shopping basket.
 6. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
-
-![SQL search query in Javascript error](img/search_error-js_console.png)
 
 ### Log in with Jim's user account
 
@@ -309,30 +310,26 @@ order to exploit and solve them:
 
 ### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
-![XSS2 request in PostMan](img/xss2_postman.png)
-
 1. Submit a POST request to http://localhost:3000/api/Users with
     * `{"email": "<script>alert(\"XSS2\")</script>", "password": "xss"}`
       as body
     * and `application/json` as `Content-Type` header.
+
+    ![XSS2 request in PostMan](img/xss2_postman.png)
 2. Log in to the application with any user.
 3. Visit http://localhost:3000/#/administration.
 4. An alert box with the text "XSS2" should appear.
+
+    ![XSS2 alert box](img/xss2_alert.png)
 5. Close this box. Notice the seemingly empty row in the _Registered
    Users_ table?
 6. Click the "eye"-button next to that empty row.
 7. A modal overlay dialog with the user details opens where the attack
    string is rendered as harmless text.
 
-![XSS2 alert box](img/xss2_alert.png)
-
-![XSS2 user in details dialog](img/xss2_user-modal.png)
+    ![XSS2 user in details dialog](img/xss2_user-modal.png)
 
 ### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
-
-![XSS3 request headers in PostMan](img/xss3_postman-header.png)
-
-![XSS3 request body in PostMan](img/xss3_postman-body.png)
 
 1. Log in to the application with any user.
 2. Copy your `Authorization` header from any HTTP request submitted via
@@ -343,16 +340,20 @@ order to exploit and solve them:
     * `application/json` as `Content-Type`
     * and `Bearer ?` as `Authorization` header, replacing the `?` with
       the token you copied from the browser.
+
+    ![XSS3 request headers in PostMan](img/xss3_postman-header.png)
+
+    ![XSS3 request body in PostMan](img/xss3_postman-body.png)
 4. Visit http://localhost:3000/#/search.
 5. An alert box with the text "XSS3" should appear.
+
+    ![XSS3 alert box](img/xss3_alert.png)
 6. Close this box. Notice the product row which seemingly lacks a
    description in the _All Products_ table?
 7. Click the "eye"-button next to that row.
 8. Another alert box with the text "XSS3" should appear.
 
-![XSS3 alert box](img/xss3_alert.png)
-
-![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
+    ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -363,15 +364,15 @@ order to exploit and solve them:
    text field rigth at the top: `<input type="text" id="userId"
    ng-model="feedback.UserId" ng-hide="true" class="ng-pristine
    ng-untouched ng-valid ng-empty ng-hide">`
+
+    ![Hidden text field on Contact Us form](img/hidden_textfield.png)
 3. In your browser's developer tools mark the entire `class` attribute
    and delete it.
+
+    ![Spoofed feedback ready for submit](img/spoofed_feedback.png)
 4. The field should now be visible in your browser. Type any user's
    database identifier in there (other than your own if you are
    currently logged in) and submit the feedback.
-
-![Hidden text field on Contact Us form](img/hidden_textfield.png)
-
-![Spoofed feedback ready for submit](img/spoofed_feedback.png)
 
 > You can also solve this challenge by directly sending a `POST` to
 > <http://localhost:3000/api/Feedbacks> endpoint. You just need to be
@@ -445,6 +446,8 @@ rather easy to identify them:
 2. Cracking his password hash will probably not work.
 3. To find out how the OAuth registration and login work, inspect the
    `juice-shop.min.js` and search for `OAuthController`.
+
+    ![OAuthController in juice-shop.min.js](img/OAuthController.png)
 4. The `e.login()` function call leaks how the password is set:
    `password: d.encode(f.email)`
 5. Checking the controller declaration you will see that `d` is actually
@@ -453,8 +456,6 @@ rather easy to identify them:
    just their Base64-encoded email address, you can just log in with
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
-
-![OAuthController in juice-shop.min.js](img/OAuthController.png)
 
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -481,12 +482,12 @@ explains the problem and gives an exploit example:
 3. Choose a rating and click _Submit_
 4. Visit http://localhost:3000/#/about for a first "XSS4" alert (from
    the _Customer Feedback_ slideshow)
+
+    ![XSS4 alert box](img/xss4_alert.png)
 5. Visit http://localhost:3000/#/administration for a second "XSS4"
    alert (from the _Customer Feedback_ table)
 
-![XSS4 alert box](img/xss4_alert.png)
-
-![XSS4 alert box in admin area](img/xss4_alert-admin.png)
+    ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
 
 ### Wherever you go, there you are
 
@@ -516,10 +517,11 @@ explains the problem and gives an exploit example:
    `/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg`
 5. Visit
    <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
+
+    ![Planet Orangeuze](img/planet_orangeuze.png)
 6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet
    Orangeuze_!
 
-![Planet Orangeuze](img/planet_orangeuze.png)
 
 > ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple
 > letter substitution cipher that replaces a letter with the letter 13
@@ -614,20 +616,23 @@ totally different attack styles.
 4. Visit <https://www.npmjs.com/package/z85> and check the _Dependents_
    section:
 
-![Dependents of z85 on npmjs.com](img/z85-dependents.png) 5. If you have
-NodeJS installed locally run `npm i -g z85-cli` to install
-<https://www.npmjs.com/package/z85-cli> - a simple command line
-interface for `z85`:
+    ![Dependents of z85 on npmjs.com](img/z85-dependents.png)
+5. If you have NodeJS installed locally run `npm install -g z85-cli` to
+   install <https://www.npmjs.com/package/z85-cli> - a simple command
+   line interface for `z85`:
 
-![z85-cli page on npmjs.com](img/z85-cli.png) 6. Check the official
-Juice Shop Twitter account for a valid coupon code:
-<https://twitter.com/owasp_juiceshop> 7. At the time of this writing -
-January 2017 - the broadcasted coupon was `n<Mibh.u)v` promising a 50%
-discount. 8. Decrypting this code with `z85 -d "n<Mibh.u)v"` returns
-`JAN17-50` 9. Encrypt a code valid for the current month with 80% or
-more discount, e.g. `z85 -e JAN17-80` which yields `n<Mibh.v0y`. 10.
-Enter and redeem the generated code on the _Your Basket_ page and
-_Checkout_ to solve the challenge.
+    ![z85-cli page on npmjs.com](img/z85-cli.png)
+6. Check the official Juice Shop Twitter account
+   <https://twitter.com/owasp_juiceshop> for a valid coupon code. At the
+   time of this writing - January 2017 - the broadcasted coupon was
+   `n<Mibh.u)v` promising a 50% discount.
+
+    ![Coupon Code for January 2017 on @owasp_juiceshop](/appendix/img/coupon_code-january2017.png)
+7. Decrypting this code with `z85 -d "n<Mibh.u)v"` returns `JAN17-50`
+8. Encrypt a code valid for the current month with 80% or more discount,
+   e.g. `z85 -e JAN17-80` which yields `n<Mibh.v0y`.
+9. Enter and redeem the generated code on the _Your Basket_ page and
+   _Checkout_ to solve the challenge.
 
 ### Solve challenge #99
 
@@ -655,6 +660,7 @@ _Checkout_ to solve the challenge.
   $("#input").text("["+numbers.join(", ")+"]");
   $("#output").text(id);
     ```
+
 7. Encoding the value `99` gives you the hash result
    `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
 8. Overwrite your `continueCode` cookie with this value and use the
@@ -684,25 +690,25 @@ _Checkout_ to solve the challenge.
 7. Download the application logo
    <http://localhost:3000/public/images/JuiceShop_Logo.svg> and use it
    as a key file to unlock the KeePass database.
+
+    ![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
 8. Find the password for the support team user account in the `prod`
    entry of the KeePass file.
+
+    ![Unlocked KeePass file](img/keepass-list.png)
 9. Log in with `support@juice-sh.op` as _Email_ and
    `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
    challenge.
 
-![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
-
-![Unlocked KeePass file](img/keepass-list.png)
-
-![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
+    ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
 
 ### Unlock Premium Challenge to access exclusive content
-
-![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
 
 1. Inspecting the HTML source of the corresponding row in the _Score
    Board_ table reveals a HTML comment that is obviously encrypted:
    `<!--R9U8AvGlBbjhHXHW422jxVL2hoLBr8wflIAQ8d/jlERpKnrNlMErs1JfgT9EK/kzTtdb1GPhuWAz3i2HhomhaFMxvg4na+tvTi+8DoQoeqZH1KADoM2NJ7UOKc14b54cdRTXiYV7yFUzbPjjPVOWZFSmDcG6z+jQIPZtJuJ/tQc=-->`.
+
+    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
 2. This cipher came out of an AES-encryption using
    <http://aesencryption.net> with a 256bit key.
 3. To get the key you should run a _Forced Directory Browsing_ attack
@@ -719,13 +725,11 @@ _Checkout_ to solve the challenge.
 4. The cipher and the key together can be used to retrieve the plain
    text on <http://aesencryption.net>:
    `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
+
+    ![Decrypted cipher on aesencryption.net](img/aesencryption_net.png)
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
-
-![Decrypted cipher on aesencryption.net](img/aesencryption_net.png)
-
-----
 
 [^1]: http://hakipedia.com/index.php/Poison_Null_Byte
 

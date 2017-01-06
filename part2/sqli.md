@@ -132,6 +132,4 @@ troll it for its lack of alcoholic beverages.
 * You should try one of the approaches you used on Jim.
 * Bender's password hash might not help you very much.
 
-----
-
 [^1]: https://www.owasp.org/index.php/Injection_Flaws

@@ -123,7 +123,5 @@ menu.
     * _Apply brute force_ (and don't give up to quickly) to find it.
     * _Investigate externally_ what languages are actually available.
 
-----
-
 [^1]: https://en.wikipedia.org/wiki/Easter_egg_(media)
 [^2]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements

@@ -220,8 +220,6 @@ you like it a bit more nostalgic, you can also join and post to the
 project mailing list at
 https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
-----
-
 [^1]: https://github.com/zaproxy/zap-core-help/wiki
 [^2]: http://docs.kali.org/introduction/what-is-kali-linux
 [^3]: http://docs.kali.org/introduction/should-i-use-kali-linux

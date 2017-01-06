@@ -123,6 +123,4 @@ run and troubleshoot the application. Not the slightest sign of
 * While it is also possible to use SQL Injection to log in as the
   support team, this will not solve the challenge.
 
-----
-
 [^1]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation

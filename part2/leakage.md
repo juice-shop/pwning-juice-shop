@@ -39,7 +39,4 @@ message on screen, the error was probably logged on the Javascript
 console of the browser. You were supposed to have it open all the time
 anyway, remember?_
 
-----
-
 [^1]: https://www.owasp.org/index.php/Top_10_2007-Information_Leakage
-[^2]: https://en.wikipedia.org/wiki/Murphy%27s_law

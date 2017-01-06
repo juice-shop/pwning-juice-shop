@@ -117,8 +117,6 @@ approach._
 * Look for possible dependencies related to input processing in the
   `package.json.bak` you harvested earlier
 
-----
-
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 [^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation

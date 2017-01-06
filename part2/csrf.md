@@ -45,8 +45,6 @@ process.
 > lookup table with one entry per hash. Use of a key derivation function
 > that employs a salt makes this attack infeasible.[^2]
 
-----
-
 [^1]: https://www.owasp.org/index.php/CSRF
 [^2]: https://en.wikipedia.org/wiki/Rainbow_table
 

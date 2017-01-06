@@ -120,6 +120,4 @@ posting a (most likely negative) feedback in his or her name!
 * The backend-side leverage point is similar to some of the
   [XSS challenges](xss.md) found in OWASP Juice Shop.
 
----
-
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation

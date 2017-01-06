@@ -47,6 +47,4 @@ anti-pattern:
 * Alternatively, you can try to find a reference or clue within the
   parts of the application that are _not usually visible_ in the browser
 
-----
-
 [^1]: https://en.wikipedia.org/wiki/Security_through_obscurity

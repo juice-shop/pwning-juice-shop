@@ -176,8 +176,6 @@ That is why the actual challenge here is to unlock and solve the
 > Juice Shop - feel free to actually use it! More on
 > [donations in part 3](../part3/README.md#donations) of this book.
 
-----
-
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
 
 

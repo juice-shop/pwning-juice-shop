@@ -146,15 +146,14 @@ list:
 
 <https://github.com/bkimminich/juice-shop/issues>
 
-* Issues labeled with "help wanted" indicate tasks where the project
+* Issues labeled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
-* Issues labeled with "newbie friendly" indicate tasks that are isolated
+
+    !["help wanted" label on GitHub](img/help_wanted-label.png)
+* Issues labeled with **newbie friendly** indicate tasks that are isolated
   and not too hard to implement, so they are well-suited for new
   contributors
 
-!["help wanted" label on GitHub](img/help_wanted-label.png)
-!["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
-
-----
+    !["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
 
 [^1]: <http://semver.org>

@@ -135,7 +135,5 @@ Password_ button in the navigation bar. On the `#/change-password` page
 you can then choose a new password. To prevent abuse you have of course
 to supply your current password to legitimate this change.
 
-----
-
 [^1]: https://www.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
 [^2]: http://xunitpatterns.com/happy%20path.html
