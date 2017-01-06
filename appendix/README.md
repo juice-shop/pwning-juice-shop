@@ -438,6 +438,24 @@ rather easy to identify them:
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
 2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
 
+### Log in with Bjoern's user account
+
+1. Bjoern has registered via Google OAuth with his (real) account
+   <bjoern.kimminich@googlemail.com>.
+2. Cracking his password hash will probably not work.
+3. To find out how the OAuth registration and login work, inspect the
+   `juice-shop.min.js` and search for `OAuthController`.
+4. The `e.login()` function call leaks how the password is set:
+   `password: d.encode(f.email)`
+5. Checking the controller declaration you will see that `d` is actually
+   an Angular service named `$base64`.
+6. Now that you know that the auto-generated password for OAuth users is
+   just their Base64-encoded email address, you can just log in with
+   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
+   `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
+
+![OAuthController in juice-shop.min.js](img/OAuthController.png)
+
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency
@@ -540,6 +558,77 @@ explains the problem and gives an exploit example:
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
+For this challenge there are actually two distinct _solution paths_ that
+are both viable. These will be explained separately as they utilize
+totally different attack styles.
+
+#### _Pattern analysis_ solution path
+
+1. Solve challenge
+   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
+   to get the `coupons_2013.md.bak` file with old coupon codes.
+
+    ```
+    n<MibgC7sn
+ mNYS#gC7sn
+ o*IVigC7sn
+ k#pDlgC7sn
+ o*I]pgC7sn
+ n(XRvgC7sn
+ n(XLtgC7sn
+ k#*AfgC7sn
+ q:<IqgC7sn
+ pEw8ogC7sn
+ pes[BgC7sn
+ l}6D$gC7ss
+    ```
+
+2. There is an obvious pattern in the last characters, as the first
+   eleven codes end with `gC7sn` and the last with `gC7ss`.
+3. You can rightfully speculate that the last five characters represent
+   the actual discount value. The change in the last character for the
+   12th code comes from a different (probably higher) discount in
+   December! :santa:
+4. Check the official Juice Shop Twitter account for a valid coupon
+   code: <https://twitter.com/owasp_juiceshop>
+5. At the time of this writing - January 2017 - the broadcasted coupon
+   was `n<Mibh.u)v` promising a 50% discount.
+6. Assuming that the discount value is encoded in the last 2-5
+   characters of the code, you could now start a trial-end-error or
+   brute force attack generating codes and try redeeming them on the
+   _Your Basket_ page. At some point you will probably hit one that
+   gives 80% or more discount.
+7. You need to _Checkout_ after redeeming your code to solve the
+   challenge.
+
+#### _Reverse engineering_ solution path
+
+1. Going through the dependencies mentioned in `package.json.bak` you
+   can speculate that at least one of them could be involved in the
+   coupon code generation.
+2. Narrowing the dependencies down to crypto or hashing libraries you
+   would end up with `hashids`, `jsonwebtoken` and `z85` as candidates.
+3. It turns out that `z85`
+   ([ZeroMQ Base-85 Encoding](https://rfc.zeromq.org/spec:32/Z85/)) was
+   chosen as the coupon code-creation algorithm.
+4. Visit <https://www.npmjs.com/package/z85> and check the _Dependents_
+   section:
+
+![Dependents of z85 on npmjs.com](img/z85-dependents.png) 5. If you have
+NodeJS installed locally run `npm i -g z85-cli` to install
+<https://www.npmjs.com/package/z85-cli> - a simple command line
+interface for `z85`:
+
+![z85-cli page on npmjs.com](img/z85-cli.png) 6. Check the official
+Juice Shop Twitter account for a valid coupon code:
+<https://twitter.com/owasp_juiceshop> 7. At the time of this writing -
+January 2017 - the broadcasted coupon was `n<Mibh.u)v` promising a 50%
+discount. 8. Decrypting this code with `z85 -d "n<Mibh.u)v"` returns
+`JAN17-50` 9. Encrypt a code valid for the current month with 80% or
+more discount, e.g. `z85 -e JAN17-80` which yields `n<Mibh.v0y`. 10.
+Enter and redeem the generated code on the _Your Basket_ page and
+_Checkout_ to solve the challenge.
+
 ### Solve challenge #99
 
 1. Open the _Score Board_ and click the _Save Progress_ button
@@ -552,25 +641,25 @@ explains the problem and gives an exploit example:
 5. Follow the link labeled _check out the demo_
    (<http://codepen.io/ivanakimov/pen/bNmExm>)
 6. The Juice Shop simply uses the example salt (`this is my salt`) and
-   the character range
+   also the default character range
    (`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`)
-   from that demo page
-7. Set the length from `8` to `60`
-8. Encode the value `99` instead of `1, 2, 3` to get the hash result
+   from that demo page. It just uses a minimum length of `60` instead of
+   `8` for the resulting hash:
+
+    ```javascript
+    var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
+
+  var id = hashids.encode(99);
+  var numbers = hashids.decode(id);
+
+  $("#input").text("["+numbers.join(", ")+"]");
+  $("#output").text(id);
+    ```
+7. Encoding the value `99` gives you the hash result
    `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
-9. Overwrite your `continueCode` cookie with this value and use the
+8. Overwrite your `continueCode` cookie with this value and use the
    _Restore Progress_ button on the _Score Board_ to solve the
    challenge.
-
-```javascript
-var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
-
-var id = hashids.encode(99);
-var numbers = hashids.decode(id);
-
-$("#input").text("["+numbers.join(", ")+"]");
-$("#output").text(id);
-```
 
 ### Log in with the support team's original user credentials
 
