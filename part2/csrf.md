@@ -19,7 +19,7 @@
 |:--------------------------------------------------------------------------|:-----------|
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | 4 of 5     |
 
-### Change Bender's password into _slurmCl4ssic_ without using SQL Injection
+### Change Bender's password into slurmCl4ssic without using SQL Injection
 
 This challenge can only be solved by changing the password of user
 Bender into _slurmCl4ssic_. Using any sort of SQL Injection will _not_

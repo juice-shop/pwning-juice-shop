@@ -75,7 +75,7 @@ contains known vulnerabilities.
 * Do some research on the internet for known security issues in the most
   suspicious application dependencies.
 
-### Apply some advanced cryptanalysis to find _the real_ easter egg
+### Apply some advanced cryptanalysis to find the real easter egg
 
 Solving the
 [Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)

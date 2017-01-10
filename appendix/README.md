@@ -14,8 +14,8 @@ or most obvious one from the authors perspective.
    Juice Shop application.
 2. Scroll down to the end of the `<nav>` tag that defines the menu bar
 
-    ```html
-       <li class="dropdown" ng-show="isLoggedIn()">
+   ```html
+    <li class="dropdown" ng-show="isLoggedIn()">
             <a href="#/complain"><i class="fa fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
        </li>
        <!--
@@ -29,7 +29,7 @@ or most obvious one from the authors perspective.
      </ul>
    </div>
  </nav>
-    ```
+   ```
 
 3. Notice the commented out `<li>` entry labeled "Score Board".
 4. Navigate to http://localhost:3000/#/score-board to solve the
@@ -48,17 +48,17 @@ error situation and solve this challenge along the way:
 
 * Visit <http://localhost:3000/#/search?q=';>
 
-    ![Javascript Error](img/error-js_console.png)
+  ![Javascript Error](img/error-js_console.png)
 * Visit <http://localhost:3000/ftp/crash>
 
-    ![403 Error](img/error_page-403.png)
+  ![403 Error](img/error_page-403.png)
 * Visit <http://localhost:3000/ftp/crash.md>
 
-    ![404 Error](img/error_page-404.png)
+  ![404 Error](img/error_page-404.png)
 * Log in to the application with `'` (single-quote) as _Email_ and
   anything as _Password_
 
-    ![SQL in UI Error](img/login-error_sql.png)
+  ![SQL in UI Error](img/login-error_sql.png)
 
 ### XSS Tier 1: Perform a reflected XSS attack
 
@@ -67,7 +67,7 @@ error situation and solve this challenge along the way:
 2. Click the _Search_ button.
 3. An alert box with the text "XSS1" should appear.
 
-    ![XSS1 alert box](img/xss1_alert.png)
+   ![XSS1 alert box](img/xss1_alert.png)
 
 ### Get rid of all 5-star customer feedback
 
@@ -75,7 +75,7 @@ error situation and solve this challenge along the way:
 2. Solve
    [Access the administration section of the store](#access-the-administration-section-of-the-store)
 
-    ![Feedback table on Administration page](img/customer_feedback-table.png)
+   ![Feedback table on Administration page](img/customer_feedback-table.png)
 3. Delete all entries with five star rating from the _Customer Feedback_
    table using the trashcan button
 
@@ -88,7 +88,7 @@ error situation and solve this challenge along the way:
 2. Successfully attempt to browse the directory by changing the URL into
    <http://localhost:3000/ftp>
 
-    ![FTP directory browser](img/ftp_directory.png)
+   ![FTP directory browser](img/ftp_directory.png)
 3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
    challenge.
 
@@ -100,7 +100,7 @@ error situation and solve this challenge along the way:
 2. Among the first entries you will find a route mapping to
    `/administration`.
 
-    ![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
+   ![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
 3. Navigate to http://localhost:3000/#/administration to solve the
    challenge.
 
@@ -115,11 +115,11 @@ error situation and solve this challenge along the way:
 5. Select the same star again to unset the _Rating_.
 6. Click the (still **enabled**) _Submit_ button to solve the challenge.
 
-    ![Zero star feedback entry](img/zero_star_feedback-form.png)
+   ![Zero star feedback entry](img/zero_star_feedback-form.png)
 7. You can verify the feedback was saved by checking the _Customer
    Feedback_ widget on the _About Us_ page.
 
-    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
+   ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
 
 ### Log in with the administrator's user account
 
@@ -131,10 +131,10 @@ error situation and solve this challenge along the way:
 * or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
   if you looked up the administrator's password hash in a rainbow table
   after harvesting the user data
-    * by solving
-      [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-    * or via REST API call <http://localhost:3000/api/Users> after
-      logging in as any user (even one you registered yourself).
+  * by solving
+    [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
+  * or via REST API call <http://localhost:3000/api/Users> after logging
+    in as any user (even one you registered yourself).
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
@@ -149,7 +149,7 @@ error situation and solve this challenge along the way:
 3. Inspect the _Session Storage_ in your browser's developer tools to
    find a numeric `bid` value.
 
-    ![Basket ID in Session Storage](img/session_storage.png)
+   ![Basket ID in Session Storage](img/session_storage.png)
 4. Change the `bid`, e.g. by adding or subtracting 1 from its value.
 5. Visit <http://localhost:3000/#/basket> to solve the challenge.
 
@@ -171,7 +171,7 @@ Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
 [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
 
-### Change Bender's password into _slurmCl4ssic_
+### Change Bender's password into slurmCl4ssic without using SQL Injection
 
 > The solution below assumes that you **do not know Bender's current
 > password**, because in that case you could just change it via the
@@ -183,17 +183,17 @@ injection as in
    password in clear text.
 3. Probe the responses of `/rest/user/change-password` on various
    inputs:
-    * <http://localhost:3000/rest/user/change-password?current=A> yields
-      a `401` error saying `Password cannot be empty.`
-    * <http://localhost:3000/rest/user/change-password?current=A&new=B>
-      yields a `401` error saying `New and repeated password do not
-      match.`
-    * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=C>
-      also says `New and repeated password do not match.`
-    * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=B>
-      says `Current password is not correct.`
-    * <http://localhost:3000/rest/user/change-password?new=B&repeat=B>
-      yields a `200` success returning the updated user as JSON!
+   * <http://localhost:3000/rest/user/change-password?current=A> yields
+     a `401` error saying `Password cannot be empty.`
+   * <http://localhost:3000/rest/user/change-password?current=A&new=B>
+     yields a `401` error saying `New and repeated password do not
+     match.`
+   * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=C>
+     also says `New and repeated password do not match.`
+   * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=B>
+     says `Current password is not correct.`
+   * <http://localhost:3000/rest/user/change-password?new=B&repeat=B>
+     yields a `200` success returning the updated user as JSON!
 4. Now
    [Log in with Bender's user account](#log-in-with-benders-user-account)
    using SQL Injection.
@@ -283,7 +283,7 @@ order to exploit and solve them:
 2. The `error` object contains the full SQL statement used for search
    for products.
 
-    ![SQL search query in Javascript error](img/search_error-js_console.png)
+   ![SQL search query in Javascript error](img/search_error-js_console.png)
 3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
    product we seek.
 4. Searching for `'--` results in a `SQLITE_ERROR: syntax error` on the
@@ -314,49 +314,49 @@ order to exploit and solve them:
 ### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
 
 1. Submit a POST request to http://localhost:3000/api/Users with
-    * `{"email": "<script>alert(\"XSS2\")</script>", "password": "xss"}`
-      as body
-    * and `application/json` as `Content-Type` header.
+   * `{"email": "<script>alert(\"XSS2\")</script>", "password": "xss"}`
+     as body
+   * and `application/json` as `Content-Type` header.
 
-    ![XSS2 request in PostMan](img/xss2_postman.png)
+   ![XSS2 request in PostMan](img/xss2_postman.png)
 2. Log in to the application with any user.
 3. Visit http://localhost:3000/#/administration.
 4. An alert box with the text "XSS2" should appear.
 
-    ![XSS2 alert box](img/xss2_alert.png)
+   ![XSS2 alert box](img/xss2_alert.png)
 5. Close this box. Notice the seemingly empty row in the _Registered
    Users_ table?
 6. Click the "eye"-button next to that empty row.
 7. A modal overlay dialog with the user details opens where the attack
    string is rendered as harmless text.
 
-    ![XSS2 user in details dialog](img/xss2_user-modal.png)
+   ![XSS2 user in details dialog](img/xss2_user-modal.png)
 
 ### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
 
 1. Log in to the application with any user.
 2. Copy your `Authorization` header from any HTTP request submitted via
    browser.
-3. Submit a POST request to http://localhost:3000/api/Products with
-    * `{"name": "XSS3", "description":
-      "<script>alert(\"XSS3\")</script>", "price": 47.11}` as body,
-    * `application/json` as `Content-Type`
-    * and `Bearer ?` as `Authorization` header, replacing the `?` with
-      the token you copied from the browser.
+3. Submit a POST request to <http://localhost:3000/api/Products> with
+   * `{"name": "XSS3", "description":
+     "<script>alert(\"XSS3\")</script>", "price": 47.11}` as body,
+   * `application/json` as `Content-Type`
+   * and `Bearer ?` as `Authorization` header, replacing the `?` with
+     the token you copied from the browser.
 
-    ![XSS3 request headers in PostMan](img/xss3_postman-header.png)
+   ![XSS3 request headers in PostMan](img/xss3_postman-header.png)
 
-    ![XSS3 request body in PostMan](img/xss3_postman-body.png)
+   ![XSS3 request body in PostMan](img/xss3_postman-body.png)
 4. Visit http://localhost:3000/#/search.
 5. An alert box with the text "XSS3" should appear.
 
-    ![XSS3 alert box](img/xss3_alert.png)
+   ![XSS3 alert box](img/xss3_alert.png)
 6. Close this box. Notice the product row which seemingly lacks a
    description in the _All Products_ table?
 7. Click the "eye"-button next to that row.
 8. Another alert box with the text "XSS3" should appear.
 
-    ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
+   ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -382,33 +382,35 @@ order to exploit and solve them:
    columns displaying data, it will at least be three. You keep adding
    columns until no more `SQLITE_ERROR` occurs (or at least it becomes a
    different one):
-    1. `')) UNION SELECT '1' FROM Users--` fails with `number of result
-       columns` error
-    2. `')) UNION SELECT '1', '2' FROM Users--` fails with `number of
-       result columns` error
-    3. `')) UNION SELECT '1', '2', '3' FROM Users--` fails with `number
-       of result columns` error
-    4. (...)
-    5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM Users--`
-       _still fails_ with `number of result columns` error
-    6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
-       Users--` shows a _Search Result_ with an interesting extra row at
-       the bottom.
 
-        ![UNION SELECT attack with fixed columns](img/union_select-success.png)
+   1. `')) UNION SELECT '1' FROM Users--` fails with `number of result
+      columns` error
+   2. `')) UNION SELECT '1', '2' FROM Users--` fails with `number of
+      result columns` error
+   3. `')) UNION SELECT '1', '2', '3' FROM Users--` fails with `number
+      of result columns` error
+   4. (...)
+   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM Users--`
+      _still fails_ with `number of result columns` error
+   6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
+      Users--` shows a _Search Result_ with an interesting extra row at
+      the bottom.
+
+      ![UNION SELECT attack with fixed columns](img/union_select-success.png)
 7. Next you get rid of the unwanted product results changing the query
    into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
    '6', '7', '8' FROM Users--`
 
-    ![UNION SELECT cleaned attack result](img/union_select-no_products.png)
+   ![UNION SELECT cleaned attack result](img/union_select-no_products.png)
 8. The last step is to replace the _visible_ fixed values with correct
-   column names. You could guess those **or** derive them from the RESTful
-   API results **or** remember them from previously seen SQL errors while attacking the
-   _Login_ form.
+   column names. You could guess those **or** derive them from the
+   RESTful API results **or** remember them from previously seen SQL
+   errors while attacking the _Login_ form.
 9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
-                    '6', '7', '8' FROM Users--` solves the challenge giving you a the list of all user data.
+   '6', '7', '8' FROM Users--` solves the challenge giving you a the
+   list of all user data.
 
-    ![User list from UNION SELECT attack](img/union_select-attack_result.png)
+   ![User list from UNION SELECT attack](img/union_select-attack_result.png)
 
 > There is of course a much easier way to retrieve a list of all users
 > as long as you are logged in: Open
@@ -426,11 +428,11 @@ order to exploit and solve them:
    ng-model="feedback.UserId" ng-hide="true" class="ng-pristine
    ng-untouched ng-valid ng-empty ng-hide">`
 
-    ![Hidden text field on Contact Us form](img/hidden_textfield.png)
+   ![Hidden text field on Contact Us form](img/hidden_textfield.png)
 3. In your browser's developer tools mark the entire `class` attribute
    and delete it.
 
-    ![Spoofed feedback ready for submit](img/spoofed_feedback.png)
+   ![Spoofed feedback ready for submit](img/spoofed_feedback.png)
 4. The field should now be visible in your browser. Type any user's
    database identifier in there (other than your own if you are
    currently logged in) and submit the feedback.
@@ -438,6 +440,29 @@ order to exploit and solve them:
 > You can also solve this challenge by directly sending a `POST` to
 > <http://localhost:3000/api/Feedbacks> endpoint. You just need to be
 > logged out and send any `UserId` in the JSON payload.
+
+### Place an order that makes you rich
+
+1. Log in as any user.
+2. Put at least one item into your shopping basket.
+3. Note that reducing the quantity of a basket item below 1 is not
+   possible via the UI, so you will need to attack the RESTful API
+   directly instead.
+4. Copy your `Authorization` header from any HTTP request submitted via
+   browser.
+5. Submit a `PUT` request to <http://localhost:3000/api/BasketItems/1>
+   with:
+   * `{"quantity": -100}` as body,
+   * `application/json` as `Content-Type`
+   * and `Bearer ?` as `Authorization` header, replacing the `?` with
+     the token you copied from the browser.
+
+   ![Negative quantity request body in PostMan](img/negative_order_postman-body.png)
+6. Visit <http://localhost:3000/#/basket> to view _Your Basket_ with the
+   negative quantity on the first item
+7. Click _Checkout_ to issue the order and solve this challenge.
+
+   ![Order confirmation with negative total](img/negative_order_pdf.pdf.png)
 
 ### Access a developer's forgotten backup file
 
@@ -451,11 +476,11 @@ order to exploit and solve them:
    Markdown file.
 4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
    only with a twist:
-    * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
-      suprisingly **not** succeed...
-    * ...because the `%` character needs to be URL-encoded (into `%25`)
-      as well in order to work its magic later during the file system
-      access.
+   * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
+     suprisingly **not** succeed...
+   * ...because the `%` character needs to be URL-encoded (into `%25`)
+     as well in order to work its magic later during the file system
+     access.
 5. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
    solve the challenge.
 
@@ -467,6 +492,18 @@ order to exploit and solve them:
 > null terminated strings. By placing a NULL byte in the string at a
 > certain byte, the string will terminate at that point, nulling the
 > rest of the string, such as a file extension.[^1]
+
+### Change the href of the link within the O-Saft product description
+
+1. By clicking the "eye"-button on the _O-Saft_ product in the _Search
+   Results_ you will learn that it's database ID is `8`.
+2. Submit a `PUT` request to <http://localhost:3000/api/Products/8>
+   with:
+   * `{"description": "<a href=\"http://kimminich.de\"
+     target=\"_blank\">More...</a>"}` as body
+   * and `application/json` as `Content-Type`
+
+   ![O-Saft link update via PostMan](img/osaft_postman-body.png)
 
 ### Inform the shop about a vulnerable library it is using
 
@@ -486,8 +523,8 @@ rather easy to identify them:
 1. Visit <http://localhost:3000/#/contact>
 2. Submit your feedback with one of these two string pairs appearing
    somewhere in the comment:
-    * `sanitize-html` and `1.4.2` or
-    * `sequelize` and `1.7`.
+   * `sanitize-html` and `1.4.2` or
+   * `sequelize` and `1.7`.
 
 ### Find the hidden easter egg
 
@@ -500,6 +537,60 @@ rather easy to identify them:
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
 2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
 
+### Travel back in time to the golden era of web design
+
+1. Visit <http://localhost:3000/#/score-board>
+2. Inspecting the rotating "Hot"-image indicates that it is part of a
+   CSS theme `geo-bootstrap`
+
+   ```html
+   <div ng-bind-html="challenge.description" class="ng-binding">
+     Travel back in time to the golden era of <img src="/css/geo-bootstrap/img/hot.gif"> web design.
+   </div>
+   ```
+
+3. Visit <https://github.com/divshot/geo-bootstrap> to learn that this
+   _"timeless Twitter Bootstrap theme built for the modern web"_ comes
+   with its own `bootstrap.css` that lives in a folder `/swatch`.
+4. Open the Javascript console of your brower.
+5. Submit the command
+   `document.getElementById("theme").setAttribute("href",
+   "css/geo-bootstrap/swatch/bootstrap.css");` to enable this beautiful
+   alternative layout for the Juice Shop.
+
+   ![Juice Shop with nostalgic theme enabled](img/geo_juiceshop.png)
+> Unfortunately the theme resets whenever you reload the page via `F5`
+> so you have to reissue the above command from time to time to stay in
+> _nostalgia mode_.
+
+### Upload a file larger than 100 kB
+
+1. The client-side validation prevents uploads larger than 100 kB.
+2. Craft a `POST` request to <http://localhost:3000/file-upload> with a
+   form parameter `file` that contains a PDF file of more than 100 kB
+   but less than 200 kB.
+
+   ![Larger file upload](img/110kB_upload.png)
+3. The response from the server will be a `204` with no content, but the
+   challenge will be successfully solved.
+
+> Files larger than 200 kB are rejected by an upload size check on
+> server side with a `500` error stating `Error: File too large`.
+
+### Upload a file that has no .pdf extension
+
+1. Craft a `POST` request to <http://localhost:3000/file-upload> with a
+   form parameter `file` that contains a non-PDF file with a size of
+   less than 200 kB.
+
+   ![Non-PDF upload](img/exe_upload.png)
+2. The response from the server will be a `204` with no content, but the
+   challenge will be successfully solved.
+
+> Uploading a non-PDF file larger than 100 kB will solve
+> [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
+> simultaneously.
+
 ### Log in with Bjoern's user account
 
 1. Bjoern has registered via Google OAuth with his (real) account
@@ -508,7 +599,7 @@ rather easy to identify them:
 3. To find out how the OAuth registration and login work, inspect the
    `juice-shop.min.js` and search for `OAuthController`.
 
-    ![OAuthController in juice-shop.min.js](img/OAuthController.png)
+   ![OAuthController in juice-shop.min.js](img/OAuthController.png)
 4. The `e.login()` function call leaks how the password is set:
    `password: d.encode(f.email)`
 5. Checking the controller declaration you will see that `d` is actually
@@ -544,11 +635,11 @@ explains the problem and gives an exploit example:
 4. Visit http://localhost:3000/#/about for a first "XSS4" alert (from
    the _Customer Feedback_ slideshow)
 
-    ![XSS4 alert box](img/xss4_alert.png)
+   ![XSS4 alert box](img/xss4_alert.png)
 5. Visit http://localhost:3000/#/administration for a second "XSS4"
    alert (from the _Customer Feedback_ table)
 
-    ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
+   ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
 
 ### Wherever you go, there you are
 
@@ -565,7 +656,7 @@ explains the problem and gives an exploit example:
    parameter containing a URL from the whitelist, e.g.
    <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
 
-### Apply some advanced cryptanalysis to find _the real_ easter egg
+### Apply some advanced cryptanalysis to find the real easter egg
 
 1. Get the encrypted string from the `eastere.gg` from the
    [Find the hidden easter egg](#find-the-hidden-easter-egg) challenge:
@@ -579,7 +670,7 @@ explains the problem and gives an exploit example:
 5. Visit
    <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
 
-    ![Planet Orangeuze](img/planet_orangeuze.png)
+   ![Planet Orangeuze](img/planet_orangeuze.png)
 6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet
    Orangeuze_!
 
@@ -599,10 +690,10 @@ explains the problem and gives an exploit example:
 
 1. Monitoring the HTTP calls to the backend when switching languages
    tells you how the translations are loaded:
-    * <http://localhost:3000/i18n/en.json>
-    * <http://localhost:3000/i18n/de.json>
-    * <http://localhost:3000/i18n/nl.json>
-    * etc.
+   * <http://localhost:3000/i18n/en.json>
+   * <http://localhost:3000/i18n/de.json>
+   * <http://localhost:3000/i18n/nl.json>
+   * etc.
 2. Brute forcing for all possible two-letter language codes (`aa`, `ab`,
    ..., `zy`, `zz`) will not solve the challenge.
 3. The hidden language is _Klingon_ which is represented by the
@@ -619,6 +710,33 @@ explains the problem and gives an exploit example:
 > dialects. Today it is spoken by humans all over the world, in many
 > contexts.[^4]
 
+### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
+
+1. Visit <http://localhost:3000/#/login> and enter some known
+   credentials.
+2. Tick the _Remember me_ checkbox and _Log in_.
+3. Inspecting the application cookies shows a new `email` cookie storing
+   the plaintext email address.
+4. _Log out_ and go back to <http://localhost:3000/#/login>. Make sure
+   _Remember me_ is still ticked.
+5. Using `ciso@juice-sh.op` as _Email_ and anything as _Password_
+   perform a failed login attempt.
+6. Inspecting the `email` cookie shows it was set to `ciso@juice-sh.op`
+   even when login failed.
+7. Inspecting any request being sent from now on you will notice a new
+   custom HTTP header `X-User-Email: ciso@juice-sh.op`.
+8. Now visit <http://localhost:3000/#/login> again, but this time choose
+   the _Log in with Google_ button.
+9. Visit <http://localhost:3000/#/contact> and check the _Author_ field
+   to be surprised that you are logged in as `ciso@juice-sh.op` instead
+   with your Google email address, because
+   [the OAuth integration for login will accept the 'X-User-Email' header as gospel regardless of the account that just logged in](https://incognitjoe.github.io/hacking-the-juice-shop.html).
+
+> If you do not own a Google account to log in with or are running the
+> Juice Shop on a hostname that is not recognized, you can still solve
+> this challenge by logging in regularly but add `"oauth": true` to the
+> JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
+
 ### Forge a coupon code that gives you a discount of at least 80%
 
 For this challenge there are actually two distinct _solution paths_ that
@@ -631,8 +749,8 @@ totally different attack styles.
    [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
    to get the `coupons_2013.md.bak` file with old coupon codes.
 
-    ```
-    n<MibgC7sn
+   ```
+   n<MibgC7sn
  mNYS#gC7sn
  o*IVigC7sn
  k#pDlgC7sn
@@ -644,7 +762,7 @@ totally different attack styles.
  pEw8ogC7sn
  pes[BgC7sn
  l}6D$gC7ss
-    ```
+   ```
 
 2. There is an obvious pattern in the last characters, as the first
    eleven codes end with `gC7sn` and the last with `gC7ss`.
@@ -677,18 +795,18 @@ totally different attack styles.
 4. Visit <https://www.npmjs.com/package/z85> and check the _Dependents_
    section:
 
-    ![Dependents of z85 on npmjs.com](img/z85-dependents.png)
+   ![Dependents of z85 on npmjs.com](img/z85-dependents.png)
 5. If you have NodeJS installed locally run `npm install -g z85-cli` to
    install <https://www.npmjs.com/package/z85-cli> - a simple command
    line interface for `z85`:
 
-    ![z85-cli page on npmjs.com](img/z85-cli.png)
+   ![z85-cli page on npmjs.com](img/z85-cli.png)
 6. Check the official Juice Shop Twitter account
    <https://twitter.com/owasp_juiceshop> for a valid coupon code. At the
    time of this writing - January 2017 - the broadcasted coupon was
    `n<Mibh.u)v` promising a 50% discount.
 
-    ![Coupon Code for January 2017 on @owasp_juiceshop](/appendix/img/coupon_code-january2017.png)
+   ![Coupon Code for January 2017 on @owasp_juiceshop](/appendix/img/coupon_code-january2017.png)
 7. Decrypting this code with `z85 -d "n<Mibh.u)v"` returns `JAN17-50`
 8. Encrypt a code valid for the current month with 80% or more discount,
    e.g. `z85 -e JAN17-80` which yields `n<Mibh.v0y`.
@@ -712,15 +830,15 @@ totally different attack styles.
    from that demo page. It just uses a minimum length of `60` instead of
    `8` for the resulting hash:
 
-    ```javascript
-    var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
+   ```javascript
+   var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 
   var id = hashids.encode(99);
   var numbers = hashids.decode(id);
 
   $("#input").text("["+numbers.join(", ")+"]");
   $("#output").text(id);
-    ```
+   ```
 
 7. Encoding the value `99` gives you the hash result
    `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
@@ -752,16 +870,16 @@ totally different attack styles.
    <http://localhost:3000/public/images/JuiceShop_Logo.svg> and use it
    as a key file to unlock the KeePass database.
 
-    ![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
+   ![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
 8. Find the password for the support team user account in the `prod`
    entry of the KeePass file.
 
-    ![Unlocked KeePass file](img/keepass-list.png)
+   ![Unlocked KeePass file](img/keepass-list.png)
 9. Log in with `support@juice-sh.op` as _Email_ and
    `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
    challenge.
 
-    ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
+   ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
 
 ### Unlock Premium Challenge to access exclusive content
 
@@ -769,42 +887,30 @@ totally different attack styles.
    Board_ table reveals a HTML comment that is obviously encrypted:
    `<!--R9U8AvGlBbjhHXHW422jxVL2hoLBr8wflIAQ8d/jlERpKnrNlMErs1JfgT9EK/kzTtdb1GPhuWAz3i2HhomhaFMxvg4na+tvTi+8DoQoeqZH1KADoM2NJ7UOKc14b54cdRTXiYV7yFUzbPjjPVOWZFSmDcG6z+jQIPZtJuJ/tQc=-->`.
 
-    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
+   ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
 2. This cipher came out of an AES-encryption using
    <http://aesencryption.net> with a 256bit key.
 3. To get the key you should run a _Forced Directory Browsing_ attack
    against the application. You can use OWASP ZAP for this purpose.
-    1. Of the word lists coming with OWASP ZAP only
-       `directory-list-2.3-big.txt` and
-       `directory-list-lowercase-2.3-big.txt` contain the directory with
-       the key file.
-    2. The search will uncover <http://localhost:3000/encryptionkeys> as
-       a browsable directory
-    3. Open <http://localhost:3000/encryptionkeys/premium.key> to
-       retrieve the AES encryption key
-       `EA99A61D92D2955B1E9285B55BF2AD42`
+   1. Of the word lists coming with OWASP ZAP only
+      `directory-list-2.3-big.txt` and
+      `directory-list-lowercase-2.3-big.txt` contain the directory with
+      the key file.
+   2. The search will uncover <http://localhost:3000/encryptionkeys> as
+      a browsable directory
+   3. Open <http://localhost:3000/encryptionkeys/premium.key> to
+      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
 4. The cipher and the key together can be used to retrieve the plain
    text on <http://aesencryption.net>:
    `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
 
-    ![Decrypted cipher on aesencryption.net](img/aesencryption_net.png)
+   ![Decrypted cipher on aesencryption.net](img/aesencryption_net.png)
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
 
-[^1]: http://hakipedia.com/index.php/Poison_Null_Byte
-
-
-
-[^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
-
-
-
-[^3]: https://en.wikipedia.org/wiki/ROT13
-
-
-
-[^4]: http://www.kli.org/about-klingon/klingon-history
-
-
+[^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
+[^2]: <https://en.wikipedia.org/wiki/Easter_egg_(media)>
+[^3]: <https://en.wikipedia.org/wiki/ROT13>
+[^4]: <http://www.kli.org/about-klingon/klingon-history>
 
