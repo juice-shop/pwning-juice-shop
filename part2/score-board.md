@@ -16,7 +16,7 @@ Board, did you?
 
 Why was the Score Board not visited during the "happy path" tour?
 Because there seemed to be no link anywhere in the application that
-would lead you there! You know that it must exists, which leaves two
+would lead you there! You know that it must exist, which leaves two
 possible explanations:
 
 1. You missed the link during the initial mapping of the application

@@ -11,13 +11,13 @@ covered by the application's score board.
 ![Partly solved Score Board](img/score-board_partly.png)
 
 On the score board you can view a list of all available challenges with
-a brief description. Some descriptions are very explicit hacking
-instructions, others are vaguely describing what to do, leaving it to
-you to find out what needs to be done.
+a brief description. Some descriptions are _very explicit_ hacking
+instructions. Others are just _vague hints_ that leave it up to you to
+find out what needs to be done.
 
 The challenges are rated with a difficulty level between 1 and 5 stars,
-with more stars suggesting a higher difficulty. These ratings have been
-continually adjusted over time based on user feedback. Visible
+with more stars representing a higher difficulty. These ratings have
+been continually adjusted over time based on user feedback. Visible
 difficulty ratings allow you to influence your own hacking pace and
 learning curve significantly. When you pick a 4- or 5-star challenge you
 _expect_ a real challenge and should be less frustrated if you fail on

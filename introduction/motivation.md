@@ -57,15 +57,14 @@ to the choice of implementation technology.
 
 ### Why yet another vulnerable web application?
 
-There was a considerable number of vulnerable web applications out there
+A considerable number of vulnerable web applications already existed
 before the Juice Shop was created. The
 [OWASP Vulnerable Web Applications Directory (VWAD)](https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project)
-maintains a list of these, divided by online and offline usage as well
-as programming language used. When Juice Shop came to life there were
-only _server-side rendered_ applications in the VWAD. But _Rich Internet
-Application (RIA)_ or _Single Page Application (SPA)_ style applications
-were already a commodity at that time. Juice Shop was meant to fill that
-gap.
+maintains a list of these applications. When Juice Shop came to life
+there were only _server-side rendered_ applications in the VWAD. But
+_Rich Internet Application (RIA)_ or _Single Page Application (SPA)_
+style applications were already a commodity at that time. Juice Shop was
+meant to fill that gap.
 
 Many of the existing vulnerable web applications were very rudimental in
 their functional scope. So the aim of the Juice Shop also was to give

@@ -7,7 +7,7 @@ exploits.
 
 > Before commencing security testing, understanding the structure of the
 > application is paramount. Without a thorough understanding of the
-> layout of the application, it is unlkely that it will be tested
+> layout of the application, it is unlikely that it will be tested
 > thoroughly. Map the target application and understand the principal
 > workflows.[^1]
 
@@ -85,7 +85,7 @@ anywhere in the Juice Shop as it is not a "real" shop, after all._
 
 ----
 
-There also also some secondary use cases that the OWASP Juice Shop
+There are also some secondary use cases that the OWASP Juice Shop
 covers. While these are not critical for the shopping workflow itself,
 they positively influence the overall customer experience.
 
@@ -104,10 +104,10 @@ languages you want the user interface to be displayed in. On the top of
 the list, you find languages with complete translations, the ones below
 with a "flask"-icon next to them, offer only partial translation.
 
-> If you want to know more about (or even help with) the localization of
-> OWASP Juice Shop, please refer to the
-> [Help with translation](/part3/translation.md) chapter in part III of
-> this book.
+If you want to know more about (or even help with) the localization of
+OWASP Juice Shop, please refer to the
+[Help with translation](/part3/translation.md) chapter in part III of
+this book.
 
 ### Provide feedback
 
@@ -122,11 +122,7 @@ text _Comment_ field and a _Rating_ on a 1-5 stars scale.
 
 The _Complain?_ button is shown only to logged in users in the navbar.
 It brings you to the `#/complain` page where you can leave a free text
-_Message_ and also attach an _Invoice_ file. The file upload only allows
-.PDF files and no files greater than 100 kB - which is totally
-sufficient for the user case, if you remember that the order
-confirmation shown after checkout was just a one-page PDF file with only
-text in it.
+_Message_ and also attach an _Invoice_ file.
 
 ### Change user password
 

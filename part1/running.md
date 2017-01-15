@@ -2,7 +2,7 @@
 
 ## Run options
 
-In the following sections you find step-by-step instructions to get up a
+In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
 endeavors. Only the most commonly used methods are described here. For a
 full list of options - including Vagrant and Amazon EC2 deployment -

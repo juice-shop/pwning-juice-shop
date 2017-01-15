@@ -23,10 +23,11 @@ essential to your success to monitor the _Javascript Console_
 permanently!__ It might leak valuable information to you through error
 or debugging logs!
 
-_There is a free online-learning course
+There is a free online-learning course
 [Discover DevTools](https://www.codeschool.com/courses/discover-devtools)
-on [Code School](https://www.codeschool.com) where you can get a
-hands-on introduction to Chrome's powerful developer toolkit._
+on [Code School](https://www.codeschool.com) which teaches you hands-on
+how Chrome's powerful developer toolkit works. The course is worth a
+look even if you think you know the DevTools quite well already.
 
 #### API testing plugin
 
@@ -41,8 +42,8 @@ Here you can create requests for all available HTTP verbs (`GET`,
 `POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request
 headers etc.
 
-_If you feel more at home on the command line, `curl` will do the trick
-just as fine as the recommended browser plugins._
+If you feel more at home on the command line, `curl` will do the trick
+just as fine as the recommended browser plugins.
 
 #### Request tampering plugin
 
@@ -66,7 +67,7 @@ tools to start with. In case you have experience with professional
 pentesting tools, you are free to use those! And you are _completely
 free_ in your choice, so expensive commercial products are just as fine
 as open source tools. With this kind of tooling you will have a
-competitive advantage for some of the challenges, especially those were
+competitive advantage for some of the challenges, especially those where
 _brute force_ is a viable attack. But there are just as many
 multi-staged vulnerabilities in the OWASP Juice Shop where - at the time
 of this writing - automated tools would probably not help you at all.
@@ -112,7 +113,7 @@ all into a "ready-to-use" Linux distribution? Entering
 
 The keyword in the previous quote is _"advanced"_! Kali Linux is _easily
 overwhelming_ when beginners try to work with it, as even the Kali
-development states:
+development team states:
 
 > As the distribution’s developers, you might expect us to recommend
 > that everyone should be using Kali Linux. The fact of the matter is,
@@ -129,10 +130,10 @@ security field. If you still feel up to it, give Kali Linux a try!
 ### Internet
 
 You are free to use Google during your hacking session to find helpful
-websites, tools or perform some necessary information gathering. The
-OWASP Juice Shop is leaking useful information all over the place if you
-know where to look, but sometimes you simply must extend your research
-to gain the relevant piece of intel to beat a challenge.
+websites or tools. The OWASP Juice Shop is leaking useful information
+all over the place if you know where to look, but sometimes you simply
+need to extend your research to the Internet in order to gain some
+relevant piece of intel to beat a challenge.
 
 ## Things you should not use
 
@@ -150,7 +151,7 @@ would be obvious when the source code is reviewed.
 
 Finally the end-to-end test suite of Juice Shop was built hack all
 challenges automatically, in order to verify they can all be solved.
-These tests deliver then required attacks on a silver plate when
+These tests deliver all the required attacks on a silver plate when
 reviewed.
 
 ### Server logfile
@@ -175,11 +176,11 @@ not covered by the [Troubleshooting section of the README.md](). You
 just should not read issues labeled `challenge` as they might contain
 spoilers or solutions.
 
-_Of course you are explicitly allowed to view
+Of course you are explicitly allowed to view
 [the repository's README.md page](https://github.com/bkimminich/juice-shop/blob/master/README.md),
 which contains no spoilers but merely covers project introduction, setup
 and troubleshooting. Just do not "dig deeper" than that into the
-repository files and folders._
+repository files and folders.
 
 ### Database table `Challenges`
 
@@ -188,8 +189,8 @@ the rest of the application data, namely in the `Challenges` table. Of
 course you could "cheat" by simply editing the state of each challenge
 from _unsolved_ to _solved_ by setting the corresponding `solved` column
 to `1`. You then just have to keep your fingers crossed, that nobody
-ever asks to _show how_ you actually solved all the 4- and 5-star
-challenges so quickly.
+ever asks you to _demonstrate how_ you actually solved all the 4- and
+5-star challenges so quickly.
 
 ### Score Board HTML/CSS
 
@@ -208,10 +209,10 @@ _real_ hacking progress.
 Frankly speaking, you are reading the _premium source of hints_ right
 now! Congratulations! In case you want to hack more on your own than
 follow the breadcrumbs through the wood of challenges in part II, the
-most direct way to ask for specific hints to particular challenges is
+most direct way to ask for specific hints for a particular challenge is
 the community chat on Gitter.im at
-https://gitter.im/bkimminich/juice-shop which is tied to your GitHub
-account.
+https://gitter.im/bkimminich/juice-shop. You can simply log in to Gitter
+with your GitHub account.
 
 If you prefer you can also use the project's Slack channel at
 https://owasp.slack.com/messages/project-juiceshop. You just need to
