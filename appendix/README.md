@@ -6,7 +6,7 @@ Change the URL accordingly if you use a different root URL.
 
 Often there are multiple ways to solve a challenge. In most cases just
 one possible solution is presented here. This is typically the easiest
-or most obvious one from the authors perspective.
+or most obvious one from the author's perspective.
 
 ### Find the carefully hidden 'Score Board' page
 
@@ -268,7 +268,7 @@ order to exploit and solve them:
   valid hash with the `hashid` library.
 * Passwords in the `Users` table are hashed with unsalted MD5
 * Users registering via Google account will get a very cheap default
-  password that insolves Base64 encoding.
+  password that involves Base64 encoding.
 
 <!-- -->
 
