@@ -3,7 +3,7 @@
 To the unsuspecting user the OWASP Juice Shop just looks like a small
 online shop which sells - _surprise!_ - fruit & vegetable juice and
 associated products. Except for the entirely overrated payment and
-delivery aspect of the ecommerce business, the Juice Shop is fully
+delivery aspect of the e-commerce business, the Juice Shop is fully
 functional. But this is just the tip of the iceberg. The Juice Shop
 contains over 30 challenges of varying difficulty where you are supposed
 to exploit underlying security vulnerabilities. These vulnerabilities
@@ -20,13 +20,13 @@ to motivate you to get as many challenges solved as possible - similar
 to unlocking achievements in many modern video games.
 
 Development of the OWASP Juice Shop started in September 2014 when a
-more modern exercise environment for an inhouse security training at the
+more modern exercise environment for an in-house security training at the
 authors employer was needed. The previously used exercise environment
 was still from the server-side rendered ASP/JSP/Servlet era and did not
 reflect the reality of current web technology any more. The Juice Shop
 was developed as open-source software without any corporate branding
 right from the beginning. Until end of 2014 most of the current
-ecommerce functionality was up and running - along with an initial
+e-commerce functionality was up and running - along with an initial
 number of planted vulnerabilities. Over the years more variants of
 vulnerabilities were added. In parallel the application was kept
 up-to-date with latest web technology (e.g. WebSockets and OAuth 2.0).
@@ -68,5 +68,5 @@ meant to fill that gap.
 
 Many of the existing vulnerable web applications were very rudimental in
 their functional scope. So the aim of the Juice Shop also was to give
-the impression of a functionally complete ecommerce application that
+the impression of a functionally complete e-commerce application that
 could actually exist like this "in the wild".

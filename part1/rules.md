@@ -123,7 +123,7 @@ development team states:
 > unfamiliar with Linux \[...\]. Even for experienced Linux users, Kali
 > can pose some challenges.[^3]
 
-Although there exist some more light-weight pentesting ditributions,
+Although there exist some more light-weight pentesting distributions,
 they basically still present a high hurdle for people new to the IT
 security field. If you still feel up to it, give Kali Linux a try!
 

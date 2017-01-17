@@ -41,7 +41,7 @@
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
-To fulfill this challenge you must identify a cryprographic algorithm
+To fulfill this challenge you must identify a cryptographic algorithm
 (or crypto library) that either * should not be used _at all_ * or is a
 _bad choice_ for a given requirement * or is used in an _insecure way_.
 
@@ -116,7 +116,7 @@ up to you to forge your own.
 ### Solve challenge #99
 
 The OWASP Juice Shop is _so broken_ that even its convenience features
-(which have nothing to do with the ecommerce use cases) are designed to
+(which have nothing to do with the e-commerce use cases) are designed to
 be vulnerable. One of these features is the
 [Your Hacking Session](/part1/challenges.md#saving-and-restoring-hacking-progress)
 section on top of the Score Board that allows to save and restore
@@ -139,7 +139,7 @@ solved challenge #99 - which does not exist.
 
 ### Unlock Premium Challenge to access exclusive content.
 
-These days a lot of seeminly free software comes with hidden or
+These days a lot of seemingly free software comes with hidden or
 follow-up costs to use it to its full potential. For example: In
 computer games, letting players pay for _Downloadable Content_ (DLC)
 after they purchased a full-price game, has become the norm. Often this
@@ -177,6 +177,3 @@ That is why the actual challenge here is to unlock and solve the
 > [donations in part 3](../part3/README.md#donations) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
-
-
-
