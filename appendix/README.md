@@ -10,7 +10,7 @@ or most obvious one from the author's perspective.
 
 ### Find the carefully hidden 'Score Board' page
 
-1. Open the _Source code view_ of your brower from any screen of the
+1. Open the _Source code view_ of your browser from any screen of the
    Juice Shop application.
 2. Scroll down to the end of the `<nav>` tag that defines the menu bar
 
@@ -95,7 +95,7 @@ error situation and solve this challenge along the way:
 
 ### Access the administration section of the store
 
-1. Open the `juice-shop.min.js` in your brower's developer tools and
+1. Open the `juice-shop.min.js` in your browser's developer tools and
    search for "admin".
 2. Among the first entries you will find a route mapping to
    `/administration`.
@@ -258,7 +258,7 @@ will get their password set to the same one we forced onto Bender!
 
 Juice Shop uses some inappropriate crypto algorithms and libraries in
 different places. While working on the following topics (and having the
-`package.json.bak` at hand) you will learn those inappropriate coices in
+`package.json.bak` at hand) you will learn those inappropriate choices in
 order to exploit and solve them:
 
 * [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
@@ -424,7 +424,7 @@ order to exploit and solve them:
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
 2. Inspect the DOM of the form in your browser to spot this suspicious
-   text field rigth at the top: `<input type="text" id="userId"
+   text field right at the top: `<input type="text" id="userId"
    ng-model="feedback.UserId" ng-hide="true" class="ng-pristine
    ng-untouched ng-valid ng-empty ng-hide">`
 
@@ -477,7 +477,7 @@ order to exploit and solve them:
 4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
    only with a twist:
    * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
-     suprisingly **not** succeed...
+     surprisingly **not** succeed...
    * ...because the `%` character needs to be URL-encoded (into `%25`)
      as well in order to work its magic later during the file system
      access.
@@ -552,7 +552,7 @@ rather easy to identify them:
 3. Visit <https://github.com/divshot/geo-bootstrap> to learn that this
    _"timeless Twitter Bootstrap theme built for the modern web"_ comes
    with its own `bootstrap.css` that lives in a folder `/swatch`.
-4. Open the Javascript console of your brower.
+4. Open the Javascript console of your browser.
 5. Submit the command
    `document.getElementById("theme").setAttribute("href",
    "css/geo-bootstrap/swatch/bootstrap.css");` to enable this beautiful
@@ -663,7 +663,7 @@ explains the problem and gives an exploit example:
    `L2d1ci9xcmlmL25lci9mYi9zaGFhbC9ndXJsL3V2cS9uYS9ybmZncmUvcnR0L2p2Z3V2YS9ndXIvcm5mZ3JlL3J0dA==`
 2. Base64-decode this into
    `/gur/qrif/ner/fb/shaal/gurl/uvq/na/rnfgre/rtt/jvguva/gur/rnfgre/rtt`
-3. Trying this as a URL will not work. Notice the reoccuring patterns
+3. Trying this as a URL will not work. Notice the recurring patterns
    (`rtt`, `gur` etc.) in the above string
 4. ROT13-decode this into
    `/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg`
@@ -865,7 +865,7 @@ totally different attack styles.
 5. You now know that the KeePass file is protected with **only a key
    file** instead of a password!
 6. The key file must be something the support team has access to from
-   everywhere - how else would they achueve 24/7?
+   everywhere - how else would they achieve 24/7?
 7. Download the application logo
    <http://localhost:3000/public/images/JuiceShop_Logo.svg> and use it
    as a key file to unlock the KeePass database.
@@ -913,4 +913,3 @@ totally different attack styles.
 [^2]: <https://en.wikipedia.org/wiki/Easter_egg_(media)>
 [^3]: <https://en.wikipedia.org/wiki/ROT13>
 [^4]: <http://www.kli.org/about-klingon/klingon-history>
-

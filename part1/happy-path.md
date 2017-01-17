@@ -20,7 +20,7 @@ software testing this is often called "happy path" testing.
 > implements it. Nothing goes wrong, nothing out of the normal happens,
 > and we swiftly and directly achieve the user's or caller's goal.[^2]
 
-The OWASP Juice Shop is a rather simple ecommerce application that
+The OWASP Juice Shop is a rather simple e-commerce application that
 covers the typical workflows of a web shop. The following sections
 briefly walk you through these "happy path" use cases.
 
@@ -28,7 +28,7 @@ briefly walk you through these "happy path" use cases.
 
 When visiting the OWASP Juice Shop you will be automatically forwarded
 to the `#/search` page, which shows a table with all available products.
-This is of course the "bread & butter" screen for any ecommerce site.
+This is of course the "bread & butter" screen for any e-commerce site.
 When you click on the small "eye"-button next to the price of a product,
 an overlay screen will open showing you that product including an image
 of it.
@@ -69,7 +69,7 @@ purchase:
 
 ### Checkout
 
-Still on the `#/basket` page you also find some purchase releated
+Still on the `#/basket` page you also find some purchase related
 buttons that are worth to be explored:
 
 * unfold the _Coupon_ section with the "gift"-button where you can
