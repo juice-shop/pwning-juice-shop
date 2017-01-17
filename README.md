@@ -54,6 +54,15 @@ __Official project landing page on the OWASP wiki:__
 
 * https://www.owasp.org/index.php/OWASP_Juice_Shop_Project
 
+__Contributors:__
+
+Ordered by date of first contribution.
+[Auto-generated](https://github.com/dtrejo/node-authors) on Tue, 17 Jan
+2017 22:00:25 GMT.
+
+- [Bjoern Kimminich](https://github.com/bkimminich) aka `bkimminich`
+- [Cristina Munoz](https://github.com/xmunoz) aka `xmunoz`
+
 ----
 
 [![CC BY-NC-ND 4.0](introduction/img/cc_by-nc-nd_4.0.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
