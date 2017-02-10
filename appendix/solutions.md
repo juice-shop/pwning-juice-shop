@@ -867,7 +867,7 @@ totally different attack styles.
 6. The key file must be something the support team has access to from
    everywhere - how else would they achieve 24/7?
 7. Download the application logo
-   <http://localhost:3000/public/images/JuiceShop_Logo.svg> and use it
+   <http://localhost:3000/public/images/JuiceShop_Logo.png> and use it
    as a key file to unlock the KeePass database.
 
    ![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
