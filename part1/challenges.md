@@ -51,6 +51,13 @@ case a number of notifications "piled up" it is not necessary to dismiss
 each one individually, as a simple reload of the UI in the browser (`F5`
 key) will dismiss all at the same time.
 
+Each challenge notification will also show a :checkered_flag: symbol
+with a character sequence next to it. If you are doing a hacking session
+just on your own, you can completely ignore this flag. The code is only
+relevant if you are participating in a CTF event. Please refer to
+[Appendix B](../appendix/ctf.md) for more information on hosting CTF
+events.
+
 ## Saving and restoring hacking progress
 
 The ["self-healing" feature](running.md#self-healing-feature) - by

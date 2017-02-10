@@ -35,4 +35,5 @@
 
 ----
 
-* [Appendix - Challenge solutions](appendix/README.md)
+* [Appendix A - Challenge solutions](appendix/solutions.md)
+* [Appendix B - Hosting a CTF event](appendix/ctf.md)

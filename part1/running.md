@@ -85,8 +85,8 @@ in the project's README.md.
    download the `latest` image as described above.
 3. Run `docker run -d -p 3000:3000 bkimminich/juice-shop` to launch the
    container with that image.
-4. Browse to <http://localhost:3000>. On macOS you will have to browse to
-   <http://192.168.99.100:3000> instead.
+4. Browse to <http://localhost:3000>. On macOS you will have to browse
+   to <http://192.168.99.100:3000> instead.
 
 If you are using Docker on Windows - inside a VirtualBox VM - make sure
 that you also enable port forwarding from host `127.0.0.1:3000` to
@@ -108,3 +108,48 @@ folder users might have modified during hacking. After performing this
 what kind of problem originally caused it to crash. For convenience the
 "self-healing" happens during the startup (i.e. `npm start`) of the
 server, so no extra command needs to be issued to trigger it.
+
+## Capture-the-flag support
+
+> In computer security, Capture the Flag (CTF) is a computer security
+> competition. CTF contests are usually designed to serve as an
+> educational exercise to give participants experience in securing a
+> machine, as well as conducting and reacting to the sort of attacks
+> found in the real world. Reverse-engineering, network sniffing,
+> protocol analysis, system administration, programming, and
+> cryptanalysis are all skills which have been required by prior CTF
+> contests at DEF CON. There are two main styles of capture the flag
+> competitions: attack/defense and jeopardy.
+>
+> In an attack/defense style competition, each team is given a machine
+> (or a small network) to defend on an isolated network. Teams are
+> scored on both their success in defending their assigned machine and
+> on their success in attacking the other team's machines. Depending on
+> the nature of the particular CTF game, teams may either be attempting
+> to take an opponent's flag from their machine or teams may be
+> attempting to plant their own flag on their opponent's machine. Two of
+> the more prominent attack/defense CTF's are held every year at DEF
+> CON, the largest hacker conference, and the NYU-CSAW (Cyber Security
+> Awareness Week), the largest student cyber-security contest.
+>
+> Jeopardy-style competitions usually involve multiple categories of
+> problems, each of which contains a variety of questions of different
+> point values and difficulties. Teams attempt to earn the most points
+> in the competition's time frame (for example 24 hours), but do not
+> directly attack each other. Rather than a race, this style of game
+> play encourages taking time to approach challenges and prioritizes
+> quantity of correct submissions over the timing.[^1]
+
+OWASP Juice Shop offers a separate GitHub repository on
+<https://github.com/bkimminich/juice-shop-ctf> which is dedicated to
+hosting Capture-the-flag (CTF) events. This can add some extra
+motivation and competition for the participants of a security training.
+
+Bear in mind: With the increasing number of challenge solutions
+available on the Internet (this book included) it might not be wise to
+host a professional CTF for prize money with OWASP Juice Shop.
+
+Please refer to [Appendix B - Hosting a CTF event](../appendix/ctf.md)
+to learn how to set up Juice Shop together with a CTF server.
+
+[^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
