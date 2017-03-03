@@ -8,6 +8,9 @@ Often there are multiple ways to solve a challenge. In most cases just
 one possible solution is presented here. This is typically the easiest
 or most obvious one from the author's perspective.
 
+> The challenge solutions found in this release of the compantion guide are
+> compatible with `v2.22.0` of OWASP Juice Shop.
+
 ### Find the carefully hidden 'Score Board' page
 
 1. Open the _Source code view_ of your browser from any screen of the

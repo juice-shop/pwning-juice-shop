@@ -11,8 +11,11 @@ In case you want to look up hints for a particular challenge, the
 following table lists all challenges of the OWASP Juice Shop in the same
 order as on the Score Board.
 
-| Challenge                                                                                                                          | Hints                                                                                                                                   | Solution                                                                                                                                          |
-|:-----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
+> The challenge hints found in this release of the compantion guide are
+> compatible with `v2.22.0` of OWASP Juice Shop.
+
+| Challenge                                                                                                                          | Hints                                                                                                                                   | Solution                                                                                                                                           |
+|:-----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
 | Find the carefully hidden 'Score Board' page.                                                                                      | [ :bulb: ](score-board.md#find-the-carefully-hidden-score-board-page)                                                                   | [:trollface:](../appendix/solutions.md#find-the-carefully-hidden-score-board-page)                                                                 |
 | Provoke an error that is not very gracefully handled.                                                                              | [ :bulb: ](leakage.md#provoke-an-error-that-is-not-very-gracefully-handled)                                                             | [:trollface:](../appendix/solutions.md#provoke-an-error-that-is-not-very-gracefully-handled)                                                       |
 | XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`.                                                  | [ :bulb: ](xss.md#xss-tier-1-perform-a-reflected-xss-attack)                                                                            | [:trollface:](../appendix/solutions.md#xss-tier-1-perform-a-reflected-xss-attack)                                                                  |
@@ -55,8 +58,8 @@ order as on the Score Board.
 ## Challenge Solutions
 
 In case you are getting frustrated with a particular challenge, you can
-refer to [Appendix - Challenge solutions](/appendix/solutions.md) where you
-find explicit instructions how to successfully exploit each
+refer to [Appendix - Challenge solutions](/appendix/solutions.md) where
+you find explicit instructions how to successfully exploit each
 vulnerability. It is highly recommended to use this option only as a
 last resort. You will learn __a lot more__ from hacking entirely on your
 own or relying only on the hints in this part of the book.
