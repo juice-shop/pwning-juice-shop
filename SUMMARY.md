@@ -10,6 +10,7 @@
     * [Challenge tracking](part1/challenges.md)
     * [Hacking exercise rules](part1/rules.md)
     * [Walking the "happy path"](part1/happy-path.md)
+    * [Customization](part1/customization.md)
 
 ----
 
