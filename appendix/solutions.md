@@ -8,8 +8,8 @@ Often there are multiple ways to solve a challenge. In most cases just
 one possible solution is presented here. This is typically the easiest
 or most obvious one from the author's perspective.
 
-> The challenge solutions found in this release of the compantion guide are
-> compatible with `v2.22.0` of OWASP Juice Shop.
+> The challenge solutions found in this release of the compantion guide
+> are compatible with `v2.22.0` of OWASP Juice Shop.
 
 ### Find the carefully hidden 'Score Board' page
 
@@ -261,8 +261,8 @@ will get their password set to the same one we forced onto Bender!
 
 Juice Shop uses some inappropriate crypto algorithms and libraries in
 different places. While working on the following topics (and having the
-`package.json.bak` at hand) you will learn those inappropriate choices in
-order to exploit and solve them:
+`package.json.bak` at hand) you will learn those inappropriate choices
+in order to exploit and solve them:
 
 * [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
   exploits `z85` (Zero-MQ Base85 implementation) as the library for
@@ -860,29 +860,33 @@ totally different attack styles.
    <http://localhost:3000/ftp/incident-support.kdbx> (note how this file
    is _not blocked_ by the file type filter).
 3. Inspecting the DOM of the _Login_ form reveals a HTML comment in
-   Romanian language: `<!-- @echipa de suport: folosiți fișierul nostru
-   cheie a fost de acord, și lăsați-martor parola de master! -->`
+   Romanian language: `<!-- @echipa de suport: Secretul nostru comun
+   este încă Caoimhe cu parola de master gol! -->`
 4. Running this through an online translator yields something like:
-   `support team: our key file using agreed, and leave the password
-   blank master!`
-5. You now know that the KeePass file is protected with **only a key
-   file** instead of a password!
+   `Support Team: Our secret is still common Caoimhe master password
+   empty!`
+5. From `master password empty` you can derive, that the KeePass file is
+   protected with **only a key file** instead of a password!
 6. The key file must be something the support team has access to from
    everywhere - how else would they achieve 24/7?
-7. Download the application logo
-   <http://localhost:3000/public/images/JuiceShop_Logo.png> and use it
-   as a key file to unlock the KeePass database.
+7. The second important hint is the reference to `Caoimhe`, which
+   happens to be an Irish feminine given name.
+8. Visit <http://localhost:3000/#/about> and cycle through the photos of
+   all support staff that are displayed in the background feedback
+   carousel. There is one woman with red hair - maybe she actually _is_
+   "Caoimhe"?
+9. Download the photo
+   <http://localhost:3000/public/images/carousel/6.jpg> and use it as a
+   key file to unlock the KeePass database.
+10. Find the password for the support team user account in the `prod`
+    entry of the KeePass file.
 
-   ![KeePass file with key file pointing to the Juice Shop logo](img/keepass-open_dialog.png)
-8. Find the password for the support team user account in the `prod`
-   entry of the KeePass file.
+    ![Unlocked KeePass file](img/keepass-list.png)
+11. Log in with `support@juice-sh.op` as _Email_ and
+    `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
+    challenge.
 
-   ![Unlocked KeePass file](img/keepass-list.png)
-9. Log in with `support@juice-sh.op` as _Email_ and
-   `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
-   challenge.
-
-   ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
+    ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
 
 ### Unlock Premium Challenge to access exclusive content
 
