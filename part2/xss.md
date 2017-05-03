@@ -109,7 +109,7 @@ approach._
 
 #### Hints
 
-* The _Comment_ field if the _Contact Us_ is where you want to put your
+* The _Comment_ field in the _Contact Us_ screen is where you want to put your
   focus on
 * The attack payload `<script>alert("XSS4")</script>` will _not be
   rejected_ by any validator but _stripped from the comment_ before
