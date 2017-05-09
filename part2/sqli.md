@@ -102,7 +102,7 @@ café with free WiFi.
 
 #### Hints
 
-* Try to find a page where can influence a list of data being displayed.
+* Try to find a page where you can influence a list of data being displayed.
 * Craft a `UNION SELECT` attack string to join data from another table
   into the original result.
 * You might have to tackle some query syntax issues step-by-step,
