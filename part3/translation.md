@@ -29,7 +29,7 @@ related assets. It is free for open source projects.[^1]
    <https://crowdin.com/project/owasp-juice-shop/invite>
 3. Pick a language you would like to help translate the project into
 
-    ![Crowdin project page](img/crowdin_project.png)
+   ![Crowdin project page](img/crowdin_project.png)
 4. In the _Files_ tab select the listed source file `en.json`
 5. Pick an untranslated label (marked with a red box) and provide a
    translation

@@ -31,8 +31,8 @@ be visible at all.
   conditions.
 * You can try to submit bad input to forms to provoke an improper error
   handling
-* Tampering with URL paths or parameters might also trigger an unforeseen
-  error
+* Tampering with URL paths or parameters might also trigger an
+  unforeseen error
 
 If you see the success notification for this challenge but no error
 message on screen, the error was probably logged on the Javascript

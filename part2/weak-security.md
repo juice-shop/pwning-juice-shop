@@ -45,11 +45,11 @@ hacking pleasure!
 
 * There are essentially two ways to light up this challenge in green on
   the score board:
-    * In case you, dear reader, happen to be Bjoern Kimminich, just log
-      in with your Google account to automatically solve this challenge!
-      Congratulations!
-    * Everybody else might want to take detailed look into how the OAuth
-      login with Google is implemented.
+  * In case you, dear reader, happen to be Bjoern Kimminich, just log in
+    with your Google account to automatically solve this challenge!
+    Congratulations!
+  * Everybody else might want to take detailed look into how the OAuth
+    login with Google is implemented.
 * It could bring you some insight to register with your own Google
   account and analyze closely what happens behind the scenes.
 * The security flaw behind this challenge is 100% Juice Shop's fault and

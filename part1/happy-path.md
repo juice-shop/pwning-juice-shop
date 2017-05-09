@@ -69,8 +69,8 @@ purchase:
 
 ### Checkout
 
-Still on the `#/basket` page you also find some purchase related
-buttons that are worth to be explored:
+Still on the `#/basket` page you also find some purchase related buttons
+that are worth to be explored:
 
 * unfold the _Coupon_ section with the "gift"-button where you can
   redeem a code for a discount

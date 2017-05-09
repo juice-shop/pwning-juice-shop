@@ -25,6 +25,6 @@ the OWASP Juice Shop team, project leader or community!
 | OWASP Slack Channel                                               | https://owasp.slack.com/messages/project-juiceshop   |
 | Project Mailing List                                              | <mailto:owasp_juice_shop_project@lists.owasp.org>    |
 
-> Your honest feedback is always appreciated, no matter if it is positive or
-> negative!
+> Your honest feedback is always appreciated, no matter if it is
+> positive or negative!
 
