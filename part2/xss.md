@@ -61,10 +61,10 @@ input validation:
 * Even less of these fields are persisted in a way where their content
   is shown on another screen.
 * Bypassing client-side security can typically be done by
-    * either disabling it on the client (i.e. in the browser by
-      manipulating the DOM tree)
-    * or by ignoring it completely and interacting with the backend
-      instead.
+  * either disabling it on the client (i.e. in the browser by
+    manipulating the DOM tree)
+  * or by ignoring it completely and interacting with the backend
+    instead.
 
 ### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
 
@@ -99,9 +99,9 @@ with the client-side Javascript or bypassing the client entirely.
 Whenever there is a server-side validation or input processing involved,
 you should investigate how it works. Finding out implementation details
 - e.g. used libraries, modules or algorithms - should be your priority.
-If the application does not leak this kind of details, you can still go
-for a _blind approach_ by testing lots and lots of different attack
-payloads and check the reaction of the application.
+  If the application does not leak this kind of details, you can still
+  go for a _blind approach_ by testing lots and lots of different attack
+  payloads and check the reaction of the application.
 
 _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error

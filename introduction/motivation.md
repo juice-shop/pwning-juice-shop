@@ -20,12 +20,12 @@ to motivate you to get as many challenges solved as possible - similar
 to unlocking achievements in many modern video games.
 
 Development of the OWASP Juice Shop started in September 2014 when a
-more modern exercise environment for an in-house security training at the
-authors employer was needed. The previously used exercise environment
-was still from the server-side rendered ASP/JSP/Servlet era and did not
-reflect the reality of current web technology any more. The Juice Shop
-was developed as open-source software without any corporate branding
-right from the beginning. Until end of 2014 most of the current
+more modern exercise environment for an in-house security training at
+the authors employer was needed. The previously used exercise
+environment was still from the server-side rendered ASP/JSP/Servlet era
+and did not reflect the reality of current web technology any more. The
+Juice Shop was developed as open-source software without any corporate
+branding right from the beginning. Until end of 2014 most of the current
 e-commerce functionality was up and running - along with an initial
 number of planted vulnerabilities. Over the years more variants of
 vulnerabilities were added. In parallel the application was kept

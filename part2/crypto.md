@@ -164,9 +164,9 @@ That is why the actual challenge here is to unlock and solve the
   library to be exploited here.
 * How much protection does a sturdy top-quality door lock add to your
   house if you...
-    * ...put the key under the door mat?
-    * ...hide the key in the nearby plant pot?
-    * ...tape the key to the underside of the mailbox?
+  * ...put the key under the door mat?
+  * ...hide the key in the nearby plant pot?
+  * ...tape the key to the underside of the mailbox?
 * Once more: **You do not have to pay anything to unlock this
   challenge!**
 

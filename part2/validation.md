@@ -56,5 +56,6 @@ the uploaded file is actually a PDF. All other file types are rejected.
 
 #### Hints
 
-* If you solved the [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb) challenge,
-  you should try to apply the same solution here
+* If you solved the
+  [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
+  challenge, you should try to apply the same solution here

@@ -66,17 +66,17 @@ performs the following actions:
 1. Clone the repository and checkout the branch to build
 2. Build the application
 3. Execute the quality checks consisting of
-    * Compliance check against the
-      [JS Standard Code Style rules](http://standardjs.com)
-    * Unit tests for the Angular client
-    * Integration tests for the server-side API
-    * End-to-end tests verifying that all challenges can be solved
+   * Compliance check against the
+     [JS Standard Code Style rules](http://standardjs.com)
+   * Unit tests for the Angular client
+   * Integration tests for the server-side API
+   * End-to-end tests verifying that all challenges can be solved
 4. Upload of the quality metrics to
    [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop)
 5. Deployment to a Heroku instance
-    * <https://juice-shop-staging.herokuapp.com> for `develop` branch
-      builds
-    * <https://juice-shop.herokuapp.com> for `master` branch builds
+   * <https://juice-shop-staging.herokuapp.com> for `develop` branch
+     builds
+   * <https://juice-shop.herokuapp.com> for `master` branch builds
 6. Trigger some monitoring endpoints about the build result
 
 > Pull Requests are built in the same manner (steps 1-3) to assess if
@@ -149,11 +149,11 @@ list:
 * Issues labeled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
 
-    !["help wanted" label on GitHub](img/help_wanted-label.png)
-* Issues labeled with **newbie friendly** indicate tasks that are isolated
-  and not too hard to implement, so they are well-suited for new
-  contributors
+  !["help wanted" label on GitHub](img/help_wanted-label.png)
+* Issues labeled with **newbie friendly** indicate tasks that are
+  isolated and not too hard to implement, so they are well-suited for
+  new contributors
 
-    !["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
+  !["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
 
 [^1]: <http://semver.org>

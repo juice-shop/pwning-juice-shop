@@ -79,7 +79,8 @@ crucial in several other challenges later on.
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found **the real** easter
 egg! Of course finding **that** is
-[a follow-up challenge](crypto.md#apply-some-advanced-cryptanalysis-to-find-_the-real_-easter-egg) to this one._
+[a follow-up challenge](crypto.md#apply-some-advanced-cryptanalysis-to-find-_the-real_-easter-egg)
+to this one._
 
 ### Travel back in time to the golden era of web design
 
@@ -119,9 +120,9 @@ menu.
 * First you should find out how the languages are technically changed in
   the user interface.
 * You can then choose between three viable ways to beat this challenge:
-    * Trust in your luck and _guess_ what language is the extra one.
-    * _Apply brute force_ (and don't give up to quickly) to find it.
-    * _Investigate externally_ what languages are actually available.
+  * Trust in your luck and _guess_ what language is the extra one.
+  * _Apply brute force_ (and don't give up to quickly) to find it.
+  * _Investigate externally_ what languages are actually available.
 
 [^1]: https://en.wikipedia.org/wiki/Easter_egg_(media)
 [^2]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements

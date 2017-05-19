@@ -53,10 +53,11 @@ of Node.js.
 1. Install [Node.js](http://nodejs.org/) on your computer.
 2. On the command line run `git clone
    https://github.com/bkimminich/juice-shop.git`.
-3. Run `npm install`. This only has to be done before the first start or
+3. Go into the cloned folder with `cd juice-shop`
+4. Run `npm install`. This only has to be done before the first start or
    after you changed the source code.
-4. Run `npm start` to launch the application.
-5. Browse to <http://localhost:3000>
+5. Run `npm start` to launch the application.
+6. Browse to <http://localhost:3000>
 
 #### From pre-packaged distribution
 

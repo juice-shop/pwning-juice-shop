@@ -50,8 +50,8 @@ option available in the main menu.
 ### Get rid of all 5-star customer feedback
 
 If you successfully solved above
-[admin section challenge](#access-the-administration-section-of-the-store) deleting the 5-star
-feedback is very easy.
+[admin section challenge](#access-the-administration-section-of-the-store)
+deleting the 5-star feedback is very easy.
 
 #### Hints
 
@@ -75,12 +75,12 @@ challenge instruction to make it light up green on the score board:
 #### Hints
 
 * _Theoretically_ there are three possible ways to beat this challenge:
-    * Finding an administrative functionality in the web application
-      that lets you change product data
-    * Looking for possible holes in the RESTful API that would allow you
-      to update a product
-    * Attempting an SQL Injection attack that sneaks in an `UPDATE`
-      statement on product data
+  * Finding an administrative functionality in the web application that
+    lets you change product data
+  * Looking for possible holes in the RESTful API that would allow you
+    to update a product
+  * Attempting an SQL Injection attack that sneaks in an `UPDATE`
+    statement on product data
 * _In practice_ two of these three ways should turn out to be dead ends
 
 ### Access someone else's basket
