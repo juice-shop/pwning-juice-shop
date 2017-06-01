@@ -38,6 +38,7 @@ and other payment options:
 | Gratipay               | <https://gratipay.com/juice-shop>                                                                                                                                                                                                                        |
 | Flattr                 | <https://flattr.com/thing/3856930/bkimminichjuice-shop-on-GitHub>                                                                                                                                                                                        |
 | Dash                   | ![dash:Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](img/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW.png)<br>[Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW)                                                     |
+| Ethereum               | ![0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](img/0x0f933ab9fCAAA782D0279C300D73750e1311EAE6.png)<br>[0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6)                                                     |
 
 Donations via PayPal are received and managed by the OWASP Foundation.
 This is the only option where an official donation receipt can be handed
