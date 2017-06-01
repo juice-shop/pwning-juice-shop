@@ -17,7 +17,7 @@ or most obvious one from the author's perspective.
    Juice Shop application.
 2. Scroll down to the end of the `<nav>` tag that defines the menu bar
 
-   ```html
+```html
     <li class="dropdown" ng-show="isLoggedIn()">
             <a href="#/complain"><i class="fa fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
        </li>
@@ -32,7 +32,7 @@ or most obvious one from the author's perspective.
      </ul>
    </div>
  </nav>
-   ```
+```
 
 3. Notice the commented out `<li>` entry labeled "Score Board".
 4. Navigate to http://localhost:3000/#/score-board to solve the
@@ -297,6 +297,10 @@ in order to exploit and solve them:
 6. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
    your shopping basket.
 7. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+
+### Reset Jim's password via the Forgot Password mechanism
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 
 ### Log in with Jim's user account
 
@@ -612,6 +616,10 @@ rather easy to identify them:
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
 
+### Reset Bender's password via the Forgot Password mechanism
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency
@@ -740,6 +748,10 @@ explains the problem and gives an exploit example:
 > this challenge by logging in regularly but add `"oauth": true` to the
 > JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
+### Reset Bjoern's password via the Forgot Password mechanism
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+
 ### Forge a coupon code that gives you a discount of at least 80%
 
 For this challenge there are actually two distinct _solution paths_ that
@@ -752,8 +764,8 @@ totally different attack styles.
    [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
    to get the `coupons_2013.md.bak` file with old coupon codes.
 
-   ```
-   n<MibgC7sn
+```
+ n<MibgC7sn
  mNYS#gC7sn
  o*IVigC7sn
  k#pDlgC7sn
@@ -765,7 +777,7 @@ totally different attack styles.
  pEw8ogC7sn
  pes[BgC7sn
  l}6D$gC7ss
-   ```
+```
 
 2. There is an obvious pattern in the last characters, as the first
    eleven codes end with `gC7sn` and the last with `gC7ss`.
@@ -833,7 +845,7 @@ totally different attack styles.
    from that demo page. It just uses a minimum length of `60` instead of
    `8` for the resulting hash:
 
-   ```javascript
+```javascript
    var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 
   var id = hashids.encode(99);
@@ -841,7 +853,7 @@ totally different attack styles.
 
   $("#input").text("["+numbers.join(", ")+"]");
   $("#output").text(id);
-   ```
+```
 
 7. Encoding the value `99` gives you the hash result
    `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
