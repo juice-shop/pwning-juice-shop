@@ -24,9 +24,9 @@ The customization is powered by a YAML configuration file placed in
 1. Place your own `.yml` configuration file into `/config`
 2. Set the environment variable `NODE_ENV` to the filename of your
    config without the `.yml` extension
-* On Windows run `set NODE_ENV=nameOfYourConfig`
-* On Linux run `export NODE_ENV=nameOfYourConfig`
-1. Run `npm start`
+   * On Windows: `set NODE_ENV=nameOfYourConfig`
+   * On Linux: `export NODE_ENV=nameOfYourConfig`
+3. Run `npm start`
 
 You can also run a config directly in one command (on Linux) via
 `NODE_ENV=nameOfYourConfig npm start`. By default the
@@ -161,7 +161,7 @@ Juice Shop:
 * [Sick-Shop](https://github.com/bkimminich/juice-shop/blob/master/config/sickshop.yml):
   A store that offers a variety of illnesses. _Achoo!_ Bless you!
 * [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
-  Keeps the Juice Shop in its default layout but enables CTF flag codes in
-  the _"challenge solved"_-notifications. Refer to
-  [Appendix B: Hosting a CTF event](../appendix/ctf.md)
-  to learn more about running a CTF-event with OWASP Juice Shop.
+  Keeps the Juice Shop in its default layout but enables CTF flag codes
+  in the _"challenge solved"_-notifications. Refer to
+  [Appendix B: Hosting a CTF event](../appendix/ctf.md) to learn more
+  about running a CTF-event with OWASP Juice Shop.
