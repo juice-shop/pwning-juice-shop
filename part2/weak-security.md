@@ -6,6 +6,7 @@
 |:-----------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | 2 of 5     |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | 3 of 5     |
+| Inform the shop about a JWT issue. (Mention the exact secret used for the signature in the JWT in your comment.)        | 3 of 5     |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | 4 of 5     |
 | Wherever you go, there you are.                                                                                                    | 4 of 5     |
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | 5 of 5     |
@@ -59,6 +60,10 @@ hacking pleasure!
 > the challenge description is _not a joke_. Please do not try to break
 > into Bjoern's (or anyone else's) Google account. This would be a
 > criminal act.
+
+### Inform the shop about a JWT issue
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account
 

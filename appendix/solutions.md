@@ -620,6 +620,10 @@ rather easy to identify them:
 
 :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 
+### Inform the shop about a JWT issue
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency
