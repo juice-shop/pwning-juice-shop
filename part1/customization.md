@@ -169,6 +169,9 @@ Juice Shop:
   in the _"challenge solved"_-notifications. Refer to
   [Appendix B: Hosting a CTF event](../appendix/ctf.md) to learn more
   about running a CTF-event with OWASP Juice Shop.
+* [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
+  Keeps the Juice Shop in its default layout but hides all _"challenge
+  solved"_-notifications, GitHub ribbon and challenge hints.
 * [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
   this customization is for you.
