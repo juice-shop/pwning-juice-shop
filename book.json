@@ -15,5 +15,8 @@
       ],
       "size": "small"
     }
+  },
+  "variables": {
+    "juiceShopVersion": "v4.1.0"
   }
 }
