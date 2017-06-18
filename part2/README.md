@@ -12,7 +12,7 @@ following table lists all challenges of the OWASP Juice Shop in the same
 order as on the Score Board.
 
 > The challenge hints found in this release of the compantion guide are
-> compatible with `{{juiceShopVersion}}` of OWASP Juice Shop.
+> compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop.
 
 | Challenge                                                                                                                          | Hints                                                                                                                                   | Solution                                                                                                                                           |
 |:-----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
