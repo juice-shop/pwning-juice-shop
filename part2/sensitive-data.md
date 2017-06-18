@@ -44,17 +44,43 @@ use it to reset his password.
 
 #### Hints
 
-* The hardest part of this challenge is actually to find out who Jim actually is
+* The hardest part of this challenge is actually to find out who Jim
+  actually is
 * Jim picked one of the worst security questions and chose to answer it
   truthfully
 * As Jim is a celebrity, the answer to his question is quite easy to
   find in publicly available information on the internet
+* Brute forcing the answer should be possible with the right kind of
+  word list
 
 ### Reset Bender's password via the Forgot Password mechanism
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+Simliar to
+[the challenge of finding Jim's security answer](#reset-jims-password-via-the-forgot-password-mechanism)
+this challenge is about finding the answer to user Bender's security
+question. It is slightly harder to find out than Jim's answer.
+
+#### Hints
+
+* If you have no idea who Bender is, please put down this book _right
+  now_ and watch the first episodes of
+  [Futurama](http://www.imdb.com/title/tt0149460/) before you come back.
+* Unexpectedly, Bender also chose to answer his chosen question
+  truthfully
+* Hints to the answer to Bender's question can be found in publicly
+  available information on the internet
+* Brute forcing the answer should be next to impossible
 
 ### Reset Bjoern's password via the Forgot Password mechanism
+
+The final security question challenge is the one to find user Bjoern's
+anwswer. As the OWASP Juice Shop Project Leader and author of this book
+is not remotely as polular and publicly exposed as
+[Jim](#reset-jims-password-via-the-forgot-password-mechanism) or
+[Bender](#reset-benders-password-via-the-forgot-password-mechanism),
+this challenge should be significantly harder.
+
+#### Hints
 
 :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 
