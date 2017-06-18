@@ -5,7 +5,7 @@ Written by [Björn Kimminich](http://kimminich.de)
 ![OWASP Juice Shop logo](introduction/img/JuiceShop_Logo.png)
 
 This is the official companion guide to the __OWASP Juice Shop__
-application. Being a web application with 41 intended security
+application. Being a web application with 42 intended security
 vulnerabilities, the OWASP Juice Shop is supposed to be the opposite of
 a _best practice_ or _template application_ for web developers: It is an
 awareness, training, demonstration and exercise tool for security risks
