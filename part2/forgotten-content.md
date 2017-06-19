@@ -6,14 +6,15 @@ development team.
 
 ## Challenges covered in this chapter
 
-| Challenge                                                      | Difficulty |
-|:---------------------------------------------------------------|:-----------|
-| Access a confidential document.                                | 1 of 5     |
-| Access a salesman's forgotten backup file.                     | 2 of 5     |
-| Access a developer's forgotten backup file.                    | 3 of 5     |
-| Find the hidden easter egg.                                    | 3 of 5     |
-| Travel back in time to the golden era of web design.           | 3 of 5     |
-| Retrieve the language file that never made it into production. | 4 of 5     |
+| Challenge                                                                          | Difficulty |
+|:-----------------------------------------------------------------------------------|:-----------|
+| Access a confidential document.                                                    | 1 of 5     |
+| Access a salesman's forgotten backup file.                                         | 2 of 5     |
+| Access a developer's forgotten backup file.                                        | 3 of 5     |
+| Find the hidden easter egg.                                                        | 3 of 5     |
+| Travel back in time to the golden era of web design.                               | 3 of 5     |
+| Deprive the shop of earnings by downloading the blueprint for one of its products. | 3 of 5     |
+| Retrieve the language file that never made it into production.                     | 4 of 5     |
 
 ### Access a confidential document
 
@@ -101,6 +102,10 @@ experience** where you actually put the file **in action** with some DOM
 tree manipulation! Unfortunately the nostalgic vision only lasts until
 the next time you hit `F5` in your browser._
 
+### Deprive the shop of earnings by downloading the blueprint for one of its products
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+
 ### Retrieve the language file that never made it into production
 
 > A project is internationalized when all of the project’s materials and
@@ -125,4 +130,6 @@ menu.
   * _Investigate externally_ what languages are actually available.
 
 [^1]: https://en.wikipedia.org/wiki/Easter_egg_(media)
+
 [^2]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
+

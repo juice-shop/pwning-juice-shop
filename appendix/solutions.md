@@ -620,7 +620,7 @@ rather easy to identify them:
 
 :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 
-### Inform the shop about a JWT issue
+### Deprive the shop of earnings by downloading the blueprint for one of its products
 
 :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 
@@ -753,6 +753,10 @@ explains the problem and gives an exploit example:
 > JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 ### Reset Bjoern's password via the Forgot Password mechanism
+
+:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+
+### Inform the shop about a JWT issue
 
 :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
 

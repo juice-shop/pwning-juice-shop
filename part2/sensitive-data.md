@@ -82,6 +82,11 @@ this challenge should be significantly harder.
 
 #### Hints
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+* Bjoern chose to answer his chosen question truthfully but tried to
+  make it harder for attackers by applying sort of a historial twist
+* Hints to the answer to Bjoern's question can be found by looking him
+  up in social networks
+* Brute forcing the answer should be next to impossible
 
 [^1]: http://goodsecurityquestions.com
+
