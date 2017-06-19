@@ -52,7 +52,7 @@ _bad choice_ for a given requirement * or is used in an _insecure way_.
 * There are four possible answers and you only need to identify one to
   solve the challenge.
 * Cryptographic functions used in the
-  [Apply some advanced cryptanalysis to find _the real_ easter egg](#apply-some-advanced-cryptanalysis-to-find-_the-real_-easter-egg)
+  [Apply some advanced cryptanalysis to find _the real_ easter egg](#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
 
@@ -174,6 +174,6 @@ That is why the actual challenge here is to unlock and solve the
 > actually a valid address of the author. So, if you'd like to donate a
 > small amount for the ongoing maintenance and development of OWASP
 > Juice Shop - feel free to actually use it! More on
-> [donations in part 3](../part3/README.md#donations) of this book.
+> [donations in part 3](../part3/donations.md) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography

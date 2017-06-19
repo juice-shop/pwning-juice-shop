@@ -79,7 +79,7 @@ crucial in several other challenges later on.
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found **the real** easter
 egg! Of course finding **that** is
-[a follow-up challenge](crypto.md#apply-some-advanced-cryptanalysis-to-find-_the-real_-easter-egg)
+[a follow-up challenge](crypto.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
 to this one._
 
 ### Travel back in time to the golden era of web design

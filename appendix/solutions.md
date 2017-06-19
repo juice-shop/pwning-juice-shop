@@ -9,7 +9,7 @@ one possible solution is presented here. This is typically the easiest
 or most obvious one from the author's perspective.
 
 > The challenge solutions found in this release of the compantion guide
-> are compatible with `v4.0.0` of OWASP Juice Shop.
+> are compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop.
 
 ### Find the carefully hidden 'Score Board' page
 
