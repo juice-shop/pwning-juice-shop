@@ -17,6 +17,7 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v4.1.0"
+    "juiceShopVersion": "v4.1.0",
+    "juiceShopNumberOfChallenges": 43
   }
 }
