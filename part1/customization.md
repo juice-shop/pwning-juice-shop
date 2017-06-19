@@ -82,7 +82,7 @@ find its syntax along with an excerpt of the default settings.
     the _Your Basket_ screen. Defaults to
     `"https://www.facebook.com/owasp.juiceshop"`
 * `products` list which, when specified, replaces **the entire list** of
-  default products.
+  default products
   * `name` of the product (_mandatory_)
   * `description` of the product (_optional)_. Defaults to a static
     placeholder text
@@ -90,12 +90,16 @@ find its syntax along with an excerpt of the default settings.
   * `image` (_optional_) filename in `/app/public/images/products` _or_
     URL of an image to download to that folder and then use as a product
     image. Defaults to `undefined.png`
+  * `deletedDate` of the product in `YYYY-MM-DD` format (_optional_).
+    Defaults to `null`.
   * `useForProductTamperingChallenge` marks a product as the target for
-    [the "product tampering" challenge](../part2/privilege-escalation.md#change-the-href-of-the-link-within-the-o-saft-product-description)
-    (_must be `true` on exactly one product_)
+    [the "product tampering" challenge](../part2/privilege-escalation.md#change-the-href-of-the-link-within-the-o-saft-product-description).
+    Overrides `deletedDate` with `null` (_must be `true` on exactly one
+    product_)
   * `useForChristmasSpecialChallenge` marks a product as the target for
-    [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014)
-    (_must be `true` on exactly one product_)
+    [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014).
+    Overrides `deletedDate` with `2014-12-27` (_must be `true` on
+    exactly one product_)
 
 ### Configuration example
 
@@ -121,6 +125,11 @@ products:
     description: "The all-time classic."
     image: "apple_juice.jpg"
 # ~~~~~ ... ~~~~~~
+  - name: 'OWASP Juice Shop Sticker (2015/2016 design)'
+    description: 'Die-cut sticker with the official 2015/2016 logo...'
+    price: 999.99
+    image: 'sticker.png'
+    deletedDate: 2017-04-28
   - name: 'OWASP SSL Advanced Forensic Tool (O-Saft)'
     description: 'O-Saft is an easy to use tool to show information...'
     price: 0.01
