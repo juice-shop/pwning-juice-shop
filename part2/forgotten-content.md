@@ -104,7 +104,14 @@ the next time you hit `F5` in your browser._
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+Why waste money for a product when you can just as well get your hands
+on its blueprint in order to make it yourself?
+
+#### Hints
+
+* First you need to find out _which product_ this challenge is all about
+* For your inconvenience the blueprint was _not_ misplaced into the same
+  place like so many others forgotten files covered in this chapter
 
 ### Retrieve the language file that never made it into production
 
