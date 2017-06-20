@@ -45,11 +45,11 @@ on the given topic._
 
 __Download a .pdf, .epub, or .mobi file from:__
 
-* https://www.gitbook.com/book/bkimminich/pwning-owasp-juice-shop
+* https://leanpub.com/juice-shop
 
 __Read the book online at:__
 
-* https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/
+* https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content
 
 __Contribute content, suggestions, and fixes on GitHub:__
 
