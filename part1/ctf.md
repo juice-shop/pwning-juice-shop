@@ -102,11 +102,84 @@ preferred CTF score server!
 
 ### Generating CTFd challenges with `juice-shop-ctf-cli`
 
-:wrench:[**TODO**](https://github.com/bkimminich/pwning-juice-shop/issues/5)
+The
+[`juice-shop-ctf-cli`](https://www.npmjs.com/package/juice-shop-ctf-cli)
+is a simple command line tool, which will generate a list of SQL
+`INSERT` statements. These can be applied to the database underneath
+CTFd to generate mirror images of all current Juice Shop challenges in a
+CTFd score server. To install `juice-shop-ctf-cli` you need to have
+Node.js 4.x or higher installed. Simply execute
+
+```
+npm install -g juice-shop-ctf-cli
+```
+
+and then run the tool with
+
+```
+juice-shop-ctf
+```
+
+The tool will now ask a series of questions. All questions have default
+answers available which you can choose by simply hitting `ENTER`.
+
+[![asciicast](https://asciinema.org/a/120833.png)](https://asciinema.org/a/120833)
+
+1. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
+   Shop server where the tool will retrieve the existing challenges from
+   via the `/api/Challenges` API. Defaults to
+   `https://juice-shop.herokuapp.com` which always hosts the latest
+   official released version of OWASP Juice Shop.
+2. **Secret key <or> URL to ctf.key file?** Either a secret key to use
+   for the CTF flag codes _or_ a URL to a file containing such a key.
+   Defaults to
+   `https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key`
+   which is the key file provided with the latest official OWASP Juice
+   Shop release. See [Overriding the `ctf.key`](#overriding-the-ctfkey)
+   for more information.
+3. **DELETE all CTFd Challenges before INSERT statements?** Determines
+   if existing challenges from the CTFd database should be deleted
+   before the `INSERT` statements. Defaults to `Yes`.
+4. **INSERT a text hint along with each CTFd Challenge?** Offers a
+   selectable choice between
+   * `No text hints` will not add any hint texts to the CTFd database.
+     This is the default choice.
+   * `Free text hints` will add the `Challenge.hint` property from the
+     Juice Shop database as hint to the corresponding challenge on the
+     CTFd server. Viewing this hint is free.
+   * `Paid text hints` adds a hint per challenge like described above.
+     Viewing this hint costs the team 10% of that challenge's score
+     value.
+5. **INSERT a hint URL along with each CTFd Challenge?** Offers a
+   selectable choice between
+   * `No hint URLs` will not add any hint URLs to the CTFd database.
+     This is the default choice.
+   * `Free hint URLs` will add the `Challenge.hintUrl` property from the
+     Juice Shop database as a hint to the corresponding challenge on the
+     CTFd server. Viewing this hint is free.
+   * `Paid hint URLs` adds a hint per challenge like described above.
+     Viewing this hint costs the team 20% of that challenge's score
+     value.
+6. **SELECT all CTFd Challenges after INSERT statements?** Determines if
+   the created challenges should be retrieved after the `INSERT`
+   statements. Defaults to `Yes`.
+
+The category of each challenge is identical to its category in the Juice
+Shop database. The score value of each challenge is calculated by the
+`juice-shop-ctf-cli` program:
+
+* 1-star challenge = 100 points
+* 2-star challenge = 250 points
+* 3-star challenge = 450 points
+* 4-star challenge = 700 points
+* 5-star challenge = 1000 points
+
+The entire output of the tool will finally be written into
+`insert-ctfd-challenges.sql` in the folder the program was started in.
 
 ### Running CTFd
 
-Apply the generated `insert-ctfd-challenges.sql` following the steps
+To apply the generated `insert-ctfd-challenges.sql`, follow the steps
 describing your preferred CTFd run-mode below.
 
 #### Default setup (including SQLite database)
