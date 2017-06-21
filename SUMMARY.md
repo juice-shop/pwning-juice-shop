@@ -11,6 +11,7 @@
   * [Hacking exercise rules](part1/rules.md)
   * [Walking the "happy path"](part1/happy-path.md)
   * [Customization](part1/customization.md)
+  * [Hosting a CTF event](part1/ctf.md)
 
 ----
 
@@ -38,4 +39,4 @@
 ----
 
 * [Appendix A - Challenge solutions](appendix/solutions.md)
-* [Appendix B - Hosting a CTF event](appendix/ctf.md)
+* 

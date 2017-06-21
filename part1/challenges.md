@@ -55,7 +55,7 @@ Each challenge notification will also show a :checkered_flag: symbol
 with a character sequence next to it. If you are doing a hacking session
 just on your own, you can completely ignore this flag. The code is only
 relevant if you are participating in a CTF event. Please refer to
-[Appendix B](../appendix/ctf.md) for more information on hosting CTF
+[Appendix B](ctf.md) for more information on hosting CTF
 events.
 
 ## Saving and restoring hacking progress
