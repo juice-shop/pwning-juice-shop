@@ -6,7 +6,7 @@
 |:-----------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | 2 of 5     |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | 3 of 5     |
-| Inform the shop about a JWT issue. (Mention the exact secret used for the signature in the JWT in your comment.)        | 3 of 5     |
+| Inform the shop about a JWT issue. (Mention the exact secret used for the signature in the JWT in your comment.)                   | 3 of 5     |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | 4 of 5     |
 | Wherever you go, there you are.                                                                                                    | 4 of 5     |
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | 5 of 5     |
@@ -63,7 +63,26 @@ hacking pleasure!
 
 ### Inform the shop about a JWT issue
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+> JSON Web Token (JWT) is a compact, URL-safe means of representing
+> claims to be transferred between two parties. The claims in a JWT are
+> encoded as a JSON object that is used as the payload of a JSON Web
+> Signature (JWS) structure or as the plaintext of a JSON Web Encryption
+> (JWE) structure, enabling the claims to be digitally signed or
+> integrity protected with a Message Authentication Code (MAC) and/or
+> encrypted.[^1]
+
+OWASP Juice Shop uses JWT in order to identify its users and authorize
+them for the more sensitive functions of the shop. Unfortunately when an
+appropriate security mechanism is used or implemented improperly, all
+its security benefits might be null and void.
+
+#### Hints
+
+* As the challenge description suggests, you need to somehow retrieve
+  the secret that is used by the application when tokens are produced.
+* For this challenge a brute force attack might be more effective than
+  manual attacks or searching for specific exploits.
+* The site https://jwt.io proved to be a pretty useful resource
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account
 
@@ -104,7 +123,7 @@ _redirecting_ to a different location.
   information about how it works under to hood
 
 > White list validation involves defining exactly what _is_ authorized,
-> and by definition, everything else is not authorized.[^1]
+> and by definition, everything else is not authorized.[^2]
 
 ### Log in with the support team's original user credentials
 
@@ -128,4 +147,5 @@ run and troubleshoot the application. Not the slightest sign of
 * While it is also possible to use SQL Injection to log in as the
   support team, this will not solve the challenge.
 
-[^1]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
+[^1]: https://tools.ietf.org/html/rfc7519
+[^2]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation

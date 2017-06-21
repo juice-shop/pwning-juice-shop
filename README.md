@@ -45,7 +45,8 @@ on the given topic._
 
 __Download a .pdf, .epub, or .mobi file from:__
 
-* https://leanpub.com/juice-shop
+* https://leanpub.com/juice-shop (official release)
+* https://www.gitbook.com/book/bkimminich/pwning-owasp-juice-shop
 
 __Read the book online at:__
 
