@@ -188,7 +188,7 @@ Juice Shop:
 * [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
   Keeps the Juice Shop in its default layout but enables CTF flag codes
   in the _"challenge solved"_-notifications. Refer to
-  [Appendix B: Hosting a CTF event](ctf.md) to learn more
+  [Hosting a CTF event](ctf.md) to learn more
   about running a CTF-event with OWASP Juice Shop.
 * [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
   Keeps the Juice Shop in its default layout but hides all _"challenge

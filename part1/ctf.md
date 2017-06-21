@@ -38,7 +38,51 @@ training or workshop.
 
 ## Running Juice Shop in CTF-mode
 
-:wrench:[**TODO**](https://github.com/bkimminich/pwning-juice-shop/issues/5)
+Juice Shop supports _Jeopardy-style CTFs_ by generating a unique _CTF
+flag code_ for each solved challenge. These codes are not displayed by
+default, but can be made visible by running the application with the
+`config/ctf.yml` configuration:
+
+```
+set NODE_ENV=ctf     # on Windows
+export NODE_ENV=ctf  # on Linux
+
+npm start
+```
+
+On Linux you can also pass the `NODE_ENV` in directly in a single
+command
+
+```
+NODE_ENV=ctf npm start
+```
+
+When running the application as a Docker container instead execute
+
+```
+docker run -d -p 3000:3000 -e "NODE_ENV=ctf"
+```
+
+### Overriding the `ctf.key`
+
+Juice Shop uses the content of the provided `ctf.key` file as the secret
+component of the generated CTF flag codes. If you want to make sure that
+your flag codes are not the same for every hosted CTF event, you need to
+override that secret key.
+
+The simplest way to do so, is by providing an alternative secret key via
+the `CTF_KEY` environment variable:
+
+```
+set CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     # on Windows
+export CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # on Linux
+```
+
+or when using Docker
+
+```
+docker run -d -p 3000:3000 -e "NODE_ENV=ctf" -e "CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
 
 ## Choosing a CTF score server
 
@@ -49,7 +93,12 @@ training or workshop.
 Juice Shop comes with
 [the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
 to to simplify the hosting of CTFs using the open source
-[CTFd](https://ctfd.io) framework.
+[CTFd](https://ctfd.io) framework. This can significantly speed up your
+setup time for an event.
+
+Apart from that, CTFd is a very well-written and stable piece of Open
+Source Software, which is why OWASP Juice Shop recommends CTFd as its
+preferred CTF score server!
 
 ### Generating CTFd challenges with `juice-shop-ctf-cli`
 
@@ -106,8 +155,9 @@ describing your preferred CTFd run-mode below.
 
 ## Commercial use disclaimer
 
-:warning: Bear in mind: With the increasing number of challenge solutions (this
-book included) available on the Internet _it might **not** be wise to
-host a professional CTF for prize money_ with OWASP Juice Shop!
+:warning: Bear in mind: With the increasing number of challenge
+solutions (this book included) available on the Internet _it might
+**not** be wise to host a professional CTF for prize money_ with OWASP
+Juice Shop!
 
 [^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
