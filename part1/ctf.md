@@ -183,6 +183,8 @@ Shop database. The score value of each challenge is calculated by the
 The entire output of the tool will finally be written into
 `insert-ctfd-challenges.sql` in the folder the program was started in.
 
+![Juice Shop CTF CLI](img/cli_usage_screenshot.png)
+
 ### Running CTFd
 
 To apply the generated `insert-ctfd-challenges.sql`, follow the steps
@@ -228,7 +230,8 @@ describing your preferred CTFd run-mode below.
    the ports section you added to `docker-compose.yml` and then do
    `docker-compose up` again and you are ready to go!
 
-Once you have CTFd up and running, you should see all the created data in the _Challenges_ tab:
+Once you have CTFd up and running, you should see all the created data
+in the _Challenges_ tab:
 
 ![CTFd challenge overview](img/ctfd_1.png)
 
