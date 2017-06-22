@@ -13,7 +13,8 @@ training, demonstration and exercise tool for security risks in modern
 web applications. The OWASP Juice Shop is an open-source project hosted
 by the non-profit
 [Open Web Application Security Project (OWASP)](https://owasp.org) and
-is developed and maintained by volunteers.
+is developed and maintained by volunteers. The content of this book was
+written for {{book.juiceShopVersion}} of OWASP Juice Shop.
 
 The book is divided into three parts:
 

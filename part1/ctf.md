@@ -100,6 +100,9 @@ Apart from that, CTFd is a very well-written and stable piece of Open
 Source Software, which is why OWASP Juice Shop recommends CTFd as its
 preferred CTF score server!
 
+This setup guide assumes that you use CTFd {{book.ctfdVersion}} or
+higher.
+
 ### Generating CTFd challenges with `juice-shop-ctf-cli`
 
 The
@@ -107,8 +110,11 @@ The
 is a simple command line tool, which will generate a list of SQL
 `INSERT` statements. These can be applied to the database underneath
 CTFd to generate mirror images of all current Juice Shop challenges in a
-CTFd score server. To install `juice-shop-ctf-cli` you need to have
-Node.js 4.x or higher installed. Simply execute
+CTFd score server. The following instructions were written for
+{{book.juiceShopCtfVersion}} of `juice-shop-ctf-cli`.
+
+To install `juice-shop-ctf-cli` you need to have Node.js 4.x or higher
+installed. Simply execute
 
 ```
 npm install -g juice-shop-ctf-cli
@@ -222,6 +228,12 @@ describing your preferred CTFd run-mode below.
    the ports section you added to `docker-compose.yml` and then do
    `docker-compose up` again and you are ready to go!
 
+Once you have CTFd up and running, you should see all the created data in the _Challenges_ tab:
+
+![CTFd challenge overview](img/ctfd_1.png)
+
+![CTFd challenge details](img/ctfd_2.png)
+
 ## Using other CTF frameworks
 
 :wrench:[**TODO**](https://github.com/bkimminich/pwning-juice-shop/issues/5)
@@ -234,3 +246,4 @@ solutions (this book included) available on the Internet _it might
 Juice Shop!
 
 [^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
+
