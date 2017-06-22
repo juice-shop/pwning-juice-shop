@@ -36,7 +36,7 @@ The OWASP Juice Shop employs a simple yet powerful gamification
 mechanism: Instant success feedback! Whenever you solve a hacking
 challenge, a notification is _immediately_ shown on the user interface.
 
-!["Challenge solved!" push notification](img/notification.png)
+!["Challenge solved!" push notification](img/notification_with_flag.png)
 
 This feature makes it unnecessary to switch back and forth between the
 screen you are attacking and the score board to verify if you succeeded.

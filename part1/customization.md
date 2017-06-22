@@ -38,14 +38,16 @@ configurations.
 ### Overriding `default.yml` in Docker container
 
 In order to override the default configuration inside your Docker
-container with one of the provided configs, you can pass in the `NODE_ENV`
-environment variable with the `-e` parameter:
+container with one of the provided configs, you can pass in the
+`NODE_ENV` environment variable with the `-e` parameter:
 
 ```
 docker run -d -p 3000:3000 -e "NODE_ENV=bodgeit"
 ```
 
-In order to inject your own configuration, you can use `-v` to mount the `default.yml` path inside the container to any config file on your outside file system:
+In order to inject your own configuration, you can use `-v` to mount the
+`default.yml` path inside the container to any config file on your
+outside file system:
 
 ```
 docker run -d -p 3000:3000 -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myConfig.yml --name juice-shop bkimminich/juice-shop
@@ -186,10 +188,10 @@ Juice Shop:
 * [Sick-Shop](https://github.com/bkimminich/juice-shop/blob/master/config/sickshop.yml):
   A store that offers a variety of illnesses. _Achoo!_ Bless you!
 * [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
-  Keeps the Juice Shop in its default layout but enables CTF flag codes
-  in the _"challenge solved"_-notifications. Refer to
-  [Hosting a CTF event](ctf.md) to learn more
-  about running a CTF-event with OWASP Juice Shop.
+  Keeps the Juice Shop in its default layout but disabled hints while
+  enabling CTF flag codes in the _"challenge solved"_-notifications.
+  Refer to [Hosting a CTF event](ctf.md) to learn more about running a
+  CTF-event with OWASP Juice Shop.
 * [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
   Keeps the Juice Shop in its default layout but hides all _"challenge
   solved"_-notifications, GitHub ribbon and challenge hints.

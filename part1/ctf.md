@@ -63,6 +63,8 @@ When running the application as a Docker container instead execute
 docker run -d -p 3000:3000 -e "NODE_ENV=ctf"
 ```
 
+!["Challenge solved!" push notification with flag](https://github.com/bkimminich/pwning-juice-shop/raw/master/part1/img/notification_with_flag.png)
+
 ### Overriding the `ctf.key`
 
 Juice Shop uses the content of the provided `ctf.key` file as the secret
@@ -84,9 +86,35 @@ or when using Docker
 docker run -d -p 3000:3000 -e "NODE_ENV=ctf" -e "CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-## Choosing a CTF score server
+## CTF event infrastructure
 
-:wrench:[**TODO**](https://github.com/bkimminich/pwning-juice-shop/issues/5)
+The pivotal point of any Jeopardy-style CTF event is a central
+score-tracking server. It manages the status of the CTF, typically
+including
+
+* registration dialogs for teams and users
+* leaderboard of users/teams participating in the event
+* challenge board with the open/solved hacking tasks and their score
+  value
+* which challenges have been solved already and by whom
+
+Apart from the server each participant should have their own instance of
+OWASP Juice Shop. Having a shared instance for each team is strongly
+disrecommended, because Juice Shop is programmed as a single-user
+application. It is absolutely important that all Juice Shop instances
+participating in a CTF use the same [secret key to generate their CTF
+flag codes](#overriding-the-ctfkey). The score server must be set up
+accordingly to accept exactly those flag codes for solving the hacking
+challenges and allocating their score to the first team/user that solved
+it.
+
+As long as the flag code key is identical for all of them, it does not
+matter which run option for the Juice Shop each participant uses: Local
+Node.js, Docker container or Heroku/Amazon EC2 instances all work fine
+as they are independently running anyway! There is no runtime dependency
+to the score server either, as participants simply enter the flag code
+they see upon solving a challenge manually somewhere on the score
+server's user interface.
 
 ## Setting up CTFd for Juice Shop
 
@@ -94,11 +122,14 @@ Juice Shop comes with
 [the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
 to to simplify the hosting of CTFs using the open source
 [CTFd](https://ctfd.io) framework. This can significantly speed up your
-setup time for an event.
+setup time for an event, because things like using the same secret key
+for the flag codes are taken care of mostly automatic.
 
-Apart from that, CTFd is a very well-written and stable piece of Open
-Source Software, which is why OWASP Juice Shop recommends CTFd as its
-preferred CTF score server!
+CTFd is a very well-written and stable piece of Open Source Software,
+which is why OWASP Juice Shop recommends it as its preferred CTF score
+server!
+
+![CTFd logo](img/ctfd_logo.png)
 
 This setup guide assumes that you use CTFd {{book.ctfdVersion}} or
 higher.
