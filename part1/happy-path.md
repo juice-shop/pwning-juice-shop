@@ -52,7 +52,14 @@ In case you are a new customer, you must first register by following the
 corresponding link on the login screen to `#/register`. There you must
 enter your email address and a password to create a new user account.
 With these credentials you can then log in... and finally start
-shopping!
+shopping! During registration you also choose and anwswer a security
+question that will let you recover the account if you ever forget your
+password.
+
+### Forgot Password
+
+By provoding your email address, the answer to your security question
+and a new password, you can revocer an otherwise unaccessible account.
 
 ### Choosing products to purchase
 
@@ -124,6 +131,15 @@ The _Complain?_ button is shown only to logged in users in the navbar.
 It brings you to the `#/complain` page where you can leave a free text
 _Message_ and also attach an _Invoice_ file.
 
+### Pomace Recycling
+
+When logged in you will furthermore see a _Recycle_ button that brings
+you to the `#/recycle` page. This is a very innovative feature that
+allows eco-friendly customers to order pre-stamped boxes for returning
+fruit pressing leftovers to the Juice Shop. For greater amounts of
+pomace the customer can alternatively order a truck to come by and pick
+it up.
+
 ### Change user password
 
 If you are currently logged in you will find the obligatory _Change
@@ -132,4 +148,6 @@ you can then choose a new password. To prevent abuse you have of course
 to supply your current password to legitimate this change.
 
 [^1]: https://www.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
+
 [^2]: http://xunitpatterns.com/happy%20path.html
+
