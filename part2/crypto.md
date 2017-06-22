@@ -118,10 +118,8 @@ up to you to forge your own.
 The OWASP Juice Shop is _so broken_ that even its convenience features
 (which have nothing to do with the e-commerce use cases) are designed to
 be vulnerable. One of these features is the
-[Your Hacking Session](/part1/challenges.md#saving-and-restoring-hacking-progress)
-section on top of the Score Board that allows to save and restore
-previously achieved hacking progress after a server crash or a few days
-pause.
+[automatic saving and restoring of hacking progress](/part1/challenges.md#automatic-saving-and-restoring-hacking-progress)
+after a server crash or a few days pause.
 
 In order to not mess with the _real challenges_ accidentally, the
 challenge is to fake a signal to the application that you successfully
@@ -177,3 +175,4 @@ That is why the actual challenge here is to unlock and solve the
 > [donations in part 3](../part3/donations.md) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
+

@@ -34,8 +34,8 @@ or most obvious one from the author's perspective.
  </nav>
 ```
 
-3. Notice the commented out `<li>` entry labeled "Score Board".
-4. Navigate to http://localhost:3000/#/score-board to solve the
+1. Notice the commented out `<li>` entry labeled "Score Board".
+2. Navigate to http://localhost:3000/#/score-board to solve the
    challenge.
 
 ### Provoke an error that is not very gracefully handled.
@@ -787,22 +787,22 @@ totally different attack styles.
  l}6D$gC7ss
 ```
 
-2. There is an obvious pattern in the last characters, as the first
+1. There is an obvious pattern in the last characters, as the first
    eleven codes end with `gC7sn` and the last with `gC7ss`.
-3. You can rightfully speculate that the last five characters represent
+2. You can rightfully speculate that the last five characters represent
    the actual discount value. The change in the last character for the
    12th code comes from a different (probably higher) discount in
    December! :santa:
-4. Check the official Juice Shop Twitter account for a valid coupon
+3. Check the official Juice Shop Twitter account for a valid coupon
    code: <https://twitter.com/owasp_juiceshop>
-5. At the time of this writing - January 2017 - the broadcasted coupon
+4. At the time of this writing - January 2017 - the broadcasted coupon
    was `n<Mibh.u)v` promising a 50% discount.
-6. Assuming that the discount value is encoded in the last 2-5
+5. Assuming that the discount value is encoded in the last 2-5
    characters of the code, you could now start a trial-end-error or
    brute force attack generating codes and try redeeming them on the
    _Your Basket_ page. At some point you will probably hit one that
    gives 80% or more discount.
-7. You need to _Checkout_ after redeeming your code to solve the
+6. You need to _Checkout_ after redeeming your code to solve the
    challenge.
 
 #### _Reverse engineering_ solution path
@@ -838,7 +838,7 @@ totally different attack styles.
 
 ### Solve challenge #99
 
-1. Open the _Score Board_ and click the _Save Progress_ button
+1. Solve any other challenge
 2. Inspect the cookies in your browser to find a `continueCode` cookie
    with 30 days lifetime
 3. The `package.json.bak` contains the library used for generating
@@ -863,11 +863,12 @@ totally different attack styles.
   $("#output").text(id);
 ```
 
-7. Encoding the value `99` gives you the hash result
+1. Encoding the value `99` gives you the hash result
    `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
-8. Overwrite your `continueCode` cookie with this value and use the
-   _Restore Progress_ button on the _Score Board_ to solve the
-   challenge.
+2. Send a `PUT` request to the URL
+   <http://localhost:3000/rest/continue-code/apply/69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj>
+
+   ![Challenge #99 in PostMan](img/challenge99_postman.png)
 
 ### Log in with the support team's original user credentials
 
@@ -937,6 +938,10 @@ totally different attack styles.
    to solve this challenge and marvel at the premium content!
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
+
 [^2]: <https://en.wikipedia.org/wiki/Easter_egg_(media)>
+
 [^3]: <https://en.wikipedia.org/wiki/ROT13>
+
 [^4]: <http://www.kli.org/about-klingon/klingon-history>
+
