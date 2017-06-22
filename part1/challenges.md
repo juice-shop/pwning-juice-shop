@@ -36,7 +36,7 @@ The OWASP Juice Shop employs a simple yet powerful gamification
 mechanism: Instant success feedback! Whenever you solve a hacking
 challenge, a notification is _immediately_ shown on the user interface.
 
-!["Challenge solved!" push notification](img/notification_with_flag.png)
+!["Challenge solved!" push notification](img/challenge_solved_notification.png)
 
 This feature makes it unnecessary to switch back and forth between the
 screen you are attacking and the score board to verify if you succeeded.
@@ -51,14 +51,16 @@ case a number of notifications "piled up" it is not necessary to dismiss
 each one individually, as a simple reload of the UI in the browser (`F5`
 key) will dismiss all at the same time.
 
-Each challenge notification will also show a :checkered_flag: symbol
-with a character sequence next to it. If you are doing a hacking session
-just on your own, you can completely ignore this flag. The code is only
-relevant if you are participating in a CTF event. Please refer to
-[Appendix B](ctf.md) for more information on hosting CTF
-events.
+Depending on your application configuration, each challenge notification
+might also also show a :checkered_flag: symbol with a character sequence
+next to it. If you are doing a hacking session just on your own, you can
+completely ignore this flag. The code is only relevant if you are
+participating in a CTF event. Please refer to chapter
+[Hosting a CTF event](ctf.md) for more information this topic.
 
-## Saving and restoring hacking progress
+!["Challenge solved!" notification with flag code](img/notification_with_flag.png)
+
+## Automatic saving and restoring hacking progress
 
 The ["self-healing" feature](running.md#self-healing-feature) - by
 wiping the entire database on server start - of Juice Shop was
@@ -69,26 +71,21 @@ every restart you start with a "clean" 0% score board and all challenges
 in _unsolved_ state.
 
 To keep the resilience against data corruption but allow users to "pick
-up where they left off" after a server restart, you can manually save
-your hacking progress using a button on the top of the Score Board:
+up where they left off" after a server restart, your hacking progress is
+automatically saved whenever you solve a challenge - as long as you
+allow Browser cookies!
 
-![Your Hacking Session section in the Score Board](img/your-hacking-session.png)
+After restarting the server, once you visit the application your hacking
+progress is automatically restored:
 
-If you previously saved your hacking progress, you can restore it with
-the corresponding button up to 30 days after your previous hacking
-session.
+![Auto-restoring hacking progress](img/autorestore-hacking-progress.png)
 
-Please be aware that __your progress is never automatically saved__, so
-it is highly recommended to __save your progress regularly__ if you want
-to avoid re-doing challenges a lot. After a server crash, you can then
-simply restore the previous hacking progress:
+The auto-save mechanism keeps your progress for up to 30 days after your
+previous hacking session. When the score board is restored to its prior
+state, a torrent of success notifications will light up - depending on
+how many challenges you solved up to that point. As mentioned earlier
+these can be bulk-dismissed by reloading the page with the `F5` key.
 
-1. Restart the application (e.g. via `npm start` or by restarting the
-   Docker container).
-2. Navigate to the (now wiped) score board.
-3. Click the _Restore Progress_ button.
-
-The score board will now be restored to its prior state and - depending
-on how many challenges you solved up to that point - a torrent of
-success notifications will light up. As mentioned earlier these can be
-bulk-dismissed by reloading the page with the `F5` key.
+If you want to start over with a fresh hacking session, simply click the
+_Delete cookie to clear hacking progress_ button. After the next server
+restart, your score board will be blank.

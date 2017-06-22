@@ -39,9 +39,12 @@ training or workshop.
 ## Running Juice Shop in CTF-mode
 
 Juice Shop supports _Jeopardy-style CTFs_ by generating a unique _CTF
-flag code_ for each solved challenge. These codes are not displayed by
-default, but can be made visible by running the application with the
-`config/ctf.yml` configuration:
+flag code_ for each solved challenge.
+
+!["Challenge solved!" notification with flag code](img/notification_with_flag.png)
+
+These codes are not displayed by default, but can be made visible by
+running the application with the `config/ctf.yml` configuration:
 
 ```
 set NODE_ENV=ctf     # on Windows
@@ -63,7 +66,15 @@ When running the application as a Docker container instead execute
 docker run -d -p 3000:3000 -e "NODE_ENV=ctf"
 ```
 
-!["Challenge solved!" push notification with flag](https://github.com/bkimminich/pwning-juice-shop/raw/master/part1/img/notification_with_flag.png)
+The `ctf.yml` configuration furthermore hides the GitHub ribbon in the
+top right corner of the screen. It also hides all hints from the score
+board. Instead it will make the _solved_-labels on the score board
+clickable which results in the corresponding _"challenge
+solved!"_-notification being repated. This can be useful in case you
+forgot to copy a flag code before closing the corresponding
+notification.
+
+![Repeat notification via Score Board](img/repeat_notification.png)
 
 ### Overriding the `ctf.key`
 
@@ -111,10 +122,10 @@ it.
 As long as the flag code key is identical for all of them, it does not
 matter which run option for the Juice Shop each participant uses: Local
 Node.js, Docker container or Heroku/Amazon EC2 instances all work fine
-as they are independently running anyway! _There is no runtime dependency
-to the score server_ either, as participants simply enter the flag code
-they see upon solving a challenge manually somewhere on the score
-server's user interface, typically via their browser:
+as they are independently running anyway! _There is no runtime
+dependency to the score server_ either, as participants simply enter the
+flag code they see upon solving a challenge manually somewhere on the
+score server's user interface, typically via their browser:
 
 ![CTF Infrastructure Example](/part1/img/CTF_Infrastructure.png)
 
@@ -273,7 +284,40 @@ in the _Challenges_ tab:
 
 ## Using other CTF frameworks
 
-:wrench:[**TODO**](https://github.com/bkimminich/pwning-juice-shop/issues/5)
+As mentioned above, [CTFd](https://ctfd.io) is not the only possible
+score server you can use. Open Source alternatives are for example
+[FBCTF](https://github.com/facebook/fbctf) from Facebook,
+[Mellivora](https://github.com/Nakiami/mellivora) or
+[NightShade](https://github.com/UnrealAkama/NightShade). You can find a
+nicely curated list of CTF platforms and related tools & resources in
+[Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
+
+All these platforms have one thing in common: You have to set up the
+challenges inside them on your own. Of course you can choose aspects
+like score per challenge, description etc. like you want. For the CTF to
+_actually work_ there is only one mandatory prerequisite:
+
+The flag code for each `Challenge` entity from the Juice Shop DB must be
+set to the result of
+
+```
+HMAC_SHA1(ctfKey, Challenge.name)
+```
+
+Feel free to use
+[the implementation within `juice-shop-ctf-cli`](https://github.com/bkimminich/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
+as an example:
+
+```
+var jsSHA = require('jssha')
+
+function hmacSha1 (secretKey, text) {
+  var shaObj = new jsSHA('SHA-1', 'TEXT')
+  shaObj.setHMACKey(secretKey, 'TEXT')
+  shaObj.update(text)
+  return shaObj.getHMAC('HEX')
+}
+```
 
 ## Commercial use disclaimer
 
