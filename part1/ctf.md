@@ -111,10 +111,13 @@ it.
 As long as the flag code key is identical for all of them, it does not
 matter which run option for the Juice Shop each participant uses: Local
 Node.js, Docker container or Heroku/Amazon EC2 instances all work fine
-as they are independently running anyway! There is no runtime dependency
-to the score server either, as participants simply enter the flag code
+as they are independently running anyway! _There is no runtime dependency
+to the score server_ either, as participants simply enter the flag code
 they see upon solving a challenge manually somewhere on the score
-server's user interface.
+server's user interface, typically via their browser:
+
+![CTF Infrastructure Example](/part1/img/CTF_Infrastructure.png)
+
 
 ## Setting up CTFd for Juice Shop
 
