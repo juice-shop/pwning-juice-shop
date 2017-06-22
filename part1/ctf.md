@@ -297,12 +297,15 @@ challenges inside them on your own. Of course you can choose aspects
 like score per challenge, description etc. like you want. For the CTF to
 _actually work_ there is only one mandatory prerequisite:
 
-The flag code for each `Challenge` entity from the Juice Shop DB must be
-set to the result of
+The flag code for each challenge must be declared as the result of
 
 ```
-HMAC_SHA1(ctfKey, Challenge.name)
+HMAC_SHA1(ctfKey, challenge.name)
 ```
+
+with `challenge.name` being the `name` column of the `Challenges` table
+in the Juice Shop's underlying database. The `ctfKey` has been described
+in the [Overriding the `ctf.key`](#overriding-the-ctfkey) section above.
 
 Feel free to use
 [the implementation within `juice-shop-ctf-cli`](https://github.com/bkimminich/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
@@ -319,6 +322,29 @@ function hmacSha1 (secretKey, text) {
 }
 ```
 
+> In cryptography, a keyed-hash message authentication code (HMAC) is a
+> specific type of message authentication code (MAC) involving a
+> cryptographic hash function and a secret cryptographic key. It may be
+> used to simultaneously verify both the data integrity and the
+> authentication of a message, as with any MAC. Any cryptographic hash
+> function, such as MD5 or SHA-1, may be used in the calculation of an
+> HMAC; the resulting MAC algorithm is termed HMAC-MD5 or HMAC-SHA1
+> accordingly. The cryptographic strength of the HMAC depends upon the
+> cryptographic strength of the underlying hash function, the size of
+> its hash output, and on the size and quality of the key.
+>
+> An iterative hash function breaks up a message into blocks of a fixed
+> size and iterates over them with a compression function. For example,
+> MD5 and SHA-1 operate on 512-bit blocks. The size of the output of
+> HMAC is the same as that of the underlying hash function (128 or 160
+> bits in the case of MD5 or SHA-1, respectively), although it can be
+> truncated if desired.
+>
+> HMAC does not encrypt the message. Instead, the message (encrypted or
+> not) must be sent alongside the HMAC hash. Parties with the secret key
+> will hash the message again themselves, and if it is authentic, the
+> received and computed hashes will match.[^2]
+
 ## Commercial use disclaimer
 
 :warning: Bear in mind: With the increasing number of challenge
@@ -327,4 +353,6 @@ solutions (this book included) available on the Internet _it might
 Juice Shop!
 
 [^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
+
+[^2]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
 
