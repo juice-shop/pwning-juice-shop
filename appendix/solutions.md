@@ -639,8 +639,7 @@ rather easy to identify them:
 
    ![Bender](img/Bender_Rodriguez.png)
 2. Visit https://en.wikipedia.org/wiki/Bender_(Futurama) and read the
-   [Character Biography](https://en.wikipedia.org/wiki/Bender_(Futurama)#Character_biography)
-   section
+   _Character Biography_ section
 3. It tells you that Bender had a job at the metalworking factory,
    bending steel girders for the construction of _suicide booths_.
 4. Find out more on _Suicide Booths_ on
