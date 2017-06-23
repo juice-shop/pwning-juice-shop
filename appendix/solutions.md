@@ -654,7 +654,16 @@ rather easy to identify them:
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product indicates that this product might actually have kind of a blueprint
+2. Download the product image from http://localhost:3000/public/images/products/3d_keychain.jpg and view its [Exif metadata](https://en.wikipedia.org/wiki/Exif)
+
+   ![3D printed logo Exif metadata](img/exif-3d_keychain.png)
+3. Researching the camera model entry _OpenSCAD_ reveals that this is a program to create 3D models, which works with `.stl` files
+4. As no further hint on the blueprint filename or anything is given, a lucky guess or brute force attack is your only choice
+5. Download http://localhost:3000/public/images/products/JuiceShop.stl to solve this challenge
+6. This model will actually allow you to 3D-print your own OWASP Juice Shop logo models!
+
+   ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
 
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
