@@ -300,7 +300,22 @@ in order to exploit and solve them:
 
 ### Reset Jim's password via the Forgot Password mechanism
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+1. Trying to find out who "Jim" might be should _eventually_ lead you to
+   _James T. Kirk_ as a possible option
+
+   ![James T. Kirk](img/Star_Trek_William_Shatner.JPG)
+2. Visit https://en.wikipedia.org/wiki/James_T._Kirk and read the
+   [Depiction](https://en.wikipedia.org/wiki/James_T._Kirk#Depiction)
+   section
+3. It tells you that Jim has a brother named _George Samuel Kirk_
+4. Visit http://localhost:3000/#/forgot-password and provide
+   `jim@juice-sh.op` as your _Email_
+5. In the subsequently appearing form, provide `Samuel` as _Your eldest
+   siblings middle name?_
+6. Then type any _New Password_ and matching _Repeat New Password_
+7. Click _Change_ to solve this challenge
+
+   ![Password reset for Jim](img/jim_forgot-password.png)
 
 ### Log in with Jim's user account
 
@@ -618,7 +633,25 @@ rather easy to identify them:
 
 ### Reset Bender's password via the Forgot Password mechanism
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+1. Trying to find out who "Bender" might be should _immediately_ lead
+   you to _Bender from [Futurama](http://www.imdb.com/title/tt0149460/)_
+   as the only viable option
+
+   ![Bender](img/Bender_Rodriguez.png)
+2. Visit https://en.wikipedia.org/wiki/Bender_(Futurama) and read the
+   [Character Biography](https://en.wikipedia.org/wiki/Bender_(Futurama)#Character_biography)
+   section
+3. It tells you that Bender had a job at the metalworking factory,
+   bending steel girders for the construction of _suicide booths_.
+4. Find out more on _Suicide Booths_ on
+   http://futurama.wikia.com/wiki/Suicide_booth
+5. This site tells you that their most important brand is _Stop'n'Drop_
+6. Visit http://localhost:3000/#/forgot-password and provide
+   `bender@juice-sh.op` as your _Email_
+7. In the subsequently appearing form, provide `Stop'n'Drop` as _Company
+   you first work for as an adult?_
+8. Then type any _New Password_ and matching _Repeat New Password_
+9. Click _Change_ to solve this challenge
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
