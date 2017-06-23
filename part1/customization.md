@@ -98,9 +98,9 @@ find its syntax along with an excerpt of the default settings.
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
-  * `description` of the product (_optional)_. Defaults to a static
+  * `description` of the product (_optional_). Defaults to a static
     placeholder text
-  * `price` of the product (_optional)_. Defaults to a random price
+  * `price` of the product (_optional_). Defaults to a random price
   * `image` (_optional_) filename in `/app/public/images/products` _or_
     URL of an image to download to that folder and then use as a product
     image. Defaults to `undefined.png`
@@ -114,6 +114,18 @@ find its syntax along with an excerpt of the default settings.
     [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014).
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
     exactly one product_)
+  * `fileForRetrieveBlueprintChallenge` (:warning:_optional on exactly
+    one product_) filename in `/app/public/images/products` _or_ URL of
+    a file download to that folder and then use as the target for the
+    [Retrieve Blueprint](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
+    challenge. To make this challenge solvable, include some kind of
+    hint to the blueprint file's name/type in the product image (e.g.
+    its `Exif` metadata) or in the product description. Defaults to
+    :warning: `JuiceShop.stl`
+
+> :warning: Please be aware that `fileForRetrieveBlueprintChallenge`
+> will become _**mandatory** on exactly one product_ and the fallback to
+> `JuiceShop.stl` will be **deactivated** with Juice Shop v5.0!
 
 ### Configuration example
 
@@ -154,6 +166,11 @@ products:
     price: 29.99
     image: 'undefined.jpg'
     useForChristmasSpecialChallenge: true
+  - name: 'OWASP Juice Shop Logo (3D-printed)'
+    description: 'This rare item was designed and handcrafted in Sweden...'
+    price: 99.99
+    image: '3d_keychain.jpg' # Exif metadata contains "OpenSCAD" as subtle hint...
+    fileForRetrieveBlueprintChallenge: 'JuiceShop.stl' # ...to blueprint file type
 # ~~~~~ ... ~~~~~~
 ```
 

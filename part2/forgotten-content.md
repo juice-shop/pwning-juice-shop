@@ -109,7 +109,8 @@ on its blueprint in order to make it yourself?
 
 #### Hints
 
-* First you need to find out _which product_ this challenge is all about
+* The product you might want to give a closer look is the _OWASP Juice
+  Shop Logo (3D-printed)_
 * For your inconvenience the blueprint was _not_ misplaced into the same
   place like so many others forgotten files covered in this chapter
 
