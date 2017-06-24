@@ -5,11 +5,11 @@ online shop which sells - _surprise!_ - fruit & vegetable juice and
 associated products. Except for the entirely overrated payment and
 delivery aspect of the e-commerce business, the Juice Shop is fully
 functional. But this is just the tip of the iceberg. The Juice Shop
-contains over 30 challenges of varying difficulty where you are supposed
-to exploit underlying security vulnerabilities. These vulnerabilities
-were intentionally planted in the application for exactly that purpose,
-but in a way that actually happens in "real-life" web development as
-well!
+contains {{book.juiceShopNumberOfChallenges}} challenges of varying
+difficulty where you are supposed to exploit underlying security
+vulnerabilities. These vulnerabilities were intentionally planted in the
+application for exactly that purpose, but in a way that actually happens
+in "real-life" web development as well!
 
 Your hacking progress is tracked by the application using immediate push
 notifications for successful exploits as well as a score board for
