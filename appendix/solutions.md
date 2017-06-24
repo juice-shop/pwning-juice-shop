@@ -654,14 +654,21 @@ rather easy to identify them:
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
-1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product indicates that this product might actually have kind of a blueprint
-2. Download the product image from http://localhost:3000/public/images/products/3d_keychain.jpg and view its [Exif metadata](https://en.wikipedia.org/wiki/Exif)
+1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product
+   indicates that this product might actually have kind of a blueprint
+2. Download the product image from
+   http://localhost:3000/public/images/products/3d_keychain.jpg and view
+   its [Exif metadata](https://en.wikipedia.org/wiki/Exif)
 
    ![3D printed logo Exif metadata](img/exif-3d_keychain.png)
-3. Researching the camera model entry _OpenSCAD_ reveals that this is a program to create 3D models, which works with `.stl` files
-4. As no further hint on the blueprint filename or anything is given, a lucky guess or brute force attack is your only choice
-5. Download http://localhost:3000/public/images/products/JuiceShop.stl to solve this challenge
-6. This model will actually allow you to 3D-print your own OWASP Juice Shop logo models!
+3. Researching the camera model entry _OpenSCAD_ reveals that this is a
+   program to create 3D models, which works with `.stl` files
+4. As no further hint on the blueprint filename or anything is given, a
+   lucky guess or brute force attack is your only choice
+5. Download http://localhost:3000/public/images/products/JuiceShop.stl
+   to solve this challenge
+6. This model will actually allow you to 3D-print your own OWASP Juice
+   Shop logo models!
 
    ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
 
@@ -795,7 +802,17 @@ explains the problem and gives an exploit example:
 
 ### Reset Bjoern's password via the Forgot Password mechanism
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+1. Trying to find out who "Bjoern" might be should quickly lead you to
+   the OWASP Juice Shop project leader and author of this ebook
+2. Visit https://www.facebook.com/bjoern.kimminich to learn that he is
+   from the town of _Uetersen_ in Germany
+3. :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+4. Visit http://localhost:3000/#/forgot-password and provide
+   `bjoern.kimminich@googlemail.com` as your _Email_
+5. In the subsequently appearing form, provide `West-2082` as _Your
+   ZIP/postal code when you were a teenager?_
+6. Then type any _New Password_ and matching _Repeat New Password_
+7. Click _Change_ to solve this challenge
 
 ### Inform the shop about a JWT issue
 
