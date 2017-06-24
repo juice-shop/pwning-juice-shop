@@ -131,7 +131,7 @@ The _Complain?_ button is shown only to logged in users in the navbar.
 It brings you to the `#/complain` page where you can leave a free text
 _Message_ and also attach an _Invoice_ file.
 
-### Pomace Recycling
+### Request Recycling Box
 
 When logged in you will furthermore see a _Recycle_ button that brings
 you to the `#/recycle` page. This is a very innovative feature that

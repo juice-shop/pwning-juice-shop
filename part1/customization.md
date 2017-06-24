@@ -95,6 +95,13 @@ find its syntax along with an excerpt of the default settings.
   * `facebookUrl` used as the Facebook link promising coupon codes on
     the _Your Basket_ screen. Defaults to
     `"https://www.facebook.com/owasp.juiceshop"`
+  * `recyclePage` custom elements on the _Request Recycling Box_ page
+    * `topProductImage` filename in `/app/public/images/products` to use
+      as the image on the top of the info column on the page. Defaults
+      to `fruit_press.jpg`
+    * `bottomProductImage` filename in `/app/public/images/products` to
+      use as the image on the bottom of the info column on the page.
+      Defaults to `apple_pressings.jpg`
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -145,6 +152,9 @@ application:
   theme: "slate"
   twitterUrl: "https://twitter.com/owasp_juiceshop"
   facebookUrl: "https://www.facebook.com/owasp.juiceshop"
+  recyclePage:
+    topProductImage: fruit_press.jpg
+    bottomProductImage: apple_pressings.jpg
 products:
   - name: "Apple Juice (1000ml)"
     price: 1.99
