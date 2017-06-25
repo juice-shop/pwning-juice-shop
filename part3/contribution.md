@@ -69,6 +69,7 @@ performs the following actions:
    * Compliance check against the
      [JS Standard Code Style rules](http://standardjs.com)
    * Unit tests for the Angular client
+   * Unit tests for the Express routes and server-side libraries
    * Integration tests for the server-side API
    * End-to-end tests verifying that all challenges can be solved
 4. Upload of the quality metrics to
@@ -113,14 +114,13 @@ The following sections sum up the most important rules and processes.
 ### Executing the tests
 
 ```
-npm test
-npm run protractor
+npm test           # check for code style violations and run all unit tests
+npm run frisby     # run all API integration tests
+npm run protractor # run all end-to-end tests
 ```
 
-`npm test` will first check for code style violations and then run all
-unit/integration tests. `npm run protractor` will run all e2e tests.
-These require a locally installed Google Chrome browser and and internet
-access.
+The end-to-end tests require a locally installed Google Chrome browser
+and internet access to be able to pass.
 
 #### Run the mutation tests
 
@@ -134,7 +134,7 @@ mutation testing engine that will complain lines of code that cause no
 test to fail when altered in behavior or logic.
 
 > Currently only the client-side unit tests are covered by mutation
-> tests. The server-side and end-to-end tests are not suitable for
+> tests. The API and end-to-end tests are not suitable for
 > mutation testing because they run against a real server instance with
 > dependencies to the database and an internet connection.
 
