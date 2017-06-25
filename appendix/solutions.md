@@ -806,17 +806,59 @@ explains the problem and gives an exploit example:
    the OWASP Juice Shop project leader and author of this ebook
 2. Visit https://www.facebook.com/bjoern.kimminich to learn that he is
    from the town of _Uetersen_ in Germany
-3. :wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+3. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
+   ZIP code _25436_
 4. Visit http://localhost:3000/#/forgot-password and provide
    `bjoern.kimminich@googlemail.com` as your _Email_
-5. In the subsequently appearing form, provide `West-2082` as _Your
+5. In the subsequently appearing form, provide `25436` as _Your
    ZIP/postal code when you were a teenager?_
-6. Then type any _New Password_ and matching _Repeat New Password_
-7. Click _Change_ to solve this challenge
+6. Type and _New Password_ and matching _Repeat New Password_ followed
+   by hitting _Change_ to **not solve** this challenge
+7. Please read [Postal codes in Germany](#postal-codes-in-germany) to
+   find out what detail you missed
+8. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
+   Uetersen's old ZIP code was `W-2082`. Or written out: `West-2082`
+9. Change the answer to _Your ZIP/postal code when you were a teenager?_
+   into `West-2082` and click _Change_ again to finally solve this
+   challenge
+
+#### Postal codes in Germany
+
+> Postal codes in Germany, Postleitzahl (plural Postleitzahlen,
+> abbreviated to PLZ; literally "postal routing number"), since 1 July
+> 1993 consist of five digits. The first two digits indicate the wider
+> area, the last three digits the postal district.
+>
+> Before reunification, both the Federal Republic of Germany (FRG) and
+> the German Democratic Republic (GDR) used four-digit codes. Under a
+> transitional arrangement following reunification, between 1989 and
+> 1993 postal codes in the west were prefixed with 'W', e.g.: W-1000
+> \[Berlin\] 30 (postal districts in western cities were separate from
+> the postal code) and those in the east with 'O' (for Ost), e.g.:
+> O-1xxx Berlin.[^5]
 
 ### Inform the shop about a JWT issue
 
-:wrench:[TODO](https://github.com/bkimminich/pwning-juice-shop/issues/7)
+1. Log in with any user via <http://localhost:3000/#/login>
+2. Find your JWT token in the `token` cookie (as well as in the
+   `Authorization` request header) and paste it into <https://jwt.io> to
+   see it decoded:
+
+   ![Decoded JWT token with invalid key](img/jwt_token_decoded.png)
+3. To solve this challenge you need to find the right secret for the
+   `HMACSHA256` function in the lower right box labeled _Verify
+   Signature_. The default value of `secret` is obviously wrong as the
+   :x:_Invalid Signature_ message at the bottom tells you
+4. As the secret key for the JWT creation is kept on the server side and
+   does not leak into the client, your best chance is either a really
+   lucky guess or a brute force attack
+5. Depending on your chosen word list (e.g. typical names) and its
+   permutations (e.g. all-caps) you will come across `JOSE` as the key
+   that gives you a :white_check_mark:_Signature Verified_ message:
+
+   ![Decoded JWT token with valid key](img/jwt_verified_signature.png)
+6. Visit <http://localhost:3000/#/contact>
+7. Submit your feedback with `JOSE` in the comment to solve this issue
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
@@ -1003,3 +1045,4 @@ totally different attack styles.
 
 [^4]: <http://www.kli.org/about-klingon/klingon-history>
 
+[^5]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
