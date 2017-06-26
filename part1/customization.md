@@ -121,7 +121,7 @@ find its syntax along with an excerpt of the default settings.
     [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014).
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
     exactly one product_)
-  * `fileForRetrieveBlueprintChallenge` (:warning:_optional on exactly
+  * `fileForRetrieveBlueprintChallenge` (:warning: _optional on exactly
     one product_) filename in `/app/public/images/products` _or_ URL of
     a file download to that folder and then use as the target for the
     [Retrieve Blueprint](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
