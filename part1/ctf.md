@@ -282,6 +282,8 @@ in the _Challenges_ tab:
 
 ![CTFd challenge details](img/ctfd_2.png)
 
+![Live at a CTF event](img/ctf_event.jpg)
+
 ## Using other CTF frameworks
 
 As mentioned above, [CTFd](https://ctfd.io) is not the only possible
