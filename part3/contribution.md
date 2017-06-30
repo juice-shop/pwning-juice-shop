@@ -4,15 +4,14 @@ If you would like to contribute to OWASP Juice Shop but need some idea
 what task to address, the best place to look is in the GitHub issue
 lists at <https://github.com/bkimminich/juice-shop/issues>.
 
+!["help wanted" label on GitHub](img/help_wanted-label.png)
+!["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
+
 * Issues labeled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
-
-  !["help wanted" label on GitHub](img/help_wanted-label.png)
 * Issues labeled with **newbie friendly** indicate tasks that are
   isolated and not too hard to implement, so they are well-suited for
   new contributors
-
-  !["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
 
 The following sections describe in detail the most important rules and
 processes when contributing to the OWASP Juice Shop project.
@@ -39,11 +38,10 @@ regular releases from `develop` in the meantime. Likewise prototypes and
 experiments must be developed on an individual branch or a distinct fork
 of the entire project.
 
-Any release from `master` is tagged with a unique version in the format
-`vMAJOR.MINOR.PATCH`, for example `{{book.juiceShopCtfVersion}}` or
-`{{book.juiceShopVersion}}`.
-
 ### Versioning
+
+Any release from `master` is tagged with a unique version in the format
+`vMAJOR.MINOR.PATCH`, for example `v1.3.0` or `v4.1.2`.
 
 > Given a version number `MAJOR.MINOR.PATCH`, increment the:
 >
