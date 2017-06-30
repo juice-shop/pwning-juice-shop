@@ -90,7 +90,7 @@ the `standard` style before running the tests. If PRs deviate from this
 coding style, they will now immediately fail their build and will not be
 merged until compliant.
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+![JavaScript Style Guide](img/badge.svg)
 
 In case your PR is failing from style guide issues try running `standard
 --fix` over your code - this will fix all syntax or code style issues
