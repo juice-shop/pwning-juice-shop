@@ -35,6 +35,10 @@ related assets. It is free for open source projects.[^1]
    translation
 6. That is all it takes!
 
+In the background, Crowdin will use the dedicated `l10n_develop` Git
+branch to synchronize translations into the `app/i18n/??.json` language
+files where `??` is a language code (e.g. `en` or `de`).
+
 ### Adding another language
 
 If you do not find the language you would like to provide a translation
@@ -63,3 +67,4 @@ new language there as well.
 > manually more!
 
 [^1]: <https://crowdin.com/>
+
