@@ -121,14 +121,17 @@ find its syntax along with an excerpt of the default settings.
     [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014).
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
     exactly one product_)
-  * `fileForRetrieveBlueprintChallenge` (:warning:_optional on exactly
+  * `fileForRetrieveBlueprintChallenge` ( :warning: _optional on exactly
     one product_) filename in `/app/public/images/products` _or_ URL of
     a file download to that folder and then use as the target for the
     [Retrieve Blueprint](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
-    challenge. To make this challenge solvable, include some kind of
-    hint to the blueprint file's name/type in the product image (e.g.
-    its `Exif` metadata) or in the product description. Defaults to
-    :warning: `JuiceShop.stl`
+    challenge. If a filename is specified but the file does not exist in
+    `/app/public/images/products` the challenge is still solvable by
+    just requesting it from the server. Defaults to :warning:
+    `JuiceShop.stl`. _**Important note:** To make this challenge
+    realistically solvable, include some kind of hint to the blueprint
+    file's name/type in the product image (e.g. its `Exif` metadata) or
+    in the product description_
 
 > :warning: Please be aware that `fileForRetrieveBlueprintChallenge`
 > will become _**mandatory** on exactly one product_ and the fallback to

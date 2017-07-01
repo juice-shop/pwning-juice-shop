@@ -6,10 +6,10 @@ available:
 
 ![Language selection dropdown](img/languages.png)
 
-> As long as the original author is taking part in the project's
-> maintenance, there will always be **English** and a complete
-> **German** translation available. Everything beyond that depends on
-> volunteer translators!
+As long as the original author is taking part in the project's
+maintenance, there will always be :uk::us: **English** and a complete :de: **German**
+translation available. Everything beyond that depends on volunteer
+translators!
 
 ## Crowdin
 
@@ -35,6 +35,10 @@ related assets. It is free for open source projects.[^1]
    translation
 6. That is all it takes!
 
+In the background, Crowdin will use the dedicated `l10n_develop` Git
+branch to synchronize translations into the `app/i18n/??.json` language
+files where `??` is a language code (e.g. `en` or `de`).
+
 ### Adding another language
 
 If you do not find the language you would like to provide a translation
@@ -56,10 +60,11 @@ corresponding two-letter-ISO-code-`.json` file to the folder
 `/app/i18n`. It will be imported to Crowdin afterwards and added as a
 new language there as well.
 
-> The Crowdin process is the preferred way for the project to handle its
-> translations as it comes with built-in review and approval options and
-> is very easy to use. But of course it would be stupid of us to turn
-> down a translation just because someone likes to edit JSON files
-> manually more!
+The Crowdin process is the preferred way for the project to handle its
+translations as it comes with built-in review and approval options and
+is very easy to use. But of course it would be stupid of us to turn down
+a translation just because someone likes to edit JSON files manually
+more!
 
 [^1]: <https://crowdin.com/>
+
