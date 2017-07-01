@@ -15,16 +15,16 @@ Your hacking progress is tracked by the application using immediate push
 notifications for successful exploits as well as a score board for
 progress overview. Finding this score board is actually one of the
 (easiest) challenges! The idea behind this is to utilize
-["gamification"](https://en.wikipedia.org/wiki/Gamification) techniques
-to motivate you to get as many challenges solved as possible - similar
-to unlocking achievements in many modern video games.
+[gamification](https://en.wikipedia.org/wiki/Gamification) techniques to
+motivate you to get as many challenges solved as possible - similar to
+unlocking achievements in many modern video games.
 
-Development of the Juice Shop started in September 2014 as a personal
-initiative when a more modern exercise environment for an in-house
-security training at the authors employer was needed. The previously
-used exercise environment was still from the server-side rendered
-ASP/JSP/Servlet era and did not reflect the reality of current web
-technology any more. The Juice Shop was developed as open-source
+Development of the Juice Shop started in September 2014 as the authors
+personal initiative, when a more modern exercise environment for an
+in-house web application security training for his employer was needed.
+The previously used exercise environment was still from the server-side
+rendered ASP/JSP/Servlet era and did not reflect the reality of current
+web technology any more. The Juice Shop was developed as open-source
 software without any corporate branding right from the beginning. Until
 end of 2014 most of the current e-commerce functionality was up and
 running - along with an initial number of planted vulnerabilities. Over
@@ -36,8 +36,8 @@ list of challenges kept growing ever since.
 
 Apart from the hacker and awareness training use case, penetration
 testing tools and automated security scanners are invited to use Juice
-Shop as a "guinea pig"-application to check how well their products cope
-with Javascript-heavy application frontends and REST APIs.
+Shop as a sort of guinea pig-application to check how well their
+products cope with Javascript-heavy application frontends and REST APIs.
 
 ### Why _OWASP_ Juice Shop?
 
@@ -114,6 +114,6 @@ meant to fill that gap.
 Many of the existing vulnerable web applications were very rudimental in
 their functional scope. So the aim of the Juice Shop also was to give
 the impression of a functionally complete e-commerce application that
-could actually exist like this "in the wild".
+could actually exist like this in the wild.
 
 [^1]: https://www.owasp.org

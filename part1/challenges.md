@@ -62,16 +62,16 @@ participating in a CTF event. Please refer to chapter
 
 ## Automatic saving and restoring hacking progress
 
-The ["self-healing" feature](running.md#self-healing-feature) - by
+The [_self-healing_ feature](running.md#self-healing-feature) - by
 wiping the entire database on server start - of Juice Shop was
 advertised as a benefit just a few pages before. This feature comes at a
 cost, though: As the challenges are also part of the database schema,
 they will be wiped along with all the other data. This means, that after
-every restart you start with a "clean" 0% score board and all challenges
+every restart you start with a clean 0% score board and all challenges
 in _unsolved_ state.
 
-To keep the resilience against data corruption but allow users to "pick
-up where they left off" after a server restart, your hacking progress is
+To keep the resilience against data corruption but allow users to _pick
+up where they left off_ after a server restart, your hacking progress is
 automatically saved whenever you solve a challenge - as long as you
 allow Browser cookies!
 

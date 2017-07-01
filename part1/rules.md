@@ -18,16 +18,32 @@ as the powerful
 [FireBug](https://addons.mozilla.org/de/firefox/addon/firebug/) plugin
 to offer.
 
-When hacking a web application that is built is Javascript, __it is
+When hacking a web application that relies havily on Javascript, **it is
 essential to your success to monitor the _Javascript Console_
-permanently!__ It might leak valuable information to you through error
+permanently!** It might leak valuable information to you through error
 or debugging logs!
 
-There is a free online-learning course
+![DevTools Console tab](img/devtools_console.png)
+
+Other useful features of DevTools and FireBug are their network overview
+as well as insight into the client-side Javascript code, cookies and
+other local storage being used by the application.
+
+![DevTools Network tab](img/devtools_network.png)
+
+![DevTools Sources tab](img/devtools_sources.png)
+
+![DevTools Application tab](img/devtools_cookies.png)
+
+If you are not familiar with the features of DevTools yet, there is a
+worthwhile online-learning course
 [Discover DevTools](https://www.codeschool.com/courses/discover-devtools)
-on [Code School](https://www.codeschool.com) which teaches you hands-on
-how Chrome's powerful developer toolkit works. The course is worth a
-look even if you think you know the DevTools quite well already.
+on [Code School](https://www.codeschool.com) availabble for free. It
+teaches you hands-on how Chrome's powerful developer toolkit works. The
+course is worth a look even if you think you know the DevTools quite
+well already.
+
+![Discover DevTools course on Code School](img/codeschool_devtools.png)
 
 #### API testing plugin
 
@@ -41,6 +57,8 @@ client-side security mechanisms or simply get certain tasks done faster.
 Here you can create requests for all available HTTP verbs (`GET`,
 `POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request
 headers etc.
+
+![PostMan Logo](img/postman-logotext-320x132.png)
 
 If you feel more at home on the command line, `curl` will do the trick
 just as fine as the recommended browser plugins.
@@ -88,6 +106,8 @@ with lots of attack patterns built in and offer active as well as
 passive attacks that can be scripted automatically or while you are
 surfing the target application.
 
+![ZAP Logo](img/zap_logo.png)
+
 The open-source
 [OWASP Zed Attack Proxy (ZAP)](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 is such a software and offers many useful hacking tools for free:
@@ -103,7 +123,7 @@ is such a software and offers many useful hacking tools for free:
 
 Instead of installing a tool such as ZAP on your computer, why not take
 it, add _several hundred_ of other offensive security tools and put them
-all into a "ready-to-use" Linux distribution? Entering
+all into a ready-to-use Linux distribution? Entering
 [Kali Linux](https://www.kali.org) and similar toolboxes:
 
 > Kali Linux is a Debian-based Linux distribution aimed at advanced
@@ -111,9 +131,9 @@ all into a "ready-to-use" Linux distribution? Entering
 > hundred tools aimed at various information security tasks, such as
 > Penetration Testing, Forensics and Reverse Engineering.[^2]
 
-The keyword in the previous quote is _"advanced"_! Kali Linux is _easily
-overwhelming_ when beginners try to work with it, as even the Kali
-development team states:
+The keyword in the previous quote is _advanced_! More precisely, Kali
+Linux is _easily overwhelming_ when beginners try to work with it, as
+even the Kali development team states:
 
 > As the distribution’s developers, you might expect us to recommend
 > that everyone should be using Kali Linux. The fact of the matter is,
@@ -122,6 +142,8 @@ development team states:
 > its unique nature, it is __NOT__ a recommended distribution if you’re
 > unfamiliar with Linux \[...\]. Even for experienced Linux users, Kali
 > can pose some challenges.[^3]
+
+![Kali Logo](img/home-kali-slider-1.png)
 
 Although there exist some more light-weight pentesting distributions,
 they basically still present a high hurdle for people new to the IT

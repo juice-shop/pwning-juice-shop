@@ -20,10 +20,9 @@ resources while still allowing to execute custom SQL for more complex
 queries.
 
 The push notifications that are shown when a challenge was successfully
-hacked, are implemented via WebSocket protocol using socket.io which is
-the most prominent Javascript library in that space. The application
-also offers convenient user registration via OAuth 2.0 so users can sign
-in with their Google accounts.
+hacked, are implemented via WebSocket protocol. The application also
+offers convenient user registration via OAuth 2.0 so users can sign in
+with their Google accounts.
 
 The following diagram shows the high-level communication paths between
 the client, server and data layers:

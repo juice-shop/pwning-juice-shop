@@ -7,19 +7,19 @@ running instance of OWASP Juice Shop for your personal hacking
 endeavors. Only the most commonly used methods are described here. For a
 full list of options - including Vagrant and Amazon EC2 deployment -
 please refer to the corresponding
-["Setup" section of the README.md on GitHub](https://github.com/bkimminich/juice-shop#setup).
+[_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#setup).
 
 ### One-click cloud instance
 
 !["Deploy to Heroku" button](img/deploy-to-heroku.svg)
 
 The quickest way to get a running instance of Juice Shop is to click the
-"Deploy to Heroku" button in the
-["Setup" section of the README.md on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno).
+_Deploy to Heroku_ button in the
+[_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno).
 You have to log in with your Heroku account and will then receive a
-single instance (or "dyno" in Heroku lingo) hosting the application. If
-you have forked the Juice Shop repository on GitHub, the "Deploy to
-Heroku" button will deploy your forked version of the application. To
+single instance (or _dyno_ in Heroku lingo) hosting the application. If
+you have forked the Juice Shop repository on GitHub, the _Deploy to
+Heroku_ button will deploy your forked version of the application. To
 deploy the latest official version you must use the button of the
 original repository at https://github.com/bkimminich/juice-shop.
 
@@ -93,7 +93,7 @@ If you are using Docker on Windows - inside a VirtualBox VM - make sure
 that you also enable port forwarding from host `127.0.0.1:3000` to
 `0.0.0.0:3000` for TCP.
 
-## "Self-healing" feature
+## _Self-healing_-feature
 
 OWASP Juice Shop was not exactly designed and built with a high
 availability and reactive enterprise-scale architecture in mind. It runs
@@ -105,7 +105,7 @@ that prevents a restart of the application.
 
 That is why - in practice - Juice Shop wipes the entire database and the
 folder users might have modified during hacking. After performing this
-"self-healing" the application is supposed to be restartable, no matter
+_self-healing_ the application is supposed to be restartable, no matter
 what kind of problem originally caused it to crash. For convenience the
-"self-healing" happens during the startup (i.e. `npm start`) of the
+_self-healing_ happens during the startup (i.e. `npm start`) of the
 server, so no extra command needs to be issued to trigger it.
