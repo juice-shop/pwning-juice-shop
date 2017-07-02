@@ -1,6 +1,6 @@
 # Hacking exercise rules
 
-## Tools you can use
+## :white_check_mark: Recommended hacking tools
 
 ### Browser
 
@@ -58,8 +58,6 @@ Here you can create requests for all available HTTP verbs (`GET`,
 `POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request
 headers etc.
 
-![PostMan Logo](img/postman-logotext-320x132.png)
-
 If you feel more at home on the command line, `curl` will do the trick
 just as fine as the recommended browser plugins.
 
@@ -106,8 +104,6 @@ with lots of attack patterns built in and offer active as well as
 passive attacks that can be scripted automatically or while you are
 surfing the target application.
 
-![ZAP Logo](img/zap_logo.png)
-
 The open-source
 [OWASP Zed Attack Proxy (ZAP)](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 is such a software and offers many useful hacking tools for free:
@@ -118,6 +114,8 @@ is such a software and offers many useful hacking tools for free:
 > for developers and functional testers who are new to penetration
 > testing. ZAP provides automated scanners as well as a set of tools
 > that allow you to find security vulnerabilities manually.[^1]
+
+![ZAP Logo](img/zap.png)
 
 #### Pentesting Linux distributions
 
@@ -143,11 +141,11 @@ even the Kali development team states:
 > unfamiliar with Linux \[...\]. Even for experienced Linux users, Kali
 > can pose some challenges.[^3]
 
-![Kali Logo](img/home-kali-slider-1.png)
-
 Although there exist some more light-weight pentesting distributions,
 they basically still present a high hurdle for people new to the IT
 security field. If you still feel up to it, give Kali Linux a try!
+
+![Kali Logo](img/kali.jpg)
 
 ### Internet
 
@@ -157,7 +155,33 @@ all over the place if you know where to look, but sometimes you simply
 need to extend your research to the Internet in order to gain some
 relevant piece of intel to beat a challenge.
 
-## Things you should not use
+## :bulb: Getting hints
+
+Frankly speaking, you are reading the _premium source of hints_ right
+now! Congratulations! In case you want to hack more on your own than
+[follow the breadcrumbs through the wood of challenges in part II](../part2/README.md),
+the most direct way to ask for specific hints for a particular challenge
+is the community chat on Gitter.im at
+https://gitter.im/bkimminich/juice-shop. You can simply log in to Gitter
+with your GitHub account.
+
+If you prefer, you can also use the project's Slack channel at
+https://owasp.slack.com/messages/project-juiceshop. You just need to
+self-invite you to OWASP's Slack first at http://owasp.herokuapp.com. If
+you like it a bit more nostalgic, you can also join and post to the
+project mailing list at
+https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
+
+## :x: Thing considered cheating
+
+### Reading a solution (:godmode:) before trying
+
+[Appendix A - Challenge solutions](../_book/appendix/solutions.md) is
+there to help you in case you are stuck or have absolutely no idea how a
+specific challenge is solved. Simply going through the entire appendix
+back to back and follow the step-by-step instructions given there for
+each challenge, would deprive you of most of the fun and learning effect
+of the Juice Shop. You have been warned.
 
 ### Source code
 
@@ -225,23 +249,6 @@ embarrassing) to uncover in a classroom training than the previously
 mentioned database manipulation: A simple reload of the score board URL
 will let all your local CSS changes vanish in a blink and reveal your
 _real_ hacking progress.
-
-## Getting hints
-
-Frankly speaking, you are reading the _premium source of hints_ right
-now! Congratulations! In case you want to hack more on your own than
-follow the breadcrumbs through the wood of challenges in part II, the
-most direct way to ask for specific hints for a particular challenge is
-the community chat on Gitter.im at
-https://gitter.im/bkimminich/juice-shop. You can simply log in to Gitter
-with your GitHub account.
-
-If you prefer you can also use the project's Slack channel at
-https://owasp.slack.com/messages/project-juiceshop. You just need to
-self-invite you to OWASP's Slack first at http://owasp.herokuapp.com. If
-you like it a bit more nostalgic, you can also join and post to the
-project mailing list at
-https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
 [^1]: https://github.com/zaproxy/zap-core-help/wiki
 [^2]: http://docs.kali.org/introduction/what-is-kali-linux
