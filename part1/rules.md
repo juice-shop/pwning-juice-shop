@@ -174,7 +174,7 @@ https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
 ## :x: Thing considered cheating
 
-### Reading a solution (:godmode:) before trying
+### Reading a solution ( :godmode: ) before trying
 
 [Appendix A - Challenge solutions](../_book/appendix/solutions.md) is
 there to help you in case you are stuck or have absolutely no idea how a
