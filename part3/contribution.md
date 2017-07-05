@@ -16,6 +16,13 @@ lists at <https://github.com/bkimminich/juice-shop/issues>.
 The following sections describe in detail the most important rules and
 processes when contributing to the OWASP Juice Shop project.
 
+## Tips for newcomers
+
+If you are new to application development - particularly with Angular.js
+and Express.js - it is recommended to read the
+[Codebase 101](codebase.md) to get an overview what belongs where. It
+will lower the entry barrier for you significantly.
+
 ## Version control
 
 The project uses `git` as its version control system and GitHub as the
