@@ -3,12 +3,14 @@
 Jumping head first into any foreign codebase can cause a little
 headache. This section is there to help you find your way through the
 code of OWASP Juice Shop. On its top level the Juice Shop codebase is
-mainly separated into a client and a server part, the latter with an
-underlying lightweight database.
+mainly separated into a client and a server tier, the latter with an
+underlying lightweight database and file system as storage.
 
-## Client side
+## Client Tier
 
 :wrench: **TODO**
+
+![Client tier focus](img/architecture-client.png)
 
 ### Services
 
@@ -50,9 +52,11 @@ command fails for you, please run `npm install -g grunt-cli` once to
 install this useful task runner. From then on, `grunt minify` should
 work.
 
-## Server side
+## Server Tier
 
 :wrench: **TODO**
+
+![Server tier focus](img/architecture-server.png)
 
 ### Routes
 
@@ -66,26 +70,32 @@ work.
 
 :wrench: **TODO**
 
-### Utilities
+### Custom libraries
 
 :wrench: **TODO**
 
-#### `utils.js`
+#### Useful utilities
 
 :wrench: **TODO**
 
-#### `insecurity.js`
+#### Insecurity features
 
 :wrench: **TODO**
 
-## Database (`SQLite`)
+## Storage Tier
 
 :wrench: **TODO**
 
-### Tables
+![DB tier focus](img/architecture-database.png)
+
+### Database
 
 :wrench: **TODO**
 
-### Populating the DB
+#### Populating the DB
+
+:wrench: **TODO**
+
+### File system
 
 :wrench: **TODO**
