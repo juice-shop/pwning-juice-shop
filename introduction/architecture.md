@@ -1,10 +1,10 @@
 # Architecture overview
 
 The OWASP Juice Shop is a pure web application implemented in
-Javascript. In the frontend the popular Angular.js framework is used to
+Javascript. In the frontend the popular AngularJS framework is used to
 create a so-called _Single Page Application_. The user interface layout
 is provided by Twitter's Bootstrap framework - which works nicely in
-combination with Angular.js.
+combination with AngularJS.
 
 Javascript is also used in the backend as the exclusive programming
 language: An Express.js application hosted in a Node.js server delivers

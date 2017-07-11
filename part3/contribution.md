@@ -18,7 +18,7 @@ processes when contributing to the OWASP Juice Shop project.
 
 ## Tips for newcomers
 
-If you are new to application development - particularly with Angular.js
+If you are new to application development - particularly with AngularJS
 and Express.js - it is recommended to read the
 [Codebase 101](codebase.md) to get an overview what belongs where. It
 will lower the entry barrier for you significantly.

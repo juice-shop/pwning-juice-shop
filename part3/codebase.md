@@ -8,7 +8,15 @@ underlying lightweight database and file system as storage.
 
 ## Client Tier
 
-:wrench: **TODO**
+OWASP Juice Shop uses v1.5 of the popular
+[AngularJS](https://angularjs.org/) framework as the core of its
+client-side. Thanks to the [Bootstrap](http://getbootstrap.com/) CSS
+framework, the UI is responsive letting it adapt nicely to different
+screen sizes. Both frameworks work very well together thanks to the
+[UI Bootstrap](https://angular-ui.github.io/bootstrap/) library that
+provides components for Bootstrap that are actually written in pure
+AngularJS. The various icons used throughout the frontend are from the
+vast [Font Awesome 4](https://fontawesome.com/) collection.
 
 ![Client tier focus](img/architecture-client.png)
 
