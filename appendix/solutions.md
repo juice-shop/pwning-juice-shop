@@ -672,6 +672,10 @@ rather easy to identify them:
 
    ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
 
+### Inform the shop about a typosquatting trick it has become victim of
+
+:wrench: **TODO**
+
 ### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency

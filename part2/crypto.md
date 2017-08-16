@@ -33,7 +33,6 @@
 | Challenge                                                                                                            | Difficulty |
 |:---------------------------------------------------------------------------------------------------------------------|:-----------|
 | Inform the shop about an algorithm or library it should definitely not use the way it does.                          | 2 of 5     |
-| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | 3 of 5     |
 | Apply some advanced cryptanalysis to find _the real_ easter egg.                                                     | 4 of 5     |
 | Forge a coupon code that gives you a discount of at least 80%.                                                       | 5 of 5     |
 | Solve challenge #99. Unfortunately, this challenge does not exist.                                                   | 5 of 5     |
@@ -55,25 +54,6 @@ _bad choice_ for a given requirement * or is used in an _insecure way_.
   [Apply some advanced cryptanalysis to find _the real_ easter egg](#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
-
-### Inform the shop about a vulnerable library it is using
-
-This challenge is quite similar to
-[Inform the shop about an algorithm or library it should definitely not use the way it does](#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)
-with the difference, that here not the _general use_ of the library is
-the issue. The application is just using _a version_ of a library that
-contains known vulnerabilities.
-
-#### Hints
-
-* Use the _Contact Us_ form to submit a feedback mentioning the
-  vulnerable library including its exact version.
-* There are two possible answers and you only need to identify one to
-  solve the challenge.
-* Look for possible dependencies related to security in the
-  `package.json.bak` you harvested earlier.
-* Do some research on the internet for known security issues in the most
-  suspicious application dependencies.
 
 ### Apply some advanced cryptanalysis to find the real easter egg
 

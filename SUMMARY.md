@@ -23,6 +23,7 @@
   * [Forgotten content](part2/forgotten-content.md)
   * [Cross Site Scripting (XSS)](part2/xss.md)
   * [Cross Site Request Forgery (CSRF)](part2/csrf.md)
+  * [Vulnerable Components](part2/vulnerable-components.md)
   * [Cryptographic issues](part2/crypto.md)
   * [Validation Flaws](part2/validation.md)
   * [Weak security mechanisms](part2/weak-security.md)
@@ -40,4 +41,3 @@
 ----
 
 * [Appendix A - Challenge solutions](appendix/solutions.md)
-* 
