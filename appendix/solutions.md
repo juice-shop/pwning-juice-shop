@@ -864,6 +864,10 @@ explains the problem and gives an exploit example:
 6. Visit <http://localhost:3000/#/contact>
 7. Submit your feedback with `JOSE` in the comment to solve this issue
 
+### Inform the shop about a more literal instance of typosquatting it fell for
+
+:wrench: **TODO**
+
 ### Forge a coupon code that gives you a discount of at least 80%
 
 For this challenge there are actually two distinct _solution paths_ that
@@ -1050,3 +1054,4 @@ totally different attack styles.
 [^4]: <http://www.kli.org/about-klingon/klingon-history>
 
 [^5]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
+

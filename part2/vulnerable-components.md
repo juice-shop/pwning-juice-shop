@@ -9,11 +9,12 @@ libraries or other 3rd party components the application uses internally.
 |:---------------------------------------------------------------------------------------------------------------------|:-----------|
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | 3 of 5     |
 | Inform the shop about a typosquatting trick it has become victim of. (Mention the exact name of the culprit)         | 3 of 5     |
+| Inform the shop about a more literal instance of typosquatting it fell for. (Mention the exact name of the culprit)  | 4 of 5     |
 
 ### Inform the shop about a vulnerable library it is using
 
 This challenge is quite similar to
-[Inform the shop about an algorithm or library it should definitely not use the way it does](#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)
+[Inform the shop about an algorithm or library it should definitely not use the way it does](crypto.md#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)
 with the difference, that here not the _general use_ of the library is
 the issue. The application is just using _a version_ of a library that
 contains known vulnerabilities.
@@ -63,4 +64,13 @@ contains known vulnerabilities.
 
 :wrench: **TODO**
 
+### Inform the shop about a more literal instance of typosquatting it fell for
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
+
 [^1]: https://en.wikipedia.org/wiki/Typosquatting
+
