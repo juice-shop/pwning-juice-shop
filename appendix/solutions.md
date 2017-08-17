@@ -63,7 +63,7 @@ error situation and solve this challenge along the way:
 
   ![SQL in UI Error](img/login-error_sql.png)
 
-### XSS Tier 1: Perform a reflected XSS attack
+### Perform a reflected XSS attack
 
 1. Paste the attack string `<script>alert("XSS1")</script>` into the
    _Search..._ field.
@@ -333,7 +333,7 @@ in order to exploit and solve them:
 * A rainbow table attack on Bender's password will probably fail as it
   is rather strong.
 
-### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
+### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 1. Submit a POST request to http://localhost:3000/api/Users with
    * `{"email": "<script>alert(\"XSS2\")</script>", "password": "xss"}`
@@ -354,7 +354,7 @@ in order to exploit and solve them:
 
    ![XSS2 user in details dialog](img/xss2_user-modal.png)
 
-### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
+### Perform a persisted XSS attack without using the frontend application at all
 
 1. Log in to the application with any user.
 2. Copy your `Authorization` header from any HTTP request submitted via
@@ -536,7 +536,7 @@ rather easy to identify them:
 
 * `sanitize-html` is pinned to version `1.4.2` which has a known bug of
   not sanitizing recursively (see
-  [XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism](#xss-tier-4-perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
+  [Perform a persisted XSS attack bypassing a server-side security mechanism](#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
 * `sequelize` in the used version `1.7.x` has several known issues with
   SQL Injection
 
@@ -676,7 +676,7 @@ rather easy to identify them:
 
 :wrench: **TODO**
 
-### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
+### Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency
 `"sanitize-html": "1.4.2"`. Internet research will yield a reported

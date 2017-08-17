@@ -19,14 +19,14 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                       | Difficulty |
-|:--------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| XSS Tier 1: Perform a reflected XSS attack with `<script>alert("XSS1")</script>`.                                               | 1 of 5     |
-| XSS Tier 2: Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism.    | 3 of 5     |
-| XSS Tier 3: Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5     |
-| XSS Tier 4: Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism.    | 4 of 5     |
+| Challenge                                                                                                           | Difficulty |
+|:--------------------------------------------------------------------------------------------------------------------|:-----------|
+| Perform a reflected XSS attack with `<script>alert("XSS1")</script>`.                                               | 1 of 5     |
+| Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism.    | 3 of 5     |
+| Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5     |
+| Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism.    | 4 of 5     |
 
-### XSS Tier 1: Perform a reflected XSS attack
+### Perform a reflected XSS attack
 
 > Reflected Cross-site Scripting (XSS) occur when an attacker injects
 > browser executable code within a single HTTP response. The injected
@@ -43,7 +43,7 @@
 * Try probing for XSS vulnerabilities by submitting text wrapped in an
   HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
-### XSS Tier 2: Perform a persisted XSS attack bypassing a client-side security mechanism
+### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 This challenge is founded on a very common security flaw of web
 applications, where the developers ignored the following golden rule of
@@ -66,7 +66,7 @@ input validation:
   * or by ignoring it completely and interacting with the backend
     instead.
 
-### XSS Tier 3: Perform a persisted XSS attack without using the frontend application at all
+### Perform a persisted XSS attack without using the frontend application at all
 
 As presented in the
 [Architecture Overview](/introduction/architecture.md), the OWASP Juice
@@ -92,7 +92,7 @@ to master this challenge.
 * Careless developers might have exposed API methods that the client
   does not even need
 
-### XSS Tier 4: Perform a persisted XSS attack bypassing a server-side security mechanism
+### Perform a persisted XSS attack bypassing a server-side security mechanism
 
 This is the hardest XSS challenge, as it cannot by solved by fiddling
 with the client-side Javascript or bypassing the client entirely.
@@ -109,8 +109,8 @@ approach._
 
 #### Hints
 
-* The _Comment_ field in the _Contact Us_ screen is where you want to put your
-  focus on
+* The _Comment_ field in the _Contact Us_ screen is where you want to
+  put your focus on
 * The attack payload `<script>alert("XSS4")</script>` will _not be
   rejected_ by any validator but _stripped from the comment_ before
   persisting it
@@ -118,5 +118,8 @@ approach._
   `package.json.bak` you harvested earlier
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
+
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
+
 [^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
+
