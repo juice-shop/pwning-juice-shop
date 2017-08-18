@@ -11,7 +11,7 @@ In case you want to look up hints for a particular challenge, the
 following table lists all challenges of the OWASP Juice Shop in the same
 order as on the Score Board.
 
-> The challenge hints found in this release of the compantion guide are
+> The challenge hints found in this release of the companion guide are
 > compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop.
 
 | Challenge                                                                                                                          | Hints                                                                                                                                     | Solution                                                                                                                                           |
