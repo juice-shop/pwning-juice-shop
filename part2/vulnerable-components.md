@@ -62,7 +62,12 @@ contains known vulnerabilities.
 
 #### Hints
 
-:wrench: **TODO**
+* This challenge has nothing to do with URLs or domains.
+* Investigate the
+  [forgotten developer's backup file](forgotten-content.md#access-a-developers-forgotten-backup-file)
+  instead.
+* [Malicious packages in npm](https://iamakulov.com/notes/npm-malicious-packages/)
+  is a worthwhile read on [Ivan Akulov’s blog](https://iamakulov.com).
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
@@ -70,7 +75,13 @@ contains known vulnerabilities.
 
 #### Hints
 
-:wrench: **TODO**
+* Like
+  [the above one](#inform-the-shop-about-a-typosquatting-trick-it-has-become-victim-of)
+  this challenge also has nothing to do with URLs or domains.
+* Other than for the above tier one, combing through the
+  `package.json.bak` does not help for this challenge.
+* This typoquatting instance literally exploits a potentially common
+  typo.
 
 [^1]: https://en.wikipedia.org/wiki/Typosquatting
 
