@@ -28,6 +28,7 @@
   * [Validation Flaws](part2/validation.md)
   * [Weak security mechanisms](part2/weak-security.md)
   * [Sensitive data exposure](part2/sensitive-data.md)
+  * [NoSQL Injection](part2/nosqli.md)
 
 ----
 

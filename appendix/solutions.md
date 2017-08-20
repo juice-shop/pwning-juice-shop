@@ -652,6 +652,14 @@ rather easy to identify them:
 8. Then type any _New Password_ and matching _Repeat New Password_
 9. Click _Change_ to solve this challenge
 
+### Let the server sleep for some time
+
+:wrench: **TODO**
+
+### Update multiple product reviews at the same time
+
+:wrench: **TODO**
+
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
 1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product
