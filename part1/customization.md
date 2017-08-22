@@ -88,7 +88,10 @@ find its syntax along with an excerpt of the default settings.
     hovering over/clicking its _"unsolved"_ badge on the score board.
     Defaults to `true`.
   * `theme` the name of the [Bootswatch](https://bootswatch.com) theme
-    used to render the UI. Defaults to `"slate"`
+    used to render the UI. Options are `cerulean`, `cosmo`, `cyborg`,
+    `darkly`, `flatly`, `lumen`, `paper`, `readable`, `sandstone`,
+    `simplex`, `slate`, `spacelab`, `superhero`, `united` and `yeti`.
+    Defaults to `"slate"`
   * `twitterUrl` used as the Twitter link promising coupon codes on the
     _Your Basket_ screen. Defaults to
     `"https://twitter.com/owasp_juiceshop"`
@@ -132,6 +135,11 @@ find its syntax along with an excerpt of the default settings.
     realistically solvable, include some kind of hint to the blueprint
     file's name/type in the product image (e.g. its `Exif` metadata) or
     in the product description_
+  * `reviews` a sub-list which adds reviews to a product (_optional_)
+    * `text` of the review (_mandatory_)
+    * `author` of the review from the following list of pre-defined
+      users in the database: `admin`, `jim`, `bender`, `ciso` or
+      `support` (_mandatory_)
 
 > :warning: Please be aware that `fileForRetrieveBlueprintChallenge`
 > will become _**mandatory** on exactly one product_ and the fallback to
@@ -163,6 +171,9 @@ products:
     price: 1.99
     description: "The all-time classic."
     image: "apple_juice.jpg"
+    reviews:
+      - text: 'One of my favorites!'
+        author: 'admin'
 # ~~~~~ ... ~~~~~~
   - name: 'OWASP Juice Shop Sticker (2015/2016 design)'
     description: 'Die-cut sticker with the official 2015/2016 logo...'
