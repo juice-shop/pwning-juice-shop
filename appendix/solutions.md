@@ -703,7 +703,25 @@ rather easy to identify them:
 
 ### Inform the shop about a typosquatting trick it has become victim of
 
-:wrench: **TODO**
+1. Solve the
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
+   challenge and open the `package.json.bak` file
+2. Scrutinizing each entry in the `dependencies` list you will at some
+   point get to `epilogue-js`, the overview page of which gives away
+   that you found the culprit
+
+   ![epilogue-js on NPM](img/npm_epilogue-js.png)
+3. Visit <http://localhost:3000/#/contact>
+4. Submit your feedback with `epilogue-js` in the comment to solve this
+   challenge
+
+> You can probably imagine that the typosquatted `epilogue-js` would be
+> _a lot harder_ to distinguish from the original repository `epilogue`,
+> if it where not marked with the _THIS IS **NOT** THE MODULE YOU ARE
+> LOOKING FOR!_-warning at the very top. Below you can see the original
+> `epilogue` NPM page:
+>
+> ![epilogue on NPM](img/npm_epilogue.png)
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -891,7 +909,8 @@ explains the problem and gives an exploit example:
 
    ![Decoded JWT token with valid key](img/jwt_verified_signature.png)
 6. Visit <http://localhost:3000/#/contact>
-7. Submit your feedback with `JOSE` in the comment to solve this issue
+7. Submit your feedback with `JOSE` in the comment to solve this
+   challenge
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
