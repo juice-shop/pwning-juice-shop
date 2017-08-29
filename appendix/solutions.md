@@ -665,15 +665,21 @@ rather easy to identify them:
    http://localhost:3000/rest/product/sleep(2000)/reviews to solve the
    challenge
 
-To avoid _real_ Denial-of-Service issues the Juice Shop will only wait
-for a maximum of 2 seconds, so
-http://localhost:3000/rest/product/sleep(999999)/reviews should take not
-longer than http://localhost:3000/rest/product/sleep(2000)/reviews to
-respond.
+> To avoid _real_ Denial-of-Service (DoS) issues, the Juice Shop will
+> only wait for a maximum of 2 seconds, so
+> http://localhost:3000/rest/product/sleep(999999)/reviews should take
+> not longer than http://localhost:3000/rest/product/sleep(2000)/reviews
+> to respond.
 
 ### Update multiple product reviews at the same time
 
-:wrench: **TODO**
+1. Log in as any user.
+2. Submit a PATCH request to http://localhost:3000/rest/product/reviews
+   with
+   * `{ "id": { "$ne": -1 }, "message": "NoSQL Injection!" }` as body
+   * and `application/json` as `Content-Type` header.
+3. Check different product detail dialogs to verify that all review
+   texts have been changed into `NoSQL Injection!`
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
