@@ -654,7 +654,22 @@ rather easy to identify them:
 
 ### Let the server sleep for some time
 
-:wrench: **TODO**
+1. You can interact with the backend API for product reviews via the
+   dedicated endpoints `/rest/product/reviews` and
+   `/rest/product/{id}/reviews`
+2. Get the reviews of the product with database ID 1:
+   http://localhost:3000/rest/product/1/reviews
+3. Inject a
+   [`sleep(integer ms)` command](https://docs.mongodb.com/manual/reference/method/sleep/)
+   by changing the URL into
+   http://localhost:3000/rest/product/sleep(2000)/reviews to solve the
+   challenge
+
+To avoid _real_ Denial-of-Service issues the Juice Shop will only wait
+for a maximum of 2 seconds, so
+http://localhost:3000/rest/product/sleep(999999)/reviews should take not
+longer than http://localhost:3000/rest/product/sleep(2000)/reviews to
+respond.
 
 ### Update multiple product reviews at the same time
 
