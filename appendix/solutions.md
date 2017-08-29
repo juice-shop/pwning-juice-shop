@@ -708,7 +708,8 @@ rather easy to identify them:
    challenge and open the `package.json.bak` file
 2. Scrutinizing each entry in the `dependencies` list you will at some
    point get to `epilogue-js`, the overview page of which gives away
-   that you found the culprit
+   that you find the culprit at
+   https://www.npmjs.com/package/epilogue-js
 
    ![epilogue-js on NPM](img/npm_epilogue-js.png)
 3. Visit <http://localhost:3000/#/contact>
@@ -914,7 +915,58 @@ explains the problem and gives an exploit example:
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
-:wrench: **TODO**
+1. In your browser perform right-click and choose _View Source_ on any
+   dialog of the Juice Shop
+2. Scroll down to the line where all the Javascript files are included:
+
+   ```html
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <!-- libraries, third party components -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/string/dist/string.min.js"></script>
+        <script src="bower_components/moment/min/moment.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+        <script src="bower_components/angular-tooltipps/dist/angular-tooltips.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+        <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+        <script src="bower_components/angular-socket-io/socket.min.js"></script>
+        <script src="bower_components/clipboard/dist/clipboard.min.js"></script>
+        <script src="bower_components/ngclipboard/dist/ngclipboard.min.js"></script>
+        <script src="bower_components/angular-base64/angular-base64.js"></script>
+        <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
+   ```
+
+3. Scrutinizing each entry in the list you will at some point get to
+   `angular-tooltipps` which adds its `dist/angular-tooltips.min.js`
+   script
+4. Noticing the spelling difference in the word _tooltip**p**s_,
+   checking the Bower registry reveals that `angular-tooltipps` is
+   actually a typosquat of `angular-tooltips`
+
+   ![angular-tooltipps on Bower](img/bower_angular-tooltipps.png)
+5. Visit <http://localhost:3000/#/contact>
+6. Submit your feedback with `angular-tooltipps` in the comment to solve
+   this challenge
+
+> You can probably imagine that the typosquatted `angular-tooltipps`
+> would be _a lot harder_ to distinguish from the original repository
+> `angular-tooltips`, if it where not marked with the _THIS IS **NOT**
+> THE MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you
+> can see the original `angular-tooltips` registry page on
+> [Libraries.io](https://libraries.io):
+>
+> ![angular-tooltips on Bower](img/bower_angular-tooltips.png)
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
