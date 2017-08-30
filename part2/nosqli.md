@@ -47,7 +47,8 @@
 
 #### Hints
 
-:wrench: **TODO**
+* This challenge is essentially a stripped-down Denial of Service (DoS) attack.
+* :wrench: **TODO**
 
 ### Update multiple product reviews at the same time
 
@@ -55,6 +56,7 @@
 
 #### Hints
 
-:wrench: **TODO**
+* Take a close look on how the equivalent of UPDATE-statements in MongoDB work.
+* :wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection

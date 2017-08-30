@@ -58,7 +58,13 @@ contains known vulnerabilities.
 > sometimes make use of typosquatting URLs to trick users into visiting
 > malicious sites that look like a given bank's site, for instance.[^1]
 
-:wrench: **TODO**
+This challenge is about identifying and reporting (via the
+http://localhost:3000/#/contact form) a case of typosquatting that
+successfully sneaked into the Juice Shop. In this case, there is no
+actual malice or mischief included, as the typosquatter is completely
+harmless. Just keep in mind that in reality, a case like this could come
+with negative consequences and would sometimes be even harder to
+identify.
 
 #### Hints
 
@@ -71,7 +77,9 @@ contains known vulnerabilities.
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
-:wrench: **TODO**
+This challenge is about identifying and reporting (via the
+http://localhost:3000/#/contact form) yet another case of typosquatting
+hidden in the Juice Shop. It is supposedly even harder to locate.
 
 #### Hints
 
@@ -80,8 +88,8 @@ contains known vulnerabilities.
   this challenge also has nothing to do with URLs or domains.
 * Other than for the above tier one, combing through the
   `package.json.bak` does not help for this challenge.
-* This typoquatting instance literally exploits a potentially common
-  typo.
+* This typoquatting instance more literally exploits a realistically
+  possible typo.
 
 [^1]: https://en.wikipedia.org/wiki/Typosquatting
 
