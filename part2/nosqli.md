@@ -43,12 +43,29 @@
 
 ### Let the server sleep for some time
 
-:wrench: **TODO**
+This challenge is about giving the server the chance to catch a breath
+by putting it to sleep for a while, making it essentially a
+stripped-down _denial-of-service_ attack challenge.
+
+> In a denial-of-service (DoS) attack, an attacker attempts to prevent
+> legitimate users from accessing information or services. By targeting
+> your computer and its network connection, or the computers and network
+> of the sites you are trying to use, an attacker may be able to prevent
+> you from accessing email, websites, online accounts (banking, etc.),
+> or other services that rely on the affected computer.[^2]
 
 #### Hints
 
-* This challenge is essentially a stripped-down Denial of Service (DoS) attack.
-* :wrench: **TODO**
+* As stated in the
+  [Architecture overview](../_book/introduction/architecture.md), OWASP
+  Juice Shop uses a MongoDB derivate as its NoSQL database.
+* The categorization into the _NoSQL Injection_ category totally already
+  gives away the expected attack vector for this challenge. Trying any
+  others will not solve the challenge, even if they might yield the same
+  result.
+* In particular, flooding the application with requests will **not**
+  solve this challenge. _That_ would probably just _kill_ your server
+  instance.
 
 ### Update multiple product reviews at the same time
 
@@ -56,7 +73,11 @@
 
 #### Hints
 
-* Take a close look on how the equivalent of UPDATE-statements in MongoDB work.
+* Take a close look on how the equivalent of UPDATE-statements in
+  MongoDB work.
 * :wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection
+
+[^2]: https://www.us-cert.gov/ncas/tips/ST04-015
+
