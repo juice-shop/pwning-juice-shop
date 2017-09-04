@@ -98,10 +98,9 @@ to some arguments between the victim and the vendor.
   having an eye on the HTTP traffic.
 * There might be a client-side association of user to basket that you
   can try to manipulate.
-
-> In case you manage to update the database via SQL Injection so that a
-> user is linked to another shopping basket, the application will _not_
-> notice this challenge as solved.
+* In case you manage to update the database via SQL Injection so that a
+  user is linked to another shopping basket, the application will _not_
+  notice this challenge as solved.
 
 ### Post some feedback in another users name
 
@@ -121,3 +120,4 @@ posting a (most likely negative) feedback in his or her name!
   [XSS challenges](xss.md) found in OWASP Juice Shop.
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
+
