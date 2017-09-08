@@ -345,6 +345,19 @@ function hmacSha1 (secretKey, text) {
 > will hash the message again themselves, and if it is authentic, the
 > received and computed hashes will match.[^2]
 
+The following screenshots were taken during a CTF event where Facebook's
+popular [FBCTF](https://github.com/facebook/fbctf) game server was used.
+Juice Shop instances were running in a Docker cluster and individually
+assigned to a participant via a load balancer.
+
+![FBCTF World Map](img/FBCTF-Iteratec-00.png)
+
+![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
+
+![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
+
+![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
+
 ## Commercial use disclaimer
 
 :warning: Bear in mind: With the increasing number of challenge
