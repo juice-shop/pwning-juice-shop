@@ -220,7 +220,7 @@ Shop database. The score value of each challenge is calculated by the
 * 5-star challenge = 1000 points
 
 The entire output of the tool will finally be written into
-`OWASP Juice Shop.YYYY-MM-DD.zip` in the folder the program was started in.
+`OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started in.
 
 ![Juice Shop CTF CLI](img/cli_usage_screenshot.png)
 
