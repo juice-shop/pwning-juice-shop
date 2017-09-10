@@ -152,13 +152,13 @@ higher.
 
 The
 [`juice-shop-ctf-cli`](https://www.npmjs.com/package/juice-shop-ctf-cli)
-is a simple command line tool, which will generate a list of SQL
-`INSERT` statements. These can be applied to the database underneath
-CTFd to generate mirror images of all current Juice Shop challenges in a
-CTFd score server. The following instructions were written for
+is a simple command line tool, which will generate a ZIP-archive compatible with
+CTFd's data backup format. This can be imported to populate the database underneath
+CTFd and generate mirror images of all current Juice Shop challenges on the score
+server. The following instructions were written for
 {{book.juiceShopCtfVersion}} of `juice-shop-ctf-cli`.
 
-To install `juice-shop-ctf-cli` you need to have Node.js 4.x or higher
+To install `juice-shop-ctf-cli` you need to have Node.js 6.x or higher
 installed. Simply execute
 
 ```
@@ -188,12 +188,9 @@ answers available which you can choose by simply hitting `ENTER`.
    which is the key file provided with the latest official OWASP Juice
    Shop release. See [Overriding the `ctf.key`](#overriding-the-ctfkey)
    for more information.
-3. **DELETE all CTFd Challenges before INSERT statements?** Determines
-   if existing challenges from the CTFd database should be deleted
-   before the `INSERT` statements. Defaults to `Yes`.
-4. **INSERT a text hint along with each CTFd Challenge?** Offers a
+4. **Insert a text hint along with each CTFd Challenge?** Offers a
    selectable choice between
-   * `No text hints` will not add any hint texts to the CTFd database.
+   * `No text hints` will not add any hint texts to the CTFd challenges.
      This is the default choice.
    * `Free text hints` will add the `Challenge.hint` property from the
      Juice Shop database as hint to the corresponding challenge on the
@@ -201,9 +198,9 @@ answers available which you can choose by simply hitting `ENTER`.
    * `Paid text hints` adds a hint per challenge like described above.
      Viewing this hint costs the team 10% of that challenge's score
      value.
-5. **INSERT a hint URL along with each CTFd Challenge?** Offers a
+5. **Insert a hint URL along with each CTFd Challenge?** Offers a
    selectable choice between
-   * `No hint URLs` will not add any hint URLs to the CTFd database.
+   * `No hint URLs` will not add any hint URLs to the CTFd challenges.
      This is the default choice.
    * `Free hint URLs` will add the `Challenge.hintUrl` property from the
      Juice Shop database as a hint to the corresponding challenge on the
@@ -211,9 +208,6 @@ answers available which you can choose by simply hitting `ENTER`.
    * `Paid hint URLs` adds a hint per challenge like described above.
      Viewing this hint costs the team 20% of that challenge's score
      value.
-6. **SELECT all CTFd Challenges after INSERT statements?** Determines if
-   the created challenges should be retrieved after the `INSERT`
-   statements. Defaults to `Yes`.
 
 The category of each challenge is identical to its category in the Juice
 Shop database. The score value of each challenge is calculated by the
@@ -226,26 +220,26 @@ Shop database. The score value of each challenge is calculated by the
 * 5-star challenge = 1000 points
 
 The entire output of the tool will finally be written into
-`insert-ctfd-challenges.sql` in the folder the program was started in.
+`OWASP Juice Shop.YYYY-MM-DD.zip` in the folder the program was started in.
 
 ![Juice Shop CTF CLI](img/cli_usage_screenshot.png)
 
 ### Running CTFd
 
-To apply the generated `insert-ctfd-challenges.sql`, follow the steps
+To apply the generated `.zip`, follow the steps
 describing your preferred CTFd run-mode below.
 
-#### Default setup (including SQLite database)
+#### Local server setup
 
 1. Get CTFd with `git clone https://github.com/CTFd/CTFd.git`.
 2. Perform steps 1 and 3 from
    [the CTFd installation instructions](https://github.com/CTFd/CTFd#install).
-3. Use your favourite SQLite client to connect to the CTFd database and
-   execute the `INSERT` statements you created.
 4. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
    and create an admin user and CTF name
+5. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
+6. Select the generated `.zip` file and make sure only the _Challenges_ box is ticket. Press _Import_.
 
-#### `docker-compose` setup (including MySQL container)
+#### Docker container setup
 
 1. Setup
    [Docker host and Docker compose](https://docs.docker.com/compose/install/).
@@ -255,25 +249,7 @@ describing your preferred CTFd run-mode below.
 3. After running `docker-compose up` from previous step, you should be
    able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
    default) and create an admin user and CTF name.
-4. Once you have done this, run `docker-compose down` or use `Ctrl-C` to
-   shut down CTFd. Note: Unlike a usual Docker container, data will
-   persist even afterwards.
-5. Add the following section to the `docker-compose.yml` file and then
-   run `docker-compose up` again:
-
-   ```
-   ports:
-     - "3306:3306"
-   ```
-
-6. Use your favourite MySQL client to connect to the CTFd database
-   (default credentials are root with no password) and execute the
-   `INSERT` statements you created.
-7. Browse back to your CTFd instance UI and check everything has worked
-   correctly.
-8. If everything has worked, do another `docker-compose down`, remove
-   the ports section you added to `docker-compose.yml` and then do
-   `docker-compose up` again and you are ready to go!
+4. Follow the steps 4-5 from the [Default setup](#local-server-setup) described above  
 
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
@@ -345,6 +321,19 @@ function hmacSha1 (secretKey, text) {
 > will hash the message again themselves, and if it is authentic, the
 > received and computed hashes will match.[^2]
 
+The following screenshots were taken during a CTF event where Facebook's
+popular [FBCTF](https://github.com/facebook/fbctf) game server was used.
+Juice Shop instances were running in a Docker cluster and individually
+assigned to a participant via a load balancer.
+
+![FBCTF World Map](img/FBCTF-Iteratec-00.png)
+
+![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
+
+![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
+
+![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
+
 ## Commercial use disclaimer
 
 :warning: Bear in mind: With the increasing number of challenge
@@ -355,4 +344,3 @@ Juice Shop!
 [^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
 
 [^2]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
-
