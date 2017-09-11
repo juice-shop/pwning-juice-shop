@@ -222,8 +222,6 @@ Shop database. The score value of each challenge is calculated by the
 The entire output of the tool will finally be written into
 `OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started in.
 
-![Juice Shop CTF CLI](img/cli_usage_screenshot.png)
-
 ### Running CTFd
 
 To apply the generated `.zip`, follow the steps
