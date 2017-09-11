@@ -174,7 +174,7 @@ juice-shop-ctf
 The tool will now ask a series of questions. All questions have default
 answers available which you can choose by simply hitting `ENTER`.
 
-[![asciicast](https://asciinema.org/a/120833.png)](https://asciinema.org/a/120833)
+![juice-shop-ctf CLI in action](img/cli_usage_screenshot.png)
 
 1. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
    Shop server where the tool will retrieve the existing challenges from
