@@ -4,7 +4,7 @@
 
 In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
-endeavors. Only the most commonly used methods are described here. For a
+endeavours. Only the most commonly used methods are described here. For a
 full list of options - including Vagrant and Amazon EC2 deployment -
 please refer to the corresponding
 [_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#setup).
@@ -107,5 +107,5 @@ That is why - in practice - Juice Shop wipes the entire database and the
 folder users might have modified during hacking. After performing this
 _self-healing_ the application is supposed to be restartable, no matter
 what kind of problem originally caused it to crash. For convenience the
-_self-healing_ happens during the startup (i.e. `npm start`) of the
+_self-healing_ happens during the start-up (i.e. `npm start`) of the
 server, so no extra command needs to be issued to trigger it.

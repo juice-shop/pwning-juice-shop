@@ -70,7 +70,7 @@ input validation:
 
 As presented in the
 [Architecture Overview](/introduction/architecture.md), the OWASP Juice
-Shop uses a Javascript client on top of a RESTful API on the server
+Shop uses a JavaScript client on top of a RESTful API on the server
 side. Even without giving this fact away in the introduction chapter,
 you would have quickly figured this out looking at their interaction
 happening on the network. Most actions on the UI result in
@@ -95,7 +95,7 @@ to master this challenge.
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
 This is the hardest XSS challenge, as it cannot by solved by fiddling
-with the client-side Javascript or bypassing the client entirely.
+with the client-side JavaScript or bypassing the client entirely.
 Whenever there is a server-side validation or input processing involved,
 you should investigate how it works. Finding out implementation details
 - e.g. used libraries, modules or algorithms - should be your priority.
@@ -122,4 +122,3 @@ approach._
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 
 [^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
-

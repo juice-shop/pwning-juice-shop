@@ -35,7 +35,7 @@ be visible at all.
   unforeseen error
 
 If you see the success notification for this challenge but no error
-message on screen, the error was probably logged on the Javascript
+message on screen, the error was probably logged on the JavaScript
 console of the browser. You were supposed to have it open all the time
 anyway, remember?
 

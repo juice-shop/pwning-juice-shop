@@ -70,7 +70,7 @@ The `ctf.yml` configuration furthermore hides the GitHub ribbon in the
 top right corner of the screen. It also hides all hints from the score
 board. Instead it will make the _solved_-labels on the score board
 clickable which results in the corresponding _"challenge
-solved!"_-notification being repated. This can be useful in case you
+solved!"_-notification being repeated. This can be useful in case you
 forgot to copy a flag code before closing the corresponding
 notification.
 
@@ -104,14 +104,14 @@ score-tracking server. It manages the status of the CTF, typically
 including
 
 * registration dialogs for teams and users
-* leaderboard of users/teams participating in the event
+* leader board of users/teams participating in the event
 * challenge board with the open/solved hacking tasks and their score
   value
 * which challenges have been solved already and by whom
 
 Apart from the server each participant should have their own instance of
 OWASP Juice Shop. Having a shared instance for each team is strongly
-disrecommended, because Juice Shop is programmed as a single-user
+discouraged, because Juice Shop is programmed as a single-user
 application. It is absolutely important that all Juice Shop instances
 participating in a CTF use the same [secret key to generate their CTF
 flag codes](#overriding-the-ctfkey). The score server must be set up

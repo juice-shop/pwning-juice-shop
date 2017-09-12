@@ -18,15 +18,15 @@ as the powerful
 [FireBug](https://addons.mozilla.org/de/firefox/addon/firebug/) plugin
 to offer.
 
-When hacking a web application that relies havily on Javascript, **it is
-essential to your success to monitor the _Javascript Console_
+When hacking a web application that relies heavily on JavaScript, **it is
+essential to your success to monitor the _JavaScript Console_
 permanently!** It might leak valuable information to you through error
 or debugging logs!
 
 ![DevTools Console tab](img/devtools_console.png)
 
 Other useful features of DevTools and FireBug are their network overview
-as well as insight into the client-side Javascript code, cookies and
+as well as insight into the client-side JavaScript code, cookies and
 other local storage being used by the application.
 
 ![DevTools Network tab](img/devtools_network.png)
@@ -38,7 +38,7 @@ other local storage being used by the application.
 If you are not familiar with the features of DevTools yet, there is a
 worthwhile online-learning course
 [Discover DevTools](https://www.codeschool.com/courses/discover-devtools)
-on [Code School](https://www.codeschool.com) availabble for free. It
+on [Code School](https://www.codeschool.com) available for free. It
 teaches you hands-on how Chrome's powerful developer toolkit works. The
 course is worth a look even if you think you know the DevTools quite
 well already.
@@ -219,7 +219,7 @@ Additionally it hosts the issue tracker of the project, which is used
 for idea management and task planning as well as bug tracking. You can
 of course submit an issue if you run into technical problems that are
 not covered by the [Troubleshooting section of the README.md](). You
-just should not read issues labeled `challenge` as they might contain
+just should not read issues labelled `challenge` as they might contain
 spoilers or solutions.
 
 Of course you are explicitly allowed to view

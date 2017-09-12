@@ -55,7 +55,7 @@ use it to reset his password.
 
 ### Reset Bender's password via the Forgot Password mechanism
 
-Simliar to
+Similar to
 [the challenge of finding Jim's security answer](#reset-jims-password-via-the-forgot-password-mechanism)
 this challenge is about finding the answer to user Bender's security
 question. It is slightly harder to find out than Jim's answer.
@@ -74,8 +74,8 @@ question. It is slightly harder to find out than Jim's answer.
 ### Reset Bjoern's password via the Forgot Password mechanism
 
 The final security question challenge is the one to find user Bjoern's
-anwswer. As the OWASP Juice Shop Project Leader and author of this book
-is not remotely as polular and publicly exposed as
+answer. As the OWASP Juice Shop Project Leader and author of this book
+is not remotely as popular and publicly exposed as
 [Jim](#reset-jims-password-via-the-forgot-password-mechanism) or
 [Bender](#reset-benders-password-via-the-forgot-password-mechanism),
 this challenge should be significantly harder.
@@ -83,10 +83,9 @@ this challenge should be significantly harder.
 #### Hints
 
 * Bjoern chose to answer his chosen question truthfully but tried to
-  make it harder for attackers by applying sort of a historial twist
+  make it harder for attackers by applying sort of a historical twist
 * Hints to the answer to Bjoern's question can be found by looking him
   up in social networks
 * Brute forcing the answer should be next to impossible
 
 [^1]: http://goodsecurityquestions.com
-

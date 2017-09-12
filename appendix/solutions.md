@@ -8,7 +8,7 @@ Often there are multiple ways to solve a challenge. In most cases just
 one possible solution is presented here. This is typically the easiest
 or most obvious one from the author's perspective.
 
-> The challenge solutions found in this release of the compantion guide
+> The challenge solutions found in this release of the companion guide
 > are compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop.
 
 ### Find the carefully hidden 'Score Board' page
@@ -34,7 +34,7 @@ or most obvious one from the author's perspective.
  </nav>
 ```
 
-1. Notice the commented out `<li>` entry labeled "Score Board".
+1. Notice the commented out `<li>` entry labelled "Score Board".
 2. Navigate to http://localhost:3000/#/score-board to solve the
    challenge.
 
@@ -42,7 +42,7 @@ or most obvious one from the author's perspective.
 
 Any request that cannot be properly handled by the server will
 eventually be passed to a global error handling component that sends an
-error page to the client that includes a stacktrace and other sensitive
+error page to the client that includes a stack trace and other sensitive
 information. The restful API behaves in a similar way, passing back a
 JSON error object with sensitive data, such as SQL query strings.
 
@@ -51,7 +51,7 @@ error situation and solve this challenge along the way:
 
 * Visit <http://localhost:3000/#/search?q=';>
 
-  ![Javascript Error](img/error-js_console.png)
+  ![JavaScript Error](img/error-js_console.png)
 * Visit <http://localhost:3000/ftp/crash>
 
   ![403 Error](img/error_page-403.png)
@@ -244,7 +244,7 @@ by Joe Butler:
 
 <http://localhost:3000/#/search?q=%3Cscript%3Exmlhttp%20%3D%20new%20XMLHttpRequest;%20xmlhttp.open('GET',%20'http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic');%20xmlhttp.send()%3C%2Fscript%3E>
 
-Prettyprinted this attack is easier to understand:
+Pretty-printed this attack is easier to understand:
 
 ```html
 <script>
@@ -281,16 +281,16 @@ in order to exploit and solve them:
 
 ### Order the Christmas special offer of 2014
 
-1. Observe the Javascript console while submitting the text `';` via the
+1. Observe the JavaScript console while submitting the text `';` via the
    _Search_ field.
 2. The `error` object contains the full SQL statement used for search
    for products.
 
-   ![SQL search query in Javascript error](img/search_error-js_console.png)
+   ![SQL search query in JavaScript error](img/search_error-js_console.png)
 3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
    product we seek.
 4. Searching for `'--` results in a `SQLITE_ERROR: syntax error` on the
-   Javascript console. This is due to two (now unbalanced) parenthesis
+   JavaScript console. This is due to two (now unbalanced) parenthesis
    in the query.
 5. Searching for `'))--` fixes the syntax and successfully lists all
    products, including the (logically deleted) Christmas offer.
@@ -529,7 +529,7 @@ in order to exploit and solve them:
 
 ### Inform the shop about a vulnerable library it is using
 
-Juice Shop depends on some Javascript libraries with known
+Juice Shop depends on some JavaScript libraries with known
 vulnerabilities. Having the `package.json.bak` and using an external
 service like [Node Security Platform](https://nodesecurity.io/) makes it
 rather easy to identify them:
@@ -574,7 +574,7 @@ rather easy to identify them:
 3. Visit <https://github.com/divshot/geo-bootstrap> to learn that this
    _"timeless Twitter Bootstrap theme built for the modern web"_ comes
    with its own `bootstrap.css` that lives in a folder `/swatch`.
-4. Open the Javascript console of your browser.
+4. Open the JavaScript console of your browser.
 5. Submit the command
    `document.getElementById("theme").setAttribute("href",
    "css/geo-bootstrap/swatch/bootstrap.css");` to enable this beautiful
@@ -917,7 +917,7 @@ explains the problem and gives an exploit example:
 
 1. In your browser perform right-click and choose _View Source_ on any
    dialog of the Juice Shop
-2. Scroll down to the line where all the Javascript files are included:
+2. Scroll down to the line where all the JavaScript files are included:
 
    ```html
    <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -1027,7 +1027,7 @@ totally different attack styles.
    section:
 
    ![Dependents of z85 on npmjs.com](img/z85-dependents.png)
-5. If you have NodeJS installed locally run `npm install -g z85-cli` to
+5. If you have Node.js installed locally run `npm install -g z85-cli` to
    install <https://www.npmjs.com/package/z85-cli> - a simple command
    line interface for `z85`:
 
@@ -1154,4 +1154,3 @@ totally different attack styles.
 [^4]: <http://www.kli.org/about-klingon/klingon-history>
 
 [^5]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
-

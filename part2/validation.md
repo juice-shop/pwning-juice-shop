@@ -30,7 +30,7 @@ out away to _receive_ money instead of _paying_ for their purchase.
 
 * You literally need to make the shop owe you any amount of money
 * Investigate the shopping basket closely to understand how it prevents
-  you from creating orders that would fulfill the challenge
+  you from creating orders that would fulfil the challenge
 
 ### Upload a file larger than 100 kB
 

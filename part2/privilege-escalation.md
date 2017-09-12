@@ -56,7 +56,7 @@ deleting the 5-star feedback is very easy.
 #### Hints
 
 * Nothing happens when you try to delete feedback entries? Check the
-  Javascript console for errors!
+  JavaScript console for errors!
 
 ### Change the href of the link within the O-Saft product description
 
@@ -87,7 +87,7 @@ challenge instruction to make it light up green on the score board:
 
 This horizontal privilege escalation challenge demands you to access the
 shopping basket of another user. Being able to do so would give an
-attacker the opportunity to spy on the victims shopping behavior. He
+attacker the opportunity to spy on the victims shopping behaviour. He
 could also play a prank on the victim by manipulating the items or their
 quantity, hoping this will go unnoticed during checkout. This could lead
 to some arguments between the victim and the vendor.
@@ -120,4 +120,3 @@ posting a (most likely negative) feedback in his or her name!
   [XSS challenges](xss.md) found in OWASP Juice Shop.
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
-

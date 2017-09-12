@@ -5,12 +5,12 @@ trainings in order to facilitating security awareness. With its not
 entirely serious user roster and product inventory the application might
 not be suited for all audiences alike.
 
-In some particularly traditional domains or sonservative enterprises it
-would be benefitial to have the demo application look and behave more
+In some particularly traditional domains or conservative enterprises it
+would be beneficial to have the demo application look and behave more
 like an internal application.
 
 OWASP Juice Shop can be customized in its product inventory and look &
-feel to accomodate this requirement. It also allows to add an arbitrary
+feel to accommodate this requirement. It also allows to add an arbitrary
 number of fake users to make demonstrations - particularly those of
 `UNION-SQL` injection attacks - even more impressive. Furthermore the
 Challenge solved!-notifications can be turned off in order to keep the
@@ -31,7 +31,7 @@ The customization is powered by a YAML configuration file placed in
 You can also run a config directly in one command (on Linux) via
 `NODE_ENV=nameOfYourConfig npm start`. By default the
 `config/default.yml` config is used which generates the original OWASP
-Juice Shop look & feel and inventory.Please note that it is not
+Juice Shop look & feel and inventory. Please note that it is not
 necessary to run `npm install` after switching customization
 configurations.
 
@@ -73,7 +73,7 @@ find its syntax along with an excerpt of the default settings.
     used as a favicon. Defaults to `"favicon_v2.ico"`
   * `numberOfRandomFakeUsers` represents the number of random user
     accounts to be created on top of the pre-defined ones (which are
-    required for serveral challenges). Defaults to `0`, meaning no
+    required for several challenges). Defaults to `0`, meaning no
     additional users are created.
   * `showChallengeSolvedNotifications` shows or hides all instant
     _"challenge solved"_-notifications. Recommended to set to `false`

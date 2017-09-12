@@ -52,7 +52,7 @@
 Instead of trying random attacks or go through an attack pattern list,
 it is a good idea to find out if and where a vulnerability exists,
 first. By injecting a payload that should typically _break_ an
-underlying SQL query (e.g. `'` or `';`) you can analyze how the behavior
+underlying SQL query (e.g. `'` or `';`) you can analyze how the behaviour
 differs from regular use. Maybe you can even provoke an error where the
 application leaks details about the query structure and schema details
 like table or column names. Do not miss this opportunity.

@@ -21,7 +21,7 @@ been continually adjusted over time based on user feedback. Visible
 difficulty ratings allow you to influence your own hacking pace and
 learning curve significantly. When you pick a 4- or 5-star challenge you
 _expect_ a real challenge and should be less frustrated if you fail on
-it several times. On the other hand if hacking a 1- oder 2-star
+it several times. On the other hand if hacking a 1- or 2-star
 challenge takes very long, you might realize quickly that you are on a
 wrong track with your chosen hacking approach.
 
@@ -52,7 +52,7 @@ each one individually, as a simple reload of the UI in the browser (`F5`
 key) will dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
-might also also show a :checkered_flag: symbol with a character sequence
+might also show a :checkered_flag: symbol with a character sequence
 next to it. If you are doing a hacking session just on your own, you can
 completely ignore this flag. The code is only relevant if you are
 participating in a CTF event. Please refer to chapter

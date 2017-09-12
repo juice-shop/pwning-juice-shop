@@ -52,14 +52,14 @@ In case you are a new customer, you must first register by following the
 corresponding link on the login screen to `#/register`. There you must
 enter your email address and a password to create a new user account.
 With these credentials you can then log in... and finally start
-shopping! During registration you also choose and anwswer a security
+shopping! During registration you also choose and answer a security
 question that will let you recover the account if you ever forget your
 password.
 
 ### Forgot Password
 
-By provoding your email address, the answer to your security question
-and a new password, you can revocer an otherwise unaccessible account.
+By providing your email address, the answer to your security question
+and a new password, you can recover an otherwise inaccessible account.
 
 ### Choosing products to purchase
 
@@ -150,4 +150,3 @@ to supply your current password to legitimate this change.
 [^1]: https://www.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
 
 [^2]: http://xunitpatterns.com/happy%20path.html
-

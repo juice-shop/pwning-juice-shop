@@ -7,9 +7,9 @@ lists at <https://github.com/bkimminich/juice-shop/issues>.
 !["help wanted" label on GitHub](img/help_wanted-label.png)
 !["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
 
-* Issues labeled with **help wanted** indicate tasks where the project
+* Issues labelled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
-* Issues labeled with **newbie friendly** indicate tasks that are
+* Issues labelled with **newbie friendly** indicate tasks that are
   isolated and not too hard to implement, so they are well-suited for
   new contributors
 
@@ -92,7 +92,7 @@ The minimum requirements for code contributions are:
 
 ### JavaScript standard style guide
 
-Since v2.7.0 the `npm test` script also verifies code complicance with
+Since v2.7.0 the `npm test` script also verifies code compliance with
 the `standard` style before running the tests. If PRs deviate from this
 coding style, they will now immediately fail their build and will not be
 merged until compliant.
@@ -238,4 +238,3 @@ described above in
 to make sure nothing is broken or missing.
 
 [^1]: <http://semver.org>
-

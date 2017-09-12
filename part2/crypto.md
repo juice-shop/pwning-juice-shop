@@ -40,7 +40,7 @@
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
-To fulfill this challenge you must identify a cryptographic algorithm
+To fulfil this challenge you must identify a cryptographic algorithm
 (or crypto library) that either * should not be used _at all_ * or is a
 _bad choice_ for a given requirement * or is used in an _insecure way_.
 
@@ -77,7 +77,7 @@ the name.
 
 This is probably one of the hardest challenges in the OWASP Juice Shop.
 As you learned during [the "happy path" tour](/part1/happy-path.md), the
-webshop offers a _Coupon_ field to get a discount on your entire order
+web shop offers a _Coupon_ field to get a discount on your entire order
 during checkout. The challenge is to get a discount of at least 80% on
 an order. As no coupons with this high a discount are published, it is
 up to you to forge your own.
@@ -148,11 +148,10 @@ That is why the actual challenge here is to unlock and solve the
 * Once more: **You do not have to pay anything to unlock this
   challenge!**
 
-> Sidenote: The Bitcoin address behind the taunting _Unlock_ button is
+> Side note: The Bitcoin address behind the taunting _Unlock_ button is
 > actually a valid address of the author. So, if you'd like to donate a
 > small amount for the ongoing maintenance and development of OWASP
 > Juice Shop - feel free to actually use it! More on
 > [donations in part 3](../part3/donations.md) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
-

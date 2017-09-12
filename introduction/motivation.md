@@ -37,7 +37,7 @@ list of challenges kept growing ever since.
 Apart from the hacker and awareness training use case, penetration
 testing tools and automated security scanners are invited to use Juice
 Shop as a sort of guinea pig-application to check how well their
-products cope with Javascript-heavy application frontends and REST APIs.
+products cope with JavaScript-heavy application frontends and REST APIs.
 
 ### Why _OWASP_ Juice Shop?
 
@@ -77,18 +77,18 @@ lousy wares and does not exactly have customer satisfaction as a
 priority: _Saftladen_. Reverse-translating this separately as _Saft_ and
 _Laden_ yields _juice_ and _shop_ in English. That is where the project
 name comes from. The fact that the initials _JS_ match with those
-commonly used for _Javascript_ was purely coincidental and not related
+commonly used for _JavaScript_ was purely coincidental and not related
 to the choice of implementation technology.
 
 ### Why the logo?
 
 Other than the name, the Juice Shop logo was designed explicitly with
-_Javascript_ in mind:
+_JavaScript_ in mind:
 
 ![Inofficial JS Shield](img/JS_Shield.png)
 
-The authors idea was to convert one of the (inofficial but popular)
-_Javascript_ shield-logos into a **leaking juice box** because it had a
+The authors idea was to convert one of the (unofficial but popular)
+_JavaScript_ shield-logos into a **leaking juice box** because it had a
 quite matching shape for this shenanigans:
 
 ![Original JuiceShop logo](img/JuiceShop_RetroLogo.png)

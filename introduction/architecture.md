@@ -1,13 +1,13 @@
 # Architecture overview
 
 The OWASP Juice Shop is a pure web application implemented in
-Javascript. In the frontend the popular
+JavaScript. In the frontend the popular
 [AngularJS](https://angularjs.org/) framework is used to create a
 so-called _Single Page Application_. The user interface layout is
 provided by Twitter's [Bootstrap](http://getbootstrap.com) framework -
 which works nicely in combination with AngularJS.
 
-Javascript is also used in the backend as the exclusive programming
+JavaScript is also used in the backend as the exclusive programming
 language: An [Express](http://expressjs.com) application hosted in a
 [Node.js](https://nodejs.org) server delivers the client-side code to
 the browser. It also provides the necessary backend functionality to the
@@ -22,8 +22,8 @@ to use a dynamically created API for simple interactions (i.e. CRUD
 operations) with database resources while still allowing to execute
 custom SQL for more complex queries.
 
-As an additional datastore a [MarsDB](https://github.com/c58/marsdb) was
-introduced with the release of OWASP Juice Shop 5.x. It is a Javascript
+As an additional data store a [MarsDB](https://github.com/c58/marsdb) was
+introduced with the release of OWASP Juice Shop 5.x. It is a JavaScript
 derivate of the widely used [MongoDB](https://www.mongodb.com) NoSQL
 database and compatible with most of its query/modify operations.
 
