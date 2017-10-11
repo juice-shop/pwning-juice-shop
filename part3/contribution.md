@@ -5,11 +5,11 @@ what task to address, the best place to look is in the GitHub issue
 lists at <https://github.com/bkimminich/juice-shop/issues>.
 
 !["help wanted" label on GitHub](img/help_wanted-label.png)
-!["newbie friendly" label on GitHub](img/newbie_friendly-label.png)
+!["good first issue" label on GitHub](img/good_first_issue-label.png)
 
 * Issues labelled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
-* Issues labelled with **newbie friendly** indicate tasks that are
+* Issues labelled with **good first issue** indicate tasks that are
   isolated and not too hard to implement, so they are well-suited for
   new contributors
 
