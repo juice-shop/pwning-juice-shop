@@ -23,8 +23,6 @@ contains known vulnerabilities.
 
 * Use the _Contact Us_ form to submit a feedback mentioning the
   vulnerable library including its exact version.
-* There are two possible answers and you only need to identify one to
-  solve the challenge.
 * Look for possible dependencies related to security in the
   `package.json.bak` you harvested earlier.
 * Do some research on the internet for known security issues in the most

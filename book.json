@@ -17,7 +17,7 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v5.0.0",
+    "juiceShopVersion": "v5.1.0-SNAPSHOT",
     "juiceShopCtfVersion": "v2.0.1",
     "ctfdVersion": "1.0.2",
     "juiceShopNumberOfChallenges": 47

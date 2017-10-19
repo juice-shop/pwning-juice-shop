@@ -529,24 +529,18 @@ in order to exploit and solve them:
 
 ### Inform the shop about a vulnerable library it is using
 
-Juice Shop depends on some JavaScript libraries with known
-vulnerabilities. Having the `package.json.bak` and using an external
-service like [Node Security Platform](https://nodesecurity.io/) makes it
-rather easy to identify them:
-
-* `sanitize-html` is pinned to version `1.4.2` which has a known bug of
-  not sanitizing recursively (see
-  [Perform a persisted XSS attack bypassing a server-side security mechanism](#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
-* `sequelize` in the used version `1.7.x` has several known issues with
-  SQL Injection
+Juice Shop depends on a JavaScript library with known vulnerabilities.
+Having the `package.json.bak` and using an external service like
+[Node Security Platform](https://nodesecurity.io/) makes it rather easy
+to identify it: `sanitize-html` is pinned to version `1.4.2` which has a
+known bug of not sanitizing recursively (see
+[Perform a persisted XSS attack bypassing a server-side security mechanism](#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
 
 <!-- -->
 
 1. Visit <http://localhost:3000/#/contact>
-2. Submit your feedback with one of these two string pairs appearing
-   somewhere in the comment:
-   * `sanitize-html` and `1.4.2` or
-   * `sequelize` and `1.7`.
+2. Submit your feedback with the string pair `sanitize-html` and `1.4.2`
+   appearing somewhere in the comment.
 
 ### Find the hidden easter egg
 
