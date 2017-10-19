@@ -294,9 +294,12 @@ in order to exploit and solve them:
    in the query.
 5. Searching for `'))--` fixes the syntax and successfully lists all
    products, including the (logically deleted) Christmas offer.
-6. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
+6. Add any regular product other than the _Christmas Super-Surprise-Box
+   (2014 Edition)_ into you shopping basket to prevent problems at
+   checkout later.
+7. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
    your shopping basket.
-7. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+8. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Reset Jim's password via the Forgot Password mechanism
 
