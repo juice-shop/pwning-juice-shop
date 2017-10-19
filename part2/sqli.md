@@ -42,7 +42,7 @@
 | Challenge                                                 | Difficulty |
 |:----------------------------------------------------------|:-----------|
 | Log in with the administrator's user account.             | 2 of 5     |
-| Order the Christmas special offer of 2014.                | 2 of 5     |
+| Order the Christmas special offer of 2014.                | 3 of 5     |
 | Retrieve a list of all user credentials via SQL Injection | 3 of 5     |
 | Log in with Jim's user account.                           | 3 of 5     |
 | Log in with Bender's user account.                        | 3 of 5     |
