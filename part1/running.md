@@ -86,8 +86,7 @@ in the project's README.md.
    download the `latest` image as described above.
 3. Run `docker run -d -p 3000:3000 bkimminich/juice-shop` to launch the
    container with that image.
-4. Browse to <http://localhost:3000>. On macOS you will have to browse
-   to <http://192.168.99.100:3000> instead.
+4. Browse to <http://localhost:3000>.
 
 If you are using Docker on Windows - inside a VirtualBox VM - make sure
 that you also enable port forwarding from host `127.0.0.1:3000` to
