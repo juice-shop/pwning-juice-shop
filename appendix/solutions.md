@@ -941,6 +941,10 @@ explains the problem and gives an exploit example:
 >
 > ![angular-tooltips on Bower](img/bower_angular-tooltips.png)
 
+### Forge an essentially unsigned JWT token
+
+:wrench: TODO
+
 ### Forge a coupon code that gives you a discount of at least 80%
 
 For this challenge there are actually two distinct _solution paths_ that
@@ -1117,6 +1121,10 @@ totally different attack styles.
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
+
+### Forge an almost properly RSA-signed JWT token
+
+:wrench: TODO
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 

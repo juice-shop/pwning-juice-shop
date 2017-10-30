@@ -9,6 +9,8 @@
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | 4 of 5     |
 | Wherever you go, there you are.                                                                                                    | 4 of 5     |
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | 5 of 5     |
+| Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                            | 4 of 5     |
+| Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                    | 5 of 5     |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
@@ -122,6 +124,22 @@ run and troubleshoot the application. Not the slightest sign of
   current account password from.
 * While it is also possible to use SQL Injection to log in as the
   support team, this will not solve the challenge.
+
+### Forge an essentially unsigned JWT token
+
+:wrench: TODO
+
+#### Hints
+
+:wrench: TODO
+
+### Forge an almost properly RSA-signed JWT token
+
+:wrench: TODO
+
+#### Hints
+
+:wrench: TODO
 
 [^1]: https://tools.ietf.org/html/rfc7519
 [^2]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
