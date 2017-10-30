@@ -886,30 +886,6 @@ explains the problem and gives an exploit example:
 > the postal code) and those in the east with 'O' (for Ost), e.g.:
 > O-1xxx Berlin.[^5]
 
-### Inform the shop about a JWT issue
-
-1. Log in with any user via <http://localhost:3000/#/login>
-2. Find your JWT token in the `token` cookie (as well as in the
-   `Authorization` request header) and paste it into <https://jwt.io> to
-   see it decoded:
-
-   ![Decoded JWT token with invalid key](img/jwt_token_decoded.png)
-3. To solve this challenge you need to find the right secret for the
-   `HMACSHA256` function in the lower right box labeled _Verify
-   Signature_. The default value of `secret` is obviously wrong as the
-   :x:_Invalid Signature_ message at the bottom tells you
-4. As the secret key for the JWT creation is kept on the server side and
-   does not leak into the client, your best chance is either a really
-   lucky guess or a brute force attack
-5. Depending on your chosen word list (e.g. typical names) and its
-   permutations (e.g. all-caps) you will come across `JOSE` as the key
-   that gives you a :white_check_mark:_Signature Verified_ message:
-
-   ![Decoded JWT token with valid key](img/jwt_verified_signature.png)
-6. Visit <http://localhost:3000/#/contact>
-7. Submit your feedback with `JOSE` in the comment to solve this
-   challenge
-
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
 1. In your browser perform right-click and choose _View Source_ on any

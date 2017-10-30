@@ -6,7 +6,6 @@
 |:-----------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | 2 of 5     |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | 3 of 5     |
-| Inform the shop about a JWT issue. (Mention the exact secret used for the signature in the JWT in your comment.)                   | 3 of 5     |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | 4 of 5     |
 | Wherever you go, there you are.                                                                                                    | 4 of 5     |
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | 5 of 5     |
@@ -60,29 +59,6 @@ hacking pleasure!
 > the challenge description is _not a joke_. Please do not try to break
 > into Bjoern's (or anyone else's) Google account. This would be a
 > criminal act.
-
-### Inform the shop about a JWT issue
-
-> JSON Web Token (JWT) is a compact, URL-safe means of representing
-> claims to be transferred between two parties. The claims in a JWT are
-> encoded as a JSON object that is used as the payload of a JSON Web
-> Signature (JWS) structure or as the plaintext of a JSON Web Encryption
-> (JWE) structure, enabling the claims to be digitally signed or
-> integrity protected with a Message Authentication Code (MAC) and/or
-> encrypted.[^1]
-
-OWASP Juice Shop uses JWT in order to identify its users and authorize
-them for the more sensitive functions of the shop. Unfortunately when an
-appropriate security mechanism is used or implemented improperly, all
-its security benefits might be null and void.
-
-#### Hints
-
-* As the challenge description suggests, you need to somehow retrieve
-  the secret that is used by the application when tokens are produced.
-* For this challenge a brute force attack might be more effective than
-  manual attacks or searching for specific exploits.
-* The site https://jwt.io proved to be a pretty useful resource
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account
 
