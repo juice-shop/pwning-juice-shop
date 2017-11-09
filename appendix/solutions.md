@@ -943,7 +943,25 @@ explains the problem and gives an exploit example:
 
 ### Forge an essentially unsigned JWT token
 
-:wrench: TODO
+1. Log in as any user to receive a valid JWT in the `Authorization`
+   header.
+2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
+   header) into the _Encoded_ field at <https://jwt.io>.
+3. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
+   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
+   The JWT algorithm should now have changed to `HS256` instead of
+   `RS256`.
+4. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
+   the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
+5. Change the value of the `alg` parameter in the _HEADER_ part on the
+   right hand side from `HS256` to `none`.
+6. In the _Encoded_ field on the left delete the signature part (colored
+   in cyan at the time of this writing) so that the final character of
+   the JWT is the last `.` (dot symbol).
+7. Change the `Authorization` header of a subsequent request to the
+   retrieved JWT (prefixed with `Bearer ` as before) and submit the
+   request. Alternatively you can set the `token` cookie to the JWT
+   which be used to populate any future request with that header.
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
@@ -1124,7 +1142,40 @@ totally different attack styles.
 
 ### Forge an almost properly RSA-signed JWT token
 
-:wrench: TODO
+1. Browse the directory <http://localhost:3000/encryptionkeys>. How to
+   find this directory is described in the solution for challenge
+   [Unlock Premium Challenge to access exclusive content](#unlock-premium-challenge-to-access-exclusive-content).
+2. Retrieve the public RSA key that is used to verify the JWTs from
+   <http://localhost:3000/encryptionkeys/jwt.pub>.
+3. Log in as any user to receive a valid JWT in the `Authorization`
+   header.
+4. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
+   header) into the _Encoded_ field at <https://jwt.io>.
+5. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
+   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
+   The JWT algorithm should now have changed to `HS256` instead of
+   `RS256`.
+6. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
+   the `email` attribute in the JSON to `rsa_lord@juice-sh.op`.
+7. In the <https://jwt.io> tab where you are modifying the JWT, go to
+   the Browser developer tools (`F12` in Chrome) and find the
+   `js/jwt.js` file (under _Source_ in Chrome).
+8. Put a breakpoint on the line saying `key =
+   window.CryptoJS.enc.Latin1.parse(key).toString();` (line 77 at the
+   time of this writing)
+9. Make some arbitrary change to the JWT on the right hand side to
+   trigger the breakpoint.
+10. While execution is paused, set the `key` variable to the public RSA
+    via the developer tools Console: `key = '-----BEGIN RSA PUBLIC
+    KEY-----\r\nMIGJAoGBAM3CosR73CBNcJsLv5E90NsFt6qN1uziQ484gbOoule8leXHFbyIzPQRozgEpSpiwhr6d2/c0CfZHEJ3m5tV0klxfjfM7oqjRMURnH/rmBjcETQ7qzIISZQ/iptJ3p7Gi78X5ZMhLNtDkUFU9WaGdiEb+SnC39wjErmJSfmGb7i1AgMBAAE=\r\n-----END
+    RSA PUBLIC KEY-----'`. Note that it is necessary to encode the line
+    breaks in the key properly using `\r\n` in the appropriate places!
+11. Resume execution. A signature should have been added to the JWT text
+    on the left hand side.
+12. Change the `Authorization` header of a subsequent request to the
+    retrieved JWT (prefixed with `Bearer ` as before) and submit the
+    request. Alternatively you can set the `token` cookie to the JWT
+    which be used to populate any future request with that header.
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
