@@ -24,30 +24,63 @@ spend) money on:
   [Bountysource](https://www.bountysource.com/teams/juice-shop))
 * Software license costs (e.g. an extended icon library)
 * Commercial support where the team lacks expertise (e.g. graphics
-  design for this book's cover)
+  design for this book's cover was paid from donations)
 
 ## How can I donate?
 
 The project gratefully accepts donations via PayPal as well as BitCoin
 and other payment options:
 
-| Provider               | Link                                                                                                                                                                                                                                                     |
-|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Provider               | Link                                                                                                                                                                                                                                                               |
+|:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PayPal** (preferred) | [![PayPal Donate Button](img/paypal_donate.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40owasp%2eorg&lc=BM&item_name=OWASP%20Juice%20Shop%20Project&item_number=OWASP%20Foundation&no_note=0&currency_code=USD&bn=PP%2dDonationsBF) |
-| Gratipay               | <https://gratipay.com/juice-shop>                                                                                                                                                                                                                        |
-| Flattr                 | <https://flattr.com/thing/3856930/bkimminichjuice-shop-on-GitHub>                                                                                                                                                                                        |
-| BitCoin                | ![bitcoin:1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](img/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm.png)<br>[1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm)                                                    |
-| Dash                   | ![dash:Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](img/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW.png)<br>[Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW)                                                     |
-| Ethereum               | ![0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](img/0x0f933ab9fCAAA782D0279C300D73750e1311EAE6.png)<br>[0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6)                                                     |
+| Credit Card            | <https://www.regonline.com/Register/Checkin.aspx?EventID=1044369>                                                                                                                                                                                                  |
+| Gratipay               | <https://gratipay.com/juice-shop>                                                                                                                                                                                                                                  |
+| Flattr                 | <https://flattr.com/thing/3856930/bkimminichjuice-shop-on-GitHub>                                                                                                                                                                                                  |
+| BitCoin                | ![bitcoin:1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](img/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm.png)<br>[1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm)                                                              |
+| Dash                   | ![dash:Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](img/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW.png)<br>[Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW)                                                               |
+| Ethereum               | ![0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](img/0x0f933ab9fCAAA782D0279C300D73750e1311EAE6.png)<br>[0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6)                                         |
 
-Donations via PayPal are received and managed by the OWASP Foundation.
-This is the only option where an official donation receipt can be handed
-out.
+Donations via PayPal and Credit Card are received and managed by the
+OWASP Foundation. This is the only option where an official donation
+receipt can be handed out.
 
-> Please refer to the
-> [Donations](https://github.com/bkimminich/juice-shop#donations)
-> section at the bottom of the project's `README.md` file on GitHub for
-> possible additional options.
+> :warning: Independent of your selected method it is recommended to
+> forward your donation confirmation to <bjoern.kimminich@owasp.org> to
+> allow verifying if the earmarking worked and the money is attributed
+> to the Juice Shop budget.
+>
+> You should provide your full name and (optional) URL for the mention
+> in the
+> [Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
+> on the official project page. If you donated at least 1000 US$ you can
+> choose to provide a logo to put on the page instead of your name. See
+> [Sponsorship Rules](#sponsorship-rules) below for details.
+
+### Credit card donation step-by-step
+
+1. Go to
+   <https://www.regonline.com/Register/Checkin.aspx?EventID=1044369>.
+2. Register with your email address and select `Project Supporter` from
+   the _Donation Type_ dropdown list.
+
+   ![Registration step](img/regonline01.png)
+3. _Continue_ to the _Personal Info_ step and fill at least all
+   mandatory fields. Click _Continue_.
+4. In the _Agenda_ step select one of the available amounts or _Project
+   Supporter - Other_ to put in an individual amount.
+5. Enter `OWASP Juice Shop Project` into the mandatory field _Which
+   Project would you like to support?_ and click _Continue_.
+
+   ![Registration step](img/regonline02.png)
+6. In the final _Checkout_ step choose a _Password_ for your account and
+   fill in your _Billing Information.
+7. Click _Finish_ to process your donation and be led to the
+   _Confirmation_ screen.
+8. Here you can download your _Receipt_ under the _Documents_ section on
+   the right.
+
+   ![Registration step](img/regonline03.png)
 
 ## Sponsorship Rules
 
@@ -55,7 +88,12 @@ OWASP Juice Shop adheres to the
 [Project Sponsorship Operational Guidelines](https://www.owasp.org/index.php/Project_Sponsorship_Operational_Guidelines)
 of the OWASP Foundation. In one sentence, these allow named
 acknowledgements (with link) for all monetary donations. For amounts of
-least 1000 US$ a logo image (with link) can be added instead. You can
-find a list of all sponsors of the OWASP Juice Shop to date in the
+least 1000 US$ a logo image (with link) can be added instead. The logo
+size can be at most 300x300 pixels. Logo and name placements are
+guaranteed for 1 year after the donation but might stay there longer at
+the discretion of the Project Leader.
+
+You can find a list of all sponsors of the OWASP Juice Shop to date in
+the
 [Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
 tab of the project homepage.
