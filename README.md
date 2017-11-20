@@ -56,9 +56,9 @@ __Contribute content, suggestions, and fixes on GitHub:__
 
 * https://github.com/bkimminich/pwning-juice-shop
 
-__Official project landing page on the OWASP wiki:__
+__Official OWASP Juice Shop project homepage:__
 
-* https://www.owasp.org/index.php/OWASP_Juice_Shop_Project
+* http://owasp-juice.shop
 
 ----
 
