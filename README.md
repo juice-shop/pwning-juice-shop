@@ -5,13 +5,12 @@ Written by [Björn Kimminich](http://kimminich.de)
 ![OWASP Juice Shop logo](introduction/img/JuiceShop_Logo.png)
 
 This is the official companion guide to the __OWASP Juice Shop__
-application. Being a web application with
-{{book.juiceShopNumberOfChallenges}} intended security vulnerabilities,
-the OWASP Juice Shop is supposed to be the opposite of a _best practice_
-or _template application_ for web developers: It is an awareness,
-training, demonstration and exercise tool for security risks in modern
-web applications. The OWASP Juice Shop is an open-source project hosted
-by the non-profit
+application. Being a web application with a vast number of intended
+security vulnerabilities, the OWASP Juice Shop is supposed to be the
+opposite of a _best practice_ or _template application_ for web
+developers: It is an awareness, training, demonstration and exercise
+tool for security risks in modern web applications. The OWASP Juice Shop
+is an open-source project hosted by the non-profit
 [Open Web Application Security Project (OWASP)](https://owasp.org) and
 is developed and maintained by volunteers. The content of this book was
 written for {{book.juiceShopVersion}} of OWASP Juice Shop.
@@ -57,9 +56,9 @@ __Contribute content, suggestions, and fixes on GitHub:__
 
 * https://github.com/bkimminich/pwning-juice-shop
 
-__Official project landing page on the OWASP wiki:__
+__Official OWASP Juice Shop project homepage:__
 
-* https://www.owasp.org/index.php/OWASP_Juice_Shop_Project
+* http://owasp-juice.shop
 
 ----
 
