@@ -2,7 +2,7 @@
 
 Written by [Björn Kimminich](http://kimminich.de)
 
-![OWASP Juice Shop logo](introduction/img/JuiceShop_Logo.png)
+![OWASP Juice Shop Avatar](introduction/img/avatar.png)
 
 This is the official companion guide to the __OWASP Juice Shop__
 application. Being a web application with a vast number of intended

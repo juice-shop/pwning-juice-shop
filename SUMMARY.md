@@ -45,4 +45,4 @@
 
 ----
 
-* [About this book](ABOUT.md)
+* [About this book](introduction/abstract.md)
