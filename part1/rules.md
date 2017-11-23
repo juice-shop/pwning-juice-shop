@@ -9,17 +9,15 @@ emphasis lies on _good_ here, so you do _not_ want to use Internet
 Explorer. Other than that it is up to your personal preference. Chrome
 and Firefox both work fine from the authors experience.
 
-#### Browser development toolkit
+#### Browser development toolkits
 
 When choosing a browser to work with you want to pick one with good
-integrated (or pluggable) developer tooling. Google's Chrome comes with
-its own _DevTools_, Mozilla's Firefox has similar built-in tools as well
-as the powerful
-[FireBug](https://addons.mozilla.org/de/firefox/addon/firebug/) plugin
-to offer.
+integrated (or pluggable) developer tooling. Google Chrome and Mozilla
+Firefox both come with powerful built-in _DevTools_ which you can open
+via the `F12`-key.
 
-When hacking a web application that relies heavily on JavaScript, **it is
-essential to your success to monitor the _JavaScript Console_
+When hacking a web application that relies heavily on JavaScript, **it
+is essential to your success to monitor the _JavaScript Console_
 permanently!** It might leak valuable information to you through error
 or debugging logs!
 
@@ -45,23 +43,11 @@ well already.
 
 ![Discover DevTools course on Code School](img/codeschool_devtools.png)
 
-#### API testing plugin
+#### Tools for HTTP request tampering
 
-API testing plugins like
-[PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
-for Chrome or
-[RESTClient](https://addons.mozilla.org/de/firefox/addon/restclient/)
-for Firefox allow you to communicate with the RESTful backend of a web
-application directly. Skipping the UI can often be useful to circumvent
-client-side security mechanisms or simply get certain tasks done faster.
-Here you can create requests for all available HTTP verbs (`GET`,
-`POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request
-headers etc.
-
-If you feel more at home on the command line, `curl` will do the trick
-just as fine as the recommended browser plugins.
-
-#### Request tampering plugin
+On the _Network_ tab of Firefox's DevTools you have the option to _Edit
+and Resend_ every recorded HTTP request. This is extremely useful when
+probing for holes in the server-side validation logic.
 
 Request tampering plugins like
 [TamperData](https://addons.mozilla.org/de/firefox/addon/tamper-data/)
@@ -70,9 +56,21 @@ for Firefox or
 let you monitor and - more importantly - modify HTTP requests _before_
 they are submitted from the browser to the server.
 
-These can be crucial tools when trying to bypass certain input
-validation or access restriction mechanisms, that are not properly
-checked _on the server_ once more.
+These can also be helpful when trying to bypass certain input validation
+or access restriction mechanisms, that are not properly checked _on the
+server_ once more.
+
+An API testing plugin like
+[PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
+for Chrome allows you to communicate with the RESTful backend of a web
+application directly. Skipping the UI can often be useful to circumvent
+client-side security mechanisms or simply get certain tasks done faster.
+Here you can create requests for all available HTTP verbs (`GET`,
+`POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request
+headers etc.
+
+If you feel more at home on the command line, `curl` will do the trick
+just as fine as the recommended browser plugins.
 
 ### Penetration testing tools
 
@@ -251,5 +249,8 @@ will let all your local CSS changes vanish in a blink and reveal your
 _real_ hacking progress.
 
 [^1]: https://github.com/zaproxy/zap-core-help/wiki
+
 [^2]: http://docs.kali.org/introduction/what-is-kali-linux
+
 [^3]: http://docs.kali.org/introduction/should-i-use-kali-linux
+
