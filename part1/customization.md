@@ -42,7 +42,7 @@ container with one of the provided configs, you can pass in the
 `NODE_ENV` environment variable with the `-e` parameter:
 
 ```
-docker run -d -p 3000:3000 -e "NODE_ENV=bodgeit"
+docker run -d -e "NODE_ENV=bodgeit" -p 3000:3000
 ```
 
 In order to inject your own configuration, you can use `-v` to mount the
@@ -50,7 +50,7 @@ In order to inject your own configuration, you can use `-v` to mount the
 outside file system:
 
 ```
-docker run -d -p 3000:3000 -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myConfig.yml --name juice-shop bkimminich/juice-shop
+docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myConfig.yml -p 3000:3000 --name juice-shop bkimminich/juice-shop
 ```
 
 ## YAML configuration file
@@ -124,9 +124,9 @@ find its syntax along with an excerpt of the default settings.
     [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014).
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
     exactly one product_)
-  * `fileForRetrieveBlueprintChallenge` ( :warning: _optional on exactly
-    one product_) filename in `/app/public/images/products` _or_ URL of
-    a file download to that folder and then use as the target for the
+  * `fileForRetrieveBlueprintChallenge` (_must be `true` on exactly one
+    product_) filename in `/app/public/images/products` _or_ URL of a
+    file download to that folder and then use as the target for the
     [Retrieve Blueprint](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
     challenge. If a filename is specified but the file does not exist in
     `/app/public/images/products` the challenge is still solvable by
@@ -140,10 +140,6 @@ find its syntax along with an excerpt of the default settings.
     * `author` of the review from the following list of pre-defined
       users in the database: `admin`, `jim`, `bender`, `ciso` or
       `support` (_mandatory_)
-
-> :warning: Please be aware that `fileForRetrieveBlueprintChallenge`
-> will become _**mandatory** on exactly one product_ and the fallback to
-> `JuiceShop.stl` will be **deactivated** with Juice Shop v5.0!
 
 ### Configuration example
 

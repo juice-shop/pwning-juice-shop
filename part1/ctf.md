@@ -63,7 +63,7 @@ NODE_ENV=ctf npm start
 When running the application as a Docker container instead execute
 
 ```
-docker run -d -p 3000:3000 -e "NODE_ENV=ctf" bkimminich/juice-shop
+docker run -d -e "NODE_ENV=ctf" -p 3000:3000 bkimminich/juice-shop
 ```
 
 The `ctf.yml` configuration furthermore hides the GitHub ribbon in the
@@ -87,14 +87,14 @@ The simplest way to do so, is by providing an alternative secret key via
 the `CTF_KEY` environment variable:
 
 ```
-set CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     # on Windows
-export CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # on Linux
+set CTF_KEY=xxxxxxxxxxxxxxx     # on Windows
+export CTF_KEY=xxxxxxxxxxxxxxx  # on Linux
 ```
 
 or when using Docker
 
 ```
-docker run -d -p 3000:3000 -e "NODE_ENV=ctf" -e "CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" bkimminich/juice-shop
+docker run -d -e "CTF_KEY=xxxxxxxxxxxxxxx" -e "NODE_ENV=ctf" -p 3000:3000 bkimminich/juice-shop
 ```
 
 ## CTF event infrastructure
@@ -152,11 +152,12 @@ higher.
 
 The
 [`juice-shop-ctf-cli`](https://www.npmjs.com/package/juice-shop-ctf-cli)
-is a simple command line tool, which will generate a ZIP-archive compatible with
-CTFd's data backup format. This can be imported to populate the database underneath
-CTFd and generate mirror images of all current Juice Shop challenges on the score
-server. The following instructions were written for
-{{book.juiceShopCtfVersion}} of `juice-shop-ctf-cli`.
+is a simple command line tool, which will generate a ZIP-archive
+compatible with CTFd's data backup format. This can be imported to
+populate the database underneath CTFd and generate mirror images of all
+current Juice Shop challenges on the score server. The following
+instructions were written for {{book.juiceShopCtfVersion}} of
+`juice-shop-ctf-cli`.
 
 To install `juice-shop-ctf-cli` you need to have Node.js 6.x or higher
 installed. Simply execute
@@ -188,7 +189,7 @@ answers available which you can choose by simply hitting `ENTER`.
    which is the key file provided with the latest official OWASP Juice
    Shop release. See [Overriding the `ctf.key`](#overriding-the-ctfkey)
    for more information.
-4. **Insert a text hint along with each CTFd Challenge?** Offers a
+3. **Insert a text hint along with each CTFd Challenge?** Offers a
    selectable choice between
    * `No text hints` will not add any hint texts to the CTFd challenges.
      This is the default choice.
@@ -198,7 +199,7 @@ answers available which you can choose by simply hitting `ENTER`.
    * `Paid text hints` adds a hint per challenge like described above.
      Viewing this hint costs the team 10% of that challenge's score
      value.
-5. **Insert a hint URL along with each CTFd Challenge?** Offers a
+4. **Insert a hint URL along with each CTFd Challenge?** Offers a
    selectable choice between
    * `No hint URLs` will not add any hint URLs to the CTFd challenges.
      This is the default choice.
@@ -220,22 +221,24 @@ Shop database. The score value of each challenge is calculated by the
 * 5-star challenge = 1000 points
 
 The entire output of the tool will finally be written into
-`OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started in.
+`OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started
+in.
 
 ### Running CTFd
 
-To apply the generated `.zip`, follow the steps
-describing your preferred CTFd run-mode below.
+To apply the generated `.zip`, follow the steps describing your
+preferred CTFd run-mode below.
 
 #### Local server setup
 
 1. Get CTFd with `git clone https://github.com/CTFd/CTFd.git`.
 2. Perform steps 1 and 3 from
    [the CTFd installation instructions](https://github.com/CTFd/CTFd#install).
-4. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
+3. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
    and create an admin user and CTF name
-5. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
-6. Select the generated `.zip` file and make sure only the _Challenges_ box is ticket. Press _Import_.
+4. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
+5. Select the generated `.zip` file and make sure only the _Challenges_
+   box is ticket. Press _Import_.
 
 #### Docker container setup
 
@@ -247,7 +250,8 @@ describing your preferred CTFd run-mode below.
 3. After running `docker-compose up` from previous step, you should be
    able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
    default) and create an admin user and CTF name.
-4. Follow the steps 4-5 from the [Default setup](#local-server-setup) described above  
+4. Follow the steps 4-5 from the [Default setup](#local-server-setup)
+   described above
 
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
@@ -342,3 +346,4 @@ Juice Shop!
 [^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
 
 [^2]: https://en.wikipedia.org/wiki/Hash-based_message_authentication_code
+
