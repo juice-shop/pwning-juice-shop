@@ -114,6 +114,10 @@ on its blueprint in order to make it yourself?
 * For your inconvenience the blueprint was _not_ misplaced into the same
   place like so many others forgotten files covered in this chapter
 
+:information_source: _If you are running the Juice Shop with a custom theme and
+product inventory, the product to inspect will be a different one. The
+tooltip on the Score Board will tell you which one._
+
 ### Retrieve the language file that never made it into production
 
 > A project is internationalized when all of the project’s materials and
