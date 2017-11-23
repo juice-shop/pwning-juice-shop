@@ -57,7 +57,7 @@ stripped-down _denial-of-service_ attack challenge.
 #### Hints
 
 * As stated in the
-  [Architecture overview](../_book/introduction/architecture.md), OWASP
+  [Architecture overview](../introduction/architecture.md), OWASP
   Juice Shop uses a MongoDB derivate as its NoSQL database.
 * The categorization into the _NoSQL Injection_ category totally already
   gives away the expected attack vector for this challenge. Trying any
