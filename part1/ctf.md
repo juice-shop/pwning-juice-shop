@@ -63,7 +63,7 @@ NODE_ENV=ctf npm start
 When running the application as a Docker container instead execute
 
 ```
-docker run -d -p 3000:3000 -e "NODE_ENV=ctf"
+docker run -d -p 3000:3000 -e "NODE_ENV=ctf" bkimminich/juice-shop
 ```
 
 The `ctf.yml` configuration furthermore hides the GitHub ribbon in the
@@ -94,7 +94,7 @@ export CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # on Linux
 or when using Docker
 
 ```
-docker run -d -p 3000:3000 -e "NODE_ENV=ctf" -e "CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+docker run -d -p 3000:3000 -e "NODE_ENV=ctf" -e "CTF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" bkimminich/juice-shop
 ```
 
 ## CTF event infrastructure
