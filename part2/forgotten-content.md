@@ -121,6 +121,19 @@ one. The tooltip on the Score Board will tell you which one._
 
 ### Access a misplaced SIEM signature file.
 
+> Security information and event management (SIEM) technology supports
+> threat detection and security incident response through the real-time
+> collection and historical analysis of security events from a wide
+> variety of event and contextual data sources. It also supports
+> compliance reporting and incident investigation through analysis of
+> historical data from these sources. The core capabilities of SIEM
+> technology are a broad scope of event collection and the ability to
+> correlate and analyze events across disparate sources.[^2]
+
+:wrench: **TODO**
+
+#### Hints
+
 :wrench: **TODO**
 
 ### Retrieve the language file that never made it into production
@@ -128,7 +141,7 @@ one. The tooltip on the Score Board will tell you which one._
 > A project is internationalized when all of the project’s materials and
 > deliverables are consumable by an international audience. This can
 > involve translation of materials into different languages, and the
-> distribution of project deliverables into different countries.[^2]
+> distribution of project deliverables into different countries.[^3]
 
 Following this requirement OWASP sets for all its projects, the Juice
 Shop's user interface is available in different languages. One extra
@@ -148,5 +161,7 @@ menu.
 
 [^1]: https://en.wikipedia.org/wiki/Easter_egg_(media)
 
-[^2]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
+[^2]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/
+
+[^3]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
 
