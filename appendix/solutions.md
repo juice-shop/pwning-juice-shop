@@ -721,6 +721,10 @@ known bug of not sanitizing recursively (see
 >
 > ![epilogue on NPM](img/npm_epilogue.png)
 
+### Access a misplaced SIEM signature file.
+
+:wrench: **TODO**
+
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency

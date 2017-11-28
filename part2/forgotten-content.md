@@ -14,6 +14,7 @@ development team.
 | Find the hidden easter egg.                                                        | 3 of 5     |
 | Travel back in time to the golden era of web design.                               | 3 of 5     |
 | Deprive the shop of earnings by downloading the blueprint for one of its products. | 3 of 5     |
+| Access a misplaced SIEM signature file.                                            | 3 of 5     |
 | Retrieve the language file that never made it into production.                     | 4 of 5     |
 
 ### Access a confidential document
@@ -114,9 +115,13 @@ on its blueprint in order to make it yourself?
 * For your inconvenience the blueprint was _not_ misplaced into the same
   place like so many others forgotten files covered in this chapter
 
-:information_source: _If you are running the Juice Shop with a custom theme and
-product inventory, the product to inspect will be a different one. The
-tooltip on the Score Board will tell you which one._
+:information_source: _If you are running the Juice Shop with a custom
+theme and product inventory, the product to inspect will be a different
+one. The tooltip on the Score Board will tell you which one._
+
+### Access a misplaced SIEM signature file.
+
+:wrench: **TODO**
 
 ### Retrieve the language file that never made it into production
 
