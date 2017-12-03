@@ -74,9 +74,9 @@ crucial in several other challenges later on.
 
 #### Hints
 
-* If you solved one of the three file access challenges above, you
+* If you solved one of the other four file access challenges, you
   already know where the easter egg is located
-* Simply reuse one of the tricks that already worked for the files above
+* Simply reuse the trick that already worked for the files above
 
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found **the real** easter
@@ -130,18 +130,32 @@ one. The tooltip on the Score Board will tell you which one._
 > technology are a broad scope of event collection and the ability to
 > correlate and analyze events across disparate sources.[^2]
 
-:wrench: **TODO**
+The misplaced signature file is actually a rule file for
+[Sigma](https://github.com/Neo23x0/sigma), a generic signature format
+for SIEM systems:
+
+> Sigma is a generic and open signature format that allows you to
+> describe relevant log events in a straight forward manner. The rule
+> format is very flexible, easy to write and applicable to any type of
+> log file. The main purpose of this project is to provide a structured
+> form in which researchers or analysts can describe their once
+> developed detection methods and make them shareable with others.
+>
+> Sigma is for log files what Snort is for network traffic and YARA is
+> for files.[^3]
 
 #### Hints
 
-:wrench: **TODO**
+* If you solved one of the other four file access challenges, you
+  already know where the SIEM signature file is located
+* Simply reuse the trick that already worked for the files above
 
 ### Retrieve the language file that never made it into production
 
 > A project is internationalized when all of the project’s materials and
 > deliverables are consumable by an international audience. This can
 > involve translation of materials into different languages, and the
-> distribution of project deliverables into different countries.[^3]
+> distribution of project deliverables into different countries.[^4]
 
 Following this requirement OWASP sets for all its projects, the Juice
 Shop's user interface is available in different languages. One extra
@@ -163,5 +177,7 @@ menu.
 
 [^2]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/
 
-[^3]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
+[^3]: https://github.com/Neo23x0/sigma#what-is-sigma
+
+[^4]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
 
