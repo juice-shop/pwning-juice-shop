@@ -57,8 +57,8 @@ stripped-down _denial-of-service_ attack challenge.
 #### Hints
 
 * As stated in the
-  [Architecture overview](../introduction/architecture.md), OWASP
-  Juice Shop uses a MongoDB derivate as its NoSQL database.
+  [Architecture overview](../introduction/architecture.md), OWASP Juice
+  Shop uses a MongoDB derivate as its NoSQL database.
 * The categorization into the _NoSQL Injection_ category totally already
   gives away the expected attack vector for this challenge. Trying any
   others will not solve the challenge, even if they might yield the same
@@ -69,13 +69,18 @@ stripped-down _denial-of-service_ attack challenge.
 
 ### Update multiple product reviews at the same time
 
-:wrench: **TODO**
+The UI and API only offer ways to update individual product reviews.
+This challenge is about manipulating an update so that it will affect
+multiple reviews are the same time.
 
 #### Hints
 
+* This challenge requires a classic Injection attack.
 * Take a close look on how the equivalent of UPDATE-statements in
   MongoDB work.
-* :wrench: **TODO**
+* It is also worth looking into how
+  [Query Operators](https://docs.mongodb.com/manual/reference/operator/query/)
+  work in MongoDB.
 
 [^1]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection
 

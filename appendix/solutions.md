@@ -547,11 +547,6 @@ known bug of not sanitizing recursively (see
 
 ### Find the hidden easter egg
 
-> An Easter egg is an intentional inside joke, hidden message, or
-> feature in an interactive work such as a computer program, video game
-> or DVD menu screen. The name is used to evoke the idea of a
-> traditional Easter egg hunt.[^2]
-
 1. Use the _Poison Null Byte_ attack described in
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
 2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
@@ -723,7 +718,9 @@ known bug of not sanitizing recursively (see
 
 ### Access a misplaced SIEM signature file.
 
-:wrench: **TODO**
+1. Use the _Poison Null Byte_ attack described in
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
+2. ...to download <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -800,7 +797,7 @@ explains the problem and gives an exploit example:
 > is its own inverse; that is, to undo ROT13, the same algorithm is
 > applied, so the same action can be used for encoding and decoding. The
 > algorithm provides virtually no cryptographic security, and is often
-> cited as a canonical example of weak encryption.[^3]
+> cited as a canonical example of weak encryption.[^2]
 
 ### Retrieve the language file that never made it into production
 
@@ -824,7 +821,7 @@ explains the problem and gives an exploit example:
 > gibberish to a usable means of communication, complete with its own
 > vocabulary, grammar, figures of speech, and even slang and regional
 > dialects. Today it is spoken by humans all over the world, in many
-> contexts.[^4]
+> contexts.[^3]
 
 ### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
 
@@ -888,7 +885,7 @@ explains the problem and gives an exploit example:
 > 1993 postal codes in the west were prefixed with 'W', e.g.: W-1000
 > \[Berlin\] 30 (postal districts in western cities were separate from
 > the postal code) and those in the east with 'O' (for Ost), e.g.:
-> O-1xxx Berlin.[^5]
+> O-1xxx Berlin.[^4]
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
@@ -1183,10 +1180,8 @@ totally different attack styles.
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
-[^2]: <https://en.wikipedia.org/wiki/Easter_egg_(media)>
+[^2]: <https://en.wikipedia.org/wiki/ROT13>
 
-[^3]: <https://en.wikipedia.org/wiki/ROT13>
+[^3]: <http://www.kli.org/about-klingon/klingon-history>
 
-[^4]: <http://www.kli.org/about-klingon/klingon-history>
-
-[^5]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
+[^4]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>

@@ -101,7 +101,7 @@ _redirecting_ to a different location.
   information about how it works under to hood
 
 > White list validation involves defining exactly what _is_ authorized,
-> and by definition, everything else is not authorized.[^2]
+> and by definition, everything else is not authorized.[^1]
 
 ### Log in with the support team's original user credentials
 
@@ -127,19 +127,50 @@ run and troubleshoot the application. Not the slightest sign of
 
 ### Forge an essentially unsigned JWT token
 
-:wrench: TODO
+> JSON Web Token (JWT) is a compact, URL-safe means of representing
+> claims to be transferred between two parties. The claims in a JWT are
+> encoded as a JSON object that is used as the payload of a JSON Web
+> Signature (JWS) structure or as the plaintext of a JSON Web Encryption
+> (JWE) structure, enabling the claims to be digitally signed or
+> integrity protected with a Message Authentication Code (MAC) and/or
+> encrypted.[^2]
+
+This challenge involves forging a valid JWT for a user that does not
+exist in the database but make the application believe it is still
+legit.
 
 #### Hints
 
-:wrench: TODO
+* You should begin with retrieving a valid JWT from the application's
+  `Authorization` request header.
+* A JWT is only given to users who have logged in. They have a limited
+  validity, so better do not dawdle.
+* The site <https://jwt.io/> offers a very convenient online debugger
+  for JWT that can prove invaluable for this challenge.
+* Try to convince the site to give you a _valid_ token with the required
+  payload while downgrading to _no_ encryption at all.
 
 ### Forge an almost properly RSA-signed JWT token
 
-:wrench: TODO
+Like
+[Forge an essentially unsigned JWT token](#forge-an-essentially-unsigned-jwt-token)
+this challenge requires you to make a valid JWT for a user that does not
+exist. What makes this challenge even harder is the requirement to have
+the JWT look like it was properly signed.
 
 #### Hints
 
-:wrench: TODO
+* The three generic hints from
+  [Forge an essentially unsigned JWT token](#forge-an-essentially-unsigned-jwt-token)
+  also help with this challenge.
+* Instead of enforcing no encryption to be applied, try to apply a more
+  sophisticated exploit against the JWT libraries used in the Juice
+  Shop.
+* Getting your hands on the public RSA key the application employs for
+  its JWTs is mandatory for this challenge.
+* Finding the corresponding private key should actually be impossible,
+  but that obviously doesn't make this challenge unsolvable.
 
-[^1]: https://tools.ietf.org/html/rfc7519
-[^2]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
+[^1]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
+
+[^2]: https://tools.ietf.org/html/rfc7519
