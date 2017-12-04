@@ -87,6 +87,8 @@ find its syntax along with an excerpt of the default settings.
   * `showChallengeHints` shows or hides hints for each challenge on
     hovering over/clicking its _"unsolved"_ badge on the score board.
     Defaults to `true`.
+  * `showVersionNumber` shows or hides the software version from the
+    title. Defaults to `true`.
   * `theme` the name of the [Bootswatch](https://bootswatch.com) theme
     used to render the UI. Options are `cerulean`, `cosmo`, `cyborg`,
     `darkly`, `flatly`, `lumen`, `paper`, `readable`, `sandstone`,
@@ -156,6 +158,7 @@ application:
   showCtfFlagsInNotifications: false
   showGitHubRibbon: true
   showChallengeHints: true
+  showVersionNumber: true
   theme: "slate"
   twitterUrl: "https://twitter.com/owasp_juiceshop"
   facebookUrl: "https://www.facebook.com/owasp.juiceshop"
@@ -207,6 +210,7 @@ application:
   favicon: "favicon_ctf.ico"
   showCtfFlagsInNotifications: true
   showGitHubRibbon: false
+  showVersionNumber: false
 ```
 
 ### Testing customizations

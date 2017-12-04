@@ -15,17 +15,18 @@ client via a RESTful API. As an underlying database a light-weight
 [SQLite](https://www.sqlite.org) was chosen, because of its file-based
 nature. This makes the database easy to create from scratch
 programmatically without the need for a dedicated server.
-[Sequelize](http://docs.sequelizejs.com) (with accompanying
-[sequelize-restful](https://github.com/sequelize/sequelize-restful)
-extension) is used as an abstraction layer to the database. This allows
-to use a dynamically created API for simple interactions (i.e. CRUD
-operations) with database resources while still allowing to execute
-custom SQL for more complex queries.
+[Sequelize](http://docs.sequelizejs.com) and
+[epilogue](https://github.com/dchester/epilogue) are used as an
+abstraction layer from the database. This allows to use a dynamically
+created API endpoints for simple interactions (i.e. CRUD operations)
+with database resources while still allowing to execute custom SQL for
+more complex queries.
 
-As an additional data store a [MarsDB](https://github.com/c58/marsdb) was
-introduced with the release of OWASP Juice Shop 5.x. It is a JavaScript
-derivate of the widely used [MongoDB](https://www.mongodb.com) NoSQL
-database and compatible with most of its query/modify operations.
+As an additional data store a [MarsDB](https://github.com/c58/marsdb)
+was introduced with the release of OWASP Juice Shop 5.x. It is a
+JavaScript derivate of the widely used
+[MongoDB](https://www.mongodb.com) NoSQL database and compatible with
+most of its query/modify operations.
 
 The push notifications that are shown when a challenge was successfully
 hacked, are implemented via
