@@ -4,8 +4,8 @@
 
 In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
-endeavours. Only the most commonly used methods are described here. For a
-full list of options - including Vagrant and Amazon EC2 deployment -
+endeavours. Only the most commonly used methods are described here. For
+a full list of options - including Vagrant and Amazon EC2 deployment -
 please refer to the corresponding
 [_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#setup).
 
@@ -32,6 +32,12 @@ Shop to the Heroku support team they answered with:
 > That sounds like a great idea. So long as you aren't asking people to
 > DDoS it that should be fine. People are certainly welcome to try their
 > luck against the platform and your app so long as it's not DDoS.
+
+As a little related anecdote, the OWASP Juice Shop was even crowned
+[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6):
+
+!["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
+
 
 ### Local installation
 
