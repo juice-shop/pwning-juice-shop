@@ -17,7 +17,7 @@ nature. This makes the database easy to create from scratch
 programmatically without the need for a dedicated server.
 [Sequelize](http://docs.sequelizejs.com) and
 [epilogue](https://github.com/dchester/epilogue) are used as an
-abstraction layer from the database. This allows to use a dynamically
+abstraction layer from the database. This allows to use dynamically
 created API endpoints for simple interactions (i.e. CRUD operations)
 with database resources while still allowing to execute custom SQL for
 more complex queries.
