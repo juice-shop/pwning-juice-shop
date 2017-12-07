@@ -1117,7 +1117,7 @@ totally different attack styles.
 
 1. Inspecting the HTML source of the corresponding row in the _Score
    Board_ table reveals a HTML comment that is obviously encrypted:
-   `<!--R9U8AvGlBbjhHXHW422jxVL2hoLBr8wflIAQ8d/jlERpKnrNlMErs1JfgT9EK/kzTtdb1GPhuWAz3i2HhomhaFMxvg4na+tvTi+8DoQoeqZH1KADoM2NJ7UOKc14b54cdRTXiYV7yFUzbPjjPVOWZFSmDcG6z+jQIPZtJuJ/tQc=-->`.
+   `<!--nn3ZDgcdSEpQcqMlpjrdpJvnFFqu5S28cR+3Fp9489Ra3v9zg0k5aHBW7VWd+lZkfk4OfMQQtENHCi+zDvfY3CGr/L9g1BsVOPkDO1aZN3mV/iPVTt6sQVIkzj6RIWpYJvK1VlMxrIxNRUduBpViCA==-->`.
 
    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
 2. This cipher came out of an AES-encryption using

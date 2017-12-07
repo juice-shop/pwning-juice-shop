@@ -23,7 +23,7 @@ or debugging logs!
 
 ![DevTools Console tab](img/devtools_console.png)
 
-Other useful features of DevTools and FireBug are their network overview
+Other useful features of browser DevTools are their network overview
 as well as insight into the client-side JavaScript code, cookies and
 other local storage being used by the application.
 
@@ -170,7 +170,7 @@ you like it a bit more nostalgic, you can also join and post to the
 project mailing list at
 https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
-## :x: Thing considered cheating
+## :x: Things considered cheating
 
 ### Reading a solution ( :godmode: ) before trying
 
@@ -197,14 +197,6 @@ Finally the end-to-end test suite of Juice Shop was built hack all
 challenges automatically, in order to verify they can all be solved.
 These tests deliver all the required attacks on a silver plate when
 reviewed.
-
-### Server logfile
-
-The server logs each request and all database queries executed. Many
-challenges actually rely on certain additions or changes to the
-database, so they are verified via SQL statements as well. These would
-show up in the log as well, potentially giving away several challenge
-solutions.
 
 ### GitHub repository
 

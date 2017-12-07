@@ -4,8 +4,8 @@
 
 In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
-endeavours. Only the most commonly used methods are described here. For a
-full list of options - including Vagrant and Amazon EC2 deployment -
+endeavours. Only the most commonly used methods are described here. For
+a full list of options - including Vagrant and Amazon EC2 deployment -
 please refer to the corresponding
 [_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#setup).
 
@@ -33,20 +33,23 @@ Shop to the Heroku support team they answered with:
 > DDoS it that should be fine. People are certainly welcome to try their
 > luck against the platform and your app so long as it's not DDoS.
 
+As a little related anecdote, the OWASP Juice Shop was even crowned
+[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6):
+
+!["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
+
 ### Local installation
 
 To run the Juice Shop locally you need to have
-[Node.js](http://nodejs.org/) installed on your computer. Please refer
-to the
-[Node.js version compatibility table on GitHub](https://github.com/bkimminich/juice-shop#nodejs-version-compatibility)
-to find out what versions are currently supported. Juice Shop follows
-the
-[Node.js Long-term Support Release Schedule](https://github.com/nodejs/LTS)
-for this purpose. During development and Continuous Integration (CI) the
-application is most thoroughly tested with the current _Long-term
-Support (LTS)_ version of Node.js. At the same time it tries to remain
-compatible with at least one previous and the upcoming _Current_ version
-of Node.js.
+[Node.js](http://nodejs.org/) installed on your computer. The Juice Shop
+offically runs on versions {{book.nodeVersions}} of Node.js, closely
+following the official
+[Node.js Long-term Support Release Schedule](https://github.com/nodejs/LTS).
+During development and Continuous Integration (CI) the application is
+automatically tested with these current versions of Node.js. The
+officially recommended version to run Juice Shop is always the
+_Long-term Support (LTS)_ version, which is Node.js
+{{book.recommendedNodeVersion}} at the moment.
 
 #### From sources
 
@@ -76,14 +79,11 @@ You need to have [Docker](https://www.docker.com/) installed to run
 Juice Shop as a container inside it. Following the instructions below
 will download the current stable version (built from `master` branch on
 GitHub) which internally runs the application on the currently
-recommended Node.js version. If you want to use a different Docker image
-version, please look up the available tags in the
-[Node.js version compatibility table](https://github.com/bkimminich/juice-shop#nodejs-version-compatibility)
-in the project's README.md.
+recommended Node.js version {{book.recommendedNodeVersion}}.
 
 1. Install [Docker](https://www.docker.com/) on your computer.
 2. On the command line run `docker pull bkimminich/juice-shop` to
-   download the `latest` image as described above.
+   download the `latest` image described above.
 3. Run `docker run -d -p 3000:3000 bkimminich/juice-shop` to launch the
    container with that image.
 4. Browse to <http://localhost:3000>.
