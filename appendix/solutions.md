@@ -854,8 +854,9 @@ explains the problem and gives an exploit example:
 
 1. Trying to find out who "Bjoern" might be should quickly lead you to
    the OWASP Juice Shop project leader and author of this ebook
-2. Visit https://www.facebook.com/bjoern.kimminich to learn that he is
+2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn that he is
    from the town of _Uetersen_ in Germany
+2. Visit https://gist.github.com/9045923 to find the source code of a game Bjoern wrote in 1995 (when he was a teenager) to learn his phone number area code of _04122_ which belongs to Uetersen. This is sufficient proof that you in fact are on the right track
 3. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
    ZIP code _25436_
 4. Visit http://localhost:3000/#/forgot-password and provide
@@ -864,10 +865,9 @@ explains the problem and gives an exploit example:
    ZIP/postal code when you were a teenager?_
 6. Type and _New Password_ and matching _Repeat New Password_ followed
    by hitting _Change_ to **not solve** this challenge
-7. Please read [Postal codes in Germany](#postal-codes-in-germany) to
-   find out what detail you missed
+7. Bjoern added some obscurity to his security answer by using an uncommon variant of the pre-unification format of [postal codes in Germany](#postal-codes-in-germany)
 8. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
-   Uetersen's old ZIP code was `W-2082`. Or written out: `West-2082`
+   Uetersen's old ZIP code was `W-2082`. This would not work as an answer either. Bjoern used the written out variation: `West-2082`
 9. Change the answer to _Your ZIP/postal code when you were a teenager?_
    into `West-2082` and click _Change_ again to finally solve this
    challenge
