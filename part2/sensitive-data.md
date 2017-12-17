@@ -85,7 +85,7 @@ this challenge should be significantly harder.
 * Bjoern chose to answer his chosen question truthfully but tried to
   make it harder for attackers by applying sort of a historical twist
 * Hints to the answer to Bjoern's question can be found by looking him
-  up in social networks
+  up on the Internet
 * Brute forcing the answer should be next to impossible
 
 [^1]: http://goodsecurityquestions.com
