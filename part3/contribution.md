@@ -92,9 +92,9 @@ The minimum requirements for code contributions are:
 
 ### JavaScript standard style guide
 
-Since v2.7.0 the `npm test` script also verifies code compliance with
-the `standard` style before running the tests. If PRs deviate from this
-coding style, they will now immediately fail their build and will not be
+As a preliminary step, the `npm test` script verifies code compliance with
+the `standard` style before running any test. If PRs deviate from this
+coding style, they will immediately fail their build and will not be
 merged until compliant.
 
 ![JavaScript Style Guide](img/badge.svg)
