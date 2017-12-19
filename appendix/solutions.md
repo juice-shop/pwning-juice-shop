@@ -1117,13 +1117,13 @@ totally different attack styles.
 
 1. Inspecting the HTML source of the corresponding row in the _Score
    Board_ table reveals a HTML comment that is obviously encrypted:
-   `<!--nn3ZDgcdSEpQcqMlpjrdpJvnFFqu5S28cR+3Fp9489Ra3v9zg0k5aHBW7VWd+lZkfk4OfMQQtENHCi+zDvfY3CGr/L9g1BsVOPkDO1aZN3mV/iPVTt6sQVIkzj6RIWpYJvK1VlMxrIxNRUduBpViCA==-->`.
+   `<!--i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==-->`.
 
    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
-2. This cipher came out of an AES-encryption using
-   <http://aesencryption.net> with a 256bit key.
-3. To get the key you should run a _Forced Directory Browsing_ attack
-   against the application. You can use OWASP ZAP for this purpose.
+2. This is a cipher text that came out of an AES-encryption using AES256 in
+   CBC mode.
+3. To get the key and the IV, you should run a _Forced Directory Browsing_
+   attack against the application. You can use OWASP ZAP for this purpose.
    1. Of the word lists coming with OWASP ZAP only
       `directory-list-2.3-big.txt` and
       `directory-list-lowercase-2.3-big.txt` contain the directory with
@@ -1131,12 +1131,11 @@ totally different attack styles.
    2. The search will uncover <http://localhost:3000/encryptionkeys> as
       a browsable directory
    3. Open <http://localhost:3000/encryptionkeys/premium.key> to
-      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
-4. The cipher and the key together can be used to retrieve the plain
-   text on <http://aesencryption.net>:
+      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42` and the IV `1337`.
+4. In order to decrypt the cipher text, it is best to use `openssl`.
+   - `echo "i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==" | openssl enc -d -aes-256-cbc -K EA99A61D92D2955B1E9285B55BF2AD42 -iv 1337 -a -A`
+   - The plain text is:
    `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
-
-   ![Decrypted cipher on aesencryption.net](img/aesencryption_net.png)
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
