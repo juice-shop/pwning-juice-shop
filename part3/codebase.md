@@ -14,15 +14,74 @@ client-side. Thanks to the [Bootstrap](http://getbootstrap.com/) CSS
 framework, the UI is responsive letting it adapt nicely to different
 screen sizes. Both frameworks work very well together thanks to the
 [UI Bootstrap](https://angular-ui.github.io/bootstrap/) library that
-provides components for Bootstrap that are actually written in pure
+provides components for Bootstrap that are explicitly written for
 AngularJS. The various icons used throughout the frontend are from the
-vast [Font Awesome 4](https://fontawesome.com/) collection.
+vast [Font Awesome 5](https://fontawesome.com/) collection.
 
 ![Client tier focus](img/architecture-client.png)
 
 ### Services
 
-:wrench: **TODO**
+The client-side AngularJS services reside in the `app/js/services`
+folder. Each service file handles all RESTful HTTP calls to the Node.js
+backend for a specific domain entity or functional aspect of the
+application.
+
+![Client tier focus](img/servicesFolder.png)
+
+Service functions must **always** use `$q.defer()` to wrap the return
+value of the `$http` backend call into a `promise`. If the backend call
+was successful, the promise will be resolved. In case of an error, the
+promise will be rejected.
+
+The following code snippet shows how all services in the OWASP Juice
+Shop client are structured using the example of `FeedbackService`. It
+wraps the `/api/Feedback` API which offers a `GET`, `POST` and `DELETE`
+endpoint to find, create and delete `Feedback` of users:
+
+```javascript
+angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function ($http, $q) {
+  'use strict'
+
+  var host = '/api/Feedbacks'
+
+  function find (params) {
+    var feedbacks = $q.defer()
+    $http.get(host + '/', {params: params}).success(function (data) {
+      feedbacks.resolve(data.data)
+    }).error(function (err) {
+      feedbacks.reject(err)
+    })
+    return feedbacks.promise
+  }
+
+  function save (params) {
+    var createdFeedback = $q.defer()
+    $http.post(host + '/', params).success(function (data) {
+      createdFeedback.resolve(data.data)
+    }).error(function (err) {
+      createdFeedback.reject(err)
+    })
+    return createdFeedback.promise
+  }
+
+  function del (id) {
+    var deletedFeedback = $q.defer()
+    $http.delete(host + '/' + id).success(function (data) {
+      deletedFeedback.resolve(data.data)
+    }).error(function (err) {
+      deletedFeedback.reject(err)
+    })
+    return deletedFeedback.promise
+  }
+
+  return {
+    find: find,
+    save: save,
+    del: del
+  }
+}])
+```
 
 ### Controllers
 
