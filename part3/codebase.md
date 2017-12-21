@@ -83,6 +83,9 @@ angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function 
 }])
 ```
 
+Unit tests for all services can be found in the
+`test/client/*ServiceSpec.js` files.
+
 ### Controllers
 
 :wrench: **TODO**
