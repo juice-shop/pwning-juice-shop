@@ -82,8 +82,6 @@ find its syntax along with an excerpt of the default settings.
     the _"challenge solved"_-notifications. Is ignored when
     `showChallengeSolvedNotifications` is set to `false`. Defaults to
     `false`.
-  * `showGitHubRibbon` shows or hides the _"Fork me on GitHub"_ ribbon
-    in the top-right corner. Defaults to `true`.
   * `showChallengeHints` shows or hides hints for each challenge on
     hovering over/clicking its _"unsolved"_ badge on the score board.
     Defaults to `true`.
@@ -94,6 +92,10 @@ find its syntax along with an excerpt of the default settings.
     `darkly`, `flatly`, `lumen`, `paper`, `readable`, `sandstone`,
     `simplex`, `slate`, `spacelab`, `superhero`, `united` and `yeti`.
     Defaults to `"slate"`
+  * `gitHubRibbon` color of the _"Fork me on GitHub"_ ribbon in the
+    top-right corner. Options are `darkblue`, `gray`, `green`, `orange`,
+    `red`, `white` and - to hide the ribbon entirely - also `none` .
+    Defaults to `"orange"`.
   * `twitterUrl` used as the Twitter link promising coupon codes on the
     _Your Basket_ screen. Defaults to
     `"https://twitter.com/owasp_juiceshop"`
@@ -156,10 +158,10 @@ application:
   numberOfRandomFakeUsers: 0
   showChallengeSolvedNotifications: true
   showCtfFlagsInNotifications: false
-  showGitHubRibbon: true
   showChallengeHints: true
   showVersionNumber: true
   theme: "slate"
+  gitHubRibbon: "orange"
   twitterUrl: "https://twitter.com/owasp_juiceshop"
   facebookUrl: "https://www.facebook.com/owasp.juiceshop"
   recyclePage:
@@ -209,8 +211,8 @@ application:
   logo: "JuiceShopCTF_Logo.png"
   favicon: "favicon_ctf.ico"
   showCtfFlagsInNotifications: true
-  showGitHubRibbon: false
   showVersionNumber: false
+  gitHubRibbon: "none"
 ```
 
 ### Testing customizations
