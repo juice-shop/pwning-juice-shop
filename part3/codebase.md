@@ -22,12 +22,16 @@ vast [Font Awesome 5](https://fontawesome.com/) collection.
 
 ### Services
 
+> AngularJS services are substitutable objects that are wired together
+> using dependency injection (DI). You can use services to organize and
+> share code across your app.[^1]
+
 The client-side AngularJS services reside in the `app/js/services`
 folder. Each service file handles all RESTful HTTP calls to the Node.js
 backend for a specific domain entity or functional aspect of the
 application.
 
-![Client tier focus](img/servicesFolder.png)
+![AngularJS Services folder](img/servicesFolder.png)
 
 Service functions must **always** use `$q.defer()` to wrap the return
 value of the `$http` backend call into a `promise`. If the backend call
@@ -83,12 +87,15 @@ angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function 
 }])
 ```
 
-:rotating_light: Unit tests for all services can be found in the `test/client/services`
-folder. They are [Jasmine 2](https://jasmine.github.io) specifications
-which are executed by the [Karma](https://karma-runner.github.io) test
-runner.
+:rotating_light: Unit tests for all services can be found in the
+`test/client/services` folder. They are
+[Jasmine 2](https://jasmine.github.io) specifications which are executed
+by the [Karma](https://karma-runner.github.io) test runner.
 
 ### Controllers
+
+> In AngularJS, a Controller is defined by a JavaScript constructor
+> function that is used to augment the AngularJS Scope.[^2]
 
 :wrench: **TODO**
 
@@ -99,6 +106,11 @@ runner.
 [Karma](https://karma-runner.github.io).
 
 ### Views
+
+> In AngularJS, templates are written with HTML that contains
+> AngularJS-specific elements and attributes. AngularJS combines the
+> template with information from the model and controller to render the
+> dynamic view that a user sees in the browser.[^3]
 
 :wrench: **TODO**
 
@@ -138,17 +150,24 @@ work.
 
 ### Routes
 
+> Routing refers to determining how an application responds to a client
+> request to a particular endpoint, which is a URI (or path) and a
+> specific HTTP request method (GET, POST, and so on).
+>
+> Each route can have one or more handler functions, which are executed
+> when the route is matched.[^4]
+
 :wrench: **TODO**
 
-:rotating_light: Unit tests for all routes can be found in the `test/server` folder.
-These tests are written using the [Chai](http://chaijs.com/) assertion
-library in conjunction with the [Mocha](https://mochajs.org/) test
-framework.
+:rotating_light: Unit tests for all routes can be found in the
+`test/server` folder. These tests are written using the
+[Chai](http://chaijs.com/) assertion library in conjunction with the
+[Mocha](https://mochajs.org/) test framework.
 
 #### Generated API endpoints
 
-:rotating_light: Integration tests for all API endpoints can be found in the `test/api`
-folder. These tests are specified using
+:rotating_light: Integration tests for all API endpoints can be found in
+the `test/api` folder. These tests are specified using
 [Frisby.js](https://www.frisbyjs.com/) and are executed by Facebook's
 [Jest](https://facebook.github.io/jest/).
 
@@ -158,8 +177,9 @@ folder. These tests are specified using
 
 :wrench: **TODO**
 
-:rotating_light: Integration tests for hand-written routes can be found in the `test/api`
-folder alongside all other API endpoint tests, from where
+:rotating_light: Integration tests for hand-written routes can be found
+in the `test/api` folder alongside all other API endpoint tests, from
+where
 [Frisby.js](https://www.frisbyjs.com/)/[Jest](https://facebook.github.io/jest/)
 assert the functionality of the entire backend on HTTP-request/response
 level.
@@ -200,4 +220,22 @@ level.
 
 ## End-to-end tests
 
+> As applications grow in size and complexity, it becomes unrealistic to
+> rely on manual testing to verify the correctness of new features,
+> catch bugs and notice regressions. Unit tests are the first line of
+> defense for catching bugs, but sometimes issues come up with
+> integration between components which can't be captured in a unit test.
+> End-to-end tests are made to find these problems.[^5]
+
 :wrench: **TODO**
+
+[^1]: https://docs.angularjs.org/guide/services
+
+[^2]: https://docs.angularjs.org/guide/controller
+
+[^3]: https://docs.angularjs.org/guide/templates
+
+[^4]: http://expressjs.com/en/starter/basic-routing.html
+
+[^5]: https://docs.angularjs.org/guide/e2e-testing
+
