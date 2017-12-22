@@ -69,6 +69,7 @@ question. It is slightly harder to find out than Jim's answer.
   truthfully
 * Hints to the answer to Bender's question can be found in publicly
   available information on the internet
+* If a seemingly correct answer is not accepted, you _might_ just need to try some alternative spelling
 * Brute forcing the answer should be next to impossible
 
 ### Reset Bjoern's password via the Forgot Password mechanism
