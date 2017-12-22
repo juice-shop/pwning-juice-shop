@@ -83,12 +83,20 @@ angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function 
 }])
 ```
 
-Unit tests for all services can be found in the
-`test/client/*ServiceSpec.js` files.
+:rotating_light: Unit tests for all services can be found in the `test/client/services`
+folder. They are [Jasmine 2](https://jasmine.github.io) specifications
+which are executed by the [Karma](https://karma-runner.github.io) test
+runner.
 
 ### Controllers
 
 :wrench: **TODO**
+
+:rotating_light: Unit tests for all controllers can be found in the
+`test/client/controllers` folder. Like the
+[service unit tests](#services) they are written in
+[Jasmine 2](https://jasmine.github.io) and run on
+[Karma](https://karma-runner.github.io).
 
 ### Views
 
@@ -132,13 +140,29 @@ work.
 
 :wrench: **TODO**
 
+:rotating_light: Unit tests for all routes can be found in the `test/server` folder.
+These tests are written using the [Chai](http://chaijs.com/) assertion
+library in conjunction with the [Mocha](https://mochajs.org/) test
+framework.
+
 #### Generated API endpoints
+
+:rotating_light: Integration tests for all API endpoints can be found in the `test/api`
+folder. These tests are specified using
+[Frisby.js](https://www.frisbyjs.com/) and are executed by Facebook's
+[Jest](https://facebook.github.io/jest/).
 
 :wrench: **TODO**
 
 #### Hand-written routes
 
 :wrench: **TODO**
+
+:rotating_light: Integration tests for hand-written routes can be found in the `test/api`
+folder alongside all other API endpoint tests, from where
+[Frisby.js](https://www.frisbyjs.com/)/[Jest](https://facebook.github.io/jest/)
+assert the functionality of the entire backend on HTTP-request/response
+level.
 
 ### Custom libraries
 
@@ -171,5 +195,9 @@ work.
 :wrench: **TODO**
 
 ### File system
+
+:wrench: **TODO**
+
+## End-to-end tests
 
 :wrench: **TODO**
