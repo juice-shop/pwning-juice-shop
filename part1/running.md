@@ -108,3 +108,26 @@ _self-healing_ the application is supposed to be restartable, no matter
 what kind of problem originally caused it to crash. For convenience the
 _self-healing_ happens during the start-up (i.e. `npm start`) of the
 server, so no extra command needs to be issued to trigger it.
+
+## Single-user restriction
+
+There is one fundamental restriction that needs to be taken into account
+when working with the OWASP Juice Shop, especially in group trainings or
+lectures:
+
+**A server instance of OWASP Juice Shop is supposed to be used by only a
+single-user!**
+
+This restriction applies to all the [Run Options](#run-options)
+explained above. It is technically necessary to make the
+[_Self-healing_-feature](#self-healing-feature) work properly and
+consistently. Furthermore, when multiple users would attack the same
+instance of the Juice Shop all their progress tracking would be mixed
+leading to inevitable confusion for the individual hacker. The upcoming
+[Challenge tracking](challenges.md) chapter will illustrate this topic.
+
+It should not go unmentioned that it is of course okay to have multiple
+users hack the same instance from a shared machine in a kind of
+_pair-hacking_-style.
+
+
