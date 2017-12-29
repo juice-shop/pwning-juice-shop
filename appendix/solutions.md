@@ -124,6 +124,10 @@ error situation and solve this challenge along the way:
 
    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
 
+### Use a deprecated B2B interface that was not properly shut down
+
+:wrench: **TODO**
+
 ### Log in with the administrator's user account
 
 * Log in with _Email_ `' or 1=1--` and any _Password_ which will
@@ -319,6 +323,10 @@ in order to exploit and solve them:
 7. Click _Change_ to solve this challenge
 
    ![Password reset for Jim](img/jim_forgot-password.png)
+
+### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
+
+:wrench: **TODO**
 
 ### Log in with Jim's user account
 

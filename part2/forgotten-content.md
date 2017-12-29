@@ -9,6 +9,7 @@ development team.
 | Challenge                                                                          | Difficulty |
 |:-----------------------------------------------------------------------------------|:-----------|
 | Access a confidential document.                                                    | 1 of 5     |
+| Use a deprecated B2B interface that was not properly shut down.                                                    | 1 of 5     |
 | Access a salesman's forgotten backup file.                                         | 2 of 5     |
 | Access a developer's forgotten backup file.                                        | 3 of 5     |
 | Find the hidden easter egg.                                                        | 3 of 5     |
@@ -29,6 +30,14 @@ top management has planned.
   directly.
 * The file you are looking for is not protected in any way. Once you
   _found it_ you can also _access it_.
+
+### Use a deprecated B2B interface that was not properly shut down
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Access a salesman's forgotten backup file
 
