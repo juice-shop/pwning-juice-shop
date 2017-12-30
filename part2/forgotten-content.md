@@ -8,8 +8,9 @@ development team.
 
 | Challenge                                                                          | Difficulty |
 |:-----------------------------------------------------------------------------------|:-----------|
+| Let us redirect you to a donation site that went out of business.                  | 1 of 5     |
 | Access a confidential document.                                                    | 1 of 5     |
-| Use a deprecated B2B interface that was not properly shut down.                                                    | 1 of 5     |
+| Use a deprecated B2B interface that was not properly shut down.                    | 1 of 5     |
 | Access a salesman's forgotten backup file.                                         | 2 of 5     |
 | Access a developer's forgotten backup file.                                        | 3 of 5     |
 | Find the hidden easter egg.                                                        | 3 of 5     |
@@ -17,6 +18,14 @@ development team.
 | Deprive the shop of earnings by downloading the blueprint for one of its products. | 3 of 5     |
 | Access a misplaced SIEM signature file.                                            | 3 of 5     |
 | Retrieve the language file that never made it into production.                     | 4 of 5     |
+
+### Let us redirect you to a donation site that went out of business
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Access a confidential document
 

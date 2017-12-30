@@ -82,6 +82,10 @@ error situation and solve this challenge along the way:
 3. Delete all entries with five star rating from the _Customer Feedback_
    table using the trashcan button
 
+### Let us redirect you to a donation site that went out of business
+
+:wrench: **TODO**
+
 ### Access a confidential document
 
 1. Follow the link to titled _Check out our boring terms of use if you
