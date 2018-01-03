@@ -8,12 +8,17 @@
   ],
   "pluginsConfig": {
     "github-buttons": {
-      "repo": "bkimminich/juice-shop",
-      "types": [
-        "star",
-        "watch"
-      ],
-      "size": "small"
+      "buttons": [{
+        "user": "bkimminich",
+        "repo": "juice-shop",
+        "type": "star",
+        "size": "small"
+      }, {
+        "user": "bkimminich",
+        "type": "follow",
+        "size": "small",
+        "count": true
+      }]
     }
   },
   "variables": {
