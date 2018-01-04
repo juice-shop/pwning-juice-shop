@@ -30,6 +30,7 @@
   * [Sensitive data exposure](part2/sensitive-data.md)
   * [NoSQL Injection](part2/nosqli.md)
   * [XML External Entities (XXE)](part2/xxe.md)
+  * [Deserialization](part2/deserialization.md)
 
 ----
 

@@ -732,7 +732,8 @@ known bug of not sanitizing recursively (see
 
 1. Use the _Poison Null Byte_ attack described in
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
-2. ...to download <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
+2. ...to download
+   <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -866,23 +867,29 @@ explains the problem and gives an exploit example:
 
 1. Trying to find out who "Bjoern" might be should quickly lead you to
    the OWASP Juice Shop project leader and author of this ebook
-2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn that he is
-   from the town of _Uetersen_ in Germany
-2. Visit https://gist.github.com/9045923 to find the source code of a game Bjoern wrote in 1995 (when he was a teenager) to learn his phone number area code of _04122_ which belongs to Uetersen. This is sufficient proof that you in fact are on the right track
-3. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
+2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn
+   that he is from the town of _Uetersen_ in Germany
+3. Visit https://gist.github.com/9045923 to find the source code of a
+   game Bjoern wrote in 1995 (when he was a teenager) to learn his phone
+   number area code of _04122_ which belongs to Uetersen. This is
+   sufficient proof that you in fact are on the right track
+4. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
    ZIP code _25436_
-4. Visit http://localhost:3000/#/forgot-password and provide
+5. Visit http://localhost:3000/#/forgot-password and provide
    `bjoern.kimminich@googlemail.com` as your _Email_
-5. In the subsequently appearing form, provide `25436` as _Your
+6. In the subsequently appearing form, provide `25436` as _Your
    ZIP/postal code when you were a teenager?_
-6. Type and _New Password_ and matching _Repeat New Password_ followed
+7. Type and _New Password_ and matching _Repeat New Password_ followed
    by hitting _Change_ to **not solve** this challenge
-7. Bjoern added some obscurity to his security answer by using an uncommon variant of the pre-unification format of [postal codes in Germany](#postal-codes-in-germany)
-8. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
-   Uetersen's old ZIP code was `W-2082`. This would not work as an answer either. Bjoern used the written out variation: `West-2082`
-9. Change the answer to _Your ZIP/postal code when you were a teenager?_
-   into `West-2082` and click _Change_ again to finally solve this
-   challenge
+8. Bjoern added some obscurity to his security answer by using an
+   uncommon variant of the pre-unification format of
+   [postal codes in Germany](#postal-codes-in-germany)
+9. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
+   Uetersen's old ZIP code was `W-2082`. This would not work as an
+   answer either. Bjoern used the written out variation: `West-2082`
+10. Change the answer to _Your ZIP/postal code when you were a
+    teenager?_ into `West-2082` and click _Change_ again to finally
+    solve this challenge
 
 #### Postal codes in Germany
 
@@ -1132,10 +1139,11 @@ totally different attack styles.
    `<!--i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==-->`.
 
    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
-2. This is a cipher text that came out of an AES-encryption using AES256 in
-   CBC mode.
-3. To get the key and the IV, you should run a _Forced Directory Browsing_
-   attack against the application. You can use OWASP ZAP for this purpose.
+2. This is a cipher text that came out of an AES-encryption using AES256
+   in CBC mode.
+3. To get the key and the IV, you should run a _Forced Directory
+   Browsing_ attack against the application. You can use OWASP ZAP for
+   this purpose.
    1. Of the word lists coming with OWASP ZAP only
       `directory-list-2.3-big.txt` and
       `directory-list-lowercase-2.3-big.txt` contain the directory with
@@ -1143,11 +1151,15 @@ totally different attack styles.
    2. The search will uncover <http://localhost:3000/encryptionkeys> as
       a browsable directory
    3. Open <http://localhost:3000/encryptionkeys/premium.key> to
-      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42` and the IV `1337`.
+      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
+      and the IV `1337`.
 4. In order to decrypt the cipher text, it is best to use `openssl`.
-   - `echo "i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==" | openssl enc -d -aes-256-cbc -K EA99A61D92D2955B1E9285B55BF2AD42 -iv 1337 -a -A`
+   - `echo
+     "i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ=="
+     | openssl enc -d -aes-256-cbc -K EA99A61D92D2955B1E9285B55BF2AD42
+     -iv 1337 -a -A`
    - The plain text is:
-   `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
+     `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
@@ -1188,6 +1200,10 @@ totally different attack styles.
     retrieved JWT (prefixed with `Bearer ` as before) and submit the
     request. Alternatively you can set the `token` cookie to the JWT
     which be used to populate any future request with that header.
+
+### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 1 second
+
+:wrench: **TODO**
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
