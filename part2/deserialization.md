@@ -4,9 +4,9 @@
 
 | Challenge                                                                                                                                                     | Difficulty |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| Perform a (DoS-like) Remote Code Execution that would occupy the server for over 1 second. (The _NoSQL Injection Tier 1_ challenge does not qualify for this) | 5 of 5     |
+| Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds. (The _NoSQL Injection Tier 1_ challenge does not qualify for this) | 5 of 5     |
 
-### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 1 second
+### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
 
 :wrench: **TODO**
 

@@ -1201,7 +1201,7 @@ totally different attack styles.
     request. Alternatively you can set the `token` cookie to the JWT
     which be used to populate any future request with that header.
 
-### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 1 second
+### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
 
 :wrench: **TODO**
 
