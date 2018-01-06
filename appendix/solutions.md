@@ -139,7 +139,29 @@ error situation and solve this challenge along the way:
 
 ### Use a deprecated B2B interface that was not properly shut down
 
-:wrench: **TODO**
+1. Log in as any user.
+2. Click _Complain?_ to go to the _File Complaint_ form
+3. Inspect the HTML file upload button for an _Invoice_ to see that it
+   has `ngf-pattern="'.pdf,.xml'"` defined which means you are allowed
+   to upload PDF and XML documents. Note the inconsistency with the
+   `ngf-accept="'.pdf'"` attribute, which is what kind of document the
+   file selection dialog will recommend you to pick from your computer.
+4. A bit further down in the HTML you also find a commented out
+   `<aside>` tag which would have rendered the value behind a
+   translation key `B2B_CUSTOMER_QUESTION` with a tooltip of
+   `ATTACH_ORDER_CONFIRMATION_XML`.
+
+   ![Possible XML upload spoilered in complaint form](img/complaint_xml_upload.png)
+5. Click on the _Choose File_ button. It will filter only for PDF
+   documents by default.
+6. In the _File Name_ field enter `*.xml` and select any arbitrary XML
+   file (<100KB) you have available. Then press _Open_.
+7. Enter some _Message_ text and press _Submit_ to solve the challenge.
+8. On the JavaScript Console of your browser you will see a suspicious
+   `410 (Gone)` HTTP Error. In the corresponding entry in the Network
+   section of your browser's DevTools, you should see an error message,
+   telling you that `B2B customer complaints via file upload have been
+   deprecated for security reasons!`
 
 ### Log in with the administrator's user account
 
