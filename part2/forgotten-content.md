@@ -21,11 +21,15 @@ development team.
 
 ### Let us redirect you to a donation site that went out of business
 
-:wrench: **TODO**
+One of the sites that the Juice Shop accepted donations from went out of
+business end of 2017.
 
 #### Hints
 
-:wrench: **TODO**
+* When removing references to the site from the code the developers have
+  been a bit sloppy.
+* It is of course not sufficient to just visit the donation site
+  _directly_ to solve the challenge.
 
 ### Access a confidential document
 

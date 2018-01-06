@@ -84,7 +84,16 @@ error situation and solve this challenge along the way:
 
 ### Let us redirect you to a donation site that went out of business
 
-:wrench: **TODO**
+1. Log in to the application with any user.
+2. Visit the _Your Basket_ page and expand the _Payment_ and
+   _Merchandise_ sections with the "credit card"-button.
+3. Inspect the _Payment_ section with your browser to find a commented
+   out payment option to Gratipay.
+
+   ![Gratipay commented out](img/gratipay-commented-out.png)
+4. Open
+   <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
+   to solve the challenge.
 
 ### Access a confidential document
 
