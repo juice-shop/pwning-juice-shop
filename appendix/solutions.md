@@ -944,41 +944,43 @@ explains the problem and gives an exploit example:
 2. Scroll down to the line where all the JavaScript files are included:
 
    ```html
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <!-- libraries, third party components -->
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/string/dist/string.min.js"></script>
-        <script src="bower_components/moment/min/moment.min.js"></script>
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
-        <script src="bower_components/angular-route/angular-route.min.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-        <script src="bower_components/angular-touch/angular-touch.min.js"></script>
-        <script src="bower_components/angular-tooltipps/dist/angular-tooltips.min.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-        <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
-        <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-        <script src="bower_components/angular-socket-io/socket.min.js"></script>
-        <script src="bower_components/clipboard/dist/clipboard.min.js"></script>
-        <script src="bower_components/ngclipboard/dist/ngclipboard.min.js"></script>
-        <script src="bower_components/angular-base64/angular-base64.js"></script>
-        <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- libraries, third party components -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="private/fontawesome-all.min.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/string/dist/string.min.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="node_modules/angular-tooltipps/dist/angular-tooltips.min.js"></script>
+    <script src="node_modules/angular-touch/angular-touch.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script src="node_modules/angular-socket-io/socket.min.js"></script>
+    <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script src="node_modules/ngclipboard/dist/ngclipboard.min.js"></script>
+    <script src="node_modules/angular-base64/angular-base64.js"></script>
+    <script src="node_modules/qrcode-generator/qrcode.js"></script>
+    <script src="node_modules/angular-qrcode/angular-qrcode.js"></script>
    ```
 
 3. Scrutinizing each entry in the list you will at some point get to
    `angular-tooltipps` which adds its `dist/angular-tooltips.min.js`
    script
 4. Noticing the spelling difference in the word _tooltip**p**s_,
-   checking the Bower registry reveals that `angular-tooltipps` is
+   checking the NPM registry reveals that `angular-tooltipps` is
    actually a typosquat of `angular-tooltips`
 
-   ![angular-tooltipps on Bower](img/bower_angular-tooltipps.png)
+   ![angular-tooltipps on NPM](img/npm_angular-tooltipps.png)
 5. Visit <http://localhost:3000/#/contact>
 6. Submit your feedback with `angular-tooltipps` in the comment to solve
    this challenge
@@ -987,10 +989,9 @@ explains the problem and gives an exploit example:
 > would be _a lot harder_ to distinguish from the original repository
 > `angular-tooltips`, if it where not marked with the _THIS IS **NOT**
 > THE MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you
-> can see the original `angular-tooltips` registry page on
-> [Libraries.io](https://libraries.io):
+> can see the original `angular-tooltips` module page on NPM:
 >
-> ![angular-tooltips on Bower](img/bower_angular-tooltips.png)
+> ![angular-tooltips on NPM](img/npm_angular-tooltips.png)
 
 ### Forge an essentially unsigned JWT token
 
