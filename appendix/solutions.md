@@ -18,25 +18,26 @@ or most obvious one from the author's perspective.
 2. Scroll down to the end of the `<nav>` tag that defines the menu bar
 
 ```html
-    <li class="dropdown" ng-show="isLoggedIn()">
-            <a href="#/complain"><i class="fa fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
-       </li>
-       <!--
-       <li class="dropdown">
-           <a href="#/score-board">Score Board</a>
-       </li>
-       -->
-       <li class="dropdown ribbon-spacer">
-           <a href="#/about"><i class="fa fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
-       </li>
-     </ul>
-   </div>
- </nav>
+            <li class="dropdown" ng-show="isLoggedIn()">
+                <a href="#/complain"><i class="fas fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
+            </li>
+            <li class="dropdown" ng-show="scoreBoardMenuVisible">
+                <a href="#/score-board"><i class="fas fa-trophy fa-lg"></i> <span translate="TITLE_SCORE_BOARD"></span></a>
+            </li>
+            <li class="dropdown ribbon-spacer">
+                <a href="#/about"><i class="fas fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 ```
 
-1. Notice the commented out `<li>` entry labelled "Score Board".
+1. Notice the `<li>` entry linking to `#/score-board` which is hidden
+   until the Score Board has been visited directly.
 2. Navigate to http://localhost:3000/#/score-board to solve the
    challenge.
+3. From now on you will see the additional menu item _Score Board_ in
+   the navigation bar.
 
 ### Provoke an error that is not very gracefully handled.
 
