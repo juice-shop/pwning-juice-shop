@@ -8,20 +8,25 @@ application. Also you should know when you actually solved a challenge
 successfully, so you can move on to another task. Both these cases are
 covered by the application's score board.
 
-![Partly solved Score Board](img/score-board_partly.png)
-
 On the score board you can view a list of all available challenges with
 a brief description. Some descriptions are _very explicit_ hacking
 instructions. Others are just _vague hints_ that leave it up to you to
 find out what needs to be done.
 
+![Partly solved Score Board](img/score-board_partly.png)
+
 The challenges are rated with a difficulty level between 1 and 5 stars,
-with more stars representing a higher difficulty. These ratings have
-been continually adjusted over time based on user feedback. Visible
-difficulty ratings allow you to influence your own hacking pace and
+with more stars representing a higher difficulty. To make the list of
+challenges less daunting, they are clustered by difficulty. By default
+only the 1-star challenges are unfolded. You can open or collapse all
+challenge blocks as you like. Collapsing a block has _no impact_ on
+whether you can _solve_ any of its challenges.
+
+The difficulty ratings have been continually adjusted over time based on
+user feedback. The ratings allow you to manage your own hacking pace and
 learning curve significantly. When you pick a 4- or 5-star challenge you
-_expect_ a real challenge and should be less frustrated if you fail on
-it several times. On the other hand if hacking a 1- or 2-star
+should _expect_ a real challenge and should be less frustrated if you
+fail on it several times. On the other hand if hacking a 1- or 2-star
 challenge takes very long, you might realize quickly that you are on a
 wrong track with your chosen hacking approach.
 
@@ -52,8 +57,8 @@ each one individually, as a simple reload of the UI in the browser (`F5`
 key) will dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
-might also show a :checkered_flag: symbol with a character sequence
-next to it. If you are doing a hacking session just on your own, you can
+might also show a :checkered_flag: symbol with a character sequence next
+to it. If you are doing a hacking session just on your own, you can
 completely ignore this flag. The code is only relevant if you are
 participating in a CTF event. Please refer to chapter
 [Hosting a CTF event](ctf.md) for more information this topic.

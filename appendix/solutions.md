@@ -18,25 +18,26 @@ or most obvious one from the author's perspective.
 2. Scroll down to the end of the `<nav>` tag that defines the menu bar
 
 ```html
-    <li class="dropdown" ng-show="isLoggedIn()">
-            <a href="#/complain"><i class="fa fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
-       </li>
-       <!--
-       <li class="dropdown">
-           <a href="#/score-board">Score Board</a>
-       </li>
-       -->
-       <li class="dropdown ribbon-spacer">
-           <a href="#/about"><i class="fa fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
-       </li>
-     </ul>
-   </div>
- </nav>
+            <li class="dropdown" ng-show="isLoggedIn()">
+                <a href="#/complain"><i class="fas fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
+            </li>
+            <li class="dropdown" ng-show="scoreBoardMenuVisible">
+                <a href="#/score-board"><i class="fas fa-trophy fa-lg"></i> <span translate="TITLE_SCORE_BOARD"></span></a>
+            </li>
+            <li class="dropdown ribbon-spacer">
+                <a href="#/about"><i class="fas fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 ```
 
-1. Notice the commented out `<li>` entry labelled "Score Board".
+1. Notice the `<li>` entry linking to `#/score-board` which is hidden
+   until the Score Board has been visited directly.
 2. Navigate to http://localhost:3000/#/score-board to solve the
    challenge.
+3. From now on you will see the additional menu item _Score Board_ in
+   the navigation bar.
 
 ### Provoke an error that is not very gracefully handled.
 
@@ -84,7 +85,16 @@ error situation and solve this challenge along the way:
 
 ### Let us redirect you to a donation site that went out of business
 
-:wrench: **TODO**
+1. Log in to the application with any user.
+2. Visit the _Your Basket_ page and expand the _Payment_ and
+   _Merchandise_ sections with the "credit card"-button.
+3. Inspect the _Payment_ section with your browser to find a commented
+   out payment option to Gratipay.
+
+   ![Gratipay commented out](img/gratipay-commented-out.png)
+4. Open
+   <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
+   to solve the challenge.
 
 ### Access a confidential document
 
@@ -130,7 +140,29 @@ error situation and solve this challenge along the way:
 
 ### Use a deprecated B2B interface that was not properly shut down
 
-:wrench: **TODO**
+1. Log in as any user.
+2. Click _Complain?_ to go to the _File Complaint_ form
+3. Inspect the HTML file upload button for an _Invoice_ to see that it
+   has `ngf-pattern="'.pdf,.xml'"` defined which means you are allowed
+   to upload PDF and XML documents. Note the inconsistency with the
+   `ngf-accept="'.pdf'"` attribute, which is what kind of document the
+   file selection dialog will recommend you to pick from your computer.
+4. A bit further down in the HTML you also find a commented out
+   `<aside>` tag which would have rendered the value behind a
+   translation key `B2B_CUSTOMER_QUESTION` with a tooltip of
+   `ATTACH_ORDER_CONFIRMATION_XML`.
+
+   ![Possible XML upload spoilered in complaint form](img/complaint_xml_upload.png)
+5. Click on the _Choose File_ button. It will filter only for PDF
+   documents by default.
+6. In the _File Name_ field enter `*.xml` and select any arbitrary XML
+   file (<100KB) you have available. Then press _Open_.
+7. Enter some _Message_ text and press _Submit_ to solve the challenge.
+8. On the JavaScript Console of your browser you will see a suspicious
+   `410 (Gone)` HTTP Error. In the corresponding entry in the Network
+   section of your browser's DevTools, you should see an error message,
+   telling you that `B2B customer complaints via file upload have been
+   deprecated for security reasons!`
 
 ### Log in with the administrator's user account
 
@@ -732,7 +764,8 @@ known bug of not sanitizing recursively (see
 
 1. Use the _Poison Null Byte_ attack described in
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
-2. ...to download <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
+2. ...to download
+   <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -866,23 +899,29 @@ explains the problem and gives an exploit example:
 
 1. Trying to find out who "Bjoern" might be should quickly lead you to
    the OWASP Juice Shop project leader and author of this ebook
-2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn that he is
-   from the town of _Uetersen_ in Germany
-2. Visit https://gist.github.com/9045923 to find the source code of a game Bjoern wrote in 1995 (when he was a teenager) to learn his phone number area code of _04122_ which belongs to Uetersen. This is sufficient proof that you in fact are on the right track
-3. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
+2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn
+   that he is from the town of _Uetersen_ in Germany
+3. Visit https://gist.github.com/9045923 to find the source code of a
+   game Bjoern wrote in 1995 (when he was a teenager) to learn his phone
+   number area code of _04122_ which belongs to Uetersen. This is
+   sufficient proof that you in fact are on the right track
+4. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
    ZIP code _25436_
-4. Visit http://localhost:3000/#/forgot-password and provide
+5. Visit http://localhost:3000/#/forgot-password and provide
    `bjoern.kimminich@googlemail.com` as your _Email_
-5. In the subsequently appearing form, provide `25436` as _Your
+6. In the subsequently appearing form, provide `25436` as _Your
    ZIP/postal code when you were a teenager?_
-6. Type and _New Password_ and matching _Repeat New Password_ followed
+7. Type and _New Password_ and matching _Repeat New Password_ followed
    by hitting _Change_ to **not solve** this challenge
-7. Bjoern added some obscurity to his security answer by using an uncommon variant of the pre-unification format of [postal codes in Germany](#postal-codes-in-germany)
-8. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
-   Uetersen's old ZIP code was `W-2082`. This would not work as an answer either. Bjoern used the written out variation: `West-2082`
-9. Change the answer to _Your ZIP/postal code when you were a teenager?_
-   into `West-2082` and click _Change_ again to finally solve this
-   challenge
+8. Bjoern added some obscurity to his security answer by using an
+   uncommon variant of the pre-unification format of
+   [postal codes in Germany](#postal-codes-in-germany)
+9. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
+   Uetersen's old ZIP code was `W-2082`. This would not work as an
+   answer either. Bjoern used the written out variation: `West-2082`
+10. Change the answer to _Your ZIP/postal code when you were a
+    teenager?_ into `West-2082` and click _Change_ again to finally
+    solve this challenge
 
 #### Postal codes in Germany
 
@@ -906,41 +945,43 @@ explains the problem and gives an exploit example:
 2. Scroll down to the line where all the JavaScript files are included:
 
    ```html
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <!-- libraries, third party components -->
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/string/dist/string.min.js"></script>
-        <script src="bower_components/moment/min/moment.min.js"></script>
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-translate/angular-translate.min.js"></script>
-        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
-        <script src="bower_components/angular-route/angular-route.min.js"></script>
-        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-        <script src="bower_components/angular-touch/angular-touch.min.js"></script>
-        <script src="bower_components/angular-tooltipps/dist/angular-tooltips.min.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-        <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
-        <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-        <script src="bower_components/angular-socket-io/socket.min.js"></script>
-        <script src="bower_components/clipboard/dist/clipboard.min.js"></script>
-        <script src="bower_components/ngclipboard/dist/ngclipboard.min.js"></script>
-        <script src="bower_components/angular-base64/angular-base64.js"></script>
-        <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- libraries, third party components -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="private/fontawesome-all.min.js"></script>
+    <script src="node_modules/underscore/underscore.js"></script>
+    <script src="node_modules/string/dist/string.min.js"></script>
+    <script src="node_modules/moment/min/moment.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script src="node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="node_modules/angular-tooltipps/dist/angular-tooltips.min.js"></script>
+    <script src="node_modules/angular-touch/angular-touch.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script> <!-- for no html5 browsers support -->
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script src="node_modules/angular-socket-io/socket.min.js"></script>
+    <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script src="node_modules/ngclipboard/dist/ngclipboard.min.js"></script>
+    <script src="node_modules/angular-base64/angular-base64.js"></script>
+    <script src="node_modules/qrcode-generator/qrcode.js"></script>
+    <script src="node_modules/angular-qrcode/angular-qrcode.js"></script>
    ```
 
 3. Scrutinizing each entry in the list you will at some point get to
    `angular-tooltipps` which adds its `dist/angular-tooltips.min.js`
    script
 4. Noticing the spelling difference in the word _tooltip**p**s_,
-   checking the Bower registry reveals that `angular-tooltipps` is
+   checking the NPM registry reveals that `angular-tooltipps` is
    actually a typosquat of `angular-tooltips`
 
-   ![angular-tooltipps on Bower](img/bower_angular-tooltipps.png)
+   ![angular-tooltipps on NPM](img/npm_angular-tooltipps.png)
 5. Visit <http://localhost:3000/#/contact>
 6. Submit your feedback with `angular-tooltipps` in the comment to solve
    this challenge
@@ -949,10 +990,9 @@ explains the problem and gives an exploit example:
 > would be _a lot harder_ to distinguish from the original repository
 > `angular-tooltips`, if it where not marked with the _THIS IS **NOT**
 > THE MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you
-> can see the original `angular-tooltips` registry page on
-> [Libraries.io](https://libraries.io):
+> can see the original `angular-tooltips` module page on NPM:
 >
-> ![angular-tooltips on Bower](img/bower_angular-tooltips.png)
+> ![angular-tooltips on NPM](img/npm_angular-tooltips.png)
 
 ### Forge an essentially unsigned JWT token
 
@@ -1132,10 +1172,11 @@ totally different attack styles.
    `<!--i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==-->`.
 
    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
-2. This is a cipher text that came out of an AES-encryption using AES256 in
-   CBC mode.
-3. To get the key and the IV, you should run a _Forced Directory Browsing_
-   attack against the application. You can use OWASP ZAP for this purpose.
+2. This is a cipher text that came out of an AES-encryption using AES256
+   in CBC mode.
+3. To get the key and the IV, you should run a _Forced Directory
+   Browsing_ attack against the application. You can use OWASP ZAP for
+   this purpose.
    1. Of the word lists coming with OWASP ZAP only
       `directory-list-2.3-big.txt` and
       `directory-list-lowercase-2.3-big.txt` contain the directory with
@@ -1143,11 +1184,15 @@ totally different attack styles.
    2. The search will uncover <http://localhost:3000/encryptionkeys> as
       a browsable directory
    3. Open <http://localhost:3000/encryptionkeys/premium.key> to
-      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42` and the IV `1337`.
+      retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
+      and the IV `1337`.
 4. In order to decrypt the cipher text, it is best to use `openssl`.
-   - `echo "i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==" | openssl enc -d -aes-256-cbc -K EA99A61D92D2955B1E9285B55BF2AD42 -iv 1337 -a -A`
+   - `echo
+     "i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ=="
+     | openssl enc -d -aes-256-cbc -K EA99A61D92D2955B1E9285B55BF2AD42
+     -iv 1337 -a -A`
    - The plain text is:
-   `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
+     `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
@@ -1188,6 +1233,10 @@ totally different attack styles.
     retrieved JWT (prefixed with `Bearer ` as before) and submit the
     request. Alternatively you can set the `token` cookie to the JWT
     which be used to populate any future request with that header.
+
+### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
+
+:wrench: **TODO**
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
