@@ -46,11 +46,19 @@ top management has planned.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
-:wrench: **TODO**
+The Juice Shop represents a classic Business-to-Consumer (B2C)
+application, but it also has some enterprise customers for which it
+would be inconvenient to order large quantities of juice through the
+webshop UI. For those customers there is a dedicated B2B interface.
 
 #### Hints
 
-:wrench: **TODO**
+* The old B2B interface was replaced with a more modern version
+  recently.
+* When deprecating the old interface, not all of its parts were cleanly
+  removed from the code base.
+* Simply using the deprecated interface suffices to solve this
+  challenge. No attack or exploit is necessary.
 
 ### Access a salesman's forgotten backup file
 
