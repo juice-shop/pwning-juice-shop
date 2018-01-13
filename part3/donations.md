@@ -15,7 +15,8 @@ This does not mean that a project like it can thrive without any
 funding. Some examples on what the OWASP Juice Shop spent (or might
 spend) money on:
 
-* Giveaways for conferences and meetups (e.g. stickers)
+* Giveaways for conferences and meetups (e.g.
+  [stickers, magnets, iron-ons or temporary tattoos](https://www.stickeryou.com/products/owasp-juice-shop/794))
 * Merchandise to reward awesome project contributions or marketing for
   the project (e.g.
   [apparel or mugs](http://shop.spreadshirt.com/juiceshop))
