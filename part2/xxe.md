@@ -52,11 +52,17 @@
 
 ### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
-:wrench: **TODO**
+In this challenge you are tasked to disclose a local file from the
+server the Juice Shop backend is hosted on.
 
 #### Hints
 
-:wrench: **TODO**
+* You already found the leverage point for this challenge if you solved
+  [Use a deprecated B2B interface that was not properly shut down](forgotten-content.md#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down).
+* This challenge sounds a lot harder than it actually is, which
+  amplifies how bad the underlying vulnerability is.
+* Doing some research on typical XEE attack patterns bascially gives
+  away the solution for free.
 
 [^1]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 
