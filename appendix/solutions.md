@@ -1236,7 +1236,37 @@ totally different attack styles.
 
 ### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
 
-:wrench: **TODO**
+1. By manual or automated URL discovery you can find a
+   [Swagger](https://swagger.io) API documentation hosted at
+   <http://localhost:3000/api-docs> which describes the B2B API.
+
+   ![Swagger API-Docs](img/swagger_api-docs.png)
+2. This API allows to `POST` orders where the order lines can be sent as
+   JSON objects (`orderLines`) but also as a String (`orderLinesData`).
+3. The given example for `orderLinesDate` indicates that this String
+   might be allowed to contain arbitrary JSON: `{"productId":
+   12,"quantity": 10000,"customerReference": ["PO0000001.2",
+   "SM20180105|042"],"couponCode": "pes[Bh.u*t"}`
+
+   ![Swagger Order Model](img/swagger_models-order.png)
+4. Click the _Try it out_ button and without changing anything click
+   _Execute_ to see if and how the API is working. This will give you a
+   `401` error saying `No Authorization header was found`.
+5. Go back to the application, log in as any user and copy your token
+   from the `Authorization Bearer` header using your browser's DevTools.
+6. Back at <http://localhost:3000/api-docs/#/Order/post_orders> click
+   _Authorize_ and paste your token into the `Value` field.
+7. Click _Try it out_ and _Execute_ to see a successful `200` response.
+8. An insecure JSON deserialization would execute any function call
+   defined within the JSON String, so a possible payload for a DoS
+   attack would be an endless loop. Replace the example code with
+   `{"orderLinesData": ["(function dos() { while(true); })()"]}` in the
+   _Request Body_ field. Click _Execute_.
+9. The server should eventually respond with a `200` after roughly 2
+   seconds, because that is defined as a timeout so you do not really
+   DoS your Juice Shop server.
+10. If your request successfully ran into that 2 second timeout, the
+    challenge is marked as solved.
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
@@ -1245,3 +1275,4 @@ totally different attack styles.
 [^3]: <http://www.kli.org/about-klingon/klingon-history>
 
 [^4]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
+
