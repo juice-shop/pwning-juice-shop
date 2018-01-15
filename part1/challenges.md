@@ -35,6 +35,12 @@ _solved_. The current overall progress is represented in a progress bar
 on top of the score board. Especially in group hacking sessions this
 allows for a bit of competition between the participants.
 
+If not deliberately turned off (see [Customization](customization.md))
+you can hover over each _unsolved_ label to see a hint for that
+challenge. If a "book" icon is also displayed within the label, you can
+click on it to be redirected to the corresponding hints section in
+[Part 2](../part2/README.md) of this book.
+
 ## Success notifications
 
 The OWASP Juice Shop employs a simple yet powerful gamification
