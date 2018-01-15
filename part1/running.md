@@ -92,6 +92,44 @@ If you are using Docker on Windows - inside a VirtualBox VM - make sure
 that you also enable port forwarding from host `127.0.0.1:3000` to
 `0.0.0.0:3000` for TCP.
 
+### Vagrant
+
+Vagrant is an open-source solution for building and maintaining virtual
+software development environments. It creates a Virtualbox VM that will
+launch a Docker container instance of the `latest` Juice Shop image
+`{{book.juiceShopVersion}}`.
+
+1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and
+   [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+2. Run `git clone https://github.com/bkimminich/juice-shop.git` (or
+   clone [your own fork](https://github.com/bkimminich/juice-shop/fork)
+   of the repository)
+3. Run `cd vagrant && vagrant up`
+4. Browse to [192.168.33.10](http://192.168.33.10)
+
+### Amazon EC2 Instance
+
+You need to have an account at
+[Amazon Web Services](https://aws.amazon.com) in order to create a
+server hosting the Juice Shop there.
+
+1. Setup an _Amazon Linux AMI_ instance
+2. In _Step 3: Configure Instance Details_ unfold _Advanced Details_ and
+   copy the script below into _User Data_
+3. In _Step 6: Configure Security Group_ add a _Rule_ that opens port 80
+   for HTTP
+4. Launch instance
+5. Browse to your instance's public DNS
+
+```
+#!/bin/bash
+yum update -y
+yum install -y docker
+service docker start
+docker pull bkimminich/juice-shop
+docker run -d -p 80:3000 bkimminich/juice-shop
+```
+
 ## _Self-healing_-feature
 
 OWASP Juice Shop was not exactly designed and built with a high
