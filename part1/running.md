@@ -4,10 +4,7 @@
 
 In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
-endeavours. Only the most commonly used methods are described here. For
-a full list of options - including Vagrant and Amazon EC2 deployment -
-please refer to the corresponding
-[_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#setup).
+endeavours.
 
 ### One-click cloud instance
 
