@@ -17,7 +17,7 @@ development team.
 | Travel back in time to the golden era of web design.                               | 3 of 5     |
 | Deprive the shop of earnings by downloading the blueprint for one of its products. | 3 of 5     |
 | Access a misplaced SIEM signature file.                                            | 3 of 5     |
-| Retrieve the language file that never made it into production.                     | 4 of 5     |
+| Retrieve the language file that never made it into production.                     | 5 of 5     |
 
 ### Let us redirect you to a donation site that went out of business
 
@@ -198,8 +198,9 @@ menu.
 
 * First you should find out how the languages are technically changed in
   the user interface.
-* You can then choose between three viable ways to beat this challenge:
-  * Trust in your luck and _guess_ what language is the extra one.
+* Guessing will most definitely not work in this challenge.
+* You should rather choose between the following two ways to beat this
+  challenge:
   * _Apply brute force_ (and don't give up to quickly) to find it.
   * _Investigate externally_ what languages are actually available.
 

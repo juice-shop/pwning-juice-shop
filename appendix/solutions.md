@@ -883,15 +883,20 @@ explains the problem and gives an exploit example:
 1. Monitoring the HTTP calls to the backend when switching languages
    tells you how the translations are loaded:
    * <http://localhost:3000/i18n/en.json>
-   * <http://localhost:3000/i18n/de.json>
-   * <http://localhost:3000/i18n/nl.json>
+   * <http://localhost:3000/i18n/de_DE.json>
+   * <http://localhost:3000/i18n/nl_NL.json>
+   * <http://localhost:3000/i18n/zh_CN.json>
+   * <http://localhost:3000/i18n/zh_HK.json>
    * etc.
-2. Brute forcing for all possible two-letter language codes (`aa`, `ab`,
-   ..., `zy`, `zz`) will not solve the challenge.
-3. The hidden language is _Klingon_ which is represented by the
-   three-letter code `tlh`.
-4. Request <http://localhost:3000/i18n/tlh.json> to solve the challenge.
-   majQa'!
+2. It is obvious the language files are stored with the official
+   _locale_ as name using underscore notation.
+3. Nonetheless, brute forcing all possible locale codes (`aa_AA`,
+   `ab_AA`, ..., `zz_ZY`, `zz_ZZ`) would still **not** solve the
+   challenge.
+4. The hidden language is _Klingon_ which is represented by a
+   three-letter code `tlh` with the dummy country code `AA`.
+5. Request <http://localhost:3000/i18n/tlh_AA.json> to solve the
+   challenge. majQa'!
 
 > The Klingon language was originally created to add realism to a race
 > of fictional aliens who inhabit the world of Star Trek, an American
