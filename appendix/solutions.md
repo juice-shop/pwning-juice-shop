@@ -1268,7 +1268,7 @@ totally different attack styles.
     request. Alternatively you can set the `token` cookie to the JWT
     which be used to populate any future request with that header.
 
-### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
+### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 1. By manual or automated URL discovery you can find a
    [Swagger](https://swagger.io) API documentation hosted at
@@ -1299,8 +1299,8 @@ totally different attack styles.
 9. The server should eventually respond with a `200` after roughly 2
    seconds, because that is defined as a timeout so you do not really
    DoS your Juice Shop server.
-10. If your request successfully ran into that 2 second timeout, the
-    challenge is marked as solved.
+10. If your request successfully bumped into the infinite loop
+    protection, the challenge is marked as solved.
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 

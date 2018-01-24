@@ -19,11 +19,11 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                                                      | Difficulty |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds. (The _NoSQL Injection Tier 1_ challenge does not qualify for this) | 5 of 5     |
+| Challenge                                                                                | Difficulty |
+|:-----------------------------------------------------------------------------------------|:-----------|
+| Perform a Remote Code Execution that would keep a less hardened application busy forever | 5 of 5     |
 
-### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
+### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 > Code Injection is the general term for attack types which consist of
 > injecting code that is then interpreted/executed by the application.
@@ -41,7 +41,7 @@
 > executed, he is only limited by what PHP is capable of. Command
 > injection consists of leveraging existing code to execute commands,
 > usually within the context of a shell.[^2]
-
+>
 > The ability to trigger arbitrary code execution from one machine on
 > another (especially via a wide-area network such as the Internet) is
 > often referred to as remote code execution.[^3]
@@ -52,9 +52,9 @@
   advertised anywhere.
 * As the Juice Shop is written in pure Javascript, there is one data
   format that is most probably used for serialization.
-* You can try to DoS the server for longer (or indefinitely) but it is
-  supposed to time out your attempts automatically after 2 seconds,
-  which then qualifies to solve the challenge.
+* You should try make the server busy for all eternity.
+* The challenge will be solved if you manage to trigger the protection
+  of the application against such DoS attacks.
 * Similar to the
   [Let the server sleep for some time](nosqli.md#let-the-server-sleep-for-some-time)
   challenge (which accepted nothing but NoSQL Injection as a solution)
@@ -63,5 +63,8 @@
   probably just _kill_ your server instance.
 
 [^1]: https://www.owasp.org/index.php/Deserialization_Cheat_Sheet
+
 [^2]: https://www.owasp.org/index.php/Code_Injection
+
 [^3]: https://en.wikipedia.org/wiki/Arbitrary_code_execution
+
