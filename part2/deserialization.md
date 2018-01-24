@@ -19,9 +19,10 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                | Difficulty |
-|:-----------------------------------------------------------------------------------------|:-----------|
-| Perform a Remote Code Execution that would keep a less hardened application busy forever | 5 of 5     |
+| Challenge                                                                                          | Difficulty |
+|:---------------------------------------------------------------------------------------------------|:-----------|
+| Perform a Remote Code Execution that would keep a less hardened application busy forever.          | 5 of 5     |
+| Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | 5 of 5     |
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
@@ -61,6 +62,14 @@
   this challenge will only accept proper RCE as a solution. It cannot be
   solved by simply hammering the server with requests. _That_ would
   probably just _kill_ your server instance.
+
+### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Deserialization_Cheat_Sheet
 

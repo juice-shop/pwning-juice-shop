@@ -1302,6 +1302,10 @@ totally different attack styles.
 10. If your request successfully bumped into the infinite loop
     protection, the challenge is marked as solved.
 
+### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
+
+:wrench: **TODO**
+
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^2]: <https://en.wikipedia.org/wiki/ROT13>
