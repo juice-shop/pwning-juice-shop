@@ -833,6 +833,10 @@ explains the problem and gives an exploit example:
 
    ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
 
+### Give the server something to chew on for quite a while
+
+:wrench: **TODO**
+
 ### Wherever you go, there you are
 
 1. Pick one of the redirect links in the application, e.g.
