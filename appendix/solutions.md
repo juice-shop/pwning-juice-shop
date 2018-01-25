@@ -1282,9 +1282,9 @@ totally different attack styles.
 2. This API allows to `POST` orders where the order lines can be sent as
    JSON objects (`orderLines`) but also as a String (`orderLinesData`).
 3. The given example for `orderLinesDate` indicates that this String
-   might be allowed to contain arbitrary JSON: `{"productId":
+   might be allowed to contain arbitrary JSON: `[{"productId":
    12,"quantity": 10000,"customerReference": ["PO0000001.2",
-   "SM20180105|042"],"couponCode": "pes[Bh.u*t"}`
+   "SM20180105|042"],"couponCode": "pes[Bh.u*t"},...]`
 
    ![Swagger Order Model](img/swagger_models-order.png)
 4. Click the _Try it out_ button and without changing anything click
@@ -1298,7 +1298,7 @@ totally different attack styles.
 8. An insecure JSON deserialization would execute any function call
    defined within the JSON String, so a possible payload for a DoS
    attack would be an endless loop. Replace the example code with
-   `{"orderLinesData": ["(function dos() { while(true); })()"]}` in the
+   `{"orderLinesData": "(function dos() { while(true); })()"}` in the
    _Request Body_ field. Click _Execute_.
 9. The server should eventually respond with a `200` after roughly 2
    seconds, because that is defined as a timeout so you do not really
