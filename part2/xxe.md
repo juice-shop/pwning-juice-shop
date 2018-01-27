@@ -48,7 +48,8 @@
 
 | Challenge                                                                         | Difficulty |
 |:----------------------------------------------------------------------------------|:-----------|
-| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | 2 of 5     |
+| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | 3 of 5     |
+| Give the server something to chew on for quite a while. | 4 of 5     |
 
 ### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
@@ -63,6 +64,14 @@ server the Juice Shop backend is hosted on.
   amplifies how bad the underlying vulnerability is.
 * Doing some research on typical XEE attack patterns bascially gives
   away the solution for free.
+
+### Give the server something to chew on for quite a while
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 

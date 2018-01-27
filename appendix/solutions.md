@@ -833,6 +833,10 @@ explains the problem and gives an exploit example:
 
    ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
 
+### Give the server something to chew on for quite a while
+
+:wrench: **TODO**
+
 ### Wherever you go, there you are
 
 1. Pick one of the redirect links in the application, e.g.
@@ -1273,7 +1277,7 @@ totally different attack styles.
     request. Alternatively you can set the `token` cookie to the JWT
     which be used to populate any future request with that header.
 
-### Perform a (DoS-like) Remote Code Execution that would occupy the server for over 2 seconds
+### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 1. By manual or automated URL discovery you can find a
    [Swagger](https://swagger.io) API documentation hosted at
@@ -1283,9 +1287,9 @@ totally different attack styles.
 2. This API allows to `POST` orders where the order lines can be sent as
    JSON objects (`orderLines`) but also as a String (`orderLinesData`).
 3. The given example for `orderLinesDate` indicates that this String
-   might be allowed to contain arbitrary JSON: `{"productId":
+   might be allowed to contain arbitrary JSON: `[{"productId":
    12,"quantity": 10000,"customerReference": ["PO0000001.2",
-   "SM20180105|042"],"couponCode": "pes[Bh.u*t"}`
+   "SM20180105|042"],"couponCode": "pes[Bh.u*t"},...]`
 
    ![Swagger Order Model](img/swagger_models-order.png)
 4. Click the _Try it out_ button and without changing anything click
@@ -1299,13 +1303,17 @@ totally different attack styles.
 8. An insecure JSON deserialization would execute any function call
    defined within the JSON String, so a possible payload for a DoS
    attack would be an endless loop. Replace the example code with
-   `{"orderLinesData": ["(function dos() { while(true); })()"]}` in the
+   `{"orderLinesData": "(function dos() { while(true); })()"}` in the
    _Request Body_ field. Click _Execute_.
 9. The server should eventually respond with a `200` after roughly 2
    seconds, because that is defined as a timeout so you do not really
    DoS your Juice Shop server.
-10. If your request successfully ran into that 2 second timeout, the
-    challenge is marked as solved.
+10. If your request successfully bumped into the infinite loop
+    protection, the challenge is marked as solved.
+
+### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
+
+:wrench: **TODO**
 
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
