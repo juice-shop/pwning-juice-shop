@@ -120,7 +120,8 @@ find its syntax along with an excerpt of the default settings.
     image. Defaults to `undefined.png`
   * `deletedDate` of the product in `YYYY-MM-DD` format (_optional_).
     Defaults to `null`.
-  * `useForProductTamperingChallenge` marks a product as the target for
+  * `urlForProductTamperingChallenge` sets the original link of the
+    product which is the target for
     [the "product tampering" challenge](../part2/privilege-escalation.md#change-the-href-of-the-link-within-the-o-saft-product-description).
     Overrides `deletedDate` with `null` (_must be `true` on exactly one
     product_)
@@ -185,7 +186,7 @@ products:
     description: 'O-Saft is an easy to use tool to show information...'
     price: 0.01
     image: 'owasp_osaft.jpg'
-    useForProductTamperingChallenge: true
+    urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/O-Saft'
   - name: 'Christmas Super-Surprise-Box (2014 Edition)'
     description: 'Contains a random selection of 10 bottles...'
     price: 29.99
