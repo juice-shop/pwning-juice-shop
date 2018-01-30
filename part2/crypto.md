@@ -30,19 +30,28 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                            | Difficulty |
-|:---------------------------------------------------------------------------------------------------------------------|:-----------|
-| Inform the shop about an algorithm or library it should definitely not use the way it does.                          | 2 of 5     |
-| Apply some advanced cryptanalysis to find _the real_ easter egg.                                                     | 4 of 5     |
-| Forge a coupon code that gives you a discount of at least 80%.                                                       | 5 of 5     |
-| Solve challenge #99. Unfortunately, this challenge does not exist.                                                   | 5 of 5     |
-| Unlock Premium Challenge to access exclusive content.                                                                | 5 of 5     |
+| Challenge                                                                                   | Difficulty |
+|:--------------------------------------------------------------------------------------------|:-----------|
+| Learn about the Token Sale before its official announcement.                                | 4 of 5     |
+| Inform the shop about an algorithm or library it should definitely not use the way it does. | 2 of 5     |
+| Apply some advanced cryptanalysis to find _the real_ easter egg.                            | 4 of 5     |
+| Forge a coupon code that gives you a discount of at least 80%.                              | 5 of 5     |
+| Solve challenge #99. Unfortunately, this challenge does not exist.                          | 5 of 5     |
+| Unlock Premium Challenge to access exclusive content.                                       | 5 of 5     |
+
+### Learn about the Token Sale before its official announcement
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
-To fulfil this challenge you must identify a cryptographic algorithm
-(or crypto library) that either * should not be used _at all_ * or is a
-_bad choice_ for a given requirement * or is used in an _insecure way_.
+To fulfil this challenge you must identify a cryptographic algorithm (or
+crypto library) that either * should not be used _at all_ * or is a _bad
+choice_ for a given requirement * or is used in an _insecure way_.
 
 #### Hints
 
@@ -155,3 +164,4 @@ That is why the actual challenge here is to unlock and solve the
 > [donations in part 3](../part3/donations.md) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
+
