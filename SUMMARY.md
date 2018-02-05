@@ -36,8 +36,6 @@
 
 * [Part III - Getting involved](part3/README.md)
   * [Provide feedback](part3/feedback.md)
-  * [Contribute to development](part3/contribution.md)
-  * [Codebase 101](part3/codebase.md)
   * [Help with translation](part3/translation.md)
   * [Donations](part3/donations.md)
 
