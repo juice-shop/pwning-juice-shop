@@ -43,25 +43,6 @@ on the given topic._
 
 ----
 
-__Download a .pdf, .epub, or .mobi file from:__
-
-* https://leanpub.com/juice-shop (official release)
-* https://www.gitbook.com/book/bkimminich/pwning-owasp-juice-shop
-
-__Read the book online at:__
-
-* https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content
-
-__Contribute content, suggestions, and fixes on GitHub:__
-
-* https://github.com/bkimminich/pwning-juice-shop
-
-__Official OWASP Juice Shop project homepage:__
-
-* http://owasp-juice.shop
-
-----
-
 [![CC BY-NC-ND 4.0](introduction/img/cc_by-nc-nd_4.0.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 This work is licensed under a
