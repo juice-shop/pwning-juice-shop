@@ -6,12 +6,8 @@
 ----
 
 * [Part I - Hacking preparations](part1/README.md)
-  * [Running OWASP Juice Shop](part1/running.md)
-  * [Challenge tracking](part1/challenges.md)
   * [Hacking exercise rules](part1/rules.md)
   * [Walking the "happy path"](part1/happy-path.md)
-  * [Customization](part1/customization.md)
-  * [Hosting a CTF event](part1/ctf.md)
 
 ----
 
