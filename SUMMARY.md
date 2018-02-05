@@ -43,8 +43,4 @@
 
 ----
 
-* [Appendix A - Challenge solutions](appendix/solutions.md)
-
-----
-
 * [About this book](introduction/abstract.md)
