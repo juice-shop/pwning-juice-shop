@@ -46,10 +46,10 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                         | Difficulty |
-|:----------------------------------------------------------------------------------|:-----------|
-| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | 3 of 5     |
-| Give the server something to chew on for quite a while. | 4 of 5     |
+| Challenge                                                                         | Difficulty                     |
+|:----------------------------------------------------------------------------------|:-------------------------------|
+| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | :star::star::star:             |
+| Give the server something to chew on for quite a while.                           | :star::star::star::star::star: |
 
 ### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 

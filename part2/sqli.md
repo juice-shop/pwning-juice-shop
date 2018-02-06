@@ -39,23 +39,23 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                 | Difficulty |
-|:----------------------------------------------------------|:-----------|
-| Log in with the administrator's user account.             | 2 of 5     |
-| Order the Christmas special offer of 2014.                | 2 of 5     |
-| Retrieve a list of all user credentials via SQL Injection | 3 of 5     |
-| Log in with Jim's user account.                           | 3 of 5     |
-| Log in with Bender's user account.                        | 3 of 5     |
+| Challenge                                                 | Difficulty               |
+|:----------------------------------------------------------|:-------------------------|
+| Log in with the administrator's user account.             | :star::star:             |
+| Order the Christmas special offer of 2014.                | :star::star:             |
+| Retrieve a list of all user credentials via SQL Injection | :star::star::star::star: |
+| Log in with Jim's user account.                           | :star::star::star:       |
+| Log in with Bender's user account.                        | :star::star::star:       |
 
 #### Reconnaissance advice
 
 Instead of trying random attacks or go through an attack pattern list,
 it is a good idea to find out if and where a vulnerability exists,
 first. By injecting a payload that should typically _break_ an
-underlying SQL query (e.g. `'` or `';`) you can analyze how the behaviour
-differs from regular use. Maybe you can even provoke an error where the
-application leaks details about the query structure and schema details
-like table or column names. Do not miss this opportunity.
+underlying SQL query (e.g. `'` or `';`) you can analyze how the
+behaviour differs from regular use. Maybe you can even provoke an error
+where the application leaks details about the query structure and schema
+details like table or column names. Do not miss this opportunity.
 
 ### Log in with the administrator's user account
 
@@ -102,7 +102,8 @@ café with free WiFi.
 
 #### Hints
 
-* Try to find a page where you can influence a list of data being displayed.
+* Try to find a page where you can influence a list of data being
+  displayed.
 * Craft a `UNION SELECT` attack string to join data from another table
   into the original result.
 * You might have to tackle some query syntax issues step-by-step,
@@ -133,3 +134,4 @@ troll it for its lack of alcoholic beverages.
 * Bender's password hash might not help you very much.
 
 [^1]: https://www.owasp.org/index.php/Injection_Flaws
+

@@ -22,13 +22,13 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                   | Difficulty |
-|:--------------------------------------------------------------------------------------------|:-----------|
-| Access the administration section of the store.                                             | 1 of 5     |
-| Get rid of all 5-star customer feedback.                                                    | 1 of 5     |
-| Change the href of the link within the O-Saft product description into http://kimminich.de. | 3 of 5     |
-| Access someone else's basket.                                                               | 2 of 5     |
-| Post some feedback in another users name.                                                   | 3 of 5     |
+| Challenge                                                                                   | Difficulty         |
+|:--------------------------------------------------------------------------------------------|:-------------------|
+| Access the administration section of the store.                                             | :star:             |
+| Get rid of all 5-star customer feedback.                                                    | :star::star:       |
+| Change the href of the link within the O-Saft product description into http://kimminich.de. | :star::star::star: |
+| Access someone else's basket.                                                               | :star::star:       |
+| Post some feedback in another users name.                                                   | :star::star::star: |
 
 ### Access the administration section of the store
 
@@ -120,3 +120,4 @@ posting a (most likely negative) feedback in his or her name!
   [XSS challenges](xss.md) found in OWASP Juice Shop.
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
+

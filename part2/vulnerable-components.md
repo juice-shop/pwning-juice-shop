@@ -5,11 +5,11 @@ libraries or other 3rd party components the application uses internally.
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                            | Difficulty |
-|:---------------------------------------------------------------------------------------------------------------------|:-----------|
-| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | 3 of 5     |
-| Inform the shop about a typosquatting trick it has become victim of. (Mention the exact name of the culprit)         | 3 of 5     |
-| Inform the shop about a more literal instance of typosquatting it fell for. (Mention the exact name of the culprit)  | 4 of 5     |
+| Challenge                                                                                                            | Difficulty                     |
+|:---------------------------------------------------------------------------------------------------------------------|:-------------------------------|
+| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | :star::star::star::star:       |
+| Inform the shop about a typosquatting trick it has become victim of. (Mention the exact name of the culprit)         | :star::star::star::star:       |
+| Inform the shop about a more literal instance of typosquatting it fell for. (Mention the exact name of the culprit)  | :star::star::star::star::star: |
 
 ### Inform the shop about a vulnerable library it is using
 

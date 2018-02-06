@@ -2,15 +2,15 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                          | Difficulty |
-|:-----------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | 2 of 5     |
-| Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | 3 of 5     |
-| Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | 4 of 5     |
-| Wherever you go, there you are.                                                                                                    | 4 of 5     |
-| Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | 5 of 5     |
-| Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                            | 4 of 5     |
-| Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                    | 5 of 5     |
+| Challenge                                                                                                                          | Difficulty                           |
+|:-----------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | :star::star:                         |
+| Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | :star::star::star::star:             |
+| Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | :star::star::star::star::star:       |
+| Wherever you go, there you are.                                                                                                    | :star::star::star::star:             |
+| Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | :star::star::star::star::star::star: |
+| Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                            | :star::star::star::star::star:       |
+| Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                    | :star::star::star::star::star::star: |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
@@ -174,3 +174,4 @@ the JWT look like it was properly signed.
 [^1]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
 
 [^2]: https://tools.ietf.org/html/rfc7519
+

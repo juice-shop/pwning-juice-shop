@@ -6,18 +6,18 @@ development team.
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                          | Difficulty |
-|:-----------------------------------------------------------------------------------|:-----------|
-| Let us redirect you to a donation site that went out of business.                  | 1 of 5     |
-| Access a confidential document.                                                    | 1 of 5     |
-| Use a deprecated B2B interface that was not properly shut down.                    | 1 of 5     |
-| Access a salesman's forgotten backup file.                                         | 2 of 5     |
-| Access a developer's forgotten backup file.                                        | 3 of 5     |
-| Find the hidden easter egg.                                                        | 3 of 5     |
-| Travel back in time to the golden era of web design.                               | 3 of 5     |
-| Deprive the shop of earnings by downloading the blueprint for one of its products. | 3 of 5     |
-| Access a misplaced SIEM signature file.                                            | 3 of 5     |
-| Retrieve the language file that never made it into production.                     | 5 of 5     |
+| Challenge                                                                          | Difficulty                     |
+|:-----------------------------------------------------------------------------------|:-------------------------------|
+| Let us redirect you to a donation site that went out of business.                  | :star:                         |
+| Access a confidential document.                                                    | :star:                         |
+| Use a deprecated B2B interface that was not properly shut down.                    | :star::star:                   |
+| Access a salesman's forgotten backup file.                                         | :star::star::star:             |
+| Access a developer's forgotten backup file.                                        | :star::star::star::star:       |
+| Find the hidden easter egg.                                                        | :star::star::star::star:       |
+| Travel back in time to the golden era of web design.                               | :star::star::star::star:       |
+| Deprive the shop of earnings by downloading the blueprint for one of its products. | :star::star::star::star::star: |
+| Access a misplaced SIEM signature file.                                            | :star::star::star::star:       |
+| Retrieve the language file that never made it into production.                     | :star::star::star::star::star: |
 
 ### Let us redirect you to a donation site that went out of business
 

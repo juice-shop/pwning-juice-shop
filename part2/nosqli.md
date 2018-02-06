@@ -38,8 +38,8 @@
 
 | Challenge                                                                            | Difficulty |
 |:-------------------------------------------------------------------------------------|:-----------|
-| Let the server sleep for some time. (It has done more than enough hard work for you) | 3 of 5     |
-| Update multiple product reviews at the same time.                                    | 3 of 5     |
+| Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:     |
+| Update multiple product reviews at the same time.                                    | :star::star::star::star:     |
 
 ### Let the server sleep for some time
 

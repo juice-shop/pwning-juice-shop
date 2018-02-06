@@ -14,7 +14,7 @@
 
 | Challenge                                             | Difficulty |
 |:------------------------------------------------------|:-----------|
-| Provoke an error that is not very gracefully handled. | 1 of 5     |
+| Provoke an error that is not very gracefully handled. | :star:     |
 
 ### Provoke an error that is not very gracefully handled
 
@@ -40,3 +40,4 @@ console of the browser. You were supposed to have it open all the time
 anyway, remember?
 
 [^1]: https://www.owasp.org/index.php/Top_10_2007-Information_Leakage
+

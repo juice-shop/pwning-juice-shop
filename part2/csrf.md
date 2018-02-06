@@ -15,9 +15,9 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                 | Difficulty |
-|:--------------------------------------------------------------------------|:-----------|
-| Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | 4 of 5     |
+| Challenge                                                                 | Difficulty               |
+|:--------------------------------------------------------------------------|:-------------------------|
+| Change Bender's password into _slurmCl4ssic_ without using SQL Injection. | :star::star::star::star: |
 
 ### Change Bender's password into slurmCl4ssic without using SQL Injection
 
@@ -46,5 +46,6 @@ process.
 > that employs a salt makes this attack infeasible.[^2]
 
 [^1]: https://www.owasp.org/index.php/CSRF
+
 [^2]: https://en.wikipedia.org/wiki/Rainbow_table
 

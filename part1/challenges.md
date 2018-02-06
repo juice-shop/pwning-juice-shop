@@ -15,16 +15,17 @@ find out what needs to be done.
 
 ![Partly solved Score Board](img/score-board_partly.png)
 
-The challenges are rated with a difficulty level between 1 and 5 stars,
-with more stars representing a higher difficulty. To make the list of
-challenges less daunting, they are clustered by difficulty. By default
-only the 1-star challenges are unfolded. You can open or collapse all
-challenge blocks as you like. Collapsing a block has _no impact_ on
-whether you can _solve_ any of its challenges.
+The challenges are rated with a difficulty level between :star: and
+:star::star::star::star::star::star:, with more stars representing a
+higher difficulty. To make the list of challenges less daunting, they
+are clustered by difficulty. By default only the 1-star challenges are
+unfolded. You can open or collapse all challenge blocks as you like.
+Collapsing a block has _no impact_ on whether you can _solve_ any of its
+challenges.
 
 The difficulty ratings have been continually adjusted over time based on
 user feedback. The ratings allow you to manage your own hacking pace and
-learning curve significantly. When you pick a 4- or 5-star challenge you
+learning curve significantly. When you pick a 5- or 6-star challenge you
 should _expect_ a real challenge and should be less frustrated if you
 fail on it several times. On the other hand if hacking a 1- or 2-star
 challenge takes very long, you might realize quickly that you are on a

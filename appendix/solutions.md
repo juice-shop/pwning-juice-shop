@@ -66,12 +66,12 @@ error situation and solve this challenge along the way:
 
 ### Perform a reflected XSS attack
 
-1. Paste the attack string `<script>alert("XSS1")</script>` into the
+1. Paste the attack string `<script>alert("XSS")</script>` into the
    _Search..._ field.
 2. Click the _Search_ button.
-3. An alert box with the text "XSS1" should appear.
+3. An alert box with the text "XSS" should appear.
 
-   ![XSS1 alert box](img/xss1_alert.png)
+   ![XSS alert box](img/xss1_alert.png)
 
 ### Get rid of all 5-star customer feedback
 
@@ -417,23 +417,23 @@ in order to exploit and solve them:
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 1. Submit a POST request to http://localhost:3000/api/Users with
-   * `{"email": "<script>alert(\"XSS2\")</script>", "password": "xss"}`
+   * `{"email": "<script>alert(\"XSS\")</script>", "password": "xss"}`
      as body
    * and `application/json` as `Content-Type` header.
 
-   ![XSS2 request in PostMan](img/xss2_postman.png)
+   ![XSS request in PostMan](img/xss2_postman.png)
 2. Log in to the application with any user.
 3. Visit http://localhost:3000/#/administration.
-4. An alert box with the text "XSS2" should appear.
+4. An alert box with the text "XSS" should appear.
 
-   ![XSS2 alert box](img/xss2_alert.png)
+   ![XSS alert box](img/xss2_alert.png)
 5. Close this box. Notice the seemingly empty row in the _Registered
    Users_ table?
 6. Click the "eye"-button next to that empty row.
 7. A modal overlay dialog with the user details opens where the attack
    string is rendered as harmless text.
 
-   ![XSS2 user in details dialog](img/xss2_user-modal.png)
+   ![XSS user in details dialog](img/xss2_user-modal.png)
 
 ### Perform a persisted XSS attack without using the frontend application at all
 
@@ -441,25 +441,25 @@ in order to exploit and solve them:
 2. Copy your `Authorization` header from any HTTP request submitted via
    browser.
 3. Submit a POST request to <http://localhost:3000/api/Products> with
-   * `{"name": "XSS3", "description":
-     "<script>alert(\"XSS3\")</script>", "price": 47.11}` as body,
+   * `{"name": "XSS", "description": "<script>alert(\"XSS\")</script>",
+     "price": 47.11}` as body,
    * `application/json` as `Content-Type`
    * and `Bearer ?` as `Authorization` header, replacing the `?` with
      the token you copied from the browser.
 
-   ![XSS3 request headers in PostMan](img/xss3_postman-header.png)
+   ![XSS request headers in PostMan](img/xss3_postman-header.png)
 
-   ![XSS3 request body in PostMan](img/xss3_postman-body.png)
+   ![XSS request body in PostMan](img/xss3_postman-body.png)
 4. Visit http://localhost:3000/#/search.
-5. An alert box with the text "XSS3" should appear.
+5. An alert box with the text "XSS" should appear.
 
-   ![XSS3 alert box](img/xss3_alert.png)
+   ![XSS alert box](img/xss3_alert.png)
 6. Close this box. Notice the product row which seemingly lacks a
    description in the _All Products_ table?
 7. Click the "eye"-button next to that row.
-8. Another alert box with the text "XSS3" should appear.
+8. Another alert box with the text "XSS" should appear.
 
-   ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
+   ![XSS alert box in product details](img/xss3_product-modal_alert.png)
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -821,17 +821,17 @@ explains the problem and gives an exploit example:
 > the output html.
 
 1. Visit http://localhost:3000/#/contact.
-2. Enter `<<script>Foo</script>script>alert("XSS4")<</script>/script>`
-   as _Comment_
+2. Enter `<<script>Foo</script>script>alert("XSS")<</script>/script>` as
+   _Comment_
 3. Choose a rating and click _Submit_
-4. Visit http://localhost:3000/#/about for a first "XSS4" alert (from
-   the _Customer Feedback_ slideshow)
+4. Visit http://localhost:3000/#/about for a first "XSS" alert (from the
+   _Customer Feedback_ slideshow)
 
-   ![XSS4 alert box](img/xss4_alert.png)
-5. Visit http://localhost:3000/#/administration for a second "XSS4"
-   alert (from the _Customer Feedback_ table)
+   ![XSS alert box](img/xss4_alert.png)
+5. Visit http://localhost:3000/#/administration for a second "XSS" alert
+   (from the _Customer Feedback_ table)
 
-   ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
+   ![XSS alert box in admin area](img/xss4_alert-admin.png)
 
 ### Give the server something to chew on for quite a while
 

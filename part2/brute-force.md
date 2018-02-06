@@ -14,9 +14,9 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                              | Difficulty |
-|:-----------------------------------------------------------------------------------------------------------------------|:-----------|
-| Reset Morty's password via the Forgot Password mechanism by bruteforcing the original answer to his security question. | 5 of 6     |
+| Challenge                                                                                                              | Difficulty                     |
+|:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------|
+| Reset Morty's password via the Forgot Password mechanism by bruteforcing the original answer to his security question. | :star::star::star::star::star: |
 
 ### Reset Morty's password via the Forgot Password mechanism
 

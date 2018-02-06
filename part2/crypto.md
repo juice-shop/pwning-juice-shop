@@ -30,14 +30,14 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                   | Difficulty |
-|:--------------------------------------------------------------------------------------------|:-----------|
-| Learn about the Token Sale before its official announcement.                                | 4 of 5     |
-| Inform the shop about an algorithm or library it should definitely not use the way it does. | 2 of 5     |
-| Apply some advanced cryptanalysis to find _the real_ easter egg.                            | 4 of 5     |
-| Forge a coupon code that gives you a discount of at least 80%.                              | 5 of 5     |
-| Solve challenge #99. Unfortunately, this challenge does not exist.                          | 5 of 5     |
-| Unlock Premium Challenge to access exclusive content.                                       | 5 of 5     |
+| Challenge                                                                                   | Difficulty                           |
+|:--------------------------------------------------------------------------------------------|:-------------------------------------|
+| Learn about the Token Sale before its official announcement.                                | :star::star::star::star:             |
+| Inform the shop about an algorithm or library it should definitely not use the way it does. | :star::star:                         |
+| Apply some advanced cryptanalysis to find _the real_ easter egg.                            | :star::star::star::star:             |
+| Forge a coupon code that gives you a discount of at least 80%.                              | :star::star::star::star::star::star: |
+| Solve challenge #99. Unfortunately, this challenge does not exist.                          | :star::star::star::star::star::star: |
+| Unlock Premium Challenge to access exclusive content.                                       | :star::star::star::star::star::star: |
 
 ### Learn about the Token Sale before its official announcement
 

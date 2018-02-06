@@ -19,10 +19,10 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                          | Difficulty |
-|:---------------------------------------------------------------------------------------------------|:-----------|
-| Perform a Remote Code Execution that would keep a less hardened application busy forever.          | 5 of 5     |
-| Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | 5 of 5     |
+| Challenge                                                                                          | Difficulty                           |
+|:---------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Perform a Remote Code Execution that would keep a less hardened application busy forever.          | :star::star::star::star::star:       |
+| Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | :star::star::star::star::star::star: |
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
