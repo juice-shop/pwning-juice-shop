@@ -1319,6 +1319,10 @@ totally different attack styles.
 
 :wrench: **TODO**
 
+### Reset Morty's password via the Forgot Password mechanism
+
+:wrench: **TODO**
+
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^2]: <https://en.wikipedia.org/wiki/ROT13>
