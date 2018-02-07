@@ -1317,7 +1317,39 @@ totally different attack styles.
 
 ### Learn about the Token Sale before its official announcement
 
-:wrench: **TODO**
+1. Open the `juice-shop.min.js` in your browser's developer tools and
+   search for "tokensale".
+2. Among the first entries you will find an obfuscated route mapping
+   using the `TokenSaleController`.
+
+   ![Obfuscated TokenSale page route in juice-shop.min.js](img/minified_js-tokensale.png)
+3. Navigate to <http://localhost:3000/#/tokensale> and
+   <http://localhost:3000/#/token-sale> just to realize that these
+   routes do not exist.
+4. Copy the obfuscating function into the JavaScript console of your
+   browser and execute it.
+
+```
+"/" + function() {
+        var e = Array.prototype.slice.call(arguments)
+          , n = e.shift();
+        return e.reverse().map(function(e, t) {
+            return String.fromCharCode(e - n - 45 - t)
+        }).join("")
+    }(25, 184, 174, 179, 182, 186) + 36669..toString(36).toLowerCase() + function() {
+        var e = Array.prototype.slice.call(arguments)
+          , n = e.shift();
+        return e.reverse().map(function(e, t) {
+            return String.fromCharCode(e - n - 24 - t)
+        }).join("")
+    }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
+```
+
+1. The console should give you the string `/tokensale-ico-ea` as a
+   result.
+2. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
+   challenge.
+
 
 ### Reset Morty's password via the Forgot Password mechanism
 
