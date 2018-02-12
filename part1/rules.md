@@ -228,6 +228,10 @@ to `1`. You then just have to keep your fingers crossed, that nobody
 ever asks you to _demonstrate how_ you actually solved all the 4- and
 5-star challenges so quickly.
 
+### Configuration REST API Endpoint
+
+:wrench: **TODO**
+
 ### Score Board HTML/CSS
 
 The Score Board and its features were covered in the
