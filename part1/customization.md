@@ -233,19 +233,24 @@ protractor`. If they pass, all challenges will be working fine!
 
 The following three customizations are provided out of the box by OWASP
 Juice Shop:
+* [7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml):
+  Full conversion <https://7ms.us>-theme for the first podcast that
+  picked up the Juice Shop way before it was famous! :sunglasses:
 * [The BodgeIt Store](https://github.com/bkimminich/juice-shop/blob/master/config/bodgeit.yml):
   An homage to
-  [our server-side rendered ancestor](https://github.com/psiinon/bodgeit)
+  [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
+  May it rest in JSPs! :skull:
 * [Sick-Shop](https://github.com/bkimminich/juice-shop/blob/master/config/sickshop.yml):
-  A store that offers a variety of illnesses. _Achoo!_ Bless you!
+  A store that offers a variety of illnesses and the original PoC theme
+  for the customization feature. _Achoo!_ Bless you! :mask:
 * [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
   Keeps the Juice Shop in its default layout but disabled hints while
   enabling CTF flag codes in the _"challenge solved"_-notifications.
   Refer to [Hosting a CTF event](ctf.md) to learn more about running a
-  CTF-event with OWASP Juice Shop.
+  CTF-event with OWASP Juice Shop. :triangular_flag_on_post:
 * [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
   Keeps the Juice Shop in its default layout but hides all _"challenge
-  solved"_-notifications, GitHub ribbon and challenge hints.
+  solved"_-notifications, GitHub ribbon and challenge hints. :mute:
 * [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
-  this customization is for you.
+  this customization is for you. :us:
