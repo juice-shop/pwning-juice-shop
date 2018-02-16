@@ -102,6 +102,11 @@ find its syntax along with an excerpt of the default settings.
   * `facebookUrl` used as the Facebook link promising coupon codes on
     the _Your Basket_ screen. Defaults to
     `"https://www.facebook.com/owasp.juiceshop"`
+  * `planetOverlayMap` filename in `/app/private` _or_ URL of an image
+    to download to that folder and then use as an overlay texture for
+    the 3D planet "easter egg". Defaults to `"orangemap2k.jpg"`
+  * `planetName` of the 3D planet "easter egg" as shown in the page
+    title. Defaults to `"Orangeuze"`
   * `recyclePage` custom elements on the _Request Recycling Box_ page
     * `topProductImage` filename in `/app/public/images/products` to use
       as the image on the top of the info column on the page. Defaults
@@ -165,6 +170,8 @@ application:
   gitHubRibbon: "orange"
   twitterUrl: "https://twitter.com/owasp_juiceshop"
   facebookUrl: "https://www.facebook.com/owasp.juiceshop"
+  planetOverlayMap: "orangemap2k.jpg"
+  planetName: "Orangeuze"
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
