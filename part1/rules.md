@@ -72,9 +72,13 @@ headers etc.
 If you feel more at home on the command line, `curl` will do the trick
 just as fine as the recommended browser plugins.
 
+#### Scripting tools
+
+:wrench: **TODO**
+
 ### Penetration testing tools
 
-You _can_ solve all challenges just using a browser and the plugins
+You _can_ solve all challenges just using a browser and the plugins/tools
 mentioned above. If you are new to web application hacking (or
 penetration testing in general) this is also the _recommended_ set of
 tools to start with. In case you have experience with professional
