@@ -5,6 +5,7 @@
 | Challenge                                                                                                                          | Difficulty                           |
 |:-----------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | :star::star:                         |
+| Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                          | :star::star:                         |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | :star::star::star::star:             |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | :star::star::star::star::star:       |
 | Wherever you go, there you are.                                                                                                    | :star::star::star::star:             |
@@ -29,6 +30,14 @@ challenge.
   that.
 * In case you use some hacker tool, you can also go for a _brute force
   attack_ using a generic _password list_
+
+### Log in with MC SafeSearch's original user credentials
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Log in with Bjoern's user account
 

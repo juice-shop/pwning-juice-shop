@@ -1355,6 +1355,10 @@ totally different attack styles.
 
 :wrench: **TODO**
 
+### Log in with MC SafeSearch's original user credentials
+
+:wrench: **TODO**
+
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^2]: <https://en.wikipedia.org/wiki/ROT13>
