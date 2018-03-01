@@ -22,7 +22,7 @@
     "juiceShopCtfVersion": "v3.1.0",
     "ctfdVersion": "≥1.0.5",
     "juiceShopNumberOfChallenges": 57,
-    "nodeVersions": "6.x, 8.x and 9.x",
-    "recommendedNodeVersion": "8.x"
+    "nodeVersions": "8.x and 9.x",
+    "recommendedNodeVersion": "9.x"
   }
 }
