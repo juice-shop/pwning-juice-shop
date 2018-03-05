@@ -114,6 +114,16 @@ find its syntax along with an excerpt of the default settings.
     * `bottomProductImage` filename in `/app/public/images/products` to
       use as the image on the bottom of the info column on the page.
       Defaults to `apple_pressings.jpg`
+  * `cookieConsent` defines the cookie consent dialog shown in the
+    bottom right corner
+    * `backgroundColor` :wrench: **TODO**
+    * `textColor` :wrench: **TODO**
+    * `buttonColor` :wrench: **TODO**
+    * `buttonTextColor` :wrench: **TODO**
+    * `message` :wrench: **TODO**
+    * `dismissText` :wrench: **TODO**
+    * `linkText` :wrench: **TODO**
+    * `linkUrl` :wrench: **TODO**
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -175,6 +185,15 @@ application:
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
+  cookieConsent:
+    backgroundColor: '#eb6c44'
+    textColor: '#ffffff'
+    buttonColor: '#f5d948'
+    buttonTextColor: '#000000'
+    message: 'This website uses fruit cookies to ensure you get the juiciest tracking experience.'
+    dismissText: 'Me want it!'
+    linkText: 'But me wait!'
+    linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
 products:
   - name: "Apple Juice (1000ml)"
     price: 1.99
