@@ -12,6 +12,7 @@
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.                       | :star::star::star::star::star::star: |
 | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                            | :star::star::star::star::star:       |
 | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                    | :star::star::star::star::star::star: |
+| Submit 10 or more customer feedbacks within 10 seconds. | :star::star::star::star::star: |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
@@ -179,6 +180,14 @@ the JWT look like it was properly signed.
   its JWTs is mandatory for this challenge.
 * Finding the corresponding private key should actually be impossible,
   but that obviously doesn't make this challenge unsolvable.
+
+### Submit 10 or more customer feedbacks within 10 seconds
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
 

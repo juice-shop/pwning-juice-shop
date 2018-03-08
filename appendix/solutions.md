@@ -1359,6 +1359,10 @@ totally different attack styles.
 
 :wrench: **TODO**
 
+### Submit 10 or more customer feedbacks within 10 seconds
+
+:wrench: **TODO**
+
 [^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^2]: <https://en.wikipedia.org/wiki/ROT13>
