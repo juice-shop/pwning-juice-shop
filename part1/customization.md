@@ -62,15 +62,15 @@ find its syntax along with an excerpt of the default settings.
   * `port` to launch the server on. Defaults to `3000`
 * `application`
   * `domain` used for all user email addresses. Defaults to
-    `"juice-sh.op"`
-  * `name` as shown in title and menu bar Defaults to `"OWASP Juice
-    Shop"`
+    `'juice-sh.op'`
+  * `name` as shown in title and menu bar Defaults to `'OWASP Juice
+    Shop'`
   * `logo` filename in `/app/public/images/` _or_ a URL of an image
     which will first be download to that folder and then used as a logo.
-    Defaults to `"JuiceShop_Logo.png"`
+    Defaults to `'JuiceShop_Logo.png'`
   * `favicon` filename in `/app/public/` _or_ a URL of an image in
     `.ico` format which will first be download to that folder and then
-    used as a favicon. Defaults to `"favicon_v2.ico"`
+    used as a favicon. Defaults to `'favicon_v2.ico'`
   * `numberOfRandomFakeUsers` represents the number of random user
     accounts to be created on top of the pre-defined ones (which are
     required for several challenges). Defaults to `0`, meaning no
@@ -91,22 +91,22 @@ find its syntax along with an excerpt of the default settings.
     used to render the UI. Options are `cerulean`, `cosmo`, `cyborg`,
     `darkly`, `flatly`, `lumen`, `paper`, `readable`, `sandstone`,
     `simplex`, `slate`, `spacelab`, `superhero`, `united` and `yeti`.
-    Defaults to `"slate"`
+    Defaults to `'slate'`
   * `gitHubRibbon` color of the _"Fork me on GitHub"_ ribbon in the
     top-right corner. Options are `darkblue`, `gray`, `green`, `orange`,
     `red`, `white` and - to hide the ribbon entirely - also `none` .
-    Defaults to `"orange"`.
+    Defaults to `'orange'`.
   * `twitterUrl` used as the Twitter link promising coupon codes on the
     _Your Basket_ screen. Defaults to
-    `"https://twitter.com/owasp_juiceshop"`
+    `'https://twitter.com/owasp_juiceshop'`
   * `facebookUrl` used as the Facebook link promising coupon codes on
     the _Your Basket_ screen. Defaults to
-    `"https://www.facebook.com/owasp.juiceshop"`
+    `'https://www.facebook.com/owasp.juiceshop'`
   * `planetOverlayMap` filename in `/app/private` _or_ URL of an image
     to download to that folder and then use as an overlay texture for
-    the 3D planet "easter egg". Defaults to `"orangemap2k.jpg"`
+    the 3D planet "easter egg". Defaults to `'orangemap2k.jpg'`
   * `planetName` of the 3D planet "easter egg" as shown in the page
-    title. Defaults to `"Orangeuze"`
+    title. Defaults to `'Orangeuze'`
   * `recyclePage` custom elements on the _Request Recycling Box_ page
     * `topProductImage` filename in `/app/public/images/products` to use
       as the image on the top of the info column on the page. Defaults
@@ -116,14 +116,23 @@ find its syntax along with an excerpt of the default settings.
       Defaults to `apple_pressings.jpg`
   * `cookieConsent` defines the cookie consent dialog shown in the
     bottom right corner
-    * `backgroundColor` :wrench: **TODO**
-    * `textColor` :wrench: **TODO**
-    * `buttonColor` :wrench: **TODO**
-    * `buttonTextColor` :wrench: **TODO**
-    * `message` :wrench: **TODO**
-    * `dismissText` :wrench: **TODO**
-    * `linkText` :wrench: **TODO**
-    * `linkUrl` :wrench: **TODO**
+    * `backgroundColor` of the cookie banner itself. Defaults to
+      `#eb6c44` (red-orange)
+    * `textColor` of the `message` shown in the cookie banner. Defaults
+      to `#ffffff` (white)
+    * `buttonColor` defines the color of the button to dismiss the
+      banner. Defaults to `#f5d948` (gold)
+    * `buttonTextColor` of the `dismissText` on the button. Defaults to
+      `#000000` (black)
+    * `message` explains the cookie usage in the application. Defaults
+      to `'This website uses fruit cookies to ensure you get the
+      juiciest tracking experience.'`
+    * `dismissText` the text shown on the button to dismiss the banner.
+      Defaults to `'Me want it!'`
+    * `linkText` is shown after the `message` to refer to further
+      information. Defaults to `'But me wait!'`
+    * `linkUrl` provides further information about cookie usage.
+      Defaults to `'https://www.youtube.com/watch?v=9PnbKL3wuH4'`
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -167,21 +176,21 @@ find its syntax along with an excerpt of the default settings.
 server:
   port: 3000
 application:
-  domain: "juice-sh.op"
-  name: "OWASP Juice Shop"
-  logo: "JuiceShop_Logo.png"
-  favicon: "favicon_v2.ico"
+  domain: 'juice-sh.op'
+  name: 'OWASP Juice Shop'
+  logo: 'JuiceShop_Logo.png'
+  favicon: 'favicon_v2.ico'
   numberOfRandomFakeUsers: 0
   showChallengeSolvedNotifications: true
   showCtfFlagsInNotifications: false
   showChallengeHints: true
   showVersionNumber: true
-  theme: "slate"
-  gitHubRibbon: "orange"
-  twitterUrl: "https://twitter.com/owasp_juiceshop"
-  facebookUrl: "https://www.facebook.com/owasp.juiceshop"
-  planetOverlayMap: "orangemap2k.jpg"
-  planetName: "Orangeuze"
+  theme: 'slate'
+  gitHubRibbon: 'orange'
+  twitterUrl: 'https://twitter.com/owasp_juiceshop'
+  facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
+  planetOverlayMap: 'orangemap2k.jpg'
+  planetName: 'Orangeuze'
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
@@ -195,10 +204,10 @@ application:
     linkText: 'But me wait!'
     linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
 products:
-  - name: "Apple Juice (1000ml)"
+  - name: 'Apple Juice (1000ml)'
     price: 1.99
-    description: "The all-time classic."
-    image: "apple_juice.jpg"
+    description: 'The all-time classic.'
+    image: 'apple_juice.jpg'
     reviews:
       - text: 'One of my favorites!'
         author: 'admin'
@@ -255,6 +264,10 @@ Juice Shop:
 * [7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml):
   Full conversion <https://7ms.us>-theme for the first podcast that
   picked up the Juice Shop way before it was famous! :sunglasses:
+* [Mozilla-CTF](https://github.com/bkimminich/juice-shop/blob/master/config/mozilla.yml):
+  Another full conversion theme harvested and refined from the
+  [Mozilla Austin CTF-event](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop)!
+  :earth_americas:
 * [The BodgeIt Store](https://github.com/bkimminich/juice-shop/blob/master/config/bodgeit.yml):
   An homage to
   [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
