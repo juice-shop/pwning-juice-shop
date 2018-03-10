@@ -1,4 +1,4 @@
-# Deserialization
+# Insecure Deserialization
 
 > Serialization is the process of turning some object into a data format
 > that can be restored later. People often serialize objects in order to
