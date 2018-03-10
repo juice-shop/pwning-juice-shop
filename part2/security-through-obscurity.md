@@ -1,6 +1,6 @@
 # Security through Obscurity
 
-Most applications contain content which is not supposed to be publicly
+Many applications contain content which is not supposed to be publicly
 accessible. A properly implemented authorization model would ensure that
 only users _with appropriate permission_ can access such content. If an
 application instead relies on the fact that the content is _not visible
@@ -19,10 +19,10 @@ anti-pattern:
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                   | Difficulty                           |
-|:--------------------------------------------------------------------------------------------|:-------------------------------------|
-| Learn about the Token Sale before its official announcement.                                | :star::star::star::star:             |
-| Apply some advanced cryptanalysis to find _the real_ easter egg.                            | :star::star::star::star:             |
+| Challenge                                                        | Difficulty               |
+|:-----------------------------------------------------------------|:-------------------------|
+| Learn about the Token Sale before its official announcement.     | :star::star::star:       |
+| Apply some advanced cryptanalysis to find _the real_ easter egg. | :star::star::star::star: |
 
 ### Learn about the Token Sale before its official announcement
 
