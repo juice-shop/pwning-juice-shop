@@ -15,7 +15,7 @@ Board.
 _The challenge hints found in this release of the companion guide are
 compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
 
-### Trivial Challenges (:star:)
+### Trivial Challenges (  :star:  )
 
 | Challenge            | Description                                                          | Hints                                                                                               | Solution                                                                                                 |
 |:---------------------|:---------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
 | XSS Tier 1           | Perform a reflected XSS attack with `<script>alert("XSS")</script>`. | [  :bulb:  ](xss.md#perform-a-reflected-xss-attack)                                                 | [ :godmode: ](../appendix/solutions.md#perform-a-reflected-xss-attack)                                   |
 | Zero Stars           | Give a devastating zero-star feedback to the store.                  | [  :bulb:  ](improper-input-validation.md#give-a-devastating-zero-star-feedback-to-the-store)       | [ :godmode: ](../appendix/solutions.md#give-a-devastating-zero-star-feedback-to-the-store)               |
 
-### Easy Challenges (:star::star:)
+### Easy Challenges (  :star::star:  )
 
 | Challenge            | Description                                                                                                  | Hints                                                                                                                                             | Solution                                                                                                                                           |
 |:---------------------|:-------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,7 +40,7 @@ compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
 | Password Strength    | Log in with the administrator's user credentials without previously changing them or applying SQL Injection. | [  :bulb:  ](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection) | [ :godmode: ](../appendix/solutions.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection) |
 | Weird Crypto         | Inform the shop about an algorithm or library it should definitely not use the way it does.                  | [  :bulb:  ](sensitive-data-exposure.md#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)               | [ :godmode: ](../appendix/solutions.md#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)                 |
 
-### Medium Challenges (:star::star::star:)
+### Medium Challenges (  :star::star::star:  )
 
 | Challenge              | Description                                                                                                        | Hints                                                                                                    | Solution                                                                                                             |
 |:-----------------------|:-------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------|
@@ -58,7 +58,7 @@ compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
 | XSS Tier 3             | Perform a persisted XSS attack with `<script>alert("XSS")</script>` without using the frontend application at all. | [  :bulb:  ](xss.md#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all)        | [ :godmode: ](../appendix/solutions.md#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all) |
 | XXE Tier 1             | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server.                                  | [  :bulb:  ](xxe.md#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server)              | [ :godmode: ](../appendix/solutions.md#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server)       |
 
-### Hard Challenges (:star::star::star::star:)
+### Hard Challenges (  :star::star::star::star:  )
 
 | Challenge                  | Description                                                                                                                        | Hints                                                                                                        | Solution                                                                                                          |
 |:---------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
@@ -78,7 +78,7 @@ compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
 | Vulnerable Library         | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)               | [  :bulb:  ](vulnerable-components.md#inform-the-shop-about-a-vulnerable-library-it-is-using)                | [ :godmode: ](../appendix/solutions.md#inform-the-shop-about-a-vulnerable-library-it-is-using)                    |
 | XSS Tier 4                 | Perform a persisted XSS attack with `<script>alert("XSS")</script>` bypassing a server-side security mechanism.                    | [  :bulb:  ](xss.md#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism)               | [ :godmode: ](../appendix/solutions.md#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism) |
 
-### Dreadful Challenges (:star::star::star::star::star:)
+### Dreadful Challenges (  :star::star::star::star::star:  )
 
 | Challenge               | Description                                                                                                            | Hints                                                                                                                              | Solution                                                                                                                         |
 |:------------------------|:-----------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
 | Typosquatting Tier 2    | Inform the shop about a more literal instance of _typosquatting_ it fell for. (Mention the exact name of the culprit)  | [  :bulb:  ](vulnerable-components.md#inform-the-shop-about-a-more-literal-instance-of-typosquatting-it-fell-for)                  | [ :godmode: ](../appendix/solutions.md#inform-the-shop-about-a-more-literal-instance-of-typosquatting-it-fell-for)               |
 | XXE Tier 2              | Give the server something to chew on for quite a while.                                                                | [  :bulb:  ](xxe.md#give-the-server-something-to-chew-on-for-quite-a-while)                                                        | [ :godmode: ](../appendix/solutions.md#give-the-server-something-to-chew-on-for-quite-a-while)                                   |
 
-### Diabolic Challenges (:star::star::star::star::star::star:)
+### Diabolic Challenges (  :star::star::star::star::star::star:  )
 
 | Challenge           | Description                                                                                                     | Hints                                                                                                                                       | Solution                                                                                                                                  |
 |:--------------------|:----------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
