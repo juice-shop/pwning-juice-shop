@@ -1,4 +1,44 @@
-# Cryptographic issues
+# Sensitive Data Exposure
+
+## Challenges covered in this chapter
+
+| Challenge                                                                                                 | Difficulty   |
+|:----------------------------------------------------------------------------------------------------------|:-------------|
+| Access a confidential document.                                                                           | :star:       |
+| Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass. | :star::star: |
+| Inform the shop about an algorithm or library it should definitely not use the way it does.               | :star::star: |
+| Forge a coupon code that gives you a discount of at least 80%.                              | :star::star::star::star::star::star: |
+| Solve challenge #99. Unfortunately, this challenge does not exist.                          | :star::star::star::star::star::star: |
+| Unlock Premium Challenge to access exclusive content.                                       | :star::star::star::star::star::star: |
+
+### Access a confidential document
+
+Somewhere in the application you can find a file that contains sensitive
+information about some - potentially hostile - takeovers the Juice Shop
+top management has planned.
+
+#### Hints
+
+* Analyze and tamper with links in the application that deliver a file
+  directly.
+* The file you are looking for is not protected in any way. Once you
+  _found it_ you can also _access it_.
+
+### Log in with MC SafeSearch's original user credentials
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
+
+### Inform the shop about an algorithm or library it should definitely not use the way it does
+
+To fulfil this challenge you must identify a cryptographic algorithm (or
+crypto library) that either
+* should not be used _at all_
+* or is a _bad choice_ for a given requirement
+* or is used in an _insecure way_.
 
 > Initially confined to the realms of academia and the military,
 > cryptography has become ubiquitous thanks to the Internet. Common
@@ -28,31 +68,6 @@
 > says "trust us, we have had experts look at this,” chances are they
 > weren't experts![^1]
 
-## Challenges covered in this chapter
-
-| Challenge                                                                                   | Difficulty                           |
-|:--------------------------------------------------------------------------------------------|:-------------------------------------|
-| Learn about the Token Sale before its official announcement.                                | :star::star::star::star:             |
-| Inform the shop about an algorithm or library it should definitely not use the way it does. | :star::star:                         |
-| Apply some advanced cryptanalysis to find _the real_ easter egg.                            | :star::star::star::star:             |
-| Forge a coupon code that gives you a discount of at least 80%.                              | :star::star::star::star::star::star: |
-| Solve challenge #99. Unfortunately, this challenge does not exist.                          | :star::star::star::star::star::star: |
-| Unlock Premium Challenge to access exclusive content.                                       | :star::star::star::star::star::star: |
-
-### Learn about the Token Sale before its official announcement
-
-:wrench: **TODO**
-
-#### Hints
-
-:wrench: **TODO**
-
-### Inform the shop about an algorithm or library it should definitely not use the way it does
-
-To fulfil this challenge you must identify a cryptographic algorithm (or
-crypto library) that either * should not be used _at all_ * or is a _bad
-choice_ for a given requirement * or is used in an _insecure way_.
-
 #### Hints
 
 * Use the _Contact Us_ form to submit a feedback mentioning the abused
@@ -60,27 +75,9 @@ choice_ for a given requirement * or is used in an _insecure way_.
 * There are four possible answers and you only need to identify one to
   solve the challenge.
 * Cryptographic functions used in the
-  [Apply some advanced cryptanalysis to find _the real_ easter egg](#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
+  [Apply some advanced cryptanalysis to find _the real_ easter egg](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
-
-### Apply some advanced cryptanalysis to find the real easter egg
-
-Solving the
-[Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)
-challenge was probably no as satisfying as you had hoped. Now it is time
-to tackle the taunt of the developers and hunt down _the real_ easter
-egg. This follow-up challenge is basically about finding a secret URL
-that - when accessed - will reward you with an easter egg that deserves
-the name.
-
-#### Hints
-
-* Make sure you solve
-  [Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)
-  first.
-* You might have to peel through several layers of tough-as-nails
-  encryption for this challenge.
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
@@ -146,7 +143,7 @@ That is why the actual challenge here is to unlock and solve the
 #### Hints
 
 * This challenge could also have been put into chapter
-  [Weak security mechanisms](weak-security.md).
+  [Weak security mechanisms](roll-your-own-security.md).
 * There is no inappropriate, self-written or misconfigured cryptographic
   library to be exploited here.
 * How much protection does a sturdy top-quality door lock add to your
@@ -164,4 +161,3 @@ That is why the actual challenge here is to unlock and solve the
 > [donations in part 3](../part3/donations.md) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
-

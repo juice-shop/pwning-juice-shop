@@ -57,7 +57,7 @@
 * The challenge will be solved if you manage to trigger the protection
   of the application against such DoS attacks.
 * Similar to the
-  [Let the server sleep for some time](nosqli.md#let-the-server-sleep-for-some-time)
+  [Let the server sleep for some time](injection.md#let-the-server-sleep-for-some-time)
   challenge (which accepted nothing but NoSQL Injection as a solution)
   this challenge will only accept proper RCE as a solution. It cannot be
   solved by simply hammering the server with requests. _That_ would

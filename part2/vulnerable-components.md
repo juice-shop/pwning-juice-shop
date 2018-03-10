@@ -5,28 +5,13 @@ libraries or other 3rd party components the application uses internally.
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                            | Difficulty                     |
-|:---------------------------------------------------------------------------------------------------------------------|:-------------------------------|
-| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | :star::star::star::star:       |
-| Inform the shop about a typosquatting trick it has become victim of. (Mention the exact name of the culprit)         | :star::star::star::star:       |
-| Inform the shop about a more literal instance of typosquatting it fell for. (Mention the exact name of the culprit)  | :star::star::star::star::star: |
-
-### Inform the shop about a vulnerable library it is using
-
-This challenge is quite similar to
-[Inform the shop about an algorithm or library it should definitely not use the way it does](crypto.md#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)
-with the difference, that here not the _general use_ of the library is
-the issue. The application is just using _a version_ of a library that
-contains known vulnerabilities.
-
-#### Hints
-
-* Use the _Contact Us_ form to submit a feedback mentioning the
-  vulnerable library including its exact version.
-* Look for possible dependencies related to security in the
-  `package.json.bak` you harvested earlier.
-* Do some research on the internet for known security issues in the most
-  suspicious application dependencies.
+| Challenge                                                                                                            | Difficulty                           |
+|:---------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Inform the shop about a typosquatting trick it has become victim of. (Mention the exact name of the culprit)         | :star::star::star::star:             |
+| Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | :star::star::star::star:             |
+| Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.              | :star::star::star::star::star:       |
+| Inform the shop about a more literal instance of typosquatting it fell for. (Mention the exact name of the culprit)  | :star::star::star::star::star:       |
+| Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.      | :star::star::star::star::star::star: |
 
 ### Inform the shop about a typosquatting trick it has become victim of
 
@@ -68,10 +53,52 @@ identify.
 
 * This challenge has nothing to do with URLs or domains.
 * Investigate the
-  [forgotten developer's backup file](forgotten-content.md#access-a-developers-forgotten-backup-file)
+  [forgotten developer's backup file](roll-your-own-security.md#access-a-developers-forgotten-backup-file)
   instead.
 * [Malicious packages in npm](https://iamakulov.com/notes/npm-malicious-packages/)
   is a worthwhile read on [Ivan Akulov’s blog](https://iamakulov.com).
+
+### Inform the shop about a vulnerable library it is using
+
+This challenge is quite similar to
+[Inform the shop about an algorithm or library it should definitely not use the way it does](sensitive-data-exposure.md#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does)
+with the difference, that here not the _general use_ of the library is
+the issue. The application is just using _a version_ of a library that
+contains known vulnerabilities.
+
+#### Hints
+
+* Use the _Contact Us_ form to submit a feedback mentioning the
+  vulnerable library including its exact version.
+* Look for possible dependencies related to security in the
+  `package.json.bak` you harvested earlier.
+* Do some research on the internet for known security issues in the most
+  suspicious application dependencies.
+
+### Forge an essentially unsigned JWT token
+
+> JSON Web Token (JWT) is a compact, URL-safe means of representing
+> claims to be transferred between two parties. The claims in a JWT are
+> encoded as a JSON object that is used as the payload of a JSON Web
+> Signature (JWS) structure or as the plaintext of a JSON Web Encryption
+> (JWE) structure, enabling the claims to be digitally signed or
+> integrity protected with a Message Authentication Code (MAC) and/or
+> encrypted.[^2]
+
+This challenge involves forging a valid JWT for a user that does not
+exist in the database but make the application believe it is still
+legit.
+
+#### Hints
+
+* You should begin with retrieving a valid JWT from the application's
+  `Authorization` request header.
+* A JWT is only given to users who have logged in. They have a limited
+  validity, so better do not dawdle.
+* The site <https://jwt.io/> offers a very convenient online debugger
+  for JWT that can prove invaluable for this challenge.
+* Try to convince the site to give you a _valid_ token with the required
+  payload while downgrading to _no_ encryption at all.
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
@@ -89,5 +116,27 @@ hidden in the Juice Shop. It is supposedly even harder to locate.
 * This typoquatting instance more literally exploits a realistically
   possible typo.
 
+### Forge an almost properly RSA-signed JWT token
+
+Like
+[Forge an essentially unsigned JWT token](#forge-an-essentially-unsigned-jwt-token)
+this challenge requires you to make a valid JWT for a user that does not
+exist. What makes this challenge even harder is the requirement to have
+the JWT look like it was properly signed.
+
+#### Hints
+
+* The three generic hints from
+  [Forge an essentially unsigned JWT token](#forge-an-essentially-unsigned-jwt-token)
+  also help with this challenge.
+* Instead of enforcing no encryption to be applied, try to apply a more
+  sophisticated exploit against the JWT libraries used in the Juice
+  Shop.
+* Getting your hands on the public RSA key the application employs for
+  its JWTs is mandatory for this challenge.
+* Finding the corresponding private key should actually be impossible,
+  but that obviously doesn't make this challenge unsolvable.
+
 [^1]: https://en.wikipedia.org/wiki/Typosquatting
 
+[^2]: https://tools.ietf.org/html/rfc7519

@@ -146,11 +146,11 @@ find its syntax along with an excerpt of the default settings.
     Defaults to `null`.
   * `urlForProductTamperingChallenge` sets the original link of the
     product which is the target for
-    [the "product tampering" challenge](../part2/privilege-escalation.md#change-the-href-of-the-link-within-the-o-saft-product-description).
+    [the "product tampering" challenge](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description).
     Overrides `deletedDate` with `null` (_must be defined on exactly one
     product_)
   * `useForChristmasSpecialChallenge` marks a product as the target for
-    [the "christmas special" challenge](../part2/sqli.md#order-the-christmas-special-offer-of-2014).
+    [the "christmas special" challenge](../part2/injection.md#order-the-christmas-special-offer-of-2014).
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
     exactly one product_)
   * `fileForRetrieveBlueprintChallenge` (_must be `true` on exactly one

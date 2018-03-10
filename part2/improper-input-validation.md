@@ -1,4 +1,4 @@
-# Validation flaws
+# Improper Input Validation
 
 ## Challenges covered in this chapter
 
