@@ -121,11 +121,11 @@ link his Google account to the application. His account even ended up in
 the initial user records that are shipped with the Juice Shop for your
 hacking pleasure!
 
-> If you do not see the _Log in with Google_ button, do not despair! The
-> hostname your Juice Shop is running on is simply not configured in the
-> OAuth integration with Google. The OAuth-related challenges are still
-> solvable! It might just take a little bit more detective work to find
-> out how an OAuth login is handled.
+If you do not see the _Log in with Google_ button, do not despair! The
+hostname your Juice Shop is running on is simply not configured in the
+OAuth integration with Google. The OAuth-related challenges are still
+solvable! It might just take a little bit more detective work to find
+out how an OAuth login is handled.
 
 #### Hints
 
@@ -141,10 +141,10 @@ hacking pleasure!
 * The security flaw behind this challenge is 100% Juice Shop's fault and
   0% Google's.
 
-> The unremarkable side note _**without** hacking his Google account_ in
-> the challenge description is _not a joke_. Please do not try to break
-> into Bjoern's (or anyone else's) Google account. This would be a
-> criminal act.
+The unremarkable side note _**without** hacking his Google account_ in
+the challenge description is _not a joke_. Please do not try to break
+into Bjoern's (or anyone else's) Google account. This would be a
+criminal act.
 
 ### Reset Bender's password via the Forgot Password mechanism
 
