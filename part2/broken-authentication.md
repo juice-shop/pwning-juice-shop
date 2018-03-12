@@ -5,12 +5,12 @@
 | Challenge                                                                                                                          | Difficulty                     |
 |:-----------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | :star::star:                   |
-| Reset Jim's password via the Forgot Password mechanism with the original answer to his security question.                          | :star::star::star:             |
+| Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                        | :star::star::star:             |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection.                                                          | :star::star::star::star:       |
 | Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | :star::star::star::star:       |
-| Reset Bender's password via the Forgot Password mechanism with the original answer to his security question.                       | :star::star::star::star:       |
+| Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                     | :star::star::star::star:       |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | :star::star::star::star::star: |
-| Reset Bjoern's password via the Forgot Password mechanism with the original answer to his security question.                       | :star::star::star::star::star: |
+| Reset Bjoern's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                     | :star::star::star::star::star: |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
@@ -159,12 +159,12 @@ question. It is slightly harder to find out than Jim's answer.
   now_ and watch the first episodes of
   [Futurama](http://www.imdb.com/title/tt0149460/) before you come back.
 * Unexpectedly, Bender also chose to answer his chosen question
-  truthfully
+  truthfully.
 * Hints to the answer to Bender's question can be found in publicly
-  available information on the internet
+  available information on the internet.
 * If a seemingly correct answer is not accepted, you _might_ just need
-  to try some alternative spelling
-* Brute forcing the answer should be next to impossible
+  to try some alternative spelling.
+* Brute forcing the answer should be next to impossible.
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account
 

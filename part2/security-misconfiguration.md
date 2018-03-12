@@ -2,12 +2,12 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                              | Difficulty                           |
-|:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Provoke an error that is not very gracefully handled.                                                                  | :star:                               |
-| Access a salesman's forgotten backup file.                                                                             | :star::star::star:                   |
-| Reset Morty's password via the Forgot Password mechanism by bruteforcing the original answer to his security question. | :star::star::star::star::star:       |
-| Log in with the support team's original user credentials without applying SQL Injection or any other bypass.           | :star::star::star::star::star::star: |
+| Challenge                                                                                                       | Difficulty                           |
+|:----------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Provoke an error that is not very gracefully handled.                                                           | :star:                               |
+| Access a salesman's forgotten backup file.                                                                      | :star::star::star:                   |
+| Reset Morty's password via the Forgot Password mechanism with _his obfuscated answer_ to his security question. | :star::star::star::star::star:       |
+| Log in with the support team's original user credentials without applying SQL Injection or any other bypass.    | :star::star::star::star::star::star: |
 
 ### Provoke an error that is not very gracefully handled
 
@@ -63,7 +63,9 @@ might also prove useful in another challenge later on.
 
 ### Reset Morty's password via the Forgot Password mechanism
 
-:wrench: **TODO**
+This password reset challenge is different from those from the
+[Broken Authentication](broken-authentication.md) category as it is next
+to impossible to solve without using a brute force approach.
 
 > A brute force attack can manifest itself in many different ways, but
 > primarily consists in an attacker configuring predetermined values,
@@ -79,7 +81,14 @@ might also prove useful in another challenge later on.
 
 #### Hints
 
-:wrench: **TODO**
+* Finding out who Morty actually is, will help to reduce the solution
+  space.
+* You can assume that Morty answered his security question truthfully
+  but employed some obfuscation to make it more secure.
+* Morty's answer is less than 10 characters long and does not include
+  any special characters.
+* Unfortunately, _Forgot your password?_ is protected by a rate limiting
+  mechanism that prevents brute forcing. You need to beat this somehow.
 
 ### Log in with the support team's original user credentials
 

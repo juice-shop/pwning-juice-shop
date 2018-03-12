@@ -1067,7 +1067,48 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 ### Reset Morty's password via the Forgot Password mechanism
 
-:wrench: **TODO**
+1. Trying to find out who "Morty" might be should _eventually_ lead you
+   to _Morty Smith_ as the most likely user identity
+
+   ![Morty Smith](img/Morty_Smith.jpg)
+2. Visit http://rickandmorty.wikia.com/wiki/Morty and skim through the
+   [Family](http://rickandmorty.wikia.com/wiki/Morty#Family) section
+3. It tells you that Morty had a dog named _Snuffles_ which also goes by
+   the alias of _Snowball_ for a while.
+4. Visit http://localhost:3000/#/forgot-password and provide
+   `morty@juice-sh.op` as your _Email_
+5. Create a word list of all mutations (including typical
+   "leet-speak"-variations!) of the strings `snuffles` and `snowball`
+   using only
+   * lower case (`a-z`)
+   * upper case (`A-Z`)
+   * and digit characters (`0-9`)
+6. Write a script that iterates over the word list and sends well-formed
+   requests to `http://localhost:3000/rest/user/reset-password`. A rate
+   limiting mechanism will prevent you from sending more than 100
+   requests within 5 minutes, severely hampering your brute force
+   attack.
+7. Change your script so that it provides a different
+   `X-Forwarded-For`-header in each request, as this takes precedence
+   over the client IP in determining the origin of a request.
+8. Rerun your script you will notice at some point that the answer to
+   the security question is `5N0wb41L` and the challenge is marked as
+   solved.
+9. Feel free to cancel the script execution at this point.
+
+> Leet (or "1337"), also known as eleet or leetspeak, is a system of
+> modified spellings and verbiage used primarily on the Internet for
+> many phonetic languages. It uses some alphabetic characters to replace
+> others in ways that play on the similarity of their glyphs via
+> reflection or other resemblance. Additionally, it modifies certain
+> words based on a system of suffixes and alternative meanings.
+>
+> The term "leet" is derived from the word elite. The leet lexicon
+> involves a specialized form of symbolic writing. For example, leet
+> spellings of the word leet include 1337 and l33t; eleet may be spelled
+> 31337 or 3l33t. Leet may also be considered a substitution cipher,
+> although many dialects or linguistic varieties exist in different
+> online communities.[^5]
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
@@ -1381,3 +1422,4 @@ to use some unofficial port._
 
 [^4]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
 
+[^5]: <https://en.wikipedia.org/wiki/Leet>
