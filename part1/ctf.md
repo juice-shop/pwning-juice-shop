@@ -214,13 +214,14 @@ answers available which you can choose by simply hitting `ENTER`.
 
 The category of each challenge is identical to its category in the Juice
 Shop database. The score value of each challenge is calculated by the
-`juice-shop-ctf-cli` program:
+`juice-shop-ctf-cli` program as follows:
 
-* 1-star challenge = 100 points
-* 2-star challenge = 250 points
-* 3-star challenge = 450 points
-* 4-star challenge = 700 points
-* 5-star challenge = 1000 points
+* 1-:star: challenge = 100 points
+* 2-:star: challenge = 250 points
+* 3-:star: challenge = 450 points
+* 4-:star: challenge = 700 points
+* 5-:star: challenge = 1000 points
+* 6-:star: challenge = 1350 points
 
 The entire output of the tool will finally be written into
 `OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started

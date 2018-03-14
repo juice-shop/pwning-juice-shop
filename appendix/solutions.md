@@ -8,8 +8,72 @@ Often there are multiple ways to solve a challenge. In most cases just
 one possible solution is presented here. This is typically the easiest
 or most obvious one from the author's perspective.
 
-> The challenge solutions found in this release of the companion guide
-> are compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop.
+_The challenge solutions found in this release of the companion guide
+are compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
+
+## Trivial Challenges (  :star:  )
+
+### Access the administration section of the store
+
+1. Open the `juice-shop.min.js` in your browser's developer tools and
+   search for "admin".
+2. Among the first entries you will find a route mapping to
+   `/administration`.
+
+   ![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
+3. Navigate to http://localhost:3000/#/administration to solve the
+   challenge.
+
+### Access a confidential document
+
+1. Follow the link to titled _Check out our boring terms of use if you
+   are interested in such lame stuff_
+   (<http://localhost:3000/ftp/legal.md?md_debug=true>) on the _About
+   Us_ page.
+2. Successfully attempt to browse the directory by changing the URL into
+   <http://localhost:3000/ftp>
+
+   ![FTP directory browser](img/ftp_directory.png)
+3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
+   challenge.
+
+### Provoke an error that is not very gracefully handled.
+
+Any request that cannot be properly handled by the server will
+eventually be passed to a global error handling component that sends an
+error page to the client that includes a stack trace and other sensitive
+information. The restful API behaves in a similar way, passing back a
+JSON error object with sensitive data, such as SQL query strings.
+
+Here are four examples (out of many different ways) to provoke such an
+error situation and solve this challenge along the way:
+
+* Visit <http://localhost:3000/#/search?q=';>
+
+  ![JavaScript Error](img/error-js_console.png)
+* Visit <http://localhost:3000/ftp/crash>
+
+  ![403 Error](img/error_page-403.png)
+* Visit <http://localhost:3000/ftp/crash.md>
+
+  ![404 Error](img/error_page-404.png)
+* Log in to the application with `'` (single-quote) as _Email_ and
+  anything as _Password_
+
+  ![SQL in UI Error](img/login-error_sql.png)
+
+### Let us redirect you to a donation site that went out of business
+
+1. Log in to the application with any user.
+2. Visit the _Your Basket_ page and expand the _Payment_ and
+   _Merchandise_ sections with the "credit card"-button.
+3. Inspect the _Payment_ section with your browser to find a commented
+   out payment option to Gratipay.
+
+   ![Gratipay commented out](img/gratipay-commented-out.png)
+4. Open
+   <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
+   to solve the challenge.
 
 ### Find the carefully hidden 'Score Board' page
 
@@ -39,88 +103,14 @@ or most obvious one from the author's perspective.
 3. From now on you will see the additional menu item _Score Board_ in
    the navigation bar.
 
-### Provoke an error that is not very gracefully handled.
-
-Any request that cannot be properly handled by the server will
-eventually be passed to a global error handling component that sends an
-error page to the client that includes a stack trace and other sensitive
-information. The restful API behaves in a similar way, passing back a
-JSON error object with sensitive data, such as SQL query strings.
-
-Here are four examples (out of many different ways) to provoke such an
-error situation and solve this challenge along the way:
-
-* Visit <http://localhost:3000/#/search?q=';>
-
-  ![JavaScript Error](img/error-js_console.png)
-* Visit <http://localhost:3000/ftp/crash>
-
-  ![403 Error](img/error_page-403.png)
-* Visit <http://localhost:3000/ftp/crash.md>
-
-  ![404 Error](img/error_page-404.png)
-* Log in to the application with `'` (single-quote) as _Email_ and
-  anything as _Password_
-
-  ![SQL in UI Error](img/login-error_sql.png)
-
 ### Perform a reflected XSS attack
 
-1. Paste the attack string `<script>alert("XSS1")</script>` into the
+1. Paste the attack string `<script>alert("XSS")</script>` into the
    _Search..._ field.
 2. Click the _Search_ button.
-3. An alert box with the text "XSS1" should appear.
+3. An alert box with the text "XSS" should appear.
 
-   ![XSS1 alert box](img/xss1_alert.png)
-
-### Get rid of all 5-star customer feedback
-
-1. Log in to the application with any user.
-2. Solve
-   [Access the administration section of the store](#access-the-administration-section-of-the-store)
-
-   ![Feedback table on Administration page](img/customer_feedback-table.png)
-3. Delete all entries with five star rating from the _Customer Feedback_
-   table using the trashcan button
-
-### Let us redirect you to a donation site that went out of business
-
-1. Log in to the application with any user.
-2. Visit the _Your Basket_ page and expand the _Payment_ and
-   _Merchandise_ sections with the "credit card"-button.
-3. Inspect the _Payment_ section with your browser to find a commented
-   out payment option to Gratipay.
-
-   ![Gratipay commented out](img/gratipay-commented-out.png)
-4. Open
-   <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
-   to solve the challenge.
-
-### Access a confidential document
-
-1. Follow the link to titled _Check out our boring terms of use if you
-   are interested in such lame stuff_
-   (<http://localhost:3000/ftp/legal.md?md_debug=true>) on the _About
-   Us_ page.
-2. Successfully attempt to browse the directory by changing the URL into
-   <http://localhost:3000/ftp>
-
-   ![FTP directory browser](img/ftp_directory.png)
-3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
-   challenge.
-
-
-### Access the administration section of the store
-
-1. Open the `juice-shop.min.js` in your browser's developer tools and
-   search for "admin".
-2. Among the first entries you will find a route mapping to
-   `/administration`.
-
-   ![Administration page route in juice-shop.min.js](img/minified_js-admin.png)
-3. Navigate to http://localhost:3000/#/administration to solve the
-   challenge.
-
+   ![XSS alert box](img/xss1_alert.png)
 
 ### Give a devastating zero-star feedback to the store
 
@@ -137,6 +127,44 @@ error situation and solve this challenge along the way:
    Feedback_ widget on the _About Us_ page.
 
    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
+
+## Easy Challenges (  :star::star:  )
+
+### Access someone else's basket
+
+1. Log in as any user.
+2. Put some products into your shopping basket.
+3. Inspect the _Session Storage_ in your browser's developer tools to
+   find a numeric `bid` value.
+
+   ![Basket ID in Session Storage](img/session_storage.png)
+4. Change the `bid`, e.g. by adding or subtracting 1 from its value.
+5. Visit <http://localhost:3000/#/basket> to solve the challenge.
+
+If the challenge is not immediately solved, you might have to
+`F5`-reload to relay the `bid` change to the Angular client.
+
+### Order the Christmas special offer of 2014
+
+1. Observe the JavaScript console while submitting the text `';` via the
+   _Search_ field.
+2. The `error` object contains the full SQL statement used for search
+   for products.
+
+   ![SQL search query in JavaScript error](img/search_error-js_console.png)
+3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
+   product we seek.
+4. Searching for `'--` results in a `SQLITE_ERROR: syntax error` on the
+   JavaScript console. This is due to two (now unbalanced) parenthesis
+   in the query.
+5. Searching for `'))--` fixes the syntax and successfully lists all
+   products, including the (logically deleted) Christmas offer.
+6. Add any regular product other than the _Christmas Super-Surprise-Box
+   (2014 Edition)_ into you shopping basket to prevent problems at
+   checkout later.
+7. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
+   your shopping basket.
+8. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
@@ -164,6 +192,16 @@ error situation and solve this challenge along the way:
    telling you that `B2B customer complaints via file upload have been
    deprecated for security reasons!`
 
+### Get rid of all 5-star customer feedback
+
+1. Log in to the application with any user.
+2. Solve
+   [Access the administration section of the store](#access-the-administration-section-of-the-store)
+
+   ![Feedback table on Administration page](img/customer_feedback-table.png)
+3. Delete all entries with five star rating from the _Customer Feedback_
+   table using the trashcan button
+
 ### Log in with the administrator's user account
 
 * Log in with _Email_ `' or 1=1--` and any _Password_ which will
@@ -179,25 +217,104 @@ error situation and solve this challenge along the way:
   * or via REST API call <http://localhost:3000/api/Users> after logging
     in as any user (even one you registered yourself).
 
+### Log in with MC SafeSearch's original user credentials
+
+1. Reading the hints for this challenge or googling "MC SafeSearch" will
+   eventually bring the music video
+   ["Protect Ya' Passwordz"](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+   to your attention.
+2. Watch this video to learn that MC used the name of his dog "Mr.
+   Noodles" as a password but changed "some vowels into zeroes".
+3. Visit <http://localhost:3000/#/login> and log in with _Email_
+   `mc.safesearch@juice-sh.op` and _Password_ `Mr. N00dles` to solve
+   this challenge.
+
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
-1. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
+1. Visit <http://localhost:3000/#/login>.
+2. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
    which is as easy to guess as it is to brute force or retrieve from a
    rainbow table.
 
-### Access someone else's basket
+### Inform the shop about an algorithm or library it should definitely not use the way it does
 
-1. Log in as any user.
-2. Put some products into your shopping basket.
-3. Inspect the _Session Storage_ in your browser's developer tools to
-   find a numeric `bid` value.
+Juice Shop uses some inappropriate crypto algorithms and libraries in
+different places. While working on the following topics (and having the
+`package.json.bak` at hand) you will learn those inappropriate choices
+in order to exploit and solve them:
 
-   ![Basket ID in Session Storage](img/session_storage.png)
-4. Change the `bid`, e.g. by adding or subtracting 1 from its value.
-5. Visit <http://localhost:3000/#/basket> to solve the challenge.
+* [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
+  exploits `z85` (Zero-MQ Base85 implementation) as the library for
+  coupon codes.
+* [Solve challenge #99](#solve-challenge-99) requires you to create a
+  valid hash with the `hashid` library.
+* Passwords in the `Users` table are hashed with unsalted MD5
+* Users registering via Google account will get a very cheap default
+  password that involves Base64 encoding.
 
-> If the challenge is not immediately solved, you might have to
-> `F5`-reload to relay the `bid` change to the Angular client.
+<!-- -->
+
+1. Visit <http://localhost:3000/#/contact>.
+2. Submit your feedback with one of the following words in the comment:
+   `z85`, `base85`, `base64`, `md5` or `hashid`.
+
+## Medium Challenges (  :star::star::star:  )
+
+### Learn about the Token Sale before its official announcement
+
+1. Open the `juice-shop.min.js` in your browser's developer tools and
+   search for "tokensale".
+2. Among the first entries you will find an obfuscated route mapping
+   using the `TokenSaleController`.
+
+   ![Obfuscated TokenSale page route in juice-shop.min.js](img/minified_js-tokensale.png)
+3. Navigate to <http://localhost:3000/#/tokensale> and
+   <http://localhost:3000/#/token-sale> just to realize that these
+   routes do not exist.
+4. Copy the obfuscating function into the JavaScript console of your
+   browser and execute it.
+
+```
+"/" + function() {
+        var e = Array.prototype.slice.call(arguments)
+          , n = e.shift();
+        return e.reverse().map(function(e, t) {
+            return String.fromCharCode(e - n - 45 - t)
+        }).join("")
+    }(25, 184, 174, 179, 182, 186) + 36669..toString(36).toLowerCase() + function() {
+        var e = Array.prototype.slice.call(arguments)
+          , n = e.shift();
+        return e.reverse().map(function(e, t) {
+            return String.fromCharCode(e - n - 24 - t)
+        }).join("")
+    }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
+```
+
+1. The console should give you the string `/tokensale-ico-ea` as a
+   result.
+2. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
+   challenge.
+
+### Post some feedback in another users name
+
+1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
+2. Inspect the DOM of the form in your browser to spot this suspicious
+   text field right at the top: `<input type="text" id="userId"
+   ng-model="feedback.UserId" ng-hide="true" class="ng-pristine
+   ng-untouched ng-valid ng-empty ng-hide">`
+
+   ![Hidden text field on Contact Us form](img/hidden_textfield.png)
+3. In your browser's developer tools mark the entire `class` attribute
+   and delete it.
+
+   ![Spoofed feedback ready for submit](img/spoofed_feedback.png)
+4. The field should now be visible in your browser. Type any user's
+   database identifier in there (other than your own if you are
+   currently logged in) and submit the feedback.
+
+You can also solve this challenge by directly sending a `POST` to
+<http://localhost:3000/api/Feedbacks> endpoint. You just need to be
+logged out and send any `UserId` in the JSON payload.
 
 ### Access a salesman's forgotten backup file
 
@@ -213,6 +330,193 @@ error situation and solve this challenge along the way:
 Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
 [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
+
+### Log in with Bender's user account
+
+* Log in with _Email_ `bender@juice-sh.op'--` and any _Password_ if you
+  have already know Bender's email address.
+* A rainbow table attack on Bender's password will probably fail as it
+  is rather strong. You can alernatively solve
+  [Change Bender's password into slurmCl4ssic without using SQL Injection](#change-benders-password-into-slurmcl4ssic-without-using-sql-injection)
+  first and then simply log in with the new password.
+
+### Log in with Jim's user account
+
+* Log in with _Email_ `jim@juice-sh.op'--` and any _Password_ if you
+  have already know Jim's email address.
+* or log in with _Email_ `jim@juice-sh.op` and _Password_ `ncc-1701` if
+  you looked up Jim's password hash in a rainbow table after harvesting
+  the user data as described in
+  [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
+
+### Place an order that makes you rich
+
+1. Log in as any user.
+2. Put at least one item into your shopping basket.
+3. Note that reducing the quantity of a basket item below 1 is not
+   possible via the UI, so you will need to attack the RESTful API
+   directly instead.
+4. Copy your `Authorization` header from any HTTP request submitted via
+   browser.
+5. Submit a `PUT` request to <http://localhost:3000/api/BasketItems/1>
+   with:
+   * `{"quantity": -100}` as body,
+   * `application/json` as `Content-Type`
+   * and `Bearer ?` as `Authorization` header, replacing the `?` with
+     the token you copied from the browser.
+
+   ![Negative quantity request body in PostMan](img/negative_order_postman-body.png)
+6. Visit <http://localhost:3000/#/basket> to view _Your Basket_ with the
+   negative quantity on the first item
+7. Click _Checkout_ to issue the order and solve this challenge.
+
+   ![Order confirmation with negative total](img/negative_order_pdf.pdf.png)
+
+### Change the href of the link within the O-Saft product description
+
+1. By clicking the "eye"-button on the _O-Saft_ product in the _Search
+   Results_ you will learn that it's database ID is `8`.
+2. Submit a `PUT` request to <http://localhost:3000/api/Products/8>
+   with:
+   * `{"description": "<a href=\"http://kimminich.de\"
+     target=\"_blank\">More...</a>"}` as body
+   * and `application/json` as `Content-Type`
+
+   ![O-Saft link update via PostMan](img/osaft_postman-body.png)
+
+### Reset Jim's password via the Forgot Password mechanism
+
+1. Trying to find out who "Jim" might be should _eventually_ lead you to
+   _James T. Kirk_ as a possible option
+
+   ![James T. Kirk](img/Star_Trek_William_Shatner.JPG)
+2. Visit https://en.wikipedia.org/wiki/James_T._Kirk and read the
+   [Depiction](https://en.wikipedia.org/wiki/James_T._Kirk#Depiction)
+   section
+3. It tells you that Jim has a brother named _George Samuel Kirk_
+4. Visit http://localhost:3000/#/forgot-password and provide
+   `jim@juice-sh.op` as your _Email_
+5. In the subsequently appearing form, provide `Samuel` as _Your eldest
+   siblings middle name?_
+6. Then type any _New Password_ and matching _Repeat New Password_
+7. Click _Change_ to solve this challenge
+
+   ![Password reset for Jim](img/jim_forgot-password.png)
+
+### Upload a file larger than 100 kB
+
+1. The client-side validation prevents uploads larger than 100 kB.
+2. Craft a `POST` request to <http://localhost:3000/file-upload> with a
+   form parameter `file` that contains a PDF file of more than 100 kB
+   but less than 200 kB.
+
+   ![Larger file upload](img/110kB_upload.png)
+3. The response from the server will be a `204` with no content, but the
+   challenge will be successfully solved.
+
+Files larger than 200 kB are rejected by an upload size check on server
+side with a `500` error stating `Error: File too large`.
+
+### Upload a file that has no .pdf extension
+
+1. Craft a `POST` request to <http://localhost:3000/file-upload> with a
+   form parameter `file` that contains a non-PDF file with a size of
+   less than 200 kB.
+
+   ![Non-PDF upload](img/exe_upload.png)
+2. The response from the server will be a `204` with no content, but the
+   challenge will be successfully solved.
+
+Uploading a non-PDF file larger than 100 kB will solve
+[Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
+simultaneously.
+
+### Perform a persisted XSS attack bypassing a client-side security mechanism
+
+1. Submit a POST request to http://localhost:3000/api/Users with
+   * `{"email": "<script>alert(\"XSS\")</script>", "password": "xss"}`
+     as body
+   * and `application/json` as `Content-Type` header.
+
+   ![XSS request in PostMan](img/xss2_postman.png)
+2. Log in to the application with any user.
+3. Visit http://localhost:3000/#/administration.
+4. An alert box with the text "XSS" should appear.
+
+   ![XSS alert box](img/xss2_alert.png)
+5. Close this box. Notice the seemingly empty row in the _Registered
+   Users_ table?
+6. Click the "eye"-button next to that empty row.
+7. A modal overlay dialog with the user details opens where the attack
+   string is rendered as harmless text.
+
+   ![XSS user in details dialog](img/xss2_user-modal.png)
+
+### Perform a persisted XSS attack without using the frontend application at all
+
+1. Log in to the application with any user.
+2. Copy your `Authorization` header from any HTTP request submitted via
+   browser.
+3. Submit a POST request to <http://localhost:3000/api/Products> with
+   * `{"name": "XSS", "description": "<script>alert(\"XSS\")</script>",
+     "price": 47.11}` as body,
+   * `application/json` as `Content-Type`
+   * and `Bearer ?` as `Authorization` header, replacing the `?` with
+     the token you copied from the browser.
+
+   ![XSS request headers in PostMan](img/xss3_postman-header.png)
+
+   ![XSS request body in PostMan](img/xss3_postman-body.png)
+4. Visit http://localhost:3000/#/search.
+5. An alert box with the text "XSS" should appear.
+
+   ![XSS alert box](img/xss3_alert.png)
+6. Close this box. Notice the product row which seemingly lacks a
+   description in the _All Products_ table?
+7. Click the "eye"-button next to that row.
+8. Another alert box with the text "XSS" should appear.
+
+   ![XSS alert box in product details](img/xss3_product-modal_alert.png)
+
+### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
+
+1. Solve the
+   [Use a deprecated B2B interface that was not properly shut down](#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down)
+   challenge.
+2. Prepare an XML file which defines and uses an external entity
+   `<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>` (or `<!ENTITY xxe
+   SYSTEM "file:///C:/Windows/system.ini" >]>` on Windows).
+3. Upload this file through the _File Complaint_ dialog and observe the
+   Javascript console while doing so. It should give you an error
+   message containing the parsed XML, including the contents of the
+   local system file!
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE foo [<!ELEMENT foo ANY >
+        <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+
+<trades>
+    <metadata>
+        <name>Apple Juice</name>
+        <trader>
+            <foo>&xxe;</foo>
+            <name>B. Kimminich</name>
+        </trader>
+        <units>1500</units>
+        <price>106</price>
+        <name>Lemon Juice</name>
+        <trader>
+            <name>B. Kimminich</name>
+        </trader>
+        <units>4500</units>
+        <price>195</price>
+    </metadata>
+</trades>
+```
+
+## Hard Challenges (  :star::star::star::star:  )
 
 ### Change Bender's password into slurmCl4ssic without using SQL Injection
 
@@ -294,172 +598,212 @@ xmlhttp.send()
 </script>
 ```
 
-Anyone who is logged in to the Juice Shop while clicking on this link
-will get their password set to the same one we forced onto Bender!
+_Anyone who is logged in to the Juice Shop while clicking on this link
+will get their password set to the same one we forced onto Bender!_
 
-### Inform the shop about an algorithm or library it should definitely not use the way it does
+### Find the hidden easter egg
 
-Juice Shop uses some inappropriate crypto algorithms and libraries in
-different places. While working on the following topics (and having the
-`package.json.bak` at hand) you will learn those inappropriate choices
-in order to exploit and solve them:
+1. Use the _Poison Null Byte_ attack described in
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
+2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
 
-* [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
-  exploits `z85` (Zero-MQ Base85 implementation) as the library for
-  coupon codes.
-* [Solve challenge #99](#solve-challenge-99) requires you to create a
-  valid hash with the `hashid` library.
-* Passwords in the `Users` table are hashed with unsalted MD5
-* Users registering via Google account will get a very cheap default
-  password that involves Base64 encoding.
+### Apply some advanced cryptanalysis to find the real easter egg
 
-<!-- -->
+1. Get the encrypted string from the `eastere.gg` from the
+   [Find the hidden easter egg](#find-the-hidden-easter-egg) challenge:
+   `L2d1ci9xcmlmL25lci9mYi9zaGFhbC9ndXJsL3V2cS9uYS9ybmZncmUvcnR0L2p2Z3V2YS9ndXIvcm5mZ3JlL3J0dA==`
+2. Base64-decode this into
+   `/gur/qrif/ner/fb/shaal/gurl/uvq/na/rnfgre/rtt/jvguva/gur/rnfgre/rtt`
+3. Trying this as a URL will not work. Notice the recurring patterns
+   (`rtt`, `gur` etc.) in the above string
+4. ROT13-decode this into
+   `/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg`
+5. Visit
+   <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
 
-1. Visit <http://localhost:3000/#/contact>
-2. Submit your feedback with one of the following words in the comment:
-   `z85`, `base85`, `base64`, `md5` or `hashid`.
+   ![Planet Orangeuze](img/planet_orangeuze.png)
+6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet
+   Orangeuze_!
 
-### Order the Christmas special offer of 2014
+> ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple
+> letter substitution cipher that replaces a letter with the letter 13
+> letters after it in the alphabet. ROT13 is a special case of the
+> Caesar cipher, developed in ancient Rome.
+>
+> Because there are 26 letters (2×13) in the basic Latin alphabet, ROT13
+> is its own inverse; that is, to undo ROT13, the same algorithm is
+> applied, so the same action can be used for encoding and decoding. The
+> algorithm provides virtually no cryptographic security, and is often
+> cited as a canonical example of weak encryption.[^1]
 
-1. Observe the JavaScript console while submitting the text `';` via the
-   _Search_ field.
-2. The `error` object contains the full SQL statement used for search
-   for products.
 
-   ![SQL search query in JavaScript error](img/search_error-js_console.png)
-3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
-   product we seek.
-4. Searching for `'--` results in a `SQLITE_ERROR: syntax error` on the
-   JavaScript console. This is due to two (now unbalanced) parenthesis
-   in the query.
-5. Searching for `'))--` fixes the syntax and successfully lists all
-   products, including the (logically deleted) Christmas offer.
-6. Add any regular product other than the _Christmas Super-Surprise-Box
-   (2014 Edition)_ into you shopping basket to prevent problems at
-   checkout later.
-7. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
-   your shopping basket.
-8. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+### Travel back in time to the golden era of web design
 
-### Reset Jim's password via the Forgot Password mechanism
+1. Visit <http://localhost:3000/#/score-board>
+2. Inspecting the rotating "Hot"-image indicates that it is part of a
+   CSS theme `geo-bootstrap`
 
-1. Trying to find out who "Jim" might be should _eventually_ lead you to
-   _James T. Kirk_ as a possible option
+   ```html
+   <div ng-bind-html="challenge.description" class="ng-binding">
+     Travel back in time to the golden era of <img src="/css/geo-bootstrap/img/hot.gif"> web design.
+   </div>
+   ```
 
-   ![James T. Kirk](img/Star_Trek_William_Shatner.JPG)
-2. Visit https://en.wikipedia.org/wiki/James_T._Kirk and read the
-   [Depiction](https://en.wikipedia.org/wiki/James_T._Kirk#Depiction)
-   section
-3. It tells you that Jim has a brother named _George Samuel Kirk_
-4. Visit http://localhost:3000/#/forgot-password and provide
-   `jim@juice-sh.op` as your _Email_
-5. In the subsequently appearing form, provide `Samuel` as _Your eldest
-   siblings middle name?_
-6. Then type any _New Password_ and matching _Repeat New Password_
-7. Click _Change_ to solve this challenge
+3. Visit <https://github.com/divshot/geo-bootstrap> to learn that this
+   _"timeless Twitter Bootstrap theme built for the modern web"_ comes
+   with its own `bootstrap.css` that lives in a folder `/swatch`.
+4. Open the JavaScript console of your browser.
+5. Submit the command
+   `document.getElementById("theme").setAttribute("href",
+   "css/geo-bootstrap/swatch/bootstrap.css");` to enable this beautiful
+   alternative layout for the Juice Shop.
 
-   ![Password reset for Jim](img/jim_forgot-password.png)
+   ![Juice Shop with nostalgic theme enabled](img/geo_juiceshop.png)
+   Unfortunately the theme resets whenever you reload the page via `F5`
+   so you have to reissue the above command from time to time to stay in
+   "nostalgia mode".
 
-### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
+### Access a developer's forgotten backup file
+
+1. Browse to <http://localhost:3000/ftp> (like in
+   [Access a confidential document](#access-a-confidential-document).
+2. Opening <http://localhost:3000/ftp/package.json.bak> directly will
+   fail complaining about an illegal file type.
+3. Exploiting the `md_debug` parameter like in
+   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
+   will not work here - probably because `package.json.bak` is not a
+   Markdown file.
+4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
+   only with a twist:
+   * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
+     surprisingly **not** succeed...
+   * ...because the `%` character needs to be URL-encoded (into `%25`)
+     as well in order to work its magic later during the file system
+     access.
+5. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
+   solve the challenge.
+
+> By embedding NULL Bytes/characters into applications that do not
+> handle postfix NULL terminators properly, an attacker can exploit a
+> system using techniques such as Local File Inclusion. The Poison Null
+> Byte exploit takes advantage strings with a known length that can
+> contain null bytes, and whether or not the API being attacked uses
+> null terminated strings. By placing a NULL byte in the string at a
+> certain byte, the string will terminate at that point, nulling the
+> rest of the string, such as a file extension.[^2]
+
+### Log in with Bjoern's user account
+
+1. Bjoern has registered via Google OAuth with his (real) account
+   <bjoern.kimminich@googlemail.com>.
+2. Cracking his password hash will probably not work.
+3. To find out how the OAuth registration and login work, inspect the
+   `juice-shop.min.js` and search for `OAuthController`.
+
+   ![OAuthController in juice-shop.min.js](img/OAuthController.png)
+4. The `e.login()` function call leaks how the password is set:
+   `password: d.encode(f.email)`
+5. Checking the controller declaration you will see that `d` is actually
+   an Angular service named `$base64`.
+6. Now that you know that the auto-generated password for OAuth users is
+   just their Base64-encoded email address, you can just log in with
+   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
+   `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
+
+### Access a misplaced SIEM signature file.
+
+1. Use the _Poison Null Byte_ attack described in
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
+2. ...to download
+   <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
+
+### Let the server sleep for some time
+
+1. You can interact with the backend API for product reviews via the
+   dedicated endpoints `/rest/product/reviews` and
+   `/rest/product/{id}/reviews`
+2. Get the reviews of the product with database ID 1:
+   http://localhost:3000/rest/product/1/reviews
+3. Inject a
+   [`sleep(integer ms)` command](https://docs.mongodb.com/manual/reference/method/sleep/)
+   by changing the URL into
+   http://localhost:3000/rest/product/sleep(2000)/reviews to solve the
+   challenge
+
+To avoid _real_ Denial-of-Service (DoS) issues, the Juice Shop will only
+wait for a maximum of 2 seconds, so
+http://localhost:3000/rest/product/sleep(999999)/reviews should take not
+longer than http://localhost:3000/rest/product/sleep(2000)/reviews to
+respond.
+
+### Update multiple product reviews at the same time
+
+1. Log in as any user.
+2. Submit a PATCH request to http://localhost:3000/rest/product/reviews
+   with
+   * `{ "id": { "$ne": -1 }, "message": "NoSQL Injection!" }` as body
+   * and `application/json` as `Content-Type` header.
+3. Check different product detail dialogs to verify that all review
+   texts have been changed into `NoSQL Injection!`
+
+### Wherever you go, there you are
+
+1. Pick one of the redirect links in the application, e.g.
+   <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
+   from the _Fork me on GitHub_-ribbon.
+2. Trying to redirect to some unrecognized URL fails due to whitelist
+   validation with `406 Error: Unrecognized target URL for redirect`.
+3. Removing the `to` parameter (<http://localhost:3000/redirect>) will
+   instead yield a `500 TypeError: Cannot read property 'indexOf' of
+   undefined` where the `indexOf` indicates a severe flaw in the way the
+   whitelist works.
+4. Craft a redirect URL so that the target-URL in `to` comes with an own
+   parameter containing a URL from the whitelist, e.g.
+   <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
+
+### Reset Bender's password via the Forgot Password mechanism
+
+1. Trying to find out who "Bender" might be should _immediately_ lead
+   you to _Bender from [Futurama](http://www.imdb.com/title/tt0149460/)_
+   as the only viable option
+
+   ![Bender](img/Bender_Rodriguez.png)
+2. Visit https://en.wikipedia.org/wiki/Bender_(Futurama) and read the
+   _Character Biography_ section
+3. It tells you that Bender had a job at the metalworking factory,
+   bending steel girders for the construction of _suicide booths_.
+4. Find out more on _Suicide Booths_ on
+   http://futurama.wikia.com/wiki/Suicide_booth
+5. This site tells you that their most important brand is _Stop'n'Drop_
+6. Visit http://localhost:3000/#/forgot-password and provide
+   `bender@juice-sh.op` as your _Email_
+7. In the subsequently appearing form, provide `Stop'n'Drop` as _Company
+   you first work for as an adult?_
+8. Then type any _New Password_ and matching _Repeat New Password_
+9. Click _Change_ to solve this challenge
+
+### Inform the shop about a typosquatting trick it has become victim of
 
 1. Solve the
-   [Use a deprecated B2B interface that was not properly shut down](#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down)
-   challenge.
-2. Prepare an XML file which defines and uses an external entity
-   `<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>` (or `<!ENTITY xxe
-   SYSTEM "file:///C:/Windows/system.ini" >]>` on Windows).
-3. Upload this file through the _File Complaint_ dialog and observe the
-   Javascript console while doing so. It should give you an error
-   message containing the parsed XML, including the contents of the
-   local system file!
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
+   challenge and open the `package.json.bak` file
+2. Scrutinizing each entry in the `dependencies` list you will at some
+   point get to `epilogue-js`, the overview page of which gives away
+   that you find the culprit at
+   https://www.npmjs.com/package/epilogue-js
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
+   ![epilogue-js on NPM](img/npm_epilogue-js.png)
+3. Visit <http://localhost:3000/#/contact>
+4. Submit your feedback with `epilogue-js` in the comment to solve this
+   challenge
 
-<!DOCTYPE foo [<!ELEMENT foo ANY >
-        <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+You can probably imagine that the typosquatted `epilogue-js` would be _a
+lot harder_ to distinguish from the original repository `epilogue`, if
+it where not marked with the _THIS IS **NOT** THE MODULE YOU ARE LOOKING
+FOR!_-warning at the very top. Below you can see the original `epilogue`
+NPM page:
 
-<trades>
-    <metadata>
-        <name>Apple Juice</name>
-        <trader>
-            <foo>&xxe;</foo>
-            <name>B. Kimminich</name>
-        </trader>
-        <units>1500</units>
-        <price>106</price>
-        <name>Lemon Juice</name>
-        <trader>
-            <name>B. Kimminich</name>
-        </trader>
-        <units>4500</units>
-        <price>195</price>
-    </metadata>
-</trades>
-```
-
-### Log in with Jim's user account
-
-* Log in with _Email_ `jim@juice-sh.op'--` and any _Password_ if you
-  have already know Jim's email address.
-* or log in with _Email_ `jim@juice-sh.op` and _Password_ `ncc-1701` if
-  you looked up Jim's password hash in a rainbow table after harvesting
-  the user data as described in
-  [Log in with the administrator's user account](#log-in-with-the-administrators-user-account).
-
-### Log in with Bender's user account
-
-* Log in with _Email_ `bender@juice-sh.op'--` and any _Password_ if you
-  have already know Bender's email address.
-* A rainbow table attack on Bender's password will probably fail as it
-  is rather strong.
-
-### Perform a persisted XSS attack bypassing a client-side security mechanism
-
-1. Submit a POST request to http://localhost:3000/api/Users with
-   * `{"email": "<script>alert(\"XSS2\")</script>", "password": "xss"}`
-     as body
-   * and `application/json` as `Content-Type` header.
-
-   ![XSS2 request in PostMan](img/xss2_postman.png)
-2. Log in to the application with any user.
-3. Visit http://localhost:3000/#/administration.
-4. An alert box with the text "XSS2" should appear.
-
-   ![XSS2 alert box](img/xss2_alert.png)
-5. Close this box. Notice the seemingly empty row in the _Registered
-   Users_ table?
-6. Click the "eye"-button next to that empty row.
-7. A modal overlay dialog with the user details opens where the attack
-   string is rendered as harmless text.
-
-   ![XSS2 user in details dialog](img/xss2_user-modal.png)
-
-### Perform a persisted XSS attack without using the frontend application at all
-
-1. Log in to the application with any user.
-2. Copy your `Authorization` header from any HTTP request submitted via
-   browser.
-3. Submit a POST request to <http://localhost:3000/api/Products> with
-   * `{"name": "XSS3", "description":
-     "<script>alert(\"XSS3\")</script>", "price": 47.11}` as body,
-   * `application/json` as `Content-Type`
-   * and `Bearer ?` as `Authorization` header, replacing the `?` with
-     the token you copied from the browser.
-
-   ![XSS3 request headers in PostMan](img/xss3_postman-header.png)
-
-   ![XSS3 request body in PostMan](img/xss3_postman-body.png)
-4. Visit http://localhost:3000/#/search.
-5. An alert box with the text "XSS3" should appear.
-
-   ![XSS3 alert box](img/xss3_alert.png)
-6. Close this box. Notice the product row which seemingly lacks a
-   description in the _All Products_ table?
-7. Click the "eye"-button next to that row.
-8. Another alert box with the text "XSS3" should appear.
-
-   ![XSS3 alert box in product details](img/xss3_product-modal_alert.png)
+![epilogue on NPM](img/npm_epilogue.png)
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -515,98 +859,12 @@ in order to exploit and solve them:
 
    ![User list from UNION SELECT attack](img/union_select-attack_result.png)
 
-> There is of course a much easier way to retrieve a list of all users
-> as long as you are logged in: Open
-> <http://localhost:3000/#/administration> while monitoring the HTTP
-> calls in your browser's developer tools. The response to
-> <http://localhost:3000/rest/user/authentication-details> contains all
-> the user data in JSON format. But: This does not involve SQL Injection
-> so it will not count as a solution for this challenge.
-
-### Post some feedback in another users name
-
-1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
-2. Inspect the DOM of the form in your browser to spot this suspicious
-   text field right at the top: `<input type="text" id="userId"
-   ng-model="feedback.UserId" ng-hide="true" class="ng-pristine
-   ng-untouched ng-valid ng-empty ng-hide">`
-
-   ![Hidden text field on Contact Us form](img/hidden_textfield.png)
-3. In your browser's developer tools mark the entire `class` attribute
-   and delete it.
-
-   ![Spoofed feedback ready for submit](img/spoofed_feedback.png)
-4. The field should now be visible in your browser. Type any user's
-   database identifier in there (other than your own if you are
-   currently logged in) and submit the feedback.
-
-> You can also solve this challenge by directly sending a `POST` to
-> <http://localhost:3000/api/Feedbacks> endpoint. You just need to be
-> logged out and send any `UserId` in the JSON payload.
-
-### Place an order that makes you rich
-
-1. Log in as any user.
-2. Put at least one item into your shopping basket.
-3. Note that reducing the quantity of a basket item below 1 is not
-   possible via the UI, so you will need to attack the RESTful API
-   directly instead.
-4. Copy your `Authorization` header from any HTTP request submitted via
-   browser.
-5. Submit a `PUT` request to <http://localhost:3000/api/BasketItems/1>
-   with:
-   * `{"quantity": -100}` as body,
-   * `application/json` as `Content-Type`
-   * and `Bearer ?` as `Authorization` header, replacing the `?` with
-     the token you copied from the browser.
-
-   ![Negative quantity request body in PostMan](img/negative_order_postman-body.png)
-6. Visit <http://localhost:3000/#/basket> to view _Your Basket_ with the
-   negative quantity on the first item
-7. Click _Checkout_ to issue the order and solve this challenge.
-
-   ![Order confirmation with negative total](img/negative_order_pdf.pdf.png)
-
-### Access a developer's forgotten backup file
-
-1. Browse to <http://localhost:3000/ftp> (like in
-   [Access a confidential document](#access-a-confidential-document).
-2. Opening <http://localhost:3000/ftp/package.json.bak> directly will
-   fail complaining about an illegal file type.
-3. Exploiting the `md_debug` parameter like in
-   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
-   will not work here - probably because `package.json.bak` is not a
-   Markdown file.
-4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
-   only with a twist:
-   * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
-     surprisingly **not** succeed...
-   * ...because the `%` character needs to be URL-encoded (into `%25`)
-     as well in order to work its magic later during the file system
-     access.
-5. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
-   solve the challenge.
-
-> By embedding NULL Bytes/characters into applications that do not
-> handle postfix NULL terminators properly, an attacker can exploit a
-> system using techniques such as Local File Inclusion. The Poison Null
-> Byte exploit takes advantage strings with a known length that can
-> contain null bytes, and whether or not the API being attacked uses
-> null terminated strings. By placing a NULL byte in the string at a
-> certain byte, the string will terminate at that point, nulling the
-> rest of the string, such as a file extension.[^1]
-
-### Change the href of the link within the O-Saft product description
-
-1. By clicking the "eye"-button on the _O-Saft_ product in the _Search
-   Results_ you will learn that it's database ID is `8`.
-2. Submit a `PUT` request to <http://localhost:3000/api/Products/8>
-   with:
-   * `{"description": "<a href=\"http://kimminich.de\"
-     target=\"_blank\">More...</a>"}` as body
-   * and `application/json` as `Content-Type`
-
-   ![O-Saft link update via PostMan](img/osaft_postman-body.png)
+There is of course a much easier way to retrieve a list of all users as
+long as you are logged in: Open <http://localhost:3000/#/administration>
+while monitoring the HTTP calls in your browser's developer tools. The
+response to <http://localhost:3000/rest/user/authentication-details>
+contains all the user data in JSON format. But: This does not involve
+SQL Injection so it will not count as a solution for this challenge.
 
 ### Inform the shop about a vulnerable library it is using
 
@@ -622,184 +880,6 @@ known bug of not sanitizing recursively (see
 1. Visit <http://localhost:3000/#/contact>
 2. Submit your feedback with the string pair `sanitize-html` and `1.4.2`
    appearing somewhere in the comment.
-
-### Find the hidden easter egg
-
-1. Use the _Poison Null Byte_ attack described in
-   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
-2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
-
-### Travel back in time to the golden era of web design
-
-1. Visit <http://localhost:3000/#/score-board>
-2. Inspecting the rotating "Hot"-image indicates that it is part of a
-   CSS theme `geo-bootstrap`
-
-   ```html
-   <div ng-bind-html="challenge.description" class="ng-binding">
-     Travel back in time to the golden era of <img src="/css/geo-bootstrap/img/hot.gif"> web design.
-   </div>
-   ```
-
-3. Visit <https://github.com/divshot/geo-bootstrap> to learn that this
-   _"timeless Twitter Bootstrap theme built for the modern web"_ comes
-   with its own `bootstrap.css` that lives in a folder `/swatch`.
-4. Open the JavaScript console of your browser.
-5. Submit the command
-   `document.getElementById("theme").setAttribute("href",
-   "css/geo-bootstrap/swatch/bootstrap.css");` to enable this beautiful
-   alternative layout for the Juice Shop.
-
-   ![Juice Shop with nostalgic theme enabled](img/geo_juiceshop.png)
-> Unfortunately the theme resets whenever you reload the page via `F5`
-> so you have to reissue the above command from time to time to stay in
-> _nostalgia mode_.
-
-### Upload a file larger than 100 kB
-
-1. The client-side validation prevents uploads larger than 100 kB.
-2. Craft a `POST` request to <http://localhost:3000/file-upload> with a
-   form parameter `file` that contains a PDF file of more than 100 kB
-   but less than 200 kB.
-
-   ![Larger file upload](img/110kB_upload.png)
-3. The response from the server will be a `204` with no content, but the
-   challenge will be successfully solved.
-
-> Files larger than 200 kB are rejected by an upload size check on
-> server side with a `500` error stating `Error: File too large`.
-
-### Upload a file that has no .pdf extension
-
-1. Craft a `POST` request to <http://localhost:3000/file-upload> with a
-   form parameter `file` that contains a non-PDF file with a size of
-   less than 200 kB.
-
-   ![Non-PDF upload](img/exe_upload.png)
-2. The response from the server will be a `204` with no content, but the
-   challenge will be successfully solved.
-
-> Uploading a non-PDF file larger than 100 kB will solve
-> [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
-> simultaneously.
-
-### Log in with Bjoern's user account
-
-1. Bjoern has registered via Google OAuth with his (real) account
-   <bjoern.kimminich@googlemail.com>.
-2. Cracking his password hash will probably not work.
-3. To find out how the OAuth registration and login work, inspect the
-   `juice-shop.min.js` and search for `OAuthController`.
-
-   ![OAuthController in juice-shop.min.js](img/OAuthController.png)
-4. The `e.login()` function call leaks how the password is set:
-   `password: d.encode(f.email)`
-5. Checking the controller declaration you will see that `d` is actually
-   an Angular service named `$base64`.
-6. Now that you know that the auto-generated password for OAuth users is
-   just their Base64-encoded email address, you can just log in with
-   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
-   `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
-
-### Reset Bender's password via the Forgot Password mechanism
-
-1. Trying to find out who "Bender" might be should _immediately_ lead
-   you to _Bender from [Futurama](http://www.imdb.com/title/tt0149460/)_
-   as the only viable option
-
-   ![Bender](img/Bender_Rodriguez.png)
-2. Visit https://en.wikipedia.org/wiki/Bender_(Futurama) and read the
-   _Character Biography_ section
-3. It tells you that Bender had a job at the metalworking factory,
-   bending steel girders for the construction of _suicide booths_.
-4. Find out more on _Suicide Booths_ on
-   http://futurama.wikia.com/wiki/Suicide_booth
-5. This site tells you that their most important brand is _Stop'n'Drop_
-6. Visit http://localhost:3000/#/forgot-password and provide
-   `bender@juice-sh.op` as your _Email_
-7. In the subsequently appearing form, provide `Stop'n'Drop` as _Company
-   you first work for as an adult?_
-8. Then type any _New Password_ and matching _Repeat New Password_
-9. Click _Change_ to solve this challenge
-
-### Let the server sleep for some time
-
-1. You can interact with the backend API for product reviews via the
-   dedicated endpoints `/rest/product/reviews` and
-   `/rest/product/{id}/reviews`
-2. Get the reviews of the product with database ID 1:
-   http://localhost:3000/rest/product/1/reviews
-3. Inject a
-   [`sleep(integer ms)` command](https://docs.mongodb.com/manual/reference/method/sleep/)
-   by changing the URL into
-   http://localhost:3000/rest/product/sleep(2000)/reviews to solve the
-   challenge
-
-> To avoid _real_ Denial-of-Service (DoS) issues, the Juice Shop will
-> only wait for a maximum of 2 seconds, so
-> http://localhost:3000/rest/product/sleep(999999)/reviews should take
-> not longer than http://localhost:3000/rest/product/sleep(2000)/reviews
-> to respond.
-
-### Update multiple product reviews at the same time
-
-1. Log in as any user.
-2. Submit a PATCH request to http://localhost:3000/rest/product/reviews
-   with
-   * `{ "id": { "$ne": -1 }, "message": "NoSQL Injection!" }` as body
-   * and `application/json` as `Content-Type` header.
-3. Check different product detail dialogs to verify that all review
-   texts have been changed into `NoSQL Injection!`
-
-### Deprive the shop of earnings by downloading the blueprint for one of its products
-
-1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product
-   indicates that this product might actually have kind of a blueprint
-2. Download the product image from
-   http://localhost:3000/public/images/products/3d_keychain.jpg and view
-   its [Exif metadata](https://en.wikipedia.org/wiki/Exif)
-
-   ![3D printed logo Exif metadata](img/exif-3d_keychain.png)
-3. Researching the camera model entry _OpenSCAD_ reveals that this is a
-   program to create 3D models, which works with `.stl` files
-4. As no further hint on the blueprint filename or anything is given, a
-   lucky guess or brute force attack is your only choice
-5. Download http://localhost:3000/public/images/products/JuiceShop.stl
-   to solve this challenge
-6. This model will actually allow you to 3D-print your own OWASP Juice
-   Shop logo models!
-
-   ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
-
-### Inform the shop about a typosquatting trick it has become victim of
-
-1. Solve the
-   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
-   challenge and open the `package.json.bak` file
-2. Scrutinizing each entry in the `dependencies` list you will at some
-   point get to `epilogue-js`, the overview page of which gives away
-   that you find the culprit at
-   https://www.npmjs.com/package/epilogue-js
-
-   ![epilogue-js on NPM](img/npm_epilogue-js.png)
-3. Visit <http://localhost:3000/#/contact>
-4. Submit your feedback with `epilogue-js` in the comment to solve this
-   challenge
-
-> You can probably imagine that the typosquatted `epilogue-js` would be
-> _a lot harder_ to distinguish from the original repository `epilogue`,
-> if it where not marked with the _THIS IS **NOT** THE MODULE YOU ARE
-> LOOKING FOR!_-warning at the very top. Below you can see the original
-> `epilogue` NPM page:
->
-> ![epilogue on NPM](img/npm_epilogue.png)
-
-### Access a misplaced SIEM signature file.
-
-1. Use the _Poison Null Byte_ attack described in
-   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
-2. ...to download
-   <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -821,66 +901,23 @@ explains the problem and gives an exploit example:
 > the output html.
 
 1. Visit http://localhost:3000/#/contact.
-2. Enter `<<script>Foo</script>script>alert("XSS4")<</script>/script>`
-   as _Comment_
+2. Enter `<<script>Foo</script>script>alert("XSS")<</script>/script>` as
+   _Comment_
 3. Choose a rating and click _Submit_
-4. Visit http://localhost:3000/#/about for a first "XSS4" alert (from
-   the _Customer Feedback_ slideshow)
+4. Visit http://localhost:3000/#/about for a first "XSS" alert (from the
+   _Customer Feedback_ slideshow)
 
-   ![XSS4 alert box](img/xss4_alert.png)
-5. Visit http://localhost:3000/#/administration for a second "XSS4"
-   alert (from the _Customer Feedback_ table)
+   ![XSS alert box](img/xss4_alert.png)
+5. Visit http://localhost:3000/#/administration for a second "XSS" alert
+   (from the _Customer Feedback_ table)
 
-   ![XSS4 alert box in admin area](img/xss4_alert-admin.png)
+   ![XSS alert box in admin area](img/xss4_alert-admin.png)
 
-### Give the server something to chew on for quite a while
+## Dreadful Challenges (  :star::star::star::star::star:  )
+
+### Submit 10 or more customer feedbacks within 10 seconds
 
 :wrench: **TODO**
-
-### Wherever you go, there you are
-
-1. Pick one of the redirect links in the application, e.g.
-   <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
-   from the _Fork me on GitHub_-ribbon.
-2. Trying to redirect to some unrecognized URL fails due to whitelist
-   validation with `406 Error: Unrecognized target URL for redirect`.
-3. Removing the `to` parameter (<http://localhost:3000/redirect>) will
-   instead yield a `500 TypeError: Cannot read property 'indexOf' of
-   undefined` where the `indexOf` indicates a severe flaw in the way the
-   whitelist works.
-4. Craft a redirect URL so that the target-URL in `to` comes with an own
-   parameter containing a URL from the whitelist, e.g.
-   <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
-
-### Apply some advanced cryptanalysis to find the real easter egg
-
-1. Get the encrypted string from the `eastere.gg` from the
-   [Find the hidden easter egg](#find-the-hidden-easter-egg) challenge:
-   `L2d1ci9xcmlmL25lci9mYi9zaGFhbC9ndXJsL3V2cS9uYS9ybmZncmUvcnR0L2p2Z3V2YS9ndXIvcm5mZ3JlL3J0dA==`
-2. Base64-decode this into
-   `/gur/qrif/ner/fb/shaal/gurl/uvq/na/rnfgre/rtt/jvguva/gur/rnfgre/rtt`
-3. Trying this as a URL will not work. Notice the recurring patterns
-   (`rtt`, `gur` etc.) in the above string
-4. ROT13-decode this into
-   `/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg`
-5. Visit
-   <http://localhost:3000/the/devs/are/so/funny/they/hid/an/easter/egg/within/the/easter/egg>
-
-   ![Planet Orangeuze](img/planet_orangeuze.png)
-6. Marvel at _the real_ easter egg: An interactive 3D scene of _Planet
-   Orangeuze_!
-
-
-> ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple
-> letter substitution cipher that replaces a letter with the letter 13
-> letters after it in the alphabet. ROT13 is a special case of the
-> Caesar cipher, developed in ancient Rome.
->
-> Because there are 26 letters (2×13) in the basic Latin alphabet, ROT13
-> is its own inverse; that is, to undo ROT13, the same algorithm is
-> applied, so the same action can be used for encoding and decoding. The
-> algorithm provides virtually no cryptographic security, and is often
-> cited as a canonical example of weak encryption.[^2]
 
 ### Retrieve the language file that never made it into production
 
@@ -911,6 +948,28 @@ explains the problem and gives an exploit example:
 > dialects. Today it is spoken by humans all over the world, in many
 > contexts.[^3]
 
+### Forge an essentially unsigned JWT token
+
+1. Log in as any user to receive a valid JWT in the `Authorization`
+   header.
+2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
+   header) into the _Encoded_ field at <https://jwt.io>.
+3. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
+   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
+   The JWT algorithm should now have changed to `HS256` instead of
+   `RS256`.
+4. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
+   the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
+5. Change the value of the `alg` parameter in the _HEADER_ part on the
+   right hand side from `HS256` to `none`.
+6. In the _Encoded_ field on the left delete the signature part (colored
+   in cyan at the time of this writing) so that the final character of
+   the JWT is the last `.` (dot symbol).
+7. Change the `Authorization` header of a subsequent request to the
+   retrieved JWT (prefixed with `Bearer ` as before) and submit the
+   request. Alternatively you can set the `token` cookie to the JWT
+   which be used to populate any future request with that header.
+
 ### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
 
 1. Visit <http://localhost:3000/#/login> and enter some known
@@ -933,10 +992,44 @@ explains the problem and gives an exploit example:
    with your Google email address, because
    [the OAuth integration for login will accept the 'X-User-Email' header as gospel regardless of the account that just logged in](https://incognitjoe.github.io/hacking-the-juice-shop.html).
 
-> If you do not own a Google account to log in with or are running the
-> Juice Shop on a hostname that is not recognized, you can still solve
-> this challenge by logging in regularly but add `"oauth": true` to the
-> JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
+If you do not own a Google account to log in with or are running the
+Juice Shop on a hostname that is not recognized, you can still solve
+this challenge by logging in regularly but add `"oauth": true` to the
+JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
+
+### Perform a Remote Code Execution that would keep a less hardened application busy forever
+
+1. By manual or automated URL discovery you can find a
+   [Swagger](https://swagger.io) API documentation hosted at
+   <http://localhost:3000/api-docs> which describes the B2B API.
+
+   ![Swagger API-Docs](img/swagger_api-docs.png)
+2. This API allows to `POST` orders where the order lines can be sent as
+   JSON objects (`orderLines`) but also as a String (`orderLinesData`).
+3. The given example for `orderLinesDate` indicates that this String
+   might be allowed to contain arbitrary JSON: `[{"productId":
+   12,"quantity": 10000,"customerReference": ["PO0000001.2",
+   "SM20180105|042"],"couponCode": "pes[Bh.u*t"},...]`
+
+   ![Swagger Order Model](img/swagger_models-order.png)
+4. Click the _Try it out_ button and without changing anything click
+   _Execute_ to see if and how the API is working. This will give you a
+   `401` error saying `No Authorization header was found`.
+5. Go back to the application, log in as any user and copy your token
+   from the `Authorization Bearer` header using your browser's DevTools.
+6. Back at <http://localhost:3000/api-docs/#/Order/post_orders> click
+   _Authorize_ and paste your token into the `Value` field.
+7. Click _Try it out_ and _Execute_ to see a successful `200` response.
+8. An insecure JSON deserialization would execute any function call
+   defined within the JSON String, so a possible payload for a DoS
+   attack would be an endless loop. Replace the example code with
+   `{"orderLinesData": "(function dos() { while(true); })()"}` in the
+   _Request Body_ field. Click _Execute_.
+9. The server should eventually respond with a `200` after roughly 2
+   seconds, because that is defined as a timeout so you do not really
+   DoS your Juice Shop server.
+10. If your request successfully bumped into the infinite loop
+    protection, the challenge is marked as solved.
 
 ### Reset Bjoern's password via the Forgot Password mechanism
 
@@ -980,6 +1073,71 @@ explains the problem and gives an exploit example:
 > \[Berlin\] 30 (postal districts in western cities were separate from
 > the postal code) and those in the east with 'O' (for Ost), e.g.:
 > O-1xxx Berlin.[^4]
+
+### Reset Morty's password via the Forgot Password mechanism
+
+1. Trying to find out who "Morty" might be should _eventually_ lead you
+   to _Morty Smith_ as the most likely user identity
+
+   ![Morty Smith](img/Morty_Smith.jpg)
+2. Visit http://rickandmorty.wikia.com/wiki/Morty and skim through the
+   [Family](http://rickandmorty.wikia.com/wiki/Morty#Family) section
+3. It tells you that Morty had a dog named _Snuffles_ which also goes by
+   the alias of _Snowball_ for a while.
+4. Visit http://localhost:3000/#/forgot-password and provide
+   `morty@juice-sh.op` as your _Email_
+5. Create a word list of all mutations (including typical
+   "leet-speak"-variations!) of the strings `snuffles` and `snowball`
+   using only
+   * lower case (`a-z`)
+   * upper case (`A-Z`)
+   * and digit characters (`0-9`)
+6. Write a script that iterates over the word list and sends well-formed
+   requests to `http://localhost:3000/rest/user/reset-password`. A rate
+   limiting mechanism will prevent you from sending more than 100
+   requests within 5 minutes, severely hampering your brute force
+   attack.
+7. Change your script so that it provides a different
+   `X-Forwarded-For`-header in each request, as this takes precedence
+   over the client IP in determining the origin of a request.
+8. Rerun your script you will notice at some point that the answer to
+   the security question is `5N0wb41L` and the challenge is marked as
+   solved.
+9. Feel free to cancel the script execution at this point.
+
+> Leet (or "1337"), also known as eleet or leetspeak, is a system of
+> modified spellings and verbiage used primarily on the Internet for
+> many phonetic languages. It uses some alphabetic characters to replace
+> others in ways that play on the similarity of their glyphs via
+> reflection or other resemblance. Additionally, it modifies certain
+> words based on a system of suffixes and alternative meanings.
+>
+> The term "leet" is derived from the word elite. The leet lexicon
+> involves a specialized form of symbolic writing. For example, leet
+> spellings of the word leet include 1337 and l33t; eleet may be spelled
+> 31337 or 3l33t. Leet may also be considered a substitution cipher,
+> although many dialects or linguistic varieties exist in different
+> online communities.[^5]
+
+### Deprive the shop of earnings by downloading the blueprint for one of its products
+
+1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product
+   indicates that this product might actually have kind of a blueprint
+2. Download the product image from
+   http://localhost:3000/public/images/products/3d_keychain.jpg and view
+   its [Exif metadata](https://en.wikipedia.org/wiki/Exif)
+
+   ![3D printed logo Exif metadata](img/exif-3d_keychain.png)
+3. Researching the camera model entry _OpenSCAD_ reveals that this is a
+   program to create 3D models, which works with `.stl` files
+4. As no further hint on the blueprint filename or anything is given, a
+   lucky guess or brute force attack is your only choice
+5. Download http://localhost:3000/public/images/products/JuiceShop.stl
+   to solve this challenge
+6. This model will actually allow you to 3D-print your own OWASP Juice
+   Shop logo models!
+
+   ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
@@ -1029,35 +1187,19 @@ explains the problem and gives an exploit example:
 6. Submit your feedback with `angular-tooltipps` in the comment to solve
    this challenge
 
-> You can probably imagine that the typosquatted `angular-tooltipps`
-> would be _a lot harder_ to distinguish from the original repository
-> `angular-tooltips`, if it where not marked with the _THIS IS **NOT**
-> THE MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you
-> can see the original `angular-tooltips` module page on NPM:
->
-> ![angular-tooltips on NPM](img/npm_angular-tooltips.png)
+You can probably imagine that the typosquatted `angular-tooltipps` would
+be _a lot harder_ to distinguish from the original repository
+`angular-tooltips`, if it where not marked with the _THIS IS **NOT** THE
+MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you can see
+the original `angular-tooltips` module page on NPM:
 
-### Forge an essentially unsigned JWT token
+![angular-tooltips on NPM](img/npm_angular-tooltips.png)
 
-1. Log in as any user to receive a valid JWT in the `Authorization`
-   header.
-2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
-   header) into the _Encoded_ field at <https://jwt.io>.
-3. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
-   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
-   The JWT algorithm should now have changed to `HS256` instead of
-   `RS256`.
-4. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
-   the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
-5. Change the value of the `alg` parameter in the _HEADER_ part on the
-   right hand side from `HS256` to `none`.
-6. In the _Encoded_ field on the left delete the signature part (colored
-   in cyan at the time of this writing) so that the final character of
-   the JWT is the last `.` (dot symbol).
-7. Change the `Authorization` header of a subsequent request to the
-   retrieved JWT (prefixed with `Bearer ` as before) and submit the
-   request. Alternatively you can set the `token` cookie to the JWT
-   which be used to populate any future request with that header.
+### Give the server something to chew on for quite a while
+
+:wrench: **TODO**
+
+## Diabolic Challenges (  :star::star::star::star::star::star:  )
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
@@ -1169,11 +1311,48 @@ totally different attack styles.
 
    ![Challenge #99 in PostMan](img/challenge99_postman.png)
 
+### Forge an almost properly RSA-signed JWT token
+
+1. Browse the directory <http://localhost:3000/encryptionkeys>. How to
+   find this directory is described in the solution for challenge
+   [Unlock Premium Challenge to access exclusive content](#unlock-premium-challenge-to-access-exclusive-content).
+2. Retrieve the public RSA key that is used to verify the JWTs from
+   <http://localhost:3000/encryptionkeys/jwt.pub>.
+3. Log in as any user to receive a valid JWT in the `Authorization`
+   header.
+4. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
+   header) into the _Encoded_ field at <https://jwt.io>.
+5. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
+   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
+   The JWT algorithm should now have changed to `HS256` instead of
+   `RS256`.
+6. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
+   the `email` attribute in the JSON to `rsa_lord@juice-sh.op`.
+7. In the <https://jwt.io> tab where you are modifying the JWT, go to
+   the Browser developer tools (`F12` in Chrome) and find the
+   `js/jwt.js` file (under _Source_ in Chrome).
+8. Put a breakpoint on the line saying `key =
+   window.CryptoJS.enc.Latin1.parse(key).toString();` (line 77 at the
+   time of this writing)
+9. Make some arbitrary change to the JWT on the right hand side to
+   trigger the breakpoint.
+10. While execution is paused, set the `key` variable to the public RSA
+    via the developer tools Console: `key = '-----BEGIN RSA PUBLIC
+    KEY-----\r\nMIGJAoGBAM3CosR73CBNcJsLv5E90NsFt6qN1uziQ484gbOoule8leXHFbyIzPQRozgEpSpiwhr6d2/c0CfZHEJ3m5tV0klxfjfM7oqjRMURnH/rmBjcETQ7qzIISZQ/iptJ3p7Gi78X5ZMhLNtDkUFU9WaGdiEb+SnC39wjErmJSfmGb7i1AgMBAAE=\r\n-----END
+    RSA PUBLIC KEY-----'`. Note that it is necessary to encode the line
+    breaks in the key properly using `\r\n` in the appropriate places!
+11. Resume execution. A signature should have been added to the JWT text
+    on the left hand side.
+12. Change the `Authorization` header of a subsequent request to the
+    retrieved JWT (prefixed with `Bearer ` as before) and submit the
+    request. Alternatively you can set the `token` cookie to the JWT
+    which be used to populate any future request with that header.
+
 ### Log in with the support team's original user credentials
 
-> Solving this challenge requires [KeePass 2.x](http://keepass.info)
-> installed on your computer. If you are using a non-Windows OS you need
-> to use some unofficial port.
+_Solving this challenge requires [KeePass 2.x](http://keepass.info)
+installed on your computer. If you are using a non-Windows OS you need
+to use some unofficial port._
 
 1. Download and install KeePass 2.x from <http://keepass.info>
 2. Get the support team's KeePass database file from
@@ -1240,86 +1419,16 @@ totally different attack styles.
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
 
-### Forge an almost properly RSA-signed JWT token
-
-1. Browse the directory <http://localhost:3000/encryptionkeys>. How to
-   find this directory is described in the solution for challenge
-   [Unlock Premium Challenge to access exclusive content](#unlock-premium-challenge-to-access-exclusive-content).
-2. Retrieve the public RSA key that is used to verify the JWTs from
-   <http://localhost:3000/encryptionkeys/jwt.pub>.
-3. Log in as any user to receive a valid JWT in the `Authorization`
-   header.
-4. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
-   header) into the _Encoded_ field at <https://jwt.io>.
-5. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
-   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
-   The JWT algorithm should now have changed to `HS256` instead of
-   `RS256`.
-6. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
-   the `email` attribute in the JSON to `rsa_lord@juice-sh.op`.
-7. In the <https://jwt.io> tab where you are modifying the JWT, go to
-   the Browser developer tools (`F12` in Chrome) and find the
-   `js/jwt.js` file (under _Source_ in Chrome).
-8. Put a breakpoint on the line saying `key =
-   window.CryptoJS.enc.Latin1.parse(key).toString();` (line 77 at the
-   time of this writing)
-9. Make some arbitrary change to the JWT on the right hand side to
-   trigger the breakpoint.
-10. While execution is paused, set the `key` variable to the public RSA
-    via the developer tools Console: `key = '-----BEGIN RSA PUBLIC
-    KEY-----\r\nMIGJAoGBAM3CosR73CBNcJsLv5E90NsFt6qN1uziQ484gbOoule8leXHFbyIzPQRozgEpSpiwhr6d2/c0CfZHEJ3m5tV0klxfjfM7oqjRMURnH/rmBjcETQ7qzIISZQ/iptJ3p7Gi78X5ZMhLNtDkUFU9WaGdiEb+SnC39wjErmJSfmGb7i1AgMBAAE=\r\n-----END
-    RSA PUBLIC KEY-----'`. Note that it is necessary to encode the line
-    breaks in the key properly using `\r\n` in the appropriate places!
-11. Resume execution. A signature should have been added to the JWT text
-    on the left hand side.
-12. Change the `Authorization` header of a subsequent request to the
-    retrieved JWT (prefixed with `Bearer ` as before) and submit the
-    request. Alternatively you can set the `token` cookie to the JWT
-    which be used to populate any future request with that header.
-
-### Perform a Remote Code Execution that would keep a less hardened application busy forever
-
-1. By manual or automated URL discovery you can find a
-   [Swagger](https://swagger.io) API documentation hosted at
-   <http://localhost:3000/api-docs> which describes the B2B API.
-
-   ![Swagger API-Docs](img/swagger_api-docs.png)
-2. This API allows to `POST` orders where the order lines can be sent as
-   JSON objects (`orderLines`) but also as a String (`orderLinesData`).
-3. The given example for `orderLinesDate` indicates that this String
-   might be allowed to contain arbitrary JSON: `[{"productId":
-   12,"quantity": 10000,"customerReference": ["PO0000001.2",
-   "SM20180105|042"],"couponCode": "pes[Bh.u*t"},...]`
-
-   ![Swagger Order Model](img/swagger_models-order.png)
-4. Click the _Try it out_ button and without changing anything click
-   _Execute_ to see if and how the API is working. This will give you a
-   `401` error saying `No Authorization header was found`.
-5. Go back to the application, log in as any user and copy your token
-   from the `Authorization Bearer` header using your browser's DevTools.
-6. Back at <http://localhost:3000/api-docs/#/Order/post_orders> click
-   _Authorize_ and paste your token into the `Value` field.
-7. Click _Try it out_ and _Execute_ to see a successful `200` response.
-8. An insecure JSON deserialization would execute any function call
-   defined within the JSON String, so a possible payload for a DoS
-   attack would be an endless loop. Replace the example code with
-   `{"orderLinesData": "(function dos() { while(true); })()"}` in the
-   _Request Body_ field. Click _Execute_.
-9. The server should eventually respond with a `200` after roughly 2
-   seconds, because that is defined as a timeout so you do not really
-   DoS your Juice Shop server.
-10. If your request successfully bumped into the infinite loop
-    protection, the challenge is marked as solved.
-
 ### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
 :wrench: **TODO**
 
-[^1]: <http://hakipedia.com/index.php/Poison_Null_Byte>
+[^1]: <https://en.wikipedia.org/wiki/ROT13>
 
-[^2]: <https://en.wikipedia.org/wiki/ROT13>
+[^2]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^3]: <http://www.kli.org/about-klingon/klingon-history>
 
 [^4]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
 
+[^5]: <https://en.wikipedia.org/wiki/Leet>
