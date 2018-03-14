@@ -67,10 +67,10 @@ find its syntax along with an excerpt of the default settings.
     Shop'`
   * `logo` filename in `/app/public/images/` _or_ a URL of an image
     which will first be download to that folder and then used as a logo.
-    Defaults to `'JuiceShop_Logo.png'`
+    Defaults to `JuiceShop_Logo.png`
   * `favicon` filename in `/app/public/` _or_ a URL of an image in
     `.ico` format which will first be download to that folder and then
-    used as a favicon. Defaults to `'favicon_v2.ico'`
+    used as a favicon. Defaults to `favicon_v2.ico`
   * `numberOfRandomFakeUsers` represents the number of random user
     accounts to be created on top of the pre-defined ones (which are
     required for several challenges). Defaults to `0`, meaning no
@@ -91,11 +91,11 @@ find its syntax along with an excerpt of the default settings.
     used to render the UI. Options are `cerulean`, `cosmo`, `cyborg`,
     `darkly`, `flatly`, `lumen`, `paper`, `readable`, `sandstone`,
     `simplex`, `slate`, `spacelab`, `superhero`, `united` and `yeti`.
-    Defaults to `'slate'`
+    Defaults to `slate`
   * `gitHubRibbon` color of the _"Fork me on GitHub"_ ribbon in the
     top-right corner. Options are `darkblue`, `gray`, `green`, `orange`,
     `red`, `white` and - to hide the ribbon entirely - also `none` .
-    Defaults to `'orange'`.
+    Defaults to `orange`.
   * `twitterUrl` used as the Twitter link promising coupon codes on the
     _Your Basket_ screen. Defaults to
     `'https://twitter.com/owasp_juiceshop'`
@@ -104,9 +104,9 @@ find its syntax along with an excerpt of the default settings.
     `'https://www.facebook.com/owasp.juiceshop'`
   * `planetOverlayMap` filename in `/app/private` _or_ URL of an image
     to download to that folder and then use as an overlay texture for
-    the 3D planet "easter egg". Defaults to `'orangemap2k.jpg'`
+    the 3D planet "easter egg". Defaults to `orangemap2k.jpg`
   * `planetName` of the 3D planet "easter egg" as shown in the page
-    title. Defaults to `'Orangeuze'`
+    title. Defaults to `Orangeuze`
   * `recyclePage` custom elements on the _Request Recycling Box_ page
     * `topProductImage` filename in `/app/public/images/products` to use
       as the image on the top of the info column on the page. Defaults
@@ -117,13 +117,13 @@ find its syntax along with an excerpt of the default settings.
   * `cookieConsent` defines the cookie consent dialog shown in the
     bottom right corner
     * `backgroundColor` of the cookie banner itself. Defaults to
-      `#eb6c44` (red-orange)
+      `'#eb6c44'` (red-orange)
     * `textColor` of the `message` shown in the cookie banner. Defaults
-      to `#ffffff` (white)
+      to `'#ffffff'` (white)
     * `buttonColor` defines the color of the button to dismiss the
-      banner. Defaults to `#f5d948` (gold)
+      banner. Defaults to `'#f5d948'` (gold)
     * `buttonTextColor` of the `dismissText` on the button. Defaults to
-      `#000000` (black)
+      `'#000000'` (black)
     * `message` explains the cookie usage in the application. Defaults
       to `'This website uses fruit cookies to ensure you get the
       juiciest tracking experience.'`
@@ -167,8 +167,8 @@ find its syntax along with an excerpt of the default settings.
   * `reviews` a sub-list which adds reviews to a product (_optional_)
     * `text` of the review (_mandatory_)
     * `author` of the review from the following list of pre-defined
-      users in the database: `admin`, `jim`, `bender`, `ciso` or
-      `support` (_mandatory_)
+      users in the database: `admin`, `jim`, `bender`, `ciso`, `support`, `morty` or
+      `mc.safesearch` (_mandatory_)
 
 ### Configuration example
 
@@ -176,24 +176,25 @@ find its syntax along with an excerpt of the default settings.
 server:
   port: 3000
 application:
-  domain: 'juice-sh.op'
+  domain: juice-sh.op
   name: 'OWASP Juice Shop'
-  logo: 'JuiceShop_Logo.png'
-  favicon: 'favicon_v2.ico'
+  logo: JuiceShop_Logo.png
+  favicon: favicon_v2.ico
   numberOfRandomFakeUsers: 0
   showChallengeSolvedNotifications: true
   showCtfFlagsInNotifications: false
   showChallengeHints: true
   showVersionNumber: true
-  theme: 'slate'
-  gitHubRibbon: 'orange'
+  theme: slate
+  gitHubRibbon: orange
   twitterUrl: 'https://twitter.com/owasp_juiceshop'
   facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
-  planetOverlayMap: 'orangemap2k.jpg'
-  planetName: 'Orangeuze'
+  planetOverlayMap: orangemap2k.jpg
+  planetName: Orangeuze
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
+  altcoinName: Juicycoin
   cookieConsent:
     backgroundColor: '#eb6c44'
     textColor: '#ffffff'
@@ -204,34 +205,39 @@ application:
     linkText: 'But me wait!'
     linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
 products:
-  - name: 'Apple Juice (1000ml)'
+  -
+    name: 'Apple Juice (1000ml)'
     price: 1.99
     description: 'The all-time classic.'
-    image: 'apple_juice.jpg'
+    image: apple_juice.jpg
     reviews:
-      - text: 'One of my favorites!'
-        author: 'admin'
+      - { text: 'One of my favorites!', author: admin }
 # ~~~~~ ... ~~~~~~
-  - name: 'OWASP Juice Shop Sticker (2015/2016 design)'
-    description: 'Die-cut sticker with the official 2015/2016 logo...'
-    price: 999.99
-    image: 'sticker.png'
-    deletedDate: 2017-04-28
-  - name: 'OWASP SSL Advanced Forensic Tool (O-Saft)'
-    description: 'O-Saft is an easy to use tool to show information...'
+  -
+    name: 'OWASP SSL Advanced Forensic Tool (O-Saft)'
+    description: 'O-Saft is an easy to use tool to show information about SSL certificate and tests the SSL connection according given list of ciphers and various SSL configurations.'
     price: 0.01
-    image: 'owasp_osaft.jpg'
+    image: orange_juice.jpg
     urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/O-Saft'
-  - name: 'Christmas Super-Surprise-Box (2014 Edition)'
-    description: 'Contains a random selection of 10 bottles...'
+  -
+    name: 'Christmas Super-Surprise-Box (2014 Edition)'
+    description: 'Contains a random selection of 10 bottles (each 500ml) of our tastiest juices and an extra fan shirt for an unbeatable price!'
     price: 29.99
-    image: 'undefined.jpg'
+    image: undefined.jpg
     useForChristmasSpecialChallenge: true
-  - name: 'OWASP Juice Shop Logo (3D-printed)'
-    description: 'This rare item was designed and handcrafted in Sweden...'
+  -
+    name: 'OWASP Juice Shop Sticker (2015/2016 design)'
+    description: 'Die-cut sticker with the official 2015/2016 logo. By now this is a rare collectors item. <em>Out of stock!</em>'
+    price: 999.99
+    image: sticker.png
+    deletedDate: '2017-04-28'
+# ~~~~~ ... ~~~~~~
+  -
+    name: 'OWASP Juice Shop Logo (3D-printed)'
+    description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
     price: 99.99
-    image: '3d_keychain.jpg' # Exif metadata contains "OpenSCAD" as subtle hint...
-    fileForRetrieveBlueprintChallenge: 'JuiceShop.stl' # ...to blueprint file type
+    image: 3d_keychain.jpg
+    fileForRetrieveBlueprintChallenge: JuiceShop.stl
 # ~~~~~ ... ~~~~~~
 ```
 
@@ -244,11 +250,12 @@ is as short as this:
 
 ```yaml
 application:
-  logo: "JuiceShopCTF_Logo.png"
-  favicon: "favicon_ctf.ico"
+  logo: JuiceShopCTF_Logo.png
+  favicon: favicon_ctf.ico
   showCtfFlagsInNotifications: true
+  showChallengeHints: false
   showVersionNumber: false
-  gitHubRibbon: "none"
+  gitHubRibbon: none
 ```
 
 ### Testing customizations
