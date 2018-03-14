@@ -219,11 +219,20 @@ If the challenge is not immediately solved, you might have to
 
 ### Log in with MC SafeSearch's original user credentials
 
-:wrench: **TODO**
+1. Reading the hints for this challenge or googling "MC SafeSearch" will
+   eventually bring the music video
+   ["Protect Ya' Passwordz"](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+   to your attention.
+2. Watch this video to learn that MC used the name of his dog "Mr.
+   Noodles" as a password but changed "some vowels into zeroes".
+3. Visit <http://localhost:3000/#/login> and log in with _Email_
+   `mc.safesearch@juice-sh.op` and _Password_ `Mr. N00dles` to solve
+   this challenge.
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
-1. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
+1. Visit <http://localhost:3000/#/login>.
+2. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
    which is as easy to guess as it is to brute force or retrieve from a
    rainbow table.
 
@@ -245,7 +254,7 @@ in order to exploit and solve them:
 
 <!-- -->
 
-1. Visit <http://localhost:3000/#/contact>
+1. Visit <http://localhost:3000/#/contact>.
 2. Submit your feedback with one of the following words in the comment:
    `z85`, `base85`, `base64`, `md5` or `hashid`.
 

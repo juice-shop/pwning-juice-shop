@@ -2,14 +2,14 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                 | Difficulty   |
-|:----------------------------------------------------------------------------------------------------------|:-------------|
-| Access a confidential document.                                                                           | :star:       |
-| Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass. | :star::star: |
-| Inform the shop about an algorithm or library it should definitely not use the way it does.               | :star::star: |
-| Forge a coupon code that gives you a discount of at least 80%.                              | :star::star::star::star::star::star: |
-| Solve challenge #99. Unfortunately, this challenge does not exist.                          | :star::star::star::star::star::star: |
-| Unlock Premium Challenge to access exclusive content.                                       | :star::star::star::star::star::star: |
+| Challenge                                                                                                 | Difficulty                           |
+|:----------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Access a confidential document.                                                                           | :star:                               |
+| Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass. | :star::star:                         |
+| Inform the shop about an algorithm or library it should definitely not use the way it does.               | :star::star:                         |
+| Forge a coupon code that gives you a discount of at least 80%.                                            | :star::star::star::star::star::star: |
+| Solve challenge #99. Unfortunately, this challenge does not exist.                                        | :star::star::star::star::star::star: |
+| Unlock Premium Challenge to access exclusive content.                                                     | :star::star::star::star::star::star: |
 
 ### Access a confidential document
 
@@ -26,11 +26,21 @@ top management has planned.
 
 ### Log in with MC SafeSearch's original user credentials
 
-:wrench: **TODO**
+Another user login challenge where only the original password is
+accepted as a solution. Employing SQL Injection or other attacks does
+not count.
 
 #### Hints
 
-:wrench: **TODO**
+* MC SafeSearch is a rapper who produced the song
+  ["Protect Ya' Passwordz"](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+  which explains password & sensitive data protection very nicely.
+* After watching
+  [the music video of this song](https://www.youtube.com/watch?v=v59CX2DiX0Y),
+  you should agree that even :star::star: is a slightly exaggerated
+  difficulty rating for this challenge.
+
+  [!["Protect Ya Passwordz"](img/protect-ya-passwordz.jpg)](https://www.youtube.com/watch?v=v59CX2DiX0Y)
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 
