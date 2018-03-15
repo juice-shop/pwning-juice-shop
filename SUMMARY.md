@@ -7,7 +7,7 @@
 
 * [Part I - Hacking preparations](part1/README.md)
   * [Running OWASP Juice Shop](part1/running.md)
-  * [Vulnerability categories](part1/challenges.md)
+  * [Vulnerability categories](part1/categories.md)
   * [Challenge tracking](part1/challenges.md)
   * [Hacking exercise rules](part1/rules.md)
   * [Walking the "happy path"](part1/happy-path.md)
