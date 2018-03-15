@@ -65,7 +65,7 @@ to some arguments between the victim and the vendor.
 * In case you manage to update the database via SQL Injection so that a
   user is linked to another shopping basket, the application will _not_
   notice this challenge as solved.
-* 
+
 ### Get rid of all 5-star customer feedback
 
 If you successfully solved above

@@ -131,7 +131,7 @@ solved challenge #99 - which does not exist.
 * What would be a _really stupid_ mistake a developer might make when
   choosing such a secret?
 
-### Unlock Premium Challenge to access exclusive content.
+### Unlock Premium Challenge to access exclusive content
 
 These days a lot of seemingly free software comes with hidden or
 follow-up costs to use it to its full potential. For example: In

@@ -29,6 +29,7 @@
   * [Cross Site Scripting (XSS)](part2/xss.md)
   * [Insecure Deserialization](part2/insecure-deserialization.md)
   * [Vulnerable Components](part2/vulnerable-components.md)
+  * [Security through Obscurity](part2/security-through-obscurity.md)
 
 ----
 

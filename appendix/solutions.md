@@ -710,7 +710,7 @@ will get their password set to the same one we forced onto Bender!_
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
 
-### Access a misplaced SIEM signature file.
+### Access a misplaced SIEM signature file
 
 1. Use the _Poison Null Byte_ attack described in
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
