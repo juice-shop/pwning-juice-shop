@@ -212,9 +212,10 @@ answers available which you can choose by simply hitting `ENTER`.
      Viewing this hint costs the team 20% of that challenge's score
      value.
 
-The category of each challenge is identical to its category in the Juice
-Shop database. The score value of each challenge is calculated by the
-`juice-shop-ctf-cli` program as follows:
+The category of each challenge is identical to its
+[category in the Juice Shop](categories.md) database. The score value of
+each challenge is calculated by the `juice-shop-ctf-cli` program as
+follows:
 
 * 1-:star: challenge = 100 points
 * 2-:star: challenge = 250 points
