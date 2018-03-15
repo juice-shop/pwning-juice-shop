@@ -1,4 +1,4 @@
-# Deserialization
+# Insecure Deserialization
 
 > Serialization is the process of turning some object into a data format
 > that can be restored later. People often serialize objects in order to
@@ -19,10 +19,10 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                          | Difficulty |
-|:---------------------------------------------------------------------------------------------------|:-----------|
-| Perform a Remote Code Execution that would keep a less hardened application busy forever.          | 5 of 5     |
-| Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | 5 of 5     |
+| Challenge                                                                                          | Difficulty                           |
+|:---------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Perform a Remote Code Execution that would keep a less hardened application busy forever.          | :star::star::star::star::star:       |
+| Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | :star::star::star::star::star::star: |
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
@@ -57,7 +57,7 @@
 * The challenge will be solved if you manage to trigger the protection
   of the application against such DoS attacks.
 * Similar to the
-  [Let the server sleep for some time](nosqli.md#let-the-server-sleep-for-some-time)
+  [Let the server sleep for some time](injection.md#let-the-server-sleep-for-some-time)
   challenge (which accepted nothing but NoSQL Injection as a solution)
   this challenge will only accept proper RCE as a solution. It cannot be
   solved by simply hammering the server with requests. _That_ would

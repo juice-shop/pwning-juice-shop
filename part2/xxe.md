@@ -46,10 +46,10 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                         | Difficulty |
-|:----------------------------------------------------------------------------------|:-----------|
-| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | 3 of 5     |
-| Give the server something to chew on for quite a while. | 4 of 5     |
+| Challenge                                                                         | Difficulty                     |
+|:----------------------------------------------------------------------------------|:-------------------------------|
+| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | :star::star::star:             |
+| Give the server something to chew on for quite a while.                           | :star::star::star::star::star: |
 
 ### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
@@ -67,11 +67,21 @@ server the Juice Shop backend is hosted on.
 
 ### Give the server something to chew on for quite a while
 
-:wrench: **TODO**
+Similar to
+[Let the server sleep for some time](injection.md#let-the-server-sleep-for-some-time)
+this challenge is about performing a stripped-down _denial-of-service_
+attack. But this one is going against an entirely different leverage
+point.
 
 #### Hints
 
-:wrench: **TODO**
+* The leverage point for this is obviously the same as for the
+  [XXE Tier 1](#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server)
+  challenge above.
+* You can only solve this challenge by keeping the server busy for >2sec
+  with your attack.
+* The effectiveness of attack payloads for this challenge might depend
+  on the operating system the Juice Shop is running on.
 
 [^1]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 

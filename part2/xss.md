@@ -19,12 +19,12 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                           | Difficulty |
-|:--------------------------------------------------------------------------------------------------------------------|:-----------|
-| Perform a reflected XSS attack with `<script>alert("XSS1")</script>`.                                               | 1 of 5     |
-| Perform a persisted XSS attack with `<script>alert("XSS2")</script>` bypassing a client-side security mechanism.    | 3 of 5     |
-| Perform a persisted XSS attack with `<script>alert("XSS3")</script>` without using the frontend application at all. | 3 of 5     |
-| Perform a persisted XSS attack with `<script>alert("XSS4")</script>` bypassing a server-side security mechanism.    | 4 of 5     |
+| Challenge                                                                                                          | Difficulty               |
+|:-------------------------------------------------------------------------------------------------------------------|:-------------------------|
+| Perform a reflected XSS attack with `<script>alert("XSS")</script>`.                                               | :star:                   |
+| Perform a persisted XSS attack with `<script>alert("XSS")</script>` bypassing a client-side security mechanism.    | :star::star::star:       |
+| Perform a persisted XSS attack with `<script>alert("XSS")</script>` without using the frontend application at all. | :star::star::star:       |
+| Perform a persisted XSS attack with `<script>alert("XSS")</script>` bypassing a server-side security mechanism.    | :star::star::star::star: |
 
 ### Perform a reflected XSS attack
 

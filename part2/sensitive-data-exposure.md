@@ -1,4 +1,54 @@
-# Cryptographic issues
+# Sensitive Data Exposure
+
+## Challenges covered in this chapter
+
+| Challenge                                                                                                 | Difficulty                           |
+|:----------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Access a confidential document.                                                                           | :star:                               |
+| Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass. | :star::star:                         |
+| Inform the shop about an algorithm or library it should definitely not use the way it does.               | :star::star:                         |
+| Forge a coupon code that gives you a discount of at least 80%.                                            | :star::star::star::star::star::star: |
+| Solve challenge #99. Unfortunately, this challenge does not exist.                                        | :star::star::star::star::star::star: |
+| Unlock Premium Challenge to access exclusive content.                                                     | :star::star::star::star::star::star: |
+
+### Access a confidential document
+
+Somewhere in the application you can find a file that contains sensitive
+information about some - potentially hostile - takeovers the Juice Shop
+top management has planned.
+
+#### Hints
+
+* Analyze and tamper with links in the application that deliver a file
+  directly.
+* The file you are looking for is not protected in any way. Once you
+  _found it_ you can also _access it_.
+
+### Log in with MC SafeSearch's original user credentials
+
+Another user login challenge where only the original password is
+accepted as a solution. Employing SQL Injection or other attacks does
+not count.
+
+#### Hints
+
+* MC SafeSearch is a rapper who produced the song
+  ["Protect Ya' Passwordz"](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+  which explains password & sensitive data protection very nicely.
+* After watching
+  [the music video of this song](https://www.youtube.com/watch?v=v59CX2DiX0Y),
+  you should agree that even :star::star: is a slightly exaggerated
+  difficulty rating for this challenge.
+
+  [!["Protect Ya Passwordz"](img/protect-ya-passwordz.jpg)](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+
+### Inform the shop about an algorithm or library it should definitely not use the way it does
+
+To fulfil this challenge you must identify a cryptographic algorithm (or
+crypto library) that either
+* should not be used _at all_
+* or is a _bad choice_ for a given requirement
+* or is used in an _insecure way_.
 
 > Initially confined to the realms of academia and the military,
 > cryptography has become ubiquitous thanks to the Internet. Common
@@ -28,22 +78,6 @@
 > says "trust us, we have had experts look at this,” chances are they
 > weren't experts![^1]
 
-## Challenges covered in this chapter
-
-| Challenge                                                                                                            | Difficulty |
-|:---------------------------------------------------------------------------------------------------------------------|:-----------|
-| Inform the shop about an algorithm or library it should definitely not use the way it does.                          | 2 of 5     |
-| Apply some advanced cryptanalysis to find _the real_ easter egg.                                                     | 4 of 5     |
-| Forge a coupon code that gives you a discount of at least 80%.                                                       | 5 of 5     |
-| Solve challenge #99. Unfortunately, this challenge does not exist.                                                   | 5 of 5     |
-| Unlock Premium Challenge to access exclusive content.                                                                | 5 of 5     |
-
-### Inform the shop about an algorithm or library it should definitely not use the way it does
-
-To fulfil this challenge you must identify a cryptographic algorithm
-(or crypto library) that either * should not be used _at all_ * or is a
-_bad choice_ for a given requirement * or is used in an _insecure way_.
-
 #### Hints
 
 * Use the _Contact Us_ form to submit a feedback mentioning the abused
@@ -51,27 +85,9 @@ _bad choice_ for a given requirement * or is used in an _insecure way_.
 * There are four possible answers and you only need to identify one to
   solve the challenge.
 * Cryptographic functions used in the
-  [Apply some advanced cryptanalysis to find _the real_ easter egg](#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
+  [Apply some advanced cryptanalysis to find _the real_ easter egg](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
-
-### Apply some advanced cryptanalysis to find the real easter egg
-
-Solving the
-[Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)
-challenge was probably no as satisfying as you had hoped. Now it is time
-to tackle the taunt of the developers and hunt down _the real_ easter
-egg. This follow-up challenge is basically about finding a secret URL
-that - when accessed - will reward you with an easter egg that deserves
-the name.
-
-#### Hints
-
-* Make sure you solve
-  [Find the hidden easter egg](forgotten-content.md#find-the-hidden-easter-egg)
-  first.
-* You might have to peel through several layers of tough-as-nails
-  encryption for this challenge.
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
@@ -115,7 +131,7 @@ solved challenge #99 - which does not exist.
 * What would be a _really stupid_ mistake a developer might make when
   choosing such a secret?
 
-### Unlock Premium Challenge to access exclusive content.
+### Unlock Premium Challenge to access exclusive content
 
 These days a lot of seemingly free software comes with hidden or
 follow-up costs to use it to its full potential. For example: In
@@ -137,7 +153,7 @@ That is why the actual challenge here is to unlock and solve the
 #### Hints
 
 * This challenge could also have been put into chapter
-  [Weak security mechanisms](weak-security.md).
+  [Weak security mechanisms](roll-your-own-security.md).
 * There is no inappropriate, self-written or misconfigured cryptographic
   library to be exploited here.
 * How much protection does a sturdy top-quality door lock add to your

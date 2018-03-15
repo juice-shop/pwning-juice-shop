@@ -1,13 +1,19 @@
-# Validation flaws
+# Improper Input Validation
+
+> When software does not validate input properly, an attacker is able to
+> craft the input in a form that is not expected by the rest of the
+> application. This will lead to parts of the system receiving
+> unintended input, which may result in altered control flow, arbitrary
+> control of a resource, or arbitrary code execution.[^1]
 
 ## Challenges covered in this chapter
 
-| Challenge                                           | Difficulty |
-|:----------------------------------------------------|:-----------|
-| Give a devastating zero-star feedback to the store. | 1 of 5     |
-| Place an order that makes you rich.                 | 3 of 5     |
-| Upload a file larger than 100 kB.                   | 3 of 5     |
-| Upload a file that has no .pdf extension.           | 3 of 5     |
+| Challenge                                           | Difficulty         |
+|:----------------------------------------------------|:-------------------|
+| Give a devastating zero-star feedback to the store. | :star:             |
+| Place an order that makes you rich.                 | :star::star::star: |
+| Upload a file larger than 100 kB.                   | :star::star::star: |
+| Upload a file that has no .pdf extension.           | :star::star::star: |
 
 ### Give a devastating zero-star feedback to the store
 
@@ -59,3 +65,5 @@ the uploaded file is actually a PDF. All other file types are rejected.
 * If you solved the
   [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
   challenge, you should try to apply the same solution here
+
+[^1]: https://cwe.mitre.org/data/definitions/20.html
