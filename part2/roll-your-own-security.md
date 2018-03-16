@@ -105,11 +105,36 @@ _redirecting_ to a different location.
 
 ### Submit 10 or more customer feedbacks within 10 seconds
 
-:wrench: **TODO**
+The _Contact Us_ form for customer feedback contains a CAPTCHA to
+protect it from being abused through scripting. This challenge is about
+beating this automation protection.
+
+> A completely automated public Turing test to tell computers and humans
+> apart, or CAPTCHA, is a program that allows you to distinguish between
+> humans and computers. First widely used by Alta Vista to prevent
+> automated search submissions, CAPTCHAs are particularly effective in
+> stopping any kind of automated abuse, including brute-force attacks.
+> They work by presenting some test that is easy for humans to pass but
+> difficult for computers to pass; therefore, they can conclude with
+> some certainty whether there is a human on the other end.
+>
+> For a CAPTCHA to be effective, humans must be able to answer the test
+> correctly as close to 100 percent of the time as possible. Computers
+> must fail as close to 100 percent of the time as possible.[^5]
 
 #### Hints
 
-:wrench: **TODO**
+* You could prepare 10 browser tabs, solving every CAPTCHA and filling
+  out the each feedback form. Then you'd need to very quickly switch
+  through the tabs and submit the forms in under 10 seconds total.
+* Should the Juice Shop ever decide to change the challenge into
+  _"Submit 100 or more customer feedbacks within 60 seconds"_ or worse,
+  you'd probably have a hard time keeping up with any tab-switching
+  approach.
+* Investigate closely how the CAPTCHA mechanism works and try to find
+  either a bypass or some automated way of solving it dynamically.
+* Wrap this into a script (in whatever programming language you prefer)
+  that repeats this 10 times.
 
 [^1]: https://en.wikipedia.org/wiki/Easter_egg_(media)
 
@@ -118,3 +143,5 @@ _redirecting_ to a different location.
 [^3]: https://github.com/Neo23x0/sigma#what-is-sigma
 
 [^4]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
+
+[^5]: https://www.owasp.org/index.php/Blocking_Brute_Force_Attacks#Sidebar:_Using_CAPTCHAS
