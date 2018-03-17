@@ -375,8 +375,8 @@ injection as in
 ### Change the href of the link within the O-Saft product description
 
 1. By clicking the "eye"-button on the _O-Saft_ product in the _Search
-   Results_ you will learn that it's database ID is `8`.
-2. Submit a `PUT` request to <http://localhost:3000/api/Products/8>
+   Results_ you will learn that it's database ID is `9`.
+2. Submit a `PUT` request to <http://localhost:3000/api/Products/9>
    with:
    * `{"description": "<a href=\"http://kimminich.de\"
      target=\"_blank\">More...</a>"}` as body
