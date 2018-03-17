@@ -44,9 +44,10 @@ following the official
 [Node.js Long-term Support Release Schedule](https://github.com/nodejs/LTS).
 During development and Continuous Integration (CI) the application is
 automatically tested with these current versions of Node.js. The
-officially recommended version to run Juice Shop is always the
-_Long-term Support (LTS)_ version, which is Node.js
-{{book.recommendedNodeVersion}} at the moment.
+officially recommended version to run Juice Shop is either the most
+recent _Long-term Support (LTS)_ version or the _Current Release_
+version. Therefor Juice Shop recommends {{book.recommendedNodeVersion}}
+for its own {{book.juiceShopVersion}} release.
 
 #### From sources
 
