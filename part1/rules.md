@@ -74,7 +74,30 @@ just as fine as the recommended browser plugins.
 
 #### Scripting tools
 
-:wrench: **TODO**
+A small number of challenges is not realistically solvable manually
+unless you are cheating or are incredibly :four_leaf_clover:-lucky.
+
+For these challenges you will require to write some scripts that for
+example can submit requests with different parameter values
+automatically in a short time. As long as the tool or language of choice
+can submit HTTP requests, you should be fine. Use whatever you are most
+familiar with.
+
+If you have little experience in programming, best pick a language that
+is easy to get into and will give you results without forcing you to
+learn a lot of syntax elements or write much _boilerplate code_. Python,
+Ruby or JavaScript give you this simplicity and ease-of-use. If you
+consider yourself a "command-line hero", Bash or PowerShell will get the
+job done for you. Languages like Java, C# or Perl are probably less
+suitable for beginners. In the end it depends entirely on your
+preferences, but being familiar with at least one programming language
+is kind of mandatory if you want to get 100% on the score board.
+
+> In computer programming, boilerplate code or boilerplate refers to
+> sections of code that have to be included in many places with little
+> or no alteration. It is often used when referring to languages that
+> are considered verbose, i.e. the programmer must write a lot of code
+> to do minimal jobs.[^1]
 
 ### Penetration testing tools
 
@@ -115,7 +138,7 @@ is such a software and offers many useful hacking tools for free:
 > people with a wide range of security experience and as such is ideal
 > for developers and functional testers who are new to penetration
 > testing. ZAP provides automated scanners as well as a set of tools
-> that allow you to find security vulnerabilities manually.[^1]
+> that allow you to find security vulnerabilities manually.[^2]
 
 ![ZAP Logo](img/zap.png)
 
@@ -129,7 +152,7 @@ all into a ready-to-use Linux distribution? Entering
 > Kali Linux is a Debian-based Linux distribution aimed at advanced
 > Penetration Testing and Security Auditing. Kali contains several
 > hundred tools aimed at various information security tasks, such as
-> Penetration Testing, Forensics and Reverse Engineering.[^2]
+> Penetration Testing, Forensics and Reverse Engineering.[^3]
 
 The keyword in the previous quote is _advanced_! More precisely, Kali
 Linux is _easily overwhelming_ when beginners try to work with it, as
@@ -141,7 +164,7 @@ even the Kali development team states:
 > professional penetration testers and security specialists, and given
 > its unique nature, it is __NOT__ a recommended distribution if you’re
 > unfamiliar with Linux \[...\]. Even for experienced Linux users, Kali
-> can pose some challenges.[^3]
+> can pose some challenges.[^4]
 
 Although there exist some more light-weight pentesting distributions,
 they basically still present a high hurdle for people new to the IT
@@ -239,11 +262,11 @@ is required by the [Customization](customization.md) feature that allows
 redressing the UI and overwriting the product catalog:
 <https://juice-shop-staging.herokuapp.com/rest/admin/application-configuration>
 
-The returned JSON contains inadvertent but unavoidable spoilers for all
-challenges that can be customized, such as
-* [Order the Christmas special offer of 2014](../part2/injection.md#order-the-christmas-special-offer-of-2014)
-* [Change the href of the link within the O-Saft product description](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description)
-* [Deprive the shop of earnings by downloading the blueprint for one of its products](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
+The returned JSON contains spoilers for all challenges that depend on a
+product from the inventory which might be customized. As not all
+customization can be prepared on the server side, exposing this REST
+endpoint is unavoidable for the [Customization](customization.md)
+feature to work properly.
 
 ### Score Board HTML/CSS
 
@@ -257,9 +280,11 @@ mentioned database manipulation: A simple reload of the score board URL
 will let all your local CSS changes vanish in a blink and reveal your
 _real_ hacking progress.
 
-[^1]: https://github.com/zaproxy/zap-core-help/wiki
+[^1]: https://en.wikipedia.org/wiki/Boilerplate_code
 
-[^2]: http://docs.kali.org/introduction/what-is-kali-linux
+[^2]: https://github.com/zaproxy/zap-core-help/wiki
 
-[^3]: http://docs.kali.org/introduction/should-i-use-kali-linux
+[^3]: http://docs.kali.org/introduction/what-is-kali-linux
+
+[^4]: http://docs.kali.org/introduction/should-i-use-kali-linux
 
