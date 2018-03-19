@@ -53,9 +53,9 @@
   advertised anywhere.
 * As the Juice Shop is written in pure Javascript, there is one data
   format that is most probably used for serialization.
-* You should try make the server busy for all eternity.
+* You should try to make the server busy for all eternity.
 * The challenge will be solved if you manage to trigger the protection
-  of the application against such DoS attacks.
+  of the application against a very specific DoS attack vector.
 * Similar to the
   [Let the server sleep for some time](injection.md#let-the-server-sleep-for-some-time)
   challenge (which accepted nothing but NoSQL Injection as a solution)
@@ -65,11 +65,18 @@
 
 ### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
-:wrench: **TODO**
+> An infinite loop (or endless loop) is a sequence of instructions in a
+> computer program which loops endlessly, either due to the loop having
+> no terminating condition, having one that can never be met, or one
+> that causes the loop to start over.[^4]
 
 #### Hints
 
-:wrench: **TODO**
+* This challenge uses the same leverage point as
+  [Perform a Remote Code Execution that would keep a less hardened application busy forever](#perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever).
+* The application has a protection against too many iterations (i.e.
+  _infinite loops_) which your attack must not trigger in order to solve
+  this challenge.
 
 [^1]: https://www.owasp.org/index.php/Deserialization_Cheat_Sheet
 
@@ -77,3 +84,4 @@
 
 [^3]: https://en.wikipedia.org/wiki/Arbitrary_code_execution
 
+[^4]: https://en.wikipedia.org/wiki/Infinite_loop
