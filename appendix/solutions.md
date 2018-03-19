@@ -1271,7 +1271,73 @@ the original `angular-tooltips` module page on NPM:
 
 ### Give the server something to chew on for quite a while
 
-:wrench: **TODO**
+1. Solve the
+   [Use a deprecated B2B interface that was not properly shut down](#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down)
+   challenge.
+2. On Linux, prepare an XML file which defines and uses an external
+   entity which will require a long time to resolve: `<!ENTITY xxe
+   SYSTEM "file:///dev/random">`. On Windows there is no similar feature
+   to retrieve randomness from the OS via an "endless" file, so the
+   attack vector has to be completely different. A _quadratic blowup_
+   attack works fine, consisting of a single large entity like `<!ENTITY
+   a "dosdosdosdos...dos"`> which is replicated very often as in
+   `<foo>&a;&a;&a;&a;&a;...&a;</foo>`.
+3. Upload this file through the _File Complaint_ dialog and observe how
+   the request processing takes up to 2 seconds and then times out (to
+   prevent you from actually DoS'ing your application) but still solving
+   the challenge.
+
+_You might feel tempted to try the classic **Billion laughs attack** but
+will quickly notice that the XML parser is hardened against it, giving
+you a status `410` HTTP error saying `Detected an entity reference
+loop`._
+
+> In computer security, a billion laughs attack is a type of
+> denial-of-service (DoS) attack which is aimed at parsers of XML
+> documents.
+>
+> It is also referred to as an XML bomb or as an exponential entity
+> expansion attack.
+>
+> The example attack consists of defining 10 entities, each defined as
+> consisting of 10 of the previous entity, with the document consisting
+> of a single instance of the largest entity, which expands to one
+> billion copies of the first entity.
+>
+> In the most frequently cited example, the first entity is the string
+> "lol", hence the name "billion laughs". The amount of computer memory
+> used would likely exceed that available to the process parsing the XML
+> (it certainly would have at the time the vulnerability was first
+> reported).
+>
+> While the original form of the attack was aimed specifically at XML
+> parsers, the term may be applicable to similar subjects as well.
+>
+> The problem was first reported as early as 2002, but began to be
+> widely addressed in 2008.
+>
+> Defenses against this kind of attack include capping the memory
+> allocated in an individual parser if loss of the document is
+> acceptable, or treating entities symbolically and expanding them
+> lazily only when (and to the extent) their content is to be used.[^6]
+> 
+> ```xml
+> <?xml version="1.0"?>
+><!DOCTYPE lolz [
+> <!ENTITY lol "lol">
+> <!ELEMENT lolz (#PCDATA)>
+> <!ENTITY lol1 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+> <!ENTITY lol2 "&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;&lol1;">
+> <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+> <!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
+> <!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;">
+> <!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;">
+> <!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
+> <!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
+> <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
+>]>
+><lolz>&lol9;</lolz>
+> ```
 
 ## Diabolic Challenges (  :star::star::star::star::star::star:  )
 
@@ -1515,3 +1581,5 @@ to use some unofficial port._
 [^4]: <https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany>
 
 [^5]: <https://en.wikipedia.org/wiki/Leet>
+
+[^6]: <https://en.wikipedia.org/wiki/Billion_laughs_attack>
