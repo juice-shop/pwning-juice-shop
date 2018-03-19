@@ -1495,7 +1495,16 @@ to use some unofficial port._
 
 ### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
-:wrench: **TODO**
+1. Follow steps 1-7 of the challenge
+   [Perform a Remote Code Execution that would keep a less hardened application busy forever](#perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever).
+2. As _Request Body_ put in `{"orderLinesData":
+   "/((a+)+)b/.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"}` - which will
+   trigger a very costly Regular Expression test once executed.
+3. Submit the request by clicking _Execute_.
+4. The server should eventually respond with a `503` status and an error
+   stating `Sorry, we are temporarily not available! Please try again
+   later.` after roughly 2 seconds. This is due to a defined timeout so
+   you do not really DoS your Juice Shop server.
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
 
