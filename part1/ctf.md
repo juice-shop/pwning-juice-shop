@@ -293,7 +293,7 @@ Feel free to use
 [the implementation within `juice-shop-ctf-cli`](https://github.com/bkimminich/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
 as an example:
 
-```
+```ecmascript 6
 var jsSHA = require('jssha')
 
 function hmacSha1 (secretKey, text) {

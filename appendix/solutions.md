@@ -274,7 +274,7 @@ in order to exploit and solve them:
 4. Copy the obfuscating function into the JavaScript console of your
    browser and execute it.
 
-```
+```javascript
 "/" + function() {
         var e = Array.prototype.slice.call(arguments)
           , n = e.shift();
