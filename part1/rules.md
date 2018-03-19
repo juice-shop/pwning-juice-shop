@@ -23,9 +23,9 @@ or debugging logs!
 
 ![DevTools Console tab](img/devtools_console.png)
 
-Other useful features of browser DevTools are their network overview
-as well as insight into the client-side JavaScript code, cookies and
-other local storage being used by the application.
+Other useful features of browser DevTools are their network overview as
+well as insight into the client-side JavaScript code, cookies and other
+local storage being used by the application.
 
 ![DevTools Network tab](img/devtools_network.png)
 
@@ -78,10 +78,10 @@ just as fine as the recommended browser plugins.
 
 ### Penetration testing tools
 
-You _can_ solve all challenges just using a browser and the plugins/tools
-mentioned above. If you are new to web application hacking (or
-penetration testing in general) this is also the _recommended_ set of
-tools to start with. In case you have experience with professional
+You _can_ solve all challenges just using a browser and the
+plugins/tools mentioned above. If you are new to web application hacking
+(or penetration testing in general) this is also the _recommended_ set
+of tools to start with. In case you have experience with professional
 pentesting tools, you are free to use those! And you are _completely
 free_ in your choice, so expensive commercial products are just as fine
 as open source tools. With this kind of tooling you will have a
@@ -234,7 +234,16 @@ ever asks you to _demonstrate how_ you actually solved all the 4- and
 
 ### Configuration REST API Endpoint
 
-:wrench: **TODO**
+The Juice Shop offers a URL to retrieve configuration information which
+is required by the [Customization](customization.md) feature that allows
+redressing the UI and overwriting the product catalog:
+<https://juice-shop-staging.herokuapp.com/rest/admin/application-configuration>
+
+The returned JSON contains inadvertent but unavoidable spoilers for all
+challenges that can be customized, such as
+* [Order the Christmas special offer of 2014](../part2/injection.md#order-the-christmas-special-offer-of-2014)
+* [Change the href of the link within the O-Saft product description](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description)
+* [Deprive the shop of earnings by downloading the blueprint for one of its products](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
 
 ### Score Board HTML/CSS
 
