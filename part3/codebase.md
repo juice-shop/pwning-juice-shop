@@ -97,7 +97,74 @@ by the [Karma](https://karma-runner.github.io) test runner.
 > In AngularJS, a Controller is defined by a JavaScript constructor
 > function that is used to augment the AngularJS Scope.[^2]
 
-:wrench: **TODO**
+The AngularJS controllers reside in the `app/js/controllers` folder.
+Each controller file handles is responsible for one screen or functional
+aspect of the application.
+
+![AngularJS Controllers folder](img/controllersFolder.png)
+
+Controllers must **always** go through one or more [Services](#services)
+when communicating with the application backend. Furthermore, they will
+rely on their own `$scope` and are forbidden to pollute the `$rootScope`
+unnecessarily.
+
+The code snippet below shows the `ContactController` which handles the
+_Contact Us_ screen and uses three different services to fulfill its
+tasks:
+* `UserService` to retrieve data about the currently logged in user (if
+  applicable) via the `whoAmi()` function
+* `CaptchaService` to retrieve a new CAPTCHA for the user to solve via
+  the `getCaptcha()` function
+* `FeedbackService` to eventually `save()` the user feedback
+
+:point_up: As a universal rule for the entire Juice Shop codebase,
+unnecessary code duplication should be avoided by using well-named
+helper functions. This is demonstrated by the very simple
+`getNewCaptcha()` function in the code snippet below. Helper functions
+should always be located as close to the calling code as possible and
+**never** be put into the _global scope_ unnecessarily as this can cause
+unexpected side effects.
+
+```javascript
+angular.module('juiceShop').controller('ContactController', [
+  '$scope',
+  'FeedbackService',
+  'UserService',
+  'CaptchaService',
+  function ($scope, feedbackService, userService, captchaService) {
+    'use strict'
+
+    userService.whoAmI().then(function (data) {
+      $scope.feedback = {}
+      $scope.feedback.UserId = data.id
+      $scope.userEmail = data.email || 'anonymous'
+    })
+
+    function getNewCaptcha () {
+      captchaService.getCaptcha().then(function (data) {
+        $scope.captcha = data.captcha
+        $scope.captchaId = data.captchaId
+      })
+    }
+    getNewCaptcha()
+
+    $scope.save = function () {
+      $scope.feedback.captchaId = $scope.captchaId
+      feedbackService.save($scope.feedback).then(function (savedFeedback) {
+        $scope.error = null
+        $scope.confirmation = 'Thank you for your feedback' + (savedFeedback.rating === 5 ? ' and your 5-star rating!' : '.')
+        $scope.feedback = {}
+        getNewCaptcha()
+        $scope.form.$setPristine()
+      }).catch(function (error) {
+        $scope.error = error
+        $scope.confirmation = null
+        $scope.feedback = {}
+        $scope.form.$setPristine()
+      })
+    }
+  }])
+```
 
 :rotating_light: Unit tests for all controllers can be found in the
 `test/client/controllers` folder. Like the
