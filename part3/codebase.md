@@ -258,7 +258,20 @@ Us_ screen.
 
 ### Index page template
 
-:wrench: **TODO**
+The `app/index.template.html` file is the entry point the Juice Shop web
+client. It loads all required CSS stylesheets and JavaScript libraries
+and includes the application's own client-side code. It also defines the
+surrounding elements of the application, such as the
+* navigation bar and menu items
+* challenge-related pop-ups
+* cookie consent banner
+* _Fork me on GitHub_ ribbon.
+
+For developers it is important to only make changes in the
+`index.template.html` file but **never** in the `index.html` which will
+be generated from the template during server startup. This intermediary
+step is necessary for the visual
+[Customization](../part1/customization.md) of the application.
 
 ### Internationalization
 
