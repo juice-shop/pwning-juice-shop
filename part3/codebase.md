@@ -179,7 +179,82 @@ angular.module('juiceShop').controller('ContactController', [
 > template with information from the model and controller to render the
 > dynamic view that a user sees in the browser.[^3]
 
-:wrench: **TODO**
+Each screen within the application is defined in a HTML view template in
+the folder `app/views`. The views are written as HTML5 using
+[Bootstrap](http://getbootstrap.com/) for styling and responsiveness.
+Furthermore most views incorporate some
+[UI Bootstrap](https://angular-ui.github.io/bootstrap/) component
+specifically for AngularJS and several icons from the
+[Font Awesome 5](https://fontawesome.com/) collection.
+
+![AngularJS Views folder](img/viewsFolder.png)
+
+The following code snippet shows the `Contact.html` view which, together
+with the previously shown `ContractController.js` represent the _Contact
+Us_ screen.
+
+```html
+<div class="row">
+    <section class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h3 class="page-header page-header-sm" translate="TITLE_CONTACT"></h3>
+
+        <div>
+
+            <form role="form" name="form" novalidate>
+                <input type="text" id="userId" ng-model="feedback.UserId" ng-hide="true"/>
+                <div class="alert-info" ng-show="confirmation && !form.$dirty">
+                    <p>{{confirmation}}</p>
+                </div>
+                <div class="alert-danger" ng-show="error && !form.$dirty">
+                    <p>{{error}}</p>
+                </div>
+                <div class="alert-danger" ng-show="form.$invalid && form.$dirty">
+                    <p ng-show="form.feedbackComment.$error.required && form.feedbackComment.$dirty" translate="MANDATORY_COMMENT"></p>
+                    <p ng-show="form.feedbackComment.$error.maxlength && form.feedbackComment.$dirty" translate="INVALID_COMMENT_LENGTH" translate-value-length="1-160"></p>
+                    <p ng-show="form.feedbackRating.$error.required && form.feedbackRating.$dirty" translate="MANDATORY_RATING"></p>
+                    <p ng-show="form.feedbackCaptcha.$error.required && form.feedbackCaptcha.$dirty" translate="MANDATORY_CAPTCHA"></p>
+                </div>
+
+                <div class="container-fluid well">
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label translate="LABEL_AUTHOR"></label>
+                                <label class="form-control input-sm">{{userEmail}}</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="feedbackComment" translate="LABEL_COMMENT"></label>
+                                <textarea class="form-control input-sm" id="feedbackComment" name="feedbackComment" ng-model="feedback.comment" required ng-maxlength="160"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label translate="LABEL_RATING"></label>
+                                <span uib-rating max="5" name="feedbackRating" ng-model="feedback.rating" required></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label translate="LABEL_CAPTCHA"></label>&nbsp;
+                                <code id="captcha">{{captcha}}</code>&nbsp;<label>?</label>
+                                <input class="form-control input-sm" name="feedbackCaptcha" ng-model="feedback.captcha" required/>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group">
+                                    <button type="submit" id="submitButton" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="save()"><i class="fas fa-paper-plane fa-lg"></i> <span translate="BTN_SUBMIT"></span></button>
+                                </div>
+                        </div>
+                </div>
+             </form>
+
+        </div>
+
+    </section>
+</div>
+```
 
 ### Index page template
 
@@ -195,7 +270,8 @@ No hard-coded texts are allowed in any of the [Views](#views) or
 [Controllers](#controllers). Instead, property keys have to be defined
 and are usually specified in a `translate` attribute which can be placed
 in most HTML tags and will later be resolved by the `$translateProvider`
-service.
+service. You might have noticed several of these `translate` attributes
+in the `Contact.html` code snippet from the [Views](#views) section.
 
 The different translations are maintained in JSON files in the
 `/app/i18n` folder. The only file that should be touched by developers
