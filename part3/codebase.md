@@ -185,6 +185,30 @@ angular.module('juiceShop').controller('ContactController', [
 
 :wrench: **TODO**
 
+### Internationalization
+
+All static texts in the user interface are fully internationalized using
+the `angular-translate` module. Texts coming from the server (e.g.
+product descriptions or server error messages) are always in English.
+
+No hard-coded texts are allowed in any of the [Views](#views) or
+[Controllers](#controllers). Instead, property keys have to be defined
+and are usually specified in a `translate` attribute which can be placed
+in most HTML tags and will later be resolved by the `$translateProvider`
+service.
+
+The different translations are maintained in JSON files in the
+`/app/i18n` folder. The only file that should be touched by developers
+is the `en.json` file for the original English texts. New properties are
+exclusively added here. When pushing the `develop` branch to GitHub, the
+online translation provider will pick up changes in `en.json` and adapt
+all other language files accordingly. All this happens behind the scenes
+in a distinct branch `l10n_develop` which will be manually merged back
+into `develop` on a regular basis.
+
+To learn about the actual translation process please refer to the
+chapter [Helping with translations](translation.md).
+
 ### Client-side code minification
 
 All client side code (except the `index.html`) is first _uglified_ (for
