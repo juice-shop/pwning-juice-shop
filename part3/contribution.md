@@ -109,7 +109,7 @@ computer with `npm i -g standard`.
 
 ### Testing
 
-```shell
+```bash
 npm test           # check for code style violations and run all unit tests
 npm run frisby     # run all API integration tests
 npm run protractor # run all end-to-end tests
@@ -130,7 +130,7 @@ There is a full suite containing isolated unit tests
 * for all client-side code in `test/client`
 * for the server-side routes and libraries in `test/server`
 
-```shell
+```bash
 npm test
 ```
 
@@ -140,7 +140,7 @@ The integration tests in `test/api` verify if the backend for all normal
 use cases of the application works. All server-side vulnerabilities are
 also tested.
 
-```shell
+```bash
 npm run frisby
 ```
 
@@ -153,7 +153,7 @@ The e2e test suite in `test/e2e` verifies if all client- and server-side
 vulnerabilities are exploitable. It passes only when all challenges are
 solvable on the score board.
 
-```shell
+```bash
 npm run protractor
 ```
 
@@ -168,7 +168,7 @@ code that should cause one or more tests to fail. If none does this
 "mutated line" is not properly covered by meaningful assertions and the
 mutation testing engine that will inform you about this.
 
-```shell
+```bash
 npm run stryker
 ```
 
@@ -231,7 +231,7 @@ archives for another easy setup method. When you contribute a change
 that impacts what the application needs to include, make sure you test
 this manually on your system.
 
-```shell
+```bash
 grunt package
 ```
 

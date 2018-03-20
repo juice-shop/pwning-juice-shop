@@ -199,7 +199,7 @@ cumbersome to launch `npm install` over and over again. Instead you can
 simply trigger the minification to generate the `juice-shop.min.js` file
 with
 
-```
+```bash
 grunt minify
 ```
 

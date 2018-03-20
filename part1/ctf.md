@@ -46,7 +46,7 @@ flag code_ for each solved challenge.
 These codes are not displayed by default, but can be made visible by
 running the application with the `config/ctf.yml` configuration:
 
-```
+```bash
 set NODE_ENV=ctf     # on Windows
 export NODE_ENV=ctf  # on Linux
 
@@ -56,13 +56,13 @@ npm start
 On Linux you can also pass the `NODE_ENV` in directly in a single
 command
 
-```
+```bash
 NODE_ENV=ctf npm start
 ```
 
 When running the application as a Docker container instead execute
 
-```
+```bash
 docker run -d -e "NODE_ENV=ctf" -p 3000:3000 bkimminich/juice-shop
 ```
 
@@ -86,14 +86,14 @@ override that secret key.
 The simplest way to do so, is by providing an alternative secret key via
 the `CTF_KEY` environment variable:
 
-```
+```bash
 set CTF_KEY=xxxxxxxxxxxxxxx     # on Windows
 export CTF_KEY=xxxxxxxxxxxxxxx  # on Linux
 ```
 
 or when using Docker
 
-```
+```bash
 docker run -d -e "CTF_KEY=xxxxxxxxxxxxxxx" -e "NODE_ENV=ctf" -p 3000:3000 bkimminich/juice-shop
 ```
 
@@ -164,13 +164,13 @@ instructions were written for {{book.juiceShopCtfVersion}} of
 To install `juice-shop-ctf-cli` you need to have Node.js 6.x or higher
 installed. Simply execute
 
-```
+```bash
 npm install -g juice-shop-ctf-cli
 ```
 
 and then run the tool with
 
-```
+```bash
 juice-shop-ctf
 ```
 

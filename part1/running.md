@@ -120,7 +120,7 @@ server hosting the Juice Shop there.
 4. Launch instance
 5. Browse to your instance's public DNS
 
-```
+```bash
 #!/bin/bash
 yum update -y
 yum install -y docker

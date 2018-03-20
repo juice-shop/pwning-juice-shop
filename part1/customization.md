@@ -41,7 +41,7 @@ In order to override the default configuration inside your Docker
 container with one of the provided configs, you can pass in the
 `NODE_ENV` environment variable with the `-e` parameter:
 
-```
+```bash
 docker run -d -e "NODE_ENV=bodgeit" -p 3000:3000
 ```
 
@@ -49,7 +49,7 @@ In order to inject your own configuration, you can use `-v` to mount the
 `default.yml` path inside the container to any config file on your
 outside file system:
 
-```
+```bash
 docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myConfig.yml -p 3000:3000 --name juice-shop bkimminich/juice-shop
 ```
 
