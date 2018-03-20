@@ -89,7 +89,7 @@ angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function 
 
 :rotating_light: Unit tests for all services can be found in the
 `test/client/services` folder. They are
-[Jasmine 2](https://jasmine.github.io) specifications which are executed
+[Jasmine 3](https://jasmine.github.io) specifications which are executed
 by the [Karma](https://karma-runner.github.io) test runner.
 
 ### Controllers
@@ -169,7 +169,7 @@ angular.module('juiceShop').controller('ContactController', [
 :rotating_light: Unit tests for all controllers can be found in the
 `test/client/controllers` folder. Like the
 [service unit tests](#services) they are written in
-[Jasmine 2](https://jasmine.github.io) and run on
+[Jasmine 3](https://jasmine.github.io) and run on
 [Karma](https://karma-runner.github.io).
 
 ### Views
