@@ -57,15 +57,16 @@ Any release from `master` is tagged with a unique version in the format
 >    backwards-compatible manner, and
 > 3. `PATCH` version when you make backwards-compatible bug fixes.[^1]
 
-The current version of the project must be manually maintained in the
-following two places:
+The current version of the project (omitting the leading `v`) must be
+manually maintained in the following three places:
 
-* `/package.json` in property `"version"`
-* `/bower.json` in property `"version"`
+* `/package.json` in the `"version"` property
+* `/app/package.json` in the `"version"` property
+* `/Dockerfile` in the `LABEL` named `org.label-schema.version`
 
-All other occurrences of the version (i.e. Docker images, packaged
-releases & the menu bar of the application itself) are resolved through
-the `"version"` property of `/package.json` automatically.
+All other occurrences of the version (i.e. packaged releases & the menu
+bar of the application itself) are resolved through the `"version"`
+property of `/package.json` automatically.
 
 ### Pull requests
 
@@ -92,21 +93,23 @@ The minimum requirements for code contributions are:
 
 ### JavaScript standard style guide
 
-As a preliminary step, the `npm test` script verifies code compliance with
-the `standard` style before running any test. If PRs deviate from this
-coding style, they will immediately fail their build and will not be
-merged until compliant.
+As a preliminary step, the `npm test` script verifies code compliance
+with the `standard` style before running any test. If PRs deviate from
+this coding style, they will immediately fail their build and will not
+be merged until compliant.
 
 ![JavaScript Style Guide](img/badge.svg)
 
 In case your PR is failing from style guide issues try running `standard
 --fix` over your code - this will fix all syntax or code style issues
-automatically without breaking your code. You might need to `npm i -g
-standard` first.
+automatically without breaking your code.
+
+:point_up: For this you will need to install `standard` globally on your
+computer with `npm i -g standard`.
 
 ### Testing
 
-```
+```shell
 npm test           # check for code style violations and run all unit tests
 npm run frisby     # run all API integration tests
 npm run protractor # run all end-to-end tests
@@ -127,7 +130,7 @@ There is a full suite containing isolated unit tests
 * for all client-side code in `test/client`
 * for the server-side routes and libraries in `test/server`
 
-```
+```shell
 npm test
 ```
 
@@ -137,7 +140,7 @@ The integration tests in `test/api` verify if the backend for all normal
 use cases of the application works. All server-side vulnerabilities are
 also tested.
 
-```
+```shell
 npm run frisby
 ```
 
@@ -150,7 +153,7 @@ The e2e test suite in `test/e2e` verifies if all client- and server-side
 vulnerabilities are exploitable. It passes only when all challenges are
 solvable on the score board.
 
-```
+```shell
 npm run protractor
 ```
 
@@ -165,7 +168,7 @@ code that should cause one or more tests to fail. If none does this
 "mutated line" is not properly covered by meaningful assertions and the
 mutation testing engine that will inform you about this.
 
-```
+```shell
 npm run stryker
 ```
 
@@ -228,7 +231,7 @@ archives for another easy setup method. When you contribute a change
 that impacts what the application needs to include, make sure you test
 this manually on your system.
 
-```
+```shell
 grunt package
 ```
 
