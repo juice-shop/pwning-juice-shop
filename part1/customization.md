@@ -293,3 +293,7 @@ Juice Shop:
 * [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
   this customization is for you. :us:
+
+![Mozilla-CTF theme](https://github.com/bkimminich/pwning-juice-shop/raw/master/part1/img/theme_mozilla.png)
+
+![BodgeIt Store theme](https://github.com/bkimminich/pwning-juice-shop/raw/master/part1/img/theme_bodgeit.png)
