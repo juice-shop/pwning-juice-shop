@@ -324,9 +324,13 @@ work.
 
 ## Server Tier
 
-:wrench: **TODO**
+The backend of OWASP Juice Shop is a [Node.js](https://nodejs.org)
+application based on the [Express](http://expressjs.com) web framework.
 
 ![Server tier focus](img/architecture-server.png)
+
+:information_source: On the server side all JavaScript code must be
+compliant to ECMAScript 6 (ES6) syntax.
 
 ### Routes
 
