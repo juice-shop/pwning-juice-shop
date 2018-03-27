@@ -370,11 +370,54 @@ level.
 
 ### Custom libraries
 
-:wrench: **TODO**
+Two important and widely used custom libraries reside in the `lib`
+folder, one containing useful utilities (`lib/utils.js`) and the other
+encapsulating many of the broken security features (`lib/insecurity.js`)
+of the application.
 
 #### Useful utilities
 
-:wrench: **TODO**
+The main responsibility of the `utils.js` module is setting challenges
+as solved and sending associated notifications, optionally including a
+CTF flag code. It can also retrieve any challenge by its name and check
+if a passed challenge is not yet solved, to avoid unnecessary (and
+sometimes expensive) repetitive solving of the same challenge.
+
+```ecmascript 6
+exports.solve = function (challenge, isRestore) {
+  const self = this
+  challenge.solved = true
+  challenge.save().then(solvedChallenge => {
+    solvedChallenge.description = entities.decode(sanitizeHtml(solvedChallenge.description, {
+      allowedTags: [],
+      allowedAttributes: []
+    }))
+    console.log(colors.green('Solved') + ' challenge ' + colors.cyan(solvedChallenge.name) + ' (' + solvedChallenge.description + ')')
+    self.sendNotification(solvedChallenge, isRestore)
+  })
+}
+
+exports.sendNotification = function (challenge, isRestore) {
+  if (!this.notSolved(challenge)) {
+    const flag = this.ctfFlag(challenge.name)
+    const notification = {
+      name: challenge.name,
+      challenge: challenge.name + ' (' + challenge.description + ')',
+      flag: flag,
+      hidden: !config.get('application.showChallengeSolvedNotifications'),
+      isRestore: isRestore
+    }
+    notifications.push(notification)
+    if (global.io) {
+      global.io.emit('challenge solved', notification)
+    }
+  }
+}
+```
+
+It also offers some basic `String` and `Date` utilities along with data
+(un-)wrapper functions and a method for the synchronous file download
+used during [Customization](../part1/customization.md).
 
 #### Insecurity features
 
