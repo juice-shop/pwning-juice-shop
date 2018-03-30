@@ -421,7 +421,24 @@ used during [Customization](../part1/customization.md).
 
 #### Insecurity features
 
-:wrench: **TODO**
+The `insecurity.js` module offers all security-relevant utilities of the
+application, but of course mostly in some broken or flawed way:
+
+* Hashing functions borh weak (`hash()`) and relatively strong
+  (`hmac()`)
+* [Route](#routes) authorization via JWT with `denyAll()` and
+  `authorize()` and corresponding checks for a user with
+  `isAuthorized()`
+* HTML sanitization by exposing a (vulnerable) external library as
+  function `sanitizeHtml()`
+* Keeping a bi-directional map of users with their current
+  authentication token (JWT) in `authenticatedUsers`
+* Coupon code creation and verification functions `generateCoupon()` and
+  `discountFromCoupon()`
+* A whitelist of allowed redirect URLs and a corresponding check
+  function `isRedirectAllowed()`
+* CAPTCHA verification via `verifyCaptcha()` which compares the user's
+  answer against the requested CAPTCHA from the database
 
 ## Storage Tier
 
@@ -431,7 +448,45 @@ used during [Customization](../part1/customization.md).
 
 ### Database
 
-:wrench: **TODO**
+For the main database of the Juice Shop the file-based
+[SQLite](https://www.sqlite.org) engine is used. It does not require a
+separate server but is accessed directly from `data/juiceshop.sqlite` on
+the file system of the Node.js server. For ease of use and more
+flexibility the relational mapping framework
+[Sequelize](http://docs.sequelizejs.com) is used to actually access the
+data through a querying API. Sometime plain SQL is used as well, and of
+course in an unsafe way that allows [Injection](../part2/injection.md).
+
+#### Data model
+
+The relational data model of the Juice Shop is very straightforward. It
+features the following tables:
+
+* `Users` which contains all registered users (i.e. potential customers)
+  of the web shop.
+* The table `SecurityQuestions` contains a fixed number of security
+  questions a user has to choose from during registration. The provided
+  answer is stored in the table `SecurityAnswers`.
+* The `Products` table contains the products available in the shop
+  including price data.
+* When logging in every user receives a shopping basket represented by a
+  row in the `Baskets` table. When putting products into the basket this
+  is reflected by entries in `BasketItems` linking a product to a basket
+  together with a quantity.
+* Users can interact further with the shop by
+  * giving feedback which is stored in the `Feedbacks` table
+  * complaining about recent orders which creates entries in the
+    `Complaints` table
+  * asking for fruit-pressing leftovers to be collected for recycled via
+    the `Recycles` table.
+* The table `Captchas` stores all generated CAPTCHA questions and
+  answers for comparison with the users response.
+* The `Challenges` table would not be part of the data model of a normal
+  e-commerce application, but for simplicities sake it is kept in the
+  same schema. This table stores all hacking challenges that the OWASP
+  Juice Shop offers and persists if the user already solved them or not.
+
+![ERM Diagram](img/erm-diagram.png)
 
 #### Populating the DB
 
