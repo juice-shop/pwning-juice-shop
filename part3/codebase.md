@@ -442,7 +442,14 @@ application, but of course mostly in some broken or flawed way:
 
 ## Storage Tier
 
-:wrench: **TODO**
+[SQLite](https://www.sqlite.org) and
+[MarsDB](https://github.com/c58/marsdb) form the backbone of the Juice
+Shop, as an e-commerce application without storage for its product,
+customer and associated data would not be very realistic. The Juice Shop
+uses light-weight implementations on the database layer to keep it
+runnable as a single "all-inclusive" server which
+[can be deployed in various ways](../part1/running.md#run-options) with
+ease.
 
 ![DB tier focus](img/architecture-database.png)
 
@@ -494,11 +501,31 @@ features the following tables:
 
 ### Non-relational database
 
-:wrench: **TODO**
+Not all data of the Juice Shop resides in a relational schema. The
+product `reviews` are stored in a non-relational in-memory
+[MarsDB](https://github.com/c58/marsdb) instance. An example user
+`reviews` entry might look like the following inside MarsDB:
+
+```
+{"message":"One of my favorites!","author":"admin@juice-sh.op","product":1,"_id":"PaZjAKKMaxWieSF65"}
+```
+
+All interaction with MarsDB happens via the MongoDB query syntax.
 
 ### File system
 
-:wrench: **TODO**
+The folder `ftp` contains some files which are directly accessible. When
+a user completes a purchase, an order confirmation PDF is generated and
+placed into this folder. Other than that the `ftp` folder is also used
+to deliver the shop's terms of use to interested customers.
+
+#### Uploaded complaint files
+
+The _File complaint_ page contains a file upload field to attach one of
+the previously mentioned order confirmation PDFs. While these are really
+uploaded to the server, they are _not written_ to the file system but
+discarded for security reasons: Publicly hosted Juice Shop instances are
+not supposed to be abused a malware distribution sites or file shares.
 
 ## End-to-end tests
 
