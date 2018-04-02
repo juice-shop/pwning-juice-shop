@@ -957,7 +957,7 @@ Two alternate (but more complex) solutions:
 The latter is actually the way it is implemented in the end-to-end test
 for this challenge:
 
-```ecmascript 6
+```javascript
   let comment, rating, submitButton, captcha
   
   beforeEach(() => {

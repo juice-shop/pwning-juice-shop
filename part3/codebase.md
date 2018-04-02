@@ -330,7 +330,7 @@ application based on the [Express](http://expressjs.com) web framework.
 ![Server tier focus](img/architecture-server.png)
 
 :information_source: On the server side all JavaScript code must be
-compliant to ECMAScript 6 (ES6) syntax.
+compliant to javascript (ES6) syntax.
 
 ### Routes
 
@@ -383,7 +383,7 @@ CTF flag code. It can also retrieve any challenge by its name and check
 if a passed challenge is not yet solved, to avoid unnecessary (and
 sometimes expensive) repetitive solving of the same challenge.
 
-```ecmascript 6
+```javascript
 exports.solve = function (challenge, isRestore) {
   const self = this
   challenge.solved = true
