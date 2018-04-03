@@ -495,10 +495,6 @@ features the following tables:
 
 ![ERM Diagram](img/erm-diagram.png)
 
-#### Populating the DB
-
-:wrench: **TODO**
-
 ### Non-relational database
 
 Not all data of the Juice Shop resides in a relational schema. The
@@ -511,6 +507,49 @@ product `reviews` are stored in a non-relational in-memory
 ```
 
 All interaction with MarsDB happens via the MongoDB query syntax.
+
+### Populating the databases
+
+The OWASP Juice Shop comes with a `data/datacreator.js` module that is
+automatically executed on every server start after the SQLite file and
+in-memory MarsDB have been cleared. It populates all tables with some
+initial data which makes the application usable out-of-the-box:
+
+```javascript
+module.exports = async () => {
+  const creators = [
+    createUsers,
+    createChallenges,
+    createRandomFakeUsers,
+    createProducts,
+    createBaskets,
+    createBasketItems,
+    createFeedback,
+    createComplaints,
+    createRecycles,
+    createSecurityQuestions,
+    createSecurityAnswers
+  ]
+
+  for (const creator of creators) {
+    await creator()
+  }
+}
+```
+
+For the `Users` and `Challenges` tables the rows to be inserted are
+defined via YAML files in the `data/static` folder. As the contents of
+the `Products` table and the non-relational `reviews` collection
+[can be customized](../part1/customization.md), it is populated based on
+the active configuration file. By default this is `config/default.yml`).
+
+The data in the `Feedbacks`, `SecurityQuestions`, `SecurityAnswers`,
+`Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically
+defined within the `datacreator.js` script. They are so simple that a
+YAML declaration file seemed like overkill.
+
+The `Captchas` table remains empty on startup, as it will dynamically
+generate a new CAPTCHA every time the _Contact us_ page is visited.
 
 ### File system
 
