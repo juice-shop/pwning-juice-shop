@@ -337,36 +337,202 @@ compliant to javascript (ES6) syntax.
 > Routing refers to determining how an application responds to a client
 > request to a particular endpoint, which is a URI (or path) and a
 > specific HTTP request method (GET, POST, and so on).
->
+> 
 > Each route can have one or more handler functions, which are executed
 > when the route is matched.[^4]
 
-:wrench: **TODO**
+Routes are defined via the the [Express](http://expressjs.com) framework
+and can be handled by any of the following middlewares:
 
-:rotating_light: Unit tests for all routes can be found in the
+* An [automatically generated API endpoint](#generated-api-endpoints)
+  for one of the exposed tables from the application's
+  [Data model](#data-model)
+* A [hand-written middleware](#hand-written-middleware) which
+  encapsulates some business or technical responsibility
+* Some third-party middleware that fulfills a non-functional requirement
+  such as
+  * file serving (via `serve-index` and `serve-favicon`)
+  * adding HTTP security headers (via `helmet` and `cors`)
+  * extracting cookies from HTTP requests (via `cookie-parser`)
+  * writing access logs (via `morgan`)
+  * catching unhandled exceptions and presenting a default error screen
+    (via `errorhandler`)
+
+:rotating_light: Integration tests for all routes can be found in the
+`test/api` folder alongside all other API endpoint tests, from where
+[Frisby.js](https://www.frisbyjs.com/)/[Jest](https://facebook.github.io/jest/)
+assert the functionality of the entire backend on HTTP-request/response
+level.
+
+#### Generated API endpoints
+
+Juice Shop uses the [Epilogue](https://github.com/dchester/epilogue)
+middleware to automatically create REST endpoints for most of its
+Sequelize models. For e.g. the `User` model the generated endpoints are:
+
+* `/api/Users` accepting
+  * `GET` requests to retrieve all (or a filtered list of) user records
+  * and `POST` requests to create a new user record
+* `/api/Users/{id}` accepting
+  * `GET` requests to retrieve a single user record by its database ID
+  * `PATCH` requests to update a user record
+  * `DELETE` requests to delete a user record
+
+Apart from the `User` model also the `Product`, `Feedback`,
+`BasketItem`, `Challenge`, `Complaint`, `Recycle`, `SecurityQuestion`
+and `SecurityAnswer` models are exposed in this fashion.
+
+Not all HTTP verbs are accepted by every endpoint. Furthermore, some
+endpoints are protected against anonymous access and can only be used by
+an authenticated user. This is described later in section
+[Access control on routes](#access-control-on-routes).
+
+```javascript
+epilogue.initialize({
+  app,
+  sequelize: models.sequelize
+})
+
+const autoModels = ['User', 'Product', 'Feedback',
+'BasketItem', 'Challenge', 'Complaint', 'Recycle',
+'SecurityQuestion', 'SecurityAnswer']
+
+for (const modelName of autoModels) {
+  const resource = epilogue.resource({
+    model: models[modelName],
+    endpoints: [`/api/${modelName}s`, `/api/${modelName}s/:id`]
+  })
+
+  // fix the api difference between epilogue and previously
+  // used sequlize-restful
+  resource.all.send.before((req, res, context) => {
+    context.instance = {
+      status: 'success',
+      data: context.instance
+    }
+    return context.continue
+  })
+}
+```
+
+#### Hand-written middleware
+
+The business functionality in the application backend is separated into
+tightly scoped middleware components which are placed in the `routes`
+folder.
+
+![Express routes folder](img/routesFolder.png)
+
+These middleware components are directly mapped to
+[Express](http://expressjs.com) routes.
+
+Each middleware exposes a single function which encapsulates their
+responsibility. For example, the `angular.js` middleware delivers the
+`index.html` page to the client:
+
+```javascript
+const path = require('path')
+const utils = require('../lib/utils')
+
+module.exports = function serveAngularClient () {
+  return ({url}, res, next) => {
+    if (!utils.startsWith(url, '/api') && !utils.startsWith(url, '/rest')) {
+      res.sendFile(path.resolve(__dirname, '../app/index.html'))
+    } else {
+      next(new Error('Unexpected path: ' + url))
+    }
+  }
+}
+```
+
+If a hand-written middleware is involved in a hacking challenge, it must
+assess on its own if the challenge has been solved. For example, in the
+`basket.js` middleware where successfully accessing another user's
+shopping basket is verified:
+
+```javascript
+const utils = require('../lib/utils')
+const insecurity = require('../lib/insecurity')
+const models = require('../models/index')
+const challenges = require('../data/datacache').challenges
+
+module.exports = function retrieveBasket () {
+  return (req, res, next) => {
+    const id = req.params.id
+    models.Basket.find({ where: { id }, include: [ { model: models.Product, paranoid: false } ] })
+      .then(basket => {
+        if (utils.notSolved(challenges.basketChallenge)) {
+          const user = insecurity.authenticatedUsers.from(req)
+          if (user && id && id !== 'undefined' && user.bid != id) {
+            utils.solve(challenges.basketChallenge)
+          }
+        }
+        res.json(utils.queryResultToJson(basket))
+      }).catch(error => {
+        next(error)
+      })
+  }
+}
+```
+
+The only middleware deviating from above specification is `verify.js`.
+It contains no business functionality. Instead of one function it
+exposes several named functions on challenge verification for
+[Generated API endpoints](#generated-api-endpoints), for example:
+
+```
+app.post('/api/Feedbacks', verify.forgedFeedbackChallenge())
+app.post('/api/Feedbacks', verify.captchaBypassChallenge())
+```
+
+The same applied for any challenges on top of third-party middleware,
+for example:
+
+```
+app.use(verify.errorHandlingChallenge())
+app.use(errorhandler())
+```
+
+Similar to the [Generated API endpoints](#generated-api-endpoints), not
+all hand-written endpoints can be used anonymously. The upcoming section
+[Access control on routes](#access-control-on-routes) explains the
+available authorization checks.
+
+:rotating_light: Unit tests for hand-written routes can be found in the
 `test/server` folder. These tests are written using the
 [Chai](http://chaijs.com/) assertion library in conjunction with the
 [Mocha](https://mochajs.org/) test framework.
 
-#### Generated API endpoints
+#### Access control on routes
 
-:rotating_light: Integration tests for all API endpoints can be found in
-the `test/api` folder. These tests are specified using
-[Frisby.js](https://www.frisbyjs.com/) and are executed by Facebook's
-[Jest](https://facebook.github.io/jest/).
+For both the generated and hand-written middleware access can be
+retricted on the corresponding routes by adding `insecurity.denyAll()`
+or `insecurity.isAuthorized()` as an extra middleware. Examples for
+denying all access to certain HTTP verbs for the `SecurityQuestion` and
+`SecurityAnswer` models:
 
-:wrench: **TODO**
+```javascript
+/* SecurityQuestions: Only GET list of questions allowed. */
+app.post('/api/SecurityQuestions', insecurity.denyAll())
+app.use('/api/SecurityQuestions/:id', insecurity.denyAll())
 
-#### Hand-written routes
+/* SecurityAnswers: Only POST of answer allowed. */
+app.get('/api/SecurityAnswers', insecurity.denyAll())
+app.use('/api/SecurityAnswers/:id', insecurity.denyAll())
+```
 
-:wrench: **TODO**
+The following snippet show the authorization settings for the `User`
+model which allows only `POST` to anonymous users (for registration) and
+requires to be logged-in for retrieving the list of users or individual
+user records. Deleting users is completely forbidden:
 
-:rotating_light: Integration tests for hand-written routes can be found
-in the `test/api` folder alongside all other API endpoint tests, from
-where
-[Frisby.js](https://www.frisbyjs.com/)/[Jest](https://facebook.github.io/jest/)
-assert the functionality of the entire backend on HTTP-request/response
-level.
+```javascript
+app.get('/api/Users', insecurity.isAuthorized())
+app.route('/api/Users/:id')
+  .get(insecurity.isAuthorized())
+  .put(insecurity.denyAll()) // Updating users is forbidden to make the password change challenge harder
+  .delete(insecurity.denyAll()) // Deleting users is forbidden entirely to keep login challenges solvable
+```
 
 ### Custom libraries
 
@@ -427,8 +593,9 @@ application, but of course mostly in some broken or flawed way:
 * Hashing functions borh weak (`hash()`) and relatively strong
   (`hmac()`)
 * [Route](#routes) authorization via JWT with `denyAll()` and
-  `authorize()` and corresponding checks for a user with
-  `isAuthorized()`
+  `isAuthorized()` (see
+  [Access control on routes](#access-control-on-routes)) and
+  corresponding grant of permission for a users with `authorize()`
 * HTML sanitization by exposing a (vulnerable) external library as
   function `sanitizeHtml()`
 * Keeping a bi-directional map of users with their current
