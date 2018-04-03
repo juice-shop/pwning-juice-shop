@@ -742,7 +742,27 @@ not supposed to be abused a malware distribution sites or file shares.
 > integration between components which can't be captured in a unit test.
 > End-to-end tests are made to find these problems.[^5]
 
-:wrench: **TODO**
+The folder `test/e2e` contains an extensive suite of end-to-end tests
+which **automatically solves _every_ challenge** in the Juice Shop
+application. Whenever a new challenge is added, a corresponding
+end-to-end test needs to be included, to prove that it can be exploited.
+
+It is quite an impressive sight to see how
+{{book.juiceShopNumberOfChallenges}} hacking challenges are solved
+without any human interaction in a few minutes. The e2e tests constantly
+jump back and forth between attacked pages and the
+[Score Board](../part1/challenges.md#the-score-board) letting you watch
+as the difficulty stars and progress bar slowly fill and ever more green
+"solved"-badges appear. There is a
+[video recording of this on YouTube](https://www.youtube.com/watch?v=oiFUdZlS7zI)
+for the 7.0.0 release of the Juice Shop.
+
+[![OWASP Juice Shop 7.0.0 - Protractor test suite](img/protractor-youtube.png)](https://www.youtube.com/watch?v=oiFUdZlS7zI)
+
+These tests are written and executed with
+[Protractor](https://www.protractortest.org) which uses
+[Selenium WebDriver](https://www.seleniumhq.org/projects/webdriver/)
+under the hood.
 
 [^1]: https://docs.angularjs.org/guide/services
 
