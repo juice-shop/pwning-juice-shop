@@ -4,11 +4,16 @@
 
 | Challenge                                               | Difficulty                     |
 |:--------------------------------------------------------|:-------------------------------|
+| Behave like any "white-hat" security researcher should. | :star::star:                   |
 | Find the hidden easter egg.                             | :star::star::star::star:       |
 | Access a developer's forgotten backup file.             | :star::star::star::star:       |
 | Access a misplaced SIEM signature file.                 | :star::star::star::star:       |
 | Wherever you go, there you are.                         | :star::star::star::star:       |
 | Submit 10 or more customer feedbacks within 10 seconds. | :star::star::star::star::star: |
+
+### Behave like any "white-hat" security researcher should
+
+:wrench: **TODO**
 
 ### Find the hidden easter egg
 

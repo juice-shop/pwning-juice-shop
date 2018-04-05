@@ -144,6 +144,10 @@ error situation and solve this challenge along the way:
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the Angular client.
 
+### Behave like any "white-hat" security researcher should
+
+:wrench: **TODO**
+
 ### Order the Christmas special offer of 2014
 
 1. Observe the JavaScript console while submitting the text `';` via the
