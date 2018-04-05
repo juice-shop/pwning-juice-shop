@@ -228,6 +228,10 @@ The entire output of the tool will finally be written into
 `OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started
 in.
 
+#### Non-interactive generator mode
+
+:wrench: **TODO**
+
 ### Running CTFd
 
 To apply the generated `.zip`, follow the steps describing your
