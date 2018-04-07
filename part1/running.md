@@ -129,6 +129,22 @@ docker pull bkimminich/juice-shop
 docker run -d -p 80:3000 bkimminich/juice-shop
 ```
 
+### Azure Web App for Containers
+
+1. Open your [Azure CLI](https://azure.github.io/projects/clis/) **or**
+   login to the [Azure Portal](https://portal.azure.com), open the
+   _CloudShell_ and then choose _Bash_ (not PowerShell).
+2. Create a resource group by running `az group create --name <group
+   name> --location <location name, e.g. "East US">`
+3. Create an app service plan by running `az appservice plan create
+   --name <plan name> --resource-group <group name> --sku S1 --is-linux`
+4. Create a web app with the
+   [Juice Shop Docker](https://registry.hub.docker.com/u/bkimminich/juice-shop/)
+   image by running the following (on one line in the bash shell) `az
+   webapp create --resource-group <group name> --plan <plan name> `
+   `--name <app name> --deployment-container-image-name
+   bkimminich/juice-shop`
+
 ## _Self-healing_-feature
 
 OWASP Juice Shop was not exactly designed and built with a high

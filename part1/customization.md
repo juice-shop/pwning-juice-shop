@@ -133,6 +133,16 @@ find its syntax along with an excerpt of the default settings.
       information. Defaults to `'But me wait!'`
     * `linkUrl` provides further information about cookie usage.
       Defaults to `'https://www.youtube.com/watch?v=9PnbKL3wuH4'`
+  * `securityTxt` defines the attributes for the `security.txt` file
+    based on the <https://securitytxt.org/> Internet draft
+    * `contact` an email address, phone number or URL to report security
+      vulnerabilities to. Can be fake obviously. Defaults to
+      `mailto:donotreply@owasp-juice.shop`
+    * `encryption` URL to a public encryption key for secure
+      communication. Can be fake obviously. Defaults to
+      `https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda`
+    * `acknowledgements` URL a "hall of fame" page. Can be fake
+      obviously. Defaults to `/#/score-board`
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -167,8 +177,8 @@ find its syntax along with an excerpt of the default settings.
   * `reviews` a sub-list which adds reviews to a product (_optional_)
     * `text` of the review (_mandatory_)
     * `author` of the review from the following list of pre-defined
-      users in the database: `admin`, `jim`, `bender`, `ciso`, `support`, `morty` or
-      `mc.safesearch` (_mandatory_)
+      users in the database: `admin`, `jim`, `bender`, `ciso`,
+      `support`, `morty` or `mc.safesearch` (_mandatory_)
 
 ### Configuration example
 
@@ -204,6 +214,10 @@ application:
     dismissText: 'Me want it!'
     linkText: 'But me wait!'
     linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
+  securityTxt:
+    contact: 'mailto:donotreply@owasp-juice.shop'
+    encryption: 'https://pgp.mit.edu/pks/lookup?op=get&search=0x062A85A8CBFBDCDA'
+    acknowledgements: '/#/score-board'
 products:
   -
     name: 'Apple Juice (1000ml)'
