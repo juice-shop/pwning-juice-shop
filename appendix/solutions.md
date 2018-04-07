@@ -105,6 +105,10 @@ error situation and solve this challenge along the way:
 
 ### Perform a reflected XSS attack
 
+:wrench: **TODO**
+
+### Perform a DOM XSS attack
+
 1. Paste the attack string `<script>alert("XSS")</script>` into the
    _Search..._ field.
 2. Click the _Search_ button.

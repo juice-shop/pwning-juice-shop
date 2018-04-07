@@ -19,12 +19,13 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                          | Difficulty               |
-|:-------------------------------------------------------------------------------------------------------------------|:-------------------------|
-| Perform a reflected XSS attack with `<script>alert("XSS")</script>`.                                               | :star:                   |
-| Perform a persisted XSS attack with `<script>alert("XSS")</script>` bypassing a client-side security mechanism.    | :star::star::star:       |
-| Perform a persisted XSS attack with `<script>alert("XSS")</script>` without using the frontend application at all. | :star::star::star:       |
-| Perform a persisted XSS attack with `<script>alert("XSS")</script>` bypassing a server-side security mechanism.    | :star::star::star::star: |
+| Challenge                                                                                                            | Difficulty               |
+|:---------------------------------------------------------------------------------------------------------------------|:-------------------------|
+| Perform a _reflected_ XSS attack with `<script>alert("XSS")</script>`.                                               | :star:                   |
+| Perform a _DOM_ XSS attack with `<script>alert("XSS")</script>`.                                                     | :star:                   |
+| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` bypassing a client-side security mechanism.    | :star::star::star:       |
+| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` without using the frontend application at all. | :star::star::star:       |
+| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` bypassing a server-side security mechanism.    | :star::star::star::star: |
 
 ### Perform a reflected XSS attack
 
@@ -35,6 +36,27 @@
 > link or third-party web page. The attack string is included as part of
 > the crafted URI or HTTP parameters, improperly processed by the
 > application, and returned to the victim.[^2]
+
+#### Hints
+
+:wrench: **TODO**
+
+### Perform a DOM XSS attack
+
+> DOM-based Cross-Site Scripting is the de-facto name for XSS bugs which
+> are the result of active browser-side content on a page, typically
+> JavaScript, obtaining user input and then doing something unsafe with
+> it which leads to execution of injected code.
+>
+> The DOM, or Document Object Model, is the structural format used to
+> represent documents in a browser. The DOM enables dynamic scripts such
+> as JavaScript to reference components of the document such as a form
+> field or a session cookie. The DOM is also used by the browser for
+> security - for example to limit scripts on different domains from
+> obtaining session cookies for other domains. A DOM-based XSS
+> vulnerability may occur when active content, such as a JavaScript
+> function, is modified by a specially crafted request such that a DOM
+> element that can be controlled by an attacker.[^3]
 
 #### Hints
 
@@ -52,7 +74,7 @@ input validation:
 > Be aware that any JavaScript input validation performed on the client
 > can be bypassed by an attacker that disables JavaScript or uses a Web
 > Proxy. Ensure that any input validation performed on the client is
-> also performed on the server.[^3]
+> also performed on the server.[^4]
 
 #### Hints
 
@@ -125,5 +147,7 @@ approach._
 
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 
-[^3]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
+[^3]: https://www.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)
+
+[^4]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
 
