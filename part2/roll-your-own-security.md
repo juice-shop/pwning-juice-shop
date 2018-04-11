@@ -4,16 +4,31 @@
 
 | Challenge                                               | Difficulty                     |
 |:--------------------------------------------------------|:-------------------------------|
-| Behave like any "white-hat" security researcher should. | :star::star:                   |
+| Behave like any "white hat" should.                     | :star::star:                   |
 | Find the hidden easter egg.                             | :star::star::star::star:       |
 | Access a developer's forgotten backup file.             | :star::star::star::star:       |
 | Access a misplaced SIEM signature file.                 | :star::star::star::star:       |
 | Wherever you go, there you are.                         | :star::star::star::star:       |
 | Submit 10 or more customer feedbacks within 10 seconds. | :star::star::star::star::star: |
 
-### Behave like any "white-hat" security researcher should
+### Behave like any "white hat" should
 
-:wrench: **TODO**
+> The term "white hat" in Internet slang refers to an ethical computer
+> hacker, or a computer security expert, who specializes in penetration
+> testing and in other testing methodologies to ensure the security of
+> an organization's information systems. Ethical hacking is a term meant
+> to imply a broader category than just penetration testing. Contrasted
+> with black hat, a malicious hacker, the name comes from Western films,
+> where heroic and antagonistic cowboys might traditionally wear a white
+> and a black hat respectively.
+
+#### Hints
+
+* This challenge asks you to act like an ethical hacker
+* As one of the good guys, would you just start attacking an application
+  without consent of the owner?
+* You also might want to ready the security policy or any bug bounty
+  program that is in place
 
 ### Find the hidden easter egg
 

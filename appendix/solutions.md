@@ -105,7 +105,12 @@ error situation and solve this challenge along the way:
 
 ### Perform a reflected XSS attack
 
-:wrench: **TODO**
+1. Log in as any user.
+2. Click the _Track Orders_ button.
+3. Paste the attack string `<script>alert("XSS")</script>` into the
+   _Order ID_ field.
+4. Click the _Track_ button.
+5. An alert box with the text "XSS" should appear.
 
 ### Perform a DOM XSS attack
 
@@ -240,9 +245,14 @@ If the challenge is not immediately solved, you might have to
    which is as easy to guess as it is to brute force or retrieve from a
    rainbow table.
 
-### Behave like any "white-hat" security researcher should
+### Behave like any "white hat" should
 
-:wrench: **TODO**
+1. Visit <https://securitytxt.org/> to learn about a proposed standard
+   which allows websites to define security policies.
+2. Request the security policy file from the server at
+   <http://localhost:3000/security.txt> to solve the challenge.
+3. Optionally, write an email to the mentioned contact address
+   <mailto:donotreply@owasp-juice.shop> and see what happens... :e-mail:
 
 ### Inform the shop about an algorithm or library it should definitely not use the way it does
 

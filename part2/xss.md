@@ -39,7 +39,10 @@
 
 #### Hints
 
-:wrench: **TODO**
+* Look for an input field where its content appears in the response HTML
+  when its form is submitted.
+* Try probing for XSS vulnerabilities by submitting text wrapped in an
+  HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
 ### Perform a DOM XSS attack
 
@@ -60,10 +63,10 @@
 
 #### Hints
 
-* Look for an input field where its content appears in the response HTML
-  when its form is submitted.
-* Try probing for XSS vulnerabilities by submitting text wrapped in an
-  HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
+* This challenge is almost indistinguishable from
+  [Perform a reflected XSS attack](#perform-a-reflected-xss-attack) if
+  you do not look "under the hood" to find out what the application
+  actually does with the user input
 
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 
