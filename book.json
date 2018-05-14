@@ -18,11 +18,11 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v7.1.0",
-    "juiceShopCtfVersion": "v4.1.0",
+    "juiceShopVersion": "v7.2.0",
+    "juiceShopCtfVersion": "v4.2.0",
     "ctfdVersion": "≥1.1.0",
     "juiceShopNumberOfChallenges": 61,
-    "nodeVersions": "8.x and 9.x",
+    "nodeVersions": "8.x, 9.x and (experimentally) 10.x",
     "recommendedNodeVersion": "9.x"
   }
 }
