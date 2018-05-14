@@ -1549,7 +1549,7 @@ to use some unofficial port._
 
 1. Inspecting the HTML source of the corresponding row in the _Score
    Board_ table reveals a HTML comment that is obviously encrypted:
-   `<!--i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ==-->`.
+   `<!--IvLuRfBJYlmStf9XfL6ckJFngyd9LfV1JaaN/KRTPQPidTuJ7FR+D/nkWJUF+0xUF07CeCeqYfxq+OJVVa0gNbqgYkUNvn//UbE7e95C+6e+7GtdpqJ8mqm4WcPvUGIUxmGLTTAC2+G9UuFCD1DUjg==-->`.
 
    ![DOM inspection of the Unlock Premium Challenge button](img/inspect-premium_challenge.png)
 2. This is a cipher text that came out of an AES-encryption using AES256
@@ -1568,9 +1568,9 @@ to use some unofficial port._
       and the IV `1337`.
 4. In order to decrypt the cipher text, it is best to use `openssl`.
    - `echo
-     "i0ycvJyZ+WoHTEIjAatNFK5A8r8GxRbwOLC2OuXHVsZcKkEc3lRgc58KjEKn2Byj8Fg3A3ai5yahQANdWL/5j5k3E3qHTjm93tuenE0YlauCdy+7tGkFvo5OltIhiXSWt1SiICecyghFZ8ca/aKtHQ=="
+     "IvLuRfBJYlmStf9XfL6ckJFngyd9LfV1JaaN/KRTPQPidTuJ7FR+D/nkWJUF+0xUF07CeCeqYfxq+OJVVa0gNbqgYkUNvn//UbE7e95C+6e+7GtdpqJ8mqm4WcPvUGIUxmGLTTAC2+G9UuFCD1DUjg=="
      | openssl enc -d -aes-256-cbc -K EA99A61D92D2955B1E9285B55BF2AD42
-     -iv 1337 -a -A`
+     -iv 1337133713371337 -a -A`
    - The plain text is:
      `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
 5. Visit
