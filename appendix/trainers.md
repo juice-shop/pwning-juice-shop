@@ -1,6 +1,6 @@
 # Appendix B - Trainer's Guide
 ## Instances
-Make sure every participant should have his/her own running Juice Shop instance. While challenges like "XSS Tier 0" do not change the state. Solving challenges like "RCE Tier 1" completly take down the shop  anddo effect other participants, in case they are using the same instance. 
+Make sure every participant should have his/her own running Juice Shop instance. While challenges like "XSS Tier 0" do not change the state. Solving challenges like "RCE Tier 1" completly take down the shop and do effect other participants, in case they are using the same instance. 
 There are multiple []Run Options](https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content/part1/running.html#run-options) which you can choose from.
 It is perfectly fine to run multiple docker containers on one host. They do not effect each other.
 
