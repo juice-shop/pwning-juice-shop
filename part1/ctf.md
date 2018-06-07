@@ -136,32 +136,23 @@ score server's user interface, typically via their browser:
 
 Juice Shop comes with
 [the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
-to to simplify the hosting of CTFs using the open source
-[CTFd](https://ctfd.io) framework. This can significantly speed up your
-setup time for an event, because things like using the same secret key
-for the flag codes are taken care of mostly automatic.
+to to simplify the hosting of CTFs using popular open source frameworks
+or game servers. This can significantly speed up your setup time for an
+event, because things like using the same secret key for the flag codes
+are taken care of mostly automatic.
 
-CTFd is a very well-written and stable piece of Open Source Software,
-which is why OWASP Juice Shop recommends it as its preferred CTF score
-server!
-
-![CTFd logo](img/ctfd_logo.png)
-
-This setup guide assumes that you use CTFd {{book.ctfdVersion}} or
-higher.
-
-### Generating CTFd challenges with `juice-shop-ctf-cli`
+### Generating challenge import files with `juice-shop-ctf-cli`
 
 The
 [`juice-shop-ctf-cli`](https://www.npmjs.com/package/juice-shop-ctf-cli)
-is a simple command line tool, which will generate a ZIP-archive
-compatible with CTFd's data backup format. This can be imported to
-populate the database underneath CTFd and generate mirror images of all
+is a simple command line tool, which will generate a file compatible
+with your chosen CTF framework's data backup format. This can be
+imported to populate its database and generate mirror images of all
 current Juice Shop challenges on the score server. The following
 instructions were written for {{book.juiceShopCtfVersion}} of
 `juice-shop-ctf-cli`.
 
-To install `juice-shop-ctf-cli` you need to have Node.js 6.x or higher
+To install `juice-shop-ctf-cli` you need to have Node.js 8.x or higher
 installed. Simply execute
 
 ```bash
@@ -179,35 +170,46 @@ answers available which you can choose by simply hitting `ENTER`.
 
 ![juice-shop-ctf CLI in action](img/cli_usage_screenshot.png)
 
-1. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
+1. **CTF framework to generate data for?** Offers a selectable choice
+   between the supported CTF frameworks, which for
+   {{book.juiceShopCtfVersion}} are
+   * `CTFd` which is a very well-written and stable piece of Open Source
+     Software. This is the default choice.
+   * `FBCTF` from Facebook which is visually more advanced though not as
+     frequently updated at CTFd.
+2. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
    Shop server where the tool will retrieve the existing challenges from
    via the `/api/Challenges` API. Defaults to
    `https://juice-shop.herokuapp.com` which always hosts the latest
    official released version of OWASP Juice Shop.
-2. **Secret key <or> URL to ctf.key file?** Either a secret key to use
+3. **Secret key <or> URL to ctf.key file?** Either a secret key to use
    for the CTF flag codes _or_ a URL to a file containing such a key.
    Defaults to
    `https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key`
    which is the key file provided with the latest official OWASP Juice
    Shop release. See [Overriding the `ctf.key`](#overriding-the-ctfkey)
    for more information.
-3. **Insert a text hint along with each CTFd Challenge?** Offers a
-   selectable choice between
-   * `No text hints` will not add any hint texts to the CTFd challenges.
-     This is the default choice.
+4. **URL to country-mapping.yml file?** URL of a mapping configuration
+   of challenges to countries, which is only asked when `FBCTF` was
+   selected. Defaults to
+   `https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml`
+5. **Insert a text hint along with each challenge?** Offers a selectable
+   choice between
+   * `No text hints` will not add any hint texts to the challenges. This
+     is the default choice.
    * `Free text hints` will add the `Challenge.hint` property from the
      Juice Shop database as hint to the corresponding challenge on the
-     CTFd server. Viewing this hint is free.
+     CTF score server. Viewing this hint is free.
    * `Paid text hints` adds a hint per challenge like described above.
      Viewing this hint costs the team 10% of that challenge's score
      value.
-4. **Insert a hint URL along with each CTFd Challenge?** Offers a
-   selectable choice between
-   * `No hint URLs` will not add any hint URLs to the CTFd challenges.
-     This is the default choice.
+6. **Insert a hint URL along with each challenge?** Offers a selectable
+   choice between
+   * `No hint URLs` will not add any hint URLs to the challenges. This
+     is the default choice.
    * `Free hint URLs` will add the `Challenge.hintUrl` property from the
      Juice Shop database as a hint to the corresponding challenge on the
-     CTFd server. Viewing this hint is free.
+     CTF score server. Viewing this hint is free.
    * `Paid hint URLs` adds a hint per challenge like described above.
      Viewing this hint costs the team 20% of that challenge's score
      value.
@@ -224,9 +226,11 @@ follows:
 * 5-:star: challenge = 1000 points
 * 6-:star: challenge = 1350 points
 
-The entire output of the tool will finally be written into
-`OWASP_Juice_Shop.YYYY-MM-DD.zip` in the folder the program was started
-in.
+The generated output of the tool will finally be written into in the
+folder the program was started in. By default the output files are named
+`OWASP_Juice_Shop.YYYY-MM-DD.CTFd.zip` or
+`OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json` depending on your initial
+framework choice.
 
 #### Non-interactive generator mode
 
@@ -234,7 +238,10 @@ in.
 
 ### Running CTFd
 
-To apply the generated `.zip`, follow the steps describing your
+![CTFd logo](img/ctfd_logo.png)
+
+This setup guide assumes that you use CTFd {{book.ctfdVersion}} or
+higher. To apply the generated `.zip`, follow the steps describing your
 preferred CTFd run-mode below.
 
 #### Local server setup
@@ -268,20 +275,37 @@ in the _Challenges_ tab:
 
 ![CTFd challenge details](img/ctfd_2.png)
 
+### Running FBCTF
+
+:wrench: **TODO**
+
+The following screenshots were taken during a CTF event where Facebook's
+game server was used. Juice Shop instances were running in a Docker
+cluster and individually assigned to a participant via a load balancer.
+
+![FBCTF World Map](img/FBCTF-Iteratec-00.png)
+
+![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
+
+![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
+
+![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
+
 ## Using other CTF frameworks
 
-As mentioned above, [CTFd](https://ctfd.io) is not the only possible
-score server you can use. Open Source alternatives are for example
-[FBCTF](https://github.com/facebook/fbctf) from Facebook,
+[CTFd](https://ctfd.io) and [FBCTF](https://github.com/facebook/fbctf)
+are not the only possible score servers you can use. Open Source
+alternatives are for example
 [Mellivora](https://github.com/Nakiami/mellivora) or
 [NightShade](https://github.com/UnrealAkama/NightShade). You can find a
 nicely curated list of CTF platforms and related tools & resources in
 [Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
 
-All these platforms have one thing in common: You have to set up the
-challenges inside them on your own. Of course you can choose aspects
-like score per challenge, description etc. like you want. For the CTF to
-_actually work_ there is only one mandatory prerequisite:
+All these platforms have one thing in common: Unless you write a
+dedicated `lib/generators/`-file :wink:, you have to set up the
+challenges inside them manually on your own. Of course you can choose
+aspects like score per challenge, description etc. like you want. For
+the CTF to _actually work_ there is only one mandatory prerequisite:
 
 The flag code for each challenge must be declared as the result of
 
@@ -330,19 +354,6 @@ function hmacSha1 (secretKey, text) {
 > not) must be sent alongside the HMAC hash. Parties with the secret key
 > will hash the message again themselves, and if it is authentic, the
 > received and computed hashes will match.[^2]
-
-The following screenshots were taken during a CTF event where Facebook's
-popular [FBCTF](https://github.com/facebook/fbctf) game server was used.
-Juice Shop instances were running in a Docker cluster and individually
-assigned to a participant via a load balancer.
-
-![FBCTF World Map](img/FBCTF-Iteratec-00.png)
-
-![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
-
-![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
-
-![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
 
 ## Commercial use disclaimer
 
