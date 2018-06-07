@@ -132,7 +132,7 @@ score server's user interface, typically via their browser:
 ![CTF Infrastructure Example](/part1/img/CTF_Infrastructure.png)
 
 
-## Setting up CTFd for Juice Shop
+## Setting up CTF score servers for Juice Shop
 
 Juice Shop comes with
 [the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
