@@ -32,10 +32,10 @@ during awareness trainings to avoid distraction. The
 [Quiet](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml)
 theme demonstrates the necessary options to achieve this.
 
-For a really sophisticated demo with consider performing some
-[Additional Browser tweaks](../part1/customization.md#additional-browser-tweaks)
-which will let you use OAuth2 login via Google and cast the illusion
-that coupon code tweet actually came from your customer's company.
+For a really sophisticated and immersive demo consider performing some
+[Additional Browser tweaks](../part1/customization.md#additional-browser-tweaks).
+These will let you use OAuth2 login via Google and cast the illusion
+that coupon codes were actually tweeted by your customer's company.
 
 ## Classroom hints
 
