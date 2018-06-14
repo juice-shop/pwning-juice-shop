@@ -308,6 +308,60 @@ Juice Shop:
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
   this customization is for you. :us:
 
-![Mozilla-CTF theme](https://github.com/bkimminich/pwning-juice-shop/raw/master/part1/img/theme_mozilla.png)
+![Mozilla-CTF theme](/part1/img/theme_mozilla.png)
 
-![BodgeIt Store theme](https://github.com/bkimminich/pwning-juice-shop/raw/master/part1/img/theme_bodgeit.png)
+![BodgeIt Store theme](/part1/img/theme_bodgeit.png)
+
+## Additional Browser tweaks
+
+Consider you are doing a live demo with a highly customized corporate
+theme. Your narrative is, that this _really_ is an upcoming eCommerce
+application _of that company_ .
+[Walking the "happy path"](happy-path.md) might now lure you into two
+situations which could spoil the immersion for the audience.
+
+#### Coupon codes on social media
+
+If you changed the `twitterUrl`/`facebookUrl` to the company's own
+account/page, you will most likely not find any coupon codes posted
+there. You will probably fail to convince the social media team to tweet
+or retweet some coupon code for an application that does not even exist!
+
+![Coupon Immersion Spoiler](/part1/img/coupon_immersion-spoiler.png)
+
+#### OAuth Login
+
+Another immersion spoiler occurs when demonstrating the _Log in with
+Google_ functionality, which will show you the application name
+registered on Google Cloud Platform!
+
+![OAuth Immersion Spoiler](/part1/img/oauth_immersion-spoiler.png)
+
+### On-the-fly text replacement
+
+You can solve both of the above problems _in your own Browser_ by
+replacing text on the fly when the Twitter, Facebook or Google-Login
+page is loaded. For Chrome
+[Word Replacer II](https://chrome.google.com/webstore/detail/word-replacer-ii/djakfbefalbkkdgnhkkdiihelkjdpbfh?hl=en)
+is a plugin that does this work for you with very little setup effort.
+For Firefox
+[FoxReplace](https://addons.mozilla.org/en-US/firefox/addon/foxreplace/)
+does a similar job. After installing either plugin you have to create two text replacements:
+
+1. Create a replacement for `OWASP Juice Shop` (as it appears on
+   Google-Login) with your own application name. Best use
+   `application.name` from your configuration.
+2. Create another replacement for a complete or partial Tweet or
+   Facebook post with some marketing text and an actual coupon code. You
+   can get valid coupon codes from the OWASP Juice Shop Twitter feed:
+   <https://twitter.com/owasp_juiceshop>.
+
+  ![Word Replacer II](/part1/img/word_replacer_ii.png)
+3. Enable the plugin and verify your replacements work:
+
+![Coupon Immersion Replacement](/part1/img/coupon_immersion-replacement.png)
+
+![OAuth Immersion Replacement](/part1/img/oauth_immersion-replacement.png)
+
+
+

@@ -32,6 +32,11 @@ during awareness trainings to avoid distraction. The
 [Quiet](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml)
 theme demonstrates the necessary options to achieve this.
 
+For a really sophisticated demo with consider performing some
+[Additional Browser tweaks](../part1/customization.md#additional-browser-tweaks)
+which will let you use OAuth2 login via Google and cast the illusion
+that coupon code tweet actually came from your customer's company.
+
 ## Classroom hints
 
 In a class room setup you have to find a way to distribute the URL of
