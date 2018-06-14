@@ -1367,6 +1367,10 @@ loop`._
 
 ## Diabolic Challenges (  :star::star::star::star::star::star:  )
 
+### Overwrite the Legal Information file
+
+:wrench: **TODO**
+
 ### Forge a coupon code that gives you a discount of at least 80%
 
 For this challenge there are actually two distinct _solution paths_ that
