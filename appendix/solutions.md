@@ -334,6 +334,10 @@ You can also solve this challenge by directly sending a `POST` to
 <http://localhost:3000/api/Feedbacks> endpoint. You just need to be
 logged out and send any `UserId` in the JSON payload.
 
+### Post a product review as another user or edit any user's existing review
+
+:wrench: **TODO**
+
 ### Access a salesman's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in

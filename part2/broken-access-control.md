@@ -28,6 +28,7 @@
 | Access someone else's basket.                                                               | :star::star:       |
 | Get rid of all 5-star customer feedback.                                                    | :star::star:       |
 | Post some feedback in another users name.                                                   | :star::star::star: |
+| Post a product review as another user or edit any user's existing review.                   | :star::star::star: |
 | Change the href of the link within the O-Saft product description into http://kimminich.de. | :star::star::star: |
 
 ### Access the administration section of the store
@@ -93,6 +94,14 @@ posting a (most likely negative) feedback in his or her name!
   used for feedback submission.
 * The backend-side leverage point is similar to some of the
   [XSS challenges](xss.md) found in OWASP Juice Shop.
+
+### Post a product review as another user or edit any user's existing review
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Change the href of the link within the O-Saft product description
 
