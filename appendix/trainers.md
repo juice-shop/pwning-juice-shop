@@ -86,16 +86,17 @@ of the project references on on GitHub.
 Well suited for live demonstrations in trainings or talks are the the
 following challenges:
 
-* [XSS Tier 0](../part2/xss.md#perform-a-reflected-xss-attack) and
-  [XSS Tier 1](../part2/xss.md#perform-a-dom-xss-attack)
-* [Forged Coupon](../part2/sensitive-data-exposure.md#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
-* [CSRF](../part2/broken-authentication.md#change-benders-password-into-slurmcl4ssic-without-using-sql-injection)
-* [User Credentials](../part2/injection.md#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-* [Admin Section](../part2/broken-access-control.md#access-the-administration-section-of-the-store)
-* [Confidential Document](../part2/sensitive-data-exposure.md#access-a-confidential-document)
-* [Forgotten Sales Backup](../part2/security-misconfiguration.md#access-a-salesmans-forgotten-backup-file)
-  and
-  [Forgotten Developer Backup](../part2/roll-your-own-security.md#access-a-developers-forgotten-backup-file)
+* [XSS Tier 0](../part2/xss.md#perform-a-reflected-xss-attack) (:star:)
+* [XSS Tier 1](../part2/xss.md#perform-a-dom-xss-attack) (:star:)
+* [Admin Section](../part2/broken-access-control.md#access-the-administration-section-of-the-store) (:star:)
+* [Confidential Document](../part2/sensitive-data-exposure.md#access-a-confidential-document) (:star:)
+* [Christmas Special](../part2/injection.md#order-the-christmas-special-offer-of-2014) (:star::star:)
+* [Basket Access](../part2/broken-access-control.md#access-someone-elses-basket) (:star::star:)
+* [Forgotten Sales Backup](../part2/security-misconfiguration.md#access-a-salesmans-forgotten-backup-file) (:star::star::star:)
+* [Forgotten Developer Backup](../part2/roll-your-own-security.md#access-a-developers-forgotten-backup-file) (:star::star::star::star:)
+* [CSRF](../part2/broken-authentication.md#change-benders-password-into-slurmcl4ssic-without-using-sql-injection) :star::star::star::star:
+* [User Credentials](../part2/injection.md#retrieve-a-list-of-all-user-credentials-via-sql-injection) :star::star::star::star:
+* [Forged Coupon](../part2/sensitive-data-exposure.md#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80) (:star::star::star::star::star::star:)
 
 Especially made for awareness trainings is the
 [harlem shake/phishing showcase](https://github.com/wurstbrot/shake-logger)
