@@ -1089,6 +1089,10 @@ Juice Shop on a hostname that is not recognized, you can still solve
 this challenge by logging in regularly but add `"oauth": true` to the
 JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
+### All your orders are belong to us
+
+:wrench: **TODO**
+
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 1. By manual or automated URL discovery you can find a
