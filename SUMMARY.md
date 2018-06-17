@@ -31,6 +31,7 @@
   * [Insecure Deserialization](part2/insecure-deserialization.md)
   * [Vulnerable Components](part2/vulnerable-components.md)
   * [Security through Obscurity](part2/security-through-obscurity.md)
+  * [Race Condition](part2/race-condition.md)
 
 ----
 
