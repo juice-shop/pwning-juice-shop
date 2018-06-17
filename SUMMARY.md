@@ -45,7 +45,7 @@
 ----
 
 * [Appendix A - Challenge solutions](appendix/solutions.md)
-* [Appendix B - Trainer's checklist](appendix/trainers.md)
+* [Appendix B - Trainer's guide](appendix/trainers.md)
 
 ----
 

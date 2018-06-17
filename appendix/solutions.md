@@ -334,6 +334,10 @@ You can also solve this challenge by directly sending a `POST` to
 <http://localhost:3000/api/Feedbacks> endpoint. You just need to be
 logged out and send any `UserId` in the JSON payload.
 
+### Post a product review as another user or edit any user's existing review
+
+:wrench: **TODO**
+
 ### Access a salesman's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in
@@ -1089,6 +1093,10 @@ Juice Shop on a hostname that is not recognized, you can still solve
 this challenge by logging in regularly but add `"oauth": true` to the
 JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
+### All your orders are belong to us
+
+:wrench: **TODO**
+
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 1. By manual or automated URL discovery you can find a
@@ -1358,6 +1366,10 @@ loop`._
 > ```
 
 ## Diabolic Challenges (  :star::star::star::star::star::star:  )
+
+### Overwrite the Legal Information file
+
+:wrench: **TODO**
 
 ### Forge a coupon code that gives you a discount of at least 80%
 

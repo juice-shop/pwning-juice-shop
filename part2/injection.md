@@ -39,15 +39,16 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                            | Difficulty               |
-|:-------------------------------------------------------------------------------------|:-------------------------|
-| Order the Christmas special offer of 2014.                                           | :star::star:             |
-| Log in with the administrator's user account.                                        | :star::star:             |
-| Log in with Bender's user account.                                                   | :star::star::star:       |
-| Log in with Jim's user account.                                                      | :star::star::star:       |
-| Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star: |
-| Update multiple product reviews at the same time.                                    | :star::star::star::star: |
-| Retrieve a list of all user credentials via SQL Injection                            | :star::star::star::star: |
+| Challenge                                                                            | Difficulty                     |
+|:-------------------------------------------------------------------------------------|:-------------------------------|
+| Order the Christmas special offer of 2014.                                           | :star::star:                   |
+| Log in with the administrator's user account.                                        | :star::star:                   |
+| Log in with Bender's user account.                                                   | :star::star::star:             |
+| Log in with Jim's user account.                                                      | :star::star::star:             |
+| Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:       |
+| Update multiple product reviews at the same time.                                    | :star::star::star::star:       |
+| Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:       |
+| All your orders are belong to us!                                                    | :star::star::star::star::star: |
 
 #### Reconnaissance advice
 
@@ -213,6 +214,14 @@ café with free WiFi.
   into the original result.
 * You might have to tackle some query syntax issues step-by-step,
   basically hopping from one error to the next
+
+### All your orders are belong to us
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Injection_Flaws
 
