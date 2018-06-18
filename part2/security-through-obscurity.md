@@ -23,6 +23,7 @@ anti-pattern:
 |:-----------------------------------------------------------------|:-------------------------|
 | Learn about the Token Sale before its official announcement.     | :star::star::star:       |
 | Apply some advanced cryptanalysis to find _the real_ easter egg. | :star::star::star::star: |
+| Rat out a notorious character hiding in plain sight in the shop. | :star::star::star::star: |
 
 ### Learn about the Token Sale before its official announcement
 
@@ -81,6 +82,14 @@ the name.
   first.
 * You might have to peel through several layers of tough-as-nails
   encryption for this challenge.
+
+### Rat out a notorious character hiding in plain sight in the shop
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://en.wikipedia.org/wiki/Security_through_obscurity
 

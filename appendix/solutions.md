@@ -800,6 +800,10 @@ respond.
 8. Then type any _New Password_ and matching _Repeat New Password_
 9. Click _Change_ to solve this challenge
 
+### Rat out a notorious character hiding in plain sight in the shop
+
+:wrench: **TODO**
+
 ### Inform the shop about a typosquatting trick it has become victim of
 
 1. Solve the
