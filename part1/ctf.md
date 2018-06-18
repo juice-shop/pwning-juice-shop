@@ -232,9 +232,41 @@ folder the program was started in. By default the output files are named
 `OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json` depending on your initial
 framework choice.
 
+Optionally you can choose the name of the output file with the
+`--output` parameter on startup:
+
+```
+juice-shop-ctf --output challenges.out
+```
+
 #### Non-interactive generator mode
 
-:wrench: **TODO**
+Instead of answering questions in the CLI you can also provide your
+desired configuration in a file with the following straightforward
+format:
+
+```yaml
+ctfFramework: CTFd | FBCTF
+juiceShopUrl: https://juice-shop.herokuapp.com
+ctfKey: https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key # can also be actual key instead URL
+countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml
+insertHints: none | free | paid
+insertHintUrls: none | free | paid
+```
+
+You can then pass this YAML file into the CLI the generator with the
+`--config` parameter:
+
+```
+juice-shop-ctf --config myconfig.yml
+```
+
+As in interactive mode, you can also choose the name of the output file
+with the `--output` parameter:
+
+```
+juice-shop-ctf --config myconfig.yml --output challenges.out
+```
 
 ### Running CTFd
 
