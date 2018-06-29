@@ -10,10 +10,19 @@
 
 | Challenge                                           | Difficulty         |
 |:----------------------------------------------------|:-------------------|
+| Get registered as admin user.                       | :star::star::star: |
 | Give a devastating zero-star feedback to the store. | :star:             |
 | Place an order that makes you rich.                 | :star::star::star: |
 | Upload a file larger than 100 kB.                   | :star::star::star: |
 | Upload a file that has no .pdf extension.           | :star::star::star: |
+
+### Get registered as admin user
+
+:wrench: **TODO**
+
+### Hints
+
+:wrench: **TODO**
 
 ### Give a devastating zero-star feedback to the store
 

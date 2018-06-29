@@ -278,6 +278,10 @@ in order to exploit and solve them:
 
 ## Medium Challenges (  :star::star::star:  )
 
+### Get registered as admin user
+
+:wrench: **TODO**
+
 ### Learn about the Token Sale before its official announcement
 
 1. Open the `juice-shop.min.js` in your browser's developer tools and
