@@ -101,7 +101,7 @@ legit.
 * Try to convince the site to give you a _valid_ token with the required
   payload while downgrading to _no_ encryption at all.
 
-### Inform the shop about a more literal instance of typosquatting it fell for
+### Inform the shop about a more sneaky instance of typosquatting it fell for
 
 This challenge is about identifying and reporting (via the
 http://localhost:3000/#/contact form) yet another case of typosquatting
@@ -114,8 +114,6 @@ hidden in the Juice Shop. It is supposedly even harder to locate.
   this challenge also has nothing to do with URLs or domains.
 * Other than for the above tier one, combing through the
   `package.json.bak` does not help for this challenge.
-* This typoquatting instance more literally exploits a realistically
-  possible typo.
 
 ### Overwrite the Legal Information file
 
