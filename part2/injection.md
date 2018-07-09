@@ -41,8 +41,8 @@
 
 | Challenge                                                                            | Difficulty                     |
 |:-------------------------------------------------------------------------------------|:-------------------------------|
-| Order the Christmas special offer of 2014.                                           | :star::star:                   |
 | Log in with the administrator's user account.                                        | :star::star:                   |
+| Order the Christmas special offer of 2014.                                           | :star::star::star:             |
 | Log in with Bender's user account.                                                   | :star::star::star:             |
 | Log in with Jim's user account.                                                      | :star::star::star:             |
 | Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:       |
@@ -59,20 +59,6 @@ underlying SQL query (e.g. `'` or `';`) you can analyze how the
 behaviour differs from regular use. Maybe you can even provoke an error
 where the application leaks details about the query structure and schema
 details like table or column names. Do not miss this opportunity.
-
-### Order the Christmas special offer of 2014
-
-To solve this challenge you need _to order_ a product that is not
-supposed to be available any more.
-
-#### Hints
-
-* Find out how the application _hides_ deleted products from its
-  customers.
-* Try to craft an attack string that makes deleted products visible
-  again.
-* You need to get the deleted product into your shopping cart and
-  trigger the _Checkout_.
 
 ### Log in with the administrator's user account
 
@@ -93,6 +79,20 @@ can abuse?
 * Alternatively you can solve this challenge as a _combo_ with the
   [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
   challenge.
+
+### Order the Christmas special offer of 2014
+
+To solve this challenge you need _to order_ a product that is not
+supposed to be available any more.
+
+#### Hints
+
+* Find out how the application _hides_ deleted products from its
+  customers.
+* Try to craft an attack string that makes deleted products visible
+  again.
+* You need to get the deleted product into your shopping cart and
+  trigger the _Checkout_.
 
 ### Log in with Bender's user account
 
@@ -208,8 +208,8 @@ café with free WiFi.
 
 #### Hints
 
-* Try to find a page where you can influence a list of data being
-  displayed.
+* Try to find an endpoint where you can influence data being
+  retrieved from the server.
 * Craft a `UNION SELECT` attack string to join data from another table
   into the original result.
 * You might have to tackle some query syntax issues step-by-step,

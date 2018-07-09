@@ -155,25 +155,28 @@ If the challenge is not immediately solved, you might have to
 
 ### Order the Christmas special offer of 2014
 
-1. Observe the JavaScript console while submitting the text `';` via the
-   _Search_ field.
-2. The `error` object contains the full SQL statement used for search
+1. Open http://localhost:3000/#/search and reload the page with `F5` while observing the _Network_ tab in your browser's DevTools
+2. Recognize the `GET` request <http://localhost:3000/rest/product/search?q=> which returns the product data
+3. Submit `';` as `q` via <http://localhost:3000/rest/product/search?q=';>
+4. The `error` object contains the full SQL statement used for search
    for products.
 
    ![SQL search query in JavaScript error](img/search_error-js_console.png)
-3. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
+5. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
    product we seek.
-4. Searching for `'--` results in a `SQLITE_ERROR: syntax error` on the
-   JavaScript console. This is due to two (now unbalanced) parenthesis
+6. Using `'--` for `q` results in a `SQLITE_ERROR: syntax error`. This is due to two (now unbalanced) parenthesis
    in the query.
-5. Searching for `'))--` fixes the syntax and successfully lists all
+7. Using `'))--` for `q` fixes the syntax and successfully retrieves all
    products, including the (logically deleted) Christmas offer.
-6. Add any regular product other than the _Christmas Super-Surprise-Box
+8. Go back to http://localhost:3000/#/search and log in as any user.
+9. Add any regular product other than the _Christmas Super-Surprise-Box
    (2014 Edition)_ into you shopping basket to prevent problems at
-   checkout later.
-7. Add at least one _Christmas Super-Surprise-Box (2014 Edition)_ to
-   your shopping basket.
-8. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+   checkout later. Memorize your `BasketId` value in the request payload.
+10. Submit a `POST` request to <http://localhost:3000/api/BasketItems>
+   with
+   * `{"BasketId": "<Your Basket ID>", "ProductId": 10, "quantity": 1}` as body
+   * and `application/json` as `Content-Type`
+11. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
@@ -839,11 +842,10 @@ NPM page:
 
 1. During the
    [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
-   challenge you learned that the _Search_ functionality is susceptible
-   to SQL Injection.
+   challenge you learned that the `/rest/product/search` endpoint is susceptible
+   to SQL Injection into the `q` parameter.
 2. The attack payload you need to craft is a `UNION SELECT` merging the
-   data from the user's DB table into the products shown in the _Search
-   Results_ table.
+   data from the user's DB table into the products returned in the JSON result.
 3. As a starting point we use the known working `'))--` attack pattern
    and try to make a `UNION SELECT` out of it
 4. Searching for `')) UNION SELECT * FROM x--` fails with a
@@ -885,16 +887,17 @@ NPM page:
    errors while attacking the _Login_ form.
 9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
    '6', '7', '8' FROM Users--` solves the challenge giving you a the
-   list of all user data.
+   list of all user data in convenient JSON format.
 
    ![User list from UNION SELECT attack](img/union_select-attack_result.png)
 
 There is of course a much easier way to retrieve a list of all users as
 long as you are logged in: Open <http://localhost:3000/#/administration>
 while monitoring the HTTP calls in your browser's developer tools. The
-response to <http://localhost:3000/rest/user/authentication-details>
-contains all the user data in JSON format. But: This does not involve
-SQL Injection so it will not count as a solution for this challenge.
+response to <http://localhost:3000/rest/user/authentication-details> also
+contains the user data in JSON format. But: This list has all the password
+hashes replaced with `*`-symbols, so it does not count as a solution for
+this challenge.
 
 ### Inform the shop about a vulnerable library it is using
 
