@@ -1,1 +1,0 @@
-![Front Cover](../cover.jpg)
