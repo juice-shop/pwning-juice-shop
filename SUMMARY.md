@@ -2,6 +2,7 @@
 
 ### Preface
 
+* [Front Cover](introduction/front-cover.md)
 * [Why OWASP Juice Shop exists](introduction/motivation.md)
 * [Architecture overview](introduction/architecture.md)
 
@@ -50,4 +51,4 @@
 
 ### Postface
 
-* [About this book](introduction/abstract.md)
+* [Back Cover](introduction/back-cover.md)
