@@ -2,15 +2,16 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                          | Difficulty                     |
-|:-----------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
-| Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                       | :star::star:                   |
-| Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                        | :star::star::star:             |
-| Change Bender's password into _slurmCl4ssic_ without using SQL Injection.                                                          | :star::star::star::star:       |
-| Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account. | :star::star::star::star:       |
-| Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                     | :star::star::star::star:       |
-| Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                            | :star::star::star::star::star: |
-| Reset Bjoern's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                     | :star::star::star::star::star: |
+| Challenge                                                                                                                                                | Difficulty                     |
+|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
+| Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                                             | :star::star:                   |
+| Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                              | :star::star::star:             |
+| Change Bender's password into _slurmCl4ssic_ without using SQL Injection.                                                                                | :star::star::star::star:       |
+| Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account.                       | :star::star::star::star:       |
+| Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                           | :star::star::star::star:       |
+| Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                                                  | :star::star::star::star::star: |
+| Reset Bjoern's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                           | :star::star::star::star::star: |
+| Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or the CVE of this vulnerability) | :star::star::star::star::star: |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
@@ -198,6 +199,14 @@ this challenge should be significantly harder.
 * Hints to the answer to Bjoern's question can be found by looking him
   up on the Internet
 * Brute forcing the answer should be next to impossible
+
+### Inform the development team about a danger to some of their credentials
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: http://goodsecurityquestions.com
 

@@ -1,5 +1,7 @@
 # Appendix B - Trainer's guide
 
+Co-authored by [Timo Pagel](https://github.com/wurstbrot)
+
 ## Instances
 
 Make sure all participants have their own running Juice Shop instance to
