@@ -1250,6 +1250,10 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
    ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
 
+### Inform the development team about a danger to some of their credentials
+
+:wrench: **TODO**
+
 ### Inform the shop about a more sneaky instance of typosquatting it fell for
 
 1. :wrench: **TODO**
