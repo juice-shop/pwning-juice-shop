@@ -61,7 +61,7 @@ want to encourage the students to hack very competitively.
 
 One existing training which uses the Juice Shop for example is a
 [Timo Pagel's University Module](https://drive.google.com/open?id=1ITkTAALjZJnGV-hhAZ-zQfNx1sVTzlA2UlWD0s270ig).
-The structure mostly is as following:
+The structure mostly is as follows:
 
 1. Introduce a topic (e.g. SQL Injection)
 2. Let the participants try it out in the Juice Shop
@@ -88,26 +88,26 @@ of the project references on on GitHub.
 Well suited for live demonstrations in trainings or talks are the the
 following challenges:
 
-* [XSS Tier 0](../part2/xss.md#perform-a-reflected-xss-attack) (:star:)
-* [XSS Tier 1](../part2/xss.md#perform-a-dom-xss-attack) (:star:)
+* [XSS Tier 0](../part2/xss.md#perform-a-reflected-xss-attack) ( :star: )
+* [XSS Tier 1](../part2/xss.md#perform-a-dom-xss-attack) ( :star: )
 * [Admin Section](../part2/broken-access-control.md#access-the-administration-section-of-the-store)
-  (:star:)
+  ( :star: )
 * [Confidential Document](../part2/sensitive-data-exposure.md#access-a-confidential-document)
-  (:star:)
+  ( :star: )
 * [Christmas Special](../part2/injection.md#order-the-christmas-special-offer-of-2014)
-  (:star::star:)
+  ( :star::star: )
 * [Basket Access](../part2/broken-access-control.md#access-someone-elses-basket)
-  (:star::star:)
+  ( :star::star: )
 * [Forgotten Sales Backup](../part2/security-misconfiguration.md#access-a-salesmans-forgotten-backup-file)
-  (:star::star::star:)
+  ( :star::star::star: )
 * [Forgotten Developer Backup](../part2/roll-your-own-security.md#access-a-developers-forgotten-backup-file)
-  (:star::star::star::star:)
+  ( :star::star::star::star: )
 * [CSRF](../part2/broken-authentication.md#change-benders-password-into-slurmcl4ssic-without-using-sql-injection)
-  :star::star::star::star:
+  ( :star::star::star::star: )
 * [User Credentials](../part2/injection.md#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-  :star::star::star::star:
+  ( :star::star::star::star: )
 * [Forged Coupon](../part2/sensitive-data-exposure.md#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
-  (:star::star::star::star::star::star:)
+  ( :star::star::star::star::star::star: )
 
 A particularly impressive
 [showcase of XSS site-defacement combined with a keylogger](https://github.com/wurstbrot/shake-logger)
