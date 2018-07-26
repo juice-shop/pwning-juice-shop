@@ -1050,10 +1050,6 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
    header.
 2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) into the _Encoded_ field at <https://jwt.io>.
-3. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
-   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
-   The JWT algorithm should now have changed to `HS256` instead of
-   `RS256`.
 4. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
    the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
 5. Change the value of the `alg` parameter in the _HEADER_ part on the
@@ -1488,10 +1484,6 @@ totally different attack styles.
    header.
 4. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) into the _Encoded_ field at <https://jwt.io>.
-5. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
-   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
-   The JWT algorithm should now have changed to `HS256` instead of
-   `RS256`.
 6. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
    the `email` attribute in the JSON to `rsa_lord@juice-sh.op`.
 7. In the <https://jwt.io> tab where you are modifying the JWT, go to
