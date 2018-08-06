@@ -66,9 +66,10 @@ application security practitioners.
 
 Once in the OWASP project portfolio it took only eight months until
 Juice Shop was promoted from the initial _Incubator_ maturity level to
-_Lab Projects_ level.
+_Lab Projects_ level. End of July 2018 the Juice Shop was promoted into
+the final _Flagship_ maturity stage for OWASP projects.
 
-![OWASP Lab Projects](img/Lab_big.jpg)
+![OWASP Flagship Projects](img/Flagship_big.jpg)
 
 ### Why the name "Juice Shop"?
 
