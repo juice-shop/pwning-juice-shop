@@ -195,21 +195,34 @@ this challenge should be significantly harder.
 #### Hints
 
 * Bjoern chose to answer his chosen question truthfully but tried to
-  make it harder for attackers by applying sort of a historical twist
+  make it harder for attackers by applying sort of a historical twist.
 * Hints to the answer to Bjoern's question can be found by looking him
-  up on the Internet
-* Brute forcing the answer should be next to impossible
+  up on the Internet.
+* Brute forcing the answer should be next to impossible.
 
 ### Inform the development team about a danger to some of their credentials
 
-:wrench: **TODO**
+> A software supply chain attack is when an attacker gains access to a
+> legitimate software vendor and then compromises either the software or
+> update repository. This is done with the intention of installing a backdoor,
+> or other malicious code, into the legitimate software update provided by
+> the vendor. As users update their software, unwittingly falling victim
+> to the Trojanized update, they also install the embedded malicious code.[^4]
+
+:information_source: Please note that having the OWASP Juice Shop installed on your computer
+_does not_ put you at any actual risk! This challenge does _neither_ install a backdoor
+or Trojan nor does it bring any other harmful code to your system!
 
 #### Hints
 
-:wrench: **TODO**
+* The shop's end users are not the targets here. The developers of the shop are!
+* This is a research-heavy challenge which does not involve any actual hacking.
+* Solving [Access a developer's forgotten backup file](roll-your-own-security.md#access-a-developers-forgotten-backup-file) before attempting this challenge will save you from a lot of frustration.
 
 [^1]: http://goodsecurityquestions.com
 
 [^2]: https://www.owasp.org/index.php/CSRF
 
 [^3]: https://en.wikipedia.org/wiki/Rainbow_table
+
+[^4]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm
