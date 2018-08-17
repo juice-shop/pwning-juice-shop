@@ -1233,7 +1233,13 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 ### Inform the development team about a danger to some of their credentials
 
-:wrench: **TODO**
+1. Solve [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
+2. The `package.json.bak` contains not only runtime dependencies but also development dependencies under the `devDependencies` section.
+3. Go through the list `devDependencies` and perform research on vulnerabilities in them which would allow a Software Supply Chain Attack.
+4. For the `eslint-scope` module you will learn about one such incident exactly in the pinned version `3.7.2`, e.g. <https://status.npmjs.org/incidents/dn7c1fgrr7ng> or <https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes>
+5. Both above links refer to the original report of this vulnerability on GitHub: <https://github.com/eslint/eslint-scope/issues/39>
+5. Visit <http://localhost:3000/#/contact>
+6. Submit your feedback with `https://github.com/eslint/eslint-scope/issues/39` in the comment to solve this challenge
 
 ### Inform the shop about a more literal instance of typosquatting it fell for
 
