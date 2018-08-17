@@ -309,7 +309,14 @@ in the _Challenges_ tab:
 
 ### Running FBCTF
 
-:wrench: **TODO**
+Please note that Facebook does not publish any versioned releases of FBCTF. They recommend
+to use the `master`-branch content from GitHub (<https://github.com/facebook/fbctf>) in
+all their setup methods. There is also no official image on Docker Hub for FBCTF.
+
+1. Follow any of the options described in the [FBCTF Quick Setup Guide](https://github.com/facebook/fbctf/wiki/Quick-Setup-Guide).
+2. Browse to your FBCTF instance UI.
+3. Click the _Controls_ tab under the _Game Admin_ panel.
+4. Choose _Import Full Game_ and select the generate `.json` file.
 
 The following screenshots were taken during a CTF event where Facebook's
 game server was used. Juice Shop instances were running in a Docker

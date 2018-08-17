@@ -813,21 +813,35 @@ respond.
 
 ### Rat out a notorious character hiding in plain sight in the shop
 
-:wrench: **TODO**
+1. Looking for irregularities among the image files you will at some point notice that `5.png` is the only PNG file among otherwise only JPGs in the customer feedback carousel:
+
+    ![Steganography customer support image](img/steganography.png)
+2. Running this image through some decoders available online will probably just return garbage, e.g. <http://stylesuxx.github.io/steganography/> gives you `ÿÁÿm¶Û$ÿ ?HÕPü^ÛN'c±UY;fäHÜmÉ#r<v¸` or <https://www.mobilefish.com/services/steganography/steganography.php> gives up with `No hidden message or file found in the image`. On <https://incoherency.co.uk/image-steganography/#unhide> you will also find nothing independent of how you set the _Hidden bits_ slider:
+
+    ![Steganography unhiding fails](img/steganography_failed-unhide.png)
+3. Moving on to client applications you might end up with [OpenStego](https://www.openstego.com/) which is built in Java but also offers a Windows installer at <https://github.com/syvaidya/openstego/releases>.
+4. Selecting the `5.png` and clicking _Extract Data_ OpenStego will quickly claim to have been successful:
+
+    ![Steganography exctraction successful](img/steganography_openstego-success.png)
+5. The image that will be put into the _Output Stego file_ location clearly depicts a pixelated version of [Pickle Rick](https://en.wikipedia.org/wiki/Pickle_Rick) (from S3E3 - one of the best [Rick & Morty](https://en.wikipedia.org/wiki/Rick_and_Morty) episodes ever)
+
+    ![Pickle Rick unveiled](img/steganography_pickle-rick.png)
+6. Visit <http://localhost:3000/#/contact>
+7. Submit your feedback containing the name `Pickle Rick` (case doesn't matter) to solve this challenge.
 
 ### Inform the shop about a typosquatting trick it has become victim of
 
-1. Solve the
+5. Solve the
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
    challenge and open the `package.json.bak` file
-2. Scrutinizing each entry in the `dependencies` list you will at some
+6. Scrutinizing each entry in the `dependencies` list you will at some
    point get to `epilogue-js`, the overview page of which gives away
    that you find the culprit at
    https://www.npmjs.com/package/epilogue-js
 
    ![epilogue-js on NPM](img/npm_epilogue-js.png)
-3. Visit <http://localhost:3000/#/contact>
-4. Submit your feedback with `epilogue-js` in the comment to solve this
+7. Visit <http://localhost:3000/#/contact>
+8. Submit your feedback with `epilogue-js` in the comment to solve this
    challenge
 
 You can probably imagine that the typosquatted `epilogue-js` would be _a
@@ -1061,10 +1075,6 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
    header.
 2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) into the _Encoded_ field at <https://jwt.io>.
-3. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
-   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
-   The JWT algorithm should now have changed to `HS256` instead of
-   `RS256`.
 4. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
    the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
 5. Change the value of the `alg` parameter in the _HEADER_ part on the
@@ -1252,7 +1262,13 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 ### Inform the development team about a danger to some of their credentials
 
-:wrench: **TODO**
+1. Solve [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
+2. The `package.json.bak` contains not only runtime dependencies but also development dependencies under the `devDependencies` section.
+3. Go through the list `devDependencies` and perform research on vulnerabilities in them which would allow a Software Supply Chain Attack.
+4. For the `eslint-scope` module you will learn about one such incident exactly in the pinned version `3.7.2`, e.g. <https://status.npmjs.org/incidents/dn7c1fgrr7ng> or <https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes>
+5. Both above links refer to the original report of this vulnerability on GitHub: <https://github.com/eslint/eslint-scope/issues/39>
+5. Visit <http://localhost:3000/#/contact>
+6. Submit your feedback with `https://github.com/eslint/eslint-scope/issues/39` in the comment to solve this challenge
 
 ### Inform the shop about a more sneaky instance of typosquatting it fell for
 
@@ -1466,10 +1482,6 @@ totally different attack styles.
    header.
 4. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) into the _Encoded_ field at <https://jwt.io>.
-5. Change the start of the JWT text from `eyJhbGciOiJ**S**` to
-   `eyJhbGciOiJ**I**` to work around a bug in the <https://jwt.io> site.
-   The JWT algorithm should now have changed to `HS256` instead of
-   `RS256`.
 6. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
    the `email` attribute in the JSON to `rsa_lord@juice-sh.op`.
 7. In the <https://jwt.io> tab where you are modifying the JWT, go to
