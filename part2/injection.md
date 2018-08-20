@@ -39,16 +39,17 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                            | Difficulty                     |
-|:-------------------------------------------------------------------------------------|:-------------------------------|
-| Log in with the administrator's user account.                                        | :star::star:                   |
-| Order the Christmas special offer of 2014.                                           | :star::star::star:             |
-| Log in with Bender's user account.                                                   | :star::star::star:             |
-| Log in with Jim's user account.                                                      | :star::star::star:             |
-| Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:       |
-| Update multiple product reviews at the same time.                                    | :star::star::star::star:       |
-| Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:       |
-| All your orders are belong to us!                                                    | :star::star::star::star::star: |
+| Challenge                                                                            | Difficulty                           |
+|:-------------------------------------------------------------------------------------|:-------------------------------------|
+| Log in with the administrator's user account.                                        | :star::star:                         |
+| Order the Christmas special offer of 2014.                                           | :star::star::star:                   |
+| Log in with Bender's user account.                                                   | :star::star::star:                   |
+| Log in with Jim's user account.                                                      | :star::star::star:                   |
+| Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:             |
+| Update multiple product reviews at the same time.                                    | :star::star::star::star:             |
+| Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:             |
+| All your orders are belong to us!                                                    | :star::star::star::star::star:       |
+| Infect the server with malware by abusing arbitrary command execution.               | :star::star::star::star::star::star: |
 
 #### Reconnaissance advice
 
@@ -222,6 +223,13 @@ café with free WiFi.
 #### Hints
 
 :wrench: **TODO**
+
+### Infect the server with malware by abusing arbitrary command execution
+
+:wrench: **TODO**
+
+#### Hints
+
 
 [^1]: https://www.owasp.org/index.php/Injection_Flaws
 

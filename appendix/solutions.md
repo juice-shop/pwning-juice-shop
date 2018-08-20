@@ -960,6 +960,10 @@ explains the problem and gives an exploit example:
 
    ![XSS alert box in admin area](img/xss4_alert-admin.png)
 
+### Perform a persisted XSS attack through an HTTP header
+
+:wrench: **TODO**
+
 ## Dreadful Challenges (  :star::star::star::star::star:  )
 
 ### Submit 10 or more customer feedbacks within 10 seconds
@@ -1039,6 +1043,10 @@ function solveNextCaptcha () {
 
 _It is worth noting that both alternate solutions would still work even
 if the CAPTCHA-pinning problem would be fixed in the application!_
+
+### Perform an unwanted information disclosure by accessing data cross-domain
+
+:wrench: **TODO**
 
 ### Retrieve the language file that never made it into production
 
@@ -1591,6 +1599,14 @@ to use some unofficial port._
    stating `Sorry, we are temporarily not available! Please try again
    later.` after roughly 2 seconds. This is due to a defined timeout so
    you do not really DoS your Juice Shop server.
+
+### Infect the server with malware by abusing arbitrary command execution
+
+:wrench: **TODO**
+
+### Request a hidden resource on server through server
+
+:wrench: **TODO**
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
 

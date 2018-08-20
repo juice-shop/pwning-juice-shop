@@ -22,14 +22,15 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                   | Difficulty         |
-|:--------------------------------------------------------------------------------------------|:-------------------|
-| Access the administration section of the store.                                             | :star:             |
-| Access someone else's basket.                                                               | :star::star:       |
-| Get rid of all 5-star customer feedback.                                                    | :star::star:       |
-| Post some feedback in another users name.                                                   | :star::star::star: |
-| Post a product review as another user or edit any user's existing review.                   | :star::star::star: |
-| Change the href of the link within the O-Saft product description into http://kimminich.de. | :star::star::star: |
+| Challenge                                                                                   | Difficulty                           |
+|:--------------------------------------------------------------------------------------------|:-------------------------------------|
+| Access the administration section of the store.                                             | :star:                               |
+| Access someone else's basket.                                                               | :star::star:                         |
+| Get rid of all 5-star customer feedback.                                                    | :star::star:                         |
+| Post some feedback in another users name.                                                   | :star::star::star:                   |
+| Post a product review as another user or edit any user's existing review.                   | :star::star::star:                   |
+| Change the href of the link within the O-Saft product description into http://kimminich.de. | :star::star::star:                   |
+| Request a hidden resource on server through server.                                         | :star::star::star::star::star::star: |
 
 ### Access the administration section of the store
 
@@ -127,6 +128,14 @@ challenge instruction to make it light up green on the score board:
   * Attempting an SQL Injection attack that sneaks in an `UPDATE`
     statement on product data
 * _In practice_ two of these three ways should turn out to be dead ends
+
+### Request a hidden resource on server through server
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
 

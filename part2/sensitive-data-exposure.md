@@ -7,6 +7,7 @@
 | Access a confidential document.                                                                           | :star:                               |
 | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass. | :star::star:                         |
 | Inform the shop about an algorithm or library it should definitely not use the way it does.               | :star::star:                         |
+| Perform an unwanted information disclosure by accessing data cross-domain.                                | :star::star::star::star::star:       |
 | Forge a coupon code that gives you a discount of at least 80%.                                            | :star::star::star::star::star::star: |
 | Solve challenge #99. Unfortunately, this challenge does not exist.                                        | :star::star::star::star::star::star: |
 | Unlock Premium Challenge to access exclusive content.                                                     | :star::star::star::star::star::star: |
@@ -88,6 +89,14 @@ crypto library) that either
   [Apply some advanced cryptanalysis to find _the real_ easter egg](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
+
+### Perform an unwanted information disclosure by accessing data cross-domain
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Forge a coupon code that gives you a discount of at least 80%
 

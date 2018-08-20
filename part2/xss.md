@@ -26,6 +26,7 @@
 | Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` bypassing a client-side security mechanism.    | :star::star::star:       |
 | Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` without using the frontend application at all. | :star::star::star:       |
 | Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` bypassing a server-side security mechanism.    | :star::star::star::star: |
+| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` through an HTTP header.                        | :star::star::star::star: |
 
 ### Perform a reflected XSS attack
 
@@ -145,6 +146,14 @@ approach._
   solved on the _Score Board_, you might not have managed to put the
   _exact_ attack string `<script>alert("XSS4")</script>` into the
   database?
+
+### Perform a persisted XSS attack through an HTTP header
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 
