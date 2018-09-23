@@ -151,7 +151,7 @@ error situation and solve this challenge along the way:
 5. Visit <http://localhost:3000/#/basket> to solve the challenge.
 
 If the challenge is not immediately solved, you might have to
-`F5`-reload to relay the `bid` change to the Angular client.
+`F5`-reload to relay the `bid` change to the AngularJS client.
 
 ### Order the Christmas special offer of 2014
 
@@ -722,7 +722,7 @@ will get their password set to the same one we forced onto Bender!_
 4. The `e.login()` function call leaks how the password is set:
    `password: d.encode(f.email)`
 5. Checking the controller declaration you will see that `d` is actually
-   an Angular service named `$base64`.
+   an AngularJS service named `$base64`.
 6. Now that you know that the auto-generated password for OAuth users is
    just their Base64-encoded email address, you can just log in with
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
