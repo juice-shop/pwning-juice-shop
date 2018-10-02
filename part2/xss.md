@@ -107,8 +107,8 @@ server.
 
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`
-or an
-[API testing plugin for your browser](/part1/rules.md#api-testing-plugin)
+or a
+[tool for HTTP request tampering](/part1/rules.md#tools-for-http-request-tampering)
 to master this challenge.
 
 #### Hints
