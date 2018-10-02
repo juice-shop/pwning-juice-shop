@@ -21,12 +21,12 @@
 
 | Challenge                                                                                                            | Difficulty               |
 |:---------------------------------------------------------------------------------------------------------------------|:-------------------------|
-| Perform a _reflected_ XSS attack with `<script>alert("XSS")</script>`.                                               | :star:                   |
-| Perform a _DOM_ XSS attack with `<script>alert("XSS")</script>`.                                                     | :star:                   |
-| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` bypassing a client-side security mechanism.    | :star::star::star:       |
-| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` without using the frontend application at all. | :star::star::star:       |
-| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` bypassing a server-side security mechanism.    | :star::star::star::star: |
-| Perform a _persisted_ XSS attack with `<script>alert("XSS")</script>` through an HTTP header.                        | :star::star::star::star: |
+| Perform a _reflected_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                               | :star:                   |
+| Perform a _DOM_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                                     | :star:                   |
+| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a client-side security mechanism.    | :star::star::star:       |
+| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` without using the frontend application at all. | :star::star::star:       |
+| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a server-side security mechanism.    | :star::star::star::star: |
+| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` through an HTTP header.                        | :star::star::star::star: |
 
 ### Perform a reflected XSS attack
 

@@ -107,14 +107,14 @@ error situation and solve this challenge along the way:
 
 1. Log in as any user.
 2. Click the _Track Orders_ button.
-3. Paste the attack string `<script>alert("XSS")</script>` into the
+3. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into the
    _Order ID_ field.
 4. Click the _Track_ button.
 5. An alert box with the text "XSS" should appear.
 
 ### Perform a DOM XSS attack
 
-1. Paste the attack string `<script>alert("XSS")</script>` into the
+1. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into the
    _Search..._ field.
 2. Click the _Search_ button.
 3. An alert box with the text "XSS" should appear.
