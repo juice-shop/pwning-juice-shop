@@ -198,7 +198,7 @@ performs the following actions:
 3. Execute the quality checks consisting of
    * Compliance check against the
      [JS Standard Code Style rules](http://standardjs.com)
-   * Unit tests for the Angular client
+   * Unit tests for the AngularJS client
    * Unit tests for the Express routes and server-side libraries
    * Integration tests for the server-side API
    * End-to-end tests verifying that all challenges can be solved
