@@ -22,11 +22,11 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                            | Difficulty |
-|:-------------------------------------|:-----------|
-| Like any review any number of times. | :star:     |
+| Challenge                                              | Difficulty                           |
+|:-------------------------------------------------------|:-------------------------------------|
+| Like any review at least three times as the same user. | :star::star::star::star::star::star: |
 
-### Like any review any number of times
+### Like any review at least three times as the same user
 
 :wrench: **TODO**
 

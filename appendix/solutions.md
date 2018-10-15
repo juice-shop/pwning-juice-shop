@@ -62,10 +62,6 @@ error situation and solve this challenge along the way:
 
   ![SQL in UI Error](img/login-error_sql.png)
 
-### Like any review any number of times
-
-:wrench: **TODO**
-
 ### Let us redirect you to a donation site that went out of business
 
 1. Log in to the application with any user.
@@ -177,9 +173,9 @@ If the challenge is not immediately solved, you might have to
    (2014 Edition)_ into you shopping basket to prevent problems at
    checkout later. Memorize your `BasketId` value in the request payload.
 10. Submit a `POST` request to <http://localhost:3000/api/BasketItems>
-   with
-   * `{"BasketId": "<Your Basket ID>", "ProductId": 10, "quantity": 1}` as body
-   * and `application/json` as `Content-Type`
+    with
+    * `{"BasketId": "<Your Basket ID>", "ProductId": 10, "quantity": 1}` as body
+    * and `application/json` as `Content-Type`
 11. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Use a deprecated B2B interface that was not properly shut down
@@ -362,7 +358,7 @@ logged out and send any `UserId` in the JSON payload.
 
 Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
-[Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
+[Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
 
 ### Log in with Bender's user account
 
@@ -461,7 +457,7 @@ side with a `500` error stating `Error: File too large`.
    challenge will be successfully solved.
 
 Uploading a non-PDF file larger than 100 kB will solve
-[Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
+[Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
 simultaneously.
 
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
@@ -616,7 +612,7 @@ will return a `500` error when loading the image URL:
 To make this exploit work, some more sophisticated attack URL is
 required, for example the following one which was originally described
 in the blog post
-[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html)
+[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html)
 by Joe Butler:
 
 <http://localhost:3000/#/search?q=%3Cscript%3Exmlhttp%20%3D%20new%20XMLHttpRequest;%20xmlhttp.open('GET',%20'http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic');%20xmlhttp.send()%3C%2Fscript%3E>
@@ -835,17 +831,17 @@ respond.
 
 ### Inform the shop about a typosquatting trick it has become victim of
 
-5. Solve the
+1. Solve the
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
    challenge and open the `package.json.bak` file
-6. Scrutinizing each entry in the `dependencies` list you will at some
+2. Scrutinizing each entry in the `dependencies` list you will at some
    point get to `epilogue-js`, the overview page of which gives away
    that you find the culprit at
    https://www.npmjs.com/package/epilogue-js
 
    ![epilogue-js on NPM](img/npm_epilogue-js.png)
-7. Visit <http://localhost:3000/#/contact>
-8. Submit your feedback with `epilogue-js` in the comment to solve this
+3. Visit <http://localhost:3000/#/contact>
+4. Submit your feedback with `epilogue-js` in the comment to solve this
    challenge
 
 You can probably imagine that the typosquatted `epilogue-js` would be _a
@@ -854,7 +850,7 @@ it where not marked with the _THIS IS **NOT** THE MODULE YOU ARE LOOKING
 FOR!_-warning at the very top. Below you can see the original `epilogue`
 NPM page:
 
-![epilogue on NPM](img/npm_epilogue.png)
+![epilogue on NPM](img/npm_epilogue.png)
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -921,10 +917,10 @@ this challenge.
 
 Juice Shop depends on a JavaScript library with known vulnerabilities.
 Having the `package.json.bak` and using an external service like
-[Node Security Platform](https://nodesecurity.io/) makes it rather easy
+[Node Security Platform](https://nodesecurity.io/) makes it rather easy
 to identify it: `sanitize-html` is pinned to version `1.4.2` which has a
 known bug of not sanitizing recursively (see
-[Perform a persisted XSS attack bypassing a server-side security mechanism](#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
+[Perform a persisted XSS attack bypassing a server-side security mechanism](#perform-a-persisted-xss-attack-bypassing-a-server-side-security-mechanism))
 
 <!-- -->
 
@@ -936,10 +932,10 @@ known bug of not sanitizing recursively (see
 
 In the `package.json.bak` you might have noticed the pinned dependency
 `"sanitize-html": "1.4.2"`. Internet research will yield a reported
-[XSS - Sanitization not applied recursively](https://nodesecurity.io/advisories/135)
+[XSS - Sanitization not applied recursively](https://nodesecurity.io/advisories/135)
 vulnerability, which was fixed with version 1.4.3 - one release later
 than used by the Juice Shop. The referenced
-[GitHub issue](https://github.com/punkave/sanitize-html/issues/29)
+[GitHub issue](https://github.com/punkave/sanitize-html/issues/29)
 explains the problem and gives an exploit example:
 
 > Sanitization is not applied recursively, leading to a vulnerability to
@@ -1087,14 +1083,14 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
    header.
 2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) into the _Encoded_ field at <https://jwt.io>.
-4. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
+3. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
    the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
-5. Change the value of the `alg` parameter in the _HEADER_ part on the
+4. Change the value of the `alg` parameter in the _HEADER_ part on the
    right hand side from `HS256` to `none`.
-6. In the _Encoded_ field on the left delete the signature part (colored
+5. In the _Encoded_ field on the left delete the signature part (colored
    in cyan at the time of this writing) so that the final character of
    the JWT is the last `.` (dot symbol).
-7. Change the `Authorization` header of a subsequent request to the
+6. Change the `Authorization` header of a subsequent request to the
    retrieved JWT (prefixed with `Bearer ` as before) and submit the
    request. Alternatively you can set the `token` cookie to the JWT
    which be used to populate any future request with that header.
@@ -1279,8 +1275,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 3. Go through the list `devDependencies` and perform research on vulnerabilities in them which would allow a Software Supply Chain Attack.
 4. For the `eslint-scope` module you will learn about one such incident exactly in the pinned version `3.7.2`, e.g. <https://status.npmjs.org/incidents/dn7c1fgrr7ng> or <https://eslint.org/blog/2018/07/postmortem-for-malicious-package-publishes>
 5. Both above links refer to the original report of this vulnerability on GitHub: <https://github.com/eslint/eslint-scope/issues/39>
-5. Visit <http://localhost:3000/#/contact>
-6. Submit your feedback with `https://github.com/eslint/eslint-scope/issues/39` in the comment to solve this challenge
+6. Visit <http://localhost:3000/#/contact>
+7. Submit your feedback with `https://github.com/eslint/eslint-scope/issues/39` in the comment to solve this challenge
 
 ### Inform the shop about a more sneaky instance of typosquatting it fell for
 
@@ -1295,7 +1291,7 @@ be _a lot harder_ to distinguish from the original repository
 MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you can see
 the original `ngx-bar-rating` module page on NPM:
 
-![ngx-bar-rating on NPM]()
+![ngx-bar-rating on NPM]()
 
 ### Give the server something to chew on for quite a while
 
@@ -1348,7 +1344,7 @@ loop`._
 > allocated in an individual parser if loss of the document is
 > acceptable, or treating entities symbolically and expanding them
 > lazily only when (and to the extent) their content is to be used.[^6]
-> 
+>
 > ```xml
 > <?xml version="1.0"?>
 ><!DOCTYPE lolz [
@@ -1494,31 +1490,35 @@ totally different attack styles.
    header.
 4. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) into the _Encoded_ field at <https://jwt.io>.
-6. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
+5. In the _PAYLOAD_ field under _Decoded_ on the right hand side, change
    the `email` attribute in the JSON to `rsa_lord@juice-sh.op`.
-7. In the <https://jwt.io> tab where you are modifying the JWT, go to
+6. In the <https://jwt.io> tab where you are modifying the JWT, go to
    the Browser developer tools (`F12` in Chrome) and find the
    `js/jwt.js` file (under _Source_ in Chrome).
-8. Put a breakpoint on the line saying `key =
+7. Put a breakpoint on the line saying `key =
    window.CryptoJS.enc.Latin1.parse(key).toString();` (line 77 at the
    time of this writing)
-9. Make some arbitrary change to the JWT on the right hand side to
+8. Make some arbitrary change to the JWT on the right hand side to
    trigger the breakpoint.
-10. While execution is paused, set the `key` variable to the public RSA
-    via the developer tools Console: `key = '-----BEGIN RSA PUBLIC
-    KEY-----\r\nMIGJAoGBAM3CosR73CBNcJsLv5E90NsFt6qN1uziQ484gbOoule8leXHFbyIzPQRozgEpSpiwhr6d2/c0CfZHEJ3m5tV0klxfjfM7oqjRMURnH/rmBjcETQ7qzIISZQ/iptJ3p7Gi78X5ZMhLNtDkUFU9WaGdiEb+SnC39wjErmJSfmGb7i1AgMBAAE=\r\n-----END
-    RSA PUBLIC KEY-----'`. Note that it is necessary to encode the line
-    breaks in the key properly using `\r\n` in the appropriate places!
-11. Resume execution. A signature should have been added to the JWT text
+9. While execution is paused, set the `key` variable to the public RSA
+   via the developer tools Console: `key = '-----BEGIN RSA PUBLIC
+   KEY-----\r\nMIGJAoGBAM3CosR73CBNcJsLv5E90NsFt6qN1uziQ484gbOoule8leXHFbyIzPQRozgEpSpiwhr6d2/c0CfZHEJ3m5tV0klxfjfM7oqjRMURnH/rmBjcETQ7qzIISZQ/iptJ3p7Gi78X5ZMhLNtDkUFU9WaGdiEb+SnC39wjErmJSfmGb7i1AgMBAAE=\r\n-----END
+   RSA PUBLIC KEY-----'`. Note that it is necessary to encode the line
+   breaks in the key properly using `\r\n` in the appropriate places!
+10. Resume execution. A signature should have been added to the JWT text
     on the left hand side.
-12. Change the `Authorization` header of a subsequent request to the
+11. Change the `Authorization` header of a subsequent request to the
     retrieved JWT (prefixed with `Bearer ` as before) and submit the
     request. Alternatively you can set the `token` cookie to the JWT
     which be used to populate any future request with that header.
 
+### Like any review at least three times as the same user
+
+:wrench: **TODO**
+
 ### Log in with the support team's original user credentials
 
-_Solving this challenge requires [KeePass 2.x](http://keepass.info)
+_Solving this challenge requires [KeePass 2.x](http://keepass.info)
 installed on your computer. If you are using a non-Windows OS you need
 to use some unofficial port._
 
