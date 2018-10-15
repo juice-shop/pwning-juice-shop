@@ -22,9 +22,9 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                            | Difficulty                           |
-|:-------------------------------------|:-------------------------------------|
-| Like any review any number of times. | :star::star::star::star::star::star: |
+| Challenge                            | Difficulty |
+|:-------------------------------------|:-----------|
+| Like any review any number of times. | :star:     |
 
 ### Like any review any number of times
 

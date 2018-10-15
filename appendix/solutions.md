@@ -62,6 +62,10 @@ error situation and solve this challenge along the way:
 
   ![SQL in UI Error](img/login-error_sql.png)
 
+### Like any review any number of times
+
+:wrench: **TODO**
+
 ### Let us redirect you to a donation site that went out of business
 
 1. Log in to the application with any user.
@@ -1550,10 +1554,6 @@ to use some unofficial port._
     challenge.
 
     ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
-
-### Like any review any number of times
-
-:wrench: **TODO**
 
 ### Unlock Premium Challenge to access exclusive content
 
