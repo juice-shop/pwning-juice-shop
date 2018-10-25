@@ -42,9 +42,9 @@
 | Challenge                                                                            | Difficulty                           |
 |:-------------------------------------------------------------------------------------|:-------------------------------------|
 | Log in with the administrator's user account.                                        | :star::star:                         |
-| Order the Christmas special offer of 2014.                                           | :star::star::star:                   |
 | Log in with Bender's user account.                                                   | :star::star::star:                   |
 | Log in with Jim's user account.                                                      | :star::star::star:                   |
+| Order the Christmas special offer of 2014.                                           | :star::star::star:                   |
 | Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:             |
 | Update multiple product reviews at the same time.                                    | :star::star::star::star:             |
 | Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:             |
@@ -81,20 +81,6 @@ can abuse?
   [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
   challenge.
 
-### Order the Christmas special offer of 2014
-
-To solve this challenge you need _to order_ a product that is not
-supposed to be available any more.
-
-#### Hints
-
-* Find out how the application _hides_ deleted products from its
-  customers.
-* Try to craft an attack string that makes deleted products visible
-  again.
-* You need to get the deleted product into your shopping cart and
-  trigger the _Checkout_.
-
 ### Log in with Bender's user account
 
 Bender is a regular customer, but mostly hangs out in the Juice Shop to
@@ -122,6 +108,20 @@ ever tasted before.
   launch a targeted attack.
 * If you harvested Jim's password hash, you can try to attack that
   instead of using SQL Injection.
+
+### Order the Christmas special offer of 2014
+
+To solve this challenge you need _to order_ a product that is not
+supposed to be available any more.
+
+#### Hints
+
+* Find out how the application _hides_ deleted products from its
+  customers.
+* Try to craft an attack string that makes deleted products visible
+  again.
+* You need to get the deleted product into your shopping cart and
+  trigger the _Checkout_.
 
 ### Let the server sleep for some time
 
