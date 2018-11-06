@@ -335,6 +335,10 @@ Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
 [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
 
+### Log in with Amy's original user credentials
+
+:wrench: **TODO**
+
 ### Log in with Bender's user account
 
 * Log in with _Email_ `bender@juice-sh.op'--` and any _Password_ if you
