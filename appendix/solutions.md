@@ -153,31 +153,6 @@ error situation and solve this challenge along the way:
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the AngularJS client.
 
-### Order the Christmas special offer of 2014
-
-1. Open http://localhost:3000/#/search and reload the page with `F5` while observing the _Network_ tab in your browser's DevTools
-2. Recognize the `GET` request <http://localhost:3000/rest/product/search?q=> which returns the product data
-3. Submit `';` as `q` via <http://localhost:3000/rest/product/search?q=';>
-4. The `error` object contains the full SQL statement used for search
-   for products.
-
-   ![SQL search query in JavaScript error](img/search_error-js_console.png)
-5. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
-   product we seek.
-6. Using `'--` for `q` results in a `SQLITE_ERROR: syntax error`. This is due to two (now unbalanced) parenthesis
-   in the query.
-7. Using `'))--` for `q` fixes the syntax and successfully retrieves all
-   products, including the (logically deleted) Christmas offer.
-8. Go back to http://localhost:3000/#/search and log in as any user.
-9. Add any regular product other than the _Christmas Super-Surprise-Box
-   (2014 Edition)_ into you shopping basket to prevent problems at
-   checkout later. Memorize your `BasketId` value in the request payload.
-10. Submit a `POST` request to <http://localhost:3000/api/BasketItems>
-    with
-    * `{"BasketId": "<Your Basket ID>", "ProductId": 10, "quantity": 1}` as body
-    * and `application/json` as `Content-Type`
-11. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
-
 ### Use a deprecated B2B interface that was not properly shut down
 
 1. Log in as any user.
@@ -359,6 +334,10 @@ logged out and send any `UserId` in the JSON payload.
 Alternatively this challenge can also be solved via _Poison Null Byte_
 injection as in
 [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
+
+### Log in with Amy's original user credentials
+
+:wrench: **TODO**
 
 ### Log in with Bender's user account
 
@@ -546,6 +525,31 @@ simultaneously.
 ```
 
 ## Hard Challenges (  :star::star::star::star:  )
+
+### Order the Christmas special offer of 2014
+
+1. Open http://localhost:3000/#/search and reload the page with `F5` while observing the _Network_ tab in your browser's DevTools
+2. Recognize the `GET` request <http://localhost:3000/rest/product/search?q=> which returns the product data
+3. Submit `';` as `q` via <http://localhost:3000/rest/product/search?q=';>
+4. The `error` object contains the full SQL statement used for search
+   for products.
+
+   ![SQL search query in JavaScript error](img/search_error-js_console.png)
+5. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
+   product we seek.
+6. Using `'--` for `q` results in a `SQLITE_ERROR: syntax error`. This is due to two (now unbalanced) parenthesis
+   in the query.
+7. Using `'))--` for `q` fixes the syntax and successfully retrieves all
+   products, including the (logically deleted) Christmas offer.
+8. Go back to http://localhost:3000/#/search and log in as any user.
+9. Add any regular product other than the _Christmas Super-Surprise-Box
+   (2014 Edition)_ into you shopping basket to prevent problems at
+   checkout later. Memorize your `BasketId` value in the request payload.
+10. Submit a `POST` request to <http://localhost:3000/api/BasketItems>
+    with
+    * `{"BasketId": "<Your Basket ID>", "ProductId": 10, "quantity": 1}` as body
+    * and `application/json` as `Content-Type`
+11. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Change Bender's password into slurmCl4ssic without using SQL Injection
 
