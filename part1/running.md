@@ -8,11 +8,11 @@ endeavours.
 
 ### One-click cloud instance
 
-!["Deploy to Heroku" button](img/deploy-to-heroku.svg)
+!["Deploy to Heroku" button](img/deploy-to-heroku.svg)
 
 The quickest way to get a running instance of Juice Shop is to click the
 _Deploy to Heroku_ button in the
-[_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno).
+[_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno).
 You have to log in with your Heroku account and will then receive a
 single instance (or _dyno_ in Heroku lingo) hosting the application. If
 you have forked the Juice Shop repository on GitHub, the _Deploy to
@@ -31,9 +31,9 @@ Shop to the Heroku support team they answered with:
 > luck against the platform and your app so long as it's not DDoS.
 
 As a little related anecdote, the OWASP Juice Shop was even crowned
-[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6):
+[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6):
 
-!["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
+!["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
 
 ### Local installation
 
@@ -41,7 +41,7 @@ To run the Juice Shop locally you need to have
 [Node.js](http://nodejs.org/) installed on your computer. The Juice Shop
 offically runs on versions {{book.nodeVersions}} of Node.js, closely
 following the official
-[Node.js Long-term Support Release Schedule](https://github.com/nodejs/LTS).
+[Node.js Long-term Support Release Schedule](https://github.com/nodejs/LTS).
 During development and Continuous Integration (CI) the application is
 automatically tested with these current versions of Node.js. The
 officially recommended version to run Juice Shop is either the most
@@ -109,7 +109,7 @@ launch a Docker container instance of the `latest` Juice Shop image
 ### Amazon EC2 Instance
 
 You need to have an account at
-[Amazon Web Services](https://aws.amazon.com) in order to create a
+[Amazon Web Services](https://aws.amazon.com) in order to create a
 server hosting the Juice Shop there.
 
 1. Setup an _Amazon Linux AMI_ instance
@@ -145,6 +145,22 @@ docker run -d -p 80:3000 bkimminich/juice-shop
    `--name <app name> --deployment-container-image-name
    bkimminich/juice-shop`
 
+## Installing a specific release version
+
+The installation instructions above will all give you the latest official release version of the Juice Shop. If you want to install a specific older version, you can easily do so by retrieving the corresponding tag from GitHub or Docker. For release v7.5.1 - which was the last version with the original AgularJS/Bootstrap frontend - for example:
+
+* [From sources](#from-sources) - Run `git fetch --tags` and then `git checkout v7.5.1` before running `npm install`
+* [Docker image](#docker-image) - Run `docker pull bkimminich/juice-shop:v7.5.1` instead of the usual `docker pull bkimminich/juice-shop`
+* [From pre-packaged distribution](#from-pre-packaged-distribution) - Just download the older release from <https://github.com/bkimminich/juice-shop/releases> or <https://sourceforge.net/projects/juice-shop/files/>
+
+To experience a preview of the next upcoming Juice Shop version you can do as follows:
+
+* Simply visit <https://juice-shop-staging.herokuapp.com> and take a look
+* [From sources](#from-sources) - Run `git fetch` and then `git checkout develop` before running `npm install`
+* [Docker image](#docker-image) - Run `docker pull bkimminich/juice-shop:snapshot` instead of the usual `docker pull bkimminich/juice-shop`
+
+:information_source: Please be aware that support by the core team or community is limited (at best) for outdated and unreleased versions alike. To fully enjoy your OWASP Juice Shop experience, it is recommended to always use the latest version.
+
 ## _Self-healing_-feature
 
 OWASP Juice Shop was not exactly designed and built with a high
@@ -171,13 +187,13 @@ lectures:
 **A server instance of OWASP Juice Shop is supposed to be used by only a
 single-user!**
 
-This restriction applies to all the [Run Options](#run-options)
+This restriction applies to all the [Run Options](#run-options)
 explained above. It is technically necessary to make the
 [_Self-healing_-feature](#self-healing-feature) work properly and
 consistently. Furthermore, when multiple users would attack the same
 instance of the Juice Shop all their progress tracking would be mixed
 leading to inevitable confusion for the individual hacker. The upcoming
-[Challenge tracking](challenges.md) chapter will illustrate this topic.
+[Challenge tracking](challenges.md) chapter will illustrate this topic.
 
 It should not go unmentioned that it is of course okay to have multiple
 users hack the same instance from a shared machine in a kind of
