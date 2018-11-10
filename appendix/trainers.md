@@ -23,7 +23,7 @@ Juice Shop offers
 [various customization options](../part1/customization.md) to achieve
 this.
 
-Several themes come with the Juice Shop source code, the two most
+Several custom configurations already come packaged with the Juice Shop source code, the two most
 sophisticated ones being
 [7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml)
 and
@@ -32,7 +32,9 @@ and
 In addition, you might want to disable all challenge notifications
 during awareness trainings to avoid distraction. The
 [Quiet](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml)
-theme demonstrates the necessary options to achieve this.
+configuration demonstrates the necessary options to achieve this.
+
+![Quiet mode](img/quiet_mode.png)
 
 For a really sophisticated and immersive demo consider performing some
 [Additional Browser tweaks](../part1/customization.md#additional-browser-tweaks).
