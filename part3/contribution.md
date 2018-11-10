@@ -18,7 +18,7 @@ processes when contributing to the OWASP Juice Shop project.
 
 ## Tips for newcomers
 
-If you are new to application development - particularly with AngularJS
+If you are new to application development - particularly with Angular
 and Express.js - it is recommended to read the
 [Codebase 101](codebase.md) to get an overview what belongs where. It
 will lower the entry barrier for you significantly.
@@ -198,7 +198,7 @@ performs the following actions:
 3. Execute the quality checks consisting of
    * Compliance check against the
      [JS Standard Code Style rules](http://standardjs.com)
-   * Unit tests for the AngularJS client
+   * Unit tests for the Angular components
    * Unit tests for the Express routes and server-side libraries
    * Integration tests for the server-side API
    * End-to-end tests verifying that all challenges can be solved

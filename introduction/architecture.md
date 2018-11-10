@@ -1,11 +1,13 @@
 # Architecture overview
 
 The OWASP Juice Shop is a pure web application implemented in
-JavaScript. In the frontend the popular
-[AngularJS](https://angularjs.org/) framework is used to create a
+JavaScript (or TypeScript which is then compiled into JavaScript). In the frontend the popular
+[Angular](https://angular.io/) framework is used to create a
 so-called _Single Page Application_. The user interface layout is
-provided by Twitter's [Bootstrap](http://getbootstrap.com) framework -
-which works nicely in combination with AngularJS.
+implementing Google's [Material Design](https://material.io/) using
+[Angular Material](https://material.angular.io/) components. All icons
+found in the UI are originating from the [Font Awesome](https://fontawesome.com)
+library.
 
 JavaScript is also used in the backend as the exclusive programming
 language: An [Express](http://expressjs.com) application hosted in a

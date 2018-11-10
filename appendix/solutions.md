@@ -151,7 +151,7 @@ error situation and solve this challenge along the way:
 5. Visit <http://localhost:3000/#/basket> to solve the challenge.
 
 If the challenge is not immediately solved, you might have to
-`F5`-reload to relay the `bid` change to the AngularJS client.
+`F5`-reload to relay the `bid` change to the Angular client.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
