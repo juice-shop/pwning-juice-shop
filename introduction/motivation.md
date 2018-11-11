@@ -30,7 +30,8 @@ end of 2014 most of the current e-commerce functionality was up and
 running - along with an initial number of planted vulnerabilities. Over
 the years more variants of vulnerabilities were added. In parallel the
 application was kept up-to-date with latest web technology (e.g.
-WebSockets and OAuth 2.0). Some of these additional capabilities then
+WebSockets and OAuth 2.0) and frontend frameworks (i.e. by migrating from AngularJS with Bootstrap to Angular with Material Design).
+Some of these additional capabilities then
 brought the chance to add corresponding vulnerabilities - and so the
 list of challenges kept growing ever since.
 

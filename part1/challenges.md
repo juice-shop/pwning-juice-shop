@@ -42,6 +42,12 @@ challenge. If a "book" icon is also displayed within the label, you can
 click on it to be redirected to the corresponding hints section in
 [Part 2](../part2/README.md) of this book.
 
+### Challenge Filters
+
+Additional to the folding and unfolding of entire difficulty blocks, you
+can filter the Score Board by [challenge categories](categories.md), e.g. to focus on specific vulnerabilities.
+You can also hide all solved challenges to reduce the level of distraction on the Score Board.
+
 ## Success notifications
 
 The OWASP Juice Shop employs a simple yet powerful gamification

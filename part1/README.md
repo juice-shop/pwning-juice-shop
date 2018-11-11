@@ -3,10 +3,10 @@
 OWASP Juice Shop offers multiple ways to be deployed and used. The
 author himself has seen it run on
 
-* restricted corporate Windows 7 bricks
+* restricted corporate Windows machines
 * heavily customized Linux distros
 * all kinds of Apple hardware
-* overclocked Windows 10 gaming notebooks
+* overclocked Windows gaming notebooks
 * various cloud platforms
 
 Chance is pretty high that you will be able to get it running on your

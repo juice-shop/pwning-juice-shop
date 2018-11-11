@@ -8,6 +8,8 @@ or MITRE's [Common Weakness Enumeration](https://cwe.mitre.org/). The
 following table presents a mapping of the Juice Shop's categories to
 OWASP and CWE (without claiming to be complete).
 
+![Category breakdown](img/categories.png)
+
 ### Category Mappings
 
 | Category                    | OWASP                                                                                                                                      | CWE                                                                                                                                                                                                                                            |

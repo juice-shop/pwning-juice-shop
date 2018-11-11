@@ -78,30 +78,25 @@ find its syntax along with an excerpt of the default settings.
   * `showChallengeSolvedNotifications` shows or hides all instant
     _"challenge solved"_-notifications. Recommended to set to `false`
     for awareness demos. Defaults to `true`.
-  * `showCtfFlagsInNotifications` shows or hides the CTF flag codes in
-    the _"challenge solved"_-notifications. Is ignored when
-    `showChallengeSolvedNotifications` is set to `false`. Defaults to
-    `false`.
   * `showChallengeHints` shows or hides hints for each challenge on
     hovering over/clicking its _"unsolved"_ badge on the score board.
     Defaults to `true`.
   * `showVersionNumber` shows or hides the software version from the
     title. Defaults to `true`.
-  * `theme` the name of the [Bootswatch](https://bootswatch.com) theme
-    used to render the UI. Options are `cerulean`, `cosmo`, `cyborg`,
-    `darkly`, `flatly`, `lumen`, `paper`, `readable`, `sandstone`,
-    `simplex`, `slate`, `spacelab`, `superhero`, `united` and `yeti`.
-    Defaults to `slate`
-  * `gitHubRibbon` color of the _"Fork me on GitHub"_ ribbon in the
-    top-right corner. Options are `darkblue`, `gray`, `green`, `orange`,
-    `red`, `white` and - to hide the ribbon entirely - also `none` .
-    Defaults to `orange`.
+  * `theme` the name of the color theme
+    used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
+    `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`.
+    Defaults to `bluegrey-lightgreen`
+  * `gitHubRibbon` shows or hides the _"GitHub"_ button in the
+    top-right corner of the navigation bar. Defaults to `true`.
   * `twitterUrl` used as the Twitter link promising coupon codes on the
-    _Your Basket_ screen. Defaults to
+    _About Us_ and _Your Basket_ screen. Defaults to
     `'https://twitter.com/owasp_juiceshop'`
   * `facebookUrl` used as the Facebook link promising coupon codes on
-    the _Your Basket_ screen. Defaults to
+    the _About Us_ and _Your Basket_ screen. Defaults to
     `'https://www.facebook.com/owasp.juiceshop'`
+  * `slackUrl` used as the Slack link on the _About Us_ screen. Defaults to
+    `'http://owaspslack.com'`
   * `planetOverlayMap` filename in `/app/private` _or_ URL of an image
     to download to that folder and then use as an overlay texture for
     the 3D planet "easter egg". Defaults to `orangemap2k.jpg`
@@ -114,16 +109,17 @@ find its syntax along with an excerpt of the default settings.
     * `bottomProductImage` filename in `/app/public/images/products` to
       use as the image on the bottom of the info column on the page.
       Defaults to `apple_pressings.jpg`
+  * `altcoinName` defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen. Defaults to `Juicycoin`
   * `cookieConsent` defines the cookie consent dialog shown in the
     bottom right corner
     * `backgroundColor` of the cookie banner itself. Defaults to
-      `'#eb6c44'` (red-orange)
+      `'#546e7a'`
     * `textColor` of the `message` shown in the cookie banner. Defaults
-      to `'#ffffff'` (white)
+      to `'#ffffff'`
     * `buttonColor` defines the color of the button to dismiss the
-      banner. Defaults to `'#f5d948'` (gold)
+      banner. Defaults to `'#558b2f'`
     * `buttonTextColor` of the `dismissText` on the button. Defaults to
-      `'#000000'` (black)
+      `'#ffffff'`
     * `message` explains the cookie usage in the application. Defaults
       to `'This website uses fruit cookies to ensure you get the
       juiciest tracking experience.'`
@@ -143,6 +139,8 @@ find its syntax along with an excerpt of the default settings.
       `https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda`
     * `acknowledgements` URL a "hall of fame" page. Can be fake
       obviously. Defaults to `/#/score-board`
+* `challenges`
+  * `safetyOverride` enables all challenges regardless of any potential harm or danger they might pose for your computer (i.e. XXE or RCE vulnerabilities which could not entirely be sandboxed). Defaults to `false`
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -178,7 +176,17 @@ find its syntax along with an excerpt of the default settings.
     * `text` of the review (_mandatory_)
     * `author` of the review from the following list of pre-defined
       users in the database: `admin`, `jim`, `bender`, `ciso`,
-      `support`, `morty` or `mc.safesearch` (_mandatory_)
+      `support`, `morty`, `amy` or `mc.safesearch` (_mandatory_)
+* `ctf`
+  * `showFlagsInNotifications` shows or hides the CTF flag codes in
+    the _"challenge solved"_-notifications. Is ignored when
+    `application.showChallengeSolvedNotifications` is set to `false`. Defaults to
+    `false`
+  * `showCountryDetailsInNotifications` determines if the country mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using [FBCTF](ctf.md#running-fbctf). Defaults to `none`
+  * `countryMapping` list which maps challenges to countries on the challenge map of [FBCTF](ctf.md#running-fbctf). Only needed for CTFs using [FBCTF](ctf.md#running-fbctf). Defaults to empty `~`
+    * `<challengeName>`
+      * `name` the name of the country
+      * `code` the two-letter ISO code of the country
 
 ### Configuration example
 
@@ -192,13 +200,13 @@ application:
   favicon: favicon_v2.ico
   numberOfRandomFakeUsers: 0
   showChallengeSolvedNotifications: true
-  showCtfFlagsInNotifications: false
   showChallengeHints: true
   showVersionNumber: true
-  theme: slate
-  gitHubRibbon: orange
+  theme: bluegrey-lightgreen
+  gitHubRibbon: true
   twitterUrl: 'https://twitter.com/owasp_juiceshop'
   facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
+  slackUrl: 'http://owaspslack.com'
   planetOverlayMap: orangemap2k.jpg
   planetName: Orangeuze
   recyclePage:
@@ -218,6 +226,8 @@ application:
     contact: 'mailto:donotreply@owasp-juice.shop'
     encryption: 'https://pgp.mit.edu/pks/lookup?op=get&search=0x062A85A8CBFBDCDA'
     acknowledgements: '/#/score-board'
+challenges:
+  safetyOverride: false
 products:
   -
     name: 'Apple Juice (1000ml)'
@@ -253,6 +263,10 @@ products:
     image: 3d_keychain.jpg
     fileForRetrieveBlueprintChallenge: JuiceShop.stl
 # ~~~~~ ... ~~~~~~
+ctf:
+  showFlagsInNotifications: false
+  showCountryDetailsInNotifications: none
+  countryMapping: ~
 ```
 
 ### Overriding default settings
@@ -266,10 +280,11 @@ is as short as this:
 application:
   logo: JuiceShopCTF_Logo.png
   favicon: favicon_ctf.ico
-  showCtfFlagsInNotifications: true
   showChallengeHints: false
   showVersionNumber: false
-  gitHubRibbon: none
+  gitHubRibbon: false
+ctf:
+  showFlagsInNotifications: true
 ```
 
 ### Testing customizations
