@@ -15,6 +15,14 @@ is an open-source project hosted by the non-profit
 is developed and maintained by volunteers. The content of this book was
 written for {{book.juiceShopVersion}} of OWASP Juice Shop.
 
+> :warning: **A major rewrite for version 8.x is currently ongoing! Several hints
+> and solutions are still for the 7.x version and might not work as-is on 8.x!
+> The content will be incrementally updated for 8.x only on GitBook!**
+>
+> To download the last edition of this book that is fully compatible with 7.x,
+> please visit <https://leanpub.com/juice-shop>. LeanPub will not be re-published
+> before the transition to 8.x is completed.
+
 The book is divided into three parts:
 
 ### Part I - Hacking preparations
