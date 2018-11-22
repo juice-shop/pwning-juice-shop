@@ -242,7 +242,7 @@ in order to exploit and solve them:
 * [Forge a coupon code that gives you a discount of at least 80%](#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)
   exploits `z85` (Zero-MQ Base85 implementation) as the library for
   coupon codes.
-* [Solve challenge #99](#solve-challenge-99) requires you to create a
+* [Solve challenge #999](#solve-challenge-999) requires you to create a
   valid hash with the `hashid` library.
 * Passwords in the `Users` table are hashed with unsalted MD5
 * Users registering via Google account will get a very cheap default
@@ -1452,11 +1452,10 @@ totally different attack styles.
 9. Enter and redeem the generated code on the _Your Basket_ page and
    _Checkout_ to solve the challenge.
 
-### Solve challenge #99
+### Solve challenge #999
 
 1. Solve any other challenge
 2. Inspect the cookies in your browser to find a `continueCode` cookie
-   with 30 days lifetime
 3. The `package.json.bak` contains the library used for generating
    continue codes: `hashid`
 4. Visit <http://hashids.org/> to get some information about the
@@ -1472,19 +1471,19 @@ totally different attack styles.
 ```javascript
    var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 
-  var id = hashids.encode(99);
+  var id = hashids.encode(999);
   var numbers = hashids.decode(id);
 
   $("#input").text("["+numbers.join(", ")+"]");
   $("#output").text(id);
 ```
 
-1. Encoding the value `99` gives you the hash result
-   `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj`
+1. Encoding the value `999` gives you the hash result
+   `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj`
 2. Send a `PUT` request to the URL
-   <http://localhost:3000/rest/continue-code/apply/69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkKgGe9M7k2rK63YpqQLPjnlb5V5LvDj>
+   <http://localhost:3000/rest/continue-code/apply/69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj>
 
-   ![Challenge #99 in PostMan](img/challenge99_postman.png)
+   ![Challenge #999 in PostMan](img/challenge999_postman.png)
 
 ### Forge an almost properly RSA-signed JWT token
 

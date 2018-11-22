@@ -10,7 +10,7 @@
 | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note") | :star::star::star:                   |
 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                           | :star::star::star::star::star:       |
 | Forge a coupon code that gives you a discount of at least 80%.                                                                                                                       | :star::star::star::star::star::star: |
-| Solve challenge #99. Unfortunately, this challenge does not exist.                                                                                                                   | :star::star::star::star::star::star: |
+| Solve challenge #999. Unfortunately, this challenge does not exist.                                                                                                                   | :star::star::star::star::star::star: |
 | Unlock Premium Challenge to access exclusive content.                                                                                                                                | :star::star::star::star::star::star: |
 
 ### Access a confidential document
@@ -127,7 +127,7 @@ up to you to forge your own.
 * If all else fails, you could still try to blindly brute force the
   coupon code field before checkout.
 
-### Solve challenge #99
+### Solve challenge #999
 
 The OWASP Juice Shop is _so broken_ that even its convenience features
 (which have nothing to do with the e-commerce use cases) are designed to
@@ -137,7 +137,7 @@ after a server crash or a few days pause.
 
 In order to not mess with the _real challenges_ accidentally, the
 challenge is to fake a signal to the application that you successfully
-solved challenge #99 - which does not exist.
+solved challenge #999 - which does not exist.
 
 #### Hints
 
