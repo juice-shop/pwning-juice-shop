@@ -26,16 +26,28 @@ briefly walk you through these "happy path" use cases.
 
 ### Browse products
 
-When visiting the OWASP Juice Shop you will be automatically forwarded
-to the `#/search` page, which shows a table with all available products.
+When visiting the OWASP Juice Shop you will begin on the landing page `#/`
+which initially displays all products offered in the shop. Clicking on the
+logo in the top left corner of the screen will always bring you back to this
+screen (or more precisely, to its alias `#/search`).
+
+![All Products](/part1/img/all-products.png)
+
 This is of course the "bread & butter" screen for any e-commerce site.
 When you click on the small "eye"-button next to the price of a product,
-an overlay screen will open showing you that product including an image
-of it.
+an overlay screen will open showing you that product details including a
+list of customer reviews for that product (if available). You can also enter
+a new (or edit an existing) product review in this dialog. Authenticated users
+can upvote reviews they like.
+
+![Product Details](/part1/img/product-details.png)
 
 You can use the _Search..._ box in the navigation bar on the top of the
 screen to filter the table for specific products by their name and
-description.
+description. Using the controls at the bottom of the table, you can
+navigate through a the result list that exceeds the _Items per page_ limit.
+
+![Search Results](/part1/img/search-results.png)
 
 ### User login
 
@@ -45,6 +57,8 @@ anonymous users. You first have to log in to the shop with your user
 credentials on the `#/login` page. There you can either log in with your
 existing credentials (if you are a returning customer) or with your
 Google account.
+
+![Login](/part1/img/login.png)
 
 ### User registration
 
@@ -56,10 +70,14 @@ shopping! During registration you also choose and answer a security
 question that will let you recover the account if you ever forget your
 password.
 
+![User Registration](/part1/img/user-registration.png)
+
 ### Forgot Password
 
 By providing your email address, the answer to your security question
 and a new password, you can recover an otherwise inaccessible account.
+
+![User Registration](/part1/img/forgot-password.png)
 
 ### Choosing products to purchase
 
@@ -74,6 +92,8 @@ purchase:
   in the shopping basket
 * remove products from the shopping basket with the "trashcan"-button
 
+![Your Basket](/part1/img/your-basket.png)
+
 ### Checkout
 
 Still on the `#/basket` page you also find some purchase related buttons
@@ -84,68 +104,126 @@ that are worth to be explored:
 * unfold the _Payment_ section with the "credit card"-button where you
   find donation and merchandise links
 
+![Basket Coupons & Payment collapsibles](/part1/img/basket-collapsibles.png)
+
 Finally you can click the _Checkout_ button to issue an order. You will
 be forwarded to a PDF with the confirmation of your order right away.
 
 _You will not find any "real" payment or delivery address options
 anywhere in the Juice Shop as it is not a "real" shop, after all._
 
-----
+![Order Confirmation](/part1/img/order-confirmation.png)
 
-There are also some secondary use cases that the OWASP Juice Shop
-covers. While these are not critical for the shopping workflow itself,
-they positively influence the overall customer experience.
+### User Menu
 
-### Get information about the shop
+Clicking the user icon right next to the application logo & title, you
+will give you access to several secondary use cases of the Juice Shop.
+This menu is obviously only available when you are logged in with your
+user account.
 
-Like every proper enterprise, the OWASP Juice Shop has of course an
-`#/about` page titled _About Us_. There you find a summary of the
-interesting history of the shop along with a link to its official Terms
-of Use document. Additionally the page displays a fancy illustrated
-slideshow of customer feedback.
+![User Menu](/part1/img/user-menu.png)
 
-### Language selection
+#### User Profile
 
-From a dropdown menu in the navigation bar you can select a multitude of
-languages you want the user interface to be displayed in. On the top of
-the list, you find languages with complete translations, the ones below
-with a "flask"-icon next to them, offer only partial translation.
+Clicking you your email address in the user menu, you will get to the
+_User Profile_ screen on `/profile`. Visiting it might break your user
+experience a bit, as it looks slightly less sophisticated than the rest
+of the shop's UI. It is fully functional nonetheless, as it allows you to
+upload a `JPG`-format picture of yourself (or link an existing Gravatar)
+and choose a username for your account.
 
-If you want to know more about (or even help with) the localization of
-OWASP Juice Shop, please refer to the
-[Help with translation](/part3/translation.md) chapter in part III of
-this book.
+![User Profile](/part1/img/user-profile.png)
 
-### Provide feedback
-
-Customers are invited to leave feedback about their shopping experience
-with the Juice Shop. Simply visit the `#/contact` page by clicking the
-_Contact Us_ button in the navigation bar. You might recognize that it
-is also possible to leave feedback - when not logged in - as an
-anonymous user. The contact form is very straightforward with a free
-text _Comment_ field and a _Rating_ on a 1-5 stars scale.
-
-### Complain about problems with an order
-
-The _Complain?_ button is shown only to logged in users in the navbar.
-It brings you to the `#/complain` page where you can leave a free text
-_Message_ and also attach an _Invoice_ file.
-
-### Request Recycling Box
+#### Request Recycling Box
 
 When logged in you will furthermore see a _Recycle_ button that brings
 you to the `#/recycle` page. This is a very innovative feature that
 allows eco-friendly customers to order pre-stamped boxes for returning
-fruit pressing leftovers to the Juice Shop. For greater amounts of
-pomace the customer can alternatively order a truck to come by and pick
-it up.
+fruit pressing leftovers to the Juice Shop.
 
-### Change user password
+![Request Recycling Box](/part1/img/request-recycling-box.png)
+
+For greater amounts of pomace the customer can alternatively order a
+truck to come by and pick it up at a chosen future date.
+
+![Request Recycling Pickup](/part1/img/recycling-pickup.png)
+
+#### Order Tracking
+
+Equipped with an order number from your confirmation PDF, you can invoke the
+`#/track-order` functionality by clicking _Track Orders_.
+
+![Track Orders](/part1/img/track-orders.png)
+
+After entering a valid order number, you will be shown the products from
+your order along with a delivery status and expected delivery date.
+
+![Track Orders Result](/part1/img/track-orders-result.png)
+
+_Just as there was no "real" payment was happening, you will hopefully
+understand that there is no "real" order delivery happening - no matter
+what the order tracking dialog suggested._
+
+#### Change user password
 
 If you are currently logged in you will find the obligatory _Change
 Password_ button in the navigation bar. On the `#/change-password` page
 you can then choose a new password. To prevent abuse you have of course
 to supply your current password to legitimate this change.
+
+![Change Password](/part1/img/change-password.png)
+
+### Contact Us Menu
+
+The _Contact Us_ button in the navigation bar reveals another drop-down
+menu with up to two options to choose from.
+
+![Contact Us Menu](/part1/img/contact-us-menu.png)
+
+#### Customer Feedback
+
+Customers are invited to leave feedback about their shopping experience
+with the Juice Shop. Simply visit the `#/contact` page by clicking the
+_Customer Feedback_ menu item. You might recognize that it
+is also possible to leave feedback as an anonymous user. The contact form
+is very straightforward with a free text _Comment_ field and a _Rating_ on
+a 1-5 stars scale. To prevent abuse, you have to solve a simple mathematical
+problem before being allowed to submit your feeback.
+
+![Contact Us](/part1/img/contact-us.png)
+
+#### Complain
+
+The _Complain?_ menu item is shown only to logged in users.
+It brings you to the `#/complain` page where you can leave a free text
+_Message_ and also attach an _Invoice_ file in case you had some issues
+with a recent order at the Juice Shop.
+
+![File Complaint](/part1/img/file-complaint.png)
+
+### About Us
+
+Like every proper enterprise, the OWASP Juice Shop has of course an
+`#/about` page titled _About Us_. There you find a summary of the
+interesting history of the shop along with a link to its official Terms
+of Use document. Additionally the page displays a fancy illustrated
+slideshow of all [customer feedback](#customer-feedback). Beneath that
+you can find all important social media contact information of the shop.
+
+![About Us](/part1/img/about-us.png)
+
+### Language selection
+
+From a dropdown menu in the navigation bar you can select a multitude of
+languages you want the user interface to be displayed in. Languages marked
+with a "flask"-icon next to them offer only rudimentary or partial translation.
+
+![Language Selection](/part1/img/language-selection.png)
+
+_If you want to know more about (or even help with) the localization of
+OWASP Juice Shop, please refer to the
+[Help with translation](/part3/translation.md) chapter in part III of
+this book._
 
 [^1]: https://www.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
 
