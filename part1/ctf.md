@@ -303,9 +303,13 @@ preferred CTFd run-mode below.
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
 
-![CTFd challenge overview](img/ctfd_1.png)
+![CTFd Challenge view](img/ctfd_1.png)
 
-![CTFd challenge details](img/ctfd_2.png)
+![CTFd Scoreboard view](img/ctfd_2.png)
+
+![CTFd Statistics view](img/ctfd_3.png)
+
+![CTFd Team view](img/ctfd_4.png)
 
 ### Running FBCTF
 
