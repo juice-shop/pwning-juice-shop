@@ -17,6 +17,7 @@ install:
   - 'node --version && npm --version'
   - 'npm i -g gitbook-cli'
   - 'choco install calibre'
+  - 'refreshenv'
   - 'npm i -g svgexport'
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
