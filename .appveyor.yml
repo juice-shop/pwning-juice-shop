@@ -26,8 +26,6 @@ install:
   - 'gitbook epub'
 build: off
 test: off
-matrix:
-  fast_finish: true
 artifacts:
   - path: '*.pdf'
   - path: '*.mobi'
