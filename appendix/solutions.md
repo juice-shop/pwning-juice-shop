@@ -9,7 +9,7 @@ one possible solution is presented here. This is typically the easiest
 or most obvious one from the author's perspective.
 
 _The challenge solutions found in this release of the companion guide
-are compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
+are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 ## Trivial Challenges (  :star:  )
 

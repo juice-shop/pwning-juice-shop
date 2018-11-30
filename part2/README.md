@@ -13,7 +13,7 @@ their difficulty and in the same order as thery appear on the Score
 Board.
 
 _The challenge hints found in this release of the companion guide are
-compatible with `{{book.juiceShopVersion}}` of OWASP Juice Shop._
+compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 ### Trivial Challenges (  :star:  )
 
