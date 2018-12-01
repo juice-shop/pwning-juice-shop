@@ -392,6 +392,10 @@ injection as in
 
    ![O-Saft link update via PostMan](img/osaft_postman-body.png)
 
+### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
+
+:wrench: **TODO**
+
 ### Reset Jim's password via the Forgot Password mechanism
 
 1. Trying to find out who "Jim" might be should _eventually_ lead you to
@@ -1164,7 +1168,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 10. If your request successfully bumped into the infinite loop
     protection, the challenge is marked as solved.
 
-### Reset Bjoern's password via the Forgot Password mechanism
+### Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 1. Trying to find out who "Bjoern" might be should quickly lead you to
    the OWASP Juice Shop project leader and author of this ebook

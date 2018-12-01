@@ -5,18 +5,19 @@
 | Challenge                                                                                                                                                | Difficulty                     |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                                             | :star::star:                   |
+| Reset the password of Bjoern's OWASP account via the Forgot Password mechanism with _the truthful answer_ to his security question.                      | :star::star::star:             |
 | Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                              | :star::star::star:             |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection.                                                                                | :star::star::star::star:       |
-| Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.                       | :star::star::star::star:       |
+| Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.                      | :star::star::star::star:       |
 | Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                           | :star::star::star::star:       |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                                                  | :star::star::star::star::star: |
-| Reset Bjoern's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                           | :star::star::star::star::star: |
+| Reset the password of Bjoern's internal account via the Forgot Password mechanism with _the truthful answer_ to his security question.                   | :star::star::star::star::star: |
 | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or the CVE of this vulnerability) | :star::star::star::star::star: |
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 You might have already solved this challenge along with
-[Log in with the administrator's user account](injection.md#log-in-with-the-administrators-user-account)
+[Log in with the administrator's user account](injection.md#log-in-with-the-administrators-user-account)
 if you chose not to use SQL Injection. This challenge can only be solved
 if you use the original password of the administrator. If you
 _accidentally_ changed the password, do not despair: The original
@@ -30,6 +31,14 @@ challenge.
   that.
 * In case you use some hacker tool, you can also go for a _brute force
   attack_ using a generic _password list_
+
+### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Reset Jim's password via the Forgot Password mechanism
 
@@ -150,7 +159,7 @@ criminal act.
 ### Reset Bender's password via the Forgot Password mechanism
 
 Similar to
-[the challenge of finding Jim's security answer](#reset-jims-password-via-the-forgot-password-mechanism)
+[the challenge of finding Jim's security answer](#reset-jims-password-via-the-forgot-password-mechanism)
 this challenge is about finding the answer to user Bender's security
 question. It is slightly harder to find out than Jim's answer.
 
@@ -183,7 +192,7 @@ characters. Good luck brute forcing that!
   this will not solve the challenge.
 * Try to utilize a broken convenience feature in your attack.
 
-### Reset Bjoern's password via the Forgot Password mechanism
+### Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 The final security question challenge is the one to find user Bjoern's
 answer. As the OWASP Juice Shop Project Leader and author of this book
