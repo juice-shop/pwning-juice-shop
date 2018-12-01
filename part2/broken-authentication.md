@@ -7,7 +7,7 @@
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                                             | :star::star:                   |
 | Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                              | :star::star::star:             |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection.                                                                                | :star::star::star::star:       |
-| Log in with Bjoern's user account without previously changing his password, applying SQL Injection, or hacking his Google account.                       | :star::star::star::star:       |
+| Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.                       | :star::star::star::star:       |
 | Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                           | :star::star::star::star:       |
 | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                                                  | :star::star::star::star::star: |
 | Reset Bjoern's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                           | :star::star::star::star::star: |
@@ -115,7 +115,7 @@ process.
 > lookup table with one entry per hash. Use of a key derivation function
 > that employs a salt makes this attack infeasible.[^3]
 
-### Log in with Bjoern's user account
+### Log in with Bjoern's Gmail account
 
 The author of the OWASP Juice Shop (and of this book) was bold enough to
 link his Google account to the application. His account even ended up in

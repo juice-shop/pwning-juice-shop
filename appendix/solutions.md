@@ -725,7 +725,7 @@ will get their password set to the same one we forced onto Bender!_
 > certain byte, the string will terminate at that point, nulling the
 > rest of the string, such as a file extension.[^2]
 
-### Log in with Bjoern's user account
+### Log in with Bjoern's Gmail account
 
 1. Bjoern has registered via Google OAuth with his (real) account
    <bjoern.kimminich@googlemail.com>.
