@@ -97,6 +97,8 @@ find its syntax along with an excerpt of the default settings.
     `'https://www.facebook.com/owasp.juiceshop'`
   * `slackUrl` used as the Slack link on the _About Us_ screen. Defaults to
     `'http://owaspslack.com'`
+  * `pressKitUrl` used as the link to logos and media files on the _About Us_ screen. Defaults to
+    `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'`
   * `planetOverlayMap` filename in `/app/private` _or_ URL of an image
     to download to that folder and then use as an overlay texture for
     the 3D planet "easter egg". Defaults to `orangemap2k.jpg`
