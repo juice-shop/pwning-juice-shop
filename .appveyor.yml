@@ -17,6 +17,7 @@ install:
   - 'node --version && npm --version'
   - 'npm i -g gitbook-cli'
   - 'choco install calibre'
+  - 'refreshenv'
   - 'npm i -g svgexport'
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
@@ -25,8 +26,6 @@ install:
   - 'gitbook epub'
 build: off
 test: off
-matrix:
-  fast_finish: true
 artifacts:
   - path: '*.pdf'
   - path: '*.mobi'

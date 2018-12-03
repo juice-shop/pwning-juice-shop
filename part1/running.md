@@ -96,7 +96,7 @@ that you also enable port forwarding from host `127.0.0.1:3000` to
 Vagrant is an open-source solution for building and maintaining virtual
 software development environments. It creates a Virtualbox VM that will
 launch a Docker container instance of the `latest` Juice Shop image
-`{{book.juiceShopVersion}}`.
+{{book.juiceShopVersion}}.
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and
    [Virtualbox](https://www.virtualbox.org/wiki/Downloads)

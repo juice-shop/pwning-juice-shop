@@ -29,7 +29,7 @@
 > play encourages taking time to approach challenges and prioritizes
 > quantity of correct submissions over the timing.[^1]
 
-![OWASP Juice Shop CTF logo](../introduction/img/JuiceShopCTF_Logo.png)
+![OWASP Juice Shop CTF logo](../introduction/img/JuiceShopCTF_Logo.png)
 
 OWASP Juice Shop can be run in a special configuration that allows to
 use it in Capture-the-flag (CTF) events. This can add some extra
@@ -41,7 +41,7 @@ training or workshop.
 Juice Shop supports _Jeopardy-style CTFs_ by generating a unique _CTF
 flag code_ for each solved challenge.
 
-!["Challenge solved!" notification with flag code](img/notification_with_flag.png)
+!["Challenge solved!" notification with flag code](img/notification_with_flag.png)
 
 These codes are not displayed by default, but can be made visible by
 running the application with the `config/ctf.yml` configuration:
@@ -74,7 +74,7 @@ solved!"_-notification being repeated. This can be useful in case you
 forgot to copy a flag code before closing the corresponding
 notification.
 
-![Repeat notification via Score Board](img/repeat_notification.png)
+![Repeat notification via Score Board](img/repeat_notification.png)
 
 ### Overriding the `ctf.key`
 
@@ -111,12 +111,12 @@ including
 
 Apart from the score-tracking server, each participant must have their
 own instance of OWASP Juice Shop. As explained in the
-[Single-user restriction](running.md#single-user-restriction) section,
+[Single-user restriction](running.md#single-user-restriction) section,
 having a shared instance for each team is strongly discouraged, because
 Juice Shop is programmed as a single-user application. It is absolutely
 important that all Juice Shop instances participating in a CTF use the
-same [secret key to generate their CTF
-flag codes](#overriding-the-ctfkey). The score server must be set up
+same [secret key to generate their CTF
+flag codes](#overriding-the-ctfkey). The score server must be set up
 accordingly to accept exactly those flag codes for solving the hacking
 challenges and allocating their score to the first team/user that solved
 it.
@@ -129,13 +129,13 @@ dependency to the score server_ either, as participants simply enter the
 flag code they see upon solving a challenge manually somewhere on the
 score server's user interface, typically via their browser:
 
-![CTF Infrastructure Example](/part1/img/CTF_Infrastructure.png)
+![CTF Infrastructure Example](/part1/img/CTF_Infrastructure.png)
 
 
 ## Setting up CTF score servers for Juice Shop
 
 Juice Shop comes with
-[the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
+[the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
 to to simplify the hosting of CTFs using popular open source frameworks
 or game servers. This can significantly speed up your setup time for an
 event, because things like using the same secret key for the flag codes
@@ -168,7 +168,7 @@ juice-shop-ctf
 The tool will now ask a series of questions. All questions have default
 answers available which you can choose by simply hitting `ENTER`.
 
-![juice-shop-ctf CLI in action](img/cli_usage_screenshot.png)
+![juice-shop-ctf CLI in action](img/cli_usage_screenshot.png)
 
 1. **CTF framework to generate data for?** Offers a selectable choice
    between the supported CTF frameworks, which for
@@ -215,7 +215,7 @@ answers available which you can choose by simply hitting `ENTER`.
      value.
 
 The category of each challenge is identical to its
-[category in the Juice Shop](categories.md) database. The score value of
+[category in the Juice Shop](categories.md) database. The score value of
 each challenge is calculated by the `juice-shop-ctf-cli` program as
 follows:
 
@@ -270,46 +270,55 @@ juice-shop-ctf --config myconfig.yml --output challenges.out
 
 ### Running CTFd
 
-![CTFd logo](img/ctfd_logo.png)
+![CTFd logo](img/ctfd_logo.png)
 
-This setup guide assumes that you use CTFd {{book.ctfdVersion}} or
-higher. To apply the generated `.zip`, follow the steps describing your
+This setup guide assumes that you use CTFd {{book.ctfdVersion}}.
+To apply the generated `.zip`, follow the steps describing your
 preferred CTFd run-mode below.
 
 #### Local server setup
 
 1. Get CTFd with `git clone https://github.com/CTFd/CTFd.git`.
-2. Perform steps 1 and 3 from
+2. Run `git checkout tags/<version>` to retrieve version {{book.ctfdVersion}}.
+3. Perform steps 1 and 3 from
    [the CTFd installation instructions](https://github.com/CTFd/CTFd#install).
-3. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
+4. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
    and create an admin user and CTF name
-4. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
-5. Select the generated `.zip` file and make sure only the _Challenges_
+5. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
+6. Select the generated `.zip` file and make sure only the _Challenges_
    box is ticket. Press _Import_.
 
 #### Docker container setup
 
 1. Setup
    [Docker host and Docker compose](https://docs.docker.com/compose/install/).
-2. Follow steps 2-4 from
-   [the CTFd Docker setup](https://github.com/isislab/CTFd/wiki/Deployment#docker)
-   to download the source code, create containers and start them.
+2. Follow all steps from
+   [the CTFd Docker setup](https://github.com/CTFd/CTFd/wiki/Basic-Deployment)
+   to install Docker, download the source code, create containers (for {{book.ctfdVersion}}) and start them.
 3. After running `docker-compose up` from previous step, you should be
    able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
    default) and create an admin user and CTF name.
 4. Follow the steps 4-5 from the [Default setup](#local-server-setup)
    described above
 
+##### Non-production Docker image
+
+1. Install Docker
+2. Run `docker pull ctfd/ctfd:<version>` the retrieve tag {{book.ctfdVersion}}
+3. Execute `docker run --rm -p 8000:8000 ctfd/ctfd:<version>` to run {{book.ctfdVersion}}
+4. Follow the steps 4-5 from the [Default setup](#local-server-setup)
+   described above
+
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
 
-![CTFd Challenge view](img/ctfd_1.png)
+![CTFd Challenge view](img/ctfd_1.png)
 
-![CTFd Scoreboard view](img/ctfd_2.png)
+![CTFd Scoreboard view](img/ctfd_2.png)
 
-![CTFd Statistics view](img/ctfd_3.png)
+![CTFd Statistics view](img/ctfd_3.png)
 
-![CTFd Team view](img/ctfd_4.png)
+![CTFd Team view](img/ctfd_4.png)
 
 ### Running FBCTF
 
@@ -326,13 +335,13 @@ The following screenshots were taken during a CTF event where Facebook's
 game server was used. Juice Shop instances were running in a Docker
 cluster and individually assigned to a participant via a load balancer.
 
-![FBCTF World Map](img/FBCTF-Iteratec-00.png)
+![FBCTF World Map](img/FBCTF-Iteratec-00.png)
 
-![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
+![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
 
-![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
+![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
 
-![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
+![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
 
 ## Using other CTF frameworks
 
@@ -342,7 +351,7 @@ alternatives are for example
 [Mellivora](https://github.com/Nakiami/mellivora) or
 [NightShade](https://github.com/UnrealAkama/NightShade). You can find a
 nicely curated list of CTF platforms and related tools & resources in
-[Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
+[Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
 
 All these platforms have one thing in common: Unless you write a
 dedicated `lib/generators/`-file :wink:, you have to set up the
@@ -358,10 +367,10 @@ HMAC_SHA1(ctfKey, challenge.name)
 
 with `challenge.name` being the `name` column of the `Challenges` table
 in the Juice Shop's underlying database. The `ctfKey` has been described
-in the [Overriding the `ctf.key`](#overriding-the-ctfkey) section above.
+in the [Overriding the `ctf.key`](#overriding-the-ctfkey) section above.
 
 Feel free to use
-[the implementation within `juice-shop-ctf-cli`](https://github.com/bkimminich/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
+[the implementation within `juice-shop-ctf-cli`](https://github.com/bkimminich/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
 as an example:
 
 ```javascript
