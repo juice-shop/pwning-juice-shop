@@ -9,7 +9,6 @@ simply forgotten and are completely unprotected against access.
 |:-----------------------------------------------------------------------------------|:-------------------------------|
 | Let us redirect you to a donation site that went out of business.                  | :star:                         |
 | Use a deprecated B2B interface that was not properly shut down.                    | :star::star:                   |
-| Travel back in time to the golden era of web design.                               | :star::star::star::star:       |
 | Retrieve the language file that never made it into production.                     | :star::star::star::star::star: |
 | Deprive the shop of earnings by downloading the blueprint for one of its products. | :star::star::star::star::star: |
 
@@ -40,25 +39,6 @@ webshop UI. For those customers there is a dedicated B2B interface.
   removed from the code base.
 * Simply using the deprecated interface suffices to solve this
   challenge. No attack or exploit is necessary.
-
-### Travel back in time to the golden era of web design
-
-You probably agree that this is one of the more ominously described
-challenges. But the description contains a very obvious hint what this
-whole _time travel_ is about.
-
-#### Hints
-
-![Time travel challenge on the score board](img/travel-back-in-time_challenge.png)
-
-* The mentioned _golden era_ lasted from 1994 to 2009.
-* You can solve this challenge by requesting a specific file
-
-_While requesting a file is sufficient to solve this challenge, you
-might want to invest a little bit of extra time for the **full
-experience** where you actually put the file **in action** with some DOM
-tree manipulation! Unfortunately the nostalgic vision only lasts until
-the next time you hit `F5` in your browser._
 
 ### Retrieve the language file that never made it into production
 

@@ -672,33 +672,6 @@ payload in his blog post
 > algorithm provides virtually no cryptographic security, and is often
 > cited as a canonical example of weak encryption.[^1]
 
-
-### :warning: Travel back in time to the golden era of web design
-
-1. Visit <http://localhost:3000/#/score-board>
-2. Inspecting the rotating "Hot"-image indicates that it is part of a
-   CSS theme `geo-bootstrap`
-
-   ```html
-   <div ng-bind-html="challenge.description" class="ng-binding">
-     Travel back in time to the golden era of <img src="/css/geo-bootstrap/img/hot.gif"> web design.
-   </div>
-   ```
-
-3. Visit <https://github.com/divshot/geo-bootstrap> to learn that this
-   _"timeless Twitter Bootstrap theme built for the modern web"_ comes
-   with its own `bootstrap.css` that lives in a folder `/swatch`.
-4. Open the JavaScript console of your browser.
-5. Submit the command
-   `document.getElementById("theme").setAttribute("href",
-   "css/geo-bootstrap/swatch/bootstrap.css");` to enable this beautiful
-   alternative layout for the Juice Shop.
-
-   ![Juice Shop with nostalgic theme enabled](img/geo_juiceshop.png)
-   Unfortunately the theme resets whenever you reload the page via `F5`
-   so you have to reissue the above command from time to time to stay in
-   "nostalgia mode".
-
 ### :warning: Access a developer's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in
