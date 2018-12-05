@@ -47,7 +47,7 @@ option available in the main menu.
   might have.
 * Alternatively, you can try to find a reference or clue within the
   parts of the application that are _not usually visible_ in the browser
-* It is just slightly harder to find than the score board link
+* It is probably just slightly harder to find than the score board link
 
 ### Access someone else's basket
 
