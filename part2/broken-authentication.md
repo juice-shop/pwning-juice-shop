@@ -18,10 +18,9 @@
 You might have already solved this challenge along with
 [Log in with the administrator's user account](injection.md#log-in-with-the-administrators-user-account)
 if you chose not to use SQL Injection. This challenge can only be solved
-if you use the original password of the administrator. If you
-_accidentally_ changed the password, do not despair: The original
-password will _always_ be accepted to make sure you can solve this
-challenge.
+if you use the original password of the administrator. If you changed
+the password previously, do not despair: The original password will
+_always_ be accepted to make sure you can solve this challenge.
 
 #### Hints
 
@@ -73,20 +72,21 @@ use it to reset his password.
   truthfully
 * As Jim is a celebrity, the answer to his question is quite easy to
   find in publicly available information on the internet
-* Brute forcing the answer should be possible with the right kind of
-  word list
+* Even brute forcing the answer should be possible with the right kind
+  of word list
 
-### Change Bender's password into slurmCl4ssic without using SQL Injection
+### Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
 
 This challenge can only be solved by changing the password of user
 Bender into _slurmCl4ssic_. Using any sort of SQL Injection will _not_
 solve the challenge, even if the password is successfully changed in the
-process.
+process. Beating Bender's security question to change his password also
+does not suffice to solve this challenge!
 
 #### Hints
 
 * The fact that the name of this challenge is "CSRF" is already a huge
-  hint.
+  hint on how this challenge has to be approached.
 * It might also have been put into the
   [Weak security mechanisms](roll-your-own-security.md) category.
 * Bender's current password is so strong that brute force, rainbow table
@@ -128,6 +128,10 @@ OAuth integration with Google. The OAuth-related challenges are still
 solvable! It might just take a little bit more detective work to find
 out how an OAuth login is handled.
 
+You can always use the official demo instance at
+<http://demo.owasp-juice.shop> to play with Google login and learn how
+it works there, then apply what you learned on your local instance.
+
 #### Hints
 
 * There are essentially two ways to light up this challenge in green on
@@ -162,14 +166,14 @@ question. It is slightly harder to find out than Jim's answer.
 * Unexpectedly, Bender also chose to answer his chosen question
   truthfully.
 * Hints to the answer to Bender's question can be found in publicly
-  available information on the internet.
+  available information on the Internet.
 * If a seemingly correct answer is not accepted, you _might_ just need
   to try some alternative spelling.
 * Brute forcing the answer should be next to impossible.
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account
 
-You should expect a Chief Information Security Officer to know
+You should expect a Chief Information Security Officer knows
 everything there is to know about password policies and best practices.
 The Juice Shop CISO took it even one step further and chose an
 incredibly long random password with all kinds of regular and special
@@ -204,20 +208,27 @@ this challenge should be significantly harder.
 
 > A software supply chain attack is when an attacker gains access to a
 > legitimate software vendor and then compromises either the software or
-> update repository. This is done with the intention of installing a backdoor,
-> or other malicious code, into the legitimate software update provided by
-> the vendor. As users update their software, unwittingly falling victim
-> to the Trojanized update, they also install the embedded malicious code.[^4]
+> update repository. This is done with the intention of installing a
+> backdoor, or other malicious code, into the legitimate software update
+> provided by the vendor. As users update their software, unwittingly
+> falling victim to the Trojanized update, they also install the
+> embedded malicious code.[^4]
 
-:information_source: Please note that having the OWASP Juice Shop installed on your computer
-_does not_ put you at any actual risk! This challenge does _neither_ install a backdoor
-or Trojan nor does it bring any other harmful code to your system!
+:information_source: Please note that having the OWASP Juice Shop
+installed on your computer _does not_ put you at any actual risk! This
+challenge does _neither_ install a backdoor or Trojan nor does it bring
+any other harmful code to your system!
 
 #### Hints
 
-* The shop's end users are not the targets here. The developers of the shop are!
-* This is a research-heavy challenge which does not involve any actual hacking.
-* Solving [Access a developer's forgotten backup file](roll-your-own-security.md#access-a-developers-forgotten-backup-file) before attempting this challenge will save you from a lot of frustration.
+* The shop's end users are not the targets here. The developers of the
+  shop are!
+* This is a research-heavy challenge which does not involve any actual
+  hacking.
+* Solving
+  [Access a developer's forgotten backup file](roll-your-own-security.md#access-a-developers-forgotten-backup-file)
+  before attempting this challenge will save you from a lot of
+  frustration.
 
 [^1]: http://goodsecurityquestions.com
 

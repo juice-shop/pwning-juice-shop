@@ -189,20 +189,22 @@ If the challenge is not immediately solved, you might have to
 3. Delete all entries with five star rating from the _Customer Feedback_
    table using the trashcan button
 
-### :warning: Log in with the administrator's user account
+### Log in with the administrator's user account
 
 * Log in with _Email_ `' or 1=1--` and any _Password_ which will
-  authenticate the first entry in the `Users` table which happens to be
-  the administrator
+  authenticate the first entry in the `Users` table which coincidentally
+  happens to be the administrator
 * or log in with _Email_ `admin@juice-sh.op'--` and any _Password_ if
   you have already know the email address of the administrator
 * or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
-  if you looked up the administrator's password hash in a rainbow table
-  after harvesting the user data
+  if you looked up the administrator's password hash
+  `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
+  the user data
   * by solving
     [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-  * or via REST API call <http://localhost:3000/api/Users> after logging
-    in as any user (even one you registered yourself).
+  * or via REST API call <http://localhost:3000/api/Users> while
+    providing any valid `Authorization Bearer` token (even one of a
+    self-registered user).
 
 ### :warning: Log in with MC SafeSearch's original user credentials
 
@@ -299,11 +301,12 @@ in order to exploit and solve them:
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
 2. Inspect the DOM of the form in your browser to spot this suspicious
-   text field right at the top: `<input _ngcontent-c23 hidden id="userId" type="text" class="ng-untouched ng-pristine ng-valid">`
+   text field right at the top: `<input _ngcontent-c23 hidden
+   id="userId" type="text" class="ng-untouched ng-pristine ng-valid">`
 
    ![Hidden text field on Contact Us form](img/hidden_textfield.png)
-3. In your browser's developer tools remove the `hidden` attribute
-   from above `<input>` tag.
+3. In your browser's developer tools remove the `hidden` attribute from
+   above `<input>` tag.
 
    ![Spoofed feedback ready for submit](img/spoofed_feedback.png)
 4. The field should now be visible in your browser. Type any user's
@@ -343,7 +346,7 @@ injection as in
   have already know Bender's email address.
 * A rainbow table attack on Bender's password will probably fail as it
   is rather strong. You can alernatively solve
-  [Change Bender's password into slurmCl4ssic without using SQL Injection](#change-benders-password-into-slurmcl4ssic-without-using-sql-injection)
+  [Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password](#change-benders-password-into-slurmcl4ssic-without-using-sql-injection)
   first and then simply log in with the new password.
 
 ### :warning: Log in with Jim's user account
@@ -380,7 +383,9 @@ injection as in
 
 ### Change the href of the link within the O-Saft product description
 
-1. By searching for _O-Saft_ directly via the REST API with <http://localhost:3000/rest/product/search?q=o-saft> you will learn that it's database ID is `9`.
+1. By searching for _O-Saft_ directly via the REST API with
+   <http://localhost:3000/rest/product/search?q=o-saft> you will learn
+   that it's database ID is `9`.
 2. Submit a `PUT` request to <http://localhost:3000/api/Products/9>
    with:
    * `{"description": "<a href=\"http://kimminich.de\"
@@ -389,22 +394,34 @@ injection as in
 
    ![O-Saft link update via PostMan](img/osaft_postman-body.png)
 
-### :warning: Reset Jim's password via the Forgot Password mechanism
+### Reset Jim's password via the Forgot Password mechanism
 
-1. Trying to find out who "Jim" might be should _eventually_ lead you to
-   _James T. Kirk_ as a possible option
+1. Visit http://localhost:3000/#/forgot-password and provide
+   `jim@juice-sh.op` as your _Email_ to learn that _Your eldest siblings
+   middle name?_ is Jim's chosen security question
+2. Jim (whose `UserId` happens to be `2`) left some breadcrumbs in the
+   application which reveal his identity
+   * A product review for the _OWASP Juice Shop-CTF Velcro Patch_
+     stating _"Looks so much better on my uniform than the boring
+     Starfleet symbol."_
+   * Another product review _"Fresh out of a replicator."_ on the _Green
+     Smoothie_ product
+   * A _Recycling Request_ with the address _"Starfleet HQ, 24-593
+     Federation Drive, San Francisco, CA"_
+3. It should eventually become obvious that _James T. Kirk_ is the only
+   viable solution to the question of Jim's identity
 
    ![James T. Kirk](img/Star_Trek_William_Shatner.JPG)
-2. Visit https://en.wikipedia.org/wiki/James_T._Kirk and read the
+4. Visit https://en.wikipedia.org/wiki/James_T._Kirk and read the
    [Depiction](https://en.wikipedia.org/wiki/James_T._Kirk#Depiction)
    section
-3. It tells you that Jim has a brother named _George Samuel Kirk_
-4. Visit http://localhost:3000/#/forgot-password and provide
+5. It tells you that Jim has a brother named _George Samuel Kirk_
+6. Visit http://localhost:3000/#/forgot-password and provide
    `jim@juice-sh.op` as your _Email_
-5. In the subsequently appearing form, provide `Samuel` as _Your eldest
+7. In the subsequently appearing form, provide `Samuel` as _Your eldest
    siblings middle name?_
-6. Then type any _New Password_ and matching _Repeat New Password_
-7. Click _Change_ to solve this challenge
+8. Then type any _New Password_ and matching _Repeat New Password_
+9. Click _Change_ to solve this challenge
 
    ![Password reset for Jim](img/jim_forgot-password.png)
 
@@ -554,11 +571,7 @@ simultaneously.
     * and `application/json` as `Content-Type`
 11. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
-### :warning: Change Bender's password into slurmCl4ssic without using SQL Injection
-
-> The solution below assumes that you **do not know Bender's current
-> password**, because in that case you could just change it via the
-> _Password Change_ form.
+### Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
 
 1. Log in as anyone.
 2. Inspecting the backend HTTP calls of the _Password Change_ form
@@ -580,11 +593,13 @@ simultaneously.
 4. Now
    [Log in with Bender's user account](#log-in-with-benders-user-account)
    using SQL Injection.
-5. Submit
+5. Craft a GET request with Bender's `Authorization Bearer` header to
    <http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic>
    to solve the challenge.
 
-### :warning:# Bonus Round: Cross Site Request Forgery
+   ![CSRF-like request via PostMan](img/csrf_postman.png)
+
+#### Bonus Round: Cross Site Request Forgery
 
 If you want to craft an actual CSRF attack against
 `/rest/user/change-password` you will have to invest a bit extra work,
@@ -592,50 +607,31 @@ because a simple attack like _Search_ for `<img
 src="http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic">`
 will not work. Making someone click on the corresponding attack link
 <http://localhost:3000/#/search?q=%3Cimg%20src%3D%22http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic%22%3E>
-will return a `500` error when loading the image URL:
-
-```html
-  <!-- ... -->
-  <body>
-    <div id="wrapper">
-      <h1>Juice Shop (Express ~4.14)</h1>
-      <h2><em>500</em> Error: Blocked illegal activity by ::1</h2>
-      <ul id="stacktrace">
-        <li> &nbsp; &nbsp;at C:\Data\Github\juice-shop\routes\changePassword.js:40:14</li>
-        <li> &nbsp; &nbsp;at Layer.handle [as handle_request] (C:\Data\Github\juice-shop\node_modules\express\lib\router\layer.js:95:5)</li>
-        <li> &nbsp; &nbsp;at next (C:\Data\Github\juice-shop\node_modules\express\lib\router\route.js:131:13)</li>
-        <li> &nbsp; &nbsp;at Route.dispatch (C:\Data\Github\juice-shop\node_modules\express\lib\router\route.js:112:3)</li>
-        <li> &nbsp; &nbsp;at Layer.handle [as handle_request] (C:\Data\Github\juice-shop\node_modules\express\lib\router\layer.js:95:5)</li>
-        <li> &nbsp; &nbsp;at C:\Data\Github\juice-shop\node_modules\express\lib\router\index.js:277:22</li>
-        <li> &nbsp; &nbsp;at Function.process_params (C:\Data\Github\juice-shop\node_modules\express\lib\router\index.js:330:12)</li>
-        <li> &nbsp; &nbsp;at next (C:\Data\Github\juice-shop\node_modules\express\lib\router\index.js:271:10)</li>
-        <li> &nbsp; &nbsp;at C:\Data\Github\juice-shop\node_modules\sequelize-restful\lib\index.js:22:7</li>
-        <li> &nbsp; &nbsp;at Layer.handle [as handle_request] (C:\Data\Github\juice-shop\node_modules\express\lib\router\layer.js:95:5)</li>
-      </ul>
-    </div>
-  </body>
-```
+will return a `500` error when loading the image URL with a message
+clearly stating that your attack ran against a security-wall: `Error:
+Blocked illegal activity`
 
 To make this exploit work, some more sophisticated attack URL is
-required, for example the following one which was originally described
-in the blog post
-[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html)
-by Joe Butler:
+required:
 
-<http://localhost:3000/#/search?q=%3Cscript%3Exmlhttp%20%3D%20new%20XMLHttpRequest;%20xmlhttp.open('GET',%20'http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic');%20xmlhttp.send()%3C%2Fscript%3E>
+<http://localhost:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Axmlhttp%20%3D%20new%20XMLHttpRequest%28%29%3B%20xmlhttp.open%28%27GET%27%2C%20%27http%3A%2F%2Flocalhost%3A3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26amp%3Brepeat%3DslurmCl4ssic%27%29%3B%20xmlhttp.setRequestHeader%28%27Authorization%27%2C%60Bearer%3D%24%7BlocalStorage.getItem%28%27token%27%29%7D%60%29%3B%20xmlhttp.send%28%29%3B%22%3E>
 
 Pretty-printed this attack is easier to understand:
 
 ```html
-<script>
-xmlhttp = new XMLHttpRequest;
-xmlhttp.open('GET', 'http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic');
-xmlhttp.send()
-</script>
+<iframe src="javascript:xmlhttp = new XMLHttpRequest();
+   xmlhttp.open('GET', 'http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&amp;repeat=slurmCl4ssic');
+   xmlhttp.setRequestHeader('Authorization',`Bearer=${localStorage.getItem('token')}`);
+   xmlhttp.send();">
+</iframe>
 ```
 
-_Anyone who is logged in to the Juice Shop while clicking on this link
-will get their password set to the same one we forced onto Bender!_
+Anyone who is logged in to the Juice Shop while clicking on this link
+will get their password set to the same one we forced onto Bender!
+
+:clap: Kudos to Joe Butler, who originally described this kind of CSRF
+payload in his blog post
+[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
 
 ### :warning: Find the hidden easter egg
 
@@ -728,23 +724,30 @@ will get their password set to the same one we forced onto Bender!_
 > certain byte, the string will terminate at that point, nulling the
 > rest of the string, such as a file extension.[^2]
 
-### :warning: Log in with Bjoern's user account
+### Log in with Bjoern's user account
 
 1. Bjoern has registered via Google OAuth with his (real) account
    <bjoern.kimminich@googlemail.com>.
 2. Cracking his password hash will probably not work.
 3. To find out how the OAuth registration and login work, inspect the
-   `juice-shop.min.js` and search for `OAuthController`.
+   `main.js` and search for `oauth`, which will eventually reveal a
+   function `userService.oauthLogin()`.
 
-   ![OAuthController in juice-shop.min.js](img/OAuthController.png)
-4. The `e.login()` function call leaks how the password is set:
-   `password: d.encode(f.email)`
-5. Checking the controller declaration you will see that `d` is actually
-   an AngularJS service named `$base64`.
-6. Now that you know that the auto-generated password for OAuth users is
-   just their Base64-encoded email address, you can just log in with
-   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
-   `YmpvZXJuLmtpbW1pbmljaEBnb29nbGVtYWlsLmNvbQ==`.
+   ![oauthLogin function in main.js](img/minified_js-oauth.png)
+4. In the function body you will notice a call to `userService.save()` -
+   which is used to create a user account in the non-Google _User
+   Registration_ process - followed by a call to the regular
+   `userService.login()`
+5. The `save()` and `login()` function calls both leak how the password
+   for the account is set: `password:
+   btoa(n.email.split("").reverse().join(""))`
+6. Some Internet search will reveal that `window.btoa()` is a default
+   function to encode strings into Base64.
+7. What is passed into `btoa()` is `email.split("").reverse().join("")`,
+   which is simply the email address string reversed.
+8. Now all you have to do is Base64-encode `moc.liamelgoog@hcinimmik.nreojb`, so you can
+   log in directly with _Email_ `bjoern.kimminich@googlemail.com` and _Password_
+   `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
 
 ### :warning: Access a misplaced SIEM signature file
 
@@ -797,7 +800,7 @@ respond.
    parameter containing a URL from the whitelist, e.g.
    <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
 
-### :warning: Reset Bender's password via the Forgot Password mechanism
+### Reset Bender's password via the Forgot Password mechanism
 
 1. Trying to find out who "Bender" might be should _immediately_ lead
    you to _Bender from [Futurama](http://www.imdb.com/title/tt0149460/)_
@@ -1122,7 +1125,7 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
    request. Alternatively you can set the `token` cookie to the JWT
    which be used to populate any future request with that header.
 
-### :warning: Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
+### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
 
 1. Visit <http://localhost:3000/#/login> and enter some known
    credentials.
@@ -1138,7 +1141,7 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
 7. Inspecting any request being sent from now on you will notice a new
    custom HTTP header `X-User-Email: ciso@juice-sh.op`.
 8. Now visit <http://localhost:3000/#/login> again, but this time choose
-   the _Log in with Google_ button.
+   the _Log in with Google_ button to log in with your own Google account.
 9. Visit <http://localhost:3000/#/contact> and check the _Author_ field
    to be surprised that you are logged in as `ciso@juice-sh.op` instead
    with your Google email address, because
