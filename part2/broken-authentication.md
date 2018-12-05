@@ -17,7 +17,7 @@
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 You might have already solved this challenge along with
-[Log in with the administrator's user account](injection.md#log-in-with-the-administrators-user-account)
+[Log in with the administrator's user account](injection.md#log-in-with-the-administrators-user-account)
 if you chose not to use SQL Injection. This challenge can only be solved
 if you use the original password of the administrator. If you changed
 the password previously, do not despair: The original password will
@@ -33,17 +33,9 @@ _always_ be accepted to make sure you can solve this challenge.
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
-:wrench: **TODO**
-
-#### Hints
-
-:wrench: **TODO**
-
-### Reset Jim's password via the Forgot Password mechanism
-
 This challenge is not about any technical vulnerability. Instead it is
-about finding out the answer to user Jim's chosen security question and
-use it to reset his password.
+about finding out the answer to user Bjoern's chosen security question
+and use it to reset the password of his OWASP account.
 
 > Many website registrations use security questions for both password
 > retrieval/reset and sign-in verification. Some also ask the same
@@ -72,6 +64,36 @@ use it to reset his password.
 > addition, many questions are not applicable to some people; for
 > example, what is your oldest child’s nickname – but you don’t have a
 > child.[^1]
+
+#### Hints
+
+* Hints to the answer to Bjoern's question can be found by looking him
+  up on the Internet.
+* More precisely, Bjoern might have accidentally
+  (:stuck_out_tongue_winking_eye:) doxxed himself by mentioning his
+  security answer on at least one occasion where a camera was running.
+* Brute forcing the answer might be very well possible with a
+  sufficiently extensive list of common pet names.
+
+> Doxing (from dox, abbreviation of documents) or doxxing is the
+> Internet-based practice of researching and broadcasting private or
+> identifiable information (especially personally identifiable
+> information) about an individual or organization.
+>
+> The methods employed to acquire this information include searching
+> publicly available databases and social media websites (like
+> Facebook), hacking, and social engineering. It is closely related to
+> Internet vigilantism and hacktivism.
+>
+> Doxing may be carried out for various reasons, including to aid law
+> enforcement, business analysis, risk analytics, extortion, coercion,
+> inflicting harm, harassment, online shaming, and vigilante
+> justice.[^2]
+
+### Reset Jim's password via the Forgot Password mechanism
+
+This challenge is about finding the answer to user Jim's security
+question.
 
 #### Hints
 
@@ -112,7 +134,7 @@ does not suffice to solve this challenge!
 > successful CSRF attack can force the user to perform state changing
 > requests like transferring funds, changing their email address, and so
 > forth. If the victim is an administrative account, CSRF can compromise
-> the entire web application.[^2]
+> the entire web application.[^3]
 >
 > A rainbow table is a precomputed table for reversing cryptographic
 > hash functions, usually for cracking password hashes. Tables are
@@ -122,7 +144,7 @@ does not suffice to solve this challenge!
 > more storage than a brute-force attack which calculates a hash on
 > every attempt, but more processing time and less storage than a simple
 > lookup table with one entry per hash. Use of a key derivation function
-> that employs a salt makes this attack infeasible.[^3]
+> that employs a salt makes this attack infeasible.[^4]
 
 ### Log in with Bjoern's Gmail account
 
@@ -162,10 +184,8 @@ criminal act.
 
 ### Reset Bender's password via the Forgot Password mechanism
 
-Similar to
-[the challenge of finding Jim's security answer](#reset-jims-password-via-the-forgot-password-mechanism)
-this challenge is about finding the answer to user Bender's security
-question. It is slightly harder to find out than Jim's answer.
+This challenge is about finding the answer to user Bender's security
+question. It is probably slightly harder to find out than Jim's answer.
 
 #### Hints
 
@@ -182,11 +202,11 @@ question. It is slightly harder to find out than Jim's answer.
 
 ### Exploit OAuth 2.0 to log in with the CISO's user account
 
-You should expect a Chief Information Security Officer knows
-everything there is to know about password policies and best practices.
-The Juice Shop CISO took it even one step further and chose an
-incredibly long random password with all kinds of regular and special
-characters. Good luck brute forcing that!
+You should expect a Chief Information Security Officer knows everything
+there is to know about password policies and best practices. The Juice
+Shop CISO took it even one step further and chose an incredibly long
+random password with all kinds of regular and special characters. Good
+luck brute forcing that!
 
 #### Hints
 
@@ -198,19 +218,19 @@ characters. Good luck brute forcing that!
 
 ### Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
-The final security question challenge is the one to find user Bjoern's
-answer. As the OWASP Juice Shop Project Leader and author of this book
-is not remotely as popular and publicly exposed as
-[Jim](#reset-jims-password-via-the-forgot-password-mechanism) or
-[Bender](#reset-benders-password-via-the-forgot-password-mechanism),
-this challenge should be significantly harder.
+This challenge is about finding the answer to the security question of
+Bjoern's internal user account `bjoern@juice-sh.op`.
 
 #### Hints
 
+* Other than with
+  [his OWASP account](#reset-the-password-of-bjoerns-owasp-account-via-the-forgot-password-mechanism),
+  Bjoern was a bit less careless with his choice of security and answer
+  to his internal account.
 * Bjoern chose to answer his chosen question truthfully but tried to
   make it harder for attackers by applying sort of a historical twist.
-* Hints to the answer to Bjoern's question can be found by looking him
-  up on the Internet.
+* Again, hints to the answer to Bjoern's question can be found by
+  looking him up on the Internet.
 * Brute forcing the answer should be next to impossible.
 
 ### Inform the development team about a danger to some of their credentials
@@ -221,7 +241,7 @@ this challenge should be significantly harder.
 > backdoor, or other malicious code, into the legitimate software update
 > provided by the vendor. As users update their software, unwittingly
 > falling victim to the Trojanized update, they also install the
-> embedded malicious code.[^4]
+> embedded malicious code.[^5]
 
 :information_source: Please note that having the OWASP Juice Shop
 installed on your computer _does not_ put you at any actual risk! This
@@ -241,8 +261,10 @@ any other harmful code to your system!
 
 [^1]: http://goodsecurityquestions.com
 
-[^2]: https://www.owasp.org/index.php/CSRF
+[^2]: https://en.wikipedia.org/wiki/Doxing
 
-[^3]: https://en.wikipedia.org/wiki/Rainbow_table
+[^3]: https://www.owasp.org/index.php/CSRF
 
-[^4]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm
+[^4]: https://en.wikipedia.org/wiki/Rainbow_table
+
+[^5]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm

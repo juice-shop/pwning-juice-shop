@@ -749,8 +749,9 @@ payload in his blog post
    function to encode strings into Base64.
 7. What is passed into `btoa()` is `email.split("").reverse().join("")`,
    which is simply the email address string reversed.
-8. Now all you have to do is Base64-encode `moc.liamelgoog@hcinimmik.nreojb`, so you can
-   log in directly with _Email_ `bjoern.kimminich@googlemail.com` and _Password_
+8. Now all you have to do is Base64-encode
+   `moc.liamelgoog@hcinimmik.nreojb`, so you can log in directly with
+   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
 
 ### :warning: Access a misplaced SIEM signature file
@@ -1145,7 +1146,8 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
 7. Inspecting any request being sent from now on you will notice a new
    custom HTTP header `X-User-Email: ciso@juice-sh.op`.
 8. Now visit <http://localhost:3000/#/login> again, but this time choose
-   the _Log in with Google_ button to log in with your own Google account.
+   the _Log in with Google_ button to log in with your own Google
+   account.
 9. Visit <http://localhost:3000/#/contact> and check the _Author_ field
    to be surprised that you are logged in as `ciso@juice-sh.op` instead
    with your Google email address, because
@@ -1194,20 +1196,21 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 10. If your request successfully bumped into the infinite loop
     protection, the challenge is marked as solved.
 
-### :warning: Reset the password of Bjoern's internal account via the Forgot Password mechanism
+### Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 1. Trying to find out who "Bjoern" might be should quickly lead you to
    the OWASP Juice Shop project leader and author of this ebook
 2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn
    that he is from the town of _Uetersen_ in Germany
 3. Visit https://gist.github.com/9045923 to find the source code of a
-   game Bjoern wrote in 1995 (when he was a teenager) to learn his phone
-   number area code of _04122_ which belongs to Uetersen. This is
-   sufficient proof that you in fact are on the right track
+   (truly amazing) game Bjoern wrote in Turbo Pascal in 1995 (when he
+   was a teenager) to learn his phone number area code of _04122_ which
+   belongs to Uetersen. This is sufficient proof that you in fact are on
+   the right track
 4. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
    ZIP code _25436_
 5. Visit http://localhost:3000/#/forgot-password and provide
-   `bjoern.kimminich@googlemail.com` as your _Email_
+   `bjoern@juice-sh.op` as your _Email_
 6. In the subsequently appearing form, provide `25436` as _Your
    ZIP/postal code when you were a teenager?_
 7. Type and _New Password_ and matching _Repeat New Password_ followed
@@ -1222,7 +1225,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
     teenager?_ into `West-2082` and click _Change_ again to finally
     solve this challenge
 
-### :warning:# Postal codes in Germany
+#### Postal codes in Germany
 
 > Postal codes in Germany, Postleitzahl (plural Postleitzahlen,
 > abbreviated to PLZ; literally "postal routing number"), since 1 July
@@ -1302,13 +1305,13 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
    ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
 
-### :warning: Inform the development team about a danger to some of their credentials
+### Inform the development team about a danger to some of their credentials
 
 1. Solve
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
 2. The `package.json.bak` contains not only runtime dependencies but
    also development dependencies under the `devDependencies` section.
-3. Go through the list `devDependencies` and perform research on
+3. Go through the list of `devDependencies` and perform research on
    vulnerabilities in them which would allow a Software Supply Chain
    Attack.
 4. For the `eslint-scope` module you will learn about one such incident
