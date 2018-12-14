@@ -7,9 +7,9 @@ available:
 ![Language selection dropdown](img/languages.png)
 
 As long as the original author is taking part in the project's
-maintenance, there will always be :uk::us: **English** and a complete :de: **German**
-translation available. Everything beyond that depends on volunteer
-translators!
+maintenance, there will always be :uk::us: **English** and a complete
+:de: **German** translation available. Everything beyond that depends on
+volunteer translators!
 
 ## Crowdin
 

@@ -83,21 +83,22 @@ find its syntax along with an excerpt of the default settings.
     Defaults to `true`.
   * `showVersionNumber` shows or hides the software version from the
     title. Defaults to `true`.
-  * `theme` the name of the color theme
-    used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
-    `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`.
-    Defaults to `bluegrey-lightgreen`
-  * `gitHubRibbon` shows or hides the _"GitHub"_ button in the
-    top-right corner of the navigation bar. Defaults to `true`.
+  * `theme` the name of the color theme used to render the UI. Options
+    are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
+    `indigo-pink`, `pink-bluegrey`, `purple-green` and
+    `deeporange-indigo`. Defaults to `bluegrey-lightgreen`
+  * `gitHubRibbon` shows or hides the _"GitHub"_ button in the top-right
+    corner of the navigation bar. Defaults to `true`.
   * `twitterUrl` used as the Twitter link promising coupon codes on the
     _About Us_ and _Your Basket_ screen. Defaults to
     `'https://twitter.com/owasp_juiceshop'`
   * `facebookUrl` used as the Facebook link promising coupon codes on
     the _About Us_ and _Your Basket_ screen. Defaults to
     `'https://www.facebook.com/owasp.juiceshop'`
-  * `slackUrl` used as the Slack link on the _About Us_ screen. Defaults to
-    `'http://owaspslack.com'`
-  * `pressKitUrl` used as the link to logos and media files on the _About Us_ screen. Defaults to
+  * `slackUrl` used as the Slack link on the _About Us_ screen. Defaults
+    to `'http://owaspslack.com'`
+  * `pressKitUrl` used as the link to logos and media files on the
+    _About Us_ screen. Defaults to
     `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'`
   * `planetOverlayMap` filename in `/app/private` _or_ URL of an image
     to download to that folder and then use as an overlay texture for
@@ -111,7 +112,8 @@ find its syntax along with an excerpt of the default settings.
     * `bottomProductImage` filename in `/app/public/images/products` to
       use as the image on the bottom of the info column on the page.
       Defaults to `apple_pressings.jpg`
-  * `altcoinName` defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen. Defaults to `Juicycoin`
+  * `altcoinName` defines the name of the (fake) crypto currency that is
+    offered on the _Token Sale_ screen. Defaults to `Juicycoin`
   * `cookieConsent` defines the cookie consent dialog shown in the
     bottom right corner
     * `backgroundColor` of the cookie banner itself. Defaults to
@@ -142,7 +144,10 @@ find its syntax along with an excerpt of the default settings.
     * `acknowledgements` URL a "hall of fame" page. Can be fake
       obviously. Defaults to `/#/score-board`
 * `challenges`
-  * `safetyOverride` enables all challenges regardless of any potential harm or danger they might pose for your computer (i.e. XXE or RCE vulnerabilities which could not entirely be sandboxed). Defaults to `false`
+  * `safetyOverride` enables all challenges regardless of any potential
+    harm or danger they might pose for your computer (i.e. XXE or RCE
+    vulnerabilities which could not entirely be sandboxed). Defaults to
+    `false`
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -180,12 +185,17 @@ find its syntax along with an excerpt of the default settings.
       users in the database: `admin`, `jim`, `bender`, `ciso`,
       `support`, `morty`, `amy` or `mc.safesearch` (_mandatory_)
 * `ctf`
-  * `showFlagsInNotifications` shows or hides the CTF flag codes in
-    the _"challenge solved"_-notifications. Is ignored when
-    `application.showChallengeSolvedNotifications` is set to `false`. Defaults to
-    `false`
-  * `showCountryDetailsInNotifications` determines if the country mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using [FBCTF](ctf.md#running-fbctf). Defaults to `none`
-  * `countryMapping` list which maps challenges to countries on the challenge map of [FBCTF](ctf.md#running-fbctf). Only needed for CTFs using [FBCTF](ctf.md#running-fbctf). Defaults to empty `~`
+  * `showFlagsInNotifications` shows or hides the CTF flag codes in the
+    _"challenge solved"_-notifications. Is ignored when
+    `application.showChallengeSolvedNotifications` is set to `false`.
+    Defaults to `false`
+  * `showCountryDetailsInNotifications` determines if the country mapped
+    to the solved challenge is displayed in the notification. Can be
+    `none`, `name`, `flag` or `both`. Only useful for CTFs using
+    [FBCTF](ctf.md#running-fbctf). Defaults to `none`
+  * `countryMapping` list which maps challenges to countries on the
+    challenge map of [FBCTF](ctf.md#running-fbctf). Only needed for CTFs
+    using [FBCTF](ctf.md#running-fbctf). Defaults to empty `~`
     * `<challengeName>`
       * `name` the name of the country
       * `code` the two-letter ISO code of the country

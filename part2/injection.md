@@ -209,8 +209,8 @@ café with free WiFi.
 
 #### Hints
 
-* Try to find an endpoint where you can influence data being
-  retrieved from the server.
+* Try to find an endpoint where you can influence data being retrieved
+  from the server.
 * Craft a `UNION SELECT` attack string to join data from another table
   into the original result.
 * You might have to tackle some query syntax issues step-by-step,

@@ -19,8 +19,8 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                            | Difficulty               |
-|:---------------------------------------------------------------------------------------------------------------------|:-------------------------|
+| Challenge                                                                                                                     | Difficulty               |
+|:------------------------------------------------------------------------------------------------------------------------------|:-------------------------|
 | Perform a _reflected_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                               | :star:                   |
 | Perform a _DOM_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                                     | :star:                   |
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a client-side security mechanism.    | :star::star::star:       |

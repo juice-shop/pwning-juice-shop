@@ -10,7 +10,7 @@ libraries or other 3rd party components the application uses internally.
 | Inform the shop about a typosquatting trick it has become victim of. (Mention the exact name of the culprit)         | :star::star::star::star:             |
 | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment) | :star::star::star::star:             |
 | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.              | :star::star::star::star::star:       |
-| Inform the shop about a more sneaky instance of typosquatting it fell for. (Mention the exact name of the culprit)  | :star::star::star::star::star:       |
+| Inform the shop about a more sneaky instance of typosquatting it fell for. (Mention the exact name of the culprit)   | :star::star::star::star::star:       |
 | Overwrite the Legal Information file.                                                                                | :star::star::star::star::star::star: |
 | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.      | :star::star::star::star::star::star: |
 

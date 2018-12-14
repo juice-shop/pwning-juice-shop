@@ -45,8 +45,9 @@ click on it to be redirected to the corresponding hints section in
 ### Challenge Filters
 
 Additional to the folding and unfolding of entire difficulty blocks, you
-can filter the Score Board by [challenge categories](categories.md), e.g. to focus on specific vulnerabilities.
-You can also hide all solved challenges to reduce the level of distraction on the Score Board.
+can filter the Score Board by [challenge categories](categories.md),
+e.g. to focus on specific vulnerabilities. You can also hide all solved
+challenges to reduce the level of distraction on the Score Board.
 
 ## Success notifications
 
