@@ -125,17 +125,17 @@ error situation and solve this challenge along the way:
 
    ![XSS alert box](img/xss1_alert.png)
 
-### :warning: Give a devastating zero-star feedback to the store
+### Give a devastating zero-star feedback to the store
 
-1. Visit the _Contact Us_ form and put in a _Comment_ text.
-2. The _Submit_ button is **disabled** because you did not select a
-   _Rating_.
-3. Select any of the stars to set a _Rating_.
+1. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
+2. The _Submit_ button is still **disabled** because you did not select a
+   _Rating_ yet.
+3. Inspect the _Submit_ button with your DevTools and note the `disabled` attribute of the `<button>` HTML tag
+4. Double click on `disabled` attribute to select it and then delete it from the tag.
+
+   ![Disabled Submit Button in Contact Us form](img/contact_disabled_submit-button.png)
 4. The _Submit_ button is now **enabled**.
-5. Select the same star again to unset the _Rating_.
-6. Click the (still **enabled**) _Submit_ button to solve the challenge.
-
-   ![Zero star feedback entry](img/zero_star_feedback-form.png)
+6. Click the _Submit_ button to solve the challenge.
 7. You can verify the feedback was saved by checking the _Customer
    Feedback_ widget on the _About Us_ page.
 
@@ -1263,7 +1263,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 > Leet (or "1337"), also known as eleet or leetspeak, is a system of
 > modified spellings and verbiage used primarily on the Internet for
 > many phonetic languages. It uses some alphabetic characters to replace
-> others in ways that play on the similarity of their glyphs via
+> others in ways thdev
+at play on the similarity of their glyphs via
 > reflection or other resemblance. Additionally, it modifies certain
 > words based on a system of suffixes and alternative meanings.
 >

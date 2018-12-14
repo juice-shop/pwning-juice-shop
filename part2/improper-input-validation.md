@@ -10,19 +10,11 @@
 
 | Challenge                                           | Difficulty         |
 |:----------------------------------------------------|:-------------------|
-| Get registered as admin user.                       | :star::star::star: |
 | Give a devastating zero-star feedback to the store. | :star:             |
+| Get registered as admin user.                       | :star::star::star: |
 | Place an order that makes you rich.                 | :star::star::star: |
 | Upload a file larger than 100 kB.                   | :star::star::star: |
 | Upload a file that has no .pdf extension.           | :star::star::star: |
-
-### Get registered as admin user
-
-:wrench: **TODO**
-
-### Hints
-
-:wrench: **TODO**
 
 ### Give a devastating zero-star feedback to the store
 
@@ -35,6 +27,14 @@ application into accepting a feedback with 0 stars.
 
 * Before you invest time bypassing the API, you might want to play
   around with the UI a bit
+
+### Get registered as admin user
+
+:wrench: **TODO**
+
+### Hints
+
+:wrench: **TODO**
 
 ### Place an order that makes you rich
 
