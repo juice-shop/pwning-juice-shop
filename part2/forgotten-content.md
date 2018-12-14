@@ -21,6 +21,8 @@ business end of 2017.
 
 * When removing references to the site from the code the developers have
   been a bit sloppy.
+* More particular, they have been sloppy in a way that even the Angular
+  Compiler was not able to clean up after them automatically.
 * It is of course not sufficient to just visit the donation site
   _directly_ to solve the challenge.
 
@@ -62,7 +64,7 @@ menu.
 * You should rather choose between the following two ways to beat this
   challenge:
   * _Apply brute force_ (and don't give up to quickly) to find it.
-  * _Investigate externally_ what languages are actually available.
+  * _Investigate online_ what languages are actually available.
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
@@ -78,7 +80,7 @@ on its blueprint in order to make it yourself?
 
 :information_source: _If you are running the Juice Shop with a custom
 theme and product inventory, the product to inspect will be a different
-one. The tooltip on the Score Board will tell you which one._
+one. The tooltip on the Score Board will tell you which one to look into._
 
 [^1]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
 

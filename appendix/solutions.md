@@ -62,16 +62,20 @@ error situation and solve this challenge along the way:
 
   ![SQL in UI Error](img/login-error_sql.png)
 
-### :warning: Let us redirect you to a donation site that went out of business
+### Let us redirect you to a donation site that went out of business
 
 1. Log in to the application with any user.
 2. Visit the _Your Basket_ page and expand the _Payment_ and
    _Merchandise_ sections with the "credit card"-button.
-3. Inspect the _Payment_ section with your browser to find a commented
-   out payment option to Gratipay.
+3. Perceive that all donation links are passed through the `to`
+   parameter of the route `/redirect`
+4. Open `main.js` in your browser's DevTools
+5. Searching for `/redirect?to=` and stepping through all matches you
+   will notice one that does not appear on any (visible) button on the
+   _Your Basket_ page: `/redirect?to=https://gratipay.com/juice-shop`
 
-   ![Gratipay commented out](img/gratipay-commented-out.png)
-4. Open
+   ![Gratipay commented out](img/gratipay-button-ngIf_false.png)
+6. Open
    <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
    to solve the challenge.
 
@@ -153,31 +157,32 @@ error situation and solve this challenge along the way:
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the Angular client.
 
-### :warning: Use a deprecated B2B interface that was not properly shut down
+### Use a deprecated B2B interface that was not properly shut down
 
 1. Log in as any user.
-2. Click _Complain?_ to go to the _File Complaint_ form
-3. Inspect the HTML file upload button for an _Invoice_ to see that it
-   has `ngf-pattern="'.pdf,.xml'"` defined which means you are allowed
-   to upload PDF and XML documents. Note the inconsistency with the
-   `ngf-accept="'.pdf'"` attribute, which is what kind of document the
-   file selection dialog will recommend you to pick from your computer.
-4. A bit further down in the HTML you also find a commented out
-   `<aside>` tag which would have rendered the value behind a
-   translation key `B2B_CUSTOMER_QUESTION` with a tooltip of
-   `ATTACH_ORDER_CONFIRMATION_XML`.
+2. Click _Complain?_ in the _Contact Us_ dropdown to go to the _File
+   Complaint_ form
+3. Clicking the file upload button for _Invoice_ and browsing some
+   directories you might notice that `.pdf` and `.zip` files are
+   filtered by default
+4. Trying to upload another other file will probably give you an error
+   message on the UI stating exactly that: `Forbidden file type. Only
+   PDF, ZIP allowed.`
+5. Open the `main.js` in your DevTools and find the declaration of the
+   file upload (e.g. by searching for `zip`)
+6. In the `allowedMimeType` array you will notice `"application/xml"`
+   and `"text/xml"` along with the expected PDF and ZIP types
 
-   ![Possible XML upload spoilered in complaint form](img/complaint_xml_upload.png)
-5. Click on the _Choose File_ button. It will filter only for PDF
-   documents by default.
-6. In the _File Name_ field enter `*.xml` and select any arbitrary XML
+   ![Possible XML upload spoilered in main.js](img/complaint_xml_mime-type.png)
+7. Click on the _Choose File_ button.
+8. In the _File Name_ field enter `*.xml` and select any arbitrary XML
    file (<100KB) you have available. Then press _Open_.
-7. Enter some _Message_ text and press _Submit_ to solve the challenge.
-8. On the JavaScript Console of your browser you will see a suspicious
-   `410 (Gone)` HTTP Error. In the corresponding entry in the Network
-   section of your browser's DevTools, you should see an error message,
-   telling you that `B2B customer complaints via file upload have been
-   deprecated for security reasons!`
+9. Enter some _Message_ text and press _Submit_ to solve the challenge.
+10. On the JavaScript Console of your browser you will see a suspicious
+    `410 (Gone)` HTTP Error. In the corresponding entry in the Network
+    section of your browser's DevTools, you should see an error message,
+    telling you that `B2B customer complaints via file upload have been
+    deprecated for security reasons!`
 
 ### Get rid of all 5-star customer feedback
 
@@ -1056,7 +1061,7 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
 
 :wrench: **TODO**
 
-### :warning: Retrieve the language file that never made it into production
+### Retrieve the language file that never made it into production
 
 1. Monitoring the HTTP calls to the backend when switching languages
    tells you how the translations are loaded:
@@ -1068,13 +1073,24 @@ if the CAPTCHA-pinning problem would be fixed in the application!_
    * etc.
 2. It is obvious the language files are stored with the official
    _locale_ as name using underscore notation.
-3. Nonetheless, brute forcing all possible locale codes (`aa_AA`,
+3. Nonetheless, even brute forcing all thinkable locale codes (`aa_AA`,
    `ab_AA`, ..., `zz_ZY`, `zz_ZZ`) would still **not** solve the
    challenge.
 4. The hidden language is _Klingon_ which is represented by a
    three-letter code `tlh` with the dummy country code `AA`.
 5. Request <http://localhost:3000/i18n/tlh_AA.json> to solve the
    challenge. majQa'!
+
+Instead of expanding your brute force pattern (which is not a very
+obvious decision to make) you can more easily find the solution to this
+challenge by investigating which languages are supported in the Juice
+Shop and how [the translations](../_book/part3/translation.md) are
+managed. This will quickly bring you over to
+<https://crowdin.com/project/owasp-juice-shop> which immediately
+spoilers _Klingon_ as a supported language. Hovering over the
+corresponding flag will eventually spoiler the language code `tlh_AA`.
+
+![Crowdin Klingon Spoiler](img/crowdin_klingon-spoiler.png)
 
 > The Klingon language was originally created to add realism to a race
 > of fictional aliens who inhabit the world of Star Trek, an American
@@ -1258,7 +1274,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 > although many dialects or linguistic varieties exist in different
 > online communities.[^5]
 
-### :warning: Deprive the shop of earnings by downloading the blueprint for one of its products
+### Deprive the shop of earnings by downloading the blueprint for one of its products
 
 1. The description of the _OWASP Juice Shop Logo (3D-printed)_ product
    indicates that this product might actually have kind of a blueprint
@@ -1276,7 +1292,14 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 6. This model will actually allow you to 3D-print your own OWASP Juice
    Shop logo models!
 
-   ![JuiceShop.stl model in Fast STL Viewer](img/JuiceShop.stl-in-FastSTLViewer.png)
+   ![JuiceShop.stl Surface Angle view](img/JuiceShop.stl_surface.png)
+   ![JuiceShop.stl Wireframe view](img/JuiceShop.stl_wireframe.png)
+
+The official place to retrieve this and other media or artwork files
+from the Juice Shop (and other OWASP projects or chapters) is
+<https://github.com/OWASP/owasp-swag>. There you can not only find the
+3D model leaked from this challenge, but also
+[one that comes with a dedicated hole to mount it on your keyring](https://github.com/OWASP/owasp-swag/blob/master/projects/juice-shop/3d/JuiceShop_KeyChain.stl)!
 
 ### Inform the development team about a danger to some of their credentials
 
