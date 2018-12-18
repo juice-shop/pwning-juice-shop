@@ -126,7 +126,7 @@ error situation and solve this challenge along the way:
    ![XSS alert box](img/xss1_alert.png)
 
 ### Give a devastating zero-star feedback to the store
-
+                         Place an order that makes you rich
 1. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 2. The _Submit_ button is still **disabled** because you did not select a
    _Rating_ yet.
@@ -363,16 +363,17 @@ injection as in
   the user data as described in
   [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
 
-### :warning: Place an order that makes you rich
+### Place an order that makes you rich
 
 1. Log in as any user.
 2. Put at least one item into your shopping basket.
 3. Note that reducing the quantity of a basket item below 1 is not
-   possible via the UI, so you will need to attack the RESTful API
-   directly instead.
-4. Copy your `Authorization` header from any HTTP request submitted via
+   possible via the UI
+4. When changing the quantity via the UI, you will notice `PUT` requests to <http://localhost:3000/api/BasketItems/{id}> in the Network tab of your DevTools
+5. Memorize the `{id}` of any item in your basket
+6. Copy your `Authorization` header from any HTTP request submitted via
    browser.
-5. Submit a `PUT` request to <http://localhost:3000/api/BasketItems/1>
+7. Submit a `PUT` request to <http://localhost:3000/api/BasketItems/{id}> replacing `{id}` with the memorized number from 5. and
    with:
    * `{"quantity": -100}` as body,
    * `application/json` as `Content-Type`
@@ -380,9 +381,11 @@ injection as in
      the token you copied from the browser.
 
    ![Negative quantity request body in PostMan](img/negative_order_postman-body.png)
-6. Visit <http://localhost:3000/#/basket> to view _Your Basket_ with the
+8. Visit <http://localhost:3000/#/basket> to view _Your Basket_ with the
    negative quantity on the first item
-7. Click _Checkout_ to issue the order and solve this challenge.
+
+   ![Basket with negative item quantity](img/negative_order-basket.png)
+9. Click _Checkout_ to issue the negative order and solve this challenge.
 
    ![Order confirmation with negative total](img/negative_order_pdf.pdf.png)
 
