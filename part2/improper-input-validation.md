@@ -52,8 +52,8 @@ out away to _receive_ money instead of _paying_ for their purchase.
 The Juice Shop offers its customers the chance to complain about an
 order that left them unsatisfied. One of the juice bottles might have
 leaked during transport or maybe the shipment was just two weeks late.
-To prove their claim customers are supposed to attach their order
-confirmation document to the complaint. To prevent abuse of this
+To prove their claim, customers are supposed to attach their order
+confirmation document to the online complaint. To prevent abuse of this
 functionality, the application only allows file uploads of 100 kB or
 less.
 

@@ -437,27 +437,27 @@ injection as in
 
    ![Password reset for Jim](img/jim_forgot-password.png)
 
-### :warning: Upload a file larger than 100 kB
+### Upload a file larger than 100 kB
 
 1. The client-side validation prevents uploads larger than 100 kB.
 2. Craft a `POST` request to <http://localhost:3000/file-upload> with a
    form parameter `file` that contains a PDF file of more than 100 kB
    but less than 200 kB.
 
-   ![Larger file upload](img/110kB_upload.png)
+   ![Larger file upload](img/invalid-size_upload.png)
 3. The response from the server will be a `204` with no content, but the
    challenge will be successfully solved.
 
 Files larger than 200 kB are rejected by an upload size check on server
 side with a `500` error stating `Error: File too large`.
 
-### :warning: Upload a file that has no .pdf extension
+### Upload a file that has no .pdf extension
 
 1. Craft a `POST` request to <http://localhost:3000/file-upload> with a
    form parameter `file` that contains a non-PDF file with a size of
    less than 200 kB.
 
-   ![Non-PDF upload](img/exe_upload.png)
+   ![Non-PDF upload](img/invalid-type_upload.png)
 2. The response from the server will be a `204` with no content, but the
    challenge will be successfully solved.
 
