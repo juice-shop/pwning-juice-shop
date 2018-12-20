@@ -345,16 +345,16 @@ injection as in
 
 :wrench: **TODO**
 
-### :warning: Log in with Bender's user account
+### Log in with Bender's user account
 
 * Log in with _Email_ `bender@juice-sh.op'--` and any _Password_ if you
   have already know Bender's email address.
 * A rainbow table attack on Bender's password will probably fail as it
-  is rather strong. You can alernatively solve
-  [Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password](#change-benders-password-into-slurmcl4ssic-without-using-sql-injection)
+  is rather strong. You can alternatively solve
+  [Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password](#change-benders-password-into-slurmcl4ssic-without-using-sql-injection-or-forgot-password)
   first and then simply log in with the new password.
 
-### :warning: Log in with Jim's user account
+### Log in with Jim's user account
 
 * Log in with _Email_ `jim@juice-sh.op'--` and any _Password_ if you
   have already know Jim's email address.
