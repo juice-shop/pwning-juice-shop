@@ -111,6 +111,23 @@ ever tasted before.
 
 ### Order the Christmas special offer of 2014
 
+> Blind SQL (Structured Query Language) injection is a type of SQL
+> Injection attack that asks the database true or false questions and
+> determines the answer based on the applications response. This attack
+> is often used when the web application is configured to show generic
+> error messages, but has not mitigated the code that is vulnerable to
+> SQL injection.
+>
+> When an attacker exploits SQL injection, sometimes the web application
+> displays error messages from the database complaining that the SQL
+> Query's syntax is incorrect. Blind SQL injection is nearly identical
+> to normal SQL Injection, the only difference being the way the data is
+> retrieved from the database. When the database does not output data to
+> the web page, an attacker is forced to steal data by asking the
+> database a series of true or false questions. This makes exploiting
+> the SQL Injection vulnerability more difficult, but not
+> impossible.[^4]
+
 To solve this challenge you need _to order_ a product that is not
 supposed to be available any more.
 
@@ -122,6 +139,8 @@ supposed to be available any more.
   again.
 * You need to get the deleted product into your shopping cart and
   trigger the _Checkout_.
+* Neither of the above can be achieved through the application frontend
+  and it might even require Blind SQL Injection.
 
 ### Let the server sleep for some time
 
@@ -236,3 +255,5 @@ café with free WiFi.
 [^2]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection
 
 [^3]: https://www.us-cert.gov/ncas/tips/ST04-015
+
+[^4]: https://www.owasp.org/index.php/Blind_SQL_Injection

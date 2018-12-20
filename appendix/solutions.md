@@ -126,15 +126,20 @@ error situation and solve this challenge along the way:
    ![XSS alert box](img/xss1_alert.png)
 
 ### Give a devastating zero-star feedback to the store
+
                          Place an order that makes you rich
-1. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
-2. The _Submit_ button is still **disabled** because you did not select a
-   _Rating_ yet.
-3. Inspect the _Submit_ button with your DevTools and note the `disabled` attribute of the `<button>` HTML tag
-4. Double click on `disabled` attribute to select it and then delete it from the tag.
+
+1. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve
+   the CAPTCHA at the bottom of the form.
+2. The _Submit_ button is still **disabled** because you did not select
+   a _Rating_ yet.
+3. Inspect the _Submit_ button with your DevTools and note the
+   `disabled` attribute of the `<button>` HTML tag
+4. Double click on `disabled` attribute to select it and then delete it
+   from the tag.
 
    ![Disabled Submit Button in Contact Us form](img/contact_disabled_submit-button.png)
-4. The _Submit_ button is now **enabled**.
+5. The _Submit_ button is now **enabled**.
 6. Click the _Submit_ button to solve the challenge.
 7. You can verify the feedback was saved by checking the _Customer
    Feedback_ widget on the _About Us_ page.
@@ -369,12 +374,15 @@ injection as in
 2. Put at least one item into your shopping basket.
 3. Note that reducing the quantity of a basket item below 1 is not
    possible via the UI
-4. When changing the quantity via the UI, you will notice `PUT` requests to <http://localhost:3000/api/BasketItems/{id}> in the Network tab of your DevTools
+4. When changing the quantity via the UI, you will notice `PUT` requests
+   to <http://localhost:3000/api/BasketItems/{id}> in the Network tab of
+   your DevTools
 5. Memorize the `{id}` of any item in your basket
 6. Copy your `Authorization` header from any HTTP request submitted via
    browser.
-7. Submit a `PUT` request to <http://localhost:3000/api/BasketItems/{id}> replacing `{id}` with the memorized number from 5. and
-   with:
+7. Submit a `PUT` request to
+   <http://localhost:3000/api/BasketItems/{id}> replacing `{id}` with
+   the memorized number from 5. and with:
    * `{"quantity": -100}` as body,
    * `application/json` as `Content-Type`
    * and `Bearer ?` as `Authorization` header, replacing the `?` with
@@ -385,7 +393,8 @@ injection as in
    negative quantity on the first item
 
    ![Basket with negative item quantity](img/negative_order-basket.png)
-9. Click _Checkout_ to issue the negative order and solve this challenge.
+9. Click _Checkout_ to issue the negative order and solve this
+   challenge.
 
    ![Order confirmation with negative total](img/negative_order_pdf.pdf.png)
 
@@ -552,36 +561,55 @@ simultaneously.
 
 ## Hard Challenges (  :star::star::star::star:  )
 
-### :warning: Order the Christmas special offer of 2014
+### Order the Christmas special offer of 2014
 
 1. Open http://localhost:3000/#/search and reload the page with `F5`
    while observing the _Network_ tab in your browser's DevTools
 2. Recognize the `GET` request
    <http://localhost:3000/rest/product/search?q=> which returns the
-   product data
-3. Submit `';` as `q` via
-   <http://localhost:3000/rest/product/search?q=';>
-4. The `error` object contains the full SQL statement used for search
-   for products.
+   product data.
+3. Submitting any SQL payloads via the _Search_ field in the navigation
+   bar will do you no good, as it is only applying filters onto the
+   entire data set what was retrieved with a singular call upon loading
+   the page.
+4. In that light, the `q=` parameter on the
+   <http://localhost:3000/rest/product/search> endpoint would not even
+   be needed, but might be a relic from a different implementation of
+   the search functionality. Test this theory by submitting
+   <http://localhost:3000/rest/product/searchq=orange> which should give
+   you a result such as
 
-   ![SQL search query in JavaScript error](img/search_error-js_console.png)
-5. Its `AND deletedAt IS NULL`-part is what is hiding the Christmas
-   product we seek.
-6. Using `'--` for `q` results in a `SQLITE_ERROR: syntax error`. This
-   is due to two (now unbalanced) parenthesis in the query.
-7. Using `'))--` for `q` fixes the syntax and successfully retrieves all
-   products, including the (logically deleted) Christmas offer.
-8. Go back to http://localhost:3000/#/search and log in as any user.
-9. Add any regular product other than the _Christmas Super-Surprise-Box
-   (2014 Edition)_ into you shopping basket to prevent problems at
-   checkout later. Memorize your `BasketId` value in the request
-   payload.
-10. Submit a `POST` request to <http://localhost:3000/api/BasketItems>
-    with
+   ![JSON search result for "orange" keyword](img/search-result_orange.png)
+5. Submit `';` as `q` via
+   <http://localhost:3000/rest/product/search?q=';>
+6. You will receive an error page with a `SQLITE_ERROR: syntax error`
+   mentioned, indicating that SQL Injection is indeed possible.
+
+   ![SQL search query syntax error](img/search-error_sql-syntax.png)
+7. You are now in the area of Blind SQL Injection, where trying create
+   valid queries is a matter of patience, observance and a bit of luck.
+8. Varying the payload into `'--` for `q` results in a `SQLITE_ERROR:
+   incomplete input`. This error happens due to two (now unbalanced)
+   parenthesis in the query.
+9. Using `'))--` for `q` fixes the syntax and successfully retrieves all
+   products, including the (logically deleted) Christmas offer. Take
+   note of its `id` (which should be `10`)
+
+   ![JSON search result with the Christmas special](img/search-result_christmas.png)
+10. Go to <http://localhost:3000/#/login> and log in as any user.
+11. Add any regularly available product into you shopping basket to
+    prevent problems at checkout later. Memorize your `BasketId` value
+    in the request payload (when viewing the Network tab) or find the
+    same information in the `bid` variable in your browser's Session
+    Storage (in the Application tab).
+12. Craft and send a `POST` request to
+    <http://localhost:3000/api/BasketItems> with
     * `{"BasketId": "<Your Basket ID>", "ProductId": 10, "quantity": 1}`
       as body
     * and `application/json` as `Content-Type`
-11. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
+13. Go to <http://localhost:3000/#/basket> to verify that the "Christmas
+    Super-Surprise-Box (2014 Edition)" is in the basket
+14. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
 ### Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
 
@@ -1266,8 +1294,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 > Leet (or "1337"), also known as eleet or leetspeak, is a system of
 > modified spellings and verbiage used primarily on the Internet for
 > many phonetic languages. It uses some alphabetic characters to replace
-> others in ways thdev
-at play on the similarity of their glyphs via
+> others in ways thdev at play on the similarity of their glyphs via
 > reflection or other resemblance. Additionally, it modifies certain
 > words based on a system of suffixes and alternative meanings.
 >
