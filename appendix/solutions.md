@@ -255,40 +255,70 @@ in order to exploit and solve them:
 
 :wrench: **TODO**
 
-### :warning: Learn about the Token Sale before its official announcement
+### Learn about the Token Sale before its official announcement
 
-1. Open the `juice-shop.min.js` in your browser's developer tools and
-   search for "tokensale".
-2. Among the first entries you will find an obfuscated route mapping
-   using the `TokenSaleController`.
+1. Open the `main.js` in your browser's developer tools and search for
+   some keywords like "ico", "token", "bitcoin" or "altcoin".
+2. Note the names of the JavaScript functions where these occur in, like
+   `Vu()` and `Hu(l)`. These names are obfuscated, so they might be
+   different for you.
 
-   ![Obfuscated TokenSale page route in juice-shop.min.js](img/minified_js-tokensale.png)
-3. Navigate to <http://localhost:3000/#/tokensale> and
-   <http://localhost:3000/#/token-sale> just to realize that these
+   ![Obfuscated token sale related functions in main.js](img/minified_js-tokensale.png)
+3. Searching for references to those functions in `main.js` might yield
+   some more functions, like `zu(l)` and some possible route name
+   `app-token-sale`
+
+   ![More token sale related functions in main.js](img/minified_js-tokensale_trail.png)
+4. Navigate to <http://localhost:3000/#/app-token-sale> or variations
+   like <http://localhost:3000/#/token-sale> just to realize that these
    routes do not exist.
-4. Copy the obfuscating function into the JavaScript console of your
-   browser and execute it.
+5. After some more chasing through the minified code, you should realize
+   that `Vu` is referenced in the route mappings that already helped
+   with
+   [Find the carefully hidden 'Score Board' page](#find-the-carefully-hidden-score-board-page)
+   and
+   [Access the administration section of the store](#access-the-administration-section-of-the-store)
+   but not to a static title. It is mapped to another variable `Ca`
+   (which might be named differently for you)
+
+   ![Tokensale route mapping in main.js](img/minified_js-tokensale_route.png)
+6. Search for `function Ca(` to find the declaration of the function
+   that should return a matcher to the route name you are looking for.
+
+   ![Tokensale route matcher in main.js](img/minified_js-tokensale_matcher.png)
+7. Copy the obfuscating function into the JavaScript console of your
+   browser and execute it immediately by appending a `()`. This will
+   probably yield a `Uncaught SyntaxError: Unexpected token )`. When you
+   pass values in, like `(1)` or `('a')` you will notice that the input
+   value is simply returned.
+8. Comparing the route mapping to others shows you that here a `matcher` is mapped to a `component` whereas most other mappings map a `path` to their `component`.
+9. The code that gives you the sought-after path is the code block passed into the `match()` function inside `Ca(l)`!
+
+   ![Code block returning the Tokensale path](img/minified_js-tokensale_path-block.png)
+10. Copying that inner code block and executing that in your console will still yield an error!
+11. You need to append it to a string to make it work, which will **finally** yield the path `/tokensale-ico-ea`.
+12. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
+   challenge.
 
 ```javascript
-"/" + function() {
-        var e = Array.prototype.slice.call(arguments)
-          , n = e.shift();
-        return e.reverse().map(function(e, t) {
-            return String.fromCharCode(e - n - 45 - t)
-        }).join("")
-    }(25, 184, 174, 179, 182, 186) + 36669..toString(36).toLowerCase() + function() {
-        var e = Array.prototype.slice.call(arguments)
-          , n = e.shift();
-        return e.reverse().map(function(e, t) {
-            return String.fromCharCode(e - n - 24 - t)
-        }).join("")
-    }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
+"" + function() {
+                for (var l = [], n = 0; n < arguments.length; n++)
+                    l[n] = arguments[n];
+                var e = Array.prototype.slice.call(l)
+                  , t = e.shift();
+                return e.reverse().map(function(l, n) {
+                    return String.fromCharCode(l - t - 45 - n)
+                }).join("")
+            }(25, 184, 174, 179, 182, 186) + 36669..toString(36).toLowerCase() + function() {
+                for (var l = [], n = 0; n < arguments.length; n++)
+                    l[n] = arguments[n];
+                var e = Array.prototype.slice.call(arguments)
+                  , t = e.shift();
+                return e.reverse().map(function(l, n) {
+                    return String.fromCharCode(l - t - 24 - n)
+                }).join("")
+            }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
 ```
-
-1. The console should give you the string `/tokensale-ico-ea` as a
-   result.
-2. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
-   challenge.
 
 ### Post some feedback in another users name
 
@@ -676,7 +706,7 @@ payload in his blog post
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
 2. ...to download <http://localhost:3000/ftp/eastere.gg%2500.md>
 
-### :warning: Apply some advanced cryptanalysis to find the real easter egg
+### Apply some advanced cryptanalysis to find the real easter egg
 
 1. Get the encrypted string from the `eastere.gg` from the
    [Find the hidden easter egg](#find-the-hidden-easter-egg) challenge:
@@ -838,7 +868,7 @@ respond.
 8. Then type any _New Password_ and matching _Repeat New Password_
 9. Click _Change_ to solve this challenge
 
-### :warning: Rat out a notorious character hiding in plain sight in the shop
+### Rat out a notorious character hiding in plain sight in the shop
 
 1. Looking for irregularities among the image files you will at some
    point notice that `5.png` is the only PNG file among otherwise only
@@ -1621,16 +1651,18 @@ to use some unofficial port._
    empty!`
 6. From `master password empty` you can derive, that the KeePass file is
    protected with **only a key file** instead of a password!
-7. The key file must be something the support team has easy access to from
-   everywhere - how else would they achieve 24/7 with expectedly high staff rotation?
+7. The key file must be something the support team has easy access to
+   from everywhere - how else would they achieve 24/7 with expectedly
+   high staff rotation?
 8. The second important hint is the reference to `Caoimhe`, which
    happens to be an Irish feminine given name.
 9. Visit <http://localhost:3000/#/about> and cycle through the photos of
    all support staff that are displayed in the background feedback
-   carousel. There is one woman with red hair, which is a (stereo-)typical attribute of Irish people - so maybe she actually _is_
-   "Caoimhe"?
+   carousel. There is one woman with red hair, which is a
+   (stereo-)typical attribute of Irish people - so maybe she actually
+   _is_ "Caoimhe"?
 
-    ![Photo of Caoimhe in About Use carousel](img/caoimhe.png)
+   ![Photo of Caoimhe in About Use carousel](img/caoimhe.png)
 10. Download the photo
     <http://localhost:3000/public/images/carousel/6.jpg> and use it as a
     key file to unlock the KeePass database.
