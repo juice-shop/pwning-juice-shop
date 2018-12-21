@@ -79,32 +79,19 @@ error situation and solve this challenge along the way:
    <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
    to solve the challenge.
 
-### :warning: Find the carefully hidden 'Score Board' page
+### Find the carefully hidden 'Score Board' page
 
-1. Open the _Source code view_ of your browser from any screen of the
-   Juice Shop application.
-2. Scroll down to the end of the `<nav>` tag that defines the menu bar
+1. Go to the _Sources_ tab of your browsers DevTools and open the
+   `main.js` file.
+2. If your browser offers pretty-printing of this minified messy code,
+   best use this offer. In Chrome this can be done with the "{}"-button.
+3. Search for `score` and iterate through each finding to come across
+   one that looks like a route mapping section:
 
-```html
-            <li class="dropdown" ng-show="isLoggedIn()">
-                <a href="#/complain"><i class="fas fa-bomb fa-lg"></i> <span translate="NAV_COMPLAIN"></span></a>
-            </li>
-            <li class="dropdown" ng-show="scoreBoardMenuVisible">
-                <a href="#/score-board"><i class="fas fa-trophy fa-lg"></i> <span translate="TITLE_SCORE_BOARD"></span></a>
-            </li>
-            <li class="dropdown ribbon-spacer">
-                <a href="#/about"><i class="fas fa-info-circle fa-lg"></i> <span translate="TITLE_ABOUT"></span></a>
-            </li>
-        </ul>
-    </div>
-</nav>
-```
-
-1. Notice the `<li>` entry linking to `#/score-board` which is hidden
-   until the Score Board has been visited directly.
-2. Navigate to http://localhost:3000/#/score-board to solve the
+   ![Route Mapping the the Score Board](/appendix/img/score-board_route.png)
+4. Navigate to http://localhost:3000/#/score-board to solve the
    challenge.
-3. From now on you will see the additional menu item _Score Board_ in
+5. From now on you will see the additional menu item _Score Board_ in
    the navigation bar.
 
 ### :warning: Perform a reflected XSS attack
@@ -240,7 +227,8 @@ If the challenge is not immediately solved, you might have to
 1. Visit <https://securitytxt.org/> to learn about a proposed standard
    which allows websites to define security policies.
 2. Request the security policy file from the server at
-   <http://localhost:3000/.well-known/security.txt> to solve the challenge.
+   <http://localhost:3000/.well-known/security.txt> to solve the
+   challenge.
 3. Optionally, write an email to the mentioned contact address
    <mailto:donotreply@owasp-juice.shop> and see what happens... :e-mail:
 
@@ -957,11 +945,12 @@ NPM page:
 
 7. Next you get rid of the unwanted product results changing the query
    into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
-   '6', '7', '8' FROM Users--` leaving only the "`UNION`ed" element in the result set
-8. The last step is to replace the fixed values with correct
-   column names. You could guess those **or** derive them from the
-   RESTful API results **or** remember them from previously seen SQL
-   errors while attacking the _Login_ form.
+   '6', '7', '8' FROM Users--` leaving only the "`UNION`ed" element in
+   the result set
+8. The last step is to replace the fixed values with correct column
+   names. You could guess those **or** derive them from the RESTful API
+   results **or** remember them from previously seen SQL errors while
+   attacking the _Login_ form.
 9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
    '6', '7', '8' FROM Users--` solves the challenge giving you a the
    list of all user data in convenient JSON format.
