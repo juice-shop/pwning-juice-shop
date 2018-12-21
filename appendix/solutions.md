@@ -37,7 +37,7 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
    challenge.
 
-### :warning: Provoke an error that is not very gracefully handled.
+### Provoke an error that is not very gracefully handled.
 
 Any request that cannot be properly handled by the server will
 eventually be passed to a global error handling component that sends an
@@ -45,22 +45,17 @@ error page to the client that includes a stack trace and other sensitive
 information. The restful API behaves in a similar way, passing back a
 JSON error object with sensitive data, such as SQL query strings.
 
-Here are four examples (out of many different ways) to provoke such an
-error situation and solve this challenge along the way:
+Here are two examples (out of many different ways) to provoke such an
+error situation and solve this challenge immediately:
 
-* Visit <http://localhost:3000/#/search?q=';>
+* Visit <http://localhost:3000/rest/qwertz>
 
-  ![JavaScript Error](img/error-js_console.png)
-* Visit <http://localhost:3000/ftp/crash>
-
-  ![403 Error](img/error_page-403.png)
-* Visit <http://localhost:3000/ftp/crash.md>
-
-  ![404 Error](img/error_page-404.png)
+  ![500 Error](img/error_page-500.png)
 * Log in to the application with `'` (single-quote) as _Email_ and
   anything as _Password_
 
-  ![SQL in UI Error](img/login-error_sql.png)
+  ![Object Error in Login form](img/login-error_js.png)
+  ![SQL error in JS console](img/error_js-console.png)
 
 ### Let us redirect you to a donation site that went out of business
 
@@ -319,7 +314,7 @@ logged out but provide any `UserId` in the JSON payload.
 
 :wrench: **TODO**
 
-### :warning: Access a salesman's forgotten backup file
+### Access a salesman's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in
    [Access a confidential document](#access-a-confidential-document).
@@ -1269,7 +1264,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 > the postal code) and those in the east with 'O' (for Ost), e.g.:
 > O-1xxx Berlin.[^4]
 
-### :warning: Reset Morty's password via the Forgot Password mechanism
+### Reset Morty's password via the Forgot Password mechanism
 
 1. Trying to find out who "Morty" might be should _eventually_ lead you
    to _Morty Smith_ as the most likely user identity
@@ -1604,7 +1599,7 @@ totally different attack styles.
 
 :wrench: **TODO**
 
-### :warning: Log in with the support team's original user credentials
+### Log in with the support team's original user credentials
 
 _Solving this challenge requires [KeePass 2.x](http://keepass.info)
 installed on your computer. If you are using a non-Windows OS you need
@@ -1613,31 +1608,37 @@ to use some unofficial port._
 1. Download and install KeePass 2.x from <http://keepass.info>
 2. Get the support team's KeePass database file from
    <http://localhost:3000/ftp/incident-support.kdbx> (note how this file
-   is _not blocked_ by the file type filter).
-3. Inspecting the DOM of the _Login_ form reveals a HTML comment in
-   Romanian language: `<!-- @echipa de suport: Secretul nostru comun
-   este încă Caoimhe cu parola de master gol! -->`
-4. Running this through an online translator yields something like:
+   is conveniently _not blocked_ by the file type filter).
+3. Inspecting `main.js` for information leakage (e.g. by searching for
+   `support`) will yield an interesting log statement that is printed
+   when the support logs in with the wrong password:
+
+   ![Support team login hint in minified JS](/appendix/img/minified-js_support-hint.png)
+4. The logged text is in Romanian language: `<!-- @echipa de suport:
+   Secretul nostru comun este încă Caoimhe cu parola de master gol! -->`
+5. Running this through an online translator yields something like:
    `Support Team: Our secret is still common Caoimhe master password
    empty!`
-5. From `master password empty` you can derive, that the KeePass file is
+6. From `master password empty` you can derive, that the KeePass file is
    protected with **only a key file** instead of a password!
-6. The key file must be something the support team has access to from
-   everywhere - how else would they achieve 24/7?
-7. The second important hint is the reference to `Caoimhe`, which
+7. The key file must be something the support team has easy access to from
+   everywhere - how else would they achieve 24/7 with expectedly high staff rotation?
+8. The second important hint is the reference to `Caoimhe`, which
    happens to be an Irish feminine given name.
-8. Visit <http://localhost:3000/#/about> and cycle through the photos of
+9. Visit <http://localhost:3000/#/about> and cycle through the photos of
    all support staff that are displayed in the background feedback
-   carousel. There is one woman with red hair - maybe she actually _is_
+   carousel. There is one woman with red hair, which is a (stereo-)typical attribute of Irish people - so maybe she actually _is_
    "Caoimhe"?
-9. Download the photo
-   <http://localhost:3000/public/images/carousel/6.jpg> and use it as a
-   key file to unlock the KeePass database.
-10. Find the password for the support team user account in the `prod`
+
+    ![Photo of Caoimhe in About Use carousel](img/caoimhe.png)
+10. Download the photo
+    <http://localhost:3000/public/images/carousel/6.jpg> and use it as a
+    key file to unlock the KeePass database.
+11. Find the password for the support team user account in the `prod`
     entry of the KeePass file.
 
     ![Unlocked KeePass file](img/keepass-list.png)
-11. Log in with `support@juice-sh.op` as _Email_ and
+12. Log in with `support@juice-sh.op` as _Email_ and
     `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
     challenge.
 
