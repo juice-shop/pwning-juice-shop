@@ -1201,7 +1201,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 :wrench: **TODO**
 
-### :warning: Perform a Remote Code Execution that would keep a less hardened application busy forever
+### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 1. By manual or automated URL discovery you can find a
    [Swagger](https://swagger.io) API documentation hosted at
@@ -1685,7 +1685,7 @@ to use some unofficial port._
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
    to solve this challenge and marvel at the premium content!
 
-### :warning: Perform a Remote Code Execution that occupies the server for a while without using infinite loops
+### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
 1. Follow steps 1-7 of the challenge
    [Perform a Remote Code Execution that would keep a less hardened application busy forever](#perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever).
