@@ -235,12 +235,12 @@ If the challenge is not immediately solved, you might have to
    which is as easy to guess as it is to brute force or retrieve from a
    rainbow table.
 
-### :warning: Behave like any "white hat" should
+### Behave like any "white hat" should
 
 1. Visit <https://securitytxt.org/> to learn about a proposed standard
    which allows websites to define security policies.
 2. Request the security policy file from the server at
-   <http://localhost:3000/security.txt> to solve the challenge.
+   <http://localhost:3000/.well-known/security.txt> to solve the challenge.
 3. Optionally, write an email to the mentioned contact address
    <mailto:donotreply@owasp-juice.shop> and see what happens... :e-mail:
 
@@ -687,7 +687,7 @@ will get their password set to the same one we forced onto Bender!
 payload in his blog post
 [Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
 
-### :warning: Find the hidden easter egg
+### Find the hidden easter egg
 
 1. Use the _Poison Null Byte_ attack described in
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
@@ -722,7 +722,7 @@ payload in his blog post
 > algorithm provides virtually no cryptographic security, and is often
 > cited as a canonical example of weak encryption.[^1]
 
-### :warning: Access a developer's forgotten backup file
+### Access a developer's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in
    [Access a confidential document](#access-a-confidential-document).
@@ -777,7 +777,7 @@ payload in his blog post
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
 
-### :warning: Access a misplaced SIEM signature file
+### Access a misplaced SIEM signature file
 
 1. Use the _Poison Null Byte_ attack described in
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
@@ -819,11 +819,11 @@ respond.
    texts_ have been changed into `NoSQL Injection!`
 
 
-### :warning: Wherever you go, there you are
+### Wherever you go, there you are
 
 1. Pick one of the redirect links in the application, e.g.
    <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
-   from the _Fork me on GitHub_-ribbon.
+   from the _GitHub_-button in the navigation bar.
 2. Trying to redirect to some unrecognized URL fails due to whitelist
    validation with `406 Error: Unrecognized target URL for redirect`.
 3. Removing the `to` parameter (<http://localhost:3000/redirect>) will
@@ -1029,7 +1029,7 @@ explains the problem and gives an exploit example:
 
 ## Dreadful Challenges (  :star::star::star::star::star:  )
 
-### :warning: Submit 10 or more customer feedbacks within 10 seconds
+### Submit 10 or more customer feedbacks within 10 seconds
 
 1. Open the Network tab of your browser DevTools and visit
    <http://localhost:3000/#/contact>
@@ -1037,7 +1037,7 @@ explains the problem and gives an exploit example:
    <http://localhost:3000/rest/captcha/> which retrieves the CAPTCHA for
    the feedback form. The HTTP response body will look similar to
    `{"captchaId":18,"captcha":"5*8*8","answer":"320"}`.
-3. Regularly fill out the form and submit it while checking the backend
+3. Fill out the form normally and submit it while checking the backend
    interaction in your Developer Tools. The CAPTCHA identifier and
    solution are transmitted along with the feedback in the request body:
    `{comment: "Hello", rating: 1, captcha: "320", captchaId: 18}`
@@ -1076,32 +1076,33 @@ for this challenge:
   
   beforeEach(() => {
     browser.get('/#/contact')
-    comment = element(by.model('feedback.comment'))
-    rating = element(by.model('feedback.rating'))
-    captcha = element(by.model('feedback.captcha'))
+    comment = element(by.id('comment'))
+    rating = $$('.br-unit').last()
+    captcha = element(by.id('captchaControl'))
     submitButton = element(by.id('submitButton'))
     solveNextCaptcha()
   })
   
-describe('challenge "captchaBypass"', () => {
-  it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
-    for (var i = 0; i < 11; i++) {
-      comment.sendKeys('Spam #' + i)
-      rating.click()
-      submitButton.click()
-      solveNextCaptcha() // first CAPTCHA was already solved in beforeEach
-    }
+  describe('challenge "captchaBypass"', () => {
+    it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
+      for (var i = 0; i < 11; i++) {
+        comment.sendKeys('Spam #' + i)
+        rating.click()
+        submitButton.click()
+        browser.sleep(200)
+        solveNextCaptcha() // first CAPTCHA was already solved in beforeEach
+      }
+    })
+
+    protractor.expect.challengeSolved({ challenge: 'CAPTCHA Bypass' })
   })
 
-  protractor.expect.challengeSolved({ challenge: 'CAPTCHA Bypass' })
-})
-
-function solveNextCaptcha () {
-  element(by.id('captcha')).getText().then((text) => {
-    const answer = eval(text).toString() // eslint-disable-line no-eval
-    captcha.sendKeys(answer)
-  })
-}
+  function solveNextCaptcha () {
+    element(by.id('captcha')).getText().then((text) => {
+      const answer = eval(text).toString() // eslint-disable-line no-eval
+      captcha.sendKeys(answer)
+    })
+  }
 ```
 
 _It is worth noting that both alternate solutions would still work even
