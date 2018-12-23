@@ -160,24 +160,10 @@ npm run protractor
 The end-to-end tests require a locally installed Google Chrome browser
 and internet access to be able to pass.
 
-#### Mutation tests
-
-The [mutation tests](https://en.wikipedia.org/wiki/Mutation_testing)
-ensure the quality of the unit test suite by making small changes to the
-code that should cause one or more tests to fail. If none does this
-"mutated line" is not properly covered by meaningful assertions and the
-mutation testing engine that will inform you about this.
-
-```bash
-npm run stryker
-```
-
-Currently only the client-side unit tests are covered by mutation tests.
-The integration and end-to-end tests are not suitable for mutation
-testing because they run against a real server instance with
-dependencies to the database and an internet connection. The mutation
-tests are intentionally not executed on Travis-CI due to their
-significant execution time.
+If you have a web proxy configured via `HTTP_PROXY` environment variable,
+the end-to-end tests will honor this setting. This can be useful to e.g.
+run the tests through tools like [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+or Burpsuite.
 
 ## Continuous integration & deployment
 
