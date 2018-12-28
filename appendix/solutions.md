@@ -255,71 +255,6 @@ in order to exploit and solve them:
 
 :wrench: **TODO**
 
-### Learn about the Token Sale before its official announcement
-
-1. Open the `main.js` in your browser's developer tools and search for
-   some keywords like "ico", "token", "bitcoin" or "altcoin".
-2. Note the names of the JavaScript functions where these occur in, like
-   `Vu()` and `Hu(l)`. These names are obfuscated, so they might be
-   different for you.
-
-   ![Obfuscated token sale related functions in main.js](img/minified_js-tokensale.png)
-3. Searching for references to those functions in `main.js` might yield
-   some more functions, like `zu(l)` and some possible route name
-   `app-token-sale`
-
-   ![More token sale related functions in main.js](img/minified_js-tokensale_trail.png)
-4. Navigate to <http://localhost:3000/#/app-token-sale> or variations
-   like <http://localhost:3000/#/token-sale> just to realize that these
-   routes do not exist.
-5. After some more chasing through the minified code, you should realize
-   that `Vu` is referenced in the route mappings that already helped
-   with
-   [Find the carefully hidden 'Score Board' page](#find-the-carefully-hidden-score-board-page)
-   and
-   [Access the administration section of the store](#access-the-administration-section-of-the-store)
-   but not to a static title. It is mapped to another variable `Ca`
-   (which might be named differently for you)
-
-   ![Tokensale route mapping in main.js](img/minified_js-tokensale_route.png)
-6. Search for `function Ca(` to find the declaration of the function
-   that should return a matcher to the route name you are looking for.
-
-   ![Tokensale route matcher in main.js](img/minified_js-tokensale_matcher.png)
-7. Copy the obfuscating function into the JavaScript console of your
-   browser and execute it immediately by appending a `()`. This will
-   probably yield a `Uncaught SyntaxError: Unexpected token )`. When you
-   pass values in, like `(1)` or `('a')` you will notice that the input
-   value is simply returned.
-8. Comparing the route mapping to others shows you that here a `matcher` is mapped to a `component` whereas most other mappings map a `path` to their `component`.
-9. The code that gives you the sought-after path is the code block passed into the `match()` function inside `Ca(l)`!
-
-   ![Code block returning the Tokensale path](img/minified_js-tokensale_path-block.png)
-10. Copying that inner code block and executing that in your console will still yield an error!
-11. You need to append it to a string to make it work, which will **finally** yield the path `/tokensale-ico-ea`.
-12. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
-   challenge.
-
-```javascript
-"" + function() {
-                for (var l = [], n = 0; n < arguments.length; n++)
-                    l[n] = arguments[n];
-                var e = Array.prototype.slice.call(l)
-                  , t = e.shift();
-                return e.reverse().map(function(l, n) {
-                    return String.fromCharCode(l - t - 45 - n)
-                }).join("")
-            }(25, 184, 174, 179, 182, 186) + 36669..toString(36).toLowerCase() + function() {
-                for (var l = [], n = 0; n < arguments.length; n++)
-                    l[n] = arguments[n];
-                var e = Array.prototype.slice.call(arguments)
-                  , t = e.shift();
-                return e.reverse().map(function(l, n) {
-                    return String.fromCharCode(l - t - 24 - n)
-                }).join("")
-            }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
-```
-
 ### Post some feedback in another users name
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
@@ -831,7 +766,6 @@ respond.
 3. Check different product detail dialogs to verify that _all review
    texts_ have been changed into `NoSQL Injection!`
 
-
 ### Wherever you go, there you are
 
 1. Pick one of the redirect links in the application, e.g.
@@ -1042,6 +976,71 @@ explains the problem and gives an exploit example:
 :wrench: **TODO**
 
 ## Dreadful Challenges (  :star::star::star::star::star:  )
+
+### Learn about the Token Sale before its official announcement
+
+1. Open the `main.js` in your browser's developer tools and search for
+   some keywords like "ico", "token", "bitcoin" or "altcoin".
+2. Note the names of the JavaScript functions where these occur in, like
+   `Vu()` and `Hu(l)`. These names are obfuscated, so they might be
+   different for you.
+
+   ![Obfuscated token sale related functions in main.js](img/minified_js-tokensale.png)
+3. Searching for references to those functions in `main.js` might yield
+   some more functions, like `zu(l)` and some possible route name
+   `app-token-sale`
+
+   ![More token sale related functions in main.js](img/minified_js-tokensale_trail.png)
+4. Navigate to <http://localhost:3000/#/app-token-sale> or variations
+   like <http://localhost:3000/#/token-sale> just to realize that these
+   routes do not exist.
+5. After some more chasing through the minified code, you should realize
+   that `Vu` is referenced in the route mappings that already helped
+   with
+   [Find the carefully hidden 'Score Board' page](#find-the-carefully-hidden-score-board-page)
+   and
+   [Access the administration section of the store](#access-the-administration-section-of-the-store)
+   but not to a static title. It is mapped to another variable `Ca`
+   (which might be named differently for you)
+
+   ![Tokensale route mapping in main.js](img/minified_js-tokensale_route.png)
+6. Search for `function Ca(` to find the declaration of the function
+   that should return a matcher to the route name you are looking for.
+
+   ![Tokensale route matcher in main.js](img/minified_js-tokensale_matcher.png)
+7. Copy the obfuscating function into the JavaScript console of your
+   browser and execute it immediately by appending a `()`. This will
+   probably yield a `Uncaught SyntaxError: Unexpected token )`. When you
+   pass values in, like `(1)` or `('a')` you will notice that the input
+   value is simply returned.
+8. Comparing the route mapping to others shows you that here a `matcher` is mapped to a `component` whereas most other mappings map a `path` to their `component`.
+9. The code that gives you the sought-after path is the code block passed into the `match()` function inside `Ca(l)`!
+
+   ![Code block returning the Tokensale path](img/minified_js-tokensale_path-block.png)
+10. Copying that inner code block and executing that in your console will still yield an error!
+11. You need to append it to a string to make it work, which will **finally** yield the path `/tokensale-ico-ea`.
+12. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
+   challenge.
+
+```javascript
+"" + function() {
+                for (var l = [], n = 0; n < arguments.length; n++)
+                    l[n] = arguments[n];
+                var e = Array.prototype.slice.call(l)
+                  , t = e.shift();
+                return e.reverse().map(function(l, n) {
+                    return String.fromCharCode(l - t - 45 - n)
+                }).join("")
+            }(25, 184, 174, 179, 182, 186) + 36669..toString(36).toLowerCase() + function() {
+                for (var l = [], n = 0; n < arguments.length; n++)
+                    l[n] = arguments[n];
+                var e = Array.prototype.slice.call(arguments)
+                  , t = e.shift();
+                return e.reverse().map(function(l, n) {
+                    return String.fromCharCode(l - t - 24 - n)
+                }).join("")
+            }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
+```
 
 ### Submit 10 or more customer feedbacks within 10 seconds
 
