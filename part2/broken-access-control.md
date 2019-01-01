@@ -27,6 +27,7 @@
 | Access the administration section of the store.                                             | :star:                               |
 | Access someone else's basket.                                                               | :star::star:                         |
 | Get rid of all 5-star customer feedback.                                                    | :star::star:                         |
+| Manipulate another user's basket.                                                   | :star::star::star:                   |
 | Post some feedback in another users name.                                                   | :star::star::star:                   |
 | Post a product review as another user or edit any user's existing review.                   | :star::star::star:                   |
 | Change the href of the link within the O-Saft product description into http://kimminich.de. | :star::star::star:                   |
@@ -49,7 +50,7 @@ option available in the main menu.
   parts of the application that are _not usually visible_ in the browser
 * It is probably just slightly harder to find than the score board link
 
-### Access someone else's basket
+### View another user's shopping basket
 
 This horizontal privilege escalation challenge demands you to access the
 shopping basket of another user. Being able to do so would give an
@@ -78,6 +79,14 @@ deleting the 5-star feedback is very easy.
 
 * Nothing happens when you try to delete feedback entries? Check the
   JavaScript console for errors!
+
+### Manipulate another user's basket
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Post some feedback in another users name
 

@@ -130,7 +130,7 @@ error situation and solve this challenge immediately:
 
 ## Easy Challenges (  :star::star:  )
 
-### Access someone else's basket
+### View another user's shopping basket
 
 1. Log in as any user.
 2. Put some products into your shopping basket.
@@ -252,6 +252,10 @@ in order to exploit and solve them:
 ## Medium Challenges (  :star::star::star:  )
 
 ### :warning: Get registered as admin user
+
+:wrench: **TODO**
+
+### Manipulate another user's basket
 
 :wrench: **TODO**
 
