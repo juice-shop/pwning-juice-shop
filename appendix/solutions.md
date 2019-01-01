@@ -255,7 +255,7 @@ in order to exploit and solve them:
 
 :wrench: **TODO**
 
-### Manipulate another user's basket
+### Put an additional product into another user's shopping basket
 
 :wrench: **TODO**
 

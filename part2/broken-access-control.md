@@ -27,7 +27,7 @@
 | Access the administration section of the store.                                             | :star:                               |
 | Access someone else's basket.                                                               | :star::star:                         |
 | Get rid of all 5-star customer feedback.                                                    | :star::star:                         |
-| Manipulate another user's basket.                                                   | :star::star::star:                   |
+| Put an additional product into another user's shopping basket.                              | :star::star::star:                   |
 | Post some feedback in another users name.                                                   | :star::star::star:                   |
 | Post a product review as another user or edit any user's existing review.                   | :star::star::star:                   |
 | Change the href of the link within the O-Saft product description into http://kimminich.de. | :star::star::star:                   |
@@ -38,7 +38,7 @@
 Just like the score board, the admin section was not part of your "happy
 path" tour because there seems to be no link to that section either. In
 case you were already
-[logged in with the administrator account](injection.md#log-in-with-the-administrators-user-account)
+[logged in with the administrator account](injection.md#log-in-with-the-administrators-user-account)
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
@@ -72,7 +72,7 @@ to some arguments between the victim and the vendor.
 ### Get rid of all 5-star customer feedback
 
 If you successfully solved above
-[admin section challenge](#access-the-administration-section-of-the-store)
+[admin section challenge](#access-the-administration-section-of-the-store)
 deleting the 5-star feedback is very easy.
 
 #### Hints
@@ -80,7 +80,7 @@ deleting the 5-star feedback is very easy.
 * Nothing happens when you try to delete feedback entries? Check the
   JavaScript console for errors!
 
-### Manipulate another user's basket
+### Put an additional product into another user's shopping basket
 
 :wrench: **TODO**
 
