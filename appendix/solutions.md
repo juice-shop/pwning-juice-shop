@@ -24,7 +24,7 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 3. Navigate to http://localhost:3000/#/administration to solve the
    challenge.
 
-### :warning: Access a confidential document
+### Access a confidential document
 
 1. Follow the link to titled _Check out our boring terms of use if you
    are interested in such lame stuff_
@@ -198,7 +198,7 @@ If the challenge is not immediately solved, you might have to
     providing any valid `Authorization Bearer` token (even one of a
     self-registered user).
 
-### :warning: Log in with MC SafeSearch's original user credentials
+### Log in with MC SafeSearch's original user credentials
 
 1. Reading the hints for this challenge or googling "MC SafeSearch" will
    eventually bring the music video
@@ -227,7 +227,7 @@ If the challenge is not immediately solved, you might have to
 3. Optionally, write an email to the mentioned contact address
    <mailto:donotreply@owasp-juice.shop> and see what happens... :e-mail:
 
-### :warning: Inform the shop about an algorithm or library it should definitely not use the way it does
+### Inform the shop about an algorithm or library it should definitely not use the way it does
 
 Juice Shop uses some inappropriate crypto algorithms and libraries in
 different places. While working on the following topics (and having the
@@ -240,7 +240,7 @@ in order to exploit and solve them:
 * [Solve challenge #999](#solve-challenge-999) requires you to create a
   valid hash with the `hashid` library.
 * Passwords in the `Users` table are hashed with unsalted MD5
-* Users registering via Google account will get a very cheap default
+* Users registering via Google account will receive a very silly default
   password that involves Base64 encoding.
 
 <!-- -->
@@ -1017,14 +1017,19 @@ explains the problem and gives an exploit example:
    probably yield a `Uncaught SyntaxError: Unexpected token )`. When you
    pass values in, like `(1)` or `('a')` you will notice that the input
    value is simply returned.
-8. Comparing the route mapping to others shows you that here a `matcher` is mapped to a `component` whereas most other mappings map a `path` to their `component`.
-9. The code that gives you the sought-after path is the code block passed into the `match()` function inside `Ca(l)`!
+8. Comparing the route mapping to others shows you that here a `matcher`
+   is mapped to a `component` whereas most other mappings map a `path`
+   to their `component`.
+9. The code that gives you the sought-after path is the code block
+   passed into the `match()` function inside `Ca(l)`!
 
    ![Code block returning the Tokensale path](img/minified_js-tokensale_path-block.png)
-10. Copying that inner code block and executing that in your console will still yield an error!
-11. You need to append it to a string to make it work, which will **finally** yield the path `/tokensale-ico-ea`.
+10. Copying that inner code block and executing that in your console
+    will still yield an error!
+11. You need to append it to a string to make it work, which will
+    **finally** yield the path `/tokensale-ico-ea`.
 12. Navigate to <http://localhost:3000/#/tokensale-ico-ea> to solve this
-   challenge.
+    challenge.
 
 ```javascript
 "" + function() {
@@ -1486,17 +1491,35 @@ loop`._
 
 :wrench: **TODO**
 
-### :warning: Forge a coupon code that gives you a discount of at least 80%
+### Forge a coupon code that gives you a discount of at least 80%
 
 For this challenge there are actually two distinct _solution paths_ that
 are both viable. These will be explained separately as they utilize
 totally different attack styles.
 
-### :warning:# _Pattern analysis_ solution path
+#### _Pattern analysis_ solution path
 
 1. Solve challenge
    [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
-   to get the `coupons_2013.md.bak` file with old coupon codes.
+   to get the `coupons_2013.md.bak` file with old coupon codes which you
+   find listed below.
+2. There is an obvious pattern in the last characters, as the first
+   eleven codes end with `gC7sn` and the last with `gC7ss`.
+3. You can rightfully speculate that the last five characters represent
+   the actual discount value. The change in the last character for the
+   12th code comes from a different (probably higher) discount in
+   December! :santa:
+4. Check the official Juice Shop Twitter account for a valid coupon
+   code: <https://twitter.com/owasp_juiceshop>
+5. At the time of this writing - January 2017 - the broadcasted coupon
+   was `n<Mibh.u)v` promising a 50% discount.
+6. Assuming that the discount value is encoded in the last 2-5
+   characters of the code, you could now start a trial-end-error or
+   brute force attack generating codes and try redeeming them on the
+   _Your Basket_ page. At some point you will probably hit one that
+   gives 80% or more discount.
+7. You need to _Checkout_ after redeeming your code to solve the
+   challenge.
 
 ```
  n<MibgC7sn
@@ -1513,25 +1536,7 @@ totally different attack styles.
  l}6D$gC7ss
 ```
 
-1. There is an obvious pattern in the last characters, as the first
-   eleven codes end with `gC7sn` and the last with `gC7ss`.
-2. You can rightfully speculate that the last five characters represent
-   the actual discount value. The change in the last character for the
-   12th code comes from a different (probably higher) discount in
-   December! :santa:
-3. Check the official Juice Shop Twitter account for a valid coupon
-   code: <https://twitter.com/owasp_juiceshop>
-4. At the time of this writing - January 2017 - the broadcasted coupon
-   was `n<Mibh.u)v` promising a 50% discount.
-5. Assuming that the discount value is encoded in the last 2-5
-   characters of the code, you could now start a trial-end-error or
-   brute force attack generating codes and try redeeming them on the
-   _Your Basket_ page. At some point you will probably hit one that
-   gives 80% or more discount.
-6. You need to _Checkout_ after redeeming your code to solve the
-   challenge.
-
-### :warning:# _Reverse engineering_ solution path
+#### _Reverse engineering_ solution path
 
 1. Going through the dependencies mentioned in `package.json.bak` you
    can speculate that at least one of them could be involved in the
@@ -1542,7 +1547,7 @@ totally different attack styles.
    ([ZeroMQ Base-85 Encoding](https://rfc.zeromq.org/spec:32/Z85/)) was
    chosen as the coupon code-creation algorithm.
 4. Visit <https://www.npmjs.com/package/z85> and check the _Dependents_
-   section:
+   tab:
 
    ![Dependents of z85 on npmjs.com](img/z85-dependents.png)
 5. If you have Node.js installed locally run `npm install -g z85-cli` to
@@ -1562,11 +1567,11 @@ totally different attack styles.
 9. Enter and redeem the generated code on the _Your Basket_ page and
    _Checkout_ to solve the challenge.
 
-### :warning: Solve challenge #999
+### Solve challenge #999
 
 1. Solve any other challenge
 2. Inspect the cookies in your browser to find a `continueCode` cookie
-3. The `package.json.bak` contains the library used for generating
+3. The `package.json.bak` contains the library used for generating these
    continue codes: `hashid`
 4. Visit <http://hashids.org/> to get some information about the
    mechanism
@@ -1576,7 +1581,13 @@ totally different attack styles.
    also the default character range
    (`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`)
    from that demo page. It just uses a minimum length of `60` instead of
-   `8` for the resulting hash:
+   `8` for the resulting hash.
+7. Encoding the value `999` with the demo (see code below) gives you the
+   hash result
+   `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj`
+8. Send a `PUT` request to the URL
+   <http://localhost:3000/rest/continue-code/apply/69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj>
+   to solve this challenge.
 
 ```javascript
    var hashids = new Hashids("this is my salt", 60, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
@@ -1587,13 +1598,6 @@ totally different attack styles.
   $("#input").text("["+numbers.join(", ")+"]");
   $("#output").text(id);
 ```
-
-1. Encoding the value `999` gives you the hash result
-   `69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj`
-2. Send a `PUT` request to the URL
-   <http://localhost:3000/rest/continue-code/apply/69OxrZ8aJEgxONZyWoz1Dw4BvXmRGkM6Ae9M7k2rK63YpqQLPjnlb5V5LvDj>
-
-   ![Challenge #999 in PostMan](img/challenge999_postman.png)
 
 ### :warning: Forge an almost properly RSA-signed JWT token
 
@@ -1679,7 +1683,7 @@ to use some unofficial port._
 
     ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
 
-### :warning: Unlock Premium Challenge to access exclusive content
+### Unlock Premium Challenge to access exclusive content
 
 1. Inspecting the HTML source of the corresponding row in the _Score
    Board_ table reveals a HTML comment that is obviously encrypted:
@@ -1697,6 +1701,8 @@ to use some unofficial port._
       the key file.
    2. The search will uncover <http://localhost:3000/encryptionkeys> as
       a browsable directory
+
+      ![Browsable directoy "encryptionkeys"](img/encryptionkeys_directory.png)
    3. Open <http://localhost:3000/encryptionkeys/premium.key> to
       retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
       and the IV `1337`.

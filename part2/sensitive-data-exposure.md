@@ -84,9 +84,9 @@ crypto library) that either
 
 * Use the _Contact Us_ form to submit a feedback mentioning the abused
   algorithm or library.
-* There are four possible answers and you only need to identify one to
+* There are five possible answers and you only need to identify one to
   solve the challenge.
-* Cryptographic functions used in the
+* Cryptographic functions only used in the
   [Apply some advanced cryptanalysis to find _the real_ easter egg](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
