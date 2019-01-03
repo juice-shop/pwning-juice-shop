@@ -1715,7 +1715,8 @@ to use some unofficial port._
      `/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us`
 5. Visit
    <http://localhost:3000/this/page/is/hidden/behind/an/incredibly/high/paywall/that/could/only/be/unlocked/by/sending/1btc/to/us>
-   to solve this challenge and marvel at the premium content!
+   to solve this challenge and marvel at the premium VR wallpaper!
+   (Requires dedicated hardware to be viewed in all its glory.)
 
 ### Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
