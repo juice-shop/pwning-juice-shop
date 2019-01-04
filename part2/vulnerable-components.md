@@ -72,7 +72,9 @@ contains known vulnerabilities.
 * Use the _Contact Us_ form to submit a feedback mentioning the
   vulnerable library including its exact version.
 * Look for possible dependencies related to security in the
-  `package.json.bak` you harvested earlier.
+  `package.json.bak` you probably harvested earlier during the
+  [Access a developer's forgotten backup file](roll-your-own-security.md#access-a-developers-forgotten-backup-file)
+  challenge.
 * Do some research on the internet for known security issues in the most
   suspicious application dependencies.
 
@@ -96,8 +98,6 @@ legit.
   `Authorization` request header.
 * A JWT is only given to users who have logged in. They have a limited
   validity, so better do not dawdle.
-* The site <https://jwt.io/> offers a very convenient online debugger
-  for JWT that can prove invaluable for this challenge.
 * Try to convince the site to give you a _valid_ token with the required
   payload while downgrading to _no_ encryption at all.
 
