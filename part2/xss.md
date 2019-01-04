@@ -40,8 +40,8 @@
 
 #### Hints
 
-* Look for an input field where its content appears in the response HTML
-  when its form is submitted.
+* Look for an input field where its content appears in the response when
+  its form is submitted.
 * Try probing for XSS vulnerabilities by submitting text wrapped in an
   HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 

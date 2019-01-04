@@ -89,7 +89,7 @@ error situation and solve this challenge immediately:
 5. From now on you will see the additional menu item _Score Board_ in
    the navigation bar.
 
-### :warning: Perform a reflected XSS attack
+### Perform a reflected XSS attack
 
 1. Log in as any user.
 2. Click the _Track Orders_ button.
@@ -98,7 +98,9 @@ error situation and solve this challenge immediately:
 4. Click the _Track_ button.
 5. An alert box with the text "XSS" should appear.
 
-### :warning: Perform a DOM XSS attack
+   ![XSS alert box](img/xss0_alert.png)
+
+### Perform a DOM XSS attack
 
 1. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into
    the _Search..._ field.
@@ -426,10 +428,10 @@ Uploading a non-PDF file larger than 100 kB will solve
 [Upload a file larger than 100 kB](#upload-a-file-larger-than-100-kb)
 simultaneously.
 
-### :warning: Perform a persisted XSS attack bypassing a client-side security mechanism
+### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 1. Submit a POST request to http://localhost:3000/api/Users with
-   * `{"email": "<script>alert(\"XSS\")</script>", "password": "xss"}`
+   * `{"email": "<iframe src=\"javascript:alert(`xss`)\">", "password": "xss"}`
      as body
    * and `application/json` as `Content-Type` header.
 
@@ -439,9 +441,9 @@ simultaneously.
 4. An alert box with the text "XSS" should appear.
 
    ![XSS alert box](img/xss2_alert.png)
-5. Close this box. Notice the seemingly empty row in the _Registered
+5. Close this box. Notice the somewhat broken looking row in the _Registered
    Users_ table?
-6. Click the "eye"-button next to that empty row.
+6. Click the "eye"-button in that row.
 7. A modal overlay dialog with the user details opens where the attack
    string is rendered as harmless text.
 
@@ -1601,7 +1603,7 @@ totally different attack styles.
 
 :wrench: **TODO**
 
-### :warning: Like any review at least three times as the same user
+### :warning: Like any review at least three times as Perform a reflected XSS attackthe same user
 
 :wrench: **TODO**
 
