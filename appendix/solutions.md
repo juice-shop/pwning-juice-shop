@@ -96,7 +96,7 @@ error situation and solve this challenge immediately:
 3. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into
    the _Order ID_ field.
 4. Click the _Track_ button.
-5. An alert box with the text "XSS" should appear.
+5. An alert box with the text "xss" should appear.
 
    ![XSS alert box](img/xss0_alert.png)
 
@@ -105,7 +105,7 @@ error situation and solve this challenge immediately:
 1. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into
    the _Search..._ field.
 2. Click the _Search_ button.
-3. An alert box with the text "XSS" should appear.
+3. An alert box with the text "xss" should appear.
 
    ![XSS alert box](img/xss1_alert.png)
 
@@ -438,7 +438,7 @@ simultaneously.
    ![XSS request in PostMan](img/xss2_postman.png)
 2. Log in to the application with any user.
 3. Visit http://localhost:3000/#/administration.
-4. An alert box with the text "XSS" should appear.
+4. An alert box with the text "xss" should appear.
 
    ![XSS alert box](img/xss2_alert.png)
 5. Close this box. Notice the somewhat broken looking row in the _Registered
@@ -463,13 +463,13 @@ simultaneously.
 
    ![XSS request in PostMan](img/xss3_postman.png)
 4. Visit http://localhost:3000/#/search.
-5. An alert box with the text "XSS" should appear.
+5. An alert box with the text "xss" should appear.
 
    ![XSS alert box](img/xss3_alert.png)
 6. Close this box. Notice the product row which has a frame border in the
    description in the _All Products_ table
 7. Click the "eye"-button next to that row.
-8. Another alert box with the text "XSS" should appear. After closing it the actual details dialog pops up showing the same frame border.
+8. Another alert box with the text "xss" should appear. After closing it the actual details dialog pops up showing the same frame border.
 
    ![After closing the XSS alert box in product details](img/xss3_product-modal_alert.png)
 
@@ -943,11 +943,11 @@ to identify it.
    1. Submit your feedback with the string pair `sanitize-html` and `1.4.2`
       appearing somewhere in the comment. Alternatively you can submit `express-jwt` and `0.1.3`.
 
-### :warning: Perform a persisted XSS attack bypassing a server-side security mechanism
+### Perform a persisted XSS attack bypassing a server-side security mechanism
 
 In the `package.json.bak` you might have noticed the pinned dependency
 `"sanitize-html": "1.4.2"`. Internet research will yield a reported
-[XSS - Sanitization not applied recursively](https://nodesecurity.io/advisories/135)
+[Cross-site Scripting (XSS)](https://snyk.io/vuln/npm:sanitize-html:20160801)
 vulnerability, which was fixed with version 1.4.3 - one release later
 than used by the Juice Shop. The referenced
 [GitHub issue](https://github.com/punkave/sanitize-html/issues/29)
@@ -963,14 +963,14 @@ explains the problem and gives an exploit example:
 > the output html.
 
 1. Visit http://localhost:3000/#/contact.
-2. Enter `<<script>Foo</script>script>alert("XSS")<</script>/script>` as
+2. Enter `<<script>Foo</script>iframe src="javascript:alert(`xss`)">` as
    _Comment_
 3. Choose a rating and click _Submit_
-4. Visit http://localhost:3000/#/about for a first "XSS" alert (from the
+4. Visit http://localhost:3000/#/about for a first "xss" alert (from the
    _Customer Feedback_ slideshow)
 
    ![XSS alert box](img/xss4_alert.png)
-5. Visit http://localhost:3000/#/administration for a second "XSS" alert
+5. Visit http://localhost:3000/#/administration for a second "xss" alert
    (from the _Customer Feedback_ table)
 
    ![XSS alert box in admin area](img/xss4_alert-admin.png)

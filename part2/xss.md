@@ -136,14 +136,14 @@ approach._
 
 * The _Comment_ field in the _Contact Us_ screen is where you want to
   put your focus on
-* The attack payload `<script>alert("XSS4")</script>` will _not be
+* The attack payload `<iframe src="javascript:alert(`xss`)">` will _not be
   rejected_ by any validator but _stripped from the comment_ before
   persisting it
 * Look for possible dependencies related to input processing in the
   `package.json.bak` you harvested earlier
-* If an `XSS4` alert shows up but the challenge does not appear as
+* If an `xss` alert shows up but the challenge does not appear as
   solved on the _Score Board_, you might not have managed to put the
-  _exact_ attack string `<script>alert("XSS4")</script>` into the
+  _exact_ attack string `<iframe src="javascript:alert(`xss`)">` into the
   database?
 
 ### Perform a persisted XSS attack through an HTTP header
