@@ -95,7 +95,7 @@ input validation:
 ### Perform a persisted XSS attack without using the frontend application at all
 
 As presented in the
-[Architecture Overview](/introduction/architecture.md), the OWASP Juice
+[Architecture Overview](/introduction/architecture.md), the OWASP Juice
 Shop uses a JavaScript client on top of a RESTful API on the server
 side. Even without giving this fact away in the introduction chapter,
 you would have quickly figured this out looking at their interaction
@@ -103,12 +103,12 @@ happening on the network. Most actions on the UI result in
 `XMLHttpRequest` (`XHR`) objects being sent and responded to by the
 server.
 
-![XHR requests to the backend API](img/xhr-api_requests.png)
+![XHR requests to the backend API](img/xhr-api_requests.png)
 
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`
 or a
-[tool for HTTP request tampering](/part1/rules.md#tools-for-http-request-tampering)
+[tool for HTTP request tampering](/part1/rules.md#tools-for-http-request-tampering)
 to master this challenge.
 
 #### Hints
@@ -123,11 +123,10 @@ to master this challenge.
 This is the hardest XSS challenge, as it cannot by solved by fiddling
 with the client-side JavaScript or bypassing the client entirely.
 Whenever there is a server-side validation or input processing involved,
-you should investigate how it works. Finding out implementation details
-- e.g. used libraries, modules or algorithms - should be your priority.
-  If the application does not leak this kind of details, you can still
-  go for a _blind approach_ by testing lots and lots of different attack
-  payloads and check the reaction of the application.
+you should investigate how it works. Finding out implementation details e.g. used libraries, modules or algorithms - should be your priority.
+If the application does not leak this kind of details, you can still
+go for a _blind approach_ by testing lots and lots of different attack
+payloads and check the reaction of the application.
 
 _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error

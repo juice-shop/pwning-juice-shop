@@ -449,31 +449,29 @@ simultaneously.
 
    ![XSS user in details dialog](img/xss2_user-modal.png)
 
-### :warning: Perform a persisted XSS attack without using the frontend application at all
+### Perform a persisted XSS attack without using the frontend application at all
 
 1. Log in to the application with any user.
 2. Copy your `Authorization` header from any HTTP request submitted via
    browser.
 3. Submit a POST request to <http://localhost:3000/api/Products> with
-   * `{"name": "XSS", "description": "<script>alert(\"XSS\")</script>",
+   * `{"name": "XSS", "description": "<iframe src=\"javascript:alert(`xss`)\">",
      "price": 47.11}` as body,
    * `application/json` as `Content-Type`
    * and `Bearer ?` as `Authorization` header, replacing the `?` with
      the token you copied from the browser.
 
-   ![XSS request headers in PostMan](img/xss3_postman-header.png)
-
-   ![XSS request body in PostMan](img/xss3_postman-body.png)
+   ![XSS request in PostMan](img/xss3_postman.png)
 4. Visit http://localhost:3000/#/search.
 5. An alert box with the text "XSS" should appear.
 
    ![XSS alert box](img/xss3_alert.png)
-6. Close this box. Notice the product row which seemingly lacks a
-   description in the _All Products_ table?
+6. Close this box. Notice the product row which has a frame border in the
+   description in the _All Products_ table
 7. Click the "eye"-button next to that row.
-8. Another alert box with the text "XSS" should appear.
+8. Another alert box with the text "XSS" should appear. After closing it the actual details dialog pops up showing the same frame border.
 
-   ![XSS alert box in product details](img/xss3_product-modal_alert.png)
+   ![After closing the XSS alert box in product details](img/xss3_product-modal_alert.png)
 
 ### :warning: Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
