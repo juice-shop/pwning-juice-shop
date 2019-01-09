@@ -473,7 +473,7 @@ simultaneously.
 
    ![After closing the XSS alert box in product details](img/xss3_product-modal_alert.png)
 
-### :warning: Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
+### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
 1. Solve the
    [Use a deprecated B2B interface that was not properly shut down](#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down)
@@ -1413,7 +1413,7 @@ the original `ngx-bar-rating` module page on NPM:
 
 ![ngx-bar-rating on NPM](img/npm_ngx-bar-rating.png)
 
-### :warning: Give the server something to chew on for quite a while
+### Give the server something to chew on for quite a while
 
 1. Solve the
    [Use a deprecated B2B interface that was not properly shut down](#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down)
