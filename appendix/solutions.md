@@ -212,7 +212,7 @@ If the challenge is not immediately solved, you might have to
    `mc.safesearch@juice-sh.op` and _Password_ `Mr. N00dles` to solve
    this challenge.
 
-### :warning: Log in with the administrator's user credentials without previously changing them or applying SQL Injection
+### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 1. Visit <http://localhost:3000/#/login>.
 2. Log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
@@ -253,7 +253,7 @@ in order to exploit and solve them:
 
 ## Medium Challenges (  :star::star::star:  )
 
-### :warning: Get registered as admin user
+###  Get registered as admin user
 
 :wrench: **TODO**
 
@@ -975,7 +975,7 @@ explains the problem and gives an exploit example:
 
    ![XSS alert box in admin area](img/xss4_alert-admin.png)
 
-### :warning: Perform a persisted XSS attack through an HTTP header
+###  Perform a persisted XSS attack through an HTTP header
 
 :wrench: **TODO**
 
@@ -1130,7 +1130,7 @@ for this challenge:
 _It is worth noting that both alternate solutions would still work even
 if the CAPTCHA-pinning problem would be fixed in the application!_
 
-### :warning: Perform an unwanted information disclosure by accessing data cross-domain
+###  Perform an unwanted information disclosure by accessing data cross-domain
 
 :wrench: **TODO**
 
@@ -1218,7 +1218,7 @@ Juice Shop on a hostname that is not recognized, you can still solve
 this challenge by logging in regularly but add `"oauth": true` to the
 JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
-### :warning: All your orders are belong to us
+###  All your orders are belong to us
 
 :wrench: **TODO**
 
@@ -1485,7 +1485,7 @@ loop`._
 
 ## Diabolic Challenges (  :star::star::star::star::star::star:  )
 
-### :warning: Overwrite the Legal Information file
+###  Overwrite the Legal Information file
 
 :wrench: **TODO**
 
@@ -1601,7 +1601,7 @@ totally different attack styles.
 
 :wrench: **TODO**
 
-### :warning: Like any review at least three times as Perform a reflected XSS attackthe same user
+###  Like any review at least three times as Perform a reflected XSS attackthe same user
 
 :wrench: **TODO**
 
@@ -1700,11 +1700,11 @@ to use some unofficial port._
    later.` after roughly 2 seconds. This is due to a defined timeout so
    you do not really DoS your Juice Shop server.
 
-### :warning: Infect the server with malware by abusing arbitrary command execution
+###  Infect the server with malware by abusing arbitrary command execution
 
 :wrench: **TODO**
 
-### :warning: Request a hidden resource on server through server
+###  Request a hidden resource on server through server
 
 :wrench: **TODO**
 
