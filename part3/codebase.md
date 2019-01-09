@@ -6,7 +6,7 @@ code of OWASP Juice Shop. On its top level the Juice Shop codebase is
 mainly separated into a client and a server tier, the latter with an
 underlying lightweight database and file system as storage.
 
-## Client Tier
+## :warning: Client Tier
 
 OWASP Juice Shop uses v1.5 of the popular
 [AngularJS](https://angularjs.org/) framework as the core of its
@@ -20,7 +20,7 @@ vast [Font Awesome 5](https://fontawesome.com/) collection.
 
 ![Client tier focus](img/architecture-client.png)
 
-### Services
+### :warning: Services
 
 > AngularJS services are substitutable objects that are wired together
 > using dependency injection (DI). You can use services to organize and
@@ -92,7 +92,7 @@ angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function 
 [Jasmine 3](https://jasmine.github.io) specifications which are executed
 by the [Karma](https://karma-runner.github.io) test runner.
 
-### Controllers
+### :warning: Controllers
 
 > In AngularJS, a Controller is defined by a JavaScript constructor
 > function that is used to augment the AngularJS Scope.[^2]
@@ -172,7 +172,7 @@ angular.module('juiceShop').controller('ContactController', [
 [Jasmine 3](https://jasmine.github.io) and run on
 [Karma](https://karma-runner.github.io).
 
-### Views
+### :warning: Views
 
 > In AngularJS, templates are written with HTML that contains
 > AngularJS-specific elements and attributes. AngularJS combines the
@@ -256,7 +256,7 @@ Us_ screen.
 </div>
 ```
 
-### Index page template
+### :warning: Index page template
 
 The `app/index.template.html` file is the entry point the Juice Shop web
 client. It loads all required CSS stylesheets and JavaScript libraries
@@ -273,7 +273,7 @@ be generated from the template during server startup. This intermediary
 step is necessary for the visual
 [Customization](../part1/customization.md) of the application.
 
-### Internationalization
+### :warning: Internationalization
 
 All static texts in the user interface are fully internationalized using
 the `angular-translate` module. Texts coming from the server (e.g.
