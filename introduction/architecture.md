@@ -5,8 +5,9 @@ and TypeScript (which is compiled into regular JavaScript). In the
 frontend the popular [Angular](https://angular.io/) framework is used to
 create a so-called _Single Page Application_. The user interface layout
 is implementing Google's [Material Design](https://material.io/) using
-[Angular Material](https://material.angular.io/) components. All icons
-found in the UI are originating from the
+[Angular Material](https://material.angular.io/) components. It uses
+[Angular Flex-Layout](https://github.com/angular/flex-layout) to achieve
+responsiveness. All icons found in the UI are originating from the
 [Font Awesome](https://fontawesome.com) library.
 
 JavaScript is also used in the backend as the exclusive programming

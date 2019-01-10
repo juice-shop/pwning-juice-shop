@@ -6,109 +6,116 @@ code of OWASP Juice Shop. On its top level the Juice Shop codebase is
 mainly separated into a client and a server tier, the latter with an
 underlying lightweight database and file system as storage.
 
-## :warning: Client Tier
+## Client Tier
 
-OWASP Juice Shop uses v1.5 of the popular
-[AngularJS](https://angularjs.org/) framework as the core of its
-client-side. Thanks to the [Bootstrap](http://getbootstrap.com/) CSS
-framework, the UI is responsive letting it adapt nicely to different
-screen sizes. Both frameworks work very well together thanks to the
-[UI Bootstrap](https://angular-ui.github.io/bootstrap/) library that
-provides components for Bootstrap that are explicitly written for
-AngularJS. The various icons used throughout the frontend are from the
-vast [Font Awesome 5](https://fontawesome.com/) collection.
+OWASP Juice Shop uses the popular [Angular](https://angular.io/)
+framework as the core of its client-side. Thanks to
+[Angular Material](https://material.angular.io/) - an Angular-specific
+implementation of Google's [Material Design](https://material.io/) - the
+UI looks nicely familiar and is easy to use. It is also built to be
+responsive with the help of
+[Angular Flex-Layout](https://github.com/angular/flex-layout), letting
+it adapt nicely to different screen sizes. The various icons used
+throughout the frontend are from the vast
+[Font Awesome 5](https://fontawesome.com/) collection.
+
+:information_source: Please note that **all client-side code is written
+in Typescript** which is compiled into regular JavaScript during the
+build process.
 
 ![Client tier focus](img/architecture-client.png)
 
-### :warning: Services
+### Services
 
-> AngularJS services are substitutable objects that are wired together
-> using dependency injection (DI). You can use services to organize and
-> share code across your app.[^1]
+> _Service_ is a broad category encompassing any value, function, or
+> feature that an app needs. A service is typically a class with a
+> narrow, well-defined purpose. It should do something specific and do
+> it well.
+>
+> Angular distinguishes components from services to increase modularity
+> and reusability. By separating a component's view-related
+> functionality from other kinds of processing, you can make your
+> component classes lean and efficient.[^1]
 
-The client-side AngularJS services reside in the `app/js/services`
-folder. Each service file handles all RESTful HTTP calls to the Node.js
-backend for a specific domain entity or functional aspect of the
-application.
+The client-side Angular services reside in the
+`frontend/src/app/Services` folder. Each service file handles all
+RESTful HTTP calls to the Node.js backend for a specific domain entity
+or functional aspect of the application.
 
-![AngularJS Services folder](img/servicesFolder.png)
+![Angular Services folder](img/servicesFolder.png)
 
-Service functions must **always** use `$q.defer()` to wrap the return
-value of the `$http` backend call into a `promise`. If the backend call
-was successful, the promise will be resolved. In case of an error, the
-promise will be rejected.
+Service functions must **always** use Angular's own `HttpClient` to make
+any backend calls.
 
 The following code snippet shows how all services in the OWASP Juice
 Shop client are structured using the example of `FeedbackService`. It
 wraps the `/api/Feedback` API which offers a `GET`, `POST` and `DELETE`
 endpoint to find, create and delete `Feedback` of users:
 
-```javascript
-angular.module('juiceShop').factory('FeedbackService', ['$http', '$q', function ($http, $q) {
-  'use strict'
+```typescript
+import { environment } from '../../environments/environment'
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { catchError, map } from 'rxjs/operators'
 
-  var host = '/api/Feedbacks'
+@Injectable({
+  providedIn: 'root'
+})
+export class FeedbackService {
 
-  function find (params) {
-    var feedbacks = $q.defer()
-    $http.get(host + '/', {params: params}).success(function (data) {
-      feedbacks.resolve(data.data)
-    }).error(function (err) {
-      feedbacks.reject(err)
-    })
-    return feedbacks.promise
+  private hostServer = environment.hostServer
+  private host = this.hostServer + '/api/Feedbacks'
+
+  constructor (private http: HttpClient) { }
+
+  find (params?: any) {
+    return this.http.get(this.host + '/' , {
+      params: params
+    }).pipe(map((response: any) => response.data), catchError((err) => {
+      throw err
+    }))
   }
 
-  function save (params) {
-    var createdFeedback = $q.defer()
-    $http.post(host + '/', params).success(function (data) {
-      createdFeedback.resolve(data.data)
-    }).error(function (err) {
-      createdFeedback.reject(err)
-    })
-    return createdFeedback.promise
+  save (params) {
+    return this.http.post(this.host + '/', params).pipe(map((response: any) =>
+      response.data), catchError((err) => { throw err }))
   }
 
-  function del (id) {
-    var deletedFeedback = $q.defer()
-    $http.delete(host + '/' + id).success(function (data) {
-      deletedFeedback.resolve(data.data)
-    }).error(function (err) {
-      deletedFeedback.reject(err)
-    })
-    return deletedFeedback.promise
+  del (id) {
+    return this.http.delete(this.host + '/' + id).pipe(map((response: any) =>
+      response.data), catchError((err) => { throw err }))
   }
-
-  return {
-    find: find,
-    save: save,
-    del: del
-  }
-}])
+}
 ```
 
-:rotating_light: Unit tests for all services can be found in the
-`test/client/services` folder. They are
-[Jasmine 3](https://jasmine.github.io) specifications which are executed
+:rotating_light: Unit tests for all services can be found next to their
+`*.service.ts` files in the `frontend/src/app/Services` folder as
+`*.service.spec.ts` files. They are
+[Jasmine 2](https://jasmine.github.io) specifications which are executed
 by the [Karma](https://karma-runner.github.io) test runner.
 
-### :warning: Controllers
+### Components
 
-> In AngularJS, a Controller is defined by a JavaScript constructor
-> function that is used to augment the AngularJS Scope.[^2]
+> A _component_ controls a patch of screen called a _view_.
+>
+> \[...\]
+>
+> You define a component's application logic—what it does to support the
+> view—inside a class. The class interacts with the view through an API
+> of properties and methods.[^2]
 
-The AngularJS controllers reside in the `app/js/controllers` folder.
-Each controller file handles is responsible for one screen or functional
-aspect of the application.
+The Angular components reside inside `frontend/src/app` as a subfolder
+for each individual component. Each component is responsible for one
+screen portion of the application. It consists of the component itself
+(`*.component.ts`) and the HTML [Template](#templates)
+(`*.component.html`) along with its styles (`*.component.scss`).
 
-![AngularJS Controllers folder](img/controllersFolder.png)
+![Angular Component folders](img/componentFolders.png)
 
-Controllers must **always** go through one or more [Services](#services)
-when communicating with the application backend. Furthermore, they will
-rely on their own `$scope` and are forbidden to pollute the `$rootScope`
-unnecessarily.
+Components must **always** go through one or more [Services](#services)
+when communicating with the application backend.
 
-The code snippet below shows the `ContactController` which handles the
+The code snippet below shows the `ContactComponent` which handles the
 _Contact Us_ screen and uses three different services to fulfill its
 tasks:
 * `UserService` to retrieve data about the currently logged in user (if
@@ -118,209 +125,243 @@ tasks:
 * `FeedbackService` to eventually `save()` the user feedback
 
 :point_up: As a universal rule for the entire Juice Shop codebase,
-unnecessary code duplication should be avoided by using well-named
-helper functions. This is demonstrated by the very simple
-`getNewCaptcha()` function in the code snippet below. Helper functions
-should always be located as close to the calling code as possible and
-**never** be put into the _global scope_ unnecessarily as this can cause
-unexpected side effects.
+unnecessary code duplication as well as deeply nested :spaghetti:-code
+should be avoided by using well-named & small helper functions. This is
+demonstrated by the very simple `getNewCaptcha()` and `resetForm()`
+functions in the code snippet below. Helper functions should always be
+located as close to the calling code as possible.
 
-```javascript
-angular.module('juiceShop').controller('ContactController', [
-  '$scope',
-  'FeedbackService',
-  'UserService',
-  'CaptchaService',
-  function ($scope, feedbackService, userService, captchaService) {
-    'use strict'
+```typescript
+import { FeedbackService } from '../Services/feedback.service'
+import { CaptchaService } from '../Services/captcha.service'
+import { UserService } from '../Services/user.service'
+import { FormControl, Validators } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faPaperPlane, faStar } from '@fortawesome/free-solid-svg-icons'
 
-    userService.whoAmI().then(function (data) {
-      $scope.feedback = {}
-      $scope.feedback.UserId = data.id
-      $scope.userEmail = data.email || 'anonymous'
+library.add(faStar, faPaperPlane)
+dom.watch()
+
+@Component({
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
+})
+export class ContactComponent implements OnInit {
+
+  public authorControl: FormControl =
+    new FormControl({ value: '', disabled: true }, [])
+  public feedbackControl: FormControl =
+    new FormControl('', [Validators.required, Validators.maxLength(160)])
+  public captchaControl: FormControl =
+    new FormControl('', [Validators.required])
+  public userIdControl: FormControl = new FormControl('', [])
+  public rating: number = 0
+  public feedback: any = undefined
+  public captcha: any
+  public captchaId: any
+  public confirmation: any
+  public error: any
+
+  constructor (
+    private userService: UserService,
+    private captchaService: CaptchaService,
+    private feedbackService: FeedbackService) { }
+
+  ngOnInit () {
+    this.userService.whoAmI().subscribe((data: any) => {
+      this.feedback = {}
+      this.userIdControl.setValue(data.id)
+      this.feedback.UserId = data.id
+      this.authorControl.setValue(data.email || 'anonymous')
+    }, (err) => {
+      this.feedback = undefined
+      console.log(err)
     })
+    this.getNewCaptcha()
+  }
 
-    function getNewCaptcha () {
-      captchaService.getCaptcha().then(function (data) {
-        $scope.captcha = data.captcha
-        $scope.captchaId = data.captchaId
-      })
-    }
-    getNewCaptcha()
+  getNewCaptcha () {
+    this.captchaService.getCaptcha().subscribe((data: any) => {
+      this.captcha = data.captcha
+      this.captchaId = data.captchaId
+    }, (err) => err)
+  }
 
-    $scope.save = function () {
-      $scope.feedback.captchaId = $scope.captchaId
-      feedbackService.save($scope.feedback).then(function (savedFeedback) {
-        $scope.error = null
-        $scope.confirmation = 'Thank you for your feedback' + (savedFeedback.rating === 5 ? ' and your 5-star rating!' : '.')
-        $scope.feedback = {}
-        getNewCaptcha()
-        $scope.form.$setPristine()
-      }).catch(function (error) {
-        $scope.error = error
-        $scope.confirmation = null
-        $scope.feedback = {}
-        $scope.form.$setPristine()
-      })
-    }
-  }])
+  save () {
+    this.feedback.captchaId = this.captchaId
+    this.feedback.captcha = this.captchaControl.value
+    this.feedback.comment = this.feedbackControl.value
+    this.feedback.rating = this.rating
+    this.feedback.UserId = this.userIdControl.value
+    this.feedbackService.save(this.feedback).subscribe((savedFeedback) => {
+      this.error = null
+      this.confirmation = 'Thank you for your feedback' +
+        (savedFeedback.rating === 5 ? ' and your 5-star rating!' : '.')
+      this.feedback = {}
+      this.ngOnInit()
+      this.resetForm()
+    }, (error) => {
+      this.error = error.error
+      this.confirmation = null
+      this.feedback = {}
+      this.resetForm()
+    })
+  }
+
+  resetForm () {
+    this.authorControl.markAsUntouched()
+    this.authorControl.markAsPristine()
+    this.authorControl.setValue('')
+    this.feedbackControl.markAsUntouched()
+    this.feedbackControl.markAsPristine()
+    this.feedbackControl.setValue('')
+    this.captchaControl.markAsUntouched()
+    this.captchaControl.markAsPristine()
+    this.captchaControl.setValue('')
+  }
+
+}
 ```
 
-:rotating_light: Unit tests for all controllers can be found in the
-`test/client/controllers` folder. Like the
-[service unit tests](#services) they are written in
-[Jasmine 3](https://jasmine.github.io) and run on
-[Karma](https://karma-runner.github.io).
+:rotating_light: Unit tests for all components can be found in their
+subfolders within `frontend/src/app/` as `*.component.spec.ts` files.
+They are [Jasmine 2](https://jasmine.github.io) specifications which are
+executed by the [Karma](https://karma-runner.github.io) test runner.
 
-### :warning: Views
+### Templates
 
-> In AngularJS, templates are written with HTML that contains
-> AngularJS-specific elements and attributes. AngularJS combines the
-> template with information from the model and controller to render the
-> dynamic view that a user sees in the browser.[^3]
+> The Angular application manages what the user sees and can do,
+> achieving this through the interaction of a component class instance
+> (the _component_) and its user-facing template.
+>
+> You may be familiar with the component/template duality from your
+> experience with model-view-controller (MVC) or model-view-viewmodel
+> (MVVM). In Angular, the component plays the part of the
+> controller/viewmodel, and the template represents the view.[^3]
 
-Each screen within the application is defined in a HTML view template in
-the folder `app/views`. The views are written as HTML5 using
-[Bootstrap](http://getbootstrap.com/) for styling and responsiveness.
-Furthermore most views incorporate some
-[UI Bootstrap](https://angular-ui.github.io/bootstrap/) component
-specifically for AngularJS and several icons from the
+Each screen within the application is defined in a HTML view template
+along with its [Component](#components) in the subfolders beneath
+`frontend/src/app/`. The views are written as HTML using
+[Angular Material](https://material.angular.io/) for styling and
+[Angular Flex-Layout](https://github.com/angular/flex-layout) for
+responsiveness. Furthermore most views incorporate icons from the
 [Font Awesome 5](https://fontawesome.com/) collection.
 
-![AngularJS Views folder](img/viewsFolder.png)
+:information_source: Understanding the
+[Declarative HTML APIs of the Angular Layout](https://github.com/angular/flex-layout/wiki/API-Documentation#html-api-declarative)
+is crucial to be able to write UI elements or entire screens without
+breaking responsiveness!
 
-The following code snippet shows the `Contact.html` view which, together
-with the previously shown `ContractController.js` represent the _Contact
-Us_ screen.
+The following code snippet shows the `contact.component.html` view which
+\- together with the previously shown `ContractComponent` class and its
+associated styles in `contact.component.scss` - represents the entire
+_Contact Us_ screen.
 
 ```html
-<div class="row">
-    <section class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <h3 class="page-header page-header-sm" translate="TITLE_CONTACT"></h3>
+<div fxLayoutAlign="center">
+  <mat-card>
+    <h3 translate>TITLE_CONTACT</h3>
 
-        <div>
+    <div *ngIf="confirmation">
+      <p class="confirmation">{{confirmation}}</p>
+    </div>
+    <div *ngIf="error">
+      <p class="error">{{error}}</p>
+    </div>
 
-            <form role="form" name="form" novalidate>
-                <input type="text" id="userId" ng-model="feedback.UserId" ng-hide="true"/>
-                <div class="alert-info" ng-show="confirmation && !form.$dirty">
-                    <p>{{confirmation}}</p>
-                </div>
-                <div class="alert-danger" ng-show="error && !form.$dirty">
-                    <p>{{error}}</p>
-                </div>
-                <div class="alert-danger" ng-show="form.$invalid && form.$dirty">
-                    <p ng-show="form.feedbackComment.$error.required && form.feedbackComment.$dirty" translate="MANDATORY_COMMENT"></p>
-                    <p ng-show="form.feedbackComment.$error.maxlength && form.feedbackComment.$dirty" translate="INVALID_COMMENT_LENGTH" translate-value-length="1-160"></p>
-                    <p ng-show="form.feedbackRating.$error.required && form.feedbackRating.$dirty" translate="MANDATORY_RATING"></p>
-                    <p ng-show="form.feedbackCaptcha.$error.required && form.feedbackCaptcha.$dirty" translate="MANDATORY_CAPTCHA"></p>
-                </div>
+    <div class="form-container">
 
-                <div class="container-fluid well">
+      <input hidden type="text" id="userId" [formControl]="userIdControl"/>
 
-                        <div class="row">
-                            <div class="form-group">
-                                <label translate="LABEL_AUTHOR"></label>
-                                <label class="form-control input-sm">{{userEmail}}</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <label for="feedbackComment" translate="LABEL_COMMENT"></label>
-                                <textarea class="form-control input-sm" id="feedbackComment" name="feedbackComment" ng-model="feedback.comment" required ng-maxlength="160"></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <label translate="LABEL_RATING"></label>
-                                <span uib-rating max="5" name="feedbackRating" ng-model="feedback.rating" required></span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <label translate="LABEL_CAPTCHA"></label>&nbsp;
-                                <code id="captcha">{{captcha}}</code>&nbsp;<label>?</label>
-                                <input class="form-control input-sm" name="feedbackCaptcha" ng-model="feedback.captcha" required/>
-                            </div>
-                        </div>
-                        <div class="row">
-                                <div class="form-group">
-                                    <button type="submit" id="submitButton" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="save()"><i class="fas fa-paper-plane fa-lg"></i> <span translate="BTN_SUBMIT"></span></button>
-                                </div>
-                        </div>
-                </div>
-             </form>
+      <mat-form-field appearance="outline">
+        <mat-label translate>LABEL_AUTHOR</mat-label>
+        <input [formControl]="authorControl" matInput type="text">
+      </mat-form-field>
 
-        </div>
+      <mat-form-field appearance="outline">
+        <mat-label translate>LABEL_COMMENT</mat-label>
+        <textarea id="comment" [formControl]="feedbackControl" matInput></textarea>
+        <mat-error *ngIf="feedbackControl.invalid && feedbackControl.errors.required" translate>
+          MANDATORY_COMMENT
+        </mat-error>
+      </mat-form-field>
 
-    </section>
+      <div style="margin-top:5px;" class="rating-container">
+        <label style="font-weight:bold; margin-right: 8px;" translate>
+          LABEL_RATING
+        </label>
+        <bar-rating [(rate)]="rating" [max]="5"></bar-rating>
+      </div>
+
+      <mat-form-field>
+        <label style="font-weight:bold;" translate>LABEL_CAPTCHA</label>&nbsp;
+        <code id="captcha">{{captcha}}</code>&nbsp;<label>?</label>
+        <input id="captchaControl" [formControl]="captchaControl" matInput type="text">
+        <mat-error *ngIf="captchaControl.invalid && captchaControl.errors.required" translate>
+          MANDATORY_CAPTCHA
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <button type="submit" id="submitButton" style="margin-top:5px;"
+            mat-raised-button color="primary"
+            [disabled]="authorControl.invalid || feedbackControl.invalid || captchaControl.invalid || !rating"
+            (click)="save()">
+      <i class="fas fa-paper-plane fa-lg"></i> {{'BTN_SUBMIT' | translate}}
+    </button>
+
+  </mat-card>
 </div>
 ```
 
-### :warning: Index page template
+:information_source: In the entire Juice Shop code base, inline
+templates are **never** used. Templates must **always** be described in
+separate `.html` files.
 
-The `app/index.template.html` file is the entry point the Juice Shop web
-client. It loads all required CSS stylesheets and JavaScript libraries
-and includes the application's own client-side code. It also defines the
-surrounding elements of the application, such as the
-* navigation bar and menu items
-* challenge-related pop-ups
-* cookie consent banner
-* _Fork me on GitHub_ ribbon.
-
-For developers it is important to only make changes in the
-`index.template.html` file but **never** in the `index.html` which will
-be generated from the template during server startup. This intermediary
-step is necessary for the visual
-[Customization](../part1/customization.md) of the application.
-
-### :warning: Internationalization
+### Internationalization
 
 All static texts in the user interface are fully internationalized using
-the `angular-translate` module. Texts coming from the server (e.g.
-product descriptions or server error messages) are always in English.
+the `ngx-translate` module. Texts coming from the server (e.g. product
+descriptions or server error messages) are always in English.
 
-No hard-coded texts are allowed in any of the [Views](#views) or
-[Controllers](#controllers). Instead, property keys have to be defined
-and are usually specified in a `translate` attribute which can be placed
-in most HTML tags and will later be resolved by the `$translateProvider`
-service. You might have noticed several of these `translate` attributes
-in the `Contact.html` code snippet from the [Views](#views) section.
+No hard-coded texts are allowed in any of the [Templates](#templates) or
+[Components](#components). Instead, property keys have to be defined and
+are usually applied with a `translate` attribute that can be placed in
+most HTML tags. You might have noticed several of these `translate`
+attributes in the `contact.component.html` code snippet from the
+[Templates](#templates) section.
 
 The different translations are maintained in JSON files in the
-`/app/i18n` folder. The only file that should be touched by developers
-is the `en.json` file for the original English texts. New properties are
-exclusively added here. When pushing the `develop` branch to GitHub, the
-online translation provider will pick up changes in `en.json` and adapt
-all other language files accordingly. All this happens behind the scenes
-in a distinct branch `l10n_develop` which will be manually merged back
-into `develop` on a regular basis.
+`/frontend/src/assets/i18n` folder. The only file that is allowed to be
+touched by developers is the `en.json` file for the original English
+texts. New properties are exclusively added here. When pushing the
+`develop` branch to GitHub, the online translation provider will pick up
+changes in `en.json` and adapt all other language files accordingly. All
+this happens behind the scenes in a distinct branch `l10n_develop` which
+will be manually merged back into `develop` on a regular basis.
 
 To learn about the actual translation process please refer to the
 chapter [Helping with translations](translation.md).
 
-### Client-side code minification
+### Client-side code compilation
 
-All client side code (except the `index.html`) is first _uglified_ (for
+All client side Angular code is compiled into JavaScript and afterwards
+_uglified_ (for
 [security by obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity))
-and then _minified_ (for initial load time reduction) during the build
+and _minified_ (for initial load time reduction) during the build
 process (launched with `npm install`) of the application. This creates
-an `app/dist/juice-shop.min.js` file, which is included by the
-`index.html` to load all application-specific client-side code.
+an `frontend/dist/frontend` folder, which is the one actually delivered
+to the Browser to load all application-specific client-side code.
 
-If you want to quickly test client-side code changes, it can be
-cumbersome to launch `npm install` over and over again. Instead you can
-simply trigger the minification to generate the `juice-shop.min.js` file
-with
-
-```bash
-grunt minify
-```
-
-and then refresh your browser with `F5` to test your changes. This will
-require grunt being installed globally on your system, so if above
-command fails for you, please run `npm install -g grunt-cli` once to
-install this useful task runner. From then on, `grunt minify` should
-work.
+:information_source: If you want to quickly test client-side code
+changes, it can be cumbersome and slow to launch `npm install` over and
+over again. Instead you can use `npm run serve` to keep let Angular
+watch for client-code changes and recompile the affected parts on the
+fly. You usually not even have to manually refresh your browser with
+`F5` to see your changes.
 
 ## Server Tier
 
@@ -731,7 +772,7 @@ The _File complaint_ page contains a file upload field to attach one of
 the previously mentioned order confirmation PDFs. While these are really
 uploaded to the server, they are _not written_ to the file system but
 discarded for security reasons: Publicly hosted Juice Shop instances are
-not supposed to be abused a malware distribution sites or file shares.
+not supposed to be abused as malware distribution sites or file shares.
 
 ## End-to-end tests
 
@@ -764,11 +805,11 @@ These tests are written and executed with
 [Selenium WebDriver](https://www.seleniumhq.org/projects/webdriver/)
 under the hood.
 
-[^1]: https://docs.angularjs.org/guide/services
+[^1]: https://angular.io/guide/architecture-services
 
-[^2]: https://docs.angularjs.org/guide/controller
+[^2]: https://angular.io/guide/architecture-components
 
-[^3]: https://docs.angularjs.org/guide/templates
+[^3]: https://angular.io/guide/template-syntax
 
 [^4]: http://expressjs.com/en/starter/basic-routing.html
 
