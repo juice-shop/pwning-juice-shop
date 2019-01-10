@@ -174,11 +174,11 @@ find its syntax along with an excerpt of the default settings.
     [Retrieve Blueprint](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
     challenge. If a filename is specified but the file does not exist in
     `/app/public/images/products` the challenge is still solvable by
-    just requesting it from the server. Defaults to :warning:
-    `JuiceShop.stl`. _**Important note:** To make this challenge
-    realistically solvable, include some kind of hint to the blueprint
-    file's name/type in the product image (e.g. its `Exif` metadata) or
-    in the product description_
+    just requesting it from the server. Defaults to `JuiceShop.stl`.
+    :information_source: _To make this challenge realistically solvable,
+    include some kind of hint to the blueprint file's name/type in the
+    product image (e.g. its `Exif` metadata) or in the product
+    description_
   * `reviews` a sub-list which adds reviews to a product (_optional_)
     * `text` of the review (_mandatory_)
     * `author` of the review from the following list of pre-defined
