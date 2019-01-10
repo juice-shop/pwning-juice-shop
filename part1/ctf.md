@@ -415,7 +415,7 @@ function hmacSha1 (secretKey, text) {
 
 ## Commercial use disclaimer
 
-:warning: Bear in mind: With the increasing number of challenge
+Bear in mind: With the increasing number of challenge
 solutions (this book included) available on the Internet _it might
 **not** be wise to host a professional CTF for prize money_ with OWASP
 Juice Shop!

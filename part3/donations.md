@@ -43,17 +43,15 @@ Donations via PayPal and Credit Card are received and managed by the
 OWASP Foundation. This is the only option where an official donation
 receipt can be handed out.
 
-> :warning: Independent of your selected method it is recommended to
-> forward your donation confirmation to <bjoern.kimminich@owasp.org> to
-> allow verifying if the earmarking worked and the money is attributed
-> to the Juice Shop budget.
->
-> You should provide your full name and (optional) URL for the mention
-> in the
-> [Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
-> on the official project page. If you donated at least 1000 US$ you can
-> choose to provide a logo to put on the page instead of your name. See
-> [Sponsorship Rules](#sponsorship-rules) below for details.
+:information_source: _Independent of your selected method it is recommended to forward your
+donation confirmation to <bjoern.kimminich@owasp.org> to allow verifying
+if the earmarking worked and the money is attributed to the Juice Shop
+budget. You should provide your full name and (optional) URL for the
+mention in the
+[Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
+on the official project page. If you donated at least 1000 US$ you can
+choose to provide a logo to put on the page instead of your name. See
+[Sponsorship Rules](#sponsorship-rules) below for details._
 
 ### Credit card donation step-by-step
 
