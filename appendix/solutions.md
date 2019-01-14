@@ -261,6 +261,85 @@ in order to exploit and solve them:
 
 :wrench: **TODO**
 
+### Submit 10 or more customer feedbacks within 10 seconds
+
+1. Open the Network tab of your browser DevTools and visit
+   <http://localhost:3000/#/contact>
+2. You should notice a `GET` request to
+   <http://localhost:3000/rest/captcha/> which retrieves the CAPTCHA for
+   the feedback form. The HTTP response body will look similar to
+   `{"captchaId":18,"captcha":"5*8*8","answer":"320"}`.
+3. Fill out the form normally and submit it while checking the backend
+   interaction in your Developer Tools. The CAPTCHA identifier and
+   solution are transmitted along with the feedback in the request body:
+   `{comment: "Hello", rating: 1, captcha: "320", captchaId: 18}`
+4. You will notice that a new CAPTCHA is retrieved from the REST
+   endpoint. It will present a different math challenge, e.g.
+   `{"captchaId":19,"captcha":"1*1-1","answer":"0"}`
+5. Write another feedback but before sending it, change the `captchaId`
+   and `captcha` parameters to the previous values of `captchaId` and
+   `answer`. In this example you would submit `captcha: "320",
+   captchaId: 18` instead of `captcha: "0", captchaId: 19`.
+6. The server will accept your feedback, telling your that the CAPTCHA
+   can be pinned to any previous one you like.
+7. Write a script with a 10-iteration loop that submits feedback using
+   your pinned `captchaId` and `captcha` parameters. Running this script
+   will solve the challenge.
+
+Two alternate (but more complex) solutions:
+* Rewrite your script so that it _parses the response from each CAPTCHA
+  retrieval call_ to <http://localhost:3000/rest/captcha/> and sets the
+  extracted `captchaId` and `answer` parameters in each subsequent form
+  submission as `captchaId` and `captcha`.
+* Using an automated browser test tool like
+  [Selenium WebDriver](https://www.seleniumhq.org/) you could do the
+  following:
+  1. Read the CAPTCHA question from the HTML element `<code id="captcha"
+     ...>`
+  2. Calculate the result on the fly using JavaScript
+  3. Let WebDriver write the answer into the `<input
+     name="feedbackCaptcha" ...>` field.
+
+The latter is actually the way it is implemented in the end-to-end test
+for this challenge:
+
+```javascript
+  let comment, rating, submitButton, captcha
+  
+  beforeEach(() => {
+    browser.get('/#/contact')
+    comment = element(by.id('comment'))
+    rating = $$('.br-unit').last()
+    captcha = element(by.id('captchaControl'))
+    submitButton = element(by.id('submitButton'))
+    solveNextCaptcha()
+  })
+  
+  describe('challenge "captchaBypass"', () => {
+    it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
+      for (var i = 0; i < 11; i++) {
+        comment.sendKeys('Spam #' + i)
+        rating.click()
+        submitButton.click()
+        browser.sleep(200)
+        solveNextCaptcha() // first CAPTCHA was already solved in beforeEach
+      }
+    })
+
+    protractor.expect.challengeSolved({ challenge: 'CAPTCHA Bypass Tier 1' })
+  })
+
+  function solveNextCaptcha () {
+    element(by.id('captcha')).getText().then((text) => {
+      const answer = eval(text).toString() // eslint-disable-line no-eval
+      captcha.sendKeys(answer)
+    })
+  }
+```
+
+_It is worth noting that both alternate solutions would still work even
+if the CAPTCHA-pinning problem would be fixed in the application!_
+
 ### Post some feedback in another users name
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
@@ -1050,85 +1129,6 @@ explains the problem and gives an exploit example:
                 }).join("")
             }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
 ```
-
-### Submit 10 or more customer feedbacks within 10 seconds
-
-1. Open the Network tab of your browser DevTools and visit
-   <http://localhost:3000/#/contact>
-2. You should notice a `GET` request to
-   <http://localhost:3000/rest/captcha/> which retrieves the CAPTCHA for
-   the feedback form. The HTTP response body will look similar to
-   `{"captchaId":18,"captcha":"5*8*8","answer":"320"}`.
-3. Fill out the form normally and submit it while checking the backend
-   interaction in your Developer Tools. The CAPTCHA identifier and
-   solution are transmitted along with the feedback in the request body:
-   `{comment: "Hello", rating: 1, captcha: "320", captchaId: 18}`
-4. You will notice that a new CAPTCHA is retrieved from the REST
-   endpoint. It will present a different math challenge, e.g.
-   `{"captchaId":19,"captcha":"1*1-1","answer":"0"}`
-5. Write another feedback but before sending it, change the `captchaId`
-   and `captcha` parameters to the previous values of `captchaId` and
-   `answer`. In this example you would submit `captcha: "320",
-   captchaId: 18` instead of `captcha: "0", captchaId: 19`.
-6. The server will accept your feedback, telling your that the CAPTCHA
-   can be pinned to any previous one you like.
-7. Write a script with a 10-iteration loop that submits feedback using
-   your pinned `captchaId` and `captcha` parameters. Running this script
-   will solve the challenge.
-
-Two alternate (but more complex) solutions:
-* Rewrite your script so that it _parses the response from each CAPTCHA
-  retrieval call_ to <http://localhost:3000/rest/captcha/> and sets the
-  extracted `captchaId` and `answer` parameters in each subsequent form
-  submission as `captchaId` and `captcha`.
-* Using an automated browser test tool like
-  [Selenium WebDriver](https://www.seleniumhq.org/) you could do the
-  following:
-  1. Read the CAPTCHA question from the HTML element `<code id="captcha"
-     ...>`
-  2. Calculate the result on the fly using JavaScript
-  3. Let WebDriver write the answer into the `<input
-     name="feedbackCaptcha" ...>` field.
-
-The latter is actually the way it is implemented in the end-to-end test
-for this challenge:
-
-```javascript
-  let comment, rating, submitButton, captcha
-  
-  beforeEach(() => {
-    browser.get('/#/contact')
-    comment = element(by.id('comment'))
-    rating = $$('.br-unit').last()
-    captcha = element(by.id('captchaControl'))
-    submitButton = element(by.id('submitButton'))
-    solveNextCaptcha()
-  })
-  
-  describe('challenge "captchaBypass"', () => {
-    it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
-      for (var i = 0; i < 11; i++) {
-        comment.sendKeys('Spam #' + i)
-        rating.click()
-        submitButton.click()
-        browser.sleep(200)
-        solveNextCaptcha() // first CAPTCHA was already solved in beforeEach
-      }
-    })
-
-    protractor.expect.challengeSolved({ challenge: 'CAPTCHA Bypass' })
-  })
-
-  function solveNextCaptcha () {
-    element(by.id('captcha')).getText().then((text) => {
-      const answer = eval(text).toString() // eslint-disable-line no-eval
-      captcha.sendKeys(answer)
-    })
-  }
-```
-
-_It is worth noting that both alternate solutions would still work even
-if the CAPTCHA-pinning problem would be fixed in the application!_
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 
