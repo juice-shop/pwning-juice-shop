@@ -93,10 +93,18 @@ The minimum requirements for code contributions are:
 
 ### JavaScript standard style guide
 
-As a preliminary step, the `npm test` script verifies code compliance
-with the `standard` style before running any test. If PRs deviate from
-this coding style, they will immediately fail their build and will not
-be merged until compliant.
+```bash
+npm run lint
+```
+
+The `npm run lint` script verifies code compliance with
+
+* the `standard` code style (for all server-side JavaScript code)
+* the TSLint rules for the frontend TypeScript code (which are defined
+  to be equal to `standard` by deriving from `tslint-config-standard`)
+
+If PRs deviate from this coding style, they will the build and will not
+be merged until made compliant.
 
 ![JavaScript Style Guide](img/badge.svg)
 
@@ -110,7 +118,7 @@ computer with `npm i -g standard`.
 ### Testing
 
 ```bash
-npm test           # check for code style violations and run all unit tests
+npm test           # run all unit tests
 npm run frisby     # run all API integration tests
 npm run protractor # run all end-to-end tests
 ```
@@ -160,9 +168,10 @@ npm run protractor
 The end-to-end tests require a locally installed Google Chrome browser
 and internet access to be able to pass.
 
-If you have a web proxy configured via `HTTP_PROXY` environment variable,
-the end-to-end tests will honor this setting. This can be useful to e.g.
-run the tests through tools like [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+If you have a web proxy configured via `HTTP_PROXY` environment
+variable, the end-to-end tests will honor this setting. This can be
+useful to e.g. run the tests through tools like
+[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 or Burpsuite.
 
 ## Continuous integration & deployment
