@@ -61,8 +61,8 @@ The current version of the project (omitting the leading `v`) must be
 manually maintained in the following three places:
 
 * `/package.json` in the `"version"` property
-* `/app/package.json` in the `"version"` property
-* `/Dockerfile` in the `LABEL` named `org.label-schema.version`
+* `/frontend/package.json` in the `"version"` property
+* `/Dockerfile` in the `LABEL` named `org.opencontainers.image.version`
 
 All other occurrences of the version (i.e. packaged releases & the menu
 bar of the application itself) are resolved through the `"version"`
@@ -93,12 +93,20 @@ The minimum requirements for code contributions are:
 
 ### JavaScript standard style guide
 
-As a preliminary step, the `npm test` script verifies code compliance
-with the `standard` style before running any test. If PRs deviate from
-this coding style, they will immediately fail their build and will not
-be merged until compliant.
-
 ![JavaScript Style Guide](img/badge.svg)
+
+```bash
+npm run lint
+```
+
+The `npm run lint` script verifies code compliance with
+
+* the `standard` code style (for all server-side JavaScript code)
+* the TSLint rules for the frontend TypeScript code (which are defined
+  to be equal to `standard` by deriving from `tslint-config-standard`)
+
+If PRs deviate from this coding style, they will the build and will not
+be merged until made compliant.
 
 In case your PR is failing from style guide issues try running `standard
 --fix` over your code - this will fix all syntax or code style issues
@@ -110,7 +118,7 @@ computer with `npm i -g standard`.
 ### Testing
 
 ```bash
-npm test           # check for code style violations and run all unit tests
+npm test           # run all unit tests
 npm run frisby     # run all API integration tests
 npm run protractor # run all end-to-end tests
 ```
@@ -127,8 +135,8 @@ they behave as intended.
 
 There is a full suite containing isolated unit tests
 
-* for all client-side code in `test/client`
-* for the server-side routes and libraries in `test/server`
+* for all client-side code in `frontend/src/app/**/*.spec.ts`
+* for the server-side routes and libraries in `test/server/*Spec.js`
 
 ```bash
 npm test
@@ -136,9 +144,9 @@ npm test
 
 #### Integration tests
 
-The integration tests in `test/api` verify if the backend for all normal
-use cases of the application works. All server-side vulnerabilities are
-also tested.
+The integration tests in `test/api/*Spec.js` verify if the backend for
+all normal use cases of the application works. All server-side
+vulnerabilities are also tested.
 
 ```bash
 npm run frisby
@@ -149,9 +157,9 @@ working internet connection is recommended.
 
 #### End-to-end tests
 
-The e2e test suite in `test/e2e` verifies if all client- and server-side
-vulnerabilities are exploitable. It passes only when all challenges are
-solvable on the score board.
+The e2e test suite in `test/e2e/*Spec.js` verifies if all client- and
+server-side vulnerabilities are exploitable. It passes only when all
+challenges are solvable on the score board.
 
 ```bash
 npm run protractor
@@ -160,9 +168,10 @@ npm run protractor
 The end-to-end tests require a locally installed Google Chrome browser
 and internet access to be able to pass.
 
-If you have a web proxy configured via `HTTP_PROXY` environment variable,
-the end-to-end tests will honor this setting. This can be useful to e.g.
-run the tests through tools like [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+If you have a web proxy configured via `HTTP_PROXY` environment
+variable, the end-to-end tests will honor this setting. This can be
+useful to e.g. run the tests through tools like
+[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 or Burpsuite.
 
 ## Continuous integration & deployment
@@ -183,18 +192,20 @@ performs the following actions:
 2. Build the application
 3. Execute the quality checks consisting of
    * Compliance check against the
-     [JS Standard Code Style rules](http://standardjs.com)
+     [JS Standard Code Style rules](http://standardjs.com)\*
    * Unit tests for the Angular components
    * Unit tests for the Express routes and server-side libraries
-   * Integration tests for the server-side API
-   * End-to-end tests verifying that all challenges can be solved
+   * Integration tests for the server-side API\*
+   * End-to-end tests verifying that all challenges can be solved\*
 4. Upload of the quality metrics to
-   [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop)
-5. Deployment to a Heroku instance
+   [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop)\*
+5. Deployment to a Heroku instance\*
    * <https://juice-shop-staging.herokuapp.com> for `develop` branch
      builds
    * <https://juice-shop.herokuapp.com> for `master` branch builds
 6. Trigger some monitoring endpoints about the build result
+
+(\*=runs only in the Node.js {{book.juiceShopVersion}} job)
 
 Pull Requests are built in the same manner (steps 1-3) to assess if they
 can safely be merged into the codebase. For tag-builds (i.e. versions to
