@@ -8,9 +8,10 @@
 | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                            | :star::star:                         |
 | Inform the shop about an algorithm or library it should definitely not use the way it does.                                                                                          | :star::star:                         |
 | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note") | :star::star::star:                   |
+| Gain access to any access log file of the server.                                                                                                                                    | :star::star::star::star:             |
 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                           | :star::star::star::star::star:       |
 | Forge a coupon code that gives you a discount of at least 80%.                                                                                                                       | :star::star::star::star::star::star: |
-| Solve challenge #999. Unfortunately, this challenge does not exist.                                                                                                                   | :star::star::star::star::star::star: |
+| Solve challenge #999. Unfortunately, this challenge does not exist.                                                                                                                  | :star::star::star::star::star::star: |
 | Unlock Premium Challenge to access exclusive content.                                                                                                                                | :star::star::star::star::star::star: |
 
 ### Access a confidential document
@@ -92,6 +93,14 @@ crypto library) that either
   a serious security problem.
 
 ### Log in with Amy's original user credentials
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
+
+### Gain access to any access log file of the server
 
 :wrench: **TODO**
 

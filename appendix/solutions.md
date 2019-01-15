@@ -592,6 +592,10 @@ simultaneously.
 
 ## Hard Challenges (  :star::star::star::star:  )
 
+### Gain access to any access log file of the server
+
+:wrench: **TODO**
+
 ### Order the Christmas special offer of 2014
 
 1. Open http://localhost:3000/#/search and reload the page with `F5`
