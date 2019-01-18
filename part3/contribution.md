@@ -91,7 +91,7 @@ The minimum requirements for code contributions are:
 3. New and changed challenges should have a corresponding e2e test
 4. All unit, integration and e2e tests must pass locally
 
-### JavaScript standard style guide
+### Linting
 
 ![JavaScript Style Guide](img/badge.svg)
 
@@ -183,41 +183,39 @@ Travis-CI:
 
 <https://travis-ci.org/bkimminich/juice-shop>
 
-On every push to any branch on GitHub, a build is triggered on
-Travis-CI. A build consists of several jobs: One for each version of
-Node.js that is officially supported by the application. Each job
-performs the following actions:
+On every push to GitHub, a build is triggered on Travis-CI. A build
+consists of several stages in which one or more jobs are executed. Not
+only direct pushes to the `master` and `develop` branches are built, but
+Pull Requests from other branches or forks as well. This helps the
+project team to assess if a PR can be safely merged into the codebase.
+For tag-builds (i.e. versions to be released) the some additional steps
+are necessary to package the
+[release-artifacts for Linux for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
+and attach these to the release page on GitHub. Lastly, not all stages
+are executed for all supported Node.js versions in order to shorten the
+feedback loop. The higher-level integration and e2e tests are only run
+for the officially recommended Node.js version
+{{book.recommendedNodeVersion}}.
 
-1. Clone the repository and checkout the branch to build
-2. Build the application
-3. Execute the quality checks consisting of
-   * Compliance check against the
-     [JS Standard Code Style rules](http://standardjs.com)\*
-   * Unit tests for the Angular components
-   * Unit tests for the Express routes and server-side libraries
-   * Integration tests for the server-side API\*
-   * End-to-end tests verifying that all challenges can be solved\*
-4. Upload of the quality metrics to
-   [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop)\*
-5. Deployment to a Heroku instance\*
-   * <https://juice-shop-staging.herokuapp.com> for `develop` branch
-     builds
-   * <https://juice-shop.herokuapp.com> for `master` branch builds
-6. Trigger some monitoring endpoints about the build result
 
-(\*=runs only in the Node.js {{book.juiceShopVersion}} job)
+| Build trigger / Stage | Lint                                                           | Test                                                                                                                                                         | Integration                                                                                                                                                                                                                        | E2e                                                                              | Deploy                                                                                      |
+|:----------------------|:---------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
+| Push to `develop`     | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                                                                                   | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.recommendedNodeVersion}} to <http://juice-shop-staging.herokuapp.com> |
+| Push to `master`      | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                                                                                   | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.recommendedNodeVersion}} to <http://juice-shop.herokuapp.com>         |
+| Pull Request          | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                                                                                   | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} |                                                                                             |
+| Tag                   |                                                                | [Unit tests](#unit-tests) and releasing [pre-packaged distributions](#testing-packaged-distrubutions) for Linux with Node.js {{book.nodeVersions}} to GitHub |                                                                                                                                                                                                                                    |                                                                                  |                                                                                             |
 
-Pull Requests are built in the same manner (steps 1-3) to assess if they
-can safely be merged into the codebase. For tag-builds (i.e. versions to
-be released) an additional step is to package release-artifacts for
-Linux for each Node.js version and attach these to the release page on
-GitHub.
+:information_source: The stages in the table above are executed
+sequentially from left to right. A failing job in any stage will break
+the build and all following stages will not be executed allowing a
+faster feedback loop.
 
 ### AppVeyor
 
 AppVeyor is used as a secondary CI server to check if the application
 can be built on Windows. It also packages and attaches release-artifacts
-for Windows in case a tag-build is executed:
+for Windows for Node.js {{book.nodeVersions}} in case a tag-build is
+executed:
 
 <https://ci.appveyor.com/project/bkimminich/juice-shop>
 
