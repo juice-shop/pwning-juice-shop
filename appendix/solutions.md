@@ -381,7 +381,17 @@ injection as in
 
 ### Log in with Amy's original user credentials
 
-:wrench: **TODO**
+1. Google for either `93.83 billion trillion trillion centuries` or `One
+   Important Final Note`.
+2. Both searches should show <https://www.grc.com/haystack.htm> as one
+   of the top hits.
+3. After reading up on _Password Padding_ try the example password
+   `D0g.....................`
+4. She actually did a similar padding trick, just with the name of her
+   boyfriend Kif!
+5. Visit <http://localhost:3000/#/login> and log in with credentials
+   `amy@juice-sh.op` and password `K1f.....................` to solve
+   the challenge
 
 ### Log in with Bender's user account
 
@@ -510,8 +520,8 @@ simultaneously.
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 1. Submit a POST request to http://localhost:3000/api/Users with
-   * `{"email": "<iframe src=\"javascript:alert(`xss`)\">", "password": "xss"}`
-     as body
+   * `{"email": "<iframe src=\"javascript:alert(`xss`)\">", "password":
+     "xss"}` as body
    * and `application/json` as `Content-Type` header.
 
    ![XSS request in PostMan](img/xss2_postman.png)
@@ -520,8 +530,8 @@ simultaneously.
 4. An alert box with the text "xss" should appear.
 
    ![XSS alert box](img/xss2_alert.png)
-5. Close this box. Notice the somewhat broken looking row in the _Registered
-   Users_ table?
+5. Close this box. Notice the somewhat broken looking row in the
+   _Registered Users_ table?
 6. Click the "eye"-button in that row.
 7. A modal overlay dialog with the user details opens where the attack
    string is rendered as harmless text.
@@ -534,8 +544,8 @@ simultaneously.
 2. Copy your `Authorization` header from any HTTP request submitted via
    browser.
 3. Submit a POST request to <http://localhost:3000/api/Products> with
-   * `{"name": "XSS", "description": "<iframe src=\"javascript:alert(`xss`)\">",
-     "price": 47.11}` as body,
+   * `{"name": "XSS", "description": "<iframe
+     src=\"javascript:alert(`xss`)\">", "price": 47.11}` as body,
    * `application/json` as `Content-Type`
    * and `Bearer ?` as `Authorization` header, replacing the `?` with
      the token you copied from the browser.
@@ -545,10 +555,11 @@ simultaneously.
 5. An alert box with the text "xss" should appear.
 
    ![XSS alert box](img/xss3_alert.png)
-6. Close this box. Notice the product row which has a frame border in the
-   description in the _All Products_ table
+6. Close this box. Notice the product row which has a frame border in
+   the description in the _All Products_ table
 7. Click the "eye"-button next to that row.
-8. Another alert box with the text "xss" should appear. After closing it the actual details dialog pops up showing the same frame border.
+8. Another alert box with the text "xss" should appear. After closing it
+   the actual details dialog pops up showing the same frame border.
 
    ![After closing the XSS alert box in product details](img/xss3_product-modal_alert.png)
 
@@ -1014,17 +1025,25 @@ solution for this challenge.
 ### Inform the shop about a vulnerable library it is using
 
 Juice Shop depends on a JavaScript library with known vulnerabilities.
-Having the `package.json.bak` and using an online vulnerability database like
-[Retire.js](https://retirejs.github.io/) or [Snyk](https://snyk.io/vuln) makes it rather easy
-to identify it.
+Having the `package.json.bak` and using an online vulnerability database
+like [Retire.js](https://retirejs.github.io/) or
+[Snyk](https://snyk.io/vuln) makes it rather easy to identify it.
 
-1. Solve [Access a developer's forgotten backup file](../part2/roll-your-own-security.md#access-a-developers-forgotten-backup-file)
-2. Checking the dependencies in `package.json.bak` for known vulnerabilities online will give you a match (at least) for
-  * `sanitize-html`: Sanitization of HTML strings is not applied recursively to input, allowing an attacker to potentially inject script and other markup (see <https://snyk.io/vuln/npm:sanitize-html:20160801>)
-  * `express-jwt`: Inherits an authentication bypass and other vulnerabilities from its dependencies (see <https://app.snyk.io/test/npm/express-jwt/0.1.3>)
+1. Solve
+   [Access a developer's forgotten backup file](../part2/roll-your-own-security.md#access-a-developers-forgotten-backup-file)
+2. Checking the dependencies in `package.json.bak` for known
+   vulnerabilities online will give you a match (at least) for
+   * `sanitize-html`: Sanitization of HTML strings is not applied
+     recursively to input, allowing an attacker to potentially inject
+     script and other markup (see
+     <https://snyk.io/vuln/npm:sanitize-html:20160801>)
+   * `express-jwt`: Inherits an authentication bypass and other
+     vulnerabilities from its dependencies (see
+     <https://app.snyk.io/test/npm/express-jwt/0.1.3>)
 3. Visit <http://localhost:3000/#/contact>
-   1. Submit your feedback with the string pair `sanitize-html` and `1.4.2`
-      appearing somewhere in the comment. Alternatively you can submit `express-jwt` and `0.1.3`.
+   1. Submit your feedback with the string pair `sanitize-html` and
+      `1.4.2` appearing somewhere in the comment. Alternatively you can
+      submit `express-jwt` and `0.1.3`.
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -1184,11 +1203,12 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
    header.
 2. Copy the JWT (i.e. everything after `Bearer ` in the `Authorization`
    header) and decode it.
-3. Under the `payload` property, change
-   the `email` attribute in the JSON to `jwtn3d@juice-sh.op`.
-4. Change the value of the `alg` property in the `header` part from `HS256` to `none`.
-5. Re-encode the JWT and then delete the signature part so that the final character of
-   the JWT is the last `.` (dot symbol).
+3. Under the `payload` property, change the `email` attribute in the
+   JSON to `jwtn3d@juice-sh.op`.
+4. Change the value of the `alg` property in the `header` part from
+   `HS256` to `none`.
+5. Re-encode the JWT and then delete the signature part so that the
+   final character of the JWT is the last `.` (dot symbol).
 6. Change the `Authorization` header of a subsequent request to the
    retrieved JWT (prefixed with `Bearer ` as before) and submit the
    request. Alternatively you can set the `token` cookie to the JWT
