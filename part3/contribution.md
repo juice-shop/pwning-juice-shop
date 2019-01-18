@@ -4,8 +4,8 @@ If you would like to contribute to OWASP Juice Shop but need some idea
 what task to address, the best place to look is in the GitHub issue
 lists at <https://github.com/bkimminich/juice-shop/issues>.
 
-!["help wanted" label on GitHub](img/help_wanted-label.png)
-!["good first issue" label on GitHub](img/good_first_issue-label.png)
+!["help wanted" label on GitHub](img/help_wanted-label.png)
+!["good first issue" label on GitHub](img/good_first_issue-label.png)
 
 * Issues labelled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
@@ -20,7 +20,7 @@ processes when contributing to the OWASP Juice Shop project.
 
 If you are new to application development - particularly with Angular
 and Express.js - it is recommended to read the
-[Codebase 101](codebase.md) to get an overview what belongs where. It
+[Codebase 101](codebase.md) to get an overview what belongs where. It
 will lower the entry barrier for you significantly.
 
 ## Version control
@@ -37,7 +37,7 @@ OWASP Juice Shop is maintained in a simplified
 [Gitflow](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/)
 fashion, where all active development happens on the `develop` branch
 while `master` is used to deploy stable versions to the
-[Heroku demo instance](https://juice-shop.herokuapp.com) and later
+[Heroku demo instance](https://juice-shop.herokuapp.com) and later
 create tagged releases from.
 
 Feature branches are only used for long-term tasks that could jeopardize
@@ -93,7 +93,7 @@ The minimum requirements for code contributions are:
 
 ### Linting
 
-![JavaScript Style Guide](img/badge.svg)
+![JavaScript Style Guide](img/badge.svg)
 
 ```bash
 npm run lint
@@ -125,7 +125,7 @@ npm run protractor # run all end-to-end tests
 
 Pull Requests are verified to pass all of the following test stages
 during the
-[continuous integration build](https://travis-ci.org/bkimminich/juice-shop).
+[continuous integration build](https://travis-ci.org/bkimminich/juice-shop).
 It is recommended that you run these tests on your local computer to
 verify they pass before submitting a PR. New features should be
 accompanied by an appropriate number of corresponding tests to verify
@@ -171,7 +171,7 @@ and internet access to be able to pass.
 If you have a web proxy configured via `HTTP_PROXY` environment
 variable, the end-to-end tests will honor this setting. This can be
 useful to e.g. run the tests through tools like
-[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 or Burpsuite.
 
 ### Testing packaged distrubutions
@@ -187,7 +187,7 @@ npm install --production && grunt package
 
 Then take the created archive from `/dist` and follow the steps
 described above in
-[Packaged Distributions](https://github.com/bkimminich/juice-shop#packaged-distributions--)
+[Packaged Distributions](https://github.com/bkimminich/juice-shop#packaged-distributions--)
 to make sure nothing is broken or missing.
 
 ## Continuous integration & deployment
@@ -206,7 +206,7 @@ Pull Requests from other branches or forks as well. This helps the
 project team to assess if a PR can be safely merged into the codebase.
 For tag-builds (i.e. versions to be released) the some additional steps
 are necessary to package the
-[release-artifacts for Linux for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
+[release-artifacts for Linux for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
 and attach these to the release page on GitHub. Lastly, not all stages
 are executed for all supported Node.js versions in order to shorten the
 feedback loop. The higher-level integration and e2e tests are only run
@@ -216,7 +216,7 @@ for the officially preferred Node.js version
 
 | :arrow_right: Stage Trigger :arrow_down: | Lint                                                           | Test                                                                                                                                                 | Integration                                                                                                                                                                                                                        | E2e                                                                              | Deploy                                                          |
 |:-----------------------------------------|:---------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:----------------------------------------------------------------|
-|                                          | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                                                                           | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.recommendedNodeVersion}} to Heroku        |
+|                                          | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                                                                           | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.herokuNodeVersion}} to Heroku             |
 | **Push to `develop`**                    | :heavy_check_mark:                                             | :heavy_check_mark:                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                 | :heavy_check_mark:                                                               | :heavy_check_mark: to <http://juice-shop-staging.herokuapp.com> |
 | **Push to `master`**                     | :heavy_check_mark:                                             | :heavy_check_mark:                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                 | :heavy_check_mark:                                                               | :heavy_check_mark: to <http://juice-shop.herokuapp.com>         |
 | **Pull Request**                         | :heavy_check_mark:                                             | :heavy_check_mark:                                                                                                                                   | :heavy_check_mark:                                                                                                                                                                                                                 | :heavy_check_mark:                                                               | :x:                                                             |
@@ -236,7 +236,7 @@ can be built on Windows:
 
 No linters or test suites are executed. Instead AppVeyor packages and
 attaches
-[release-artifacts for Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
+[release-artifacts for Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
 to GitHub in case a tag-build is executed.
 
 | Trigger               | Build Tasks                                                                                                                      |
