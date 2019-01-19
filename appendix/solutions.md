@@ -387,8 +387,8 @@ injection as in
    of the top hits.
 3. After reading up on _Password Padding_ try the example password
    `D0g.....................`
-4. She actually did a similar padding trick, just with the name of her
-   boyfriend Kif!
+4. She actually did a very similar padding trick, just with the name of her
+   husband _Kif_ written as _K1f_ instead of _D0g_ from the example! She did not even bother changing the padding length!
 5. Visit <http://localhost:3000/#/login> and log in with credentials
    `amy@juice-sh.op` and password `K1f.....................` to solve
    the challenge

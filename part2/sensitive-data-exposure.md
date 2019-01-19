@@ -94,11 +94,23 @@ crypto library) that either
 
 ### Log in with Amy's original user credentials
 
-:wrench: **TODO**
+This challenge is similar to
+[Log in with the administrators user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
+in the sense that only using her original credentials will work as a
+challenge solutions.
+
+![Amy and Kif Kroker](img/amy_and_kif.jpg)
 
 #### Hints
 
-:wrench: **TODO**
+* As with so many other characters from
+  [Futurama](http://www.imdb.com/title/tt0149460/) this challenge is of
+  course about logging in as Amy from that show. In the picture above
+  you see her together with her alien husband Kif.
+* The challenge description contains a few sentences which give away
+  some information how Amy decided to strengthen her password.
+* Obviously, Amy - being a little dimwitted - did not put nearly enough
+  effort and creativity into the password selection process.
 
 ### Gain access to any access log file of the server
 
@@ -119,7 +131,7 @@ crypto library) that either
 ### Forge a coupon code that gives you a discount of at least 80%
 
 This is probably one of the hardest challenges in the OWASP Juice Shop.
-As you learned during [the "happy path" tour](/part1/happy-path.md), the
+As you learned during [the "happy path" tour](/part1/happy-path.md), the
 web shop offers a _Coupon_ field to get a discount on your entire order
 during checkout. The challenge is to get a discount of at least 80% on
 an order. As no coupons with this high a discount are published, it is
@@ -141,7 +153,7 @@ up to you to forge your own.
 The OWASP Juice Shop is _so broken_ that even its convenience features
 (which have nothing to do with the e-commerce use cases) are designed to
 be vulnerable. One of these features is the
-[automatic saving and restoring of hacking progress](/part1/challenges.md#automatic-saving-and-restoring-hacking-progress)
+[automatic saving and restoring of hacking progress](/part1/challenges.md#automatic-saving-and-restoring-hacking-progress)
 after a server crash or a few days pause.
 
 In order to not mess with the _real challenges_ accidentally, the
