@@ -387,8 +387,9 @@ injection as in
    of the top hits.
 3. After reading up on _Password Padding_ try the example password
    `D0g.....................`
-4. She actually did a very similar padding trick, just with the name of her
-   husband _Kif_ written as _K1f_ instead of _D0g_ from the example! She did not even bother changing the padding length!
+4. She actually did a very similar padding trick, just with the name of
+   her husband _Kif_ written as _K1f_ instead of _D0g_ from the example!
+   She did not even bother changing the padding length!
 5. Visit <http://localhost:3000/#/login> and log in with credentials
    `amy@juice-sh.op` and password `K1f.....................` to solve
    the challenge
@@ -1354,6 +1355,12 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    the security question is `5N0wb41L` and the challenge is marked as
    solved.
 9. Feel free to cancel the script execution at this point.
+
+:godmode: If you do not want to write your own script for this
+challenge, take a look at
+[juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
+which was kindly published as a Gist on GitHub by
+[philly-vanilly](https://github.com/philly-vanilly).
 
 > Leet (or "1337"), also known as eleet or leetspeak, is a system of
 > modified spellings and verbiage used primarily on the Internet for
