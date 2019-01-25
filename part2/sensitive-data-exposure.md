@@ -114,11 +114,39 @@ challenge solutions.
 
 ### Gain access to any access log file of the server
 
-:wrench: **TODO**
+> An access log is a list of all the requests for individual files that
+> people have requested from a Web site. These files will include the
+> HTML files and their imbedded graphic images and any other associated
+> files that get transmitted. The access log (sometimes referred to as
+> the "raw data") can be analyzed and summarized by another program.
+>
+> In general, an access log can be analyzed to tell you:
+>
+> The number of visitors (unique first-time requests) to a home page The
+> origin of the visitors in terms of their associated server's domain
+> name (for example, visitors from .edu, .com, and .gov sites and from
+> the online services) How many requests for each page at the site,
+> which can be presented with the pages with most requests listed first
+> Usage patterns in terms of time of day, day of week, and seasonally
+> Access log keepers and analyzers can be found as shareware on the Web
+> or may come with a Web server.[^2]
+
+The Juice Shop application server is writing access logs, which can
+contain interesting information that competitors might also be
+interested in.
 
 #### Hints
 
-:wrench: **TODO**
+* Normally, server log files are written to disk on server side and are
+  not accessible from the outside.
+* Which raises the question: Who would want a server access log to be
+  accessible through a web application?
+* One particular file found in the folder you might already have found
+  during the
+  [Access a confidential document](#access-a-confidential-document)
+  challenge might give you an idea who is interested in such a public
+  exposure.
+* Drilling down one level into the file system might not be sufficient.
 
 ### Perform an unwanted information disclosure by accessing data cross-domain
 
@@ -210,3 +238,4 @@ That is why the actual challenge here is to unlock and solve the
 > [donations in part 3](../part3/donations.md) of this book.
 
 [^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
+[^2]: https://searchsecurity.techtarget.com/definition/access-log
