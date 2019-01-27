@@ -387,8 +387,9 @@ injection as in
    of the top hits.
 3. After reading up on _Password Padding_ try the example password
    `D0g.....................`
-4. She actually did a very similar padding trick, just with the name of her
-   husband _Kif_ written as _K1f_ instead of _D0g_ from the example! She did not even bother changing the padding length!
+4. She actually did a very similar padding trick, just with the name of
+   her husband _Kif_ written as _K1f_ instead of _D0g_ from the example!
+   She did not even bother changing the padding length!
 5. Visit <http://localhost:3000/#/login> and log in with credentials
    `amy@juice-sh.op` and password `K1f.....................` to solve
    the challenge
@@ -1283,31 +1284,32 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 ### Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 1. Trying to find out who "Bjoern" might be should quickly lead you to
-   the OWASP Juice Shop project leader and author of this ebook
+   the OWASP Juice Shop project leader and author of this ebook.
 2. Visit https://www.facebook.com/bjoern.kimminich to immediately learn
-   that he is from the town of _Uetersen_ in Germany
-3. Visit https://gist.github.com/9045923 to find the source code of a
-   (truly amazing) game Bjoern wrote in Turbo Pascal in 1995 (when he
-   was a teenager) to learn his phone number area code of _04122_ which
+   that he is from the town of _Uetersen_ in Germany.
+3. Visit <https://gist.github.com/9045923> or
+   <https://pastebin.com/JL5E0RfX> to find the source code of a (truly
+   amazing) game Bjoern wrote in Turbo Pascal in 1995 (when he was a
+   teenager) to learn his phone number area code of _04122_ which
    belongs to Uetersen. This is sufficient proof that you in fact are on
-   the right track
+   the right track.
 4. http://www.geopostcodes.com/Uetersen will tell you that Uetersen has
-   ZIP code _25436_
+   ZIP code _25436_.
 5. Visit http://localhost:3000/#/forgot-password and provide
-   `bjoern@juice-sh.op` as your _Email_
+   `bjoern@juice-sh.op` as your _Email_.
 6. In the subsequently appearing form, provide `25436` as _Your
    ZIP/postal code when you were a teenager?_
 7. Type and _New Password_ and matching _Repeat New Password_ followed
-   by hitting _Change_ to **not solve** this challenge
+   by hitting _Change_ to **not solve** this challenge.
 8. Bjoern added some obscurity to his security answer by using an
    uncommon variant of the pre-unification format of
-   [postal codes in Germany](#postal-codes-in-germany)
+   [postal codes in Germany](#postal-codes-in-germany).
 9. Visit http://www.alte-postleitzahlen.de/uetersen to learn that
    Uetersen's old ZIP code was `W-2082`. This would not work as an
-   answer either. Bjoern used the written out variation: `West-2082`
+   answer either. Bjoern used the written out variation: `West-2082`.
 10. Change the answer to _Your ZIP/postal code when you were a
     teenager?_ into `West-2082` and click _Change_ again to finally
-    solve this challenge
+    solve this challenge.
 
 #### Postal codes in Germany
 
