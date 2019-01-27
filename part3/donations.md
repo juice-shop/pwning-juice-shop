@@ -35,6 +35,7 @@ and other payment options:
 |:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **PayPal** (preferred) | [![PayPal Donate Button](img/paypal_donate.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40owasp%2eorg&lc=BM&item_name=OWASP%20Juice%20Shop%20Project&item_number=OWASP%20Foundation&no_note=0&currency_code=USD&bn=PP%2dDonationsBF) |
 | Credit Card            | <https://www.regonline.com/Register/Checkin.aspx?EventID=1044369>                                                                                                                                                                                                  |
+| Liberapay              | <https://liberapay.com/bkimminich/donate>                                                                                                                                                                                                                          |
 | BitCoin                | ![bitcoin:1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](img/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm.png)<br>[1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm](https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm)                                                              |
 | Dash                   | ![dash:Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](img/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW.png)<br>[Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW](https://explorer.dash.org/address/Xr556RzuwX6hg5EGpkybbv5RanJoZN17kW)                                                               |
 | Ethereum               | ![0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](img/0x0f933ab9fCAAA782D0279C300D73750e1311EAE6.png)<br>[0x0f933ab9fCAAA782D0279C300D73750e1311EAE6](https://etherscan.io/address/0x0f933ab9fcaaa782d0279c300d73750e1311eae6)                                         |
@@ -43,11 +44,11 @@ Donations via PayPal and Credit Card are received and managed by the
 OWASP Foundation. This is the only option where an official donation
 receipt can be handed out.
 
-:information_source: _Independent of your selected method it is recommended to forward your
-donation confirmation to <bjoern.kimminich@owasp.org> to allow verifying
-if the earmarking worked and the money is attributed to the Juice Shop
-budget. You should provide your full name and (optional) URL for the
-mention in the
+:information_source: _Independent of your selected method it is
+recommended to forward your donation confirmation to
+<bjoern.kimminich@owasp.org> to allow verifying if the earmarking worked
+and the money is attributed to the Juice Shop budget. You should provide
+your full name and (optional) URL for the mention in the
 [Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
 on the official project page. If you donated at least 1000 US$ you can
 choose to provide a logo to put on the page instead of your name. See

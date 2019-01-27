@@ -606,7 +606,26 @@ simultaneously.
 
 ### Gain access to any access log file of the server
 
-:wrench: **TODO**
+1. Solve the
+   [Access a confidential document](#access-a-confidential-document) or
+   any related challenges which will bring the exposed `/ftp` folder to
+   your attention.
+2. Visit <http://localhost:3000/ftp> and notice the file
+   `incident-support.kdbx` which is needed for
+   [Log in with the support team's original user credentials](../part2/security-misconfiguration.md#log-in-with-the-support-teams-original-user-credentials)
+   and indicates that some support team is performing its duties from
+   the public Internet and possibly with VPN access.
+3. Guess luckily or run a brute force attack with e.g.
+   [OWASP ZAPs DirBuster plugin](https://github.com/zaproxy/zap-extensions/tree/beta/src/org/zaproxy/zap/extension/bruteforce)
+   for a possibly exposed directory containing the log files.
+4. Following
+   [the hint to drill down deeper than one level](../part2/sensitive-data-exposure.md#gain-access-to-any-access-log-file-of-the-server),
+   you will at some point end up with
+   <http://localhost:3000/support/logs>.
+5. Inside you will find at least one `access.log` of the current day.
+   Open or download it to solve this challenge.
+
+   ![Exposed folder containing access logs](img/access-log_folder.png)
 
 ### Order the Christmas special offer of 2014
 
@@ -1356,6 +1375,12 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    the security question is `5N0wb41L` and the challenge is marked as
    solved.
 9. Feel free to cancel the script execution at this point.
+
+:godmode: If you do not want to write your own script for this
+challenge, take a look at
+[juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
+which was kindly published as a Gist on GitHub by
+[philly-vanilly](https://github.com/philly-vanilly).
 
 > Leet (or "1337"), also known as eleet or leetspeak, is a system of
 > modified spellings and verbiage used primarily on the Internet for
