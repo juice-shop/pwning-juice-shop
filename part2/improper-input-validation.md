@@ -30,11 +30,17 @@ application into accepting a feedback with 0 stars.
 
 ### Get registered as admin user
 
-:wrench: **TODO**
+The Juice Shop does not bother to separate administrative functionality
+into a deployment unit of its own. Instead, the cheapest solution was
+chosen by simply leaving then admin features in the web shop itself and
+(allegedly) demanding a higher level of access to use them.
 
 ### Hints
 
-:wrench: **TODO**
+* Register as an ordinary user to learn what API endpoints are involved
+  in this use case
+* Think of the simplest possible implementations of a distinction
+  between regular users and administrators
 
 ### Place an order that makes you rich
 

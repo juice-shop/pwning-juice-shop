@@ -255,7 +255,13 @@ in order to exploit and solve them:
 
 ###  Get registered as admin user
 
-:wrench: **TODO**
+1. Submit a `POST` request to <http://localhost:3000/api/Users> with:
+   * `{"email":"admin","password":"admin","isAdmin":true}` as body
+   * and `application/json` as `Content-Type`
+
+   ![Admin user registration request via Postman](img/register-admin_postman.png)
+2. Upon your next visit to the application's web UI the challenge will
+   be marked as solved.
 
 ### Put an additional product into another user's shopping basket
 
