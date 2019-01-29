@@ -22,17 +22,25 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                              | Difficulty                           |
-|:-------------------------------------------------------|:-------------------------------------|
-| Like any review at least three times as the same user. | :star::star::star::star::star::star: |
+| Challenge                                             | Difficulty                           |
+|:------------------------------------------------------|:-------------------------------------|
+| Like any review at least five times as the same user. | :star::star::star::star::star::star: |
 
-### Like any review at least three times as the same user
+### Like any review at least five times as the same user
 
-:wrench: **TODO**
+Any online shop with a review or rating functionality for its products
+should be very keen on keeping fake or inappropriate reviews out. The
+Juice Shop decided to give its customers the ability to give a "like" to
+their favorite reviews. Of course, each user should be able to do so
+only once for each review.
 
 #### Hints
 
-:wrench: **TODO**
+* Every user is (almost) immediately associated with the review they
+  "liked" to prevent abuse of that functionality
+* Did you really think clicking the "like" button five times in a row
+  _really fast_ would be enough to solve a
+  :star::star::star::star::star::star: challenge?
 
 [^1]: https://en.wikipedia.org/wiki/Race_condition
 [^2]: https://en.wikipedia.org/wiki/Race_condition#Computer_security

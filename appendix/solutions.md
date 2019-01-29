@@ -1206,7 +1206,7 @@ explains the problem and gives an exploit example:
 Instead of expanding your brute force pattern (which is not a very
 obvious decision to make) you can more easily find the solution to this
 challenge by investigating which languages are supported in the Juice
-Shop and how [the translations](../_book/part3/translation.md) are
+Shop and how [the translations](../part3/translation.md) are
 managed. This will quickly bring you over to
 <https://crowdin.com/project/owasp-juice-shop> which immediately
 spoilers _Klingon_ as a supported language. Hovering over the
@@ -1658,7 +1658,7 @@ totally different attack styles.
 
 :wrench: **TODO**
 
-###  Like any review at least three times as Perform a reflected XSS attackthe same user
+###  Like any review at least five times as the same user
 
 :wrench: **TODO**
 
