@@ -173,8 +173,11 @@ answers available which you can choose by simply hitting `ENTER`.
 1. **CTF framework to generate data for?** Offers a selectable choice
    between the supported CTF frameworks, which for
    {{book.juiceShopCtfVersion}} are
-   * `CTFd` which is a very well-written and stable piece of Open Source
-     Software. This is the default choice.
+   * `CTFd 2.x` which is a very well-written and stable piece of Open
+     Source Software. This is the default choice.
+   * `CTFd 1.x` requiring a slightly different data format than the
+     newer 2.x version. (:zap: _This option will be removed in a future
+     major release!_)
    * `FBCTF` from Facebook which is visually more advanced though not as
      frequently updated at CTFd.
 2. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
@@ -228,6 +231,7 @@ follows:
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
+`OWASP_Juice_Shop.YYYY-MM-DD.CTFd2.zip`,
 `OWASP_Juice_Shop.YYYY-MM-DD.CTFd.zip` or
 `OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json` depending on your initial
 framework choice.
@@ -246,12 +250,12 @@ desired configuration in a file with the following straightforward
 format:
 
 ```yaml
-ctfFramework: CTFd | FBCTF
+ctfFramework: CTFd 2.x | CTFd 1.x | FBCTF
 juiceShopUrl: https://juice-shop.herokuapp.com
 ctfKey: https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key # can also be actual key instead URL
-countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml
+countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml # ignored for CTFd
 insertHints: none | free | paid
-insertHintUrls: none | free | paid
+insertHintUrls: none | free | paid # optional for FBCTF
 ```
 
 You can then pass this YAML file into the CLI the generator with the
@@ -284,10 +288,14 @@ CTFd run-mode below.
 3. Perform steps 1 and 3 from
    [the CTFd installation instructions](https://github.com/CTFd/CTFd#install).
 4. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
-   and create an admin user and CTF name
+   and create an admin user and CTF name.
 5. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
 6. Select the generated `.zip` file and make sure only the _Challenges_
    box is ticket. Press _Import_.
+7. _(Only for CTFd 2.x)_ Dismiss the potential `Internal Server Error`
+   alert popup after import and restart your CTFd server.
+8. _(Only for CTFd 2.x)_ Repeat the initial setup from step 4. to regain
+   access to the CTF now pre-populated with the Juice Shop challenges.
 
 #### Docker container setup
 
@@ -300,8 +308,8 @@ CTFd run-mode below.
 3. After running `docker-compose up` from previous step, you should be
    able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
    default) and create an admin user and CTF name.
-4. Follow the steps 4-5 from the [Default setup](#local-server-setup)
-   described above
+4. Follow the steps 5-8 from the [Default setup](#local-server-setup)
+   described above.
 
 ##### Non-production Docker image
 
@@ -310,7 +318,7 @@ CTFd run-mode below.
    {{book.ctfdVersion}}
 3. Execute `docker run --rm -p 8000:8000 ctfd/ctfd:<version>` to run
    {{book.ctfdVersion}}
-4. Follow the steps 4-5 from the [Default setup](#local-server-setup)
+4. Follow the steps 5-8 from the [Default setup](#local-server-setup)
    described above
 
 Once you have CTFd up and running, you should see all the created data
@@ -415,10 +423,9 @@ function hmacSha1 (secretKey, text) {
 
 ## Commercial use disclaimer
 
-Bear in mind: With the increasing number of challenge
-solutions (this book included) available on the Internet _it might
-**not** be wise to host a professional CTF for prize money_ with OWASP
-Juice Shop!
+Bear in mind: With the increasing number of challenge solutions (this
+book included) available on the Internet _it might **not** be wise to
+host a professional CTF for prize money_ with OWASP Juice Shop!
 
 [^1]: https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security
 
