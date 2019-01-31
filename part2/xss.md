@@ -23,6 +23,7 @@
 |:------------------------------------------------------------------------------------------------------------------------------|:-------------------------|
 | Perform a _reflected_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                               | :star:                   |
 | Perform a _DOM_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                                     | :star:                   |
+| Perform an XSS attack with `<script>alert(`xss`)</script>` on a legacy page within the application.                           | :star::star:             |
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a client-side security mechanism.    | :star::star::star:       |
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` without using the frontend application at all. | :star::star::star:       |
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a server-side security mechanism.    | :star::star::star::star: |
@@ -69,6 +70,14 @@
   you do not look "under the hood" to find out what the application
   actually does with the user input
 
+### Perform an XSS attack on a legacy page within the application
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
+
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 This challenge is founded on a very common security flaw of web
@@ -95,7 +104,7 @@ input validation:
 ### Perform a persisted XSS attack without using the frontend application at all
 
 As presented in the
-[Architecture Overview](/introduction/architecture.md), the OWASP Juice
+[Architecture Overview](/introduction/architecture.md), the OWASP Juice
 Shop uses a JavaScript client on top of a RESTful API on the server
 side. Even without giving this fact away in the introduction chapter,
 you would have quickly figured this out looking at their interaction
@@ -103,12 +112,12 @@ happening on the network. Most actions on the UI result in
 `XMLHttpRequest` (`XHR`) objects being sent and responded to by the
 server.
 
-![XHR requests to the backend API](img/xhr-api_requests.png)
+![XHR requests to the backend API](img/xhr-api_requests.png)
 
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`
 or a
-[tool for HTTP request tampering](/part1/rules.md#tools-for-http-request-tampering)
+[tool for HTTP request tampering](/part1/rules.md#tools-for-http-request-tampering)
 to master this challenge.
 
 #### Hints
@@ -123,10 +132,11 @@ to master this challenge.
 This is the hardest XSS challenge, as it cannot by solved by fiddling
 with the client-side JavaScript or bypassing the client entirely.
 Whenever there is a server-side validation or input processing involved,
-you should investigate how it works. Finding out implementation details e.g. used libraries, modules or algorithms - should be your priority.
-If the application does not leak this kind of details, you can still
-go for a _blind approach_ by testing lots and lots of different attack
-payloads and check the reaction of the application.
+you should investigate how it works. Finding out implementation details
+e.g. used libraries, modules or algorithms - should be your priority. If
+the application does not leak this kind of details, you can still go for
+a _blind approach_ by testing lots and lots of different attack payloads
+and check the reaction of the application.
 
 _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error
@@ -136,14 +146,14 @@ approach._
 
 * The _Comment_ field in the _Contact Us_ screen is where you want to
   put your focus on
-* The attack payload `<iframe src="javascript:alert(`xss`)">` will _not be
-  rejected_ by any validator but _stripped from the comment_ before
+* The attack payload `<iframe src="javascript:alert(`xss`)">` will _not
+  be rejected_ by any validator but _stripped from the comment_ before
   persisting it
 * Look for possible dependencies related to input processing in the
   `package.json.bak` you harvested earlier
-* If an `xss` alert shows up but the challenge does not appear as
-  solved on the _Score Board_, you might not have managed to put the
-  _exact_ attack string `<iframe src="javascript:alert(`xss`)">` into the
+* If an `xss` alert shows up but the challenge does not appear as solved
+  on the _Score Board_, you might not have managed to put the _exact_
+  attack string `<iframe src="javascript:alert(`xss`)">` into the
   database?
 
 ### Perform a persisted XSS attack through an HTTP header

