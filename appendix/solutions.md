@@ -1670,7 +1670,7 @@ totally different attack styles.
 
 :wrench: **TODO**
 
-###  Like any review at least five times as the same user
+###  Like any review at least three times as the same user
 
 :wrench: **TODO**
 
