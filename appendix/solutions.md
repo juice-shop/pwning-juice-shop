@@ -267,9 +267,9 @@ in order to exploit and solve them:
    `<script>` tag survived the procedure.
 7. Change the username into `<<a|ascript>alert(`xss`)</script>` and
    click _Set Username_.
-8. The naive sanitizer only removes `<a|a` effectively changing the username
-   into `<script>alert(`xss`)</script>` thus resulting in the expected
-   alert box popping up.
+8. The naive sanitizer only removes `<a|a` effectively changing the
+   username into `<script>alert(`xss`)</script>` thus resulting in the
+   expected alert box popping up.
 
 ## Medium Challenges (  :star::star::star:  )
 
@@ -1684,21 +1684,38 @@ totally different attack styles.
 
 ### Forge an almost properly RSA-signed JWT token
 
-_This is most easily solved with a BurpSuite Extension called ["JSON Web Token Attacker" aka "JOSEPH"](https://portswigger.net/bappstore/82d6c60490b540369d6d5d01822bdf61)_
+1. Use your favorite forced directory browsing tool (or incredible
+   guessing luck) to identify <http://localhost:3000/encryptionkeys> as
+   having directory listing enabled.
+2. Download the application's public JWT key from
+   <http://localhost:3000/encryptionkeys/jwt.pub>
 
-1. Find and download the public JWT key at "/encryptionkeys":
-![encryption keys](img/jwt2-findkey.PNG)
-2. Load the ["JSON Web Token Attacker" aka "JOSEPH"](https://portswigger.net/bappstore/82d6c60490b540369d6d5d01822bdf61) via "Extender Tab of BurpSuite:
-![load extension](img/jwt2-burpextension.PNG)
-3. Send any request that has a "Authorization: Bearer" token to repeater.
-4. Once in repeater, click the "JWS" tab. Then click the "Payload" tab and modify the email parameter to be "rsa_lord@juice-sh.op":
-![modify payload](img/jwt2-request.PNG)
-5. Next click the "Attacker" tab, select "Key Confusion", then click load.
-6. Paste in the "jwt.pub" contents (not including RSA header/footer):
-![key confusion](img/jwt2-keyconfusion.PNG)
-7. Click "Update" and then "Go" in the top left to send the modified request!
-8. Complete.
+   ![encryption keys](img/jwt2-findkey.PNG)
+3. Download and install the
+   [Burp Suite Community Edition](https://portswigger.net/burp/communitydownload)
+4. In the _BApp Store_ tab under the _Extender_ tab within Burp Suite
+   find and install the
+   [JSON Web Token Attacker](https://portswigger.net/bappstore/82d6c60490b540369d6d5d01822bdf61)
+   extension (aka _JOSEPH_)
 
+   ![load extension](img/jwt2-burpextension.PNG)
+5. Send any captured request that has an `Authorization: Bearer` token
+   to Burp's _Repeater_.
+6. Once in _Repeater_, click the _JWS_ tab, then the _Payload_ tab
+   beneath and modify the email parameter to be `rsa_lord@juice-sh.op`.
+
+   ![modify payload](img/jwt2-request.PNG)
+7. Next, click the _Attacker_ tab, select _Key Confusion_, then click
+   _Load_.
+8. Paste in the contents of the `jwt.pub` file without the `-----BEGIN
+   RSA PUBLIC KEY-----` and `-----END RSA PUBLIC KEY-----` lines.
+
+   ![key confusion](img/jwt2-keyconfusion.PNG)
+9. Click _Update_ and then _Go_ in the top left to send the modified
+   request via Burp and solve this challenge!
+
+:clap: Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for
+providing this solution.
 
 ###  Like any review at least three times as the same user
 
