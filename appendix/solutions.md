@@ -1684,7 +1684,21 @@ totally different attack styles.
 
 ### Forge an almost properly RSA-signed JWT token
 
-:wrench: **TODO**
+_This is most easily solved with a BurpSuite Extension called ["JSON Web Token Attacker" aka "JOSEPH"](https://portswigger.net/bappstore/82d6c60490b540369d6d5d01822bdf61)_
+
+1. Find and download the public JWT key at "/encryptionkeys":
+![encryption keys](img/jwt2-findkey.PNG)
+2. Load the ["JSON Web Token Attacker" aka "JOSEPH"](https://portswigger.net/bappstore/82d6c60490b540369d6d5d01822bdf61) via "Extender Tab of BurpSuite:
+![load extension](img/jwt2-burpextension.PNG)
+3. Send any request that has a "Authorization: Bearer" token to repeater.
+4. Once in repeater, click the "JWS" tab. Then click the "Payload" tab and modify the email parameter to be "rsa_lord@juice-sh.op":
+![modify payload](img/jwt2-request.PNG)
+5. Next click the "Attacker" tab, select "Key Confusion", then click load.
+6. Paste in the "jwt.pub" contents (not including RSA header/footer):
+![key confusion](img/jwt2-keyconfusion.PNG)
+7. Click "Update" and then "Go" in the top left to send the modified request!
+8. Complete.
+
 
 ###  Like any review at least three times as the same user
 
