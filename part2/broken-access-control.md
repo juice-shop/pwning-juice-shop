@@ -38,7 +38,7 @@
 Just like the score board, the admin section was not part of your "happy
 path" tour because there seems to be no link to that section either. In
 case you were already
-[logged in with the administrator account](injection.md#log-in-with-the-administrators-user-account)
+[logged in with the administrator account](injection.md#log-in-with-the-administrators-user-account)
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
@@ -72,7 +72,7 @@ to some arguments between the victim and the vendor.
 ### Get rid of all 5-star customer feedback
 
 If you successfully solved above
-[admin section challenge](#access-the-administration-section-of-the-store)
+[admin section challenge](#access-the-administration-section-of-the-store)
 deleting the 5-star feedback is very easy.
 
 #### Hints
@@ -82,11 +82,21 @@ deleting the 5-star feedback is very easy.
 
 ### Put an additional product into another user's shopping basket
 
-:wrench: **TODO**
+[View another user's shopping basket](#view-another-users-shopping-basket)
+was only about spying out other customers. For this challenge you need
+to get your hands dirty by putting a product into someone else's basket
+that cannot be already in there!
 
 #### Hints
 
-:wrench: **TODO**
+* Check the HTTP traffic while placing products into your own shopping
+  basket to find a leverage point.
+* Adding more instances of the same product to someone elses basket does
+  not qualify as a solution.
+* Creating something new could turn out much more successful than
+  stealing from someone else.
+* This challenge is a classic example of being the weakest link in the
+  security chain.
 
 ### Post some feedback in another users name
 

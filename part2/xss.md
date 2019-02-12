@@ -72,11 +72,16 @@
 
 ### Perform an XSS attack on a legacy page within the application
 
-:wrench: **TODO**
+In the [Architecture overview](../introduction/architecture.md) you were
+told that the Juice Shop uses a modern _Single Page Application_
+frontend. That was not entirely true.
 
 #### Hints
 
-:wrench: **TODO**
+* Find a screen in the application that looks subtly odd and dated
+  compared with all other screens
+* What is _even better_ than homegrown validation based on a RegEx?
+  Homegrown sanitization based on a RegEx!
 
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 

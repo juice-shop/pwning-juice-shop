@@ -253,7 +253,23 @@ in order to exploit and solve them:
 
 ### Perform an XSS attack on a legacy page within the application
 
-:wrench: **TODO**
+1. Log in as any user.
+2. Visit our user profile page at <http://localhost:3000/profile>.
+3. Type in any _Username_ and click the _Set Username_ button.
+4. Notice that the username is displayed beneath the profile image.
+5. Change the username into `<script>alert(`xss`)</script>` and click
+   _Set Username_.
+6. Notice the displayed username under the profile picture now is
+   `lert(`xss`)` while in the _Username_ field it shows
+   `lert(`xss`)</script>` - both a clear indication that the malicious
+   input was sanitized. Obviously the sanitization was not very
+   sophisticated, as the input was quite mangled and even the closing
+   `<script>` tag survived the procedure.
+7. Change the username into `<<a|ascript>alert(`xss`)</script>` and
+   click _Set Username_.
+8. The naive sanitizer only removes `<a|a` effectively changing the username
+   into `<script>alert(`xss`)</script>` thus resulting in the expected
+   alert box popping up.
 
 ## Medium Challenges (  :star::star::star:  )
 
@@ -1218,8 +1234,8 @@ payload in his blog post
 Instead of expanding your brute force pattern (which is not a very
 obvious decision to make) you can more easily find the solution to this
 challenge by investigating which languages are supported in the Juice
-Shop and how [the translations](../part3/translation.md) are
-managed. This will quickly bring you over to
+Shop and how [the translations](../part3/translation.md) are managed.
+This will quickly bring you over to
 <https://crowdin.com/project/owasp-juice-shop> which immediately
 spoilers _Klingon_ as a supported language. Hovering over the
 corresponding flag will eventually spoiler the language code `tlh_AA`.
