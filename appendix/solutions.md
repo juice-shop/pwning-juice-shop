@@ -1308,12 +1308,14 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
    JSON to `jwtn3d@juice-sh.op`.
 4. Change the value of the `alg` property in the `header` part from
    `HS256` to `none`.
-5. Re-encode the JWT and then delete the signature part so that the
-   final character of the JWT is the last `.` (dot symbol).
-6. Change the `Authorization` header of a subsequent request to the
+5. Encode the `header` to `base64url`. Similarly, encode the `payload`
+   to `base64url`.
+6. Join the two strings obtained above with a `.` (dot symbol) and
+   add a `.` at the end of the obtained string. So, effectively it
+   becomes `base64url(header).base64url(payload).`
+7. Change the `Authorization` header of a subsequent request to the
    retrieved JWT (prefixed with `Bearer ` as before) and submit the
-   request. Alternatively you can set the `token` cookie to the JWT
-   which be used to populate any future request with that header.
+   request.
 
 ### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
 
