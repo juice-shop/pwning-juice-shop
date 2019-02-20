@@ -1699,76 +1699,59 @@ totally different attack styles.
 
 #### _Cloud computing_ solution path
 
-1. From February 2019 onward you might notice the monthly coupon tweets
-   to begin with a robot face emoji in square brackets.
+1. From February 2019 onward the monthly coupon tweets begin with a
+   robot face emoji in square brackets. Maybe the Juice Shop sales team
+   forgot to send coupons too often so that the process was automated at
+   some point?
 
    ![Coupon tweeted by a bot](img/coupon_tweet_bot.png)
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
-   and its associated GitHub repository 2. Some Internet research will
-   bring you to the
-   [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
    <https://github.com/bkimminich/juicy-coupon-bot>.
-3. As this is not part of the Juice Shop repo itself and it is publicly
-   accessible, analyzing this repository is not considered cheating!
-4. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
+   :information_source: _As this is not part of the Juice Shop repo
+   itself and it is publicly accessible, analyzing this repository is
+   **not** considered cheating!_
+3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
    <https://travis-ci.org/bkimminich/juicy-coupon-bot>.
-5. You will realize that there is a `deploy` step that is only executed
+4. You will realize that there is a `deploy` step that is only executed
    when the build was triggered by a (monthly) cron job on Travis-CI.
    This is probably the origin of the monthly tweets! But where does the
    bot get its coupon code from?
-6. Read the code of the `juicy-coupon-bot` carefully and optionally try
+5. Read the code of the `juicy-coupon-bot` carefully and optionally try
    to play with it locally after installing it via `npm i -g
    juicy-coupon-bot`. You can learn a few things that way:
-   * Running `juicy-coupon-bot` locally will log a text similar to the
-     ones from the tweets
-   * You would need to supply Twitter API keys/tokens to create a tweet.
-     These are securely encrypted within `.travis.yml`
-     <https://github.com/bkimminich/juicy-coupon-bot>.
-7. As this is not part of the Juice Shop repo itself and it is publicly
-   accessible, analyzing this repository is not considered cheating!
-8. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
-   You can also look at the job results and logs at
-   <https://travis-ci.org/bkimminich/juicy-coupon-bot>.
-9. You will realize that there is a `deploy` step that is only executed
-   when the build was triggered by a (monthly) cron job on Travis-CI.
-   This is probably the origin of the monthly tweets! But where does the
-   bot get its coupon code from?
-10. Read the code of the `juicy-coupon-bot` carefully and optionally try
-    to play with it locally after installing it via `npm i -g
-    juicy-coupon-bot`. You can learn a few things that way:
-    * Running `juicy-coupon-bot` locally will
-      [prepare the text for a tweet with a coupon code](https://github.com/bkimminich/juicy-coupon-bot/blob/master/lib/statusText.js)
-      for the current month and with a discount between 10% and 40% and
-      log it to your console.
-    * The coupon code is actually retrieved
-      [via an AWS API call](https://5j4d1u7jhf.execute-api.eu-west-1.amazonaws.com/default/JuicyCouponFunc)
-      which returns valid coupons with different discounts and their
-      expiration date as JSON, e.g.
-      `{"discountCodes":{"10%":"mNYS#iv#%t","20%":"mNYS#iw00u","30%":"mNYS#iw03v","40%":"mNYS#iw06w"},"expiryDate":"2019-02-28"}`
-11. You could collect this data for several months and basically fall
-    back to the
-    [Pattern analysis solution path](#pattern-analysis-solution-path)
-    only with more recent coupons.
-12. For an easier and more satisfying victory over this challenge, take
-    a look at the commit history of the GitHub repository
-    <https://github.com/bkimminich/juicy-coupon-bot>, though.
-13. Going back in time a bit, you will learn that the coupon retrieval
-    via AWS API backed by a Lambda function was not the original
-    implementation. Commit
-    `[fde2003](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)`
-    introduced the API call, replacing the previous programmatic
-    creation of a coupon code.
+   * Running `juicy-coupon-bot` locally will
+     [prepare the text for a tweet with a coupon code](https://github.com/bkimminich/juicy-coupon-bot/blob/master/lib/statusText.js)
+     for the current month and with a discount between 10% and 40% and
+     log it to your console.
+   * The coupon code is actually retrieved
+     [via an AWS API call](https://5j4d1u7jhf.execute-api.eu-west-1.amazonaws.com/default/JuicyCouponFunc)
+     which returns valid coupons with different discounts and their
+     expiration date as JSON, e.g.
+     `{"discountCodes":{"10%":"mNYS#iv#%t","20%":"mNYS#iw00u","30%":"mNYS#iw03v","40%":"mNYS#iw06w"},"expiryDate":"2019-02-28"}`
+6. You could collect this data for several months and basically fall
+   back to the
+   [Pattern analysis solution path](#pattern-analysis-solution-path)
+   only with more recent coupons.
+7. For an easier and more satisfying victory over this challenge, take a
+   look at the commit history of the GitHub repository
+   <https://github.com/bkimminich/juicy-coupon-bot>, though.
+8. Going back in time a bit, you will learn that the coupon retrieval
+   via AWS API backed by a Lambda function was not the original
+   implementation. Commit
+   `[fde2003](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)`
+   introduced the API call, replacing the previous programmatic creation
+   of a coupon code.
 
-    ![Diff of local and cloud-based coupon creation](img/git-diff_coupon_lambda.png)
-14. You now habe learned the coupon format and that it is `z85` encoded.
-    You can now either manipulate your local clone of the
-    `juicy-coupon-bot` or fall back to the last part of the
-    [Reverse engineering solution path](#reverse-engineering-solution-path)
-    where you find and install `z85-cli` to conveniently create your own
-    80%+ coupon locally.
+   ![Diff of local and cloud-based coupon creation](img/git-diff_coupon_lambda.png)
+9. You now habe learned the coupon format and that it is `z85` encoded.
+   You can now either manipulate your local clone of the
+   `juicy-coupon-bot` or fall back to the last part of the
+   [Reverse engineering solution path](#reverse-engineering-solution-path)
+   where you find and install `z85-cli` to conveniently create your own
+   80%+ coupon locally.
 
 ### Solve challenge #999
 
