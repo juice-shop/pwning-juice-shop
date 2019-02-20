@@ -1746,9 +1746,9 @@ totally different attack styles.
    of a coupon code.
 
    ![Diff of local and cloud-based coupon creation](img/git-diff_coupon_lambda.png)
-9. You now habe learned the coupon format and that it is `z85` encoded.
+9. You now have learned the coupon format and that it is `z85` encoded.
    You can now either manipulate your local clone of the
-   `juicy-coupon-bot` or fall back to the last part of the
+   "pre-`fde2003` version" of the `juicy-coupon-bot` or fall back to the last part of the
    [Reverse engineering solution path](#reverse-engineering-solution-path)
    where you find and install `z85-cli` to conveniently create your own
    80%+ coupon locally.
