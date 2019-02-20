@@ -92,11 +92,10 @@ that cannot be already in there!
 * Check the HTTP traffic while placing products into your own shopping
   basket to find a leverage point.
 * Adding more instances of the same product to someone elses basket does
-  not qualify as a solution.
-* Creating something new could turn out much more successful than
-  stealing from someone else.
-* This challenge is a classic example of being the weakest link in the
-  security chain.
+  not qualify as a solution. The same goes for stealing from someone
+  elses basket.
+* This challenge requires a bit more sophisticated tampering than others
+  of the same ilk.
 
 ### Post some feedback in another users name
 

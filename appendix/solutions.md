@@ -285,7 +285,54 @@ in order to exploit and solve them:
 
 ### Put an additional product into another user's shopping basket
 
-:wrench: **TODO**
+1. Log in as any user.
+2. Inspect HTTP traffic while putting items into your own shopping
+   basket to learn your own `BasketId`. For this solution we assume
+   yours is `1` and another user's basket with a `BasketId` of `2`
+   exists.
+3. Submit a `POST` request to <http://localhost:3000/api/BasketItems>
+   with payload as `{"ProductId": 14,"BasketId": "2","quantity": 1}`
+   making sure no product of that with `ProductId` of `14` is already in
+   the target basket. Make sure to supply your `Authorization Bearer`
+   token in the request header.
+4. You will receive a (probably unexpected) response of `{'error' :
+   'Invalid BasketId'}` - after all, it is not your basket!
+5. Change your `POST` request into utilizing HTTP Parameter Polution
+   (HPP) by supplying your own `BasketId` _and_ that of someone else in
+   the same payload, i.e. `{"ProductId": 14,"BasketId": "1","quantity":
+   1,"BasketId": "2"}`.
+6. Submitting this request will satisfy the validation based on your own
+   `BasketId` but put the product into the other basket!
+
+:information_source: With other `BasketId`s you might need to play with
+the order of the duplicate property a bit and/or make sure your own
+`BasketId` is lower than the one of the target basket to make this HPP
+vulnerability work in your favor.
+
+> Supplying multiple HTTP parameters with the same name may cause an
+> application to interpret values in unanticipated ways. By exploiting
+> these effects, an attacker may be able to bypass input validation,
+> trigger application errors or modify internal variables values. As
+> HTTP Parameter Pollution (in short HPP) affects a building block of
+> all web technologies, server and client side attacks exist.
+>
+> Current HTTP standards do not include guidance on how to interpret
+> multiple input parameters with the same name. For instance, RFC 3986
+> simply defines the term Query String as a series of field-value pairs
+> and RFC 2396 defines classes of reversed and unreserved query string
+> characters. Without a standard in place, web application components
+> handle this edge case in a variety of ways (see the table below for
+> details).
+>
+> By itself, this is not necessarily an indication of vulnerability.
+> However, if the developer is not aware of the problem, the presence of
+> duplicated parameters may produce an anomalous behavior in the
+> application that can be potentially exploited by an attacker. As often
+> in security, unexpected behaviors are a usual source of weaknesses
+> that could lead to HTTP Parameter Pollution attacks in this case. To
+> better introduce this class of vulnerabilities and the outcome of HPP
+> attacks, it is interesting to analyze some real-life examples that
+> have been discovered in the past. [^7]
 
 ### Submit 10 or more customer feedbacks within 10 seconds
 
@@ -1835,3 +1882,5 @@ to use some unofficial port._
 [^5]: <https://en.wikipedia.org/wiki/Leet>
 
 [^6]: <https://en.wikipedia.org/wiki/Billion_laughs_attack>
+
+[^7]: <https://www.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
