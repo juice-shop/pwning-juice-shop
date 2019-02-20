@@ -1741,7 +1741,7 @@ totally different attack styles.
 8. Going back in time a bit, you will learn that the coupon retrieval
    via AWS API backed by a Lambda function was not the original
    implementation. Commit
-   `[fde2003](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)`
+   [`fde2003`](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)
    introduced the API call, replacing the previous programmatic creation
    of a coupon code.
 
