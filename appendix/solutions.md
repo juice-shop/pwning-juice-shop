@@ -1315,7 +1315,8 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
    becomes `base64url(header).base64url(payload).`
 7. Change the `Authorization` header of a subsequent request to the
    retrieved JWT (prefixed with `Bearer ` as before) and submit the
-   request.
+   request. Alternatively you can set the `token` cookie to the JWT
+   which be used to populate any future request with that header.
 
 ### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
 
