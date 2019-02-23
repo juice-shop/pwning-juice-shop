@@ -1741,14 +1741,14 @@ totally different attack styles.
 8. Going back in time a bit, you will learn that the coupon retrieval
    via AWS API backed by a Lambda function was not the original
    implementation. Commit
-   `[fde2003](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)`
+   [`fde2003`](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)
    introduced the API call, replacing the previous programmatic creation
    of a coupon code.
 
    ![Diff of local and cloud-based coupon creation](img/git-diff_coupon_lambda.png)
-9. You now habe learned the coupon format and that it is `z85` encoded.
+9. You now have learned the coupon format and that it is `z85` encoded.
    You can now either manipulate your local clone of the
-   `juicy-coupon-bot` or fall back to the last part of the
+   "pre-`fde2003` version" of the `juicy-coupon-bot` or fall back to the last part of the
    [Reverse engineering solution path](#reverse-engineering-solution-path)
    where you find and install `z85-cli` to conveniently create your own
    80%+ coupon locally.
