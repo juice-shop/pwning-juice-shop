@@ -24,7 +24,7 @@
 
 | Challenge                                                                                   | Difficulty                           |
 |:--------------------------------------------------------------------------------------------|:-------------------------------------|
-| Access the administration section of the store.                                             | :star:                               |
+| Access the administration section of the store.                                             | :star::star:                         |
 | Access someone else's basket.                                                               | :star::star:                         |
 | Get rid of all 5-star customer feedback.                                                    | :star::star:                         |
 | Put an additional product into another user's shopping basket.                              | :star::star::star:                   |
@@ -48,7 +48,10 @@ option available in the main menu.
   might have.
 * Alternatively, you can try to find a reference or clue within the
   parts of the application that are _not usually visible_ in the browser
-* It is probably just slightly harder to find than the score board link
+* It is probably just slightly harder to find and gain access to than
+  the score board link
+* There is some access control in place, but there are at least three
+  ways to bypass it.
 
 ### View another user's shopping basket
 

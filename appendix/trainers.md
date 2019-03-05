@@ -94,7 +94,7 @@ following challenges:
   )
 * [XSS Tier 1](../part2/xss.md#perform-a-dom-xss-attack) ( :star: )
 * [Admin Section](../part2/broken-access-control.md#access-the-administration-section-of-the-store)
-  ( :star: )
+  ( :star::star: )
 * [Confidential Document](../part2/sensitive-data-exposure.md#access-a-confidential-document)
   ( :star: )
 * [Basket Access](../part2/broken-access-control.md#view-another-users-shopping-basket)
