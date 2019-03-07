@@ -13,17 +13,6 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 ## Trivial Challenges (  :star:  )
 
-### Access the administration section of the store
-
-1. Open the `main.js` in your browser's developer tools and search for
-   "admin".
-2. One of the matches will be a route mapping to `path:
-   "administration"`.
-
-   ![Administration page route in main.js](img/minified_js-admin.png)
-3. Navigate to http://localhost:3000/#/administration to solve the
-   challenge.
-
 ### Access a confidential document
 
 1. Follow the link to titled _Check out our boring terms of use if you
@@ -131,6 +120,19 @@ error situation and solve this challenge immediately:
    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
 
 ## Easy Challenges (  :star::star:  )
+
+### Access the administration section of the store
+
+:wrench: **TODO**
+
+1. Open the `main.js` in your browser's developer tools and search for
+   "admin".
+2. One of the matches will be a route mapping to `path:
+   "administration"`.
+
+   ![Administration page route in main.js](img/minified_js-admin.png)
+3. Navigate to http://localhost:3000/#/administration to solve the
+   challenge.
 
 ### View another user's shopping basket
 
