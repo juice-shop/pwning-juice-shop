@@ -148,6 +148,11 @@ find its syntax along with an excerpt of the default settings.
     harm or danger they might pose for your computer (i.e. XXE or RCE
     vulnerabilities which could not entirely be sandboxed). Defaults to
     `false`
+  * `overwriteUrlForProductTamperingChallenge` the URL that should
+    replace the original URL defined in
+    `urlForProductTamperingChallenge` for the
+    [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description)
+    challenge. Defaults to `https://owasp.slack.com`
 * `products` list which, when specified, replaces **the entire list** of
   default products
   * `name` of the product (_mandatory_)
@@ -160,10 +165,10 @@ find its syntax along with an excerpt of the default settings.
   * `deletedDate` of the product in `YYYY-MM-DD` format (_optional_).
     Defaults to `null`.
   * `urlForProductTamperingChallenge` sets the original link of the
-    product which is the target for
-    [the "product tampering" challenge](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description).
-    Overrides `deletedDate` with `null` (_must be defined on exactly one
-    product_)
+    product which is the target for the
+    [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description)
+    challenge. Overrides `deletedDate` with `null` (_must be defined on
+    exactly one product_)
   * `useForChristmasSpecialChallenge` marks a product as the target for
     [the "christmas special" challenge](../part2/injection.md#order-the-christmas-special-offer-of-2014).
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
@@ -179,6 +184,15 @@ find its syntax along with an excerpt of the default settings.
     include some kind of hint to the blueprint file's name/type in the
     product image (e.g. its `Exif` metadata) or in the product
     description_
+  * `keywordsForPastebinDataLeakChallenge` (_must be defined on exactly
+    one product_) list of keywords which are all mandatory to mention in
+    a feedback or complaint to solve the
+    [DLP Tier 1](../part2/sensitive-data-exposure.md#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous)
+    challenge. Overrides `deletedDate` with `2019-02-1`.
+    :information_source: _To make this challenge realistically solvable,
+    provide the keywords on e.g. PasteBin in an obscured way that works
+    well with the "dangerous ingredients of an unsafe product""
+    narrative_
   * `reviews` a sub-list which adds reviews to a product (_optional_)
     * `text` of the review (_mandatory_)
     * `author` of the review from the following list of pre-defined
