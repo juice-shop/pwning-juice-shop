@@ -259,6 +259,7 @@ The following code snippet shows the `contact.component.html` view which
 associated styles in `contact.component.scss` - represents the entire
 _Contact Us_ screen.
 
+{% raw %}
 ```html
 <div fxLayoutAlign="center">
   <mat-card>
@@ -316,6 +317,7 @@ _Contact Us_ screen.
   </mat-card>
 </div>
 ```
+{% endraw %}
 
 :information_source: In the entire Juice Shop code base, inline
 templates are **never** used. Templates must **always** be described in
