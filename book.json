@@ -18,10 +18,10 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v8.4.0-SNAPSHOT",
+    "juiceShopVersion": "v8.4.0",
     "juiceShopCtfVersion": "v6.0.0",
     "ctfdVersion": "2.x, 1.1.x or 1.2.x",
-    "juiceShopNumberOfChallenges": 78,
+    "juiceShopNumberOfChallenges": 80,
     "nodeVersions": "8.x, 9.x, 10.x and 11.x",
     "recommendedNodeVersion": "10.x",
     "herokuNodeVersion": "11.x"
