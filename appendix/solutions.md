@@ -1315,7 +1315,7 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 4. Change the value of the `alg` property in the `header` part from
    `HS256` to `none`.
 5. Encode the `header` to `base64url`. Similarly, encode the `payload`
-   to `base64url`.
+   to `base64url`. *base64url makes it URL safe*, a regular Base64 encode might not work!
 6. Join the two strings obtained above with a `.` (dot symbol) and
    add a `.` at the end of the obtained string. So, effectively it
    becomes `base64url(header).base64url(payload).`

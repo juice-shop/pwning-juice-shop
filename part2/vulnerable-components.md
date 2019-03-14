@@ -100,6 +100,7 @@ legit.
   validity, so better do not dawdle.
 * Try to convince the site to give you a _valid_ token with the required
   payload while downgrading to _no_ encryption at all.
+* Make sure your JWT is URL safe!
 
 ### Inform the shop about a more sneaky instance of typosquatting it fell for
 
@@ -168,6 +169,7 @@ the JWT look like it was properly signed.
   its JWTs is mandatory for this challenge.
 * Finding the corresponding private key should actually be impossible,
   but that obviously doesn't make this challenge unsolvable.
+* Make sure your JWT is URL safe!
 
 [^1]: https://en.wikipedia.org/wiki/Typosquatting
 
