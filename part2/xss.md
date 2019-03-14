@@ -134,14 +134,15 @@ to master this challenge.
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
-This is the hardest XSS challenge, as it cannot by solved by fiddling
-with the client-side JavaScript or bypassing the client entirely.
-Whenever there is a server-side validation or input processing involved,
-you should investigate how it works. Finding out implementation details
-e.g. used libraries, modules or algorithms - should be your priority. If
-the application does not leak this kind of details, you can still go for
-a _blind approach_ by testing lots and lots of different attack payloads
-and check the reaction of the application.
+This is one of the hardest XSS challenges, as it cannot by solved by
+just fiddling with the client-side JavaScript or bypassing the client
+entirely. Whenever there is a server-side validation or input processing
+involved, you should investigate how it works. Finding out
+implementation details e.g. used libraries, modules or algorithms -
+should be your priority. If the application does not leak this kind of
+details, you can still go for a _blind approach_ by testing lots and
+lots of different attack payloads and check the reaction of the
+application.
 
 _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error
@@ -163,11 +164,18 @@ approach._
 
 ### Perform a persisted XSS attack through an HTTP header
 
-:wrench: **TODO**
+This final XSS challenge originates from an unsafely processed user
+input via an HTTP header. The difficulty lies in finding the attack path
+whereas the actual exploit is rather business as usual.
 
 #### Hints
 
-:wrench: **TODO**
+* Finding a piece of information displayed in the UI that could
+  originate from an HTTP header
+* You might have to look into less common or even proprietary HTTP
+  headers to find the leverage point
+* Adding insult to injury, the HTTP header you need will never be sent
+  by the application on its own
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 
