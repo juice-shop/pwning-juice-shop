@@ -168,7 +168,7 @@ what the order tracking dialog suggested._
 #### Change user password
 
 If you are currently logged in you will find the obligatory _Change
-Password_ button in the navigation bar. On the `#/change-password` page
+Password_ button in the navigation bar. On the `#/privacy-security/change-password` page
 you can then choose a new password. To prevent abuse you have of course
 to supply your current password to legitimate this change.
 
