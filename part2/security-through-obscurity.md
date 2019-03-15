@@ -21,14 +21,23 @@ anti-pattern:
 
 | Challenge                                                        | Difficulty                     |
 |:-----------------------------------------------------------------|:-------------------------------|
+| Prove that you actually read our privacy policy.                 | :star::star::star:             |
 | Apply some advanced cryptanalysis to find _the real_ easter egg. | :star::star::star::star:       |
 | Rat out a notorious character hiding in plain sight in the shop. | :star::star::star::star:       |
 | Learn about the Token Sale before its official announcement.     | :star::star::star::star::star: |
 
+### Prove that you actually read our privacy policy
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
+
 ### Apply some advanced cryptanalysis to find the real easter egg
 
 Solving the
-[Find the hidden easter egg](roll-your-own-security.md#find-the-hidden-easter-egg)
+[Find the hidden easter egg](roll-your-own-security.md#find-the-hidden-easter-egg)
 challenge was probably no as satisfying as you had hoped. Now it is time
 to tackle the taunt of the developers and hunt down _the real_ easter
 egg. This follow-up challenge is basically about finding a secret URL

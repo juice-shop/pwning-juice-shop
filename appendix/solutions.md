@@ -109,9 +109,7 @@ error situation and solve this challenge immediately:
 
 ### Give a devastating zero-star feedback to the store
 
-                         Place an order that makes you rich
-
-1. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve
+Place an order that makes you rich. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve
    the CAPTCHA at the bottom of the form.
 2. The _Submit_ button is still **disabled** because you did not select
    a _Rating_ yet.
@@ -525,6 +523,10 @@ injection as in
    challenge.
 
    ![Order confirmation with negative total](img/negative_order_pdf.pdf.png)
+
+### Prove that you actually read our privacy policy
+
+:wrench: **TODO**
 
 ### Change the href of the link within the O-Saft product description
 
