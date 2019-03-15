@@ -46,6 +46,15 @@ error situation and solve this challenge immediately:
   ![Object Error in Login form](img/login-error_js.png)
   ![SQL error in JS console](img/error_js-console.png)
 
+### Read our privacy policy
+
+1. Log in to the application with any user.
+2. Open the dropdown menu on your profile picture and choose _Privacy &
+   Security_.
+3. You will find yourself on
+   <http://localhost:3000/#/privacy-security/privacy-policy> which
+   instantly solves this challenge for you.
+
 ### Let us redirect you to a donation site that went out of business
 
 1. Log in to the application with any user.
@@ -380,7 +389,7 @@ for this challenge:
 
 ```javascript
   let comment, rating, submitButton, captcha
-  
+
   beforeEach(() => {
     browser.get('/#/contact')
     comment = element(by.id('comment'))
@@ -389,7 +398,7 @@ for this challenge:
     submitButton = element(by.id('submitButton'))
     solveNextCaptcha()
   })
-  
+
   describe('challenge "captchaBypass"', () => {
     it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
       for (var i = 0; i < 11; i++) {
@@ -1315,10 +1324,11 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 4. Change the value of the `alg` property in the `header` part from
    `HS256` to `none`.
 5. Encode the `header` to `base64url`. Similarly, encode the `payload`
-   to `base64url`. *base64url makes it URL safe*, a regular Base64 encode might not work!
-6. Join the two strings obtained above with a `.` (dot symbol) and
-   add a `.` at the end of the obtained string. So, effectively it
-   becomes `base64url(header).base64url(payload).`
+   to `base64url`. *base64url makes it URL safe*, a regular Base64
+   encode might not work!
+6. Join the two strings obtained above with a `.` (dot symbol) and add a
+   `.` at the end of the obtained string. So, effectively it becomes
+   `base64url(header).base64url(payload).`
 7. Change the `Authorization` header of a subsequent request to the
    retrieved JWT (prefixed with `Bearer ` as before) and submit the
    request. Alternatively you can set the `token` cookie to the JWT
