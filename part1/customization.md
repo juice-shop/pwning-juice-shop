@@ -133,6 +133,8 @@ find its syntax along with an excerpt of the default settings.
       information. Defaults to `'But me wait!'`
     * `linkUrl` provides further information about cookie usage.
       Defaults to `'https://www.youtube.com/watch?v=9PnbKL3wuH4'`
+  * `privacyContactEmail` the email address shown as contact in the
+    _Privacy Policy_. Defaults to `donotreply@owasp-juice.shop`
   * `securityTxt` defines the attributes for the `security.txt` file
     based on the <https://securitytxt.org/> Internet draft
     * `contact` an email address, phone number or URL to report security
@@ -248,12 +250,14 @@ application:
     dismissText: 'Me want it!'
     linkText: 'But me wait!'
     linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
+  privacyContactEmail: donotreply@owasp-juice.shop
   securityTxt:
     contact: 'mailto:donotreply@owasp-juice.shop'
     encryption: 'https://pgp.mit.edu/pks/lookup?op=get&search=0x062A85A8CBFBDCDA'
     acknowledgements: '/#/score-board'
 challenges:
   safetyOverride: false
+  overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
 products:
   -
     name: 'Apple Juice (1000ml)'
