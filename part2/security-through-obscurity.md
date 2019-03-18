@@ -28,11 +28,20 @@ anti-pattern:
 
 ### Prove that you actually read our privacy policy
 
-:wrench: **TODO**
+User agreements and privacy policies are too often simply dismissed or
+blindly accepted. This challenge kind of forces you to reconsider that
+approach.
 
 #### Hints
 
-:wrench: **TODO**
+* First you should obviously solve
+  [Read our privacy policy](roll-your-own-security.md#read-our-privacy-policy).
+* It is fine to use the mouse cursor to not lose sight of the paragraph
+  you are currently reading.
+* If you find some particularly hot sections in the policy you might
+  want to melt them together similar to what you might have already
+  uncovered in
+  [Apply some advanced cryptanalysis to find the real easter egg](#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg).
 
 ### Apply some advanced cryptanalysis to find the real easter egg
 

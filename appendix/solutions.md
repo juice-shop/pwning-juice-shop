@@ -109,19 +109,20 @@ error situation and solve this challenge immediately:
 
 ### Give a devastating zero-star feedback to the store
 
-Place an order that makes you rich. Visit the _Contact Us_ form and put in a _Comment_ text. Also solve
-   the CAPTCHA at the bottom of the form.
-2. The _Submit_ button is still **disabled** because you did not select
+Place an order that makes you rich. Visit the _Contact Us_ form and put
+in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
+
+1. The _Submit_ button is still **disabled** because you did not select
    a _Rating_ yet.
-3. Inspect the _Submit_ button with your DevTools and note the
+2. Inspect the _Submit_ button with your DevTools and note the
    `disabled` attribute of the `<button>` HTML tag
-4. Double click on `disabled` attribute to select it and then delete it
+3. Double click on `disabled` attribute to select it and then delete it
    from the tag.
 
    ![Disabled Submit Button in Contact Us form](img/contact_disabled_submit-button.png)
-5. The _Submit_ button is now **enabled**.
-6. Click the _Submit_ button to solve the challenge.
-7. You can verify the feedback was saved by checking the _Customer
+4. The _Submit_ button is now **enabled**.
+5. Click the _Submit_ button to solve the challenge.
+6. You can verify the feedback was saved by checking the _Customer
    Feedback_ widget on the _About Us_ page.
 
    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
@@ -526,7 +527,24 @@ injection as in
 
 ### Prove that you actually read our privacy policy
 
-:wrench: **TODO**
+1. Open <http://localhost:3000/#/privacy-security/privacy-policy>.
+2. Moving your mouse cursor over each paragraph will make a fire-effect
+   appear on certain words or partial sentences.
+
+   ![Hot section in the privacy policy](img/privacy-policy_hot-section.png)
+3. Inspect the HTML in your browser and note down all text inside `<span
+   class="hot">` tags, which are `http://localhost`, `We may also`,
+   `instruct you`, `to refuse all`, `reasonably necessary` and
+   `responsibility`.
+4. Combine those into the URL
+   <http://localhost:3000/we/may/also/instruct/you/to/refuse/all/reasonably/necessary/responsibility>
+   (adding the server port if needed) and solve the challenge by
+   visiting it.
+
+It seems the Juice Shop team did not appreciate your extensive reading
+effort enough to provide even a tiny gratification, as you will receive
+only a `404 Error: ENOENT: no such file or directory, stat
+'/app/frontend/dist/frontend/assets/private/thank-you.jpg'`.
 
 ### Change the href of the link within the O-Saft product description
 
