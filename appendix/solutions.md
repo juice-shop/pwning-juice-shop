@@ -561,7 +561,43 @@ only a `404 Error: ENOENT: no such file or directory, stat
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
-:wrench: **TODO**
+1. Find Bjoern's
+   [_OWASP Juice Shop_ playlist on Youtube](https://www.youtube.com/playlist?list=PLV9O4rIovHhO1y8_78GZfMbH6oznyx2g2)
+2. Watch
+   [BeNeLux Day 2018: Juice Shop: OWASP's Most Broken Flagship - Björn Kimminich](https://www.youtube.com/watch?v=Lu0-kDdtVf4)
+3. This conference talk recording immediately dives into a demo of the
+   Juice Shop application in which Bjoern starts registering a new
+   account 3:59 into the video (<https://youtu.be/Lu0-kDdtVf4?t=239>)
+4. Bjoern picks _Name of your favorite pet?_ as his security question
+   and - live on camera - answers it truthfully with "Zaya", the name of
+   his family's adorable three-legged cat.
+5. Visit <http://localhost:3000/#/forgot-password> and provide
+   `bjoern@owasp.org` as your _Email_.
+6. In the subsequently appearing form, provide `Zaya` as _Name of your
+   favorite pet?_
+7. Then type any _New Password_ and matching _Repeat New Password_
+8. Click _Change_ to solve this challenge
+
+#### Other hints about Bjoern's choice of security answer
+
+The **user profile picture** of his account at
+<http://localhost:3000/assets/public/images/uploads/13.jpg> shows his
+pet cat playing.
+
+![Zaya playing](img/zaya.jpg)
+
+Furthermore, on Bjoern's **Patreon page** at
+<https://www.patreon.com/bkimminich> there is a locked post titled
+"Behind the scenes: Photo-bombed by Zaya" and tagged with the keyword
+"cat" which spoilers the pet's name.
+
+![Locked Patreon post mentioning Zaya](img/patreon_locked-post.png)
+
+Unlocking the post (by becoming a project patron) is not even necessary,
+but it would confirm the identity of the cat when comparing it with the
+user profile picture from before.
+
+![Unlocked Patreon post mentioning Zaya](img/patreon_unlocked-post.png)
 
 ### Reset Jim's password via the Forgot Password mechanism
 
