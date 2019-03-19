@@ -1658,7 +1658,40 @@ loop`._
 
 ###  Overwrite the Legal Information file
 
-:wrench: **TODO**
+1. Combing through the updates of the
+   [@owasp_juiceshop](https://twitter.com/owasp_juiceshop) Twitter
+   account you will notice
+   <https://twitter.com/owasp_juiceshop/status/1107781073575002112>.
+
+   ![Tweet advertising ZIP uploads in "File Complaint"](img/tweet_zip-complaints.png)
+2. Researching ZIP-based vulnerabilities should also yield
+   [Zip Slip](https://snyk.io/research/zip-slip-vulnerability) which
+   exploits directory traversal filenames in file archives.
+3. As the Legal Information file you need to override lives in
+   <http://localhost:3000/ftp/legal.md> and uploading files via _File
+   Complaint_ does not give any feedback where they are stored, an
+   iterative directory traversal approach is recommended.
+4. Prepare a ZIP file (on Linux) with `zip exploit.zip ../ftp/legal.md`.
+5. Log in as any user at <http://localhost:3000/#/login>.
+6. Click _Contact Us_ and _Complain?_ to get to the _File Complaint_
+   screen at <http://localhost:3000/#/complain>.
+7. Type in any message and attach your ZIP file, then click _Submit_.
+8. The challenge will _not_ be solved. Repeat steps 5-7 but with `zip
+   exploit.zip ../../ftp/legal.md` as the payload.
+9. The challenge will be marked as solved! When you visit
+   <http://localhost:3000/ftp/legal.md> you will see your overwritten
+   Legal Information!
+
+> Zip Slip is a form of directory traversal that can be exploited by
+> extracting files from an archive. The premise of the directory
+> traversal vulnerability is that an attacker can gain access to parts
+> of the file system outside of the target folder in which they should
+> reside. The attacker can then overwrite executable files and either
+> invoke them remotely or wait for the system or user to call them, thus
+> achieving remote command execution on the victim’s machine. The
+> vulnerability can also cause damage by overwriting configuration files
+> or other sensitive resources, and can be exploited on both client
+> (user) machines and servers. [^8]
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
@@ -1980,3 +2013,5 @@ to use some unofficial port._
 [^6]: <https://en.wikipedia.org/wiki/Billion_laughs_attack>
 
 [^7]: <https://www.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
+
+[^8]: <https://snyk.io/research/zip-slip-vulnerability>

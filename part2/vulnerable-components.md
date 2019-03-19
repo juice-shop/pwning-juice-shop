@@ -148,6 +148,9 @@ hidden in the Juice Shop. It is supposedly even harder to locate.
 * Find all places in the application where file uploads are possible.
 * For at least one of these, the Juice Shop is depending on a library
   that suffers from an arbitrary file overwrite vulnerability.
+* You can find a hint toward the underlying vulnerability in the
+  [@owasp_juiceshop](https://twitter.com/owasp_juiceshop) Twitter
+  timeline
 
 ### Forge an almost properly RSA-signed JWT token
 
