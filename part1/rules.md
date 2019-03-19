@@ -33,16 +33,6 @@ local storage being used by the application.
 
 ![DevTools Application tab](img/devtools_cookies.png)
 
-If you are not familiar with the features of DevTools yet, there is a
-worthwhile online-learning course
-[Discover DevTools](https://www.codeschool.com/courses/discover-devtools)
-on [Code School](https://www.codeschool.com) available for free. It
-teaches you hands-on how Chrome's powerful developer toolkit works. The
-course is worth a look even if you think you know the DevTools quite
-well already.
-
-![Discover DevTools course on Code School](img/codeschool_devtools.png)
-
 #### Tools for HTTP request tampering
 
 On the _Network_ tab of Firefox's DevTools you have the option to _Edit
@@ -201,7 +191,7 @@ https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
 ### Reading a solution ( :godmode: ) before trying
 
-[Appendix A - Challenge solutions](../_book/appendix/solutions.md) is
+[Appendix A - Challenge solutions](../appendix/solutions.md) is
 there to help you in case you are stuck or have absolutely no idea how a
 specific challenge is solved. Simply going through the entire appendix
 back to back and follow the step-by-step instructions given there for
