@@ -1327,7 +1327,9 @@ payload in his blog post
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 
-:wrench: **TODO**
+1. Find a request to the ```/rest/user/whoami``` API endpoint. Which will look like this.
+
+2. Add a URL parameter called "callback". This will cause the API to return the content as a JavaScript fragment (JSONP) rather than just a standard JSON object.
 
 ### Retrieve the language file that never made it into production
 
