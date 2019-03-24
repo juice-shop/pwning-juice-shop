@@ -171,7 +171,7 @@ interested in.
 Somewhere in the application there is an API endpoint which will allow
 data to be accessed cross domain. Usually the same-origin policy would
 prevent this but this endpoint has a special feature enabled which will
-allow cross domani access under certain circumstances.
+allow cross domain access under certain circumstances.
 
 #### Hints
 
