@@ -168,7 +168,9 @@ interested in.
 
 ### Perform an unwanted information disclosure by accessing data cross-domain
 
-:wrench: **TODO**
+* Try to find and attack an endpoint that responds with user information. SQL Injection is not the solution here.
+* What ways are there to access data from a web applicaiton cross-domain?
+* This challenge uses an old way which is no longer recommended.
 
 #### Hints
 
