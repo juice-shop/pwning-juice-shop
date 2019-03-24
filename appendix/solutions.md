@@ -131,16 +131,20 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
 ### Access the administration section of the store
 
-:wrench: **TODO**
-
 1. Open the `main.js` in your browser's developer tools and search for
    "admin".
 2. One of the matches will be a route mapping to `path:
    "administration"`.
 
    ![Administration page route in main.js](img/minified_js-admin.png)
-3. Navigate to http://localhost:3000/#/administration to solve the
-   challenge.
+3. Navigating to http://localhost:3000/#/administration will give 
+   a `403 Forbidden` error.
+4. Log in to an administrator's account by solving the challenge
+   * [Log in with the administrator's user account](#log-in-with-the-administrators-user-account) or 
+   * [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
+   first and then navigate to http://localhost:3000/#/administration
+   will solve the challenge.
+  
 
 ### View another user's shopping basket
 
