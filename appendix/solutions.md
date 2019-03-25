@@ -1331,7 +1331,11 @@ payload in his blog post
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 
-:wrench: **TODO**
+1. Find a request to the ```/rest/user/whoami``` API endpoint. Notice that you can remove the "Authorization" header and it still works.
+![Normal whoami call](img/normal_whoami.png)
+
+2. Add a URL parameter called "callback". This will cause the API to return the content as a JavaScript fragment (JSONP) rather than just a standard JSON object.
+![whoami call using JSONP](img/jsonp_whoami.png)
 
 ### Retrieve the language file that never made it into production
 
