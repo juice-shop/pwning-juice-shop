@@ -1175,7 +1175,7 @@ explains the problem and gives an exploit example:
 > the output html.
 
 1. Visit http://localhost:3000/#/contact.
-2. Enter `<<script>Foo</script>iframe src="javascript:alert(`xss`)">` as
+2. Enter `<<script>Foo</script>iframe src="javascript:alert('xss')">` as
    _Comment_
 3. Choose a rating and click _Submit_
 4. Visit http://localhost:3000/#/about for a first "xss" alert (from the
