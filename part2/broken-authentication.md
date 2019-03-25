@@ -116,26 +116,14 @@ does not suffice to solve this challenge!
 
 #### Hints
 
-* The fact that the name of this challenge is "CSRF" is already a huge
-  hint on how this challenge has to be approached.
+* In previous releases of OWASP Juice Shop this challenge was wrongly
+  accused of being based on
+  [Cross-Site Request Forgery](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 * It might also have been put into the
   [Weak security mechanisms](roll-your-own-security.md) category.
 * Bender's current password is so strong that brute force, rainbow table
   or guessing attacks will probably not work.
 
-> Cross-Site Request Forgery (CSRF) is an attack that forces an end user
-> to execute unwanted actions on a web application in which they're
-> currently authenticated. CSRF attacks specifically target
-> state-changing requests, not theft of data, since the attacker has no
-> way to see the response to the forged request. With a little help of
-> social engineering (such as sending a link via email or chat), an
-> attacker may trick the users of a web application into executing
-> actions of the attacker's choosing. If the victim is a normal user, a
-> successful CSRF attack can force the user to perform state changing
-> requests like transferring funds, changing their email address, and so
-> forth. If the victim is an administrative account, CSRF can compromise
-> the entire web application.[^3]
->
 > A rainbow table is a precomputed table for reversing cryptographic
 > hash functions, usually for cracking password hashes. Tables are
 > usually used in recovering a plaintext password up to a certain length
@@ -144,7 +132,7 @@ does not suffice to solve this challenge!
 > more storage than a brute-force attack which calculates a hash on
 > every attempt, but more processing time and less storage than a simple
 > lookup table with one entry per hash. Use of a key derivation function
-> that employs a salt makes this attack infeasible.[^4]
+> that employs a salt makes this attack infeasible.[^3]
 
 ### Log in with Bjoern's Gmail account
 
@@ -241,7 +229,7 @@ Bjoern's internal user account `bjoern@juice-sh.op`.
 > backdoor, or other malicious code, into the legitimate software update
 > provided by the vendor. As users update their software, unwittingly
 > falling victim to the Trojanized update, they also install the
-> embedded malicious code.[^5]
+> embedded malicious code.[^4]
 
 :information_source: Please note that having the OWASP Juice Shop
 installed on your computer _does not_ put you at any actual risk! This
@@ -263,8 +251,6 @@ any other harmful code to your system!
 
 [^2]: https://en.wikipedia.org/wiki/Doxing
 
-[^3]: https://www.owasp.org/index.php/CSRF
+[^3]: https://en.wikipedia.org/wiki/Rainbow_table
 
-[^4]: https://en.wikipedia.org/wiki/Rainbow_table
-
-[^5]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm
+[^4]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm
