@@ -875,6 +875,10 @@ more attention & a good portion of shrewdness.
 > algorithm provides virtually no cryptographic security, and is often
 > cited as a canonical example of weak encryption.[^1]
 
+### Successfully redeem an expired campaign coupon code
+
+:wrench: **TODO**
+
 ### Access a developer's forgotten backup file
 
 1. Browse to <http://localhost:3000/ftp> (like in

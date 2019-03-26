@@ -8,6 +8,7 @@
 | Behave like any "white hat" should.                     | :star::star:             |
 | Submit 10 or more customer feedbacks within 10 seconds. | :star::star::star:       |
 | Find the hidden easter egg.                             | :star::star::star::star: |
+| Successfully redeem an expired campaign coupon code.    | :star::star::star::star: |
 | Access a developer's forgotten backup file.             | :star::star::star::star: |
 | Access a misplaced SIEM signature file.                 | :star::star::star::star: |
 | Wherever you go, there you are.                         | :star::star::star::star: |
@@ -119,6 +120,14 @@ as the developers taunt you about not having found **the real** easter
 egg! Of course finding **that** is
 [a follow-up challenge](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
 to this one._
+
+### Successfully redeem an expired campaign coupon code
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Access a developer's forgotten backup file
 
