@@ -21,13 +21,13 @@
 
 | Challenge                                                                                                                     | Difficulty               |
 |:------------------------------------------------------------------------------------------------------------------------------|:-------------------------|
-| Perform a _reflected_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                               | :star:                   |
-| Perform a _DOM_ XSS attack with `<iframe src="javascript:alert(`xss`)">`.                                                     | :star:                   |
+| Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | :star:                   |
+| Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | :star:                   |
 | Perform an XSS attack with `<script>alert(`xss`)</script>` on a legacy page within the application.                           | :star::star:             |
-| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a client-side security mechanism.    | :star::star::star:       |
-| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` without using the frontend application at all. | :star::star::star:       |
-| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` bypassing a server-side security mechanism.    | :star::star::star::star: |
-| Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` through an HTTP header.                        | :star::star::star::star: |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | :star::star::star:       |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | :star::star::star:       |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | :star::star::star::star: |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | :star::star::star::star: |
 
 ### Perform a reflected XSS attack
 
@@ -152,14 +152,14 @@ approach._
 
 * The _Comment_ field in the _Contact Us_ screen is where you want to
   put your focus on
-* The attack payload `<iframe src="javascript:alert(`xss`)">` will _not
+* The attack payload ``<iframe src="javascript:alert(`xss`)">`` will _not
   be rejected_ by any validator but _stripped from the comment_ before
   persisting it
 * Look for possible dependencies related to input processing in the
   `package.json.bak` you harvested earlier
 * If an `xss` alert shows up but the challenge does not appear as solved
   on the _Score Board_, you might not have managed to put the _exact_
-  attack string `<iframe src="javascript:alert(`xss`)">` into the
+  attack string ``<iframe src="javascript:alert(`xss`)">`` into the
   database?
 
 ### Perform a persisted XSS attack through an HTTP header

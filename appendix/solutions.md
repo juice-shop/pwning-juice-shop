@@ -91,7 +91,7 @@ error situation and solve this challenge immediately:
 
 1. Log in as any user.
 2. Click the _Track Orders_ button.
-3. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into
+3. Paste the attack string ``<iframe src="javascript:alert(`xss`)">`` into
    the _Order ID_ field.
 4. Click the _Track_ button.
 5. An alert box with the text "xss" should appear.
@@ -100,7 +100,7 @@ error situation and solve this challenge immediately:
 
 ### Perform a DOM XSS attack
 
-1. Paste the attack string `<iframe src="javascript:alert(`xss`)">` into
+1. Paste the attack string ``<iframe src="javascript:alert(`xss`)">`` into
    the _Search..._ field.
 2. Click the _Search_ button.
 3. An alert box with the text "xss" should appear.
@@ -131,16 +131,21 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
 ### Access the administration section of the store
 
-:wrench: **TODO**
-
 1. Open the `main.js` in your browser's developer tools and search for
    "admin".
 2. One of the matches will be a route mapping to `path:
    "administration"`.
 
    ![Administration page route in main.js](img/minified_js-admin.png)
-3. Navigate to http://localhost:3000/#/administration to solve the
-   challenge.
+3. Navigating to http://localhost:3000/#/administration will give a `403
+   Forbidden` error.
+4. Log in to an administrator's account by solving the challenge
+   * [Log in with the administrator's user account](#log-in-with-the-administrators-user-account)
+     or
+   * [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
+     first and then navigate to http://localhost:3000/#/administration
+     will solve the challenge.
+
 
 ### View another user's shopping basket
 
@@ -1285,13 +1290,14 @@ explains the problem and gives an exploit example:
    <http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic>
    to solve the challenge.
 
-   ![CSRF-like request via PostMan](img/csrf_postman.png)
+   ![GET request via PostMan](img/csrf_postman.png)
 
-#### Bonus Round: Cross Site Request Forgery
+#### Bonus Round: Delivering the attack via reflected XSS
 
-If you want to craft an actual CSRF attack against
-`/rest/user/change-password` you will have to invest a bit extra work,
-because a simple attack like _Search_ for `<img
+If you want to craft an actually realistic attack against
+`/rest/user/change-password` that you could send a user as a malicious
+link, you will have to invest a bit extra work, because a simple attack
+like _Search_ for `<img
 src="http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic">`
 will not work. Making someone click on the corresponding attack link
 <http://localhost:3000/#/search?q=%3Cimg%20src%3D%22http:%2F%2Flocalhost:3000%2Frest%2Fuser%2Fchange-password%3Fnew%3DslurmCl4ssic%26repeat%3DslurmCl4ssic%22%3E>
@@ -1317,7 +1323,7 @@ Pretty-printed this attack is easier to understand:
 Anyone who is logged in to the Juice Shop while clicking on this link
 will get their password set to the same one we forced onto Bender!
 
-:clap: Kudos to Joe Butler, who originally described this kind of CSRF
+:clap: Kudos to Joe Butler, who originally described this advanced XSS
 payload in his blog post
 [Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
 
@@ -1327,7 +1333,14 @@ payload in his blog post
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 
-:wrench: **TODO**
+1. Find a request to the ```/rest/user/whoami``` API endpoint. Notice
+   that you can remove the "Authorization" header and it still works.
+   ![Normal whoami call](img/normal_whoami.png)
+
+2. Add a URL parameter called "callback". This will cause the API to
+   return the content as a JavaScript fragment (JSONP) rather than just
+   a standard JSON object.
+   ![whoami call using JSONP](img/jsonp_whoami.png)
 
 ### Retrieve the language file that never made it into production
 

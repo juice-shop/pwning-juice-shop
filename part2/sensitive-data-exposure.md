@@ -168,11 +168,17 @@ interested in.
 
 ### Perform an unwanted information disclosure by accessing data cross-domain
 
-:wrench: **TODO**
+Somewhere in the application there is an API endpoint which will allow
+data to be accessed cross domain. Usually the same-origin policy would
+prevent this but this endpoint has a special feature enabled which will
+allow cross domain access under certain circumstances.
 
 #### Hints
 
-:wrench: **TODO**
+* Try to find and attack an endpoint that responds with user information. SQL Injection
+  is not the solution here.
+* What ways are there to access data from a web application cross-domain?
+* This challenge uses an old way which is no longer recommended.
 
 ### Forge a coupon code that gives you a discount of at least 80%
 
