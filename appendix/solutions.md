@@ -91,8 +91,8 @@ error situation and solve this challenge immediately:
 
 1. Log in as any user.
 2. Click the _Track Orders_ button.
-3. Paste the attack string ``<iframe src="javascript:alert(`xss`)">`` into
-   the _Order ID_ field.
+3. Paste the attack string ``<iframe src="javascript:alert(`xss`)">``
+   into the _Order ID_ field.
 4. Click the _Track_ button.
 5. An alert box with the text "xss" should appear.
 
@@ -100,8 +100,8 @@ error situation and solve this challenge immediately:
 
 ### Perform a DOM XSS attack
 
-1. Paste the attack string ``<iframe src="javascript:alert(`xss`)">`` into
-   the _Search..._ field.
+1. Paste the attack string ``<iframe src="javascript:alert(`xss`)">``
+   into the _Search..._ field.
 2. Click the _Search_ button.
 3. An alert box with the text "xss" should appear.
 
@@ -272,18 +272,18 @@ in order to exploit and solve them:
 2. Visit our user profile page at <http://localhost:3000/profile>.
 3. Type in any _Username_ and click the _Set Username_ button.
 4. Notice that the username is displayed beneath the profile image.
-5. Change the username into `<script>alert(`xss`)</script>` and click
+5. Change the username into ``<script>alert(`xss`)</script>`` and click
    _Set Username_.
 6. Notice the displayed username under the profile picture now is
-   `lert(`xss`)` while in the _Username_ field it shows
-   `lert(`xss`)</script>` - both a clear indication that the malicious
+   ``lert(`xss`)`` while in the _Username_ field it shows
+   ``lert(`xss`)</script>`` - both a clear indication that the malicious
    input was sanitized. Obviously the sanitization was not very
    sophisticated, as the input was quite mangled and even the closing
    `<script>` tag survived the procedure.
-7. Change the username into `<<a|ascript>alert(`xss`)</script>` and
+7. Change the username into ``<<a|ascript>alert(`xss`)</script>`` and
    click _Set Username_.
 8. The naive sanitizer only removes `<a|a` effectively changing the
-   username into `<script>alert(`xss`)</script>` thus resulting in the
+   username into ``<script>alert(`xss`)</script>`` thus resulting in the
    expected alert box popping up.
 
 ## Medium Challenges (  :star::star::star:  )
