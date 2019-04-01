@@ -17,13 +17,14 @@ the OWASP Juice Shop team, project leader or community!
 
 ## Feedback Channels
 
-| Channel                                                           | Link                                                 |
-|:------------------------------------------------------------------|:-----------------------------------------------------|
-| GitHub Issues                                                     | https://github.com/bkimminich/juice-shop/issues      |
-| Tweet via [@owasp_juiceshop](https://twitter.com/owasp_juiceshop) | https://twitter.com/intent/tweet?via=owasp_juiceshop |
-| Community Chat                                                    | https://gitter.im/bkimminich/juice-shop              |
-| OWASP Slack Channel                                               | https://owasp.slack.com/messages/project-juiceshop   |
-| Project Mailing List                                              | <mailto:owasp_juice_shop_project@lists.owasp.org>    |
+| Channel                                 | Link                                                                     |
+|:----------------------------------------|:-------------------------------------------------------------------------|
+| GitHub Issues                           | <https://github.com/bkimminich/juice-shop/issues>                        |
+| Community Chat                          | <https://gitter.im/bkimminich/juice-shop>                                |
+| OWASP Slack Channel                     | <https://owasp.slack.com/messages/project-juiceshop>                     |
+| Google Groups Forum                     | <https://groups.google.com/a/owasp.org/forum/#!forum/juice-shop-project> |
+| Project Mailing List (on Google Groups) | <mailto:juice-shop-project@owasp.org>                                    |
+| Reddit                                  | <https://www.reddit.com/r/owasp_juiceshop>                               |
 
 Your honest feedback is always appreciated, no matter if it is positive
 or negative!
