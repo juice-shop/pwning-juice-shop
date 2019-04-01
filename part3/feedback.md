@@ -9,8 +9,8 @@
 * Do you disagree with the difficulty rating for some of the challenges?
 * Did you spot a misbehaving UI component or broken image?
 * Did you enjoy a conference talk, podcast or video about OWASP Juice
-  Shop that is missing in the
-  [project media compilation on GitHub](https://github.com/bkimminich/juice-shop#project-media--marketing)?
+  Shop that is missing in our
+  [references compilation on GitHub](https://github.com/bkimminich/juice-shop/blob/master/REFERENCES.md)?
 
 In all the above (as well as other similar) cases, please reach out to
 the OWASP Juice Shop team, project leader or community!
