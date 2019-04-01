@@ -57,9 +57,6 @@ might also prove useful in another challenge later on.
   prevents access to it.
 * You need to trick the security mechanism into thinking that the file
   has a valid file type.
-* For this challenge there are _two approaches_ to succeed with one
-  being based on Security Misconfiguration and the other on a
-  [Roll Your Own Security](roll-your-own-security.md)-problem.
 
 ### Reset Morty's password via the Forgot Password mechanism
 
