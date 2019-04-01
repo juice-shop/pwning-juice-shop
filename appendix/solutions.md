@@ -452,21 +452,6 @@ logged out but provide any `UserId` in the JSON payload.
 
 :wrench: **TODO**
 
-### Access a salesman's forgotten backup file
-
-1. Browse to <http://localhost:3000/ftp> (like in
-   [Access a confidential document](#access-a-confidential-document).
-2. Opening <http://localhost:3000/ftp/coupons_2013.md.bak> directly will
-   fail complaining about an illegal file type.
-3. Exploit a bug in the `md_debug` parameter that was obviously not
-   supposed to go into production to bypass the filter and solve the
-   challenge:
-   <http://localhost:3000/ftp/coupons_2013.md.bak?md_debug=.md>
-
-Alternatively this challenge can also be solved via _Poison Null Byte_
-injection as in
-[Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file).
-
 ### Log in with Amy's original user credentials
 
 1. Google for either `93.83 billion trillion trillion centuries` or `One
@@ -907,6 +892,13 @@ more attention & a good portion of shrewdness.
 > null terminated strings. By placing a NULL byte in the string at a
 > certain byte, the string will terminate at that point, nulling the
 > rest of the string, such as a file extension.[^2]
+
+### Access a salesman's forgotten backup file
+
+1. Use the _Poison Null Byte_ attack described in
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)...
+2. ...to download
+   <http://localhost:3000/ftp/coupons_2013.md.bak%2500.md>
 
 ### Log in with Bjoern's Gmail account
 
