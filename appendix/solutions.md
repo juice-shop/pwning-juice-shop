@@ -2037,11 +2037,15 @@ to use some unofficial port._
    later.` after roughly 2 seconds. This is due to a defined timeout so
    you do not really DoS your Juice Shop server.
 
+###  Request a hidden resource on server through server
+
+:wrench: **TODO**
+
 ###  Infect the server with malware by abusing arbitrary command execution
 
 :wrench: **TODO**
 
-###  Request a hidden resource on server through server
+### Embed an XSS payload into one of our marketing collaterals
 
 :wrench: **TODO**
 

@@ -19,15 +19,16 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                     | Difficulty               |
-|:------------------------------------------------------------------------------------------------------------------------------|:-------------------------|
-| Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | :star:                   |
-| Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | :star:                   |
-| Perform an XSS attack with `<script>alert(`xss`)</script>` on a legacy page within the application.                           | :star::star:             |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | :star::star::star:       |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | :star::star::star:       |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | :star::star::star::star: |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | :star::star::star::star: |
+| Challenge                                                                                                                       | Difficulty                           |
+|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | :star:                               |
+| Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | :star:                               |
+| Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | :star::star:                         |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | :star::star::star:                   |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | :star::star::star:                   |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | :star::star::star::star:             |
+| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | :star::star::star::star:             |
+| Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into one of our marketing collaterals.                          | :star::star::star::star::star::star: |
 
 ### Perform a reflected XSS attack
 
@@ -152,9 +153,9 @@ approach._
 
 * The _Comment_ field in the _Contact Us_ screen is where you want to
   put your focus on
-* The attack payload ``<iframe src="javascript:alert(`xss`)">`` will _not
-  be rejected_ by any validator but _stripped from the comment_ before
-  persisting it
+* The attack payload ``<iframe src="javascript:alert(`xss`)">`` will
+  _not be rejected_ by any validator but _stripped from the comment_
+  before persisting it
 * Look for possible dependencies related to input processing in the
   `package.json.bak` you harvested earlier
 * If an `xss` alert shows up but the challenge does not appear as solved
@@ -176,6 +177,14 @@ whereas the actual exploit is rather business as usual.
   headers to find the leverage point
 * Adding insult to injury, the HTTP header you need will never be sent
   by the application on its own
+
+### Embed an XSS payload into one of our marketing collaterals
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 
