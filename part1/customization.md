@@ -156,9 +156,9 @@ find its syntax along with an excerpt of the default settings.
       `JuiceShopJingle.mp4`
     * `subtitles` name of a
       [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/)
-      file in `/app/public/subtitles` _or_ URL of an image to download
+      file in `/app/public/videos` _or_ URL of an image to download
       to that folder and then use as the promotion video. Defaults to
-      `jingleSubtitles.vtt`
+      `JuiceShopJingle.vtt`
 * `challenges`
   * `safetyOverride` enables all challenges regardless of any potential
     harm or danger they might pose for your computer (i.e. XXE or RCE
