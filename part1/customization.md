@@ -145,6 +145,20 @@ find its syntax along with an excerpt of the default settings.
       `https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda`
     * `acknowledgements` URL a "hall of fame" page. Can be fake
       obviously. Defaults to `/#/score-board`
+  * `promotion` defines the attributes required for the `/promotion`
+    screen where a marketing video with subtitles is rendered that hosts
+    the
+    [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-one-of-our-marketing-collaterals)
+    challenge
+    * `video` name of a file with `video/mp4` content type in
+      `/app/public/videos` _or_ URL of an image to download to that
+      folder and then use as the promotion video. Defaults to
+      `JuiceShopJingle.mp4`
+    * `subtitles` name of a
+      [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/)
+      file in `/app/public/subtitles` _or_ URL of an image to download
+      to that folder and then use as the promotion video. Defaults to
+      `jingleSubtitles.vtt`
 * `challenges`
   * `safetyOverride` enables all challenges regardless of any potential
     harm or danger they might pose for your computer (i.e. XXE or RCE
@@ -255,6 +269,9 @@ application:
     contact: 'mailto:donotreply@owasp-juice.shop'
     encryption: 'https://pgp.mit.edu/pks/lookup?op=get&search=0x062A85A8CBFBDCDA'
     acknowledgements: '/#/score-board'
+  promotion:
+    video: JuiceShopJingle.mp4
+    subtitles: jingleSubtitles.vtt
 challenges:
   safetyOverride: false
   overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
