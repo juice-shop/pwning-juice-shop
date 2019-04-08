@@ -2047,7 +2047,68 @@ to use some unofficial port._
 
 ### Embed an XSS payload into one of our marketing collaterals
 
-:wrench: **TODO**
+1. The author
+   [tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
+   from his personal account, openly spoilering the URL
+   <http://juice-shop-staging.herokuapp.com/promotion>
+
+   ![Tweet promoting a new in-app promotion video](img/tweet_promotion.png)
+2. Visit <http://localhost:3000/promotion> to watch the video. You will
+   notice that it comes with subtitles enabled by default.
+
+   ![In-app promotion video](img/promo_video.png)
+3. Right-click and select _View Source_ on the page to learn that it
+   loads its video from <http://localhost:3000/video> and that the
+   subtitles are directly embedded in the page itself.
+4. Inspecting the response for <http://localhost:3000/video> in the
+   _Network_ tab of your DevTools shows an interesting header
+   `Content-Location: /assets/public/videos/JuiceShopJingle.mp4`
+5. Trying to access the video directly at
+   <http://localhost:3000/assets/public/videos/JuiceShopJingle.mp4>
+   works fine.
+6. Getting a directory listing for
+   <http://localhost:3000/assets/public/videos> does not work
+   unfortunately.
+7. Knowing that the subtitles are in
+   [WebVTT](https://www.w3.org/TR/webvtt1/) format (from step 3) a lucky
+   guess would be that a corresponding `.vtt` file is available
+   alongside the video.
+8. Accessing
+   <http://localhost:3000/assets/public/videos/JuiceShopJingle.vtt>
+   proves this assumption correct.
+9. As the subtitles are not loaded separately by the client, they must
+   be embedded on the server side. If this embedding happens without
+   proper safeguards, an XSS attack would be possible if the subtitles
+   files could be overwritten.
+10. The prescribed XSS payload also hints clearly at the intended attack
+    against the subtitles, which are themselves enclosed in a `<script>`
+    tag, which the payload will try to close prematurely with its
+    starting `</script>`.
+11. To successfully overwrite the file, the Zip Slip vulnerability
+    behind the
+    [Overwrite the Legal Information file](#overwrite-the-legal-information-file)
+    challenge can be used.
+12. The blind part of this challenge is the actual file location in the
+    server file system. Trying to create a Zip file with any path trying
+    to traverse into `../../assets/public/videos/` will fail. Notice
+    that `../../` was sufficient to get to the root folder in
+    [Overwrite the Legal Information file](#overwrite-the-legal-information-file).
+13. This likely means that there is a deeper directory structure in
+    which `assets/` resides.
+14. This actual directory structure on the server is created by the
+    AngularCLI tool when it compiles the application and looks as
+    follows: `frontend/dist/frontend/assets/`.
+15. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that contains
+    the prescribed payload of ``</script><script>alert(`xss`)</script>``
+    with `zip exploit.zip
+    ../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt`
+    (on Linux).
+16. Upload the ZIP file on <http://localhost:3000/#/complain>.
+17. The challenge notification will not trigger immediately, as it
+    requires you to actually execute the payload by visiting
+    <http://localhost:3000/promotion> again.
+18. You will see the alert box and once you go _Back_ the challenge
+    solution should trigger accordingly.
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
 

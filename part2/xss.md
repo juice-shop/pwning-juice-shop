@@ -165,9 +165,9 @@ approach._
 
 ### Perform a persisted XSS attack through an HTTP header
 
-This final XSS challenge originates from an unsafely processed user
-input via an HTTP header. The difficulty lies in finding the attack path
-whereas the actual exploit is rather business as usual.
+This XSS challenge originates from an unsafely processed user input via
+an HTTP header. The difficulty lies in finding the attack path whereas
+the actual exploit is rather business as usual.
 
 #### Hints
 
@@ -180,11 +180,19 @@ whereas the actual exploit is rather business as usual.
 
 ### Embed an XSS payload into one of our marketing collaterals
 
-:wrench: **TODO**
+As with the previous one, the difficulty of this challenge is based on
+how hard it is to successfully place the XSS payload in the application.
 
 #### Hints
 
-:wrench: **TODO**
+* Without utilizing the vulnerability behind another
+  :star::star::star::star::star::star: challenge it is not possible to
+  plant the XSS payload for this challenge
+* The mentioned "marketing collateral" might have been publicly
+  advertised by the Juice Shop but is not necessarily part of its
+  sitemap yet
+* This challenge will always partially keep you blindfolded, no matter
+  how hard you do research and analysis.
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
 
