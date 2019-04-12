@@ -4,8 +4,8 @@ If you would like to contribute to OWASP Juice Shop but need some idea
 what task to address, the best place to look is in the GitHub issue
 lists at <https://github.com/bkimminich/juice-shop/issues>.
 
-!["help wanted" label on GitHub](img/help_wanted-label.png)
-!["good first issue" label on GitHub](img/good_first_issue-label.png)
+!["help wanted" label on GitHub](img/help_wanted-label.png)
+!["good first issue" label on GitHub](img/good_first_issue-label.png)
 
 * Issues labelled with **help wanted** indicate tasks where the project
   team would very much appreciate help from the community
@@ -20,7 +20,7 @@ processes when contributing to the OWASP Juice Shop project.
 
 If you are new to application development - particularly with Angular
 and Express.js - it is recommended to read the
-[Codebase 101](codebase.md) to get an overview what belongs where. It
+[Codebase 101](codebase.md) to get an overview what belongs where. It
 will lower the entry barrier for you significantly.
 
 ## Version control
@@ -37,7 +37,7 @@ OWASP Juice Shop is maintained in a simplified
 [Gitflow](http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/)
 fashion, where all active development happens on the `develop` branch
 while `master` is used to deploy stable versions to the
-[Heroku demo instance](https://juice-shop.herokuapp.com) and later
+[Heroku demo instance](https://juice-shop.herokuapp.com) and later
 create tagged releases from.
 
 Feature branches are only used for long-term tasks that could jeopardize
@@ -85,15 +85,17 @@ branch for a PR afterwards some time ago.
 The minimum requirements for code contributions are:
 
 1. The code must be compliant with the
-   [JS Standard Code Style rules](http://standardjs.com)
+   [JS Standard Code Style rules](http://standardjs.com) or their
+   correspondingly configured TSLint rules
 2. All new and changed code should have a corresponding unit and/or
    integration test
-3. New and changed challenges should have a corresponding e2e test
-4. All unit, integration and e2e tests must pass locally
+3. New and changed challenges must have a corresponding e2e test
+4. Linting and all unit, integration and e2e tests should pass locally
+   before opening a Pull Request
 
 ### Linting
 
-![JavaScript Style Guide](img/badge.svg)
+![JavaScript Style Guide](img/badge.svg)
 
 ```bash
 npm run lint
@@ -108,12 +110,9 @@ The `npm run lint` script verifies code compliance with
 If PRs deviate from this coding style, they will the build and will not
 be merged until made compliant.
 
-In case your PR is failing from style guide issues try running `standard
---fix` over your code - this will fix all syntax or code style issues
+In case your PR is failing from style guide issues try running `npm run
+fix` over your code - this will fix all syntax or code style issues
 automatically without breaking your code.
-
-:point_up: For this you will need to install `standard` globally on your
-computer with `npm i -g standard`.
 
 ### Testing
 
@@ -125,7 +124,7 @@ npm run protractor # run all end-to-end tests
 
 Pull Requests are verified to pass all of the following test stages
 during the
-[continuous integration build](https://travis-ci.org/bkimminich/juice-shop).
+[continuous integration build](https://travis-ci.org/bkimminich/juice-shop).
 It is recommended that you run these tests on your local computer to
 verify they pass before submitting a PR. New features should be
 accompanied by an appropriate number of corresponding tests to verify
@@ -171,7 +170,7 @@ and internet access to be able to pass.
 If you have a web proxy configured via `HTTP_PROXY` environment
 variable, the end-to-end tests will honor this setting. This can be
 useful to e.g. run the tests through tools like
-[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+[OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 or Burpsuite.
 
 ### Testing packaged distrubutions
@@ -187,7 +186,7 @@ npm install --production && grunt package
 
 Then take the created archive from `/dist` and follow the steps
 described above in
-[Packaged Distributions](https://github.com/bkimminich/juice-shop#packaged-distributions--)
+[Packaged Distributions](https://github.com/bkimminich/juice-shop#packaged-distributions--)
 to make sure nothing is broken or missing.
 
 ## Continuous integration & deployment
@@ -206,7 +205,7 @@ Pull Requests from other branches or forks as well. This helps the
 project team to assess if a PR can be safely merged into the codebase.
 For tag-builds (i.e. versions to be released) the some additional steps
 are necessary to package the
-[release-artifacts for Linux for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
+[release-artifacts for Linux for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
 and attach these to the release page on GitHub. Lastly, not all stages
 are executed for all supported Node.js versions in order to shorten the
 feedback loop. The higher-level integration and e2e tests are only run
@@ -236,7 +235,7 @@ can be built on Windows:
 
 No linters or test suites are executed. Instead AppVeyor packages and
 attaches
-[release-artifacts for Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
+[release-artifacts for Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
 to GitHub in case a tag-build is executed.
 
 | Trigger               | Build Tasks                                                                                                                      |
