@@ -72,6 +72,10 @@ error situation and solve this challenge immediately:
    <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
    to solve the challenge.
 
+### Follow the DRY principle while registering a user
+
+:wrench: **TODO**
+
 ### Find the carefully hidden 'Score Board' page
 
 1. Go to the _Sources_ tab of your browsers DevTools and open the
