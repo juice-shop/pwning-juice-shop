@@ -74,7 +74,18 @@ error situation and solve this challenge immediately:
 
 ### Follow the DRY principle while registering a user
 
-:wrench: **TODO**
+1. Go to <http://localhost:3000/#/register>.
+2. Fill out all required information except the _Password_ and _Repeat
+   Password_ field.
+3. Type e.g. `12345` into the _Password_ field.
+4. Now type `12345` into the _Repeat Password_ field. While typing the
+   numbers you will see a _Passwords do not match_ error until you reach
+   `12345`.
+5. Finally go back to the _Password_ field and change it into any other
+   password. The _Repeat Password_ field does not show the expected
+   error.
+6. Submit the form with _Register_ which will solve this challenge.
+
 
 ### Find the carefully hidden 'Score Board' page
 

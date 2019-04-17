@@ -19,11 +19,18 @@
 
 ### Follow the DRY principle while registering a user
 
-:wrench: **TODO**
+> The DRY (Don't Repeat Yourself) Principle states:
+> > Every piece of knowledge must have a single, unambiguous,
+> > authoritative representation within a system.
 
 #### Hints
 
-:wrench: **TODO**
+* The obvious repetition in the _User Registration_ form is the _Repeat
+  Password_ field
+* Try to register with either an empty or different value in _Repeat
+  Password_
+* You can solve this challenge by cleverly interacting with the UI or
+  bypassing it altogether
 
 ### Give a devastating zero-star feedback to the store
 
