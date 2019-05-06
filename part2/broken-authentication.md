@@ -5,6 +5,7 @@
 | Challenge                                                                                                                                                | Difficulty                     |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
 | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                                             | :star::star:                   |
+| Log in with Chris' erased user account.                                                                                                                  | :star::star::star:             |
 | Reset the password of Bjoern's OWASP account via the Forgot Password mechanism with _the truthful answer_ to his security question.                      | :star::star::star:             |
 | Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                                              | :star::star::star:             |
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection.                                                                                | :star::star::star::star:       |
@@ -30,6 +31,14 @@ _always_ be accepted to make sure you can solve this challenge.
   that.
 * In case you use some hacker tool, you can also go for a _brute force
   attack_ using a generic _password list_
+
+### Log in with Chris' erased user account
+
+:wrench: **TODO**
+
+#### Hints
+
+:wrench: **TODO**
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 

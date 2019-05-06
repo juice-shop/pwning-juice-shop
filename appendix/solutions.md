@@ -467,6 +467,10 @@ logged out but provide any `UserId` in the JSON payload.
 
 :wrench: **TODO**
 
+### Log in with Chris' erased user account
+
+:wrench: **TODO**
+
 ### Log in with Amy's original user credentials
 
 1. Google for either `93.83 billion trillion trillion centuries` or `One
@@ -940,6 +944,10 @@ more attention & a good portion of shrewdness.
    `moc.liamelgoog@hcinimmik.nreojb`, so you can log in directly with
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
+
+### Steal someone else's personal data without using Injection
+
+:wrench: **TODO**
 
 ### Find an old Recycle request and inform the shop about its unusual address
 

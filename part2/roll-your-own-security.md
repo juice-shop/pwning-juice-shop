@@ -2,16 +2,17 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                               | Difficulty               |
-|:--------------------------------------------------------|:-------------------------|
-| Read our privacy policy.                                | :star:                   |
-| Behave like any "white hat" should.                     | :star::star:             |
-| Submit 10 or more customer feedbacks within 10 seconds. | :star::star::star:       |
-| Find the hidden easter egg.                             | :star::star::star::star: |
-| Successfully redeem an expired campaign coupon code.    | :star::star::star::star: |
-| Access a developer's forgotten backup file.             | :star::star::star::star: |
-| Access a misplaced SIEM signature file.                 | :star::star::star::star: |
-| Wherever you go, there you are.                         | :star::star::star::star: |
+| Challenge                                                   | Difficulty               |
+|:------------------------------------------------------------|:-------------------------|
+| Read our privacy policy.                                    | :star:                   |
+| Behave like any "white hat" should.                         | :star::star:             |
+| Submit 10 or more customer feedbacks within 10 seconds.     | :star::star::star:       |
+| Find the hidden easter egg.                                 | :star::star::star::star: |
+| Successfully redeem an expired campaign coupon code.        | :star::star::star::star: |
+| Access a developer's forgotten backup file.                 | :star::star::star::star: |
+| Steal someone else's personal data without using Injection. | :star::star::star::star: |
+| Access a misplaced SIEM signature file.                     | :star::star::star::star: |
+| Wherever you go, there you are.                             | :star::star::star::star: |
 
 ### Read our privacy policy
 
@@ -146,6 +147,14 @@ crucial in several other challenges later on.
 * You need to trick the security mechanism into thinking that the file
   has a valid file type.
 * For this challenge there is only _one approach_ to pull this trick.
+
+### Steal someone else's personal data without using Injection
+
+:wrench: **TODO**
+
+### Hints
+
+:wrench: **TODO**
 
 ### Access a misplaced SIEM signature file.
 
