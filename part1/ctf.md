@@ -218,16 +218,18 @@ answers available which you can choose by simply hitting `ENTER`.
      value.
 
 The category of each challenge is identical to its
-[category in the Juice Shop](categories.md) database. The score value of
-each challenge is calculated by the `juice-shop-ctf-cli` program as
-follows:
+[category in the Juice Shop](categories.md) database. The score value
+and optional costs for hints of each challenge are calculated by the
+`juice-shop-ctf-cli` program as follows:
 
-* 1-:star: challenge = 100 points
-* 2-:star: challenge = 250 points
-* 3-:star: challenge = 450 points
-* 4-:star: challenge = 700 points
-* 5-:star: challenge = 1000 points
-* 6-:star: challenge = 1350 points
+| Difficulty                           | Score value | Paid hint costs (Text / URL) |
+|:-------------------------------------|:------------|:-----------------------------|
+| :star:                               | 100 points  | (10 points / 20 points)      |
+| :star::star:                         | 250 points  | (25 points / 50 points)      |
+| :star::star::star:                   | 450 points  | (45 points / 90 points)      |
+| :star::star::star::star:             | 700 points  | (70 points / 140 points)     |
+| :star::star::star::star::star:       | 1000 points | (100 points / 200 points)    |
+| :star::star::star::star::star::star: | 1350 points | (135 points / 260 points)    |
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
@@ -294,8 +296,9 @@ CTFd run-mode below.
    box is ticket. Press _Import_.
 7. _(Only for CTFd 2.0.x)_ Dismiss any occuring `Internal Server Error`
    alert popup after import and restart your CTFd server.
-8. _(Only for CTFd 2.x)_ Repeat the initial admin and CTF setup from step 4. to regain
-   access to the CTF game. It is now pre-populated with the Juice Shop challenges.
+8. _(Only for CTFd 2.x)_ Repeat the initial admin and CTF setup from
+   step 4. to regain access to the CTF game. It is now pre-populated
+   with the Juice Shop challenges.
 
 #### Docker container setup
 
@@ -308,7 +311,7 @@ CTFd run-mode below.
 3. After running `docker-compose up` from previous step, you should be
    able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
    default) and create an admin user and CTF name.
-4. Follow the steps 5-8 from the [Default setup](#local-server-setup)
+4. Follow the steps 5-8 from the [Local server setup](#local-server-setup)
    described above.
 
 ##### Non-production Docker image
@@ -318,7 +321,7 @@ CTFd run-mode below.
    {{book.ctfdVersion}}
 3. Execute `docker run --rm -p 8000:8000 ctfd/ctfd:<version>` to run
    {{book.ctfdVersion}}
-4. Follow the steps 5-8 from the [Default setup](#local-server-setup)
+4. Follow the steps 5-8 from the [Local server setup](#local-server-setup)
    described above
 
 Once you have CTFd up and running, you should see all the created data
