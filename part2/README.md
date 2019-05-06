@@ -1,4 +1,4 @@
-<# Part II - Challen>ge hunting
+# Part II - Challenge hunting
 
 This part of the book can be read from end to end as a _hacking guide_.
 Used in that way you will be walked through various types of web
