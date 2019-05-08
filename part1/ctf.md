@@ -337,6 +337,8 @@ in the _Challenges_ tab:
 
 ### Running FBCTF
 
+![FBCTF logo](img/fbctf_logo.jpg)
+
 Please note that Facebook does not publish any versioned releases of
 FBCTF. They recommend to use the `master`-branch content from GitHub
 (<https://github.com/facebook/fbctf>) in all their setup methods. There
