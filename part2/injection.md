@@ -45,7 +45,6 @@
 | Log in with Bender's user account.                                                                                                         | :star::star::star:                   |
 | Log in with Jim's user account.                                                                                                            | :star::star::star:                   |
 | Order the Christmas special offer of 2014.                                                                                                 | :star::star::star:                   |
-| Find an old Recycle request and inform the shop about its unusual address. (Mention the entire delivery or pickup address in your comment) | :star::star::star::star:             |
 | Let the server sleep for some time. (It has done more than enough hard work for you)                                                       | :star::star::star::star:             |
 | Update multiple product reviews at the same time.                                                                                          | :star::star::star::star:             |
 | Retrieve a list of all user credentials via SQL Injection.                                                                                 | :star::star::star::star:             |
@@ -142,14 +141,6 @@ supposed to be available any more.
   trigger the _Checkout_.
 * Neither of the above can be achieved through the application frontend
   and it might even require Blind SQL Injection.
-
-### Find an old Recycle request and inform the shop about its unusual address
-
-:wrench: **TODO**
-
-#### Hints
-
-:wrench: **TODO**
 
 ### Let the server sleep for some time
 

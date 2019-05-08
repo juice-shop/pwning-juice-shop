@@ -941,10 +941,6 @@ more attention & a good portion of shrewdness.
    _Email_ `bjoern.kimminich@googlemail.com` and _Password_
    `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
 
-### Find an old Recycle request and inform the shop about its unusual address
-
-:wrench: **TODO**
-
 ### Access a misplaced SIEM signature file
 
 1. Use the _Poison Null Byte_ attack described in
