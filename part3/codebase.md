@@ -409,7 +409,7 @@ level.
 
 #### Generated API endpoints
 
-Juice Shop uses the [Epilogue](https://github.com/dchester/epilogue)
+Juice Shop uses the [finale-rest](https://www.npmjs.com/package/finale-rest)
 middleware to automatically create REST endpoints for most of its
 Sequelize models. For e.g. the `User` model the generated endpoints are:
 
@@ -431,7 +431,7 @@ an authenticated user. This is described later in section
 [Access control on routes](#access-control-on-routes).
 
 ```javascript
-epilogue.initialize({
+finale.initialize({
   app,
   sequelize: models.sequelize
 })
@@ -441,12 +441,12 @@ const autoModels = ['User', 'Product', 'Feedback',
 'SecurityQuestion', 'SecurityAnswer']
 
 for (const modelName of autoModels) {
-  const resource = epilogue.resource({
+  const resource = finale.resource({
     model: models[modelName],
     endpoints: [`/api/${modelName}s`, `/api/${modelName}s/:id`]
   })
 
-  // fix the api difference between epilogue and previously
+  // fix the api difference between finale (fka epilogue) and previously
   // used sequlize-restful
   resource.all.send.before((req, res, context) => {
     context.instance = {
