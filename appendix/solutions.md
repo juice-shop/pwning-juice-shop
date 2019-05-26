@@ -55,7 +55,7 @@ error situation and solve this challenge immediately:
    <http://localhost:3000/#/privacy-security/privacy-policy> which
    instantly solves this challenge for you.
 
-### Let us redirect you to a donation site that went out of business
+### Let us redirect you to one of our crypto currency addresses
 
 1. Log in to the application with any user.
 2. Visit the _Your Basket_ page and expand the _Payment_ and
@@ -64,12 +64,12 @@ error situation and solve this challenge immediately:
    parameter of the route `/redirect`
 4. Open `main.js` in your browser's DevTools
 5. Searching for `/redirect?to=` and stepping through all matches you
-   will notice one that does not appear on any (visible) button on the
-   _Your Basket_ page: `/redirect?to=https://gratipay.com/juice-shop`
+   will notice three functions that are called only from hidden buttons
+   on the _Your Basket_ page:
 
-   ![Gratipay commented out](img/gratipay-button-ngIf_false.png)
-6. Open
-   <http://localhost:3000/redirect?to=https://gratipay.com/juice-shop>
+   ![Hidden crypto currency link functions](img/cryptoLinks.png)
+6. Open one of the three, e.g.
+   <http://localhost:3000/redirect?to=https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm>
    to solve the challenge.
 
 ### Follow the DRY principle while registering a user

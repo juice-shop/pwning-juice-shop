@@ -12,19 +12,19 @@ simply forgotten and are completely unprotected against access.
 | Retrieve the language file that never made it into production.                     | :star::star::star::star::star: |
 | Deprive the shop of earnings by downloading the blueprint for one of its products. | :star::star::star::star::star: |
 
-### Let us redirect you to a donation site that went out of business
+### Let us redirect you to one of our crypto currency addresses
 
 One of the sites that the Juice Shop accepted donations from went out of
 business end of 2017.
 
 #### Hints
 
-* When removing references to the site from the code the developers have
-  been a bit sloppy.
+* When removing references to those addresses from the code the
+  developers have been a bit sloppy.
 * More particular, they have been sloppy in a way that even the Angular
   Compiler was not able to clean up after them automatically.
-* It is of course not sufficient to just visit the donation site
-  _directly_ to solve the challenge.
+* It is of course not sufficient to just visit any of the crypto
+  currency links _directly_ to solve the challenge.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
@@ -80,7 +80,8 @@ on its blueprint in order to make it yourself?
 
 :information_source: _If you are running the Juice Shop with a custom
 theme and product inventory, the product to inspect will be a different
-one. The tooltip on the Score Board will tell you which one to look into._
+one. The tooltip on the Score Board will tell you which one to look
+into._
 
 [^1]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
 
