@@ -19,7 +19,7 @@ client via a RESTful API. As an underlying database a light-weight
 nature. This makes the database easy to create from scratch
 programmatically without the need for a dedicated server.
 [Sequelize](http://docs.sequelizejs.com) and
-[epilogue](https://github.com/dchester/epilogue) are used as an
+[finale-rest](https://www.npmjs.com/package/finale-rest) are used as an
 abstraction layer from the database. This allows to use dynamically
 created API endpoints for simple interactions (i.e. CRUD operations)
 with database resources while still allowing to execute custom SQL for

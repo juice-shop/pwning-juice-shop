@@ -949,10 +949,6 @@ more attention & a good portion of shrewdness.
 
 :wrench: **TODO**
 
-### Find an old Recycle request and inform the shop about its unusual address
-
-:wrench: **TODO**
-
 ### Access a misplaced SIEM signature file
 
 1. Use the _Poison Null Byte_ attack described in
