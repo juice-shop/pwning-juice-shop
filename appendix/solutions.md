@@ -595,19 +595,6 @@ pet cat playing.
 
 ![Zaya playing](img/zaya.jpg)
 
-Furthermore, on Bjoern's **Patreon page** at
-<https://www.patreon.com/bkimminich> there is a locked post titled
-"Behind the scenes: Photo-bombed by Zaya" and tagged with the keyword
-"cat" which spoilers the pet's name.
-
-![Locked Patreon post mentioning Zaya](img/patreon_locked-post.png)
-
-Unlocking the post (by becoming a project patron) is not even necessary,
-but it would confirm the identity of the cat when comparing it with the
-user profile picture from before.
-
-![Unlocked Patreon post mentioning Zaya](img/patreon_unlocked-post.png)
-
 ### Reset Jim's password via the Forgot Password mechanism
 
 1. Visit http://localhost:3000/#/forgot-password and provide
