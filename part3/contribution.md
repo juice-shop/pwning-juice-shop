@@ -84,14 +84,14 @@ branch for a PR afterwards some time ago.
 
 The minimum requirements for code contributions are:
 
-1. The code must be compliant with the
+1. The code _must_ be compliant with the
    [JS Standard Code Style rules](http://standardjs.com) or their
-   correspondingly configured TSLint rules
-2. All new and changed code should have a corresponding unit and/or
-   integration test
-3. New and changed challenges must have a corresponding e2e test
-4. Linting and all unit, integration and e2e tests should pass locally
-   before opening a Pull Request
+   correspondingly configured TSLint rules.
+2. All new and changed code _should_ have a corresponding unit and/or
+   integration test.
+3. New and changed challenges _must_ have a corresponding e2e test.
+4. Linting, as well as all unit, integration and e2e tests _should_ pass
+   locally before opening a Pull Request.
 
 ### Linting
 
@@ -205,7 +205,7 @@ Pull Requests from other branches or forks as well. This helps the
 project team to assess if a PR can be safely merged into the codebase.
 For tag-builds (i.e. versions to be released) the some additional steps
 are necessary to package the
-[release-artifacts for Linux for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
+[release-artifacts for Linux, MacOS and Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
 and attach these to the release page on GitHub. Lastly, not all stages
 are executed for all supported Node.js versions in order to shorten the
 feedback loop. The higher-level integration and e2e tests are only run
@@ -224,26 +224,8 @@ for the officially preferred Node.js version
 :information_source: The stages in the table above are executed
 sequentially from left to right. A failing job in any stage will break
 the build and all following stages will not be executed allowing a
-faster feedback loop.
-
-### AppVeyor
-
-AppVeyor is used as a secondary CI server to check if the application
-can be built on Windows:
-
-<https://ci.appveyor.com/project/bkimminich/juice-shop>
-
-No linters or test suites are executed. Instead AppVeyor packages and
-attaches
-[release-artifacts for Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
-to GitHub in case a tag-build is executed.
-
-| Trigger               | Build Tasks                                                                                                                      |
-|:----------------------|:---------------------------------------------------------------------------------------------------------------------------------|
-|                       | Compile and archive [pre-packaged distributions](#testing-packaged-distrubutions) for Windows with Node.js {{book.nodeVersions}} |
-| **Push to `develop`** | :heavy_check_mark:                                                                                                               |
-| **Push to `master`**  | :heavy_check_mark:                                                                                                               |
-| **Pull Request**      | :heavy_check_mark:                                                                                                               |
-| **Version tag**       | :heavy_check_mark: and release to GitHub                                                                                         |
+faster feedback loop. The table only depicts the setup for Linux, as
+this is where all tests are executed. In the MacOS and Windows jobs only
+release-artifacts are built.
 
 [^1]: <http://semver.org>
