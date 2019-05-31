@@ -20,5 +20,4 @@ application, please do not hesitate to
 or by
 [opening a GitHub issue](https://github.com/bkimminich/juice-shop/issues)!
 Please just make sure that you flipped through
-[the existing troubleshooting guide](https://github.com/bkimminich/juice-shop/blob/master/TROUBLESHOOTING.md)
-first.
+[the appendix on troubleshooting](../appendix/troubleshooting.md) first.
