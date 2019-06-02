@@ -327,7 +327,7 @@ in order to exploit and solve them:
    token in the request header.
 4. You will receive a (probably unexpected) response of `{'error' :
    'Invalid BasketId'}` - after all, it is not your basket!
-5. Change your `POST` request into utilizing HTTP Parameter Polution
+5. Change your `POST` request into utilizing HTTP Parameter Pollution
    (HPP) by supplying your own `BasketId` _and_ that of someone else in
    the same payload, i.e. `{"ProductId": 14,"BasketId": "1","quantity":
    1,"BasketId": "2"}`.
