@@ -72,7 +72,7 @@ server the Juice Shop backend is hosted on.
   [Use a deprecated B2B interface that was not properly shut down](forgotten-content.md#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down).
 * This challenge sounds a lot harder than it actually is, which
   amplifies how bad the underlying vulnerability is.
-* Doing some research on typical XEE attack patterns bascially gives
+* Doing some research on typical XEE attack patterns basically gives
   away the solution for free.
 
 ### Give the server something to chew on for quite a while

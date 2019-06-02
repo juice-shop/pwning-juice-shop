@@ -173,7 +173,7 @@ useful to e.g. run the tests through tools like
 [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 or Burpsuite.
 
-### Testing packaged distrubutions
+### Testing packaged distributions
 
 During releases the application will be packaged into `.zip`/`.tgz`
 archives for another easy setup method. When you contribute a change

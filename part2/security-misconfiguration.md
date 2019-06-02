@@ -44,7 +44,7 @@ anyway, remember?
 
 ### Access a salesman's forgotten backup file
 
-A sales person as accidentally uploaded a list of (by now outdated)
+A salesperson as accidentally uploaded a list of (by now outdated)
 coupon codes to the application. Downloading this file will not only
 solve the _Access a salesman's forgotten backup file_ challenge but
 might also prove useful in another challenge later on.

@@ -94,9 +94,9 @@ that cannot be already in there!
 
 * Check the HTTP traffic while placing products into your own shopping
   basket to find a leverage point.
-* Adding more instances of the same product to someone elses basket does
+* Adding more instances of the same product to someone else's basket does
   not qualify as a solution. The same goes for stealing from someone
-  elses basket.
+  else's basket.
 * This challenge requires a bit more sophisticated tampering than others
   of the same ilk.
 

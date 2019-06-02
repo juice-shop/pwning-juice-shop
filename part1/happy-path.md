@@ -189,7 +189,7 @@ _Customer Feedback_ menu item. You might recognize that it is also
 possible to leave feedback as an anonymous user. The contact form is
 very straightforward with a free text _Comment_ field and a _Rating_ on
 a 1-5 stars scale. To prevent abuse, you have to solve a simple
-mathematical problem before being allowed to submit your feeback.
+mathematical problem before being allowed to submit your feedback.
 
 ![Contact Us](/part1/img/contact-us.png)
 
