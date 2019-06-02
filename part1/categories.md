@@ -2,7 +2,7 @@
 
 The vulnerabilities found in the OWASP Juice Shop are categorized into
 several different classes. Most of them cover different risk or
-vulnerabiliy types from well-known lists or documents, such as
+vulnerability types from well-known lists or documents, such as
 [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
 or MITRE's [Common Weakness Enumeration](https://cwe.mitre.org/). The
 following table presents a mapping of the Juice Shop's categories to

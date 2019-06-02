@@ -384,7 +384,7 @@ for the audience.
 
 #### Coupon codes on social media
 
-If you changed the `twitterUrl`/`facebookUrl` to the company's own
+If you change the `twitterUrl`/`facebookUrl` to the company's own
 account/page, you will most likely not find any coupon codes posted
 there. You will probably fail to convince the social media team to tweet
 or retweet some coupon code for an application that does not even exist!

@@ -349,7 +349,7 @@ vulnerability work in your favor.
 > Current HTTP standards do not include guidance on how to interpret
 > multiple input parameters with the same name. For instance, RFC 3986
 > simply defines the term Query String as a series of field-value pairs
-> and RFC 2396 defines classes of reversed and unreserved query string
+> and RFC 2396 defines classes of reserved and unreserved query string
 > characters. Without a standard in place, web application components
 > handle this edge case in a variety of ways (see the table below for
 > details).

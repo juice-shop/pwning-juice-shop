@@ -294,7 +294,7 @@ CTFd run-mode below.
 5. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
 6. Select the generated `.zip` file and make sure only the _Challenges_
    box is ticket. Press _Import_.
-7. _(Only for CTFd 2.0.x)_ Dismiss any occuring `Internal Server Error`
+7. _(Only for CTFd 2.0.x)_ Dismiss any occurring `Internal Server Error`
    alert popup after import and restart your CTFd server.
 8. _(Only for CTFd 2.x)_ Repeat the initial admin and CTF setup from
    step 4. to regain access to the CTF game. It is now pre-populated
