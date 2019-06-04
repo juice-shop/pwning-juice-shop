@@ -558,7 +558,7 @@ only a `404 Error: ENOENT: no such file or directory, stat
 ### Change the href of the link within the O-Saft product description
 
 1. By searching for _O-Saft_ directly via the REST API with
-   <http://localhost:3000/rest/product/search?q=o-saft> you will learn
+   <http://localhost:3000/rest/products/search?q=o-saft> you will learn
    that it's database ID is `9`.
 2. Submit a `PUT` request to <http://localhost:3000/api/Products/9>
    with:
@@ -768,22 +768,22 @@ simultaneously.
 1. Open http://localhost:3000/#/search and reload the page with `F5`
    while observing the _Network_ tab in your browser's DevTools
 2. Recognize the `GET` request
-   <http://localhost:3000/rest/product/search?q=> which returns the
+   <http://localhost:3000/rest/products/search?q=> which returns the
    product data.
 3. Submitting any SQL payloads via the _Search_ field in the navigation
    bar will do you no good, as it is only applying filters onto the
    entire data set what was retrieved with a singular call upon loading
    the page.
 4. In that light, the `q=` parameter on the
-   <http://localhost:3000/rest/product/search> endpoint would not even
+   <http://localhost:3000/rest/products/search> endpoint would not even
    be needed, but might be a relic from a different implementation of
    the search functionality. Test this theory by submitting
-   <http://localhost:3000/rest/product/searchq=orange> which should give
+   <http://localhost:3000/rest/products/searchq=orange> which should give
    you a result such as
 
    ![JSON search result for "orange" keyword](img/search-result_orange.png)
 5. Submit `';` as `q` via
-   <http://localhost:3000/rest/product/search?q=';>
+   <http://localhost:3000/rest/products/search?q=';>
 6. You will receive an error page with a `SQLITE_ERROR: syntax error`
    mentioned, indicating that SQL Injection is indeed possible.
 
@@ -819,7 +819,7 @@ This solution involves a lot less hacking & sophistication but requires
 more attention & a good portion of shrewdness.
 
 1. Retrieve all products as JSON by calling
-   <http://localhost:3000/rest/product/search?q=>
+   <http://localhost:3000/rest/products/search?q=>
 2. Write down all `id`s that are _missing_ in the otherwise sequential
    numeric range
 3. Perform step 12. and 13. from above solution for all those missing
@@ -946,27 +946,27 @@ more attention & a good portion of shrewdness.
 ### Let the server sleep for some time
 
 1. You can interact with the backend API for product reviews via the
-   dedicated endpoints `/rest/product/reviews` and
-   `/rest/product/{id}/reviews`
+   dedicated endpoints `/rest/products/reviews` and
+   `/rest/products/{id}/reviews`
 2. Get the reviews of the product with database ID 1:
-   http://localhost:3000/rest/product/1/reviews
+   http://localhost:3000/rest/products/1/reviews
 3. Inject a
    [`sleep(integer ms)` command](https://docs.mongodb.com/manual/reference/method/sleep/)
    by changing the URL into
-   http://localhost:3000/rest/product/sleep(2000)/reviews to solve the
+   http://localhost:3000/rest/products/sleep(2000)/reviews to solve the
    challenge
 
 To avoid _real_ Denial-of-Service (DoS) issues, the Juice Shop will only
 wait for a maximum of 2 seconds, so
-http://localhost:3000/rest/product/sleep(999999)/reviews should not take
-longer than http://localhost:3000/rest/product/sleep(2000)/reviews to
+http://localhost:3000/rest/products/sleep(999999)/reviews should not take
+longer than http://localhost:3000/rest/products/sleep(2000)/reviews to
 respond.
 
 ### Update multiple product reviews at the same time
 
 1. Log in as any user to get your `Authorization` token from any
    subsequent request's headers.
-2. Submit a PATCH request to http://localhost:3000/rest/product/reviews
+2. Submit a PATCH request to http://localhost:3000/rest/products/reviews
    with
    * `{ "id": { "$ne": -1 }, "message": "NoSQL Injection!" }` as body
    * `application/json` as `Content-Type` header.
@@ -1077,7 +1077,7 @@ NPM page:
 
 1. During the
    [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
-   challenge you learned that the `/rest/product/search` endpoint is
+   challenge you learned that the `/rest/products/search` endpoint is
    susceptible to SQL Injection into the `q` parameter.
 2. The attack payload you need to craft is a `UNION SELECT` merging the
    data from the user's DB table into the products returned in the JSON
