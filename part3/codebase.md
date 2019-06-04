@@ -633,7 +633,7 @@ used during [Customization](../part1/customization.md).
 The `insecurity.js` module offers all security-relevant utilities of the
 application, but of course mostly in some broken or flawed way:
 
-* Hashing functions borh weak (`hash()`) and relatively strong
+* Hashing functions both weak (`hash()`) and relatively strong
   (`hmac()`)
 * [Route](#routes) authorization via JWT with `denyAll()` and
   `isAuthorized()` (see

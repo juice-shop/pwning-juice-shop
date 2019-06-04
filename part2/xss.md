@@ -135,7 +135,7 @@ to master this challenge.
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
-This is one of the hardest XSS challenges, as it cannot by solved by
+This is one of the hardest XSS challenges, as it cannot be solved by
 just fiddling with the client-side JavaScript or bypassing the client
 entirely. Whenever there is a server-side validation or input processing
 involved, you should investigate how it works. Finding out

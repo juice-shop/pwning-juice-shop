@@ -48,6 +48,7 @@
 
 * [Appendix A - Challenge solutions](appendix/solutions.md)
 * [Appendix B - Trainer's guide](appendix/trainers.md)
+* [Appendix C - Troubleshooting](appendix/troubleshooting.md)
 
 ### Postface
 

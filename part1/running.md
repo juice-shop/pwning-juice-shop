@@ -39,7 +39,7 @@ As a little related anecdote, the OWASP Juice Shop was even crowned
 
 To run the Juice Shop locally you need to have
 [Node.js](http://nodejs.org/) installed on your computer. The Juice Shop
-offically runs on versions {{book.nodeVersions}} of Node.js, closely
+officially runs on versions {{book.nodeVersions}} of Node.js, closely
 following the official
 [Node.js Long-term Support Release Schedule](https://github.com/nodejs/LTS).
 During development and Continuous Integration (CI) the application is
@@ -151,7 +151,7 @@ The installation instructions above will all give you the latest
 official release version of the Juice Shop. If you want to install a
 specific older version, you can easily do so by retrieving the
 corresponding tag from GitHub or Docker. For release v7.5.1 - which was
-the last version with the original AgularJS/Bootstrap frontend - for
+the last version with the original AngularJS/Bootstrap frontend - for
 example:
 
 * [From sources](#from-sources) - Run `git fetch --tags` and then `git

@@ -327,7 +327,7 @@ in order to exploit and solve them:
    token in the request header.
 4. You will receive a (probably unexpected) response of `{'error' :
    'Invalid BasketId'}` - after all, it is not your basket!
-5. Change your `POST` request into utilizing HTTP Parameter Polution
+5. Change your `POST` request into utilizing HTTP Parameter Pollution
    (HPP) by supplying your own `BasketId` _and_ that of someone else in
    the same payload, i.e. `{"ProductId": 14,"BasketId": "1","quantity":
    1,"BasketId": "2"}`.
@@ -349,7 +349,7 @@ vulnerability work in your favor.
 > Current HTTP standards do not include guidance on how to interpret
 > multiple input parameters with the same name. For instance, RFC 3986
 > simply defines the term Query String as a series of field-value pairs
-> and RFC 2396 defines classes of reversed and unreserved query string
+> and RFC 2396 defines classes of reserved and unreserved query string
 > characters. Without a standard in place, web application components
 > handle this edge case in a variety of ways (see the table below for
 > details).
