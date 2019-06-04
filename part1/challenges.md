@@ -67,8 +67,8 @@ the regular web UI the next time.
 To make sure you do not miss any notifications they do not disappear
 automatically after a timeout. You have to dismiss them explicitly. In
 case a number of notifications "piled up" it is not necessary to dismiss
-each one individually, as a simple reload of the UI in the browser (`F5`
-key) will dismiss all at the same time.
+each one individually, as you can simply `Shift`-click one of their
+_X_-buttons to dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
 might also show a :checkered_flag: symbol with a character sequence next
@@ -103,7 +103,7 @@ The auto-save mechanism keeps your progress for up to 30 days after your
 previous hacking session. When the score board is restored to its prior
 state, a torrent of success notifications will light up - depending on
 how many challenges you solved up to that point. As mentioned earlier
-these can be bulk-dismissed by reloading the page with the `F5` key.
+these can be bulk-dismissed by `Shift`-clicking any of the _X_-buttons.
 
 If you want to start over with a fresh hacking session, simply click the
 _Delete cookie to clear hacking progress_ button. After the next server

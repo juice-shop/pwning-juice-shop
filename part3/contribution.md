@@ -226,6 +226,7 @@ sequentially from left to right. A failing job in any stage will break
 the build and all following stages will not be executed allowing a
 faster feedback loop. The table only depicts the setup for Linux, as
 this is where all tests are executed. In the MacOS and Windows jobs only
-release-artifacts are built.
+`npm install` is executed and release-artifacts are assembled in
+tag-builds.
 
 [^1]: <http://semver.org>
