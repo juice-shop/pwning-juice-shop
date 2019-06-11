@@ -469,7 +469,14 @@ logged out but provide any `UserId` in the JSON payload.
 
 ### Log in with Chris' erased user account
 
-:wrench: **TODO**
+* Log in with _Email_ `chris.pike@juice-sh.op'--` and any _Password_ if you
+  have already know Chris' email address.
+* or log in with _Email_ as `\' or deletedAt IS NOT NULL--` and any
+  _Password_ you like.
+* The presence of *deletedAt* is known from the user data as described in
+  [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
+* The *deletedAt* value not set to NULL implies that the user has been deleted 
+  at some point of time. So using the above query in _Email_ field solves the challenge.
 
 ### Log in with Amy's original user credentials
 

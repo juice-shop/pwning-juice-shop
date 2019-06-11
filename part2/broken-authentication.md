@@ -34,11 +34,17 @@ _always_ be accepted to make sure you can solve this challenge.
 
 ### Log in with Chris' erased user account
 
-:wrench: **TODO**
+This challenge is about finding an account of a deleted user. So, basically
+it requires you to find email address of the deleted user Chris.
 
 #### Hints
 
-:wrench: **TODO**
+* It is very useful to find how the user account information is being
+  stored in the database tables.
+* If you have solved the challenge [Retrieve a list of all user credentials via SQL Injection](injection.md#retrieve-a-list-of-all-user-credentials-via-sql-injection) you might have 
+  got some information related to the status of deletion of a user in User's Table.
+* Purpose of the column *deletedAt* in the User's table is something which is
+  interesting, helps you to solve the challenge.
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
