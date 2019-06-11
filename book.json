@@ -23,7 +23,7 @@
     "ctfdVersion": "2.x, 1.1.x or 1.2.x",
     "juiceShopNumberOfChallenges": 86,
     "nodeVersions": "8.x, 10.x and 12.x",
-    "recommendedNodeVersion": "10.x",
+    "recommendedNodeVersion": "12.x",
     "herokuNodeVersion": "12.x"
   }
 }
