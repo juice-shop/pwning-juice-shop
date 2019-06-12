@@ -71,10 +71,10 @@ find its syntax along with an excerpt of the default settings.
   * `favicon` filename in `/app/public/` _or_ a URL of an image in
     `.ico` format which will first be download to that folder and then
     used as a favicon. Defaults to `favicon_v2.ico`
-  * `numberOfRandomFakeUsers` represents the number of random user
-    accounts to be created on top of the pre-defined ones (which are
-    required for several challenges). Defaults to `0`, meaning no
-    additional users are created.
+  * `theme` the name of the color theme used to render the UI. Options
+    are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
+    `indigo-pink`, `pink-bluegrey`, `purple-green` and
+    `deeporange-indigo`. Defaults to `bluegrey-lightgreen`
   * `showChallengeSolvedNotifications` shows or hides all instant
     _"challenge solved"_-notifications. Recommended to set to `false`
     for awareness demos. Defaults to `true`.
@@ -83,12 +83,17 @@ find its syntax along with an excerpt of the default settings.
     Defaults to `true`.
   * `showVersionNumber` shows or hides the software version from the
     title. Defaults to `true`.
-  * `theme` the name of the color theme used to render the UI. Options
-    are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
-    `indigo-pink`, `pink-bluegrey`, `purple-green` and
-    `deeporange-indigo`. Defaults to `bluegrey-lightgreen`
-  * `gitHubRibbon` shows or hides the _"GitHub"_ button in the top-right
-    corner of the navigation bar. Defaults to `true`.
+  * `showGitHubLinks` shows or hides the _"GitHub"_ button in the
+    navigation and side bar as well as the info box about contributing
+    on the _Score Board_. Defaults to `true`.
+  * `showWelcomeBanner` shows or hides a dismissable welcome banner when
+    first visiting the application. Recommended to be set to `false` for
+    custom themes as the text is OWASP Juice Shop specific and not
+    configurable. Defaults to `true`.
+  * `numberOfRandomFakeUsers` represents the number of random user
+    accounts to be created on top of the pre-defined ones (which are
+    required for several challenges). Defaults to `0`, meaning no
+    additional users are created.
   * `twitterUrl` used as the Twitter link promising coupon codes on the
     _About Us_ and _Your Basket_ screen. Defaults to
     `'https://twitter.com/owasp_juiceshop'`
@@ -156,8 +161,8 @@ find its syntax along with an excerpt of the default settings.
       `JuiceShopJingle.mp4`
     * `subtitles` name of a
       [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/)
-      file in `/app/public/videos` _or_ URL of an image to download
-      to that folder and then use as the promotion video. Defaults to
+      file in `/app/public/videos` _or_ URL of an image to download to
+      that folder and then use as the promotion video. Defaults to
       `JuiceShopJingle.vtt`
 * `challenges`
   * `safetyOverride` enables all challenges regardless of any potential
@@ -240,12 +245,13 @@ application:
   name: 'OWASP Juice Shop'
   logo: JuiceShop_Logo.png
   favicon: favicon_v2.ico
-  numberOfRandomFakeUsers: 0
+  theme: bluegrey-lightgreen
   showChallengeSolvedNotifications: true
   showChallengeHints: true
   showVersionNumber: true
-  theme: bluegrey-lightgreen
-  gitHubRibbon: true
+  showGitHubLinks: true
+  showWelcomeBanner: true
+  numberOfRandomFakeUsers: 0
   twitterUrl: 'https://twitter.com/owasp_juiceshop'
   facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
   slackUrl: 'http://owaspslack.com'
@@ -329,7 +335,8 @@ application:
   favicon: favicon_ctf.ico
   showChallengeHints: false
   showVersionNumber: false
-  gitHubRibbon: false
+  showGitHubLinks: false
+  showWelcomeBanner: false
 ctf:
   showFlagsInNotifications: true
 ```
