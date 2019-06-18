@@ -34,17 +34,14 @@ _always_ be accepted to make sure you can solve this challenge.
 
 ### Log in with Chris' erased user account
 
-This challenge is about finding an account of a deleted user. So, basically
-it requires you to find email address of the deleted user Chris.
+This challenge is about loggin in with the account of a user who previously insisted on his "right to be forgotten" in accordance with Art. 17 GDPR.
 
 #### Hints
 
-* It is very useful to find how the user account information is being
-  stored in the database tables.
+* Trying out the _Request Data Erasure_ functionality might be interesting, but cannot help you solve this challenge in real time.
 * If you have solved the challenge [Retrieve a list of all user credentials via SQL Injection](injection.md#retrieve-a-list-of-all-user-credentials-via-sql-injection) you might have 
-  got some information related to the status of deletion of a user in User's Table.
-* Purpose of the column *deletedAt* in the User's table is something which is
-  interesting, helps you to solve the challenge.
+  already retrieved some information about how the Juice Shop "deletes" users upon their request.
+* What the Juice Shop does here is totally incompliant with GDPR. Luckily a 4% fine on a gross income of 0$ is still 0$.
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
