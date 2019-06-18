@@ -219,7 +219,7 @@ If the challenge is not immediately solved, you might have to
   authenticate the first entry in the `Users` table which coincidentally
   happens to be the administrator
 * or log in with _Email_ `admin@juice-sh.op'--` and any _Password_ if
-  you have already know the email address of the administrator
+  you already know the email address of the administrator
 * or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
   if you looked up the administrator's password hash
   `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
@@ -469,7 +469,8 @@ logged out but provide any `UserId` in the JSON payload.
 
 ### Log in with Chris' erased user account
 
-:wrench: **TODO**
+* Log in with _Email_ `chris.pike@juice-sh.op'--` and any _Password_ if you already know the email address of Chris.
+* or log in with _Email_ as `\' or deletedAt IS NOT NULL--` and any _Password_ you like for a "lucky hit" as Chris seems to be the only or at least first ever deleted user. The presence of `deletedAt` you might have derived from [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection) and enforcing it to be `NOT NULL` will give you back only users who were soft-deleted at some point of time.
 
 ### Log in with Amy's original user credentials
 
@@ -489,7 +490,7 @@ logged out but provide any `UserId` in the JSON payload.
 ### Log in with Bender's user account
 
 * Log in with _Email_ `bender@juice-sh.op'--` and any _Password_ if you
-  have already know Bender's email address.
+  already know the email address of Bender.
 * A rainbow table attack on Bender's password will probably fail as it
   is rather strong. You can alternatively solve
   [Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password](#change-benders-password-into-slurmcl4ssic-without-using-sql-injection-or-forgot-password)
@@ -498,7 +499,7 @@ logged out but provide any `UserId` in the JSON payload.
 ### Log in with Jim's user account
 
 * Log in with _Email_ `jim@juice-sh.op'--` and any _Password_ if you
-  have already know Jim's email address.
+  already know the email address of Jim.
 * or log in with _Email_ `jim@juice-sh.op` and _Password_ `ncc-1701` if
   you looked up Jim's password hash in a rainbow table after harvesting
   the user data as described in
