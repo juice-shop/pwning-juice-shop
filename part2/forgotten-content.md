@@ -9,7 +9,6 @@ simply forgotten and are completely unprotected against access.
 |:-----------------------------------------------------------------------------------|:-------------------------------|
 | Let us redirect you to a donation site that went out of business.                  | :star:                         |
 | Use a deprecated B2B interface that was not properly shut down.                    | :star::star:                   |
-| Retrieve the language file that never made it into production.                     | :star::star::star::star::star: |
 | Deprive the shop of earnings by downloading the blueprint for one of its products. | :star::star::star::star::star: |
 
 ### Let us redirect you to one of our crypto currency addresses
@@ -41,30 +40,6 @@ webshop UI. For those customers there is a dedicated B2B interface.
   removed from the code base.
 * Simply using the deprecated interface suffices to solve this
   challenge. No attack or exploit is necessary.
-
-### Retrieve the language file that never made it into production
-
-> A project is internationalized when all of the project’s materials and
-> deliverables are consumable by an international audience. This can
-> involve translation of materials into different languages, and the
-> distribution of project deliverables into different countries.[^1]
-
-Following this requirement OWASP sets for all its projects, the Juice
-Shop's user interface is available in different languages. One extra
-language is actually available that you will not find in the selection
-menu.
-
-![Language selection dropdown](/part3/img/languages.png)
-
-#### Hints
-
-* First you should find out how the languages are technically changed in
-  the user interface.
-* Guessing will most definitely not work in this challenge.
-* You should rather choose between the following two ways to beat this
-  challenge:
-  * _Apply brute force_ (and don't give up to quickly) to find it.
-  * _Investigate online_ what languages are actually available.
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 

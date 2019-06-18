@@ -22,8 +22,6 @@
 * [Finding the Score Board](part2/score-board.md)
 * [Injection](part2/injection.md)
 * [Broken Authentication](part2/broken-authentication.md)
-* [Forgotten Content](part2/forgotten-content.md)
-* [Roll your own Security](part2/roll-your-own-security.md)
 * [Sensitive Data Exposure](part2/sensitive-data-exposure.md)
 * [XML External Entities (XXE)](part2/xxe.md)
 * [Improper Input Validation](part2/improper-input-validation.md)
@@ -33,7 +31,10 @@
 * [Insecure Deserialization](part2/insecure-deserialization.md)
 * [Vulnerable Components](part2/vulnerable-components.md)
 * [Security through Obscurity](part2/security-through-obscurity.md)
-* [Race Condition](part2/race-condition.md)
+* [Unvalidated Redirects](part2/unvalidated-redirects.md)
+* [Broken Anti-Automation](part2/broken-anti-automation.md)
+* [Cryptographic Issues](part2/cryptographic-issues.md)
+* [Miscellaneous](part2/miscellaneous.md)
 
 ### Part III - Getting involved
 

@@ -6,7 +6,6 @@
 |:----------------------------------------------------------------------------------------------------------------|:-------------------------------------|
 | Provoke an error that is not very gracefully handled.                                                           | :star:                               |
 | Access a salesman's forgotten backup file.                                                                      | :star::star::star::star:             |
-| Reset Morty's password via the Forgot Password mechanism with _his obfuscated answer_ to his security question. | :star::star::star::star::star:       |
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.    | :star::star::star::star::star::star: |
 
 ### Provoke an error that is not very gracefully handled
@@ -57,35 +56,6 @@ might also prove useful in another challenge later on.
   prevents access to it.
 * You need to trick the security mechanism into thinking that the file
   has a valid file type.
-
-### Reset Morty's password via the Forgot Password mechanism
-
-This password reset challenge is different from those from the
-[Broken Authentication](broken-authentication.md) category as it is next
-to impossible to solve without using a brute force approach.
-
-> A brute force attack can manifest itself in many different ways, but
-> primarily consists in an attacker configuring predetermined values,
-> making requests to a server using those values, and then analyzing the
-> response. For the sake of efficiency, an attacker may use a dictionary
-> attack (with or without mutations) or a traditional brute-force attack
-> (with given classes of characters e.g.: alphanumerical, special, case
-> (in)sensitive). Considering a given method, number of tries,
-> efficiency of the system which conducts the attack, and estimated
-> efficiency of the system which is attacked the attacker is able to
-> calculate approximately how long it will take to submit all chosen
-> predetermined values.[^2]
-
-#### Hints
-
-* Finding out who Morty actually is, will help to reduce the solution
-  space.
-* You can assume that Morty answered his security question truthfully
-  but employed some obfuscation to make it more secure.
-* Morty's answer is less than 10 characters long and does not include
-  any special characters.
-* Unfortunately, _Forgot your password?_ is protected by a rate limiting
-  mechanism that prevents brute forcing. You need to beat this somehow.
 
 ### Log in with the support team's original user credentials
 

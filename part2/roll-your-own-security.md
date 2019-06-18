@@ -6,8 +6,6 @@
 |:------------------------------------------------------------|:-------------------------|
 | Read our privacy policy.                                    | :star:                   |
 | Behave like any "white hat" should.                         | :star::star:             |
-| Submit 10 or more customer feedbacks within 10 seconds.     | :star::star::star:       |
-| Find the hidden easter egg.                                 | :star::star::star::star: |
 | Successfully redeem an expired campaign coupon code.        | :star::star::star::star: |
 | Access a developer's forgotten backup file.                 | :star::star::star::star: |
 | Steal someone else's personal data without using Injection. | :star::star::star::star: |
@@ -70,57 +68,7 @@
 * You also might want to ready the security policy or any bug bounty
   program that is in place
 
-### Submit 10 or more customer feedbacks within 10 seconds
 
-The _Contact Us_ form for customer feedback contains a CAPTCHA to
-protect it from being abused through scripting. This challenge is about
-beating this automation protection.
-
-> A completely automated public Turing test to tell computers and humans
-> apart, or CAPTCHA, is a program that allows you to distinguish between
-> humans and computers. First widely used by Alta Vista to prevent
-> automated search submissions, CAPTCHAs are particularly effective in
-> stopping any kind of automated abuse, including brute-force attacks.
-> They work by presenting some test that is easy for humans to pass but
-> difficult for computers to pass; therefore, they can conclude with
-> some certainty whether there is a human on the other end.
->
-> For a CAPTCHA to be effective, humans must be able to answer the test
-> correctly as close to 100 percent of the time as possible. Computers
-> must fail as close to 100 percent of the time as possible.[^5]
-
-#### Hints
-
-* You could prepare 10 browser tabs, solving every CAPTCHA and filling
-  out the each feedback form. Then you'd need to very quickly switch
-  through the tabs and submit the forms in under 10 seconds total.
-* Should the Juice Shop ever decide to change the challenge into
-  _"Submit 100 or more customer feedbacks within 60 seconds"_ or worse,
-  you'd probably have a hard time keeping up with any tab-switching
-  approach.
-* Investigate closely how the CAPTCHA mechanism works and try to find
-  either a bypass or some automated way of solving it dynamically.
-* Wrap this into a script (in whatever programming language you prefer)
-  that repeats this 10 times.
-
-### Find the hidden easter egg
-
-> An Easter egg is an intentional inside joke, hidden message, or
-> feature in an interactive work such as a computer program, video game
-> or DVD menu screen. The name is used to evoke the idea of a
-> traditional Easter egg hunt.[^1]
-
-#### Hints
-
-* If you solved one of the other four file access challenges, you
-  already know where the easter egg is located
-* Simply reuse the trick that already worked for the files above
-
-_When you open the easter egg file, you might be a little disappointed,
-as the developers taunt you about not having found **the real** easter
-egg! Of course finding **that** is
-[a follow-up challenge](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
-to this one._
 
 ### Successfully redeem an expired campaign coupon code
 
