@@ -1144,7 +1144,7 @@ like [Retire.js](https://retirejs.github.io/) or
 [Snyk](https://snyk.io/vuln) makes it rather easy to identify it.
 
 1. Solve
-   [Access a developer's forgotten backup file](../part2/roll-your-own-security.md#access-a-developers-forgotten-backup-file)
+   [Access a developer's forgotten backup file](../part2/sensitive-data-exposure.md#access-a-developers-forgotten-backup-file)
 2. Checking the dependencies in `package.json.bak` for known
    vulnerabilities online will give you a match (at least) for
    * `sanitize-html`: Sanitization of HTML strings is not applied

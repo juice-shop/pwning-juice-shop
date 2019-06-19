@@ -46,7 +46,7 @@
 | Login Bender       | Log in with Bender's user account.                                                   | :star::star::star:                   |
 | Login Jim          | Log in with Jim's user account.                                                      | :star::star::star:                   |
 | NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:             |
-| NoSQL Exfiltration | All your orders are belong to us!                                                    | :star::star::star::star::star:       |
+| NoSQL Exfiltration | All your orders are belong to us! Even the ones which don't!                         | :star::star::star::star::star:       |
 | NoSQL Manipulation | Update multiple product reviews at the same time.                                    | :star::star::star::star:             |
 | SSTi               | Infect the server with malware by abusing arbitrary command execution.               | :star::star::star::star::star::star: |
 | User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:             |

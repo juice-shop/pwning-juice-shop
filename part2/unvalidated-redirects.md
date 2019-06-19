@@ -7,7 +7,7 @@
 | Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | :star:                   |
 | Whitelist Bypass   | Enforce a redirect to a page you are not supposed to redirect to.                              | :star::star::star::star: |
 
-### Let us redirect you to one of our crypto currency addresses which are not promoted any longer
+### Let us redirect you to one of our crypto currency addresses
 
 Some time ago the Juice Shop project accepted donations via Bitcoin,
 Dash and Ether. It never received any, so these were dropped at some

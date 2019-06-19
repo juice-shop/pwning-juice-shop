@@ -22,17 +22,17 @@
 
 ## Challenges covered in this chapter
 
-| Name               | Challenge                                                                                                                      | Difficulty                           |
-|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Admin Section      | Access the administration section of the store.                                                                                | :star::star:                         |
-| Easter Egg         | Find the hidden easter egg.                                                                                                    | :star::star::star::star:             |
-| Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                       | :star::star:                         |
-| Forged Feedback    | Post some feedback in another users name.                                                                                      | :star::star::star:                   |
-| Forged Review      | Post a product review as another user or edit any user's existing review.                                                      | :star::star::star:                   |
-| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                 | :star::star::star:                   |
-| Product Tampering  | Change the href of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into http://kimminich.de. | :star::star::star:                   |
-| SSRF               | Request a hidden resource on server through server.                                                                            | :star::star::star::star::star::star: |
-| View Basket        | View another user's shopping basket.                                                                                           | :star::star:                         |
+| Name               | Challenge                                                                                                                              | Difficulty                           |
+|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Admin Section      | Access the administration section of the store.                                                                                        | :star::star:                         |
+| Easter Egg         | Find the hidden easter egg.                                                                                                            | :star::star::star::star:             |
+| Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | :star::star:                         |
+| Forged Feedback    | Post some feedback in another users name.                                                                                              | :star::star::star:                   |
+| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | :star::star::star:                   |
+| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | :star::star::star:                   |
+| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | :star::star::star:                   |
+| SSRF               | Request a hidden resource on server through server.                                                                                    | :star::star::star::star::star::star: |
+| View Basket        | View another user's shopping basket.                                                                                                   | :star::star:                         |
 
 ### Access the administration section of the store
 
