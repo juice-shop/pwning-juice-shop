@@ -176,8 +176,7 @@ answers available which you can choose by simply hitting `ENTER`.
    * `CTFd 2.x` which is a very well-written and stable piece of Open
      Source Software. This is the default choice.
    * `CTFd 1.x` requiring a slightly different data format than the
-     newer 2.x version. (:zap: _This option will be removed in a future
-     major release!_)
+     newer 2.x version.
    * `FBCTF` from Facebook which is visually more advanced though not as
      frequently updated at CTFd.
 2. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
@@ -224,12 +223,12 @@ and optional costs for hints of each challenge are calculated by the
 
 | Difficulty                           | Score value | Paid hint costs (Text / URL) |
 |:-------------------------------------|:------------|:-----------------------------|
-| :star:                               | 100 points  | (10 points / 20 points)      |
-| :star::star:                         | 250 points  | (25 points / 50 points)      |
-| :star::star::star:                   | 450 points  | (45 points / 90 points)      |
-| :star::star::star::star:             | 700 points  | (70 points / 140 points)     |
-| :star::star::star::star::star:       | 1000 points | (100 points / 200 points)    |
-| :star::star::star::star::star::star: | 1350 points | (135 points / 260 points)    |
+| ⭐                               | 100 points  | (10 points / 20 points)      |
+| ⭐⭐                         | 250 points  | (25 points / 50 points)      |
+| ⭐⭐⭐                   | 450 points  | (45 points / 90 points)      |
+| ⭐⭐⭐⭐             | 700 points  | (70 points / 140 points)     |
+| ⭐⭐⭐⭐⭐       | 1000 points | (100 points / 200 points)    |
+| ⭐⭐⭐⭐⭐⭐ | 1350 points | (135 points / 260 points)    |
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
@@ -373,7 +372,7 @@ nicely curated list of CTF platforms and related tools & resources in
 [Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
 
 All these platforms have one thing in common: Unless you write a
-dedicated `lib/generators/`-file :wink:, you have to set up the
+dedicated `lib/generators/`-file 😉, you have to set up the
 challenges inside them manually on your own. Of course you can choose
 aspects like score per challenge, description etc. like you want. For
 the CTF to _actually work_ there is only one mandatory prerequisite:

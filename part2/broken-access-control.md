@@ -24,15 +24,15 @@
 
 | Name               | Challenge                                                                                                                              | Difficulty                           |
 |:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Admin Section      | Access the administration section of the store.                                                                                        | :star::star:                         |
-| Easter Egg         | Find the hidden easter egg.                                                                                                            | :star::star::star::star:             |
-| Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | :star::star:                         |
-| Forged Feedback    | Post some feedback in another users name.                                                                                              | :star::star::star:                   |
-| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | :star::star::star:                   |
-| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | :star::star::star:                   |
-| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | :star::star::star:                   |
-| SSRF               | Request a hidden resource on server through server.                                                                                    | :star::star::star::star::star::star: |
-| View Basket        | View another user's shopping basket.                                                                                                   | :star::star:                         |
+| Admin Section      | Access the administration section of the store.                                                                                        | ⭐⭐                         |
+| Easter Egg         | Find the hidden easter egg.                                                                                                            | ⭐⭐⭐⭐             |
+| Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | ⭐⭐                         |
+| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐                   |
+| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐                   |
+| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐                   |
+| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐                   |
+| SSRF               | Request a hidden resource on server through server.                                                                                    | ⭐⭐⭐⭐⭐⭐ |
+| View Basket        | View another user's shopping basket.                                                                                                   | ⭐⭐                         |
 
 ### Access the administration section of the store
 
@@ -95,7 +95,7 @@ posting a (most likely negative) feedback in his or her name!
 
 ### Post a product review as another user or edit any user's existing review
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Put an additional product into another user's shopping basket
 
@@ -137,7 +137,7 @@ challenge instruction to make it light up green on the score board:
 
 ### Request a hidden resource on server through server
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### View another user's shopping basket
 

@@ -175,7 +175,7 @@ do as follows:
   bkimminich/juice-shop:snapshot` instead of the usual `docker pull
   bkimminich/juice-shop`
 
-:information_source: Please be aware that support by the core team or
+ℹ️ Please be aware that support by the core team or
 community is limited (at best) for outdated and unreleased versions
 alike. To fully enjoy your OWASP Juice Shop experience, it is
 recommended to always use the latest version.

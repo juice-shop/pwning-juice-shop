@@ -10,13 +10,13 @@
 
 | Name                    | Challenge                                            | Difficulty               |
 |:------------------------|:-----------------------------------------------------|:-------------------------|
-| Admin Registration      | Register as a user with administrator privileges.    | :star::star::star:       |
-| Expired Coupon          | Successfully redeem an expired campaign coupon code. | :star::star::star::star: |
-| Payback Time            | Place an order that makes you rich.                  | :star::star::star:       |
-| Repetitive Registration | Follow the DRY principle while registering a user.   | :star:                   |
-| Upload Size             | Upload a file larger than 100 kB.                    | :star::star::star:       |
-| Upload Type             | Upload a file that has no .pdf or .zip extension.    | :star::star::star:       |
-| Zero Stars              | Give a devastating zero-star feedback to the store.  | :star:                   |
+| Admin Registration      | Register as a user with administrator privileges.    | ⭐⭐⭐       |
+| Expired Coupon          | Successfully redeem an expired campaign coupon code. | ⭐⭐⭐⭐ |
+| Payback Time            | Place an order that makes you rich.                  | ⭐⭐⭐       |
+| Repetitive Registration | Follow the DRY principle while registering a user.   | ⭐                   |
+| Upload Size             | Upload a file larger than 100 kB.                    | ⭐⭐⭐       |
+| Upload Type             | Upload a file that has no .pdf or .zip extension.    | ⭐⭐⭐       |
+| Zero Stars              | Give a devastating zero-star feedback to the store.  | ⭐                   |
 
 ### Register as a user with administrator privileges
 
@@ -32,7 +32,7 @@ chosen by simply leaving then admin features in the web shop itself and
 
 ### Successfully redeem an expired campaign coupon code
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Place an order that makes you rich
 

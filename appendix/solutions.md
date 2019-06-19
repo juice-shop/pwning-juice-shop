@@ -1,4 +1,4 @@
-# :godmode: Appendix A - Challenge solutions
+# Appendix A - Challenge solutions
 
 All URLs in the challenge solutions assume you are running the
 application locally and on the default port http://localhost:3000.
@@ -11,7 +11,7 @@ or most obvious one from the author's perspective.
 _The challenge solutions found in this release of the companion guide
 are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
-## :star: Challenges
+## ⭐ Challenges
 
 ### Access a confidential document
 
@@ -142,7 +142,7 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
 
-## :star::star: Challenges
+## ⭐⭐ Challenges
 
 ### Access the administration section of the store
 
@@ -300,7 +300,7 @@ in order to exploit and solve them:
    username into ``<script>alert(`xss`)</script>`` thus resulting in the
    expected alert box popping up.
 
-## :star::star::star: Challenges
+## ⭐⭐⭐ Challenges
 
 ###  Register as a user with administrator privileges
 
@@ -333,7 +333,7 @@ in order to exploit and solve them:
 6. Submitting this request will satisfy the validation based on your own
    `BasketId` but put the product into the other basket!
 
-:information_source: With other `BasketId`s you might need to play with
+ℹ️ With other `BasketId`s you might need to play with
 the order of the duplicate property a bit and/or make sure your own
 `BasketId` is lower than the one of the target basket to make this HPP
 vulnerability work in your favor.
@@ -464,7 +464,7 @@ logged out but provide any `UserId` in the JSON payload.
 
 ### Post a product review as another user or edit any user's existing review
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Log in with Chris' erased user account
 
@@ -615,7 +615,7 @@ pet cat playing.
    * Another product review _"Fresh out of a replicator."_ on the _Green
      Smoothie_ product
    * A _Recycling Request_ with the address _"Starfleet HQ, 24-593
-     Federation Drive, San Francisco, CA"_ (:wrench: **TODO**)
+     Federation Drive, San Francisco, CA"_ (🔧 **TODO**)
 3. It should eventually become obvious that _James T. Kirk_ is the only
    viable solution to the question of Jim's identity
 
@@ -745,7 +745,7 @@ simultaneously.
 </trades>
 ```
 
-## :star::star::star::star: Challenges
+## ⭐⭐⭐⭐ Challenges
 
 ### Gain access to any access log file of the server
 
@@ -836,7 +836,7 @@ more attention & a good portion of shrewdness.
 
 ### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Find the hidden easter egg
 
@@ -875,7 +875,7 @@ more attention & a good portion of shrewdness.
 
 ### Successfully redeem an expired campaign coupon code
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Access a developer's forgotten backup file
 
@@ -941,7 +941,7 @@ more attention & a good portion of shrewdness.
 
 ### Steal someone else's personal data without using Injection
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Access a misplaced SIEM signature file
 
@@ -1199,9 +1199,9 @@ explains the problem and gives an exploit example:
 
 ###  Perform a persisted XSS attack through an HTTP header
 
-:wrench: **TODO**
+🔧 **TODO**
 
-## :star::star::star::star::star: Challenges
+## ⭐⭐⭐⭐⭐ Challenges
 
 ### Learn about the Token Sale before its official announcement
 
@@ -1332,13 +1332,13 @@ Pretty-printed this attack is easier to understand:
 Anyone who is logged in to the Juice Shop while clicking on this link
 will get their password set to the same one we forced onto Bender!
 
-:clap: Kudos to Joe Butler, who originally described this advanced XSS
+👏 Kudos to Joe Butler, who originally described this advanced XSS
 payload in his blog post
 [Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
 
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 
@@ -1393,7 +1393,7 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 
 ### Solve the 2FA challenge for user "wurstbrot"
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Forge an essentially unsigned JWT token
 
@@ -1446,7 +1446,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 ###  All your orders are belong to us
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
@@ -1558,7 +1558,7 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-:godmode: If you do not want to write your own script for this
+📕: If you do not want to write your own script for this
 challenge, take a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
@@ -1716,7 +1716,7 @@ loop`._
 ><lolz>&lol9;</lolz>
 > ```
 
-## :star::star::star::star::star::star: Challenges
+## ⭐⭐⭐⭐⭐⭐ Challenges
 
 ###  Overwrite the Legal Information file
 
@@ -1772,7 +1772,7 @@ totally different attack styles.
 3. You can rightfully speculate that the last five characters represent
    the actual discount value. The change in the last character for the
    12th code comes from a different (probably higher) discount in
-   December! :santa:
+   December! 🎅
 4. Check the official Juice Shop Twitter account for a valid coupon
    code: <https://twitter.com/owasp_juiceshop>
 5. At the time of this writing - January 2017 - the broadcasted coupon
@@ -1843,7 +1843,7 @@ totally different attack styles.
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
    <https://github.com/bkimminich/juicy-coupon-bot>.
-   :information_source: _As this is not part of the Juice Shop repo
+   ℹ️ _As this is not part of the Juice Shop repo
    itself and it is publicly accessible, analyzing this repository is
    **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
@@ -1952,12 +1952,12 @@ totally different attack styles.
 9. Click _Update_ and then _Go_ in the top left to send the modified
    request via Burp and solve this challenge!
 
-:clap: Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for
+👏 Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for
 providing this solution.
 
 ###  Like any review at least three times as the same user
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Log in with the support team's original user credentials
 
@@ -2056,11 +2056,11 @@ to use some unofficial port._
 
 ###  Request a hidden resource on server through server
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ###  Infect the server with malware by abusing arbitrary command execution
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Embed an XSS payload into our promo video
 

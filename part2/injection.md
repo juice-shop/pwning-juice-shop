@@ -41,15 +41,15 @@
 
 | Name               | Challenge                                                                            | Difficulty                           |
 |:-------------------|:-------------------------------------------------------------------------------------|:-------------------------------------|
-| Christmas Special  | Order the Christmas special offer of 2014.                                           | :star::star::star:                   |
-| Login Admin        | Log in with the administrator's user account.                                        | :star::star:                         |
-| Login Bender       | Log in with Bender's user account.                                                   | :star::star::star:                   |
-| Login Jim          | Log in with Jim's user account.                                                      | :star::star::star:                   |
-| NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:             |
-| NoSQL Exfiltration | All your orders are belong to us! Even the ones which don't!                         | :star::star::star::star::star:       |
-| NoSQL Manipulation | Update multiple product reviews at the same time.                                    | :star::star::star::star:             |
-| SSTi               | Infect the server with malware by abusing arbitrary command execution.               | :star::star::star::star::star::star: |
-| User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:             |
+| Christmas Special  | Order the Christmas special offer of 2014.                                           | ⭐⭐⭐                   |
+| Login Admin        | Log in with the administrator's user account.                                        | ⭐⭐                         |
+| Login Bender       | Log in with Bender's user account.                                                   | ⭐⭐⭐                   |
+| Login Jim          | Log in with Jim's user account.                                                      | ⭐⭐⭐                   |
+| NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | ⭐⭐⭐⭐             |
+| NoSQL Exfiltration | All your orders are belong to us! Even the ones which don't!                         | ⭐⭐⭐⭐⭐       |
+| NoSQL Manipulation | Update multiple product reviews at the same time.                                    | ⭐⭐⭐⭐             |
+| SSTi               | Infect the server with malware by abusing arbitrary command execution.               | ⭐⭐⭐⭐⭐⭐ |
+| User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | ⭐⭐⭐⭐             |
 
 #### Reconnaissance advice
 
@@ -195,7 +195,7 @@ stripped-down _denial-of-service_ attack challenge.
 
 ### All your orders are belong to us
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Update multiple product reviews at the same time
 
@@ -212,7 +212,7 @@ multiple reviews are the same time.
 
 ### Infect the server with malware by abusing arbitrary command execution
 
-:wrench: **TODO**
+🔧 **TODO**
 
 ### Retrieve a list of all user credentials via SQL Injection
 

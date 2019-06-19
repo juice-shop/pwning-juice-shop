@@ -4,16 +4,16 @@
 
 | Name                      | Challenge                                                                                                                              | Difficulty                     |
 |:--------------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
-| Bjoern's Favorite Pet     | Reset the password of Bjoern's OWASP account via the Forgot Password mechanism with _the truthful answer_ to his security question.    | :star::star::star:             |
-| Change Bender's Password  | Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password.                                           | :star::star::star::star:       |
-| GDPR Data Erasure         | Log in with Chris' erased user account.                                                                                                | :star::star::star:             |
-| Login Bjoern              | Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.    | :star::star::star::star:       |
-| Login CISO                | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                                | :star::star::star::star::star: |
-| Password Strength         | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                           | :star::star:                   |
-| Reset Bender's Password   | Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                         | :star::star::star::star:       |
-| Reset Bjoern's Password   | Reset the password of Bjoern's internal account via the Forgot Password mechanism with _the truthful answer_ to his security question. | :star::star::star::star::star: |
-| Reset Jim's Password      | Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                            | :star::star::star:             |
-| Two Factor Authentication | Solve the 2FA challenge for user "wurstbrot". (Disabling, bypassing or overwriting his 2FA settings does not count as a solution)      | :star::star::star::star::star: |
+| Bjoern's Favorite Pet     | Reset the password of Bjoern's OWASP account via the Forgot Password mechanism with _the truthful answer_ to his security question.    | ⭐⭐⭐             |
+| Change Bender's Password  | Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password.                                           | ⭐⭐⭐⭐       |
+| GDPR Data Erasure         | Log in with Chris' erased user account.                                                                                                | ⭐⭐⭐             |
+| Login Bjoern              | Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.    | ⭐⭐⭐⭐       |
+| Login CISO                | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                                | ⭐⭐⭐⭐⭐ |
+| Password Strength         | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                           | ⭐⭐                   |
+| Reset Bender's Password   | Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                         | ⭐⭐⭐⭐       |
+| Reset Bjoern's Password   | Reset the password of Bjoern's internal account via the Forgot Password mechanism with _the truthful answer_ to his security question. | ⭐⭐⭐⭐⭐ |
+| Reset Jim's Password      | Reset Jim's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                            | ⭐⭐⭐             |
+| Two Factor Authentication | Solve the 2FA challenge for user "wurstbrot". (Disabling, bypassing or overwriting his 2FA settings does not count as a solution)      | ⭐⭐⭐⭐⭐ |
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
@@ -52,7 +52,7 @@ and use it to reset the password of his OWASP account.
 * Hints to the answer to Bjoern's question can be found by looking him
   up on the Internet.
 * More precisely, Bjoern might have accidentally
-  (:stuck_out_tongue_winking_eye:) doxxed himself by mentioning his
+  (😜) doxxed himself by mentioning his
   security answer on at least one occasion where a camera was running.
 * Brute forcing the answer might be very well possible with a
   sufficiently extensive list of common pet names.
@@ -223,7 +223,7 @@ question.
 
 ### Solve the 2FA challenge for user "wurstbrot"
 
-:wrench: **TODO**
+🔧 **TODO**
 
 [^1]: http://goodsecurityquestions.com
 [^2]: https://en.wikipedia.org/wiki/Doxing

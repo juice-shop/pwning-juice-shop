@@ -153,7 +153,7 @@ find its syntax along with an excerpt of the default settings.
   * `promotion` defines the attributes required for the `/promotion`
     screen where a marketing video with subtitles is rendered that hosts
     the
-    [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-one-of-our-marketing-collaterals)
+    [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-our-promo-video)
     challenge
     * `video` name of a file with `video/mp4` content type in
       `/app/public/videos` _or_ URL of an image to download to that
@@ -197,11 +197,11 @@ find its syntax along with an excerpt of the default settings.
   * `fileForRetrieveBlueprintChallenge` (_must be `true` on exactly one
     product_) filename in `/app/public/images/products` _or_ URL of a
     file download to that folder and then use as the target for the
-    [Retrieve Blueprint](../part2/forgotten-content.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
+    [Retrieve Blueprint](../part2/sensitive-data-exposure.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
     challenge. If a filename is specified but the file does not exist in
     `/app/public/images/products` the challenge is still solvable by
     just requesting it from the server. Defaults to `JuiceShop.stl`.
-    :information_source: _To make this challenge realistically solvable,
+    ℹ️ _To make this challenge realistically solvable,
     include some kind of hint to the blueprint file's name/type in the
     product image (e.g. its `Exif` metadata) or in the product
     description_
@@ -210,7 +210,7 @@ find its syntax along with an excerpt of the default settings.
     a feedback or complaint to solve the
     [DLP Tier 1](../part2/sensitive-data-exposure.md#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous)
     challenge. Overrides `deletedDate` with `2019-02-1`.
-    :information_source: _To make this challenge realistically solvable,
+    ℹ️ _To make this challenge realistically solvable,
     provide the keywords on e.g. PasteBin in an obscured way that works
     well with the "dangerous ingredients of an unsafe product""
     narrative_
@@ -353,29 +353,26 @@ The following three customizations are provided out of the box by OWASP
 Juice Shop:
 * [7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml):
   Full conversion <https://7ms.us>-theme for the first podcast that
-  picked up the Juice Shop way before it was famous! :sunglasses:
+  picked up the Juice Shop way before it was famous! 😎
 * [Mozilla-CTF](https://github.com/bkimminich/juice-shop/blob/master/config/mozilla.yml):
   Another full conversion theme harvested and refined from the
   [Mozilla Austin CTF-event](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop)!
-  :earth_americas:
+  🦊
 * [The BodgeIt Store](https://github.com/bkimminich/juice-shop/blob/master/config/bodgeit.yml):
   An homage to
   [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
-  May it rest in JSPs! :skull:
-* [Sick-Shop](https://github.com/bkimminich/juice-shop/blob/master/config/sickshop.yml):
-  A store that offers a variety of illnesses and the original PoC theme
-  for the customization feature. _Achoo!_ Bless you! :mask:
+  May it rest in JSPs! 💀
 * [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
   Keeps the Juice Shop in its default layout but disabled hints while
   enabling CTF flag codes in the _"challenge solved"_-notifications.
   Refer to [Hosting a CTF event](ctf.md) to learn more about running a
-  CTF-event with OWASP Juice Shop. :triangular_flag_on_post:
+  CTF-event with OWASP Juice Shop. 🚩
 * [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
   Keeps the Juice Shop in its default layout but hides all _"challenge
-  solved"_-notifications, GitHub ribbon and challenge hints. :mute:
+  solved"_-notifications, GitHub ribbon and challenge hints. 🔇
 * [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
-  this customization is for you. :us:
+  this customization is for you. 🧃
 
 ![Mozilla-CTF theme](/part1/img/theme_mozilla.png)
 

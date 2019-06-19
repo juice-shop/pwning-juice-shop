@@ -4,8 +4,8 @@
 
 | Name               | Challenge                                                                                      | Difficulty               |
 |:-------------------|:-----------------------------------------------------------------------------------------------|:-------------------------|
-| Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | :star:                   |
-| Whitelist Bypass   | Enforce a redirect to a page you are not supposed to redirect to.                              | :star::star::star::star: |
+| Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | ⭐                   |
+| Whitelist Bypass   | Enforce a redirect to a page you are not supposed to redirect to.                              | ⭐⭐⭐⭐ |
 
 ### Let us redirect you to one of our crypto currency addresses
 

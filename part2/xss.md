@@ -21,14 +21,14 @@
 
 | Name                       | Challenge                                                                                                                       | Difficulty                           |
 |:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | :star::star::star:                   |
-| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | :star::star:                         |
-| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | :star::star::star:                   |
-| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | :star:                               |
-| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | :star::star::star::star:             |
-| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | :star:                               |
-| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | :star::star::star::star:             |
-| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                           | :star::star::star::star::star::star: |
+| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | ⭐⭐⭐                   |
+| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | ⭐⭐                         |
+| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | ⭐⭐⭐                   |
+| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | ⭐                               |
+| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | ⭐⭐⭐⭐             |
+| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | ⭐                               |
+| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | ⭐⭐⭐⭐             |
+| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                           | ⭐⭐⭐⭐⭐⭐ |
 
 ### Perform a persisted XSS attack without using the frontend application at all
 
@@ -170,7 +170,7 @@ As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.
 
 * Without utilizing the vulnerability behind another
-  :star::star::star::star::star::star: challenge it is not possible to
+  ⭐⭐⭐⭐⭐⭐ challenge it is not possible to
   plant the XSS payload for this challenge
 * The mentioned "marketing collateral" might have been publicly
   advertised by the Juice Shop but is not necessarily part of its

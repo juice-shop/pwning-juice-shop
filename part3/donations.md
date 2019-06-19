@@ -38,7 +38,7 @@ The project gratefully accepts donations via PayPal or Credit Card:
 All donations are received and managed by the
 OWASP Foundation and must be earmarked properly to end up in the Juice Shop budget. You will receive an official donation receipt.
 
-:information_source: _Independent of your selected method it is
+ℹ️ _Independent of your selected method it is
 recommended to forward your donation confirmation to
 bjoern.kimminich@owasp.org to allow verifying if the earmarking worked
 and the money is attributed to the Juice Shop budget. You should provide

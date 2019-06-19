@@ -1,6 +1,6 @@
 # Hacking exercise rules
 
-## :white_check_mark: Recommended hacking tools
+## ✔️ Recommended hacking tools
 
 ### Browser
 
@@ -65,7 +65,7 @@ just as fine as the recommended browser plugins.
 #### Scripting tools
 
 A small number of challenges is not realistically solvable manually
-unless you are cheating or are incredibly :four_leaf_clover:-lucky.
+unless you are cheating or are incredibly 🍀-lucky.
 
 For these challenges you will require to write some scripts that for
 example can submit requests with different parameter values
@@ -170,7 +170,7 @@ all over the place if you know where to look, but sometimes you simply
 need to extend your research to the Internet in order to gain some
 relevant piece of intel to beat a challenge.
 
-## :bulb: Getting hints
+## 💡 Getting hints
 
 Frankly speaking, you are reading the _premium source of hints_ right
 now! Congratulations! In case you want to hack more on your own than
@@ -187,9 +187,9 @@ you like it a bit more nostalgic, you can also join and post to the
 project mailing list at
 https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
-## :x: Things considered cheating
+## ❌ Things considered cheating
 
-### Reading a solution ( :godmode: ) before trying
+### Reading a solution ( 📕: ) before trying
 
 [Appendix A - Challenge solutions](../appendix/solutions.md) is
 there to help you in case you are stuck or have absolutely no idea how a

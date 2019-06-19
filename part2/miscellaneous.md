@@ -4,9 +4,9 @@
 
 | Name            | Challenge                                                          | Difficulty   |
 |:----------------|:-------------------------------------------------------------------|:-------------|
-| Privacy Policy  | Read our privacy policy.                                           | :star:       |
-| Score Board     | Find the carefully hidden 'Score Board' page.                      | :star:       |
-| Security Policy | Behave like any "white hat" should before getting into the action. | :star::star: |
+| Privacy Policy  | Read our privacy policy.                                           | ⭐       |
+| Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐       |
+| Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐ |
 
 ### Read our privacy policy
 

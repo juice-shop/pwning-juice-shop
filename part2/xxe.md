@@ -48,10 +48,10 @@
 
 | Name            | Challenge                                                                         | Difficulty                     |
 |:----------------|:----------------------------------------------------------------------------------|:-------------------------------|
-| XXE Data Access | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | :star::star::star:             |
-| XXE DoS         | Give the server something to chew on for quite a while.                           | :star::star::star::star::star: |
+| XXE Data Access | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | ⭐⭐⭐             |
+| XXE DoS         | Give the server something to chew on for quite a while.                           | ⭐⭐⭐⭐⭐ |
 
-:information_source: _Please note that both XXE challenges described
+ℹ️ _Please note that both XXE challenges described
 below are **not available** when running the Juice Shop in either a
 Docker container or on a Heroku dyno! Certain aggressive attacks against
 the underlying XML parser caused the process to die from "Segmentation

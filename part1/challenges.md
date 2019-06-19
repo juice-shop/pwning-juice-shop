@@ -15,8 +15,8 @@ find out what needs to be done.
 
 ![Partly solved Score Board](img/score-board_partly.png)
 
-The challenges are rated with a difficulty level between :star: and
-:star::star::star::star::star::star:, with more stars representing a
+The challenges are rated with a difficulty level between ⭐ and
+⭐⭐⭐⭐⭐⭐, with more stars representing a
 higher difficulty. To make the list of challenges less daunting, they
 are clustered by difficulty. By default only the 1-star challenges are
 unfolded. You can open or collapse all challenge blocks as you like.
@@ -71,7 +71,7 @@ each one individually, as you can simply `Shift`-click one of their
 _X_-buttons to dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
-might also show a :checkered_flag: symbol with a character sequence next
+might also show a 🏁 symbol with a character sequence next
 to it. If you are doing a hacking session just on your own, you can
 completely ignore this flag. The code is only relevant if you are
 participating in a CTF event. Please refer to chapter
