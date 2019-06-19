@@ -39,17 +39,17 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                                  | Difficulty                           |
-|:-------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Log in with the administrator's user account.                                                                                              | :star::star:                         |
-| Log in with Bender's user account.                                                                                                         | :star::star::star:                   |
-| Log in with Jim's user account.                                                                                                            | :star::star::star:                   |
-| Order the Christmas special offer of 2014.                                                                                                 | :star::star::star:                   |
-| Let the server sleep for some time. (It has done more than enough hard work for you)                                                       | :star::star::star::star:             |
-| Update multiple product reviews at the same time.                                                                                          | :star::star::star::star:             |
-| Retrieve a list of all user credentials via SQL Injection.                                                                                 | :star::star::star::star:             |
-| All your orders are belong to us!                                                                                                          | :star::star::star::star::star:       |
-| Infect the server with malware by abusing arbitrary command execution.                                                                     | :star::star::star::star::star::star: |
+| Name               | Challenge                                                                            | Difficulty                           |
+|:-------------------|:-------------------------------------------------------------------------------------|:-------------------------------------|
+| Christmas Special  | Order the Christmas special offer of 2014.                                           | :star::star::star:                   |
+| Login Admin        | Log in with the administrator's user account.                                        | :star::star:                         |
+| Login Bender       | Log in with Bender's user account.                                                   | :star::star::star:                   |
+| Login Jim          | Log in with Jim's user account.                                                      | :star::star::star:                   |
+| NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | :star::star::star::star:             |
+| NoSQL Exfiltration | All your orders are belong to us!                                                    | :star::star::star::star::star:       |
+| NoSQL Manipulation | Update multiple product reviews at the same time.                                    | :star::star::star::star:             |
+| SSTi               | Infect the server with malware by abusing arbitrary command execution.               | :star::star::star::star::star::star: |
+| User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | :star::star::star::star:             |
 
 #### Reconnaissance advice
 
@@ -60,54 +60,6 @@ underlying SQL query (e.g. `'` or `';`) you can analyze how the
 behaviour differs from regular use. Maybe you can even provoke an error
 where the application leaks details about the query structure and schema
 details like table or column names. Do not miss this opportunity.
-
-### Log in with the administrator's user account
-
-What would a vulnerable web application be without an administrator user
-account whose (supposedly) privileged access rights a successful hacker
-can abuse?
-
-#### Hints
-
-* The challenge description probably gave away what form you should
-  attack.
-* If you happen to know the email address of the admin already, you can
-  launch a targeted attack.
-* You might be lucky with a dedicated attack pattern even if you have no
-  clue about the admin email address.
-* If you harvested the admin's password hash, you can of course try to
-  attack that instead of using SQL Injection.
-* Alternatively you can solve this challenge as a _combo_ with the
-  [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
-  challenge.
-
-### Log in with Bender's user account
-
-Bender is a regular customer, but mostly hangs out in the Juice Shop to
-troll it for its lack of alcoholic beverages.
-
-#### Hints
-
-* The challenge description probably gave away what form you should
-  attack.
-* You need to know (or smart-guess) Bender's email address so you can
-  launch a targeted attack.
-* In case you try some other approach than SQL Injection, you will
-  notice that Bender's password hash is not very useful.
-
-### Log in with Jim's user account
-
-Jim is a regular customer. He prefers juice from fruits that no man has
-ever tasted before.
-
-#### Hints
-
-* The challenge description probably gave away what form you should
-  attack.
-* You need to know (or smart-guess) Jim's email address so you can
-  launch a targeted attack.
-* If you harvested Jim's password hash, you can try to attack that
-  instead of using SQL Injection.
 
 ### Order the Christmas special offer of 2014
 
@@ -131,8 +83,6 @@ ever tasted before.
 To solve this challenge you need _to order_ a product that is not
 supposed to be available any more.
 
-#### Hints
-
 * Find out how the application _hides_ deleted products from its
   customers.
 * Try to craft an attack string that makes deleted products visible
@@ -141,6 +91,49 @@ supposed to be available any more.
   trigger the _Checkout_.
 * Neither of the above can be achieved through the application frontend
   and it might even require Blind SQL Injection.
+
+
+### Log in with the administrator's user account
+
+What would a vulnerable web application be without an administrator user
+account whose (supposedly) privileged access rights a successful hacker
+can abuse?
+
+* The challenge description probably gave away what form you should
+  attack.
+* If you happen to know the email address of the admin already, you can
+  launch a targeted attack.
+* You might be lucky with a dedicated attack pattern even if you have no
+  clue about the admin email address.
+* If you harvested the admin's password hash, you can of course try to
+  attack that instead of using SQL Injection.
+* Alternatively you can solve this challenge as a _combo_ with the
+  [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
+  challenge.
+
+### Log in with Bender's user account
+
+Bender is a regular customer, but mostly hangs out in the Juice Shop to
+troll it for its lack of alcoholic beverages.
+
+* The challenge description probably gave away what form you should
+  attack.
+* You need to know (or smart-guess) Bender's email address so you can
+  launch a targeted attack.
+* In case you try some other approach than SQL Injection, you will
+  notice that Bender's password hash is not very useful.
+
+### Log in with Jim's user account
+
+Jim is a regular customer. He prefers juice from fruits that no man has
+ever tasted before.
+
+* The challenge description probably gave away what form you should
+  attack.
+* You need to know (or smart-guess) Jim's email address so you can
+  launch a targeted attack.
+* If you harvested Jim's password hash, you can try to attack that
+  instead of using SQL Injection.
 
 ### Let the server sleep for some time
 
@@ -189,8 +182,6 @@ stripped-down _denial-of-service_ attack challenge.
 > you from accessing email, websites, online accounts (banking, etc.),
 > or other services that rely on the affected computer.[^3]
 
-#### Hints
-
 * As stated in the
   [Architecture overview](../introduction/architecture.md), OWASP Juice
   Shop uses a MongoDB derivate as its NoSQL database.
@@ -202,13 +193,15 @@ stripped-down _denial-of-service_ attack challenge.
   solve this challenge. _That_ would probably just _kill_ your server
   instance.
 
+### All your orders are belong to us
+
+:wrench: **TODO**
+
 ### Update multiple product reviews at the same time
 
 The UI and API only offer ways to update individual product reviews.
 This challenge is about manipulating an update so that it will affect
 multiple reviews are the same time.
-
-#### Hints
 
 * This challenge requires a classic Injection attack.
 * Take a close look on how the equivalent of UPDATE-statements in
@@ -216,6 +209,10 @@ multiple reviews are the same time.
 * It is also worth looking into how
   [Query Operators](https://docs.mongodb.com/manual/reference/operator/query/)
   work in MongoDB.
+
+### Infect the server with malware by abusing arbitrary command execution
+
+:wrench: **TODO**
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -225,8 +222,6 @@ or sneaking out with a USB stick full of sensitive information. Given
 your application is vulnerable to a certain type of SQL Injection
 attacks, hackers can have the same effect while comfortably sitting in a
 café with free WiFi.
-
-#### Hints
 
 * Try to find an endpoint where you can influence data being retrieved
   from the server.
@@ -239,25 +234,7 @@ café with free WiFi.
   this cannot be achieved through the application frontend but involves
   some Blind SQL Injection instead.
 
-### All your orders are belong to us
-
-:wrench: **TODO**
-
-#### Hints
-
-:wrench: **TODO**
-
-### Infect the server with malware by abusing arbitrary command execution
-
-:wrench: **TODO**
-
-#### Hints
-
-
 [^1]: https://www.owasp.org/index.php/Injection_Flaws
-
 [^2]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection
-
 [^3]: https://www.us-cert.gov/ncas/tips/ST04-015
-
 [^4]: https://www.owasp.org/index.php/Blind_SQL_Injection

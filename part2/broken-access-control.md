@@ -66,7 +66,7 @@ option available in the main menu.
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found **the real** easter
 egg! Of course finding **that** is
-[a follow-up challenge](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
+[a follow-up challenge](cryptographic-issues.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
 to this one._
 
 ### Get rid of all 5-star customer feedback

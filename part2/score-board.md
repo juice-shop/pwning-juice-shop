@@ -23,8 +23,6 @@ possible explanations:
 2. There is a URL that leads to the Score Board but it is not
    hyperlinked to
 
-#### Hints
-
 * Knowing it exists, you can simply _guess_ what URL the Score Board
   might have.
 * Alternatively, you can try to find a reference or clue within the

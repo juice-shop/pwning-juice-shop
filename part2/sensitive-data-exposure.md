@@ -2,117 +2,20 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                                                                               | Difficulty                           |
-|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Access a confidential document.                                                                                                                                                         | :star:                               |
-| Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | :star::star:                         |
-| Inform the shop about an algorithm or library it should definitely not use the way it does.                                                                                             | :star::star:                         |
-| Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | :star::star::star:                   |
-| Gain access to any access log file of the server.                                                                                                                                       | :star::star::star::star:             |
-| Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | :star::star::star::star:             |
-| Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | :star::star::star::star::star:       |
-| Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | :star::star::star::star::star:       |
-| Forge a coupon code that gives you a discount of at least 80%.                                                                                                                          | :star::star::star::star::star::star: |
-| Solve challenge #999. Unfortunately, this challenge does not exist.                                                                                                                     | :star::star::star::star::star::star: |
-| Unlock Premium Challenge to access exclusive content.                                                                                                                                   | :star::star::star::star::star::star: |
-
-### Access a confidential document
-
-Somewhere in the application you can find a file that contains sensitive
-information about some - potentially hostile - takeovers the Juice Shop
-top management has planned.
-
-#### Hints
-
-* Analyze and tamper with links in the application that deliver a file
-  directly.
-* The file you are looking for is not protected in any way. Once you
-  _found it_ you can also _access it_.
-
-### Log in with MC SafeSearch's original user credentials
-
-Another user login challenge where only the original password is
-accepted as a solution. Employing SQL Injection or other attacks does
-not count.
-
-#### Hints
-
-* MC SafeSearch is a rapper who produced the song
-  ["Protect Ya' Passwordz"](https://www.youtube.com/watch?v=v59CX2DiX0Y)
-  which explains password & sensitive data protection very nicely.
-* After watching
-  [the music video of this song](https://www.youtube.com/watch?v=v59CX2DiX0Y),
-  you should agree that even :star::star: is a slightly exaggerated
-  difficulty rating for this challenge.
-
-  [!["Protect Ya Passwordz"](img/protect-ya-passwordz.jpg)](https://www.youtube.com/watch?v=v59CX2DiX0Y)
-
-### Inform the shop about an algorithm or library it should definitely not use the way it does
-
-To fulfil this challenge you must identify a cryptographic algorithm (or
-crypto library) that either
-* should not be used _at all_
-* or is a _bad choice_ for a given requirement
-* or is used in an _insecure way_.
-
-> Initially confined to the realms of academia and the military,
-> cryptography has become ubiquitous thanks to the Internet. Common
-> every day uses of cryptography include mobile phones, passwords, SSL,
-> smart cards, and DVDs. Cryptography has permeated everyday life, and
-> is heavily used by many web applications.
->
-> Cryptography (or crypto) is one of the more advanced topics of
-> information security, and one whose understanding requires the most
-> schooling and experience. It is difficult to get right because there
-> are many approaches to encryption, each with advantages and
-> disadvantages that need to be thoroughly understood by web solution
-> architects and developers. In addition, serious cryptography research
-> is typically based in advanced mathematics and number theory,
-> providing a serious barrier to entry.
->
-> The proper and accurate implementation of cryptography is extremely
-> critical to its efficacy. A small mistake in configuration or coding
-> will result in removing a large degree of the protection it affords
-> and rending the crypto implementation useless against serious attacks.
->
-> A good understanding of crypto is required to be able to discern
-> between solid products and snake oil. The inherent complexity of
-> crypto makes it easy to fall for fantastic claims from vendors about
-> their product. Typically, these are “a breakthrough in cryptography”
-> or “unbreakable” or provide "military grade" security. If a vendor
-> says "trust us, we have had experts look at this,” chances are they
-> weren't experts![^1]
-
-#### Hints
-
-* Use the _Contact Us_ form to submit a feedback mentioning the abused
-  algorithm or library.
-* There are five possible answers and you only need to identify one to
-  solve the challenge.
-* Cryptographic functions only used in the
-  [Apply some advanced cryptanalysis to find _the real_ easter egg](security-through-obscurity.md#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg)
-  challenge _do not count_ as they are only a developer's prank and not
-  a serious security problem.
-
-### Log in with Amy's original user credentials
-
-This challenge is similar to
-[Log in with the administrators user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
-in the sense that only using her original credentials will work as a
-challenge solutions.
-
-![Amy and Kif Kroker](img/amy_and_kif.jpg)
-
-#### Hints
-
-* As with so many other characters from
-  [Futurama](http://www.imdb.com/title/tt0149460/) this challenge is of
-  course about logging in as Amy from that show. In the picture above
-  you see her together with her alien husband Kif.
-* The challenge description contains a few sentences which give away
-  some information how Amy decided to strengthen her password.
-* Obviously, Amy - being a little dimwitted - did not put nearly enough
-  effort and creativity into the password selection process.
+| Name                       | Challenge                                                                                                                                                                               | Difficulty                     |
+|:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
+| Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | :star::star::star::star:       |
+| Confidential Document      | Access a confidential document.                                                                                                                                                         | :star:                         |
+| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | :star::star::star::star::star: |
+| Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | :star::star::star::star:       |
+| Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | :star::star::star::star:       |
+| GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | :star::star::star::star:       |
+| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | :star::star::star::star::star: |
+| Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | :star::star::star::star:       |
+| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | :star::star::star:             |
+| Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | :star::star:                   |
+| Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | :star::star::star::star:       |
+| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | :star::star::star::star::star: |
 
 ### Gain access to any access log file of the server
 
@@ -131,13 +34,11 @@ challenge solutions.
 > which can be presented with the pages with most requests listed first
 > Usage patterns in terms of time of day, day of week, and seasonally
 > Access log keepers and analyzers can be found as shareware on the Web
-> or may come with a Web server.[^2]
+> or may come with a Web server.[^1]
 
 The Juice Shop application server is writing access logs, which can
 contain interesting information that competitors might also be
 interested in.
-
-#### Hints
 
 * Normally, server log files are written to disk on server side and are
   not accessible from the outside.
@@ -150,21 +51,16 @@ interested in.
   exposure.
 * Drilling down one level into the file system might not be sufficient.
 
-### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
+### Access a confidential document
 
-:wrench: **TODO**
+Somewhere in the application you can find a file that contains sensitive
+information about some - potentially hostile - takeovers the Juice Shop
+top management has planned.
 
-#### Hints
-
-:wrench: **TODO**
-
-### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
-
-:wrench: **TODO**
-
-#### Hints
-
-:wrench: **TODO**
+* Analyze and tamper with links in the application that deliver a file
+  directly.
+* The file you are looking for is not protected in any way. Once you
+  _found it_ you can also _access it_.
 
 ### Perform an unwanted information disclosure by accessing data cross-domain
 
@@ -173,93 +69,132 @@ data to be accessed cross domain. Usually the same-origin policy would
 prevent this but this endpoint has a special feature enabled which will
 allow cross domain access under certain circumstances.
 
-#### Hints
-
-* Try to find and attack an endpoint that responds with user information. SQL Injection
-  is not the solution here.
-* What ways are there to access data from a web application cross-domain?
+* Try to find and attack an endpoint that responds with user
+  information. SQL Injection is not the solution here.
+* What ways are there to access data from a web application
+  cross-domain?
 * This challenge uses an old way which is no longer recommended.
 
-### Forge a coupon code that gives you a discount of at least 80%
+### Access a developer's forgotten backup file
 
-This is probably one of the hardest challenges in the OWASP Juice Shop.
-As you learned during [the "happy path" tour](/part1/happy-path.md), the
-web shop offers a _Coupon_ field to get a discount on your entire order
-during checkout. The challenge is to get a discount of at least 80% on
-an order. As no coupons with this high a discount are published, it is
-up to you to forge your own.
+During an emergency incident and the hotfix that followed, a developer
+accidentally pasted an application configuration file into the wrong
+place. Downloading this file will not only solve the _Access a
+developer's forgotten backup file_ challenge but might also prove
+crucial in several other challenges later on.
 
-#### Hints
+* Analyze and tamper with links in the application that deliver a file
+  directly.
+* The file is not directly accessible because a security mechanism
+  prevents access to it.
+* You need to trick the security mechanism into thinking that the file
+  has a valid file type.
+* For this challenge there is only _one approach_ to pull this trick.
 
-* One viable solution would be to reverse-engineer how coupon codes are
-  generated and craft your own 80% coupon by using the same (or at least
-  similar) implementation.
-* Another possible solution might be harvesting as many previous coupon
-  as possible and look for patterns that might give you a leverage for a
-  brute force attack.
-* If all else fails, you could still try to blindly brute force the
-  coupon code field before checkout.
+### Access a salesman's forgotten backup file
 
-### Solve challenge #999
+A salesperson as accidentally uploaded a list of (by now outdated)
+coupon codes to the application. Downloading this file will not only
+solve the _Access a salesman's forgotten backup file_ challenge but
+might also prove useful in another challenge later on.
 
-The OWASP Juice Shop is _so broken_ that even its convenience features
-(which have nothing to do with the e-commerce use cases) are designed to
-be vulnerable. One of these features is the
-[automatic saving and restoring of hacking progress](/part1/challenges.md#automatic-saving-and-restoring-hacking-progress)
-after a server crash or a few days pause.
+* Analyze and tamper with links in the application that deliver a file
+  directly.
+* The file is not directly accessible because a security mechanism
+  prevents access to it.
+* You need to trick the security mechanism into thinking that the file
+  has a valid file type.
 
-In order to not mess with the _real challenges_ accidentally, the
-challenge is to fake a signal to the application that you successfully
-solved challenge #999 - which does not exist.
+### Steal someone else's personal data without using Injection
 
-#### Hints
+:wrench: **TODO**
 
-* Find out how saving and restoring progress is done behind the scenes
-* Deduce from all available information (e.g. the `package.json.bak`)
-  how the application encrypts and decrypts your hacking progress.
-* Other than the user's passwords, the hacking progress involves an
-  additional secret during its encryption.
-* What would be a _really stupid_ mistake a developer might make when
-  choosing such a secret?
+### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
-### Unlock Premium Challenge to access exclusive content
+:wrench: **TODO**
 
-These days a lot of seemingly free software comes with hidden or
-follow-up costs to use it to its full potential. For example: In
-computer games, letting players pay for _Downloadable Content_ (DLC)
-after they purchased a full-price game, has become the norm. Often this
-is okay, because the developers actually _added_ something worth the
-costs to their game. But just as often gamers are supposed to pay for
-_just unlocking_ features that were already part of the original
-release.
+### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
-This hacking challenge represents the latter kind of "premium" feature.
-_It only exists to rip you hackers off!_ Of course you should never
-tolerate such a business policy, let alone support it with your precious
-Bitcoins!
+:wrench: **TODO**
 
-That is why the actual challenge here is to unlock and solve the
-"premium" challenge _bypassing the paywall_ in front of it.
+### Log in with Amy's original user credentials
 
-#### Hints
+This challenge is similar to
+[Log in with the administrators user credentials without previously changing them or applying SQL Injection](broken-authentication.md#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
+in the sense that only using her original credentials will work as a
+challenge solutions.
 
-* This challenge could also have been put into chapter
-  [Weak security mechanisms](roll-your-own-security.md).
-* There is no inappropriate, self-written or misconfigured cryptographic
-  library to be exploited here.
-* How much protection does a sturdy top-quality door lock add to your
-  house if you...
-  * ...put the key under the door mat?
-  * ...hide the key in the nearby plant pot?
-  * ...tape the key to the underside of the mailbox?
-* Once more: **You do not have to pay anything to unlock this
-  challenge!**
+![Amy and Kif Kroker](img/amy_and_kif.jpg)
 
-> Side note: The Bitcoin address behind the taunting _Unlock_ button is
-> actually a valid address of the author. So, if you'd like to donate a
-> small amount for the ongoing maintenance and development of OWASP
-> Juice Shop - feel free to actually use it! More on
-> [donations in part 3](../part3/donations.md) of this book.
+* As with so many other characters from
+  [Futurama](http://www.imdb.com/title/tt0149460/) this challenge is of
+  course about logging in as Amy from that show. In the picture above
+  you see her together with her alien husband Kif.
+* The challenge description contains a few sentences which give away
+  some information how Amy decided to strengthen her password.
+* Obviously, Amy - being a little dimwitted - did not put nearly enough
+  effort and creativity into the password selection process.
 
-[^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
-[^2]: https://searchsecurity.techtarget.com/definition/access-log
+### Log in with MC SafeSearch's original user credentials
+
+Another user login challenge where only the original password is
+accepted as a solution. Employing SQL Injection or other attacks does
+not count.
+
+* MC SafeSearch is a rapper who produced the song
+  ["Protect Ya' Passwordz"](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+  which explains password & sensitive data protection very nicely.
+* After watching
+  [the music video of this song](https://www.youtube.com/watch?v=v59CX2DiX0Y),
+  you should agree that even :star::star: is a slightly exaggerated
+  difficulty rating for this challenge.
+
+  [!["Protect Ya Passwordz"](img/protect-ya-passwordz.jpg)](https://www.youtube.com/watch?v=v59CX2DiX0Y)
+
+### Access a misplaced SIEM signature file.
+
+> Security information and event management (SIEM) technology supports
+> threat detection and security incident response through the real-time
+> collection and historical analysis of security events from a wide
+> variety of event and contextual data sources. It also supports
+> compliance reporting and incident investigation through analysis of
+> historical data from these sources. The core capabilities of SIEM
+> technology are a broad scope of event collection and the ability to
+> correlate and analyze events across disparate sources.[^2]
+
+The misplaced signature file is actually a rule file for
+[Sigma](https://github.com/Neo23x0/sigma), a generic signature format
+for SIEM systems:
+
+> Sigma is a generic and open signature format that allows you to
+> describe relevant log events in a straight forward manner. The rule
+> format is very flexible, easy to write and applicable to any type of
+> log file. The main purpose of this project is to provide a structured
+> form in which researchers or analysts can describe their once
+> developed detection methods and make them shareable with others.
+>
+> Sigma is for log files what Snort is for network traffic and YARA is
+> for files.[^3]
+
+* If you solved one of the other four file access challenges, you
+  already know where the SIEM signature file is located
+* Simply reuse the trick that already worked for the files above
+
+### Deprive the shop of earnings by downloading the blueprint for one of its products
+
+Why waste money for a product when you can just as well get your hands
+on its blueprint in order to make it yourself?
+
+* The product you might want to give a closer look is the _OWASP Juice
+  Shop Logo (3D-printed)_
+* For your inconvenience the blueprint was _not_ misplaced into the same
+  place like so many others forgotten files covered in this chapter
+
+:information_source: _If you are running the Juice Shop with a custom
+theme and product inventory, the product to inspect will be a different
+one. The tooltip on the Score Board will tell you which one to look
+into._
+
+[^1]: https://searchsecurity.techtarget.com/definition/access-log
+[^2]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/
+[^3]: https://github.com/Neo23x0/sigma#what-is-sigma

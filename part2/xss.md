@@ -19,93 +19,16 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                                       | Difficulty                           |
-|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | :star:                               |
-| Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | :star:                               |
-| Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | :star::star:                         |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | :star::star::star:                   |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | :star::star::star:                   |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | :star::star::star::star:             |
-| Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | :star::star::star::star:             |
-| Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into one of our marketing collaterals.                          | :star::star::star::star::star::star: |
-
-### Perform a reflected XSS attack
-
-> Reflected Cross-site Scripting (XSS) occur when an attacker injects
-> browser executable code within a single HTTP response. The injected
-> attack is not stored within the application itself; it is
-> non-persistent and only impacts users who open a maliciously crafted
-> link or third-party web page. The attack string is included as part of
-> the crafted URI or HTTP parameters, improperly processed by the
-> application, and returned to the victim.[^2]
-
-#### Hints
-
-* Look for an input field where its content appears in the response when
-  its form is submitted.
-* Try probing for XSS vulnerabilities by submitting text wrapped in an
-  HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
-
-### Perform a DOM XSS attack
-
-> DOM-based Cross-Site Scripting is the de-facto name for XSS bugs which
-> are the result of active browser-side content on a page, typically
-> JavaScript, obtaining user input and then doing something unsafe with
-> it which leads to execution of injected code.
->
-> The DOM, or Document Object Model, is the structural format used to
-> represent documents in a browser. The DOM enables dynamic scripts such
-> as JavaScript to reference components of the document such as a form
-> field or a session cookie. The DOM is also used by the browser for
-> security - for example to limit scripts on different domains from
-> obtaining session cookies for other domains. A DOM-based XSS
-> vulnerability may occur when active content, such as a JavaScript
-> function, is modified by a specially crafted request such that a DOM
-> element that can be controlled by an attacker.[^3]
-
-#### Hints
-
-* This challenge is almost indistinguishable from
-  [Perform a reflected XSS attack](#perform-a-reflected-xss-attack) if
-  you do not look "under the hood" to find out what the application
-  actually does with the user input
-
-### Perform an XSS attack on a legacy page within the application
-
-In the [Architecture overview](../introduction/architecture.md) you were
-told that the Juice Shop uses a modern _Single Page Application_
-frontend. That was not entirely true.
-
-#### Hints
-
-* Find a screen in the application that looks subtly odd and dated
-  compared with all other screens
-* What is _even better_ than homegrown validation based on a RegEx?
-  Homegrown sanitization based on a RegEx!
-
-### Perform a persisted XSS attack bypassing a client-side security mechanism
-
-This challenge is founded on a very common security flaw of web
-applications, where the developers ignored the following golden rule of
-input validation:
-
-> Be aware that any JavaScript input validation performed on the client
-> can be bypassed by an attacker that disables JavaScript or uses a Web
-> Proxy. Ensure that any input validation performed on the client is
-> also performed on the server.[^4]
-
-#### Hints
-
-* There are only some input fields in the Juice Shop forms that validate
-  their input.
-* Even less of these fields are persisted in a way where their content
-  is shown on another screen.
-* Bypassing client-side security can typically be done by
-  * either disabling it on the client (i.e. in the browser by
-    manipulating the DOM tree)
-  * or by ignoring it completely and interacting with the backend
-    instead.
+| Name                       | Challenge                                                                                                                       | Difficulty                           |
+|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | :star::star::star:                   |
+| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | :star::star:                         |
+| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | :star::star::star:                   |
+| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | :star:                               |
+| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | :star::star::star::star:             |
+| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | :star:                               |
+| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | :star::star::star::star:             |
+| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                           | :star::star::star::star::star::star: |
 
 ### Perform a persisted XSS attack without using the frontend application at all
 
@@ -126,12 +49,92 @@ or a
 [tool for HTTP request tampering](/part1/rules.md#tools-for-http-request-tampering)
 to master this challenge.
 
-#### Hints
-
 * A matrix of known data entities and their supported HTTP verbs through
   the API can help you here
 * Careless developers might have exposed API methods that the client
   does not even need
+
+### Perform an XSS attack on a legacy page within the application
+
+In the [Architecture overview](../introduction/architecture.md) you were
+told that the Juice Shop uses a modern _Single Page Application_
+frontend. That was not entirely true.
+
+* Find a screen in the application that looks subtly odd and dated
+  compared with all other screens
+* What is _even better_ than homegrown validation based on a RegEx?
+  Homegrown sanitization based on a RegEx!
+
+### Perform a persisted XSS attack bypassing a client-side security mechanism
+
+This challenge is founded on a very common security flaw of web
+applications, where the developers ignored the following golden rule of
+input validation:
+
+> Be aware that any JavaScript input validation performed on the client
+> can be bypassed by an attacker that disables JavaScript or uses a Web
+> Proxy. Ensure that any input validation performed on the client is
+> also performed on the server.[^4]
+
+* There are only some input fields in the Juice Shop forms that validate
+  their input.
+* Even less of these fields are persisted in a way where their content
+  is shown on another screen.
+* Bypassing client-side security can typically be done by
+  * either disabling it on the client (i.e. in the browser by
+    manipulating the DOM tree)
+  * or by ignoring it completely and interacting with the backend
+    instead.
+
+### Perform a DOM XSS attack
+
+> DOM-based Cross-Site Scripting is the de-facto name for XSS bugs which
+> are the result of active browser-side content on a page, typically
+> JavaScript, obtaining user input and then doing something unsafe with
+> it which leads to execution of injected code.
+>
+> The DOM, or Document Object Model, is the structural format used to
+> represent documents in a browser. The DOM enables dynamic scripts such
+> as JavaScript to reference components of the document such as a form
+> field or a session cookie. The DOM is also used by the browser for
+> security - for example to limit scripts on different domains from
+> obtaining session cookies for other domains. A DOM-based XSS
+> vulnerability may occur when active content, such as a JavaScript
+> function, is modified by a specially crafted request such that a DOM
+> element that can be controlled by an attacker.[^3]
+
+* This challenge is almost indistinguishable from
+  [Perform a reflected XSS attack](#perform-a-reflected-xss-attack) if
+  you do not look "under the hood" to find out what the application
+  actually does with the user input
+
+### Perform a persisted XSS attack through an HTTP header
+
+This XSS challenge originates from an unsafely processed user input via
+an HTTP header. The difficulty lies in finding the attack path whereas
+the actual exploit is rather business as usual.
+
+* Finding a piece of information displayed in the UI that could
+  originate from an HTTP header
+* You might have to look into less common or even proprietary HTTP
+  headers to find the leverage point
+* Adding insult to injury, the HTTP header you need will never be sent
+  by the application on its own
+
+### Perform a reflected XSS attack
+
+> Reflected Cross-site Scripting (XSS) occur when an attacker injects
+> browser executable code within a single HTTP response. The injected
+> attack is not stored within the application itself; it is
+> non-persistent and only impacts users who open a maliciously crafted
+> link or third-party web page. The attack string is included as part of
+> the crafted URI or HTTP parameters, improperly processed by the
+> application, and returned to the victim.[^2]
+
+* Look for an input field where its content appears in the response when
+  its form is submitted.
+* Try probing for XSS vulnerabilities by submitting text wrapped in an
+  HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
 ### Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -149,8 +152,6 @@ _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error
 approach._
 
-#### Hints
-
 * The _Comment_ field in the _Contact Us_ screen is where you want to
   put your focus on
 * The attack payload ``<iframe src="javascript:alert(`xss`)">`` will
@@ -163,27 +164,10 @@ approach._
   attack string ``<iframe src="javascript:alert(`xss`)">`` into the
   database?
 
-### Perform a persisted XSS attack through an HTTP header
-
-This XSS challenge originates from an unsafely processed user input via
-an HTTP header. The difficulty lies in finding the attack path whereas
-the actual exploit is rather business as usual.
-
-#### Hints
-
-* Finding a piece of information displayed in the UI that could
-  originate from an HTTP header
-* You might have to look into less common or even proprietary HTTP
-  headers to find the leverage point
-* Adding insult to injury, the HTTP header you need will never be sent
-  by the application on its own
-
-### Embed an XSS payload into one of our marketing collaterals
+### Embed an XSS payload into our promo video
 
 As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.
-
-#### Hints
 
 * Without utilizing the vulnerability behind another
   :star::star::star::star::star::star: challenge it is not possible to
@@ -195,10 +179,7 @@ how hard it is to successfully place the XSS payload in the application.
   how hard you do research and analysis.
 
 [^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
-
 [^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
-
 [^3]: https://www.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)
-
 [^4]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
 

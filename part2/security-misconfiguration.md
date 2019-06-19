@@ -2,13 +2,27 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                                       | Difficulty                           |
-|:----------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Provoke an error that is not very gracefully handled.                                                           | :star:                               |
-| Access a salesman's forgotten backup file.                                                                      | :star::star::star::star:             |
-| Log in with the support team's original user credentials without applying SQL Injection or any other bypass.    | :star::star::star::star::star::star: |
+| Name                 | Challenge                                                                                                    | Difficulty                           |
+|:---------------------|:-------------------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Deprecated Interface | Use a deprecated B2B interface that was not properly shut down.                                              | :star::star:                         |
+| Error Handling       | Provoke an error that is neither very gracefully nor consistently handled.                                   | :star:                               |
+| Login Support Team   | Log in with the support team's original user credentials without applying SQL Injection or any other bypass. | :star::star::star::star::star::star: |
 
-### Provoke an error that is not very gracefully handled
+### Use a deprecated B2B interface that was not properly shut down
+
+The Juice Shop represents a classic Business-to-Consumer (B2C)
+application, but it also has some enterprise customers for which it
+would be inconvenient to order large quantities of juice through the
+webshop UI. For those customers there is a dedicated B2B interface.
+
+* The old B2B interface was replaced with a more modern version
+  recently.
+* When deprecating the old interface, not all of its parts were cleanly
+  removed from the code base.
+* Simply using the deprecated interface suffices to solve this
+  challenge. No attack or exploit is necessary.
+
+### Provoke an error that is neither very gracefully nor consistently handled
 
 The OWASP Juice Shop is quite _forgiving_ when it comes to bad input,
 broken requests or other failure situations. It is just not very
@@ -27,8 +41,6 @@ be visible at all.
 > messages. Often, this information can be leveraged to launch or even
 > automate more powerful attacks.[^1]
 
-#### Hints
-
 * This challenge actually triggers from various possible error
   conditions.
 * You can try to submit bad input to forms to provoke an improper error
@@ -41,22 +53,6 @@ message on screen, the error was probably logged on the JavaScript
 console of the browser. You were supposed to have it open all the time
 anyway, remember?
 
-### Access a salesman's forgotten backup file
-
-A salesperson as accidentally uploaded a list of (by now outdated)
-coupon codes to the application. Downloading this file will not only
-solve the _Access a salesman's forgotten backup file_ challenge but
-might also prove useful in another challenge later on.
-
-#### Hints
-
-* Analyze and tamper with links in the application that deliver a file
-  directly.
-* The file is not directly accessible because a security mechanism
-  prevents access to it.
-* You need to trick the security mechanism into thinking that the file
-  has a valid file type.
-
 ### Log in with the support team's original user credentials
 
 This is another _follow-the-breadcrumbs_ challenge of the tougher sort.
@@ -65,8 +61,6 @@ developed in the _classic style_: The development team wrote the code
 and then threw it over the fence to an operations and support team to
 run and troubleshoot the application. Not the slightest sign of
 [DevOps](https://en.wikipedia.org/wiki/DevOps) culture here.
-
-#### Hints
 
 * The support team is located in some low-cost country and the team
   structure fluctuates a lot due to people leaving for jobs with even
@@ -80,6 +74,3 @@ run and troubleshoot the application. Not the slightest sign of
   support team, this will not solve the challenge.
 
 [^1]: https://www.owasp.org/index.php/Top_10_2007-Information_Leakage
-
-[^2]: https://www.owasp.org/index.php/Brute_force_attack
-

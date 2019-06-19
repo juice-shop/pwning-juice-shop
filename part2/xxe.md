@@ -46,15 +46,15 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                         | Difficulty                     |
-|:----------------------------------------------------------------------------------|:-------------------------------|
-| Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | :star::star::star:             |
-| Give the server something to chew on for quite a while.                           | :star::star::star::star::star: |
+| Name            | Challenge                                                                         | Difficulty                     |
+|:----------------|:----------------------------------------------------------------------------------|:-------------------------------|
+| XXE Data Access | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | :star::star::star:             |
+| XXE DoS         | Give the server something to chew on for quite a while.                           | :star::star::star::star::star: |
 
-:information_source: _Please note that both XXE challenges described below are
-**not available** when running the Juice Shop in either a Docker
-container or on a Heroku dyno! Certain aggressive attacks against the
-underlying XML parser caused the process to die from "Segmentation
+:information_source: _Please note that both XXE challenges described
+below are **not available** when running the Juice Shop in either a
+Docker container or on a Heroku dyno! Certain aggressive attacks against
+the underlying XML parser caused the process to die from "Segmentation
 Fault" (`segfault`) errors. This happens despite the fact that the
 parsing actually happens in a sandbox with a timeout. While it is
 unfortunate to not have XXE challenges on containerized environments,
@@ -66,10 +66,8 @@ parsers actually are._
 In this challenge you are tasked to disclose a local file from the
 server the Juice Shop backend is hosted on.
 
-#### Hints
-
 * You already found the leverage point for this challenge if you solved
-  [Use a deprecated B2B interface that was not properly shut down](forgotten-content.md#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down).
+  [Use a deprecated B2B interface that was not properly shut down](security-misconfiguration.md#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down).
 * This challenge sounds a lot harder than it actually is, which
   amplifies how bad the underlying vulnerability is.
 * Doing some research on typical XEE attack patterns basically gives
@@ -82,8 +80,6 @@ Similar to
 this challenge is about performing a stripped-down _denial-of-service_
 attack. But this one is going against an entirely different leverage
 point.
-
-#### Hints
 
 * The leverage point for this is obviously the same as for the
   [XXE Tier 1](#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server)

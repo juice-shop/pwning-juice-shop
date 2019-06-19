@@ -19,10 +19,10 @@
 
 ## Challenges covered in this chapter
 
-| Challenge                                                                                          | Difficulty                           |
-|:---------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Perform a Remote Code Execution that would keep a less hardened application busy forever.          | :star::star::star::star::star:       |
-| Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | :star::star::star::star::star::star: |
+| Name               | Challenge                                                                                          | Difficulty                           |
+|:-------------------|:---------------------------------------------------------------------------------------------------|:-------------------------------------|
+| Blocked RCE DoS    | Perform a Remote Code Execution that would keep a less hardened application busy forever.          | :star::star::star::star::star:       |
+| Successful RCE DoS | Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | :star::star::star::star::star::star: |
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
@@ -47,8 +47,6 @@
 > another (especially via a wide-area network such as the Internet) is
 > often referred to as remote code execution.[^3]
 
-#### Hints
-
 * The feature you need to exploit for this challenge is not directly
   advertised anywhere.
 * As the Juice Shop is written in pure Javascript, there is one data
@@ -70,8 +68,6 @@
 > no terminating condition, having one that can never be met, or one
 > that causes the loop to start over.[^4]
 
-#### Hints
-
 * This challenge uses the same leverage point as
   [Perform a Remote Code Execution that would keep a less hardened application busy forever](#perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever).
 * The application has a protection against too many iterations (i.e.
@@ -79,9 +75,6 @@
   this challenge.
 
 [^1]: https://www.owasp.org/index.php/Deserialization_Cheat_Sheet
-
 [^2]: https://www.owasp.org/index.php/Code_Injection
-
 [^3]: https://en.wikipedia.org/wiki/Arbitrary_code_execution
-
 [^4]: https://en.wikipedia.org/wiki/Infinite_loop
