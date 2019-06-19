@@ -11,7 +11,7 @@ or most obvious one from the author's perspective.
 _The challenge solutions found in this release of the companion guide
 are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
-## Trivial Challenges (  :star:  )
+## :star: Challenges
 
 ### Access a confidential document
 
@@ -26,7 +26,7 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 3. Open <http://localhost:3000/ftp/acquisitions.md> to solve the
    challenge.
 
-### Provoke an error that is not very gracefully handled.
+### Provoke an error that is neither very gracefully nor consistently handled
 
 Any request that cannot be properly handled by the server will
 eventually be passed to a global error handling component that sends an
@@ -142,7 +142,7 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
    ![Zero star feedback in carousel](img/zero_star_feedback-carousel.png)
 
-## Easy Challenges (  :star::star:  )
+## :star::star: Challenges
 
 ### Access the administration section of the store
 
@@ -160,7 +160,6 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
    * [Log in with the administrator's user credentials without previously changing them or applying SQL Injection](#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection)
      first and then navigate to http://localhost:3000/#/administration
      will solve the challenge.
-
 
 ### View another user's shopping basket
 
@@ -249,7 +248,7 @@ If the challenge is not immediately solved, you might have to
    which is as easy to guess as it is to brute force or retrieve from a
    rainbow table.
 
-### Behave like any "white hat" should
+### Behave like any "white hat" should before getting into the action
 
 1. Visit <https://securitytxt.org/> to learn about a proposed standard
    which allows websites to define security policies.
@@ -301,9 +300,9 @@ in order to exploit and solve them:
    username into ``<script>alert(`xss`)</script>`` thus resulting in the
    expected alert box popping up.
 
-## Medium Challenges (  :star::star::star:  )
+## :star::star::star: Challenges
 
-###  Get registered as admin user
+###  Register as a user with administrator privileges
 
 1. Submit a `POST` request to <http://localhost:3000/api/Users> with:
    * `{"email":"admin","password":"admin","isAdmin":true}` as body
@@ -469,8 +468,15 @@ logged out but provide any `UserId` in the JSON payload.
 
 ### Log in with Chris' erased user account
 
-* Log in with _Email_ `chris.pike@juice-sh.op'--` and any _Password_ if you already know the email address of Chris.
-* or log in with _Email_ as `\' or deletedAt IS NOT NULL--` and any _Password_ you like for a "lucky hit" as Chris seems to be the only or at least first ever deleted user. The presence of `deletedAt` you might have derived from [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection) and enforcing it to be `NOT NULL` will give you back only users who were soft-deleted at some point of time.
+* Log in with _Email_ `chris.pike@juice-sh.op'--` and any _Password_ if
+  you already know the email address of Chris.
+* or log in with _Email_ as `\' or deletedAt IS NOT NULL--` and any
+  _Password_ you like for a "lucky hit" as Chris seems to be the only or
+  at least first ever deleted user. The presence of `deletedAt` you
+  might have derived from
+  [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
+  and enforcing it to be `NOT NULL` will give you back only users who
+  were soft-deleted at some point of time.
 
 ### Log in with Amy's original user credentials
 
@@ -739,7 +745,7 @@ simultaneously.
 </trades>
 ```
 
-## Hard Challenges (  :star::star::star::star:  )
+## :star::star::star::star: Challenges
 
 ### Gain access to any access log file of the server
 
@@ -779,8 +785,8 @@ simultaneously.
    <http://localhost:3000/rest/products/search> endpoint would not even
    be needed, but might be a relic from a different implementation of
    the search functionality. Test this theory by submitting
-   <http://localhost:3000/rest/products/searchq=orange> which should give
-   you a result such as
+   <http://localhost:3000/rest/products/searchq=orange> which should
+   give you a result such as
 
    ![JSON search result for "orange" keyword](img/search-result_orange.png)
 5. Submit `';` as `q` via
@@ -959,9 +965,9 @@ more attention & a good portion of shrewdness.
 
 To avoid _real_ Denial-of-Service (DoS) issues, the Juice Shop will only
 wait for a maximum of 2 seconds, so
-http://localhost:3000/rest/products/sleep(999999)/reviews should not take
-longer than http://localhost:3000/rest/products/sleep(2000)/reviews to
-respond.
+http://localhost:3000/rest/products/sleep(999999)/reviews should not
+take longer than http://localhost:3000/rest/products/sleep(2000)/reviews
+to respond.
 
 ### Update multiple product reviews at the same time
 
@@ -978,7 +984,7 @@ respond.
 3. Check different product detail dialogs to verify that _all review
    texts_ have been changed into `NoSQL Injection!`
 
-### Wherever you go, there you are
+### Enforce a redirect to a page you are not supposed to redirect to
 
 1. Pick one of the redirect links in the application, e.g.
    <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
@@ -1051,7 +1057,7 @@ respond.
 7. Submit your feedback containing the name `Pickle Rick` (case doesn't
    matter) to solve this challenge.
 
-### Inform the shop about a typosquatting trick it has become victim of
+### Inform the shop about a typosquatting trick it has been a victim of
 
 1. Solve the
    [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file)
@@ -1195,7 +1201,7 @@ explains the problem and gives an exploit example:
 
 :wrench: **TODO**
 
-## Dreadful Challenges (  :star::star::star::star::star:  )
+## :star::star::star::star::star: Challenges
 
 ### Learn about the Token Sale before its official announcement
 
@@ -1384,6 +1390,10 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 > vocabulary, grammar, figures of speech, and even slang and regional
 > dialects. Today it is spoken by humans all over the world, in many
 > contexts.[^3]
+
+### Solve the 2FA challenge for user "wurstbrot"
+
+:wrench: **TODO**
 
 ### Forge an essentially unsigned JWT token
 
@@ -1615,7 +1625,7 @@ from the Juice Shop (and other OWASP projects or chapters) is
    `https://github.com/eslint/eslint-scope/issues/39` in the comment to
    solve this challenge
 
-### Inform the shop about a more sneaky instance of typosquatting it fell for
+### Inform the shop about a typosquatting imposter that dug itself deep into the frontend
 
 1. Request <http://localhost:3000/3rdpartylicenses.txt> to retrieve the
    3rd party license list generated by Angular CLI by default
@@ -1706,7 +1716,7 @@ loop`._
 ><lolz>&lol9;</lolz>
 > ```
 
-## Diabolic Challenges (  :star::star::star::star::star::star:  )
+## :star::star::star::star::star::star: Challenges
 
 ###  Overwrite the Legal Information file
 
@@ -2052,7 +2062,7 @@ to use some unofficial port._
 
 :wrench: **TODO**
 
-### Embed an XSS payload into one of our marketing collaterals
+### Embed an XSS payload into our promo video
 
 1. The author
    [tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
