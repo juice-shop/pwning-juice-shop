@@ -647,7 +647,7 @@ pet cat playing.
 Files larger than 200 kB are rejected by an upload size check on server
 side with a `500` error stating `Error: File too large`.
 
-### Upload a file that has no .pdf extension
+### Upload a file that has no .pdf or .zip extension
 
 1. Craft a `POST` request to <http://localhost:3000/file-upload> with a
    form parameter `file` that contains a non-PDF file with a size of

@@ -71,7 +71,7 @@ less.
 * With this understanding you need to find a "weak spot" in the right
   place and have to craft an exploit for it
 
-### Upload a file that has no .pdf extension
+### Upload a file that has no .pdf or .zip extension
 
 In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
