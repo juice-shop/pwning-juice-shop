@@ -16,12 +16,11 @@ find out what needs to be done.
 ![Partly solved Score Board](img/score-board_partly.png)
 
 The challenges are rated with a difficulty level between ⭐ and
-⭐⭐⭐⭐⭐⭐, with more stars representing a
-higher difficulty. To make the list of challenges less daunting, they
-are clustered by difficulty. By default only the 1-star challenges are
-unfolded. You can open or collapse all challenge blocks as you like.
-Collapsing a block has _no impact_ on whether you can _solve_ any of its
-challenges.
+⭐⭐⭐⭐⭐⭐, with more stars representing a higher difficulty. To make the
+list of challenges less daunting, they are clustered by difficulty. By
+default only the 1-star challenges are unfolded. You can open or
+collapse all challenge blocks as you like. Collapsing a block has _no
+impact_ on whether you can _solve_ any of its challenges.
 
 The difficulty ratings have been continually adjusted over time based on
 user feedback. The ratings allow you to manage your own hacking pace and
@@ -44,10 +43,13 @@ click on it to be redirected to the corresponding hints section in
 
 ### Challenge Filters
 
-Additional to the folding and unfolding of entire difficulty blocks, you
-can filter the Score Board by [challenge categories](categories.md),
-e.g. to focus on specific vulnerabilities. You can also hide all solved
-challenges to reduce the level of distraction on the Score Board.
+Additional to the filtering by difficulty, you can filter the Score
+Board by [challenge categories](categories.md), e.g. to focus your
+hacking efforts on specific vulnerabilities. You can also hide all
+solved challenges to reduce the level of distraction on the Score Board.
+
+🐌 Selecting _Show all_ for all difficulties and all challenges might
+impact the load time of the Score Board significantly!
 
 ## Success notifications
 
@@ -71,11 +73,11 @@ each one individually, as you can simply `Shift`-click one of their
 _X_-buttons to dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
-might also show a 🏁 symbol with a character sequence next
-to it. If you are doing a hacking session just on your own, you can
-completely ignore this flag. The code is only relevant if you are
-participating in a CTF event. Please refer to chapter
-[Hosting a CTF event](ctf.md) for more information this topic.
+might also show a 🏁 symbol with a character sequence next to it. If
+you are doing a hacking session just on your own, you can completely
+ignore this flag. The code is only relevant if you are participating in
+a CTF event. Please refer to chapter [Hosting a CTF event](ctf.md) for
+more information this topic.
 
 !["Challenge solved!" notification with flag code](img/notification_with_flag.png)
 
