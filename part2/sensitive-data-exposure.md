@@ -2,20 +2,20 @@
 
 ## Challenges covered in this chapter
 
-| Name                       | Challenge                                                                                                                                                                               | Difficulty                     |
-|:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
-| Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | ⭐⭐⭐⭐       |
-| Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐                         |
-| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐ |
-| Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | ⭐⭐⭐⭐       |
-| Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | ⭐⭐⭐⭐       |
-| GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | ⭐⭐⭐⭐       |
-| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐ |
-| Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | ⭐⭐⭐⭐       |
-| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐             |
-| Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | ⭐⭐                   |
-| Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐       |
-| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐ |
+| Name                       | Description                                                                                                                                                                             | Difficulty |
+|:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | ⭐⭐⭐⭐     |
+| Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐          |
+| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐    |
+| Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | ⭐⭐⭐⭐     |
+| Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | ⭐⭐⭐⭐     |
+| GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | ⭐⭐⭐⭐     |
+| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐    |
+| Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | ⭐⭐⭐⭐     |
+| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐       |
+| Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | ⭐⭐        |
+| Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐     |
+| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐    |
 
 ### Gain access to any access log file of the server
 
@@ -146,8 +146,8 @@ not count.
   which explains password & sensitive data protection very nicely.
 * After watching
   [the music video of this song](https://www.youtube.com/watch?v=v59CX2DiX0Y),
-  you should agree that even ⭐⭐ is a slightly exaggerated
-  difficulty rating for this challenge.
+  you should agree that even ⭐⭐ is a slightly exaggerated difficulty
+  rating for this challenge.
 
   [!["Protect Ya Passwordz"](img/protect-ya-passwordz.jpg)](https://www.youtube.com/watch?v=v59CX2DiX0Y)
 
@@ -190,10 +190,9 @@ on its blueprint in order to make it yourself?
 * For your inconvenience the blueprint was _not_ misplaced into the same
   place like so many others forgotten files covered in this chapter
 
-ℹ️ _If you are running the Juice Shop with a custom
-theme and product inventory, the product to inspect will be a different
-one. The tooltip on the Score Board will tell you which one to look
-into._
+ℹ️ _If you are running the Juice Shop with a custom theme and product
+inventory, the product to inspect will be a different one. The tooltip
+on the Score Board will tell you which one to look into._
 
 [^1]: https://searchsecurity.techtarget.com/definition/access-log
 [^2]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/

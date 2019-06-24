@@ -46,20 +46,19 @@
 
 ## Challenges covered in this chapter
 
-| Name            | Challenge                                                                         | Difficulty                     |
-|:----------------|:----------------------------------------------------------------------------------|:-------------------------------|
-| XXE Data Access | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | ⭐⭐⭐             |
-| XXE DoS         | Give the server something to chew on for quite a while.                           | ⭐⭐⭐⭐⭐ |
+| Name            | Description                                                                       | Difficulty |
+|:----------------|:----------------------------------------------------------------------------------|:-----------|
+| XXE Data Access | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server. | ⭐⭐⭐       |
+| XXE DoS         | Give the server something to chew on for quite a while.                           | ⭐⭐⭐⭐⭐    |
 
-ℹ️ _Please note that both XXE challenges described
-below are **not available** when running the Juice Shop in either a
-Docker container or on a Heroku dyno! Certain aggressive attacks against
-the underlying XML parser caused the process to die from "Segmentation
-Fault" (`segfault`) errors. This happens despite the fact that the
-parsing actually happens in a sandbox with a timeout. While it is
-unfortunate to not have XXE challenges on containerized environments,
-this somewhat nicely shows how incredibly dangerous ill-configured XML
-parsers actually are._
+ℹ️ _Please note that both XXE challenges described below are **not
+available** when running the Juice Shop in either a Docker container or
+on a Heroku dyno! Certain aggressive attacks against the underlying XML
+parser caused the process to die from "Segmentation Fault" (`segfault`)
+errors. This happens despite the fact that the parsing actually happens
+in a sandbox with a timeout. While it is unfortunate to not have XXE
+challenges on containerized environments, this somewhat nicely shows how
+incredibly dangerous ill-configured XML parsers actually are._
 
 ### Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 

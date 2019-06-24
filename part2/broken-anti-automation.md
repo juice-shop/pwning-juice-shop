@@ -16,12 +16,12 @@
 
 ## Challenges covered in this chapter
 
-| Name                   | Challenge                                                                                                       | Difficulty                           |
-|:-----------------------|:----------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| CAPTCHA Bypass         | Submit 10 or more customer feedbacks within 10 seconds.                                                         | ⭐⭐⭐                   |
-| Extra Language         | Retrieve the language file that never made it into production.                                                  | ⭐⭐⭐⭐⭐       |
-| Multiple Likes         | Like any review at least three times as the same user.                                                          | ⭐⭐⭐⭐⭐⭐ |
-| Reset Morty's Password | Reset Morty's password via the Forgot Password mechanism with _his obfuscated answer_ to his security question. | ⭐⭐⭐⭐⭐       |
+| Name                   | Description                                                                                                     | Difficulty |
+|:-----------------------|:----------------------------------------------------------------------------------------------------------------|:-----------|
+| CAPTCHA Bypass         | Submit 10 or more customer feedbacks within 10 seconds.                                                         | ⭐⭐⭐       |
+| Extra Language         | Retrieve the language file that never made it into production.                                                  | ⭐⭐⭐⭐⭐    |
+| Multiple Likes         | Like any review at least three times as the same user.                                                          | ⭐⭐⭐⭐⭐⭐  |
+| Reset Morty's Password | Reset Morty's password via the Forgot Password mechanism with _his obfuscated answer_ to his security question. | ⭐⭐⭐⭐⭐    |
 
 ### Submit 10 or more customer feedbacks within 10 seconds
 
@@ -99,8 +99,7 @@ only once for each review.
 * Every user is (almost) immediately associated with the review they
   "liked" to prevent abuse of that functionality
 * Did you really think clicking the "like" button three times in a row
-  _really fast_ would be enough to solve a
-  ⭐⭐⭐⭐⭐⭐ challenge?
+  _really fast_ would be enough to solve a ⭐⭐⭐⭐⭐⭐ challenge?
 * The underlying flaw of this challenge is a Race Condition
 
 > A race condition or race hazard is the behavior of an electronics,

@@ -8,15 +8,15 @@
 
 ## Challenges covered in this chapter
 
-| Name                    | Challenge                                            | Difficulty               |
-|:------------------------|:-----------------------------------------------------|:-------------------------|
+| Name                    | Description                                          | Difficulty |
+|:------------------------|:-----------------------------------------------------|:-----------|
 | Admin Registration      | Register as a user with administrator privileges.    | ⭐⭐⭐       |
-| Expired Coupon          | Successfully redeem an expired campaign coupon code. | ⭐⭐⭐⭐ |
+| Expired Coupon          | Successfully redeem an expired campaign coupon code. | ⭐⭐⭐⭐     |
 | Payback Time            | Place an order that makes you rich.                  | ⭐⭐⭐       |
-| Repetitive Registration | Follow the DRY principle while registering a user.   | ⭐                   |
+| Repetitive Registration | Follow the DRY principle while registering a user.   | ⭐          |
 | Upload Size             | Upload a file larger than 100 kB.                    | ⭐⭐⭐       |
 | Upload Type             | Upload a file that has no .pdf or .zip extension.    | ⭐⭐⭐       |
-| Zero Stars              | Give a devastating zero-star feedback to the store.  | ⭐                   |
+| Zero Stars              | Give a devastating zero-star feedback to the store.  | ⭐          |
 
 ### Register as a user with administrator privileges
 

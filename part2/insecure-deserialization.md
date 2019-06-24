@@ -19,10 +19,10 @@
 
 ## Challenges covered in this chapter
 
-| Name               | Challenge                                                                                          | Difficulty                           |
-|:-------------------|:---------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Blocked RCE DoS    | Perform a Remote Code Execution that would keep a less hardened application busy forever.          | ⭐⭐⭐⭐⭐       |
-| Successful RCE DoS | Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | ⭐⭐⭐⭐⭐⭐ |
+| Name               | Description                                                                                        | Difficulty |
+|:-------------------|:---------------------------------------------------------------------------------------------------|:-----------|
+| Blocked RCE DoS    | Perform a Remote Code Execution that would keep a less hardened application busy forever.          | ⭐⭐⭐⭐⭐    |
+| Successful RCE DoS | Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | ⭐⭐⭐⭐⭐⭐  |
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
