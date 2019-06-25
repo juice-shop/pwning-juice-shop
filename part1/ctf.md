@@ -353,13 +353,13 @@ The following screenshots were taken during a CTF event where Facebook's
 game server was used. Juice Shop instances were running in a Docker
 cluster and individually assigned to a participant via a load balancer.
 
-![FBCTF World Map](img/FBCTF-Iteratec-00.png)
+![FBCTF World Map](img/fbctf_1.png)
 
-![FBCTF Highlighted target country](img/FBCTF-Iteratec-01.png)
+![FBCTF Highlighted target country](img/fbctf_2.png)
 
-![FBCTF Hacking Challenge](img/FBCTF-Iteratec-02.png)
+![FBCTF Hacking Challenge](img/fbctf_3.png)
 
-![FBCTF Score Board](img/FBCTF-Iteratec-03.png)
+![FBCTF Score Board](img/fbctf_4.png)
 
 ## Using other CTF frameworks
 
