@@ -31,7 +31,9 @@ Shop to the Heroku support team they answered with:
 > luck against the platform and your app so long as it's not DDoS.
 
 As a little related anecdote, the OWASP Juice Shop was even crowned
-[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6):
+[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6)
+and once more
+[in March 2019](https://hello.heroku.com/webmail/36622/844098776/9fe33b8eda9eb79bca7ee569888b1874):
 
 !["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
 
@@ -46,7 +48,7 @@ During development and Continuous Integration (CI) the application is
 automatically tested with these current versions of Node.js. The
 officially recommended version to run Juice Shop is either the most
 recent _Long-term Support (LTS)_ version or the _Current Release_
-version. Therefor Juice Shop recommends Node.js
+version. Therefore Juice Shop recommends Node.js
 {{book.recommendedNodeVersion}} for its own {{book.juiceShopVersion}}
 release.
 
@@ -112,15 +114,17 @@ You need to have an account at
 [Amazon Web Services](https://aws.amazon.com) in order to create a
 server hosting the Juice Shop there.
 
-1. Setup an _Amazon Linux AMI_ instance
-2. In _Step 3: Configure Instance Details_ unfold _Advanced Details_ and
+1. In the _EC2_ sidenav select _Instances_ and click _Launch Instance_
+2. In _Step 1: Choose an Amazon Machine Image (AMI)_ choose an _Amazon
+   Linux AMI_ or _Amazon Linux 2 AMI_
+3. In _Step 3: Configure Instance Details_ unfold _Advanced Details_ and
    copy the script below into _User Data_
-3. In _Step 6: Configure Security Group_ add a _Rule_ that opens port 80
+4. In _Step 6: Configure Security Group_ add a _Rule_ that opens port 80
    for HTTP
-4. Launch instance
-5. Browse to your instance's public DNS
+5. Launch your instance
+6. Browse to your instance's public DNS
 
-```bash
+```
 #!/bin/bash
 yum update -y
 yum install -y docker
@@ -129,7 +133,36 @@ docker pull bkimminich/juice-shop
 docker run -d -p 80:3000 bkimminich/juice-shop
 ```
 
-### Azure Web App for Containers
+#### AWS EC2 Launch Template
+
+1. In the _EC2_ sidenav select _Launch Templates_ and click _Create
+   launch template_
+2. Under _Launch template contents_ select as _AMI ID_ either _Amazon
+   Linux AMI_ or _Amazon Linux 2 AMI_ (by using _Search for AMI_)
+3. In the same section add a _Security Group_ that opens port 80 for
+   HTTP
+4. Unfold _Advanced details_ at the bottom of the screen and paste in
+   the script above into _User Data_
+5. Create your launch template
+6. Launch one or multiple EC2 instances from your template
+7. Browse to your instance's public DNS
+
+### Azure Container Instance
+
+1. Open and login (via `az login`) to your
+   [Azure CLI](https://azure.github.io/projects/clis/) **or** login to
+   the [Azure Portal](https://portal.azure.com), open the _CloudShell_
+   and then choose _Bash_ (not PowerShell).
+2. Create a resource group by running `az group create --name <group
+   name> --location <location name, e.g. "centralus">`
+3. Create a new container by running `az container create
+   --resource-group <group name> --name <container name> --image
+   bkimminich/juice-shop --dns-name-label <dns name label> --ports 3000
+   --ip-address public`
+4. Your container will be available at `http://<dns name
+   label>.<location name>.azurecontainer.io:3000`
+
+#### Azure Web App for Containers
 
 1. Open your [Azure CLI](https://azure.github.io/projects/clis/) **or**
    login to the [Azure Portal](https://portal.azure.com), open the
@@ -175,10 +208,10 @@ do as follows:
   bkimminich/juice-shop:snapshot` instead of the usual `docker pull
   bkimminich/juice-shop`
 
-ℹ️ Please be aware that support by the core team or
-community is limited (at best) for outdated and unreleased versions
-alike. To fully enjoy your OWASP Juice Shop experience, it is
-recommended to always use the latest version.
+ℹ️ Please be aware that support by the core team or community is
+limited (at best) for outdated and unreleased versions alike. To fully
+enjoy your OWASP Juice Shop experience, it is recommended to always use
+the latest version.
 
 ## _Self-healing_-feature
 

@@ -464,7 +464,15 @@ logged out but provide any `UserId` in the JSON payload.
 
 ### Post a product review as another user or edit any user's existing review
 
-🔧 **TODO**
+1. Select any product and write a review for it
+    ![Simple product review](img/normal_review.png)
+
+2. Submit the review while observing the `Networks` tab of your browser.
+
+3. Analyze the `PUT` request.
+    ![normal product request](img/normal_review_request.png)
+
+3. Change the author name to `admin@juice-sh.op` in `Request Body` and re-send the request.
 
 ### Log in with Chris' erased user account
 
@@ -647,7 +655,7 @@ pet cat playing.
 Files larger than 200 kB are rejected by an upload size check on server
 side with a `500` error stating `Error: File too large`.
 
-### Upload a file that has no .pdf extension
+### Upload a file that has no .pdf or .zip extension
 
 1. Craft a `POST` request to <http://localhost:3000/file-upload> with a
    form parameter `file` that contains a non-PDF file with a size of

@@ -2,13 +2,13 @@
 
 ## Challenges covered in this chapter
 
-| Name                | Challenge                                                                                   | Difficulty                           |
-|:--------------------|:--------------------------------------------------------------------------------------------|:-------------------------------------|
-| Forged Coupon       | Forge a coupon code that gives you a discount of at least 80%.                              | ⭐⭐⭐⭐⭐⭐ |
-| Imaginary Challenge | Solve challenge #999. Unfortunately, this challenge does not exist.                         | ⭐⭐⭐⭐⭐⭐ |
-| Nested Easter Egg   | Apply some advanced cryptanalysis to find _the real_ easter egg.                            | ⭐⭐⭐⭐             |
-| Premium Paywall     | Unlock Premium Challenge to access exclusive content.                                       | ⭐⭐⭐⭐⭐⭐ |
-| Weird Crypto        | Inform the shop about an algorithm or library it should definitely not use the way it does. | ⭐⭐                         |
+| Name                | Description                                                                                 | Difficulty |
+|:--------------------|:--------------------------------------------------------------------------------------------|:-----------|
+| Forged Coupon       | Forge a coupon code that gives you a discount of at least 80%.                              | ⭐⭐⭐⭐⭐⭐  |
+| Imaginary Challenge | Solve challenge #999. Unfortunately, this challenge does not exist.                         | ⭐⭐⭐⭐⭐⭐  |
+| Nested Easter Egg   | Apply some advanced cryptanalysis to find _the real_ easter egg.                            | ⭐⭐⭐⭐     |
+| Premium Paywall     | Unlock Premium Challenge to access exclusive content.                                       | ⭐⭐⭐⭐⭐⭐  |
+| Weird Crypto        | Inform the shop about an algorithm or library it should definitely not use the way it does. | ⭐⭐        |
 
 ### Forge a coupon code that gives you a discount of at least 80%
 

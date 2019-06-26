@@ -8,9 +8,9 @@ Board, did you?
 
 ## Challenges covered in this chapter
 
-| Challenge                                     | Difficulty |
-|:----------------------------------------------|:-----------|
-| Find the carefully hidden 'Score Board' page. | ⭐     |
+| Name        | Description                                   | Difficulty |
+|:------------|:----------------------------------------------|:-----------|
+| Score Board | Find the carefully hidden 'Score Board' page. | ⭐          |
 
 ### Find the carefully hidden 'Score Board' page
 

@@ -201,24 +201,23 @@ find its syntax along with an excerpt of the default settings.
     challenge. If a filename is specified but the file does not exist in
     `/app/public/images/products` the challenge is still solvable by
     just requesting it from the server. Defaults to `JuiceShop.stl`.
-    ℹ️ _To make this challenge realistically solvable,
-    include some kind of hint to the blueprint file's name/type in the
-    product image (e.g. its `Exif` metadata) or in the product
-    description_
+    ℹ️ _To make this challenge realistically solvable, include some
+    kind of hint to the blueprint file's name/type in the product image
+    (e.g. its `Exif` metadata) or in the product description_
   * `keywordsForPastebinDataLeakChallenge` (_must be defined on exactly
     one product_) list of keywords which are all mandatory to mention in
     a feedback or complaint to solve the
     [DLP Tier 1](../part2/sensitive-data-exposure.md#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous)
-    challenge. Overrides `deletedDate` with `2019-02-1`.
-    ℹ️ _To make this challenge realistically solvable,
-    provide the keywords on e.g. PasteBin in an obscured way that works
-    well with the "dangerous ingredients of an unsafe product""
-    narrative_
+    challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make
+    this challenge realistically solvable, provide the keywords on e.g.
+    PasteBin in an obscured way that works well with the "dangerous
+    ingredients of an unsafe product"" narrative_
   * `reviews` a sub-list which adds reviews to a product (_optional_)
     * `text` of the review (_mandatory_)
     * `author` of the review from the following list of pre-defined
       users in the database: `admin`, `jim`, `bender`, `ciso`,
-      `support`, `morty`, `amy` or `mc.safesearch` (_mandatory_)
+      `support`, `morty`, `amy`, `mc.safesearch`, `J12934`, `wurstbrot`
+      or `bjoern` (_mandatory_)
 * `ctf`
   * `showFlagsInNotifications` shows or hides the CTF flag codes in the
     _"challenge solved"_-notifications. Is ignored when

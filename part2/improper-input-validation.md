@@ -8,15 +8,15 @@
 
 ## Challenges covered in this chapter
 
-| Name                    | Challenge                                            | Difficulty               |
-|:------------------------|:-----------------------------------------------------|:-------------------------|
+| Name                    | Description                                          | Difficulty |
+|:------------------------|:-----------------------------------------------------|:-----------|
 | Admin Registration      | Register as a user with administrator privileges.    | ⭐⭐⭐       |
-| Expired Coupon          | Successfully redeem an expired campaign coupon code. | ⭐⭐⭐⭐ |
+| Expired Coupon          | Successfully redeem an expired campaign coupon code. | ⭐⭐⭐⭐     |
 | Payback Time            | Place an order that makes you rich.                  | ⭐⭐⭐       |
-| Repetitive Registration | Follow the DRY principle while registering a user.   | ⭐                   |
+| Repetitive Registration | Follow the DRY principle while registering a user.   | ⭐          |
 | Upload Size             | Upload a file larger than 100 kB.                    | ⭐⭐⭐       |
 | Upload Type             | Upload a file that has no .pdf or .zip extension.    | ⭐⭐⭐       |
-| Zero Stars              | Give a devastating zero-star feedback to the store.  | ⭐                   |
+| Zero Stars              | Give a devastating zero-star feedback to the store.  | ⭐          |
 
 ### Register as a user with administrator privileges
 
@@ -71,7 +71,7 @@ less.
 * With this understanding you need to find a "weak spot" in the right
   place and have to craft an exploit for it
 
-### Upload a file that has no .pdf extension
+### Upload a file that has no .pdf or .zip extension
 
 In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.

@@ -22,17 +22,17 @@
 
 ## Challenges covered in this chapter
 
-| Name               | Challenge                                                                                                                              | Difficulty                           |
-|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Admin Section      | Access the administration section of the store.                                                                                        | ⭐⭐                         |
-| Easter Egg         | Find the hidden easter egg.                                                                                                            | ⭐⭐⭐⭐             |
-| Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | ⭐⭐                         |
-| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐                   |
-| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐                   |
-| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐                   |
-| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐                   |
-| SSRF               | Request a hidden resource on server through server.                                                                                    | ⭐⭐⭐⭐⭐⭐ |
-| View Basket        | View another user's shopping basket.                                                                                                   | ⭐⭐                         |
+| Name               | Description                                                                                                                            | Difficulty |
+|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| Admin Section      | Access the administration section of the store.                                                                                        | ⭐⭐        |
+| Easter Egg         | Find the hidden easter egg.                                                                                                            | ⭐⭐⭐⭐     |
+| Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | ⭐⭐        |
+| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐       |
+| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐       |
+| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐       |
+| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐       |
+| SSRF               | Request a hidden resource on server through server.                                                                                    | ⭐⭐⭐⭐⭐⭐  |
+| View Basket        | View another user's shopping basket.                                                                                                   | ⭐⭐        |
 
 ### Access the administration section of the store
 
@@ -95,7 +95,18 @@ posting a (most likely negative) feedback in his or her name!
 
 ### Post a product review as another user or edit any user's existing review
 
-🔧 **TODO**
+The Juice Shop allows users to provide reviews of all the products. A
+user has to be logged in before they can post any review for any of the
+products. This challenge is about vilifying another user by posting a
+(most likely bad) review in his or her name!
+
+* This challenge can be solved by using developers tool of your browser
+  or with tools like postman.
+* Analyze the form used for review submission and try to find a leverage
+  point.
+* This challenge is pretty similar to
+  [Post some feedback in another users name](#post-some-feedback-in-another-users-name)
+  challenge.
 
 ### Put an additional product into another user's shopping basket
 

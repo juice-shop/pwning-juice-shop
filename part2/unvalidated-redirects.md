@@ -2,10 +2,10 @@
 
 ## Challenges covered in this chapter
 
-| Name               | Challenge                                                                                      | Difficulty               |
-|:-------------------|:-----------------------------------------------------------------------------------------------|:-------------------------|
-| Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | ⭐                   |
-| Whitelist Bypass   | Enforce a redirect to a page you are not supposed to redirect to.                              | ⭐⭐⭐⭐ |
+| Name               | Description                                                                                    | Difficulty |
+|:-------------------|:-----------------------------------------------------------------------------------------------|:-----------|
+| Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | ⭐          |
+| Whitelist Bypass   | Enforce a redirect to a page you are not supposed to redirect to.                              | ⭐⭐⭐⭐     |
 
 ### Let us redirect you to one of our crypto currency addresses
 

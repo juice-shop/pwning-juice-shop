@@ -35,20 +35,18 @@ local storage being used by the application.
 
 #### Tools for HTTP request tampering
 
-On the _Network_ tab of Firefox's DevTools you have the option to _Edit
-and Resend_ every recorded HTTP request. This is extremely useful when
-probing for holes in the server-side validation logic.
-
-Request tampering plugins like
-[TamperData](https://addons.mozilla.org/de/firefox/addon/tamper-data/)
-for Firefox or
 [Tamper Chrome](https://chrome.google.com/webstore/detail/tamper-chrome-extension/hifhgpdkfodlpnlmlnmhchnkepplebkb)
-let you monitor and - more importantly - modify HTTP requests _before_
+lets you monitor and - more importantly - modify HTTP requests _before_
 they are submitted from the browser to the server.
 
-These can also be helpful when trying to bypass certain input validation
-or access restriction mechanisms, that are not properly checked _on the
-server_ once more.
+Mozilla Firefox has built-in tampering capabilities and does not need a
+plugin. On the _Network_ tab of Firefox's DevTools you have the option
+to _Edit and Resend_ every recorded HTTP request.
+
+Tampering is extremely useful when probing for holes in the server-side
+validation logic. It can also be helpful when trying to bypass certain
+input validation or access restriction mechanisms, that are not properly
+checked _on the server_ once more.
 
 An API testing plugin like
 [PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
@@ -189,14 +187,14 @@ https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
 ## ❌ Things considered cheating
 
-### Reading a solution ( 📕: ) before trying
+### Reading a solution ( 📕 ) before trying
 
-[Appendix A - Challenge solutions](../appendix/solutions.md) is
-there to help you in case you are stuck or have absolutely no idea how a
-specific challenge is solved. Simply going through the entire appendix
-back to back and follow the step-by-step instructions given there for
-each challenge, would deprive you of most of the fun and learning effect
-of the Juice Shop. You have been warned.
+[Appendix A - Challenge solutions](../appendix/solutions.md) is there to
+help you in case you are stuck or have absolutely no idea how a specific
+challenge is solved. Simply going through the entire appendix back to
+back and follow the step-by-step instructions given there for each
+challenge, would deprive you of most of the fun and learning effect of
+the Juice Shop. You have been warned.
 
 ### Source code
 
@@ -250,7 +248,7 @@ ever asks you to _demonstrate how_ you actually solved all the 4- and
 The Juice Shop offers a URL to retrieve configuration information which
 is required by the [Customization](customization.md) feature that allows
 redressing the UI and overwriting the product catalog:
-<https://juice-shop-staging.herokuapp.com/rest/admin/application-configuration>
+<http://localhost:3000/rest/admin/application-configuration>
 
 The returned JSON contains spoilers for all challenges that depend on a
 product from the inventory which might be customized. As not all

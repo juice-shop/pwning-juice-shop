@@ -5,15 +5,15 @@ libraries or other 3rd party components the application uses internally.
 
 ## Challenges covered in this chapter
 
-| Name                   | Challenge                                                                                                                                                | Difficulty                           |
-|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------|
-| Arbitrary File Write   | Overwrite the Legal Information file.                                                                                                                    | ⭐⭐⭐⭐⭐⭐ |
-| Forged Signed JWT      | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                                          | ⭐⭐⭐⭐⭐⭐ |
-| Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                           | ⭐⭐⭐⭐⭐       |
-| Legacy Typosquatting   | Inform the shop about a typosquatting trick it has been a victim of at least in `v6.2.0-SNAPSHOT`. (Mention the exact name of the culprit)               | ⭐⭐⭐⭐             |
-| Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or the CVE of this vulnerability) | ⭐⭐⭐⭐⭐       |
-| Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                  | ⭐⭐⭐⭐⭐       |
-| Vulnerable Library     | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)                                     | ⭐⭐⭐⭐             |
+| Name                   | Description                                                                                                                                              | Difficulty |
+|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| Arbitrary File Write   | Overwrite the Legal Information file.                                                                                                                    | ⭐⭐⭐⭐⭐⭐  |
+| Forged Signed JWT      | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                                          | ⭐⭐⭐⭐⭐⭐  |
+| Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                           | ⭐⭐⭐⭐⭐    |
+| Legacy Typosquatting   | Inform the shop about a typosquatting trick it has been a victim of at least in `v6.2.0-SNAPSHOT`. (Mention the exact name of the culprit)               | ⭐⭐⭐⭐     |
+| Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or the CVE of this vulnerability) | ⭐⭐⭐⭐⭐    |
+| Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                  | ⭐⭐⭐⭐⭐    |
+| Vulnerable Library     | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)                                     | ⭐⭐⭐⭐     |
 
 ### Overwrite the Legal Information file
 
@@ -107,10 +107,10 @@ the Juice Shop. It is supposedly hard to locate.
   combing through the `package.json.bak` does not help for this
   challenge.
 
-ℹ️ There is no actual malice or mischief included, as
-the typosquatter is completely harmless. Just keep in mind that in
-reality, a case like this could come with negative consequences and
-would sometimes be even harder to identify.
+ℹ️ There is no actual malice or mischief included, as the typosquatter
+is completely harmless. Just keep in mind that in reality, a case like
+this could come with negative consequences and would sometimes be even
+harder to identify.
 
 ### Inform the shop about a typosquatting trick it has been a victim of
 
@@ -138,10 +138,10 @@ it is not in use any more in {{book.juiceShopVersion}}.
 > falling victim to the Trojanized update, they also install the
 > embedded malicious code.[^4]
 
-ℹ️ Please note that having the OWASP Juice Shop
-installed on your computer _does not_ put you at any actual risk! This
-challenge does _neither_ install a backdoor or Trojan nor does it bring
-any other harmful code to your system!
+ℹ️ Please note that having the OWASP Juice Shop installed on your
+computer _does not_ put you at any actual risk! This challenge does
+_neither_ install a backdoor or Trojan nor does it bring any other
+harmful code to your system!
 
 * The shop's end users are not the targets here. The developers of the
   shop are!
