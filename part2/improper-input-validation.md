@@ -32,7 +32,12 @@ chosen by simply leaving then admin features in the web shop itself and
 
 ### Successfully redeem an expired campaign coupon code
 
-🔧 **TODO**
+Apart from the monthly coupon codes found on Twitter the Juice Shop also
+offered some seasonal special campaign at least once.
+
+* Look for clues about the past campaign or holiday event somewhere in
+  the application
+* Solving this challenge does not require actual time traveling
 
 ### Place an order that makes you rich
 
