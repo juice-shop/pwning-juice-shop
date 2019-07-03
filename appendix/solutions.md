@@ -333,10 +333,10 @@ in order to exploit and solve them:
 6. Submitting this request will satisfy the validation based on your own
    `BasketId` but put the product into the other basket!
 
-ℹ️ With other `BasketId`s you might need to play with
-the order of the duplicate property a bit and/or make sure your own
-`BasketId` is lower than the one of the target basket to make this HPP
-vulnerability work in your favor.
+ℹ️ With other `BasketId`s you might need to play with the order of the
+duplicate property a bit and/or make sure your own `BasketId` is lower
+than the one of the target basket to make this HPP vulnerability work in
+your favor.
 
 > Supplying multiple HTTP parameters with the same name may cause an
 > application to interpret values in unanticipated ways. By exploiting
@@ -465,14 +465,15 @@ logged out but provide any `UserId` in the JSON payload.
 ### Post a product review as another user or edit any user's existing review
 
 1. Select any product and write a review for it
-    ![Simple product review](img/normal_review.png)
+   ![Simple product review](img/normal_review.png)
 
 2. Submit the review while observing the `Networks` tab of your browser.
 
 3. Analyze the `PUT` request.
-    ![normal product request](img/normal_review_request.png)
+   ![normal product request](img/normal_review_request.png)
 
-3. Change the author name to `admin@juice-sh.op` in `Request Body` and re-send the request.
+4. Change the author name to `admin@juice-sh.op` in `Request Body` and
+   re-send the request.
 
 ### Log in with Chris' erased user account
 
@@ -883,7 +884,21 @@ more attention & a good portion of shrewdness.
 
 ### Successfully redeem an expired campaign coupon code
 
-🔧 **TODO**
+1. Open `main.js` in your Browser's dev tools and search for `campaign`.
+
+   ![Campaign code in minified JavaScript](img/minified_js-campaigncode.png)
+2. You will find a function `applyCoupon()` that contains a static
+   comparison `"WMNSDY2019" === this.couponControl.value` pointing to
+   `WMNSDY2019` as the solution.
+3. Submitting `WMNSDY2019` will yield an `Invalid Coupon.` error,
+   though. This is because of the second part of the validity check
+   `15519996e5 === this.clientDate`.
+4. Converting this number into a JavaScript date will tell you that this
+   campaign was active on March 8th 2019 only: Women's Day!
+5. Set the time of your computer to March 8th 2019 and try to submit the
+   code again.
+6. This time it will be accepted! Proceed to _Checkout_ to get the
+   challenge solved.
 
 ### Access a developer's forgotten backup file
 
@@ -1566,8 +1581,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-📕: If you do not want to write your own script for this
-challenge, take a look at
+📕: If you do not want to write your own script for this challenge,
+take a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
 [philly-vanilly](https://github.com/philly-vanilly).
@@ -1850,10 +1865,9 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>.
-   ℹ️ _As this is not part of the Juice Shop repo
-   itself and it is publicly accessible, analyzing this repository is
-   **not** considered cheating!_
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
+   not part of the Juice Shop repo itself and it is publicly accessible,
+   analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
    <https://travis-ci.org/bkimminich/juicy-coupon-bot>.
@@ -1960,8 +1974,8 @@ totally different attack styles.
 9. Click _Update_ and then _Go_ in the top left to send the modified
    request via Burp and solve this challenge!
 
-👏 Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for
-providing this solution.
+👏 Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for providing
+this solution.
 
 ###  Like any review at least three times as the same user
 
