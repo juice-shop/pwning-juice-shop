@@ -122,6 +122,10 @@ will give you access to several secondary use cases of the Juice Shop.
 This menu is obviously only available when you are logged in with your
 user account.
 
+ℹ️ We will cover only a fraction of the available functionality from
+the user menu in the following sub-sections. It is recommended to
+explore the rest on your own before diving into any hacking exercises.
+
 ![User Menu](/part1/img/user-menu.png)
 
 #### User Profile
@@ -168,16 +172,16 @@ what the order tracking dialog suggested._
 #### Change user password
 
 If you are currently logged in you will find the obligatory _Change
-Password_ button in the navigation bar. On the `#/privacy-security/change-password` page
-you can then choose a new password. To prevent abuse you have of course
-to supply your current password to legitimate this change.
+Password_ button in the navigation bar. On the
+`#/privacy-security/change-password` page you can then choose a new
+password. To prevent abuse you have of course to supply your current
+password to legitimate this change.
 
 ![Change Password](/part1/img/change-password.png)
 
-### Contact Us Menu
+### Side Menu
 
-The _Contact Us_ button in the navigation bar reveals another drop-down
-menu with up to two options to choose from.
+The sidebar menu button left of the application logo reveals some more options to choose from.
 
 ![Contact Us Menu](/part1/img/contact-us-menu.png)
 
@@ -202,7 +206,7 @@ recent order at the Juice Shop.
 
 ![File Complaint](/part1/img/file-complaint.png)
 
-### About Us
+#### About Us
 
 Like every proper enterprise, the OWASP Juice Shop has of course an
 `#/about` page titled _About Us_. There you find a summary of the
