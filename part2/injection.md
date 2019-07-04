@@ -195,7 +195,13 @@ stripped-down _denial-of-service_ attack challenge.
 
 ### All your orders are belong to us
 
-🔧 **TODO**
+This challenge is about retrieving all user's order data from the NoSQL
+DB in a single data extraction using an Injection attack.
+
+* This challenge requires a classic Injection attack.
+* Find an API endpoint with the intent of delivering a single order to
+  the user and work with that.
+* Reading up on how MongoDB queries work is really helpful here.
 
 ### Update multiple product reviews at the same time
 
@@ -203,7 +209,7 @@ The UI and API only offer ways to update individual product reviews.
 This challenge is about manipulating an update so that it will affect
 multiple reviews are the same time.
 
-* This challenge requires a classic Injection attack.
+* This challenge requires another classic Injection attack.
 * Take a close look on how the equivalent of UPDATE-statements in
   MongoDB work.
 * It is also worth looking into how
