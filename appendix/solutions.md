@@ -964,7 +964,31 @@ more attention & a good portion of shrewdness.
 
 ### Steal someone else's personal data without using Injection
 
-🔧 **TODO**
+1. Log in as any user, put some items into your basket and create an
+   order from these.
+2. Copy the order ID from the confirmation PDF. It should look similar
+   to `5267-829f123593e9d098` in its format.
+3. Visit <http://localhost:3000/#/track-order>, paste in your _Order ID_
+   and then click _Track_.
+4. In the network tab of your browser you should find a request similar
+   to <http://localhost:3000/rest/track-order/7962-6e31e50a0c6f2ea3>.
+5. Inspecting the response closely, you might notice that the user email
+   address is partially obfuscated:
+   `{"status":"success","data":[{"orderId":"5267-829f123593e9d098","email":"*dm*n@j**c*-sh.*p","totalPrice":2.88,"products":[{"quantity":1,"name":"Apple
+   Juice
+   (1000ml)","price":1.99,"total":1.99,"bonus":0},{"quantity":1,"name":"Apple
+   Pomace","price":0.89,"total":0.89,"bonus":0}],"bonus":0,"eta":"2","_id":"tosmfPsDaWcEnzRr3"}]}`
+6. It looks like certain letters - seemingly all vowels - were replaced
+   with `*` characters before the order was stored in the database.
+7. Register a new user with an email address that would result in _the
+   exact same_ obfuscated email address. For example register
+   `edmin@juice-sh.op` to steal the data of `admin@juice-sh.op`.
+8. Log in with your new user and immediately get your data exported via
+   <http://localhost:3000/#/privacy-security/data-export>.
+9. You will notice that the order belonging to the existing user
+   `admin@juice-sh.op` (in this example `5267-829f123593e9d098`) is part
+   of your new user's data export due to the clash when obfuscating
+   emails!
 
 ### Access a misplaced SIEM signature file
 

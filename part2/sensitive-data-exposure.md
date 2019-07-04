@@ -107,7 +107,18 @@ might also prove useful in another challenge later on.
 
 ### Steal someone else's personal data without using Injection
 
-🔧 **TODO**
+In order to comply with GDPR, the Juice Shop offers a _Request Data
+Export_ function for its registered customers. It is possible to exploit
+a flaw in the feature to retrieve more data than intended. Injection
+attacks will not count to solve this one.
+
+* You should not try to steal data from a "vanilla" user who never even
+  ordered something at the shop.
+* As everything about this data export functionality happens on the
+  server-side, it won't be possible to just tamper with some HTTP
+  requests to solve this challenge.
+* Inspecting various server responses which contain user-specific data
+  might give you a clue about the mistake the developers made.
 
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
