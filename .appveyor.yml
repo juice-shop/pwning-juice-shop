@@ -21,9 +21,9 @@ install:
   - 'npm i -g svgexport'
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
-  - 'gitbook pdf'
-  - 'gitbook mobi'
-  - 'gitbook epub'
+  - 'gitbook pdf ./ ./juice-shop.pdf'
+  - 'gitbook mobi ./ ./juice-shop.mobi'
+  - 'gitbook epub ./ ./juice-shop.epub'
 build: off
 test: off
 artifacts:
