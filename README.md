@@ -1,4 +1,12 @@
+{% if book.ctf %}
+
+# Pwning OWASP Juice Shop (CTF Edition)
+
+{% else %}
+
 # Pwning OWASP Juice Shop
+
+{% endif %}
 
 Written by [Björn Kimminich](https://twitter.com/bkimminich)
 
@@ -30,6 +38,13 @@ application.
 
 ### Part III - Getting involved
 
+{% if book.ctf %}
+
+Part three points you to the social media channels and tells you about
+donation options of the OWASP Juice Shop open source project.
+
+{% else %}
+
 Part three shows up various ways to contribute to the OWASP Juice Shop
 open source project.
 
@@ -59,6 +74,8 @@ __Contribute content, suggestions, and fixes on GitHub:__
 __Official OWASP Juice Shop project homepage:__
 
 * http://owasp-juice.shop
+
+{% endif %}
 
 ----
 

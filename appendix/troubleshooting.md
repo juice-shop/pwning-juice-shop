@@ -1,4 +1,4 @@
-# Appendix C - Troubleshooting
+# Troubleshooting
 
 If (and only if) none of the below hints could help you resolve your
 issue, please post your problem on our

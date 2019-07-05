@@ -1,0 +1,33 @@
+{
+  "title": "Pwning OWASP Juice Shop",
+  "author": "Björn Kimminich",
+  "language": "en",
+  "plugins": [
+    "advanced-emoji",
+    "github-buttons"
+  ],
+  "pluginsConfig": {
+    "github-buttons": {
+      "buttons": [{
+        "user": "bkimminich",
+        "repo": "juice-shop",
+        "type": "star",
+        "size": "small",
+        "count": true
+      }]
+    }
+  },
+  "variables": {
+    "juiceShopVersion": "v9.0.0-SNAPSHOT",
+    "juiceShopCtfVersion": "v6.1.1",
+    "ctfdVersion": "2.x, 1.1.x or 1.2.x",
+    "juiceShopNumberOfChallenges": 86,
+    "nodeVersions": "10.x and 12.x",
+    "recommendedNodeVersion": "12.x",
+    "herokuNodeVersion": "12.x",
+    "ctf": true
+  },
+  "structure": {
+    "summary": "SUMMARY-CTF.md"
+  }
+}

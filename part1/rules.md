@@ -187,14 +187,18 @@ https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
 
 ## ❌ Things considered cheating
 
+{% if book.ctf == false %}
+
 ### Reading a solution ( 📕 ) before trying
 
-[Appendix A - Challenge solutions](../appendix/solutions.md) is there to
+The [Challenge solutions](../appendix/solutions.md) appendix is there to
 help you in case you are stuck or have absolutely no idea how a specific
 challenge is solved. Simply going through the entire appendix back to
 back and follow the step-by-step instructions given there for each
 challenge, would deprive you of most of the fun and learning effect of
 the Juice Shop. You have been warned.
+
+{% endif %}
 
 ### Source code
 

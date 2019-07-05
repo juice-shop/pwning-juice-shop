@@ -24,6 +24,10 @@ install:
   - 'gitbook pdf ./ ./juice-shop.pdf'
   - 'gitbook mobi ./ ./juice-shop.mobi'
   - 'gitbook epub ./ ./juice-shop.epub'
+  - 'cp ./book-ctf.json ./book.json'
+  - 'gitbook pdf ./ ./juice-shop-ctf.pdf'
+  - 'gitbook mobi ./ ./juice-shop-ctf.mobi'
+  - 'gitbook epub ./ ./juice-shop-ctf.epub'
 build: off
 test: off
 artifacts:

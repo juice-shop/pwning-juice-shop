@@ -1,4 +1,4 @@
-# Appendix B - Trainer's guide
+# Trainer's guide
 
 Co-authored by [Timo Pagel](https://github.com/wurstbrot)
 

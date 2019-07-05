@@ -8,13 +8,10 @@
 ### Part I - Hacking preparations
 
 * [Hacking preparations](part1/README.md)
-* [Running OWASP Juice Shop](part1/running.md)
 * [Vulnerability categories](part1/categories.md)
 * [Challenge tracking](part1/challenges.md)
 * [Hacking exercise rules](part1/rules.md)
 * [Walking the "happy path"](part1/happy-path.md)
-* [Customization](part1/customization.md)
-* {% if book.ctf == false %} [Hosting a CTF event](part1/ctf.md) {% endif %}
 
 ### Part II - Challenge hunting
 
@@ -39,16 +36,10 @@
 ### Part III - Getting involved
 
 * [Getting involved](part3/README.md)
-* [Provide feedback](part3/feedback.md)
-* [Contribute to development](part3/contribution.md)
-* [Codebase 101](part3/codebase.md)
-* [Help with translation](part3/translation.md)
 * [Donations](part3/donations.md)
 
 ### Appendix
 
-* [Challenge solutions](appendix/solutions.md)
-* [Trainer's guide](appendix/trainers.md)
 * [Troubleshooting](appendix/troubleshooting.md)
 
 ### Postface
