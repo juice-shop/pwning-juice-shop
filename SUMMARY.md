@@ -14,7 +14,7 @@
 * [Hacking exercise rules](part1/rules.md)
 * [Walking the "happy path"](part1/happy-path.md)
 * [Customization](part1/customization.md)
-* {% if book.ctf == false %} [Hosting a CTF event](part1/ctf.md) {% endif %}
+* [Hosting a CTF event](part1/ctf.md)
 
 ### Part II - Challenge hunting
 
