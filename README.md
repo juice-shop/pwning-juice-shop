@@ -10,7 +10,15 @@
 
 Written by [Björn Kimminich](https://twitter.com/bkimminich)
 
+{% if book.ctf %}
+
+![Front Cover](cover-ctf.jpg)
+
+{% else %}
+
 ![Front Cover](cover.jpg)
+
+{% endif %}
 
 This is the official companion guide to the __OWASP Juice Shop__
 application. Being a web application with a vast number of intended
