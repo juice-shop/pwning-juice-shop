@@ -1,22 +1,7 @@
 {
-  "title": "Pwning OWASP Juice Shop",
+  "title": "Pwning OWASP Juice Shop (CTF Edition)",
   "author": "Björn Kimminich",
   "language": "en",
-  "plugins": [
-    "advanced-emoji",
-    "github-buttons"
-  ],
-  "pluginsConfig": {
-    "github-buttons": {
-      "buttons": [{
-        "user": "bkimminich",
-        "repo": "juice-shop",
-        "type": "star",
-        "size": "small",
-        "count": true
-      }]
-    }
-  },
   "variables": {
     "juiceShopVersion": "v9.0.0-SNAPSHOT",
     "juiceShopCtfVersion": "v6.1.1",

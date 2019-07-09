@@ -3,7 +3,6 @@
   "author": "Björn Kimminich",
   "language": "en",
   "plugins": [
-    "advanced-emoji",
     "github-buttons"
   ],
   "pluginsConfig": {
