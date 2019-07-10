@@ -1246,7 +1246,34 @@ explains the problem and gives an exploit example:
 
 ###  Perform a persisted XSS attack through an HTTP header
 
-🔧 **TODO**
+1. Log in as any user.
+2. Visit <http://localhost:3000/#/privacy-security/last-login-ip> where
+   your _IP Address_ probably shows as `0.0.0.0`.
+
+   ![Normal Last Login IP address](img/normal_lastLoginIp.png)
+3. Log out and then log in again with the same user as before.
+4. Visit <http://localhost:3000/#/privacy-security/last-login-ip> again
+   where your _IP Address_ should now show your actual remote IP address
+   (or `127.0.0.1` if you run the application locally).
+5. Find the request to <https://localhost:3000/rest/saveLoginIp> in your
+   Browser DevTools.
+6. Replay the request after adding the `X-Forwarded-For` HTTP header to
+   spoof an arbitrary IP, e.g. `1.2.3.4`.
+7. Unfortunately in the response (and also on
+   <http://localhost:3000/#/privacy-security/last-login-ip> after
+   logging in again) you will still find your remote IP as before
+8. Repeat step 6. only with the proprietary header `True-Client-IP`.
+9. In the JSON response you will notice `lastLoginIp: "1.2.3.4"` and
+   after logging in again you will see `1.2.3.4` as your _IP Address_ on
+   <http://localhost:3000/#/privacy-security/last-login-ip>.
+10. Replay the request once more with `True-Client-IP: <iframe
+    src="javascript:alert(``xss``)">` to solve this seriously obscure
+    challenge.
+11. Log in again and visit
+    <http://localhost:3000/#/privacy-security/last-login-ip> see the
+    alert popup.
+
+    ![XSS in Last Login IP address](img/xss5_lastLoginIp.png)
 
 ## ⭐⭐⭐⭐⭐ Challenges
 
