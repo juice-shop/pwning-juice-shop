@@ -86,10 +86,6 @@ find its syntax along with an excerpt of the default settings.
   * `showGitHubLinks` shows or hides the _"GitHub"_ button in the
     navigation and side bar as well as the info box about contributing
     on the _Score Board_. Defaults to `true`.
-  * `showWelcomeBanner` shows or hides a dismissable welcome banner when
-    first visiting the application. Recommended to be set to `false` for
-    custom themes as the text is OWASP Juice Shop specific and not
-    configurable. Defaults to `true`.
   * `numberOfRandomFakeUsers` represents the number of random user
     accounts to be created on top of the pre-defined ones (which are
     required for several challenges). Defaults to `0`, meaning no
@@ -119,6 +115,25 @@ find its syntax along with an excerpt of the default settings.
       Defaults to `apple_pressings.jpg`
   * `altcoinName` defines the name of the (fake) crypto currency that is
     offered on the _Token Sale_ screen. Defaults to `Juicycoin`
+  * `welcomeBanner` defines a dismissable welcome banner that can be
+    shown when first visiting the application.
+    * `showOnFirstStart` shows or hides the banner. Defaults to `true`.
+    * `title` defines the headline of the banner. Defaults to `Welcome
+      to OWASP Juice Shop!`.
+    * `message` defines the body of the banner. Can contain arbitrary
+      HTML. Defaults to `<p>Being a web application with a vast number
+      of intended security vulnerabilities, the <strong>OWASP Juice
+      Shop</strong> is supposed to be the opposite of a best practice or
+      template application for web developers: It is an awareness,
+      training, demonstration and exercise tool for security risks in
+      modern web applications. The <strong>OWASP Juice Shop</strong> is
+      an open-source project hosted by the non-profit <a
+      href='https://owasp.org' target='_blank'>Open Web Application
+      Security Project (OWASP)</a> and is developed and maintained by
+      volunteers. Check out the link below for more information and
+      documentation on the project.</p><h1><a
+      href='http://owasp-juice.shop'
+      target='_blank'>http://owasp-juice.shop</a></h1>`.
   * `cookieConsent` defines the cookie consent dialog shown in the
     bottom right corner
     * `backgroundColor` of the cookie banner itself. Defaults to
@@ -249,7 +264,6 @@ application:
   showChallengeHints: true
   showVersionNumber: true
   showGitHubLinks: true
-  showWelcomeBanner: true
   numberOfRandomFakeUsers: 0
   twitterUrl: 'https://twitter.com/owasp_juiceshop'
   facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
@@ -260,6 +274,10 @@ application:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
   altcoinName: Juicycoin
+  welcomeBanner:
+    showOnFirstStart: true
+    title: 'Welcome to OWASP Juice Shop!'
+    message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='http://owasp-juice.shop' target='_blank'>http://owasp-juice.shop</a></h1>"
   cookieConsent:
     backgroundColor: '#eb6c44'
     textColor: '#ffffff'
@@ -335,7 +353,8 @@ application:
   showChallengeHints: false
   showVersionNumber: false
   showGitHubLinks: false
-  showWelcomeBanner: false
+  welcomeBanner:
+    showOnFirstStart: false
 ctf:
   showFlagsInNotifications: true
 ```
