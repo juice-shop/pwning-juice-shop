@@ -110,3 +110,42 @@ these can be bulk-dismissed by `Shift`-clicking any of the _X_-buttons.
 If you want to start over with a fresh hacking session, simply click the
 _Delete cookie to clear hacking progress_ button. After the next server
 restart, your score board will be blank.
+
+{% if book.ctf == false %}
+
+## Hacking Instructor
+
+![Juicy Bot the mascot of the Hacking Instructor](img/juice_bot.png)
+
+The built-in _Hacking Instructor_ offers tutorials for some of the Juice
+Shop challenges. By default the welcome banner shown upon first launch
+of the application has a 🎓-button which will help you
+[Find the carefully hidden 'Score Board' page](../part2/score-board.md#find-the-carefully-hidden-score-board-page).
+
+![Welcome Banner](img/welcome-banner.png)
+
+On the Score Board itself you will then find similar 🎓-buttons on some
+of the challenges which will launch a corresponding tutorial for each as
+well. All tutorials consist of a scripted sequence of helpful hints and
+instructions.
+
+![Hacking Instructor spoilering SQL Injection](img/hacking-instructor_1.png)
+
+The scripts often provide some interaction, like waiting for the user to
+make some specific input or having them visit another dialog before
+continuing. Some hints or instructions can be skipped by just clicking
+on them.
+
+![Hacking Instructor awaiting specific input](img/hacking-instructor_2.png)
+
+After successfully completing all steps of a tutorial, the Hacking
+Instructor will usually congratulate you and then go into hiding until
+summoned again for another hacking challenge via the Score Board.
+
+![Hacking Instructor reports successful solution](img/hacking-instructor_3.png)
+
+ℹ️ The Hacking Instructor is a tool to help beginners getting started.
+It cannot offer a tutorial for _every challenge_ as some are too complex
+or require too many steps outside the application.
+
+{% endif %}

@@ -83,6 +83,9 @@ find its syntax along with an excerpt of the default settings.
     Defaults to `true`.
   * `showVersionNumber` shows or hides the software version from the
     title. Defaults to `true`.
+  * `showHackingInstructor` shows or hides
+    [Hacking Instructor](challenges.md#hacking-instructor) buttons on
+    the Score Board and in the Welcome Banner. Defaults to `true`.
   * `showGitHubLinks` shows or hides the _"GitHub"_ button in the
     navigation and side bar as well as the info box about contributing
     on the _Score Board_. Defaults to `true`.
@@ -263,6 +266,7 @@ application:
   showChallengeSolvedNotifications: true
   showChallengeHints: true
   showVersionNumber: true
+  showHackingInstructor: true
   showGitHubLinks: true
   numberOfRandomFakeUsers: 0
   twitterUrl: 'https://twitter.com/owasp_juiceshop'
@@ -352,6 +356,7 @@ application:
   favicon: favicon_ctf.ico
   showChallengeHints: false
   showVersionNumber: false
+  showHackingInstructor: false
   showGitHubLinks: false
   welcomeBanner:
     showOnFirstStart: false
