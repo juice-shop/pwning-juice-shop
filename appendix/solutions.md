@@ -845,7 +845,42 @@ more attention & a good portion of shrewdness.
 
 ### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
-🔧 **TODO**
+1. Solve
+   [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
+   but enumerate all deleted products until you come across "Rippertuer
+   Special Juice"
+2. Notice the warning _"This item has been made unavailable because of
+   lack of safety standards."_ in its description, indicating that this
+   is the product you need to investigate for this challenge
+3. Further notice the partial list of ingredients in the description
+   namely _"Cherymoya Annona cherimola, Jabuticaba Myrciaria cauliflora,
+   Bael Aegle marmelos... and others"_
+4. Submitting either or all of the above ingredients at
+   <http://localhost:3000/#/contact> will **not** solve this challenge -
+   it must be some unlisted ingredients that create a dangerous
+   combination.
+5. A simple Google search for `Cherymoya Annona cherimola Jabuticaba
+   Myrciaria cauliflora Bael Aegle marmelos` should bring up several
+   results, one of them being a blog post "Top 20 Fruits You Probably
+   Don’t Know" from 2011. Visit this post at
+   <https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know>
+6. Scrolling through the list of replies you will notice
+   [a particular comment from user _Localhorst_](https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know/#comment-4541753139)
+   saying _"Awesome, some of these fruits also made it into our
+   "Rippertuer Special Juice"! https://pastebin.com/90dUgd7s"_
+7. Visit <https://pastebin.com/90dUgd7s> to find a PasteBin paste titled
+   "Rippertuer Special Juice Ingredients" containing a JSON document
+   with many exotic fruits in it, each with its name as `type` and a
+   detailed `description`
+8. When carefully reading all fruit descriptions you will notice a
+   warning on the `Hueteroneel` fruit that _"this coupled with Eurogium
+   Edule was sometimes found fatal"_
+
+    ![Ingredients list of "Rippertuer Special Juice"](img/rippertuer-ingredients.png)
+9. As `Eurogium Edule` is also on the very same list of ingredients,
+   these two must be the ones you are looking for
+10. Submit a comment containing both `Eurogium Edule` and `Hueteroneel`
+    via <http://localhost:3000/#/contact> to solve this challenge
 
 ### Find the hidden easter egg
 

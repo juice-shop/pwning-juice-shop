@@ -126,7 +126,20 @@ attacks will not count to solve this one.
 
 ### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
-🔧 **TODO**
+Similar to
+[Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to](#dumpster-dive-the-internet-for-a-leaked-password-and-log-in-to-the-original-user-account-it-belongs-to)
+this challenge further highlights the risks from a lack of data loss
+prevention.
+
+* You must first identify the "unsafe product" which ist not available
+  any more in the shop.
+* Solving the
+  [Order the Christmas special offer of 2014](injection.md#order-the-christmas-special-offer-of-2014)
+  challenge might give it to you as by-catch.
+* The actual data you need to solve this challenge was leaked into a
+  popular paste tool on the Internet. Finding it is the actual challenge
+  here.
+* Google is a particularly good accomplice in this challenge.
 
 ### Log in with Amy's original user credentials
 
