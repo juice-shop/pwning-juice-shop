@@ -876,7 +876,7 @@ more attention & a good portion of shrewdness.
    warning on the `Hueteroneel` fruit that _"this coupled with Eurogium
    Edule was sometimes found fatal"_
 
-    ![Ingredients list of "Rippertuer Special Juice"](img/rippertuer-ingredients.png)
+   ![Ingredients list of "Rippertuer Special Juice"](img/rippertuer-ingredients.png)
 9. As `Eurogium Edule` is also on the very same list of ingredients,
    these two must be the ones you are looking for
 10. Submit a comment containing both `Eurogium Edule` and `Hueteroneel`
@@ -1447,7 +1447,48 @@ payload in his blog post
 
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
-🔧 **TODO**
+1. Visit <https://stackoverflow.com/questions/tagged/access-log> to find
+   all questions tagged with `access-log` in this popular platform
+2. The list of questions should not be excessive and one mentioning a
+   familiar URL path might immediately stand out
+
+   ![Questions tagged 'access-log' on StackOverflow](img/stackoverflow_access-log.png)
+3. Visit
+   <https://stackoverflow.com/questions/57061271/less-verbose-access-logs-using-expressjs-morgan>
+   to find more unambiguous URL paths from the Juice Shop in it
+
+   ![Question on expressjs/morgan configuration](img/stackoverflow_morgan_question.png)
+4. Follow the link to PasteBin that is mentioned below the log file
+   snippet in _"(see https://pastebin.com/4U1V1UjU for more)"_
+5. On <https://pastebin.com/4U1V1UjU> search for `password` to find log
+   entries that might help with the ultimate challenge goal
+6. You will find one particularly interesting `GET` request that has
+   been logged as `161.194.17.103 - - [27/Jan/2019:11:18:35 +0000] "GET
+   /rest/user/change-password?current=0Y8rMnww$*9VFYE%C2%A759-!Fg1L6t&6lB&new=sjss22%@%E2%82%AC55jaJasj!.k&repeat=sjss22%@%E2%82%AC55jaJasj!.k8
+   HTTP/1.1" 401 39 "http://localhost:3000/" "Mozilla/5.0 (Linux;
+   Android 8.1.0; Nexus 5X) AppleWebKit/537.36 (KHTML, like Gecko)
+   Chrome/71.0.3578.99 Mobile Safari/537.36"`
+7. The mismatched `new` and `repeat` parameters and the return code of
+   `401` indicate that this password change failed. This means the
+   password could still be the current one of
+   `0Y8rMnww$*9VFYE%C2%A759-!Fg1L6t&6lB`!
+8. Not knowing which user it belongs to, you can now
+   * either perform a _Password Spraying_ attack by trying to log in
+     with the password for all known user emails, e.g. from
+     [Access the administration section of the store](#access-the-administration-section-of-the-store)
+   * hash the known password with `MD5` and compare it to the password
+     hashes harvested from
+     [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
+9. Either way you will conclude that the password belongs to
+   `J12934@juice-sh.op` so using this as _Email_ and
+   `0Y8rMnww$*9VFYE%C2%A759-!Fg1L6t&6lB` as _Password_ on
+   <http://localhost:3000/#/login> will solve the challenge
+
+🤡 Did you notice that one of the next requests of `161.194.17.103` in
+the leaked access log went to <http://localhost:3000/api/Complaints> and
+returned a `201 Created` HTTP status code? It seems the user
+successfully complained, but eventually didn't bother or was too
+frustrated to finish what he originally planned to do.
 
 ###  Perform an unwanted information disclosure by accessing data cross-domain
 

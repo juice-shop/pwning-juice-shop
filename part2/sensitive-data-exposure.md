@@ -122,7 +122,44 @@ attacks will not count to solve this one.
 
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
-🔧 **TODO**
+The company behind the Juice Shop failed miserably at implementing any
+data loss prevention measures for itself. This challenge simulates a
+seemingly harmless data leak that - upon closer inspection -
+subsequently allows an account takeover.
+
+> **Data loss prevention software** detects potential data breaches/data
+> ex-filtration transmissions and prevents them by monitoring, detecting
+> and blocking sensitive data while in use (endpoint actions), in motion
+> (network traffic), and at rest (data storage).
+>
+> The terms "data loss" and "data leak" are related and are often used
+> interchangeably. Data loss incidents turn into data leak incidents in
+> cases where media containing sensitive information is lost and
+> subsequently acquired by an unauthorized party. However, a data leak
+> is possible without losing the data on the originating side. Other
+> terms associated with data leakage prevention are information leak
+> detection and prevention (ILDP), information leak prevention (ILP),
+> content monitoring and filtering (CMF), information protection and
+> control (IPC) and extrusion prevention system (EPS), as opposed to
+> intrusion prevention system. [^2]
+
+* As the challenge name implies, your task is to find some leaked access
+  logs which happen to have a fairly common format.
+* A very popular help platform for developers might contain breadcrumbs
+  towards solving this challenge
+* The actual log file was copied & paste onto a platform often used to
+  share data quickly with externals or even just internal peers.
+* Once you found and harvested the important piece of information from
+  the log, you could employ a technique called _Password Spraying_ to
+  solve this challenge.
+
+> Password spraying refers to the attack method that takes a large
+> number of usernames and loops them with a single password. We can use
+> multiple iterations using a number of different passwords, but the
+> number of passwords attempted is usually low when compared to the
+> number of users attempted. This method avoids password lockouts, and
+> it is often more effective at uncovering weak passwords than targeting
+> specific users.[^5]
 
 ### Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
@@ -136,9 +173,9 @@ prevention.
 * Solving the
   [Order the Christmas special offer of 2014](injection.md#order-the-christmas-special-offer-of-2014)
   challenge might give it to you as by-catch.
-* The actual data you need to solve this challenge was leaked into a
-  popular paste tool on the Internet. Finding it is the actual challenge
-  here.
+* The actual data you need to solve this challenge was leaked on the
+  same platform that was involved in
+  [Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to](#dumpster-dive-the-internet-for-a-leaked-password-and-log-in-to-the-original-user-account-it-belongs-to)
 * Google is a particularly good accomplice in this challenge.
 
 ### Log in with Amy's original user credentials
@@ -184,7 +221,7 @@ not count.
 > compliance reporting and incident investigation through analysis of
 > historical data from these sources. The core capabilities of SIEM
 > technology are a broad scope of event collection and the ability to
-> correlate and analyze events across disparate sources.[^2]
+> correlate and analyze events across disparate sources.[^3]
 
 The misplaced signature file is actually a rule file for
 [Sigma](https://github.com/Neo23x0/sigma), a generic signature format
@@ -198,7 +235,7 @@ for SIEM systems:
 > developed detection methods and make them shareable with others.
 >
 > Sigma is for log files what Snort is for network traffic and YARA is
-> for files.[^3]
+> for files.[^4]
 
 * If you solved one of the other four file access challenges, you
   already know where the SIEM signature file is located
@@ -219,5 +256,7 @@ inventory, the product to inspect will be a different one. The tooltip
 on the Score Board will tell you which one to look into._
 
 [^1]: https://searchsecurity.techtarget.com/definition/access-log
-[^2]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/
-[^3]: https://github.com/Neo23x0/sigma#what-is-sigma
+[^2]: https://en.wikipedia.org/wiki/Data_loss_prevention_software
+[^3]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/
+[^4]: https://github.com/Neo23x0/sigma#what-is-sigma
+[^5]: https://resources.infosecinstitute.com/password-spraying/
