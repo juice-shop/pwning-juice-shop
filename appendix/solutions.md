@@ -2267,7 +2267,38 @@ to use some unofficial port._
 
 ###  Request a hidden resource on server through server
 
-🔧 **TODO**
+1. Solve
+   [Infect the server with "juicy malware" by abusing arbitrary command execution](#infect-the-server-with-juicy-malware-by-abusing-arbitrary-command-execution)
+   at least to the point where you have access to the "juicy malware"
+   executables.
+2. Similar to that SSTi challenge, the vulnerable place for this one is
+   found on the <http://localhost:3000/profile> page.
+3. The only promising input field for an SSRF attack is the _Gravatar
+   URL_. Open your browser's DevTools and watch the _Network_ tab.
+4. Type any URL (e.g. <https://placekitten.com/100/100>) into _Gravatr
+   URL_ and click _Link Gravatar_. You will realize a request
+   <http://juice-shop-staging.herokuapp.com/profile/image/url> with the
+   chosen <https://placekitten.com/100/100> as paramter `imageUrl`.
+5. You will find no HTTP request to <https://placekitten.com/100/100>
+   going out from your browser, though. As the image was retrieved and
+   associated with your profile, it must have been downloaded _by the
+   Juice Shop server_.
+
+   ![Placekitten image associated with a user profile](img/ssrf_placekitten.png)
+6. To solve this challenge, you need to find a secret URL hidden inside
+   the "juicy malware" and simulate a self-targeted SSRF attack with it.
+7. Use your favorite decompiler(s) to see what is going on inside the
+   malware program...
+8. ...or execute the malware while tunneling all its traffic through a
+   proxy.
+9. Either way you should be able to identify the URL being called by it
+   is
+   <http://localhost:3000/solve/challenges/server-side?key=tRy_H4rd3r_n0thIng_iS_Imp0ssibl3>
+10. Visiting that URL directly will not do anything, as it needs to be
+    called through the _Gravatar Link_ field that was presumably
+    vulnerable to SSRF
+11. Paste the URL in and click _Link Gravatar_ to get the expected
+    challenge solved notification!
 
 ###  Infect the server with juicy malware by abusing arbitrary command execution
 
@@ -2356,14 +2387,15 @@ challeng e ca n be used. 12. The blind part of this challenge is the
 actual file location in the server file system. Trying to create a Zip
 file with any path trying to traverse into `../../assets/public/videos/`
 will fail. Notice that `../../` was sufficient to get to the root folder
-in [Overwrite the Legal Information file](#overwrite-the-legal-info rmat
-ion-file). 13. This likely means that there is a deeper directory
-structure in which `ass ets/ ` resides. 14. This actual directory
-structure on the server is created by the AngularCLI tool when it
-compiles the application and looks as follows: `frontend/dist/fron tend
-/assets/`. 15. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside
-that contains the prescribed payload of
-``</script><script>alert(`xss`)</script>`` with `zip exploit.zip
+in
+[Overwrite the Legal Information file](#overwrite-the-legal-information-file).
+13\. This likely means that there is a deeper directory structure in
+which `ass ets/ ` resides. 14. This actual directory structure on the
+server is created by the AngularCLI tool when it compiles the
+application and looks as follows: `frontend/dist/fron tend /assets/`.
+15\. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that contains
+the prescribed payload of ``</script><script>alert(`xss`)</script>``
+with `zip exploit.zip
 ../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt` (
 on Linux). 16. Upload the ZIP file on <http://localhost:300 0/#/
 complain>. 17. The challenge notification will not trigger immediately,
