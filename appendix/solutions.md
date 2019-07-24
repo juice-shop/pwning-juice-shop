@@ -2168,7 +2168,22 @@ this solution.
 
 ###  Like any review at least three times as the same user
 
-🔧 **TODO**
+1. Liking a review normally results in a request to
+   <http://localhost:3000/rest/products/reviews> which associates the
+   email of the user with the review (identified by the JSON body of
+   e.g. `{id: "ZQdzyRCbwQ4ys3PCG"}`) and also increases its like counter
+   by one.
+2. If you try to replay the same request you will get a `403 Forbidden`
+   HTTP status with `{"error":"Not allowed"}` in the response.
+3. Write a script that simultaneously executes three requests to
+   <http://localhost:3000/rest/products/reviews> with body e.g. `{id:
+   "ZQdzyRCbwQ4ys3PCG"}` and run it.
+4. If your 3 requests get handled asynchronously withing an (artificial)
+   150ms time window, you will cause a race condition and all will get
+   through and each increase the like counter by one to a total of
+   three!
+5. Back in your browser you should now see the corresponding challenge
+   marked as solved!
 
 ### Log in with the support team's original user credentials
 
