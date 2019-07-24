@@ -148,7 +148,25 @@ challenge instruction to make it light up green on the score board:
 
 ### Request a hidden resource on server through server
 
-🔧 **TODO**
+This Server-side Request Forgery challenge will come back to the malware
+you used in
+[Infect the server with juicy malware by abusing arbitrary command execution](injection.md#infect-the-server-with-malware-by-abusing-arbitrary-command-execution).
+
+* Using whatever you find inside the malware _directly_ will not do you
+  any good.
+* For this to count as an SSRF attack you need to make the Juice Shop
+  server _attack itself_.
+* Do not try to find the source code for the malware on GitHub. Take it
+  apart with classic reverse-engineering techniques instead.
+
+> In a Server-Side Request Forgery (SSRF) attack, the attacker can abuse
+> functionality on the server to read or update internal resources. The
+> attacker can supply or a modify a URL which the code running on the
+> server will read or submit data to, and by carefully selecting the
+> URLs, the attacker may be able to read server configuration such as
+> AWS metadata, connect to internal services like http enabled databases
+> or perform post requests towards internal services which are not
+> intended to be exposed. [^3]
 
 ### View another user's shopping basket
 
@@ -169,3 +187,4 @@ to some arguments between the victim and the vendor.
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
+[^3]: https://www.owasp.org/index.php/Server_Side_Request_Forgery
