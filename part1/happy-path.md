@@ -97,23 +97,28 @@ purchase:
 
 ### Checkout
 
-Still on the `#/basket` page you also find some purchase related buttons
-that are worth to be explored:
+During checkout you will be guided through a series of steps to set your
+delivery address, desired delivery method and credit card.
 
-* unfold the _Coupon_ section with the "gift"-button where you can
-  redeem a code for a discount
-* unfold the _Payment_ section with the "credit card"-button where you
-  find donation and merchandise links
+![Delivery address selection](img/select-address.png)
+![Delivery method selection](img/delivery-method.png)
 
-![Basket Coupons & Payment collapsibles](/part1/img/basket-collapsibles.png)
+_Do not put any real credit card or delivery address options anywhere in
+the Juice Shop as it is not a "real" shop, after all._
+
+![Payment card selection](img/payment.png)
+
+In the _Add a coupon_ section you can redeem a code for a discount.
+Unfold the _Other payment options_ section to see links with donation
+and merchandise links of the Juice Shop open source project.
 
 Finally you can click the _Checkout_ button to issue an order. You will
-be forwarded to a PDF with the confirmation of your order right away.
+be forwarded to a confirmation of your order right away. It also
+includes a link to a printable PDF confirmation for your order and as
+well as a tracking link.
 
-_You will not find any "real" payment or delivery address options
-anywhere in the Juice Shop as it is not a "real" shop, after all._
-
-![Order Confirmation](/part1/img/order-confirmation.png)
+![Order completion screen](img/order-completion.png)
+![Order confirmation PDF](/part1/img/order-confirmation.png)
 
 ### User Menu
 
@@ -181,7 +186,8 @@ password to legitimate this change.
 
 ### Side Menu
 
-The sidebar menu button left of the application logo reveals some more options to choose from.
+The sidebar menu button left of the application logo reveals some more
+options to choose from.
 
 ![Contact Us Menu](/part1/img/contact-us-menu.png)
 
