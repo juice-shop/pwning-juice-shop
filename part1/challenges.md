@@ -149,3 +149,18 @@ It cannot offer a tutorial for _every challenge_ as some are too complex
 or require too many steps outside the application.
 
 {% endif %}
+
+## Potentially dangerous challenges
+
+Some challenges can cause potential harm or pose some danger for your
+computer, i.e. the XXE, SSTi and Deserialization challenges. These
+simply cannot be sandboxed in a 100% secure way. These are only
+dangerous if you use actually malicious payloads, so please do not play
+with payloads you do not fully understand.
+
+For safety reasons all potentially dangerous challenges are disabled
+(along with their underlying vulnerabilities) in containerized
+environments. By default this applies to Docker and Heroku. You can set
+`safetyOverride: true` in your
+[YAML configuration file](customization.md#yaml-configuration-file) you
+can re-enable these challenges. Please use at your own risk.

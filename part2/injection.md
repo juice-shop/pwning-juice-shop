@@ -48,7 +48,7 @@
 | NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | ⭐⭐⭐⭐     |
 | NoSQL Exfiltration | All your orders are belong to us! Even the ones which don't!                         | ⭐⭐⭐⭐⭐    |
 | NoSQL Manipulation | Update multiple product reviews at the same time.                                    | ⭐⭐⭐⭐     |
-| SSTi               | Infect the server with juicy malware by abusing arbitrary command execution.               | ⭐⭐⭐⭐⭐⭐  |
+| SSTi               | Infect the server with juicy malware by abusing arbitrary command execution.         | ⭐⭐⭐⭐⭐⭐  |
 | User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | ⭐⭐⭐⭐     |
 
 #### Reconnaissance advice
@@ -217,6 +217,11 @@ multiple reviews are the same time.
   work in MongoDB.
 
 ### Infect the server with juicy malware by abusing arbitrary command execution
+
+ℹ️ _Please note that this challenge is **not available** when running
+the Juice Shop in either a Docker container or on a Heroku dyno! It is
+not possible to implement this vulnerability in a "safe" way without any
+risk of compromise of the underlying system._
 
 In this challenge you must exploit a Server-side Template Injection
 (SSTi) to "infect" the server with a specially crafted "malware".

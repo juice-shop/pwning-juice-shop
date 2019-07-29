@@ -24,6 +24,15 @@
 | Blocked RCE DoS    | Perform a Remote Code Execution that would keep a less hardened application busy forever.          | ⭐⭐⭐⭐⭐    |
 | Successful RCE DoS | Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | ⭐⭐⭐⭐⭐⭐  |
 
+ℹ️ _Please note that both RCE challenges described below are **not
+available** when running the Juice Shop in either a Docker container or
+on a Heroku dyno! The deserialization actually happens in a sandbox with
+a timeout, but with sufficient skills an attacker could break out of the
+sandbox and actually harm the underlying system. While it is unfortunate
+to not have RCE challenges on containerized environments, this
+illustrates how hard it is to protect against deserialization attacks
+except for not using it at all._
+
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 > Code Injection is the general term for attack types which consist of
