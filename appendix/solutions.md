@@ -993,9 +993,9 @@ more attention & a good portion of shrewdness.
 7. What is passed into `btoa()` is `email.split("").reverse().join("")`,
    which is simply the email address string reversed.
 8. Now all you have to do is Base64-encode
-   `moc.liamelgoog@hcinimmik.nreojb`, so you can log in directly with
-   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
-   `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
+   `moc.liamg@hcinimmik.nreojb`, so you can log in directly with
+   _Email_ `bjoern.kimminich@gmail.com` and _Password_
+   `bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=`.
 
 ### Steal someone else's personal data without using Injection
 
