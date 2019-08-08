@@ -42,6 +42,7 @@
 | Name               | Description                                                                          | Difficulty |
 |:-------------------|:-------------------------------------------------------------------------------------|:-----------|
 | Christmas Special  | Order the Christmas special offer of 2014.                                           | ⭐⭐⭐       |
+| Database Schema    | Exfiltrate the entire DB schema definition via SQL Injection.                        | ⭐⭐⭐       |
 | Login Admin        | Log in with the administrator's user account.                                        | ⭐⭐        |
 | Login Bender       | Log in with Bender's user account.                                                   | ⭐⭐⭐       |
 | Login Jim          | Log in with Jim's user account.                                                      | ⭐⭐⭐       |
@@ -90,8 +91,24 @@ supposed to be available any more.
 * You need to get the deleted product into your shopping cart and
   trigger the _Checkout_.
 * Neither of the above can be achieved through the application frontend
-  and it might even require Blind SQL Injection.
+  and it might even require (half-)Blind SQL Injection.
 
+### Exfiltrate the entire DB schema definition via SQL Injection
+
+An attacker would try to exploit SQL Injection to find out as much as
+possible about your database schema. This subsequently allows much more
+targeted, stealthy and devastating SQL Injections, like
+[Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
+
+* Find out which database system is in use and where it would usually
+  store its schema definitions.
+* Craft a `UNION SELECT` attack string to join the relevant data from
+  any such identified system table into the original result.
+* You might have to tackle some query syntax issues step-by-step,
+  basically hopping from one error to the next
+* As with
+  [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
+  this cannot be achieved through the application frontend.
 
 ### Log in with the administrator's user account
 
@@ -276,8 +293,9 @@ café with free WiFi.
   basically hopping from one error to the next
 * As with
   [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
-  this cannot be achieved through the application frontend but involves
-  some Blind SQL Injection instead.
+  and
+  [Exfiltrate the entire DB schema definition via SQL Injection](#exfiltrate-the-entire-db-schema-definition-via-sql-injection)
+  this cannot be achieved through the application frontend.
 
 [^1]: https://www.owasp.org/index.php/Injection_Flaws
 [^2]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection
