@@ -34,7 +34,7 @@ back to this screen (or more precisely, to its alias `#/search`).
 ![All Products](/part1/img/all-products.png)
 
 This is of course the "bread & butter" screen for any e-commerce site.
-When you click on the small "eye"-button next to the price of a product,
+When you click on the product logo or the description of a product,
 an overlay screen will open showing you that product details including a
 list of customer reviews for that product (if available). You can also
 enter a new (or edit an existing) product review in this dialog.
@@ -44,8 +44,8 @@ Authenticated users can upvote reviews they like.
 
 You can use the _Search..._ box in the navigation bar on the top of the
 screen to filter the table for specific products by their name and
-description. Using the controls at the bottom of the table, you can
-navigate through a the result list that exceeds the _Items per page_
+description. Using the controls at the bottom of the screen, you can
+navigate through the result list that exceeds the _Items per page_
 limit.
 
 ![Search Results](/part1/img/search-results.png)
@@ -82,23 +82,48 @@ and a new password, you can recover an otherwise inaccessible account.
 
 ### Choosing products to purchase
 
-After logging in to the application you will notice a "shopping
-cart"-icon in every row of the products table. Unsurprisingly this will
-let you add one or more products into your shopping basket. The _Your
-Basket_ button in the navigation bar will bring you to the `#/basket`
-page, where you can do several things before actually confirming your
-purchase:
+After logging in to the application you will notice a "Add to Basket"-button
+in each product card. Unsurprisingly this will let you add one or more products
+into your shopping basket. The _Your Basket_ button in the navigation bar 
+will bring you to the `#/basket` page, where you can do several things before
+actually confirming your purchase:
 
 * increase ("+") or decrease ("-") the quantity of individual products
   in the shopping basket
 * remove products from the shopping basket with the "trashcan"-button
 
+Clicking on the checkout button will lead to the `#/address/select`.
+
 ![Your Basket](/part1/img/your-basket.png)
 
-### Checkout
+### Add An Address
 
-Still on the `#/basket` page you also find some purchase related buttons
-that are worth to be explored:
+In case you haven't stored any address, you will see a "Add New Address"-button. Clicking on which will lead you to `#/address/create`.
+
+![New Address](/part1/img/new-address.png)
+
+### Select An Address
+
+On this page your stored addresses will be listed. Selecting an address will allow you to continue with the purchase.
+
+![Select an Address](/part1/img/select-an-address.png)
+
+### Delivery Speed
+
+After selecting an address, you will be directed to `/#/delivery-method` and will be asked to select a delivery speed for your order.
+
+![Delivery Speed](/part1/img/delivery-speed.png)
+
+### Payment
+
+This page will allow you to choose your preferred method of payment, add new cards and will provide some purchase related buttons that are worth to be explored:
+
+![Payment](/part1/img/payment.png)
+
+* selecting from the saved cards will allow you to proceed with the purchase.
+* unfold the _Add New Card_ section to add a new card.
+
+![New Card](/part1/img/new-card.png)
 
 * unfold the _Coupon_ section with the "gift"-button where you can
   redeem a code for a discount
@@ -107,13 +132,24 @@ that are worth to be explored:
 
 ![Basket Coupons & Payment collapsibles](/part1/img/basket-collapsibles.png)
 
-Finally you can click the _Checkout_ button to issue an order. You will
-be forwarded to a PDF with the confirmation of your order right away.
+After clicking on the _Continue_ button, you will be directed to `/#/order-summary.`
+
+### Order Summary
+
+You can click the _Place your order and pay_ button to issue an order.
+
+![Order Summary](/part1/img/order-summary.png)
+
+### Order Completion
+
+Finally you will be able to view your order details, along with options to share your purchase on _Twitter_ and view a PDF with the confirmation.
+
+![Order Completion](/part1/img/order-completion.png)
+
+![Order Confirmation](/part1/img/order-confirmation.png)
 
 _You will not find any "real" payment or delivery address options
 anywhere in the Juice Shop as it is not a "real" shop, after all._
-
-![Order Confirmation](/part1/img/order-confirmation.png)
 
 ### User Menu
 
@@ -127,13 +163,73 @@ user account.
 #### User Profile
 
 Clicking you your email address in the user menu, you will get to the
-_User Profile_ screen on `/profile`. Visiting it might break your user
-experience a bit, as it looks slightly less sophisticated than the rest
-of the shop's UI. It is fully functional nonetheless, as it allows you
-to upload a `JPG`-format picture of yourself (or link an existing
+_User Profile_ screen on `/profile`. It allows you to upload a `JPG`-format picture of yourself (or link an existing
 Gravatar) and choose a username for your account.
 
 ![User Profile](/part1/img/user-profile.png)
+
+#### My saved addresses
+
+This page lists your saved addresses and provides you with the ability to edit or delete already saved addresses.
+
+![Stored Address](/part1/img/stored-address.png)
+
+#### My Payment Options
+
+This page lists your saved cards and provides you with the ability to delete already saved cards or to add new ones.
+
+![Stored Card](/part1/img/stored-card.png)
+
+#### Juice Shop Wallet
+
+This page allows you to add money to your wallet and to check the existing balance. All the bonuses on your purchase are directly credited to your wallet.
+
+![Wallet](/part1/img/wallet.png)
+
+#### Order History
+
+This page allows you to view the details of all your existing orders and the status of their delivery.
+
+![Order History](/part1/img/order-history.png)
+
+##### Privacy Policy
+
+This page informs you about the policies regarding the collection, use and disclosure of personal data when you use the OWASP Juice Shop and the choices you have associated with the data.
+
+![Privacy Policy](/part1/img/privacy-policy.png)
+
+##### Request Data Export
+
+This page allows you to obtain a copy of your data saved in the Juice Shop.
+
+![Request Data Export](/part1/img/request-data-export.png)
+
+##### Request Data Erasure
+
+This page allows you to request a complete erasure of your account and any associated data from the Juice Shop.
+
+![Data Erasure Request](/part1/img/data-erasure-request.png)
+
+##### Change user password
+
+If you are currently logged in you will find the obligatory _Change
+Password_ button in the navigation bar. On the `#/privacy-security/change-password` page
+you can then choose a new password. To prevent abuse you have of course
+to supply your current password to legitimate this change.
+
+![Change Password](/part1/img/change-password.png)
+
+##### 2FA Configuration
+
+This page allows you to secure your account with an additional factor by providing you with a barcode to scan.
+
+![2FA Configuration](/part1/img/2fa-configuration.png)
+
+##### Last Login IP
+
+This page displays the IP from which your account was last logged in.
+
+![Last Login IP](/part1/img/last-login-ip.png)
 
 #### Request Recycling Box
 
@@ -165,21 +261,11 @@ _Just as there was no "real" payment was happening, you will hopefully
 understand that there is no "real" order delivery happening - no matter
 what the order tracking dialog suggested._
 
-#### Change user password
+### Menu
 
-If you are currently logged in you will find the obligatory _Change
-Password_ button in the navigation bar. On the `#/privacy-security/change-password` page
-you can then choose a new password. To prevent abuse you have of course
-to supply your current password to legitimate this change.
+The hamburger menu button in the left corner of the navigation bar reveals another side navigation menu with many options to choose from.
 
-![Change Password](/part1/img/change-password.png)
-
-### Contact Us Menu
-
-The _Contact Us_ button in the navigation bar reveals another drop-down
-menu with up to two options to choose from.
-
-![Contact Us Menu](/part1/img/contact-us-menu.png)
+![Menu](/part1/img/menu.png)
 
 #### Customer Feedback
 
@@ -191,7 +277,7 @@ very straightforward with a free text _Comment_ field and a _Rating_ on
 a 1-5 stars scale. To prevent abuse, you have to solve a simple
 mathematical problem before being allowed to submit your feedback.
 
-![Contact Us](/part1/img/contact-us.png)
+![Customer Feedback](/part1/img/customer-feedback.png)
 
 #### Complain
 
@@ -200,9 +286,9 @@ you to the `#/complain` page where you can leave a free text _Message_
 and also attach an _Invoice_ file in case you had some issues with a
 recent order at the Juice Shop.
 
-![File Complaint](/part1/img/file-complaint.png)
+![Complain](/part1/img/complain.png)
 
-### About Us
+#### About Us
 
 Like every proper enterprise, the OWASP Juice Shop has of course an
 `#/about` page titled _About Us_. There you find a summary of the
@@ -212,6 +298,18 @@ slideshow of all [customer feedback](#customer-feedback). Beneath that
 you can find all important social media contact information of the shop.
 
 ![About Us](/part1/img/about-us.png)
+
+#### Photo Wall
+
+The OWASP Juice Shop also has an `#/photo-wall` page titled _Photo Wall_ which allows its users to share their memories with other customers of the Juice Shop.
+
+![Photo Wall](/part1/img/photo-wall.png)
+
+#### Deluxe Membership
+
+The OWASP Juice Shop offers a deluxe membership to its customers which provides them with offers on puchase, free fast delivery and an unrestricted purchase of the items they like.
+
+![Deluxe Membership](/part1/img/deluxe-membership.png)
 
 ### Language selection
 
