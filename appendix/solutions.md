@@ -1556,6 +1556,10 @@ frustrated to finish what he originally planned to do.
    a standard JSON object.
    ![whoami call using JSONP](img/jsonp_whoami.png)
 
+### Log in with the (non-existing) accountant without ever registering that user
+
+:wrench: **TODO**
+
 ### Retrieve the language file that never made it into production
 
 1. Monitoring the HTTP calls to the backend when switching languages
