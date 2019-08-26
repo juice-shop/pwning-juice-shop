@@ -102,11 +102,11 @@ delivery address, desired delivery method and credit card.
 
 ![Delivery address selection](img/select-address.png)
 ![Delivery method selection](img/delivery-method.png)
-
-_Do not put any real credit card or delivery address options anywhere in
-the Juice Shop as it is not a "real" shop, after all._
-
 ![Payment card selection](img/payment.png)
+
+🚨 **Do not enter any real credit card or address data anywhere in the
+Juice Shop! Always remember that it is not a real shop and it is
+intentionally riddled with security and privacy flaws!**
 
 In the _Add a coupon_ section you can redeem a code for a discount.
 Unfold the _Other payment options_ section to see links with donation
@@ -146,43 +146,56 @@ Gravatar) and choose a username for your account.
 
 #### My saved addresses
 
-This page lists your saved addresses and provides you with the ability to edit or delete already saved addresses.
+This page lists your saved addresses and provides you with the ability
+to edit or delete already saved addresses.
 
 ![Stored Address](/part1/img/stored-address.png)
 
+🚨 **Do not enter real address data here!**
+
 #### My Payment Options
 
-This page lists your saved cards and provides you with the ability to delete already saved cards or to add new ones.
+This page lists your saved cards and provides you with the ability to
+delete already saved cards or to add new ones.
 
 ![Stored Card](/part1/img/stored-card.png)
 
+🚨 **Do not enter real credit card data here!**
+
 #### Juice Shop Wallet
 
-This page allows you to add money to your wallet and to check the existing balance. All the bonuses on your purchase are directly credited to your wallet.
+This page allows you to add money to your wallet and to check the
+existing balance. All the bonuses on your purchase are directly credited
+to your wallet.
 
 ![Wallet](/part1/img/wallet.png)
 
 #### Order History
 
-This page allows you to view the details of all your existing orders and the status of their delivery.
+This page allows you to view the details of all your current and
+previous orders and the status of their delivery.
 
 ![Order History](/part1/img/order-history.png)
 
 ##### Privacy Policy
 
-This page informs you about the policies regarding the collection, use and disclosure of personal data when you use the OWASP Juice Shop and the choices you have associated with the data.
+This page informs you about the policies regarding the collection, use
+and disclosure of personal data when you use the OWASP Juice Shop and
+the choices you have when it comes to your data.
 
 ![Privacy Policy](/part1/img/privacy-policy.png)
 
 ##### Request Data Export
 
-This page allows you to obtain a copy of your data saved in the Juice Shop.
+This page allows you to obtain a copy of all your data saved in the
+Juice Shop.
 
 ![Request Data Export](/part1/img/request-data-export.png)
 
 ##### Request Data Erasure
 
-This page allows you to request a complete erasure of your account and any associated data from the Juice Shop.
+This page allows you to request a complete erasure of your account and
+any associated data from the Juice Shop.
 
 ![Data Erasure Request](/part1/img/data-erasure-request.png)
 
@@ -198,7 +211,8 @@ password to legitimate this change.
 
 ##### 2FA Configuration
 
-This page allows you to secure your account with an additional factor by providing you with a barcode to scan.
+This page allows you to secure your account with an additional factor by
+providing you with a barcode to scan.
 
 ![2FA Configuration](/part1/img/2fa-configuration.png)
 
@@ -279,13 +293,17 @@ you can find all important social media contact information of the shop.
 
 #### Photo Wall
 
-The OWASP Juice Shop also has an `#/photo-wall` page titled _Photo Wall_ which allows its users to share their memories with other customers of the Juice Shop.
+The OWASP Juice Shop also has an `#/photo-wall` page titled _Photo Wall_
+which allows its users to share their memories with other customers of
+the Juice Shop.
 
 ![Photo Wall](/part1/img/photo-wall.png)
 
 #### Deluxe Membership
 
-The OWASP Juice Shop offers a deluxe membership to its customers which provides them with offers on puchase, free fast delivery and an unrestricted purchase of the items they like.
+The OWASP Juice Shop offers a deluxe membership to its customers which
+provides them with exclusive offers, free fast delivery and an
+unrestricted purchase of the items they like.
 
 ![Deluxe Membership](/part1/img/deluxe-membership.png)
 
