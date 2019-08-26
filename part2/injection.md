@@ -113,7 +113,23 @@ targeted, stealthy and devastating SQL Injections, like
 
 ### Log in with the (non-existing) accountant without ever registering that user
 
-:wrench: **TODO**
+In ths challenge you need to log in with a user that has
+accountant-level permissions, but does not really exist.
+
+* The user literally needs to be _ephemeral_ as in
+  ["lasting for only a short time"](https://dictionary.cambridge.org/de/worterbuch/englisch/ephemeral).
+* Registering normally with the user's email address will then obviously
+  not solve this challenge. The Juice Shop will not even let you
+  register as `acc0unt4nt@juice-sh.op`, as this would make the challenge
+  unsolvable for you.
+* Getting the user into the database some other way will also fail to
+  solve this challenge. In case you somehow managed to do so, you need
+  to restart the Juice Shop application in order to wipe the database
+  and make the challenge solvable again.
+* The fact that this challenge is in the _Injection_ category should
+  already give away the intended approach.
+
+![Nice try error when registering ephemeral accountant user](img/nice_try-error.png)
 
 ### Log in with the administrator's user account
 
