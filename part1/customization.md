@@ -68,11 +68,6 @@ find its syntax along with an excerpt of the default settings.
   * `logo` filename in `/app/public/images/` _or_ a URL of an image
     which will first be download to that folder and then used as a logo.
     Defaults to `JuiceShop_Logo.png`
-  * `deluxePage` custom elements on the _Deluxe Membership_ page
-    * `deluxeDeliveryImage` filename in `app/public/images/deluxe` _or_
-      a URL of an image which will first be download to that folder and
-      then displayed on the _Deluxe Membership_ page. Defaults to
-      `'delivery_juiceshop.png'`.
   * `favicon` filename in `/app/public/` _or_ a URL of an image in
     `.ico` format which will first be download to that folder and then
     used as a favicon. Defaults to `favicon_v2.ico`
@@ -114,6 +109,11 @@ find its syntax along with an excerpt of the default settings.
     the 3D planet "easter egg". Defaults to `orangemap2k.jpg`
   * `planetName` of the 3D planet "easter egg" as shown in the page
     title. Defaults to `Orangeuze`
+  * `deluxePage` custom elements on the _Deluxe Membership_ page
+    * `deluxeDeliveryImage` filename in `app/public/images/deluxe` _or_
+      a URL of an image which will first be download to that folder and
+      then displayed on the _Deluxe Membership_ page. Defaults to
+      `delivery_juiceshop.png`.
   * `recyclePage` custom elements on the _Request Recycling Box_ page
     * `topProductImage` filename in `/app/public/images/products` to use
       as the image on the top of the info column on the page. Defaults
@@ -266,8 +266,6 @@ application:
   domain: juice-sh.op
   name: 'OWASP Juice Shop'
   logo: JuiceShop_Logo.png
-  deluxePage:
-    deluxeDeliveryImage: 'delivery_juiceshop.png'
   favicon: favicon_v2.ico
   theme: bluegrey-lightgreen
   showChallengeSolvedNotifications: true
@@ -281,6 +279,8 @@ application:
   slackUrl: 'http://owaspslack.com'
   planetOverlayMap: orangemap2k.jpg
   planetName: Orangeuze
+  deluxePage:
+    deluxeDeliveryImage: delivery_juiceshop.png
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
@@ -360,13 +360,13 @@ is as short as this:
 ```yaml
 application:
   logo: JuiceShopCTF_Logo.png
-  deluxePage:
-    deluxeDeliveryImage: 'delivery_ctf.png'
   favicon: favicon_ctf.ico
   showChallengeHints: false
   showVersionNumber: false
   showHackingInstructor: false
   showGitHubLinks: false
+  deluxePage:
+    deluxeDeliveryImage: delivery_ctf.png
   welcomeBanner:
     showOnFirstStart: false
 ctf:
