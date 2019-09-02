@@ -251,4 +251,14 @@ It should not go unmentioned that it is of course okay to have multiple
 users hack the same instance from a shared machine in a kind of
 _pair-hacking_-style.
 
+## Hosting individual instances for multiple users
 
+A solution to host and manage individual JuiceShop instances for multiple
+users is [JuicyCTF](https://github.com/iteratec/juicy-ctf/). JuicyCTF
+is a kubernetes based system to start up the required instances on
+demand. It also comes with a custom LoadBalancer so that every
+participant can use the same url but their traffic will still get
+send to their own instance.
+
+The JuicyCTF repository contains multiple guides on how to set up the
+system on different cloud provider environments.
