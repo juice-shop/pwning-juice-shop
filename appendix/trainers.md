@@ -61,11 +61,18 @@ want to encourage the students to hack very competitively.
 
 ### Hosting individual instances for multiple users
 
-A solution to host and manage individual JuiceShop instances for multiple users is [JuicyCTF](https://github.com/iteratec/juicy-ctf/).
-JuicyCTF is a kubernetes based system to start up the required Juice Shop instances on demand. It will also clean up unused instances after a configured period of inactivity.
-It also comes with a custom load-balancer so that every participant can use the same url, but their traffic will still get send to their own instance.
+A solution to host and manage individual Juice Shop instances for
+multiple users is [JuicyCTF](https://github.com/iteratec/juicy-ctf/).
+JuicyCTF is a Kubernetes based system to start up the required Juice
+Shop instances on demand. It will also clean up unused instances after a
+configured period of inactivity.
 
-The JuicyCTF repository contains multiple guides on how to set up the system on different cloud provider environments.
+JuicyCTF comes with a custom-built load balancer. It allows every
+participant to use the same URL, but their traffic will always be sent
+to their own personal instance.
+
+The JuicyCTF repository contains multiple guides on how to set up the
+system on different cloud provider environments.
 
 ## Existing trainings
 
@@ -102,7 +109,7 @@ the
 ( ⭐ ) so you can then pick any of the challenge below to further
 demonstrate certain categories of vulnerabilities.
 
-| Description                                                                                                           | Category                   | Difficulty | Time for demo | Dependencies                                                                                                                                                                                                                                                                                                                                             |
+| Description                                                                                                         | Category                   | Difficulty | Time for demo | Dependencies                                                                                                                                                                                                                                                                                                                                             |
 |:--------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [DOM XSS](../part2/xss.md#perform-a-dom-xss-attack)                                                                 | XSS                        | ⭐          | ⏳             | None                                                                                                                                                                                                                                                                                                                                                     |
 | [Confidential Document](../part2/sensitive-data-exposure.md#access-a-confidential-document)                         | Sensitive Data Exposure    | ⭐          | ⏳             | None                                                                                                                                                                                                                                                                                                                                                     |

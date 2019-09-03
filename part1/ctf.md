@@ -113,15 +113,19 @@ Apart from the score-tracking server, each participant must have their
 own instance of OWASP Juice Shop. As explained in the
 [Single-user restriction](running.md#single-user-restriction) section,
 having a shared instance for each team is strongly discouraged, because
-Juice Shop is programmed as a single-user application. If you want to
-centrally host the Juice Shop Instances for the participants see the
-[classroom hints](../appendix/trainers.md#classroom-hints) in the trainer's guide.
+Juice Shop is programmed as a single-user application.
+
+If you want to centrally host Juice Shop instances for any number of CTF
+participants you find more information in section
+[Hosting individual instances for multiple users](../appendix/trainers.md#hosting-individual-instances-for-multiple-users)
+of the trainer's guide.
 
 It is absolutely important that all Juice Shop instances participating
-in a CTF use the same [secret key to generate their CTF flag codes](#overriding-the-ctfkey).
-The score server must be set up accordingly to accept exactly those
-flag codes for solving the hacking challenges and allocating their
-score to the first team/user that solved it.
+in a CTF use the same
+[secret key to generate their CTF flag codes](#overriding-the-ctfkey).
+The score server must be set up accordingly to accept exactly those flag
+codes for solving the hacking challenges and allocating their score to
+the first team/user that solved it.
 
 As long as the flag code key is identical for all of them, it does not
 matter which run option for the Juice Shop each participant uses: Local
@@ -223,14 +227,14 @@ The category of each challenge is identical to its
 and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 
-| Difficulty                           | Score value | Paid hint costs (Text / URL) |
-|:-------------------------------------|:------------|:-----------------------------|
-| ⭐                               | 100 points  | (10 points / 20 points)      |
-| ⭐⭐                         | 250 points  | (25 points / 50 points)      |
-| ⭐⭐⭐                   | 450 points  | (45 points / 90 points)      |
-| ⭐⭐⭐⭐             | 700 points  | (70 points / 140 points)     |
-| ⭐⭐⭐⭐⭐       | 1000 points | (100 points / 200 points)    |
-| ⭐⭐⭐⭐⭐⭐ | 1350 points | (135 points / 260 points)    |
+| Difficulty | Score value | Paid hint costs (Text / URL) |
+|:-----------|:------------|:-----------------------------|
+| ⭐          | 100 points  | (10 points / 20 points)      |
+| ⭐⭐        | 250 points  | (25 points / 50 points)      |
+| ⭐⭐⭐       | 450 points  | (45 points / 90 points)      |
+| ⭐⭐⭐⭐     | 700 points  | (70 points / 140 points)     |
+| ⭐⭐⭐⭐⭐    | 1000 points | (100 points / 200 points)    |
+| ⭐⭐⭐⭐⭐⭐  | 1350 points | (135 points / 260 points)    |
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
@@ -312,8 +316,8 @@ CTFd run-mode below.
 3. After running `docker-compose up` from previous step, you should be
    able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
    default) and create an admin user and CTF name.
-4. Follow the steps 5-8 from the [Local server setup](#local-server-setup)
-   described above.
+4. Follow the steps 5-8 from the
+   [Local server setup](#local-server-setup) described above.
 
 ##### Non-production Docker image
 
@@ -322,8 +326,8 @@ CTFd run-mode below.
    {{book.ctfdVersion}}
 3. Execute `docker run --rm -p 8000:8000 ctfd/ctfd:<version>` to run
    {{book.ctfdVersion}}
-4. Follow the steps 5-8 from the [Local server setup](#local-server-setup)
-   described above
+4. Follow the steps 5-8 from the
+   [Local server setup](#local-server-setup) described above
 
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
@@ -374,10 +378,10 @@ nicely curated list of CTF platforms and related tools & resources in
 [Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
 
 All these platforms have one thing in common: Unless you write a
-dedicated `lib/generators/`-file 😉, you have to set up the
-challenges inside them manually on your own. Of course you can choose
-aspects like score per challenge, description etc. like you want. For
-the CTF to _actually work_ there is only one mandatory prerequisite:
+dedicated `lib/generators/`-file 😉, you have to set up the challenges
+inside them manually on your own. Of course you can choose aspects like
+score per challenge, description etc. like you want. For the CTF to
+_actually work_ there is only one mandatory prerequisite:
 
 The flag code for each challenge must be declared as the result of
 
