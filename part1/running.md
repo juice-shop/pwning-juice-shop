@@ -251,4 +251,7 @@ It should not go unmentioned that it is of course okay to have multiple
 users hack the same instance from a shared machine in a kind of
 _pair-hacking_-style.
 
-
+If you want to centrally host Juice Shop instances for multiple users
+you find more information in section
+[Hosting individual instances for multiple users](../appendix/trainers.md#hosting-individual-instances-for-multiple-users)
+of the trainer's guide.
