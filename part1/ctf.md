@@ -115,7 +115,7 @@ own instance of OWASP Juice Shop. As explained in the
 having a shared instance for each team is strongly discouraged, because
 Juice Shop is programmed as a single-user application. If you want to
 centrally host the Juice Shop Instances for the participants see the
-[multi-user section](running.md#hosting-individual-instances-for-multiple-users).
+[classroom hints](../appendix/trainers.md#classroom-hints) in the trainer's guide.
 
 It is absolutely important that all Juice Shop instances participating
 in a CTF use the same [secret key to generate their CTF flag codes](#overriding-the-ctfkey).
