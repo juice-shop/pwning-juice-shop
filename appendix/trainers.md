@@ -59,6 +59,14 @@ can post the challenges they already solved. You might consider turning
 off public visibility of the leader board on the CTF server unless you
 want to encourage the students to hack very competitively.
 
+### Hosting individual instances for multiple users
+
+A solution to host and manage individual JuiceShop instances for multiple users is [JuicyCTF](https://github.com/iteratec/juicy-ctf/).
+JuicyCTF is a kubernetes based system to start up the required Juice Shop instances on demand. It will also clean up unused instances after a configured period of inactivity.
+It also comes with a custom load-balancer so that every participant can use the same url, but their traffic will still get send to their own instance.
+
+The JuicyCTF repository contains multiple guides on how to set up the system on different cloud provider environments.
+
 ## Existing trainings
 
 One existing training which uses the Juice Shop for example is a

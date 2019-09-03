@@ -113,13 +113,15 @@ Apart from the score-tracking server, each participant must have their
 own instance of OWASP Juice Shop. As explained in the
 [Single-user restriction](running.md#single-user-restriction) section,
 having a shared instance for each team is strongly discouraged, because
-Juice Shop is programmed as a single-user application. It is absolutely
-important that all Juice Shop instances participating in a CTF use the
-same [secret key to generate their CTF
-flag codes](#overriding-the-ctfkey). The score server must be set up
-accordingly to accept exactly those flag codes for solving the hacking
-challenges and allocating their score to the first team/user that solved
-it.
+Juice Shop is programmed as a single-user application. If you want to
+centrally host the Juice Shop Instances for the participants see the
+[classroom hints](../appendix/trainers.md#classroom-hints) in the trainer's guide.
+
+It is absolutely important that all Juice Shop instances participating
+in a CTF use the same [secret key to generate their CTF flag codes](#overriding-the-ctfkey).
+The score server must be set up accordingly to accept exactly those
+flag codes for solving the hacking challenges and allocating their
+score to the first team/user that solved it.
 
 As long as the flag code key is identical for all of them, it does not
 matter which run option for the Juice Shop each participant uses: Local
