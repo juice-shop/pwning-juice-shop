@@ -1265,7 +1265,7 @@ NPM page:
    names. You could guess those **or** derive them from the RESTful API
    results **or** remember them from previously seen SQL errors while
    attacking the _Login_ form.
-9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
+9. Searching for `qwert')) UNION SELECT id, email, password, '4', '5',
    '6', '7', '8', '9' FROM Users--` solves the challenge giving you a
    the list of all user data in convenient JSON format.
 
