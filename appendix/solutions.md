@@ -734,7 +734,7 @@ simultaneously.
    * and `application/json` as `Content-Type` header.
 
    ![XSS request in PostMan](img/xss2_postman.png)
-2. Log in to the application with any user.
+2. Log in to the application with an admin.
 3. Visit http://localhost:3000/#/administration.
 4. An alert box with the text "xss" should appear.
 
