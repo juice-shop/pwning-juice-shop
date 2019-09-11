@@ -17,7 +17,7 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 1. Follow the link to titled _Check out our boring terms of use if you
    are interested in such lame stuff_
-   (<http://localhost:3000/ftp/legal.md?md_debug=true>) on the _About
+   (<http://localhost:3000/ftp/legal.md>) on the _About
    Us_ page.
 2. Successfully attempt to browse the directory by changing the URL into
    <http://localhost:3000/ftp>
@@ -997,18 +997,14 @@ more attention & a good portion of shrewdness.
    [Access a confidential document](#access-a-confidential-document).
 2. Opening <http://localhost:3000/ftp/package.json.bak> directly will
    fail complaining about an illegal file type.
-3. Exploiting the `md_debug` parameter like in
-   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
-   will not work here - probably because `package.json.bak` is not a
-   Markdown file.
-4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
+3. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
    only with a twist:
    * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
      surprisingly **not** succeed...
    * ...because the `%` character needs to be URL-encoded (into `%25`)
      as well in order to work its magic later during the file system
      access.
-5. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
+4. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
    solve the challenge.
 
 > By embedding NULL Bytes/characters into applications that do not
