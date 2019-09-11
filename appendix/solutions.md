@@ -998,7 +998,7 @@ more attention & a good portion of shrewdness.
 2. Opening <http://localhost:3000/ftp/package.json.bak> directly will
    fail complaining about an illegal file type.
 3. Exploiting the `md_debug` parameter like in
-   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
+   [Access a confidential document](#access-a-confidential-document)
    will not work here - probably because `package.json.bak` is not a
    Markdown file.
 4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
