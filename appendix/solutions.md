@@ -2262,8 +2262,7 @@ this solution.
 ### Log in with the support team's original user credentials
 
 _Solving this challenge requires [KeePass 2.x](http://keepass.info)
-installed on your computer. If you are using a non-Windows OS you need
-to use some unofficial port._
+installed on your computer. If you are using a non-Windows OS you can try using some unofficial port but there is no guarantee the file can be opened on those._
 
 1. Download and install KeePass 2.x from <http://keepass.info>
 2. Get the support team's KeePass database file from
