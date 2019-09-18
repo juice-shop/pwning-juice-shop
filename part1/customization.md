@@ -223,10 +223,10 @@ find its syntax along with an excerpt of the default settings.
     [Retrieve Blueprint](../part2/sensitive-data-exposure.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
     challenge. If a filename is specified but the file does not exist in
     `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by
-    just requesting it from the server. Defaults to `JuiceShop.stl`. ℹ️
-    _To make this challenge realistically solvable, include some kind of
-    hint to the blueprint file's name/type in the product image (e.g.
-    its `Exif` metadata) or in the product description_
+    just requesting it from the server. Defaults to `JuiceShop.stl`.
+    ℹ️ _To make this challenge realistically solvable, include some
+    kind of hint to the blueprint file's name/type in the product image
+    (e.g. its `Exif` metadata) or in the product description_
   * `keywordsForPastebinDataLeakChallenge` (_must be defined on exactly
     one product_) list of keywords which are all mandatory to mention in
     a feedback or complaint to solve the
@@ -409,6 +409,15 @@ Juice Shop:
 ![Mozilla-CTF theme](/part1/img/theme_mozilla.png)
 
 ![BodgeIt Store theme](/part1/img/theme_bodgeit.png)
+
+## Limitations
+
+* When running a customization (except `default.yml`) that overwrites
+  the property `application.domain`, the description of the challenges
+  _Ephemeral Accountant_, _Forged Signed JWT_ and _Unsigned JWT_ will
+  always be shown in English.
+* Configurations (except `default.yml`) do not support translation of
+  custom product names and descriptions as of {{book.juiceShopVersion}}.
 
 ## Additional Browser tweaks
 

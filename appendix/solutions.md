@@ -17,7 +17,7 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 1. Follow the link to titled _Check out our boring terms of use if you
    are interested in such lame stuff_
-   (<http://localhost:3000/ftp/legal.md?md_debug=true>) on the _About
+   (<http://localhost:3000/ftp/legal.md>) on the _About
    Us_ page.
 2. Successfully attempt to browse the directory by changing the URL into
    <http://localhost:3000/ftp>
@@ -734,7 +734,7 @@ simultaneously.
    * and `application/json` as `Content-Type` header.
 
    ![XSS request in PostMan](img/xss2_postman.png)
-2. Log in to the application with any user.
+2. Log in to the application with an admin.
 3. Visit http://localhost:3000/#/administration.
 4. An alert box with the text "xss" should appear.
 
@@ -997,18 +997,14 @@ more attention & a good portion of shrewdness.
    [Access a confidential document](#access-a-confidential-document).
 2. Opening <http://localhost:3000/ftp/package.json.bak> directly will
    fail complaining about an illegal file type.
-3. Exploiting the `md_debug` parameter like in
-   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file)
-   will not work here - probably because `package.json.bak` is not a
-   Markdown file.
-4. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
+3. Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
    only with a twist:
    * Accessing <http://localhost:3000/ftp/package.json.bak%00.md> will
      surprisingly **not** succeed...
    * ...because the `%` character needs to be URL-encoded (into `%25`)
      as well in order to work its magic later during the file system
      access.
-5. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
+4. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
    solve the challenge.
 
 > By embedding NULL Bytes/characters into applications that do not
@@ -1265,7 +1261,7 @@ NPM page:
    names. You could guess those **or** derive them from the RESTful API
    results **or** remember them from previously seen SQL errors while
    attacking the _Login_ form.
-9. Searching for `qwert')) UNION SELECT '1', id, email, password, '5',
+9. Searching for `qwert')) UNION SELECT id, email, password, '4', '5',
    '6', '7', '8', '9' FROM Users--` solves the challenge giving you a
    the list of all user data in convenient JSON format.
 
@@ -2266,8 +2262,7 @@ this solution.
 ### Log in with the support team's original user credentials
 
 _Solving this challenge requires [KeePass 2.x](http://keepass.info)
-installed on your computer. If you are using a non-Windows OS you need
-to use some unofficial port._
+installed on your computer. If you are using a non-Windows OS you can try using some unofficial port but there is no guarantee the file can be opened on those._
 
 1. Download and install KeePass 2.x from <http://keepass.info>
 2. Get the support team's KeePass database file from
