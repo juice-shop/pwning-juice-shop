@@ -65,12 +65,12 @@ find its syntax along with an excerpt of the default settings.
     `'juice-sh.op'`
   * `name` as shown in title and menu bar Defaults to `'OWASP Juice
     Shop'`
-  * `logo` filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image
-    which will first be download to that folder and then used as a logo.
-    Defaults to `JuiceShop_Logo.png`
-  * `favicon` filename in `frontend/dist/frontend/assets/public` _or_ a URL of an image in
-    `.ico` format which will first be download to that folder and then
-    used as a favicon. Defaults to `favicon_v2.ico`
+  * `logo` filename in `frontend/dist/frontend/assets/public/images`
+    _or_ a URL of an image which will first be download to that folder
+    and then used as a logo. Defaults to `JuiceShop_Logo.png`
+  * `favicon` filename in `frontend/dist/frontend/assets/public` _or_ a
+    URL of an image in `.ico` format which will first be download to
+    that folder and then used as a favicon. Defaults to `favicon_v2.ico`
   * `theme` the name of the color theme used to render the UI. Options
     are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
     `indigo-pink`, `pink-bluegrey`, `purple-green` and
@@ -104,23 +104,27 @@ find its syntax along with an excerpt of the default settings.
   * `pressKitUrl` used as the link to logos and media files on the
     _About Us_ screen. Defaults to
     `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'`
-  * `planetOverlayMap` filename in `frontend/dist/frontend/assets/private` _or_ URL of an image
-    to download to that folder and then use as an overlay texture for
-    the 3D planet "easter egg". Defaults to `orangemap2k.jpg`
+  * `planetOverlayMap` filename in
+    `frontend/dist/frontend/assets/private` _or_ URL of an image to
+    download to that folder and then use as an overlay texture for the
+    3D planet "easter egg". Defaults to `orangemap2k.jpg`
   * `planetName` of the 3D planet "easter egg" as shown in the page
     title. Defaults to `Orangeuze`
   * `deluxePage` custom elements on the _Deluxe Membership_ page
-    * `deluxeDeliveryImage` filename in `app/public/images/deluxe` _or_
-      a URL of an image which will first be download to that folder and
-      then displayed on the _Deluxe Membership_ page. Defaults to
+    * `deluxeDeliveryImage` filename in
+      `frontend/dist/frontend/assets/public/images/deluxe` _or_ a URL of
+      an image which will first be download to that folder and then
+      displayed on the _Deluxe Membership_ page. Defaults to
       `delivery_juiceshop.png`.
   * `recyclePage` custom elements on the _Request Recycling Box_ page
-    * `topProductImage` filename in `frontend/dist/frontend/assets/public/images/products` to use
-      as the image on the top of the info column on the page. Defaults
-      to `fruit_press.jpg`
-    * `bottomProductImage` filename in `frontend/dist/frontend/assets/public/images/products` to
-      use as the image on the bottom of the info column on the page.
-      Defaults to `apple_pressings.jpg`
+    * `topProductImage` filename in
+      `frontend/dist/frontend/assets/public/images/products` to use as
+      the image on the top of the info column on the page. Defaults to
+      `fruit_press.jpg`
+    * `bottomProductImage` filename in
+      `frontend/dist/frontend/assets/public/images/products` to use as
+      the image on the bottom of the info column on the page. Defaults
+      to `apple_pressings.jpg`
   * `altcoinName` defines the name of the (fake) crypto currency that is
     offered on the _Token Sale_ screen. Defaults to `Juicycoin`
   * `welcomeBanner` defines a dismissable welcome banner that can be
@@ -179,14 +183,14 @@ find its syntax along with an excerpt of the default settings.
     [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-our-promo-video)
     challenge
     * `video` name of a file with `video/mp4` content type in
-      `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that
-      folder and then use as the promotion video. Defaults to
-      `JuiceShopJingle.mp4`
+      `frontend/dist/frontend/assets/public/videos` _or_ URL of an image
+      to download to that folder and then use as the promotion video.
+      Defaults to `JuiceShopJingle.mp4`
     * `subtitles` name of a
       [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/)
-      file in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to
-      that folder and then use as the promotion video. Defaults to
-      `JuiceShopJingle.vtt`
+      file in `frontend/dist/frontend/assets/public/videos` _or_ URL of
+      an image to download to that folder and then use as the promotion
+      video. Defaults to `JuiceShopJingle.vtt`
 * `challenges`
   * `safetyOverride` enables all challenges regardless of any potential
     harm or danger they might pose for your computer (i.e. XXE or RCE
@@ -203,9 +207,10 @@ find its syntax along with an excerpt of the default settings.
   * `description` of the product (_optional_). Defaults to a static
     placeholder text
   * `price` of the product (_optional_). Defaults to a random price
-  * `image` (_optional_) filename in `frontend/dist/frontend/assets/public/images/products` _or_
-    URL of an image to download to that folder and then use as a product
-    image. Defaults to `undefined.png`
+  * `image` (_optional_) filename in
+    `frontend/dist/frontend/assets/public/images/products` _or_ URL of
+    an image to download to that folder and then use as a product image.
+    Defaults to `undefined.png`
   * `deletedDate` of the product in `YYYY-MM-DD` format (_optional_).
     Defaults to `null`.
   * `urlForProductTamperingChallenge` sets the original link of the
@@ -218,15 +223,17 @@ find its syntax along with an excerpt of the default settings.
     Overrides `deletedDate` with `2014-12-27` (_must be `true` on
     exactly one product_)
   * `fileForRetrieveBlueprintChallenge` (_must be `true` on exactly one
-    product_) filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a
+    product_) filename in
+    `frontend/dist/frontend/assets/public/images/products` _or_ URL of a
     file download to that folder and then use as the target for the
     [Retrieve Blueprint](../part2/sensitive-data-exposure.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
     challenge. If a filename is specified but the file does not exist in
-    `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by
-    just requesting it from the server. Defaults to `JuiceShop.stl`.
-    ℹ️ _To make this challenge realistically solvable, include some
-    kind of hint to the blueprint file's name/type in the product image
-    (e.g. its `Exif` metadata) or in the product description_
+    `frontend/dist/frontend/assets/public/images/products` the challenge
+    is still solvable by just requesting it from the server. Defaults to
+    `JuiceShop.stl`. ℹ️ _To make this challenge realistically
+    solvable, include some kind of hint to the blueprint file's
+    name/type in the product image (e.g. its `Exif` metadata) or in the
+    product description_
   * `keywordsForPastebinDataLeakChallenge` (_must be defined on exactly
     one product_) list of keywords which are all mandatory to mention in
     a feedback or complaint to solve the
