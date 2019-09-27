@@ -76,7 +76,7 @@ system on different cloud provider environments.
 
 ## Existing trainings
 
-One existing training which uses the Juice Shop for example is a
+One existing training which uses the Juice Shop for example is
 [Timo Pagel's University Module](https://drive.google.com/open?id=1ITkTAALjZJnGV-hhAZ-zQfNx1sVTzlA2UlWD0s270ig).
 The structure mostly is as follows:
 
@@ -84,10 +84,8 @@ The structure mostly is as follows:
 2. Let the participants try it out in the Juice Shop
 3. Show mitigation/counter measures
 
-Björn Kimminich's
-[Web Application Security Training](https://www.slideshare.net/BjrnKimminich/web-application-security-training-v410)
-slides as well as the web attack chapters of his
-[IT Security Lecture](https://github.com/bkimminich/it-security-lecture)
+The 2nd semester web attack chapters of
+[Björn Kimminich's IT Security Lecture](https://github.com/bkimminich/it-security-lecture)
 follow a similar pattern of
 
 1. Introduction
@@ -150,5 +148,5 @@ is provided explicitly for live demos and awareness trainings:
     removed during the reload.
 
 There is also a video recording available on YouTube:
-<https://youtu.be/Msi52Kicb-w>. This is a good fallback
-in case the Docker-based setup does not work for you.
+<https://youtu.be/Msi52Kicb-w>. This is a good fallback in case the
+Docker-based setup does not work for you.
