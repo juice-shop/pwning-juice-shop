@@ -2,9 +2,8 @@
 
 If (and only if) none of the below hints could help you resolve your
 issue, please post your problem on our
-[official Gitter Chat](https://gitter.im/bkimminich/juice-shop) or in
-our [official Subreddit](https://www.reddit.com/r/owasp_juiceshop). If
-you are sure to have found a bug in the Juice Shop itself please open a
+[official Gitter Chat](https://gitter.im/bkimminich/juice-shop). If you
+are sure to have found a bug in the Juice Shop itself please open a
 GitHub issue.
 
 ## Node.js / NPM
