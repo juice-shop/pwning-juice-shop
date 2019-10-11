@@ -153,10 +153,11 @@ or require too many steps outside the application.
 ## Potentially dangerous challenges
 
 Some challenges can cause potential harm or pose some danger for your
-computer, i.e. the XXE, SSTi and Deserialization challenges. These
-simply cannot be sandboxed in a 100% secure way. These are only
-dangerous if you use actually malicious payloads, so please do not play
-with payloads you do not fully understand.
+computer, i.e. the XXE, SSTi and Deserialization challenges as well as
+two of the NoSQLi challenges. These simply cannot be sandboxed in a 100%
+secure way. These are only dangerous if you use actually malicious
+payloads, so please do not play with payloads you do not fully
+understand.
 
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) in containerized

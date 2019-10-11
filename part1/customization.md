@@ -192,10 +192,10 @@ find its syntax along with an excerpt of the default settings.
       an image to download to that folder and then use as the promotion
       video. Defaults to `JuiceShopJingle.vtt`
 * `challenges`
-  * `safetyOverride` enables all challenges regardless of any potential
-    harm or danger they might pose for your computer (i.e. XXE or RCE
-    vulnerabilities which could not entirely be sandboxed). Defaults to
-    `false`
+  * `safetyOverride` enables all
+    [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges)
+    regardless of any harm they might cause when running in a
+    containerized environment. Defaults to `false`
   * `overwriteUrlForProductTamperingChallenge` the URL that should
     replace the original URL defined in
     `urlForProductTamperingChallenge` for the

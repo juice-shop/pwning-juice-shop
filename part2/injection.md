@@ -53,6 +53,12 @@
 | SSTi                 | Infect the server with juicy malware by abusing arbitrary command execution.                           | ⭐⭐⭐⭐⭐⭐  |
 | User Credentials     | Retrieve a list of all user credentials via SQL Injection.                                             | ⭐⭐⭐⭐     |
 
+ℹ️ _Please note that some NoSQL Injection challenges described below
+are **not available** when running the Juice Shop in either a Docker
+container or on a Heroku dyno! The used query syntax allows any
+sufficiently skilled attacker to execute arbitrary code including to
+terminate the application process._
+
 #### Reconnaissance advice
 
 Instead of trying random attacks or go through an attack pattern list,
