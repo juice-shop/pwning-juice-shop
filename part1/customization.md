@@ -412,6 +412,10 @@ Juice Shop:
 * [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
   this customization is for you. 🧃
+* [Unsafe mode](https://github.com/bkimminich/juice-shop/blob/master/config/unsafe.yml):
+  Keeps everything at default settings except _enabling_ all
+  [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges)
+  even in containerized environments. ☠️ **Use at your own risk!**
 
 ![Mozilla-CTF theme](/part1/img/theme_mozilla.png)
 
