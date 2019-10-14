@@ -72,7 +72,7 @@ __Download a .pdf, .epub, or .mobi file from:__
 
 __Read the book online at:__
 
-* http://help.owasp-juice.shop
+* http://pwning.owasp-juice.shop
 
 __Contribute content, suggestions, and fixes on GitHub:__
 
