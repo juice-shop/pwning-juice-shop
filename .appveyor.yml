@@ -19,7 +19,7 @@ install:
   - 'choco install calibre'
   - 'refreshenv'
   - 'npm i -g svgexport'
-build:
+build_script:
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
   - 'gitbook build'
