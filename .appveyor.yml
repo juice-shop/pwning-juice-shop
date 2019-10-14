@@ -19,8 +19,10 @@ install:
   - 'choco install calibre'
   - 'refreshenv'
   - 'npm i -g svgexport'
+build:
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
+  - 'gitbook build'
   - 'gitbook pdf ./ ./juice-shop.pdf'
   - 'gitbook mobi ./ ./juice-shop.mobi'
   - 'gitbook epub ./ ./juice-shop.epub'
@@ -30,12 +32,14 @@ install:
   - 'gitbook pdf ./ ./juice-shop-ctf.pdf'
   - 'gitbook mobi ./ ./juice-shop-ctf.mobi'
   - 'gitbook epub ./ ./juice-shop-ctf.epub'
-build: off
+after_build:
+  - '7z a website.zip %APPVEYOR_BUILD_FOLDER%\_book\'
 test: off
 artifacts:
   - path: '*.pdf'
   - path: '*.mobi'
   - path: '*.epub'
+  - path: 'website.zip'
 notifications:
   -
     provider: Slack
