@@ -39,8 +39,8 @@ artifacts:
   - path: '_book'
 deploy:
   provider: FTP
-  protocol: ftp
-  host: ftp.strato.de
+  protocol: sftp
+  host: ssh.strato.de
   username: kimminich.de
   password:
     secure: Vu/o5fi8cCRsc9VmD4B/Xg==
