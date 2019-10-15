@@ -69,11 +69,10 @@ on the given topic._
 __Download a .pdf, .epub, or .mobi file from:__
 
 * https://leanpub.com/juice-shop (official release)
-* https://www.gitbook.com/book/bkimminich/pwning-owasp-juice-shop
 
 __Read the book online at:__
 
-* https://bkimminich.gitbooks.io/pwning-owasp-juice-shop/content
+* http://pwning.owasp-juice.shop
 
 __Contribute content, suggestions, and fixes on GitHub:__
 

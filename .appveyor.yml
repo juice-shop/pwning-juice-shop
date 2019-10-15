@@ -4,7 +4,6 @@ init:
 branches:
   only:
     - master
-    - develop
 skip_commits:
   files:
     - LICENSE
@@ -19,8 +18,10 @@ install:
   - 'choco install calibre'
   - 'refreshenv'
   - 'npm i -g svgexport'
+build_script:
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
+  - 'gitbook build'
   - 'gitbook pdf ./ ./juice-shop.pdf'
   - 'gitbook mobi ./ ./juice-shop.mobi'
   - 'gitbook epub ./ ./juice-shop.epub'
@@ -30,12 +31,21 @@ install:
   - 'gitbook pdf ./ ./juice-shop-ctf.pdf'
   - 'gitbook mobi ./ ./juice-shop-ctf.mobi'
   - 'gitbook epub ./ ./juice-shop-ctf.epub'
-build: off
 test: off
 artifacts:
   - path: '*.pdf'
   - path: '*.mobi'
   - path: '*.epub'
+  - path: '_book'
+deploy:
+  provider: FTP
+  protocol: sftp
+  host: ssh.strato.de
+  username: kimminich.de
+  password:
+    secure: Vu/o5fi8cCRsc9VmD4B/Xg==
+  folder: pwning-juice-shop
+  application: _book.zip
 notifications:
   -
     provider: Slack
