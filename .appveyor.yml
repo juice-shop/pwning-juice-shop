@@ -4,7 +4,6 @@ init:
 branches:
   only:
     - master
-    - develop
 skip_commits:
   files:
     - LICENSE
@@ -40,7 +39,7 @@ artifacts:
   - path: '_book'
 deploy:
   provider: FTP
-  protocol: ftps
+  protocol: ftp
   host: ftp.strato.de
   username: kimminich.de
   password:
