@@ -32,15 +32,21 @@ build_script:
   - 'gitbook pdf ./ ./juice-shop-ctf.pdf'
   - 'gitbook mobi ./ ./juice-shop-ctf.mobi'
   - 'gitbook epub ./ ./juice-shop-ctf.epub'
-after_build:
-  - '7z a website.zip %APPVEYOR_BUILD_FOLDER%\_book\'
 test: off
 artifacts:
   - path: '*.pdf'
   - path: '*.mobi'
   - path: '*.epub'
   - path: '_book'
-  - path: 'website.zip'
+deploy:
+  provider: FTP
+  protocol: ftps
+  host: ftp.strato.de
+  username: kimminich.de
+  password:
+    secure: Vu/o5fi8cCRsc9VmD4B/Xg==
+  folder: pwning-juice-shop
+  application: _book.zip
 notifications:
   -
     provider: Slack
