@@ -39,6 +39,7 @@ artifacts:
   - path: '*.pdf'
   - path: '*.mobi'
   - path: '*.epub'
+  - path: '_book'
   - path: 'website.zip'
 notifications:
   -
