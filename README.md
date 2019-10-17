@@ -72,7 +72,7 @@ __Download a .pdf, .epub, or .mobi file from:__
 
 __Read the book online at:__
 
-* http://pwning.owasp-juice.shop
+* https://pwning.owasp-juice.shop
 
 __Contribute content, suggestions, and fixes on GitHub:__
 
@@ -80,7 +80,7 @@ __Contribute content, suggestions, and fixes on GitHub:__
 
 __Official OWASP Juice Shop project homepage:__
 
-* http://owasp-juice.shop
+* https://owasp-juice.shop
 
 {% endif %}
 

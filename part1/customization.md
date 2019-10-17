@@ -144,8 +144,8 @@ find its syntax along with an excerpt of the default settings.
       Security Project (OWASP)</a> and is developed and maintained by
       volunteers. Check out the link below for more information and
       documentation on the project.</p><h1><a
-      href='http://owasp-juice.shop'
-      target='_blank'>http://owasp-juice.shop</a></h1>`.
+      href='https://owasp-juice.shop'
+      target='_blank'>https://owasp-juice.shop</a></h1>`.
   * `cookieConsent` defines the cookie consent dialog shown in the
     bottom right corner
     * `backgroundColor` of the cookie banner itself. Defaults to
@@ -295,7 +295,7 @@ application:
   welcomeBanner:
     showOnFirstStart: true
     title: 'Welcome to OWASP Juice Shop!'
-    message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='http://owasp-juice.shop' target='_blank'>http://owasp-juice.shop</a></h1>"
+    message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-juice.shop' target='_blank'>https://owasp-juice.shop</a></h1>"
   cookieConsent:
     backgroundColor: '#eb6c44'
     textColor: '#ffffff'

@@ -127,7 +127,7 @@ solvable! It might just take a little bit more detective work to find
 out how an OAuth login is handled.
 
 You can always use the official demo instance at
-<http://demo.owasp-juice.shop> to play with Google login and learn how
+<https://demo.owasp-juice.shop> to play with Google login and learn how
 it works there, then apply what you learned on your local instance.
 
 * There are essentially two ways to light up this challenge in green on
