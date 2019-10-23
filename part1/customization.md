@@ -248,6 +248,16 @@ find its syntax along with an excerpt of the default settings.
       users in the database: `admin`, `jim`, `bender`, `ciso`,
       `support`, `morty`, `amy`, `mc.safesearch`, `J12934`, `wurstbrot`
       or `bjoern` (_mandatory_)
+* `memories` list which, when specified, replaces all default _Photo
+  Wall_ entries
+  * `image` filename in
+    `frontend/dist/frontend/assets/public/images/uploads/` _or_ URL of
+    an image to download to that folder and then use as a _Photo Wall_
+    image (_mandatory_)
+  * `caption` text to show when hovering over the image or sending a
+    Tweet about it (_optional_)
+  * `user` reference by `key` from `data/static/users.yml` to the owner
+    of the photo upload (_mandatory_)
 * `ctf`
   * `showFlagsInNotifications` shows or hides the CTF flag codes in the
     _"challenge solved"_-notifications. Is ignored when
@@ -351,6 +361,11 @@ products:
     image: 3d_keychain.jpg
     fileForRetrieveBlueprintChallenge: JuiceShop.stl
 # ~~~~~ ... ~~~~~~
+memories:
+  -
+    image: 'magn(et)ificent!-1571814229653.jpg'
+    caption: 'Magn(et)ificent!'
+    user: bjoernOwasp
 ctf:
   showFlagsInNotifications: false
   showCountryDetailsInNotifications: none
