@@ -8,15 +8,16 @@
 
 ## Challenges covered in this chapter
 
-| Name                    | Description                                          | Difficulty |
-|:------------------------|:-----------------------------------------------------|:-----------|
-| Admin Registration      | Register as a user with administrator privileges.    | ⭐⭐⭐       |
-| Expired Coupon          | Successfully redeem an expired campaign coupon code. | ⭐⭐⭐⭐     |
-| Payback Time            | Place an order that makes you rich.                  | ⭐⭐⭐       |
-| Repetitive Registration | Follow the DRY principle while registering a user.   | ⭐          |
-| Upload Size             | Upload a file larger than 100 kB.                    | ⭐⭐⭐       |
-| Upload Type             | Upload a file that has no .pdf or .zip extension.    | ⭐⭐⭐       |
-| Zero Stars              | Give a devastating zero-star feedback to the store.  | ⭐          |
+| Name                    | Description                                                | Difficulty |
+|:------------------------|:-----------------------------------------------------------|:-----------|
+| Admin Registration      | Register as a user with administrator privileges.          | ⭐⭐⭐       |
+| Expired Coupon          | Successfully redeem an expired campaign coupon code.       | ⭐⭐⭐⭐     |
+| Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode". | ⭐          |
+| Payback Time            | Place an order that makes you rich.                        | ⭐⭐⭐       |
+| Repetitive Registration | Follow the DRY principle while registering a user.         | ⭐          |
+| Upload Size             | Upload a file larger than 100 kB.                          | ⭐⭐⭐       |
+| Upload Type             | Upload a file that has no .pdf or .zip extension.          | ⭐⭐⭐       |
+| Zero Stars              | Give a devastating zero-star feedback to the store.        | ⭐          |
 
 ### Register as a user with administrator privileges
 
@@ -38,6 +39,10 @@ offered some seasonal special campaign at least once.
 * Look for clues about the past campaign or holiday event somewhere in
   the application
 * Solving this challenge does not require actual time traveling
+
+### Retrieve the photo of Bjoern's cat in "melee combat-mode"
+
+🛠️ **TODO**
 
 ### Place an order that makes you rich
 

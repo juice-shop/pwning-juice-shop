@@ -17,8 +17,7 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 1. Follow the link to titled _Check out our boring terms of use if you
    are interested in such lame stuff_
-   (<http://localhost:3000/ftp/legal.md>) on the _About
-   Us_ page.
+   (<http://localhost:3000/ftp/legal.md>) on the _About Us_ page.
 2. Successfully attempt to browse the directory by changing the URL into
    <http://localhost:3000/ftp>
 
@@ -54,6 +53,10 @@ error situation and solve this challenge immediately:
 3. You will find yourself on
    <http://localhost:3000/#/privacy-security/privacy-policy> which
    instantly solves this challenge for you.
+
+### Retrieve the photo of Bjoern's cat in "melee combat-mode"
+
+🛠️ **TODO**
 
 ### Let us redirect you to one of our crypto currency addresses
 
@@ -662,10 +665,19 @@ only a `404 Error: ENOENT: no such file or directory, stat
 #### Other hints about Bjoern's choice of security answer
 
 The **user profile picture** of his account at
-<http://localhost:3000/assets/public/images/uploads/13.jpg> shows his
-pet cat playing.
+<http://localhost:3000/assets/public/images/uploads/12.jpg> shows his
+pet cat.
 
-![Zaya playing](img/zaya.jpg)
+![Zaya at window](img/zaya_window.jpg)
+
+Retrieving another photo of his cat is the subject of the
+[Retrieve the photo of Bjoern's cat in "melee combat-mode"](../part2/improper-input-validation.md#retrieve-the-photo-of-bjoerns-cat-in-melee-combat-mode)
+challenge. The corresponding image caption `😼 #zatschi
+#whoneedsfourlegs` also leaks the nickname "Zatschi" of the pet - which
+is cute, but (intentionally) not very helpful to find out her real name,
+though.
+
+![Zaya in melee combat mode](img/zaya_melee.jpg)
 
 ### Reset Jim's password via the Forgot Password mechanism
 
@@ -1572,8 +1584,8 @@ frustrated to finish what he originally planned to do.
    'default.svg' as 'profileImage', '' as 'totpSecret', 1 as 'isActive',
    '1999-08-16 14:14:41.644 +00:00' as 'createdAt', '1999-08-16
    14:33:41.930 +00:00' as 'updatedAt', null as 'deletedAt')--`
-6. This will trick the application backend into handing out a valid JWT token and
-   thus establishing a user session.
+6. This will trick the application backend into handing out a valid JWT
+   token and thus establishing a user session.
 
 ### Retrieve the language file that never made it into production
 
@@ -2262,7 +2274,9 @@ this solution.
 ### Log in with the support team's original user credentials
 
 _Solving this challenge requires [KeePass 2.x](http://keepass.info)
-installed on your computer. If you are using a non-Windows OS you can try using some unofficial port but there is no guarantee the file can be opened on those._
+installed on your computer. If you are using a non-Windows OS you can
+try using some unofficial port but there is no guarantee the file can be
+opened on those._
 
 1. Download and install KeePass 2.x from <http://keepass.info>
 2. Get the support team's KeePass database file from
