@@ -43,6 +43,7 @@
 * [Contribute to development](part3/contribution.md)
 * [Codebase 101](part3/codebase.md)
 * [Help with translation](part3/translation.md)
+* [Hacking Instructor tutorial scripts](part3/tutorials.md)
 * [Donations](part3/donations.md)
 
 ### Appendix

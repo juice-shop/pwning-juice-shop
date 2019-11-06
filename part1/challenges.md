@@ -146,7 +146,9 @@ summoned again for another hacking challenge via the Score Board.
 
 ℹ️ The Hacking Instructor is a tool to help beginners getting started.
 It cannot offer a tutorial for _every challenge_ as some are too complex
-or require too many steps outside the application.
+or require too many steps outside the application. In Part III you can
+learn more about how to write
+[Hacking Instructor tutorial scripts](../part3/tutorials.md).
 
 {% endif %}
 
