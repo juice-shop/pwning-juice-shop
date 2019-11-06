@@ -248,6 +248,16 @@ find its syntax along with an excerpt of the default settings.
       users in the database: `admin`, `jim`, `bender`, `ciso`,
       `support`, `morty`, `amy`, `mc.safesearch`, `J12934`, `wurstbrot`
       or `bjoern` (_mandatory_)
+* `memories` list which, when specified, replaces all default _Photo
+  Wall_ entries
+  * `image` filename in
+    `frontend/dist/frontend/assets/public/images/uploads/` _or_ URL of
+    an image to download to that folder and then use as a _Photo Wall_
+    image (_mandatory_)
+  * `caption` text to show when hovering over the image or sending a
+    Tweet about it (_optional_)
+  * `user` reference by `key` from `data/static/users.yml` to the owner
+    of the photo upload (_mandatory_)
 * `ctf`
   * `showFlagsInNotifications` shows or hides the CTF flag codes in the
     _"challenge solved"_-notifications. Is ignored when
@@ -351,6 +361,11 @@ products:
     image: 3d_keychain.jpg
     fileForRetrieveBlueprintChallenge: JuiceShop.stl
 # ~~~~~ ... ~~~~~~
+memories:
+  -
+    image: 'magn(et)ificent!-1571814229653.jpg'
+    caption: 'Magn(et)ificent!'
+    user: bjoernOwasp
 ctf:
   showFlagsInNotifications: false
   showCountryDetailsInNotifications: none
@@ -397,6 +412,10 @@ Juice Shop:
   Another full conversion theme harvested and refined from the
   [Mozilla Austin CTF-event](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop)!
   🦊
+* [AllDayDeflOps](https://github.com/bkimminich/juice-shop/blob/master/config/addo.yml):
+  This full conversion had its live debut at the
+  [All Day DevOps 2019](https://www.alldaydevops.com/) conference and
+  was released the same day! 🎀
 * [The BodgeIt Store](https://github.com/bkimminich/juice-shop/blob/master/config/bodgeit.yml):
   An homage to
   [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
@@ -412,6 +431,10 @@ Juice Shop:
 * [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
   this customization is for you. 🧃
+* [Unsafe mode](https://github.com/bkimminich/juice-shop/blob/master/config/unsafe.yml):
+  Keeps everything at default settings except _enabling_ all
+  [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges)
+  even in containerized environments. ☠️ **Use at your own risk!**
 
 ![Mozilla-CTF theme](/part1/img/theme_mozilla.png)
 
