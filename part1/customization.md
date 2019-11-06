@@ -412,6 +412,10 @@ Juice Shop:
   Another full conversion theme harvested and refined from the
   [Mozilla Austin CTF-event](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop)!
   🦊
+* [AllDayDeflOps](https://github.com/bkimminich/juice-shop/blob/master/config/addo.yml):
+  This full conversion had its live debut at the
+  [All Day DevOps 2019](https://www.alldaydevops.com/) conference and
+  was released the same day! 🎀
 * [The BodgeIt Store](https://github.com/bkimminich/juice-shop/blob/master/config/bodgeit.yml):
   An homage to
   [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
