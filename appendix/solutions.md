@@ -364,7 +364,7 @@ in order to exploit and solve them:
 ###  Register as a user with administrator privileges
 
 1. Submit a `POST` request to <http://localhost:3000/api/Users> with:
-   * `{"email":"admin","password":"admin","isAdmin":true}` as body
+   * `{"email":"admin","password":"admin","role":"admin"}` as body
    * and `application/json` as `Content-Type`
 
    ![Admin user registration request via Postman](img/register-admin_postman.png)
