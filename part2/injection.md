@@ -42,6 +42,7 @@
 | Name                 | Description                                                                                            | Difficulty |
 |:---------------------|:-------------------------------------------------------------------------------------------------------|:-----------|
 | Christmas Special    | Order the Christmas special offer of 2014.                                                             | ⭐⭐⭐       |
+| Cross-Site Imaging   | Stick cute cross-domain kittens all over our delivery boxes.                                           | ⭐⭐⭐⭐⭐    |
 | Database Schema      | Exfiltrate the entire DB schema definition via SQL Injection.                                          | ⭐⭐⭐       |
 | Ephemeral Accountant | Log in with the (non-existing) accountant _acc0unt4nt@juice-sh.op_ without ever registering that user. | ⭐⭐⭐⭐     |
 | Login Admin          | Log in with the administrator's user account.                                                          | ⭐⭐        |
@@ -116,6 +117,10 @@ targeted, stealthy and devastating SQL Injections, like
 * As with
   [Order the Christmas special offer of 2014](#order-the-christmas-special-offer-of-2014)
   this cannot be achieved through the application frontend.
+
+### Stick cute cross-domain kittens all over our delivery boxes
+
+🛠️ **TODO**
 
 ### Log in with the (non-existing) accountant without ever registering that user
 

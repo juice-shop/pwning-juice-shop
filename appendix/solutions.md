@@ -1508,6 +1508,10 @@ will get their password set to the same one we forced onto Bender!
 payload in his blog post
 [Hacking(and automating!) the OWASP Juice Shop](https://incognitjoe.github.io/hacking-the-juice-shop.html).
 
+### Stick cute cross-domain kittens all over our delivery boxes
+
+🛠️ **TODO**
+
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
 1. Visit <https://stackoverflow.com/questions/tagged/access-log> to find
