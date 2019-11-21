@@ -185,6 +185,8 @@ answers available which you can choose by simply hitting `ENTER`.
      newer 2.x version.
    * `FBCTF` from Facebook which is visually more advanced though not as
      frequently updated at CTFd.
+   * `RootTheBox` a very sophisticated framework which comes even with
+     category logos and embedded Juice Shop theme.
 2. **Juice Shop URL to retrieve challenges?** URL of a _running_ Juice
    Shop server where the tool will retrieve the existing challenges from
    via the `/api/Challenges` API. Defaults to
@@ -227,20 +229,21 @@ The category of each challenge is identical to its
 and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 
-| Difficulty | Score value | Paid hint costs (Text / URL) |
-|:-----------|:------------|:-----------------------------|
-| ⭐          | 100 points  | (10 points / 20 points)      |
-| ⭐⭐        | 250 points  | (25 points / 50 points)      |
-| ⭐⭐⭐       | 450 points  | (45 points / 90 points)      |
-| ⭐⭐⭐⭐     | 700 points  | (70 points / 140 points)     |
-| ⭐⭐⭐⭐⭐    | 1000 points | (100 points / 200 points)    |
-| ⭐⭐⭐⭐⭐⭐  | 1350 points | (135 points / 260 points)    |
+| Difficulty     | Score value | Paid hint costs (Text / URL) |
+|:---------------|:------------|:-----------------------------|
+| ⭐            | 100 points  | (10 points / 20 points)      |
+| ⭐⭐          | 250 points  | (25 points / 50 points)      |
+| ⭐⭐⭐        | 450 points  | (45 points / 90 points)      |
+| ⭐⭐⭐⭐      | 700 points  | (70 points / 140 points)     |
+| ⭐⭐⭐⭐⭐   | 1000 points | (100 points / 200 points)    |
+| ⭐⭐⭐⭐⭐⭐ | 1350 points | (135 points / 260 points)    |
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
 `OWASP_Juice_Shop.YYYY-MM-DD.CTFd2.zip`,
-`OWASP_Juice_Shop.YYYY-MM-DD.CTFd.zip` or
-`OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json` depending on your initial
+`OWASP_Juice_Shop.YYYY-MM-DD.CTFd.zip`,
+`OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json` or
+`OWASP_Juice_Shop.YYYY-MM-DD.RTB.xml` depending on your initial
 framework choice.
 
 Optionally you can choose the name of the output file with the
@@ -257,10 +260,10 @@ desired configuration in a file with the following straightforward
 format:
 
 ```yaml
-ctfFramework: CTFd 2.x | CTFd 1.x | FBCTF
+ctfFramework: CTFd 2.x | CTFd 1.x | FBCTF | RootTheBox
 juiceShopUrl: https://juice-shop.herokuapp.com
 ctfKey: https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key # can also be actual key instead URL
-countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml # ignored for CTFd
+countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
 insertHints: none | free | paid
 insertHintUrls: none | free | paid # optional for FBCTF
 ```
@@ -367,12 +370,26 @@ cluster and individually assigned to a participant via a load balancer.
 
 ![FBCTF Score Board](img/fbctf_4.png)
 
+### Running RootTheBox
+
+🛠️ **TODO**
+
+![](img/rtb_0.png)
+
+![](img/rtb_1.png)
+
+![](img/rtb_2.png)
+
+![](img/rtb_3.png)
+
+![](img/rtb_4.png)
+
 ## Using other CTF frameworks
 
-[CTFd](https://ctfd.io) and [FBCTF](https://github.com/facebook/fbctf)
-are not the only possible score servers you can use. Open Source
-alternatives are for example
-[Mellivora](https://github.com/Nakiami/mellivora) or
+[CTFd](https://ctfd.io), [FBCTF](https://github.com/facebook/fbctf) and
+[RootTheBox](https://github.com/moloch--/RootTheBox) are not the only
+possible score servers you can use. Open Source alternatives are for
+example [Mellivora](https://github.com/Nakiami/mellivora) or
 [NightShade](https://github.com/UnrealAkama/NightShade). You can find a
 nicely curated list of CTF platforms and related tools & resources in
 [Awesome CTF](https://github.com/apsdehal/awesome-ctf) on GitHub.
