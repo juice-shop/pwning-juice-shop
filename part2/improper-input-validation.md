@@ -42,7 +42,14 @@ offered some seasonal special campaign at least once.
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
-🛠️ **TODO**
+Who wouldn't want to see Bjoern's cat fighting fiercely with a furry
+green plush toy?
+
+* When you visit the _Photo Wall_ you will notice a broken image on one of the entries
+* You just have to (literally) inspect the problem to understand the basic issue
+* It can also help to try out the _Tweet_-button of the entry and observe what happens
+
+![Broken image on photo wall](img/broken_image-photo_wall.png)
 
 ### Place an order that makes you rich
 
