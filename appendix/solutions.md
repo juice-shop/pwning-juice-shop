@@ -691,8 +691,8 @@ though.
      Starfleet symbol."_
    * Another product review _"Fresh out of a replicator."_ on the _Green
      Smoothie_ product
-   * A _Recycling Request_ with the address _"Starfleet HQ, 24-593
-     Federation Drive, San Francisco, CA"_ (🔧 **TODO**)
+   * A _Recycling Request_ associated to his saved address _"Room 3F
+     121, Deck 5, USS Enterprise, 1701"_
 3. It should eventually become obvious that _James T. Kirk_ is the only
    viable solution to the question of Jim's identity
 
@@ -2144,8 +2144,8 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
-   not part of the Juice Shop repo itself and it is publicly accessible,
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is not
+   part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
