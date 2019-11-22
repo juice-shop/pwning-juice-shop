@@ -56,7 +56,30 @@ error situation and solve this challenge immediately:
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
-🛠️ **TODO**
+1. Visit <http://localhost:3000/#/photo-wall>
+2. Right-click _Inspect_ the broken image in the entry labeled "😼
+   #zatschi #whoneedsfourlegs"
+3. You should find an image tag similar to `<img _ngcontent-akt-c18=""
+   class="image"
+   src="assets/public/images/uploads/😼-#zatschi-#whoneedsfourlegs-1572600969477.jpg"
+   alt="😼 #zatschi #whoneedsfourlegs">` in the source
+4. Right-click _Open in new tab_ the `src` element of the image
+5. Observe (in your DevTools _Network_ tab) that the request sent to the
+   server is
+   <http://localhost:3000/assets/public/images/uploads/%F0%9F%98%BC->
+6. The culprit here are the two `#` characters in the URL, which are no
+   problem for your OS in a filename, but are interpreted by your
+   browser as HTML anchors. Thus, they are not transmitted to the server
+   at all.
+7. To get them over to the server intact, they must obviously be
+   URL-encoded into `%23`
+8. Open
+   <http://localhost:3000/assets/public/images/uploads/😼-%23zatschi-%23whoneedsfourlegs-1572600969477.jpg>
+   and enjoy the incredibly cute photo of this pet being happy despite
+   missing half a hind leg
+9. Go back to the application and the challenge will be solved.
+
+![Zaya in melee combat mode](img/zaya_melee.jpg)
 
 ### Let us redirect you to one of our crypto currency addresses
 
