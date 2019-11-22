@@ -179,8 +179,8 @@ answers available which you can choose by simply hitting `ENTER`.
 1. **CTF framework to generate data for?** Offers a selectable choice
    between the supported CTF frameworks, which for
    {{book.juiceShopCtfVersion}} are
-   * `CTFd` which is a very well-written and stable piece of Open
-     Source Software. This is the default choice.
+   * `CTFd` which is a very well-written and stable piece of Open Source
+     Software. This is the default choice.
    * `FBCTF` from Facebook which is visually more advanced though not as
      frequently updated at CTFd.
    * `RootTheBox` a very sophisticated framework which comes even with
@@ -227,14 +227,14 @@ The category of each challenge is identical to its
 and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 
-| Difficulty     | Score value | Paid hint costs (Text / URL) |
-|:---------------|:------------|:-----------------------------|
-| ⭐            | 100 points  | (10 points / 20 points)      |
-| ⭐⭐          | 250 points  | (25 points / 50 points)      |
-| ⭐⭐⭐        | 450 points  | (45 points / 90 points)      |
-| ⭐⭐⭐⭐      | 700 points  | (70 points / 140 points)     |
-| ⭐⭐⭐⭐⭐   | 1000 points | (100 points / 200 points)    |
-| ⭐⭐⭐⭐⭐⭐ | 1350 points | (135 points / 260 points)    |
+| Difficulty | Score value | Paid hint costs (Text / URL) |
+|:-----------|:------------|:-----------------------------|
+| ⭐          | 100 points  | (10 points / 20 points)      |
+| ⭐⭐        | 250 points  | (25 points / 50 points)      |
+| ⭐⭐⭐       | 450 points  | (45 points / 90 points)      |
+| ⭐⭐⭐⭐     | 700 points  | (70 points / 140 points)     |
+| ⭐⭐⭐⭐⭐    | 1000 points | (100 points / 200 points)    |
+| ⭐⭐⭐⭐⭐⭐  | 1350 points | (135 points / 260 points)    |
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
@@ -354,7 +354,7 @@ is also no official image on Docker Hub for FBCTF.
    [FBCTF Quick Setup Guide](https://github.com/facebook/fbctf/wiki/Quick-Setup-Guide).
 2. Browse to your FBCTF instance UI.
 3. Click the _Controls_ tab under the _Game Admin_ panel.
-4. Choose _Import Full Game_ and select the generate `.json` file.
+4. Choose _Import Full Game_ and select the generated `.json` file.
 
 The following screenshots were taken during a CTF event where Facebook's
 game server was used. Juice Shop instances were running in a Docker
@@ -370,7 +370,20 @@ cluster and individually assigned to a participant via a load balancer.
 
 ### Running RootTheBox
 
-🛠️ **TODO**
+1. Follow either the
+   [Installation Tutorial](https://github.com/moloch--/RootTheBox/wiki/Installation)
+   or
+   [Docker Deployment](https://github.com/moloch--/RootTheBox/wiki/Docker-Deployment)
+   guide to install RootTheBox version {{book.rtbVersion}}.
+2. Log in with the admin credentials displayed during server start-up.
+3. In the _Backup/Restore_ menu select _Import XML_ and select the
+   generated `.xml` file.
+4. You can now see the challenges under _Game Management_ in _Flags /
+   Boxes / Corps._
+
+The following screenshots show the look & feel of RootTheBox as it was
+imported from the XML which by default has all the banners and category
+logos embedded:
 
 ![RootTheBox Welcome Screen](img/rtb_0.png)
 
