@@ -179,10 +179,8 @@ answers available which you can choose by simply hitting `ENTER`.
 1. **CTF framework to generate data for?** Offers a selectable choice
    between the supported CTF frameworks, which for
    {{book.juiceShopCtfVersion}} are
-   * `CTFd 2.x` which is a very well-written and stable piece of Open
+   * `CTFd` which is a very well-written and stable piece of Open
      Source Software. This is the default choice.
-   * `CTFd 1.x` requiring a slightly different data format than the
-     newer 2.x version.
    * `FBCTF` from Facebook which is visually more advanced though not as
      frequently updated at CTFd.
    * `RootTheBox` a very sophisticated framework which comes even with
@@ -260,7 +258,7 @@ desired configuration in a file with the following straightforward
 format:
 
 ```yaml
-ctfFramework: CTFd 2.x | CTFd 1.x | FBCTF | RootTheBox
+ctfFramework: CTFd | FBCTF | RootTheBox
 juiceShopUrl: https://juice-shop.herokuapp.com
 ctfKey: https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key # can also be actual key instead URL
 countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
@@ -374,15 +372,15 @@ cluster and individually assigned to a participant via a load balancer.
 
 🛠️ **TODO**
 
-![](img/rtb_0.png)
+![RootTheBox Welcome Screen](img/rtb_0.png)
 
-![](img/rtb_1.png)
+![RootTheBox Missions](img/rtb_1.png)
 
-![](img/rtb_2.png)
+![RootTheBox Failed Flag Submission](img/rtb_2.png)
 
-![](img/rtb_3.png)
+![RootTheBox Successful Flag Submission](img/rtb_3.png)
 
-![](img/rtb_4.png)
+![RootTheBox Score Board](img/rtb_4.png)
 
 ## Using other CTF frameworks
 
