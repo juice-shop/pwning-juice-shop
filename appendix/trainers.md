@@ -160,8 +160,8 @@ the use of automated tools . The following table gives you an idea on
 complexity and expected time consumption for each of these, so you can
 plan your training accordingly.
 
-| Challenge         | Category              | Difficulty | Description                                            | Auto-solve? | Effort to automate | Execution runtime | Tool recommendation       |
-|:------------------|:----------------------|:-----------|:-------------------------------------------------------|:------------|:-------------------|:------------------|:--------------------------|
-| Forged Signed JWT | Vulnerable Components | ⭐⭐⭐⭐⭐⭐  | Find `/encryptionkeys` directory with needed `jwt.pub` | :x:         | 🧠                | ⏳⏳                | OWASP ZAP _Forced Browse_ |
+| Challenge         | Description                                            | Auto-solve? | Effort to automate | Execution runtime | Tool recommendation       |
+|:------------------|:-------------------------------------------------------|:------------|:-------------------|:------------------|:--------------------------|
+| Forged Signed JWT | Find `/encryptionkeys` directory with needed `jwt.pub` | ❌          | 🧠                | ⏳⏳                | OWASP ZAP _Forced Browse_ |
 
 🛠️ **TODO**
