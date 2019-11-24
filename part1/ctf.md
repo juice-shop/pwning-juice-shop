@@ -370,6 +370,8 @@ cluster and individually assigned to a participant via a load balancer.
 
 ### Running RootTheBox
 
+![RootTheBox logo](img/rtb_logo.png)
+
 1. Follow either the
    [Installation Tutorial](https://github.com/moloch--/RootTheBox/wiki/Installation)
    or
