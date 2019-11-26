@@ -4,14 +4,30 @@
 
 | Name                 | Description                                                                                                  | Difficulty |
 |:---------------------|:-------------------------------------------------------------------------------------------------------------|:-----------|
-| Cross-Site Imaging   | Stick cute cross-domain kittens all over our delivery boxes.                                           | ⭐⭐⭐⭐⭐    |
+| Cross-Site Imaging   | Stick cute cross-domain kittens all over our delivery boxes.                                                 | ⭐⭐⭐⭐⭐    |
 | Deprecated Interface | Use a deprecated B2B interface that was not properly shut down.                                              | ⭐⭐        |
 | Error Handling       | Provoke an error that is neither very gracefully nor consistently handled.                                   | ⭐          |
 | Login Support Team   | Log in with the support team's original user credentials without applying SQL Injection or any other bypass. | ⭐⭐⭐⭐⭐⭐  |
 
 ### Stick cute cross-domain kittens all over our delivery boxes
 
-🛠️ **TODO**
+The Juice Shop offers a _Deluxe Membership_ that comes with reduced
+delivery fees and other perks. On the page advertising it, a heap of
+delivery boxes can be seen - all with the Juice Shop logo on them.
+
+![Vanilla Deluxe Membership page](img/deluxe-membership_page.png)
+
+* Loading this page with an empty browser cache and on a slow (or
+  throttled) connection will give you an idea on what the delivery box
+  image is made of. Of course inspecting the page source will tell you
+  just as much.
+* You need to dive deep into the actual Angular code to understand this
+  one.
+* This challenge requires the exploitation of another vulnerability
+  which even has its own two challenges in its very own category
+* This challenge can only be solved by strictly using the mentioned
+  "cross-domain kittens". No other kittens from anywhere else can solve
+  this challenge.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
