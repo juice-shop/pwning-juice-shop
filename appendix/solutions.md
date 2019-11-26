@@ -2291,7 +2291,7 @@ this solution.
 3. Write a script that simultaneously executes three requests to
    <http://localhost:3000/rest/products/reviews> with body e.g. `{id:
    "ZQdzyRCbwQ4ys3PCG"}` and run it.
-4. If your 3 requests get handled asynchronously withing an (artificial)
+4. If your 3 requests get handled asynchronously within an (artificial)
    150ms time window, you will cause a race condition and all will get
    through and each increase the like counter by one to a total of
    three!
