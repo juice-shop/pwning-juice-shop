@@ -150,7 +150,7 @@ challenge instruction to make it light up green on the score board:
 
 This Server-side Request Forgery challenge will come back to the malware
 you used in
-[Infect the server with juicy malware by abusing arbitrary command execution](injection.md#infect-the-server-with-malware-by-abusing-arbitrary-command-execution).
+[Infect the server with juicy malware by abusing arbitrary command execution](injection.md#infect-the-server-with-juicy-malware-by-abusing-arbitrary-command-execution).
 
 * Using whatever you find inside the malware _directly_ will not do you
   any good.
