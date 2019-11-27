@@ -113,14 +113,15 @@ You can import various helper functions from
 `frontend/src/hacking-instructor/helpers/helpers.ts` and use them
 conveniently as your `resolved` function in any challenge hint:
 
-| Helper function                                                                                     | Usage example                                                                        |
-|:----------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------|
-| `waitInMs (timeInMs: number)`                                                                       | `resolved: waitInMs(5000)`                                                           |
-| `waitForElementToGetClicked (elementSelector: string)`                                              | `resolved: waitForElementToGetClicked('#loginButton')`                               |
-| `waitForInputToNotBeEmpty (inputSelector: string)`                                                  | `resolved: waitForInputToNotBeEmpty('#password')`                                    |
-| `waitForInputToHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })`    | `resolved: waitForInputToHaveValue('#email', "' OR true--")`                         |
-| `waitForInputToNotHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })` | `resolved: waitForInputToNotHaveValue('#password', "Bla42!", { ignoreCase: false })` |
-| `waitForElementsInnerHtmlToBe (elementSelector: string, value: String)`                             | `resolved: waitForInputToHaveValue('#searchQuery input', 'owasp')`                   |
+| Helper function                                                                                     | Usage example                                                                      |
+|:----------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
+| `waitInMs (timeInMs: number)`                                                                       | `resolved: waitInMs(5000)`                                                         |
+| `waitForElementToGetClicked (elementSelector: string)`                                              | `resolved: waitForElementToGetClicked('#loginButton')`                             |
+| `waitForInputToNotBeEmpty (inputSelector: string)`                                                  | `resolved: waitForInputToNotBeEmpty('#password')`                                  |
+| `waitForInputToHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })`    | `resolved: waitForInputToHaveValue('#email', "' OR true--")`                       |
+| `waitForInputToNotHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })` | `resolved: waitForInputToNotHaveValue('#comment', "WTF?!", { ignoreCase: false })` |
+| `waitForElementsInnerHtmlToBe (elementSelector: string, value: String)`                             | `resolved: waitForInputToHaveValue('#searchQuery input', 'owasp')`                 |
+| `waitForAngularRouteToBeVisited (route: String)`                                                    | `resolved: waitForAngularRouteToBeVisited('login')`                                |
 
 ℹ️ The helper functions are supposed to be self-explanatory enough on
 their own. Please check out the [Reference example](#reference-example)
@@ -162,7 +163,7 @@ import {
   waitForInputToNotBeEmpty,
   waitForElementToGetClicked,
   waitInMs,
-  sleep
+  sleep, waitForAngularRouteToBeVisited
 } from '../helpers/helpers'
 import { ChallengeInstruction } from '../'
 
@@ -188,14 +189,7 @@ export const LoginAdminInstruction: ChallengeInstruction = {
         "Let's try if we find a way to log in with the administrator's user account. To begin, go to the _Login_ page via the _Account_ menu.",
       fixture: 'app-navbar',
       unskippable: true,
-      async resolved () {
-        while (true) {
-          if (window.location.hash === '#/login') {
-            break
-          }
-          await sleep(100)
-        }
-      }
+      resolved: waitForAngularRouteToBeVisited('login')
     },
     {
       text: 'To find a way around the normal login process we will try to use a **SQL Injection** (SQLi) attack.',
