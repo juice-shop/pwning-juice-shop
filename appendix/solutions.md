@@ -88,7 +88,7 @@ error situation and solve this challenge immediately:
    _Merchandise_ sections with the "credit card"-button.
 3. Perceive that all donation links are passed through the `to`
    parameter of the route `/redirect`
-4. Open `main.js` in your browser's DevTools
+4. Open `main-es2015.js` in your browser's DevTools
 5. Searching for `/redirect?to=` and stepping through all matches you
    will notice three functions that are called only from hidden buttons
    on the _Your Basket_ page:
@@ -116,7 +116,7 @@ error situation and solve this challenge immediately:
 ### Find the carefully hidden 'Score Board' page
 
 1. Go to the _Sources_ tab of your browsers DevTools and open the
-   `main.js` file.
+   `main-es2015.js` file.
 2. If your browser offers pretty-printing of this minified messy code,
    best use this offer. In Chrome this can be done with the "{}"-button.
 3. Search for `score` and iterate through each finding to come across
@@ -228,12 +228,12 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
 ### Access the administration section of the store
 
-1. Open the `main.js` in your browser's developer tools and search for
-   "admin".
+1. Open the `main-es2015.js` in your browser's developer tools and
+   search for "admin".
 2. One of the matches will be a route mapping to `path:
    "administration"`.
 
-   ![Administration page route in main.js](img/minified_js-admin.png)
+   ![Administration page route in main-es2015.js](img/minified_js-admin.png)
 3. Navigating to http://localhost:3000/#/administration will give a `403
    Forbidden` error.
 4. Log in to an administrator's account by solving the challenge
@@ -268,12 +268,12 @@ If the challenge is not immediately solved, you might have to
 4. Trying to upload another other file will probably give you an error
    message on the UI stating exactly that: `Forbidden file type. Only
    PDF, ZIP allowed.`
-5. Open the `main.js` in your DevTools and find the declaration of the
-   file upload (e.g. by searching for `zip`)
+5. Open the `main-es2015.js` in your DevTools and find the declaration
+   of the file upload (e.g. by searching for `zip`)
 6. In the `allowedMimeType` array you will notice `"application/xml"`
    and `"text/xml"` along with the expected PDF and ZIP types
 
-   ![Possible XML upload spoilered in main.js](img/complaint_xml_mime-type.png)
+   ![Possible XML upload spoilered in main-es2015.js](img/complaint_xml_mime-type.png)
 7. Click on the _Choose File_ button.
 8. In the _File Name_ field enter `*.xml` and select any arbitrary XML
    file (<100KB) you have available. Then press _Open_.
@@ -1010,7 +1010,8 @@ more attention & a good portion of shrewdness.
 
 ### Successfully redeem an expired campaign coupon code
 
-1. Open `main.js` in your Browser's dev tools and search for `campaign`.
+1. Open `main-es2015.js` in your Browser's dev tools and search for
+   `campaign`.
 
    ![Campaign code in minified JavaScript](img/minified_js-campaigncode.png)
 2. You will find a function `applyCoupon()` that contains a static
@@ -1064,10 +1065,10 @@ more attention & a good portion of shrewdness.
    <bjoern.kimminich@googlemail.com>.
 2. Cracking his password hash will probably not work.
 3. To find out how the OAuth registration and login work, inspect the
-   `main.js` and search for `oauth`, which will eventually reveal a
-   function `userService.oauthLogin()`.
+   `main-es2015.js` and search for `oauth`, which will eventually reveal
+   a function `userService.oauthLogin()`.
 
-   ![oauthLogin function in main.js](img/minified_js-oauth.png)
+   ![oauthLogin function in main-es2015.js](img/minified_js-oauth.png)
 4. In the function body you will notice a call to `userService.save()` -
    which is used to create a user account in the non-Google _User
    Registration_ process - followed by a call to the regular
@@ -1400,18 +1401,18 @@ explains the problem and gives an exploit example:
 
 ### Learn about the Token Sale before its official announcement
 
-1. Open the `main.js` in your browser's developer tools and search for
-   some keywords like "ico", "token", "bitcoin" or "altcoin".
+1. Open the `main-es2015.js` in your browser's developer tools and
+   search for some keywords like "ico", "token", "bitcoin" or "altcoin".
 2. Note the names of the JavaScript functions where these occur in, like
    `Vu()` and `Hu(l)`. These names are obfuscated, so they might be
    different for you.
 
-   ![Obfuscated token sale related functions in main.js](img/minified_js-tokensale.png)
-3. Searching for references to those functions in `main.js` might yield
-   some more functions, like `zu(l)` and some possible route name
+   ![Obfuscated token sale related functions in main-es2015.js](img/minified_js-tokensale.png)
+3. Searching for references to those functions in `main-es2015.js` might
+   yield some more functions, like `zu(l)` and some possible route name
    `app-token-sale`
 
-   ![More token sale related functions in main.js](img/minified_js-tokensale_trail.png)
+   ![More token sale related functions in main-es2015.js](img/minified_js-tokensale_trail.png)
 4. Navigate to <http://localhost:3000/#/app-token-sale> or variations
    like <http://localhost:3000/#/token-sale> just to realize that these
    routes do not exist.
@@ -1424,11 +1425,11 @@ explains the problem and gives an exploit example:
    but not to a static title. It is mapped to another variable `Ca`
    (which might be named differently for you)
 
-   ![Tokensale route mapping in main.js](img/minified_js-tokensale_route.png)
+   ![Tokensale route mapping in main-es2015.js](img/minified_js-tokensale_route.png)
 6. Search for `function Ca(` to find the declaration of the function
    that should return a matcher to the route name you are looking for.
 
-   ![Tokensale route matcher in main.js](img/minified_js-tokensale_matcher.png)
+   ![Tokensale route matcher in main-es2015.js](img/minified_js-tokensale_matcher.png)
 7. Copy the obfuscating function into the JavaScript console of your
    browser and execute it immediately by appending a `()`. This will
    probably yield a `Uncaught SyntaxError: Unexpected token )`. When you
@@ -1533,7 +1534,78 @@ payload in his blog post
 
 ### Stick cute cross-domain kittens all over our delivery boxes
 
-🛠️ **TODO**
+1. Log in with any user and go to
+   <http://localhost:3000/#/deluxe-membership>
+2. Right-click and _Inspect_ the image of the delivery boxes with the
+   Juice Shop logo on them.
+3. You will notice that this image is in fact an inline `<svg>` tag that
+   includes six `<image>` tags. One is loading
+   `assets/public/images/deluxe/blankBoxes.png` and the other five load
+   `assets/public/images/JuiceShop_Logo.png` in different sizes and
+   positions onto the SVG graphic.
+4. Open the `main-es2015.js` in your browser DevTools and search for the
+   corresponding Angular controller code related to that page and SVG
+   image
+5. You will be able to spot six `:svg:image` references, one of them
+   `blankBoxes.png` and the other five seemingly unspecified at that
+   time.
+
+   ![Inline SVG in Angular controller](img/delivery-boxes_inline_svg.png)
+6. Scrolling only slightly further down, you will notice a code location
+   where a property `t.logoSrc` is passed into some non-descriptive
+   function five times.
+
+   ![Property logoSrc passed into SVG five times](img/delivery-boxes_apply_logoSrc.png)
+7. Scroll up in the source code a few hundred lines until you reach the
+   declaration of the controller (`class Ht` in the following
+   screenshot). There you find the definition of `this.logoSrc =
+   "assets/public/images/JuiceShop_Logo.png"`.
+8. In the subsequent `ngOnInit()` function is overwritten with either
+   the `application.logo` value coming out of the
+   `getApplicationConfiguration()` service...
+9. ...or - if specified - the value of the URL query parameter
+   `testDecal`! It seems the developers used this for testing the
+   overlay images on the SVG but forgot to remove it before go-live!
+   D'uh!
+
+   ![Forgotten query parameter testDecal](img/delivery-boxes_testDecal.png)
+10. Try the `testDecal` parameter, e.g. by going to
+    <http://localhost:3000/#/deluxe-membership?testDecal=test>. You will
+    notice that the logos on the boxes are now gone or display a broken
+    image symbol.
+
+    ![Probing the behavior of testDecal](img/delivery-boxes_apply_testDecal.png)
+11. As the logo references are relative, you cannot simply do e.g.
+    <http://localhost:3000/#/deluxe-membership?testDecal=https:%2F%2Fplacekitten.com%2Fg%2F400%2F500>
+    as this would result in the application to request the logos from
+    the relative URL
+    `assets/public/images/https://placekitten.com/g/400/500` which
+    obviously cannot work.
+12. As you are dealing with a relative path, you can try if path
+    traversal works, so you could get to the root of the web server e.g.
+    via
+    <http://localhost:3000/#/deluxe-membership?testDecal=..%2F..%2F..%2Ftest>.
+    This will indeed result in the image actually being requested as
+    <http://localhost:3000/test>!
+
+    ![Testing path traversal via testDecal](img/delivery-boxes_testDecal_path_traversal.png)
+13. It might not seem like it, but this behavior is a huge step forward!
+    If the Juice Shop web server only offered a URL which would be able
+    to _redirect_ you to any external location and grab those images...
+14. ...which _it does_ in the form of the
+    <http://localhost:3000/redirect> endpoint! If you haven't done so
+    yet, you should stop here and
+    [Enforce a redirect to a page you are not supposed to redirect to](#enforce-a-redirect-to-a-page-you-are-not-supposed-to-redirect-to)
+    first!
+15. Combining that redirect exploit with the forgotten `testDecal` and
+    its susceptibility to path traversal will allow you to craft a URL
+    like
+    <http://localhost:3000/#/deluxe-membership?testDecal=..%2F..%2F..%2F..%2Fredirect%3Fto%3Dhttps:%2F%2Fplacekitten.com%2Fg%2F400%2F500%3Fx%3Dhttps:%2F%2Fgithub.com%2Fbkimminich%2Fjuice-shop>
+    where the most difficult part is to get the URL encoding just right
+    to bypass the redirect whitelist and still get the intended image
+    returned cross-domain.
+
+    ![Placekitten images put on the delivery boxes](img/delivery-boxes_placeKitten.png)
 
 ### Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
@@ -2309,9 +2381,9 @@ opened on those._
 2. Get the support team's KeePass database file from
    <http://localhost:3000/ftp/incident-support.kdbx> (note how this file
    is conveniently _not blocked_ by the file type filter).
-3. Inspecting `main.js` for information leakage (e.g. by searching for
-   `support`) will yield an interesting log statement that is printed
-   when the support logs in with the wrong password:
+3. Inspecting `main-es2015.js` for information leakage (e.g. by
+   searching for `support`) will yield an interesting log statement that
+   is printed when the support logs in with the wrong password:
 
    ![Support team login hint in minified JS](/appendix/img/minified-js_support-hint.png)
 4. The logged text is in Romanian language: `<!-- @echipa de suport:
