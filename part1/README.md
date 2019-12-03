@@ -7,6 +7,7 @@ author himself has seen it run on
 * heavily customized Linux distros
 * all kinds of Apple hardware
 * overclocked Windows gaming notebooks
+* Chromebooks with native Linux support
 * various cloud platforms
 
 Chance is pretty high that you will be able to get it running on your
