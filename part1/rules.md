@@ -260,6 +260,17 @@ customization can be prepared on the server side, exposing this REST
 endpoint is unavoidable for the [Customization](customization.md)
 feature to work properly.
 
+### Tutorial JavaScript file
+
+If enabled, the
+[Hacking Instructor](../part1/challenges.md#hacking-instructor) script
+`tutorial-es2015.js` (or `tutorial-es5.js` in legacy browsers) including
+all on-screen tutorials is loaded lazily by the _Score Board_ and the
+_Welcome Banner_. You should exclude this file from all your manual or
+automated frontend code analysis. It contains step-by-step hints and
+unavoidably massive spoilers for several challenges via its condition
+checks that trigger progressing through each tutorial.
+
 ### Score Board HTML/CSS
 
 The Score Board and its features were covered in the
