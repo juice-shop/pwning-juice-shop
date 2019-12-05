@@ -1,11 +1,11 @@
 # Summary
 
-### Preface
+## Preface
 
 * [Why OWASP Juice Shop exists](introduction/motivation.md)
 * [Architecture overview](introduction/architecture.md)
 
-### Part I - Hacking preparations
+## Part I - Hacking preparations
 
 * [Hacking preparations](part1/README.md)
 * [Vulnerability categories](part1/categories.md)
@@ -13,7 +13,7 @@
 * [Hacking exercise rules](part1/rules.md)
 * [Walking the "happy path"](part1/happy-path.md)
 
-### Part II - Challenge hunting
+## Part II - Challenge hunting
 
 * [Challenge hunting](part2/README.md)
 * [Finding the Score Board](part2/score-board.md)
@@ -33,15 +33,15 @@
 * [Cryptographic Issues](part2/cryptographic-issues.md)
 * [Miscellaneous](part2/miscellaneous.md)
 
-### Part III - Getting involved
+## Part III - Getting involved
 
 * [Getting involved](part3/README.md)
 * [Donations](part3/donations.md)
 
-### Appendix
+## Appendix
 
 * [Troubleshooting](appendix/troubleshooting.md)
 
-### Postface
+## Postface
 
 * [About this book](introduction/about.md)
