@@ -4,6 +4,7 @@ init:
 branches:
   only:
     - master
+    - develop
 skip_commits:
   files:
     - LICENSE
@@ -46,6 +47,8 @@ deploy:
     secure: Vu/o5fi8cCRsc9VmD4B/Xg==
   folder: pwning-juice-shop
   application: _book.zip
+  on:
+    branch: master
 notifications:
   -
     provider: Slack
