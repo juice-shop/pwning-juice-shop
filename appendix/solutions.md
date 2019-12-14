@@ -680,7 +680,7 @@ only a `404 Error: ENOENT: no such file or directory, stat
    that it's database ID is `9`.
 2. Submit a `PUT` request to <http://localhost:3000/api/Products/9>
    with:
-   * `{"description": "<a href=\"http://kimminich.de\"
+   * `{"description": "<a href=\"https://owasp.slack.com\"
      target=\"_blank\">More...</a>"}` as body
    * and `application/json` as `Content-Type`
 
