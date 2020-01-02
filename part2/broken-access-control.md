@@ -27,10 +27,10 @@
 | Admin Section      | Access the administration section of the store.                                                                                        | ⭐⭐        |
 | Easter Egg         | Find the hidden easter egg.                                                                                                            | ⭐⭐⭐⭐     |
 | Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | ⭐⭐        |
-| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐       |
-| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐       |
-| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐       |
-| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐       |
+| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐      |
+| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐      |
+| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐      |
+| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐      |
 | SSRF               | Request a hidden resource on server through server.                                                                                    | ⭐⭐⭐⭐⭐⭐  |
 | View Basket        | View another user's shopping basket.                                                                                                   | ⭐⭐        |
 

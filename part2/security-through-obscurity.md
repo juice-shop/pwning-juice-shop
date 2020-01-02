@@ -21,8 +21,8 @@ anti-pattern:
 
 | Name                      | Description                                                      | Difficulty |
 |:--------------------------|:-----------------------------------------------------------------|:-----------|
-| Blockchain Hype           | Learn about the Token Sale before its official announcement.     | ⭐⭐⭐⭐⭐    |
-| Privacy Policy Inspection | Prove that you actually read our privacy policy.                 | ⭐⭐⭐       |
+| Blockchain Hype           | Learn about the Token Sale before its official announcement.     | ⭐⭐⭐⭐⭐   |
+| Privacy Policy Inspection | Prove that you actually read our privacy policy.                 | ⭐⭐⭐      |
 | Steganography             | Rat out a notorious character hiding in plain sight in the shop. | ⭐⭐⭐⭐     |
 
 ### Learn about the Token Sale before its official announcement

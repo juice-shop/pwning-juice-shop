@@ -21,7 +21,7 @@
 
 | Name               | Description                                                                                        | Difficulty |
 |:-------------------|:---------------------------------------------------------------------------------------------------|:-----------|
-| Blocked RCE DoS    | Perform a Remote Code Execution that would keep a less hardened application busy forever.          | ⭐⭐⭐⭐⭐    |
+| Blocked RCE DoS    | Perform a Remote Code Execution that would keep a less hardened application busy forever.          | ⭐⭐⭐⭐⭐   |
 | Successful RCE DoS | Perform a Remote Code Execution that occupies the server for a while without using infinite loops. | ⭐⭐⭐⭐⭐⭐  |
 
 ℹ️ _Please note that both RCE challenges described below are **not

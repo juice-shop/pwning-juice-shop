@@ -10,7 +10,7 @@ Board, did you?
 
 | Name        | Description                                   | Difficulty |
 |:------------|:----------------------------------------------|:-----------|
-| Score Board | Find the carefully hidden 'Score Board' page. | ⭐          |
+| Score Board | Find the carefully hidden 'Score Board' page. | ⭐         |
 
 ### Find the carefully hidden 'Score Board' page
 

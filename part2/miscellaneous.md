@@ -4,8 +4,8 @@
 
 | Name            | Description                                                        | Difficulty |
 |:----------------|:-------------------------------------------------------------------|:-----------|
-| Privacy Policy  | Read our privacy policy.                                           | ⭐          |
-| Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐          |
+| Privacy Policy  | Read our privacy policy.                                           | ⭐         |
+| Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐         |
 | Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐        |
 
 ### Read our privacy policy
