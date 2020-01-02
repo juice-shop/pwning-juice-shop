@@ -5,17 +5,17 @@
 | Name                       | Description                                                                                                                                                                             | Difficulty |
 |:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | ⭐⭐⭐⭐     |
-| Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐          |
-| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐    |
+| Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐         |
+| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐   |
 | Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | ⭐⭐⭐⭐     |
 | Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | ⭐⭐⭐⭐     |
 | GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | ⭐⭐⭐⭐     |
-| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐    |
+| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐   |
 | Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | ⭐⭐⭐⭐     |
-| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐       |
+| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐      |
 | Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | ⭐⭐        |
 | Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐     |
-| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐    |
+| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐   |
 
 ### Gain access to any access log file of the server
 
