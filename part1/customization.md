@@ -58,223 +58,191 @@ docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myC
 The YAML format for customizations is very straightforward. Below you
 find its syntax along with an excerpt of the default settings.
 
-* `server`
-  * `port` to launch the server on. Defaults to `3000`
-* `application`
-  * `domain` used for all user email addresses. Defaults to
-    `'juice-sh.op'`
-  * `name` as shown in title and menu bar Defaults to `'OWASP Juice
-    Shop'`
-  * `logo` filename in `frontend/dist/frontend/assets/public/images`
-    _or_ a URL of an image which will first be download to that folder
-    and then used as a logo. Defaults to `JuiceShop_Logo.png`
-  * `favicon` filename in `frontend/dist/frontend/assets/public` _or_ a
-    URL of an image in `.ico` format which will first be download to
-    that folder and then used as a favicon. Defaults to `favicon_v2.ico`
-  * `theme` the name of the color theme used to render the UI. Options
-    are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`,
-    `indigo-pink`, `pink-bluegrey`, `purple-green` and
-    `deeporange-indigo`. Defaults to `bluegrey-lightgreen`
-  * `showChallengeSolvedNotifications` shows or hides all instant
-    _"challenge solved"_-notifications. Recommended to set to `false`
-    for awareness demos. Defaults to `true`.
-  * `showChallengeHints` shows or hides hints for each challenge on
-    hovering over/clicking its _"unsolved"_ badge on the score board.
-    Defaults to `true`.
-  * `showVersionNumber` shows or hides the software version from the
-    title. Defaults to `true`.
-  * `showHackingInstructor` shows or hides
-    [Hacking Instructor](challenges.md#hacking-instructor) buttons on
-    the Score Board and in the Welcome Banner. Defaults to `true`.
-  * `showGitHubLinks` shows or hides the _"GitHub"_ button in the
-    navigation and side bar as well as the info box about contributing
-    on the _Score Board_. Defaults to `true`.
-  * `numberOfRandomFakeUsers` represents the number of random user
-    accounts to be created on top of the pre-defined ones (which are
-    required for several challenges). Defaults to `0`, meaning no
-    additional users are created.
-  * `twitterUrl` used as the Twitter link promising coupon codes on the
-    _About Us_ and _Your Basket_ screen. Defaults to
-    `'https://twitter.com/owasp_juiceshop'`
-  * `facebookUrl` used as the Facebook link promising coupon codes on
-    the _About Us_ and _Your Basket_ screen. Defaults to
-    `'https://www.facebook.com/owasp.juiceshop'`
-  * `slackUrl` used as the Slack link on the _About Us_ screen. Defaults
-    to `'http://owaspslack.com'`
-  * `pressKitUrl` used as the link to logos and media files on the
-    _About Us_ screen. Defaults to
-    `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'`
-  * `planetOverlayMap` filename in
-    `frontend/dist/frontend/assets/private` _or_ URL of an image to
-    download to that folder and then use as an overlay texture for the
-    3D planet "easter egg". Defaults to `orangemap2k.jpg`
-  * `planetName` of the 3D planet "easter egg" as shown in the page
-    title. Defaults to `Orangeuze`
-  * `deluxePage` custom elements on the _Deluxe Membership_ page
-    * `deluxeDeliveryImage` filename in
-      `frontend/dist/frontend/assets/public/images/deluxe` _or_ a URL of
-      an image which will first be download to that folder and then
-      displayed on the _Deluxe Membership_ page. Defaults to
-      `delivery_juiceshop.png`.
-  * `recyclePage` custom elements on the _Request Recycling Box_ page
-    * `topProductImage` filename in
-      `frontend/dist/frontend/assets/public/images/products` to use as
-      the image on the top of the info column on the page. Defaults to
-      `fruit_press.jpg`
-    * `bottomProductImage` filename in
-      `frontend/dist/frontend/assets/public/images/products` to use as
-      the image on the bottom of the info column on the page. Defaults
-      to `apple_pressings.jpg`
-  * `altcoinName` defines the name of the (fake) crypto currency that is
-    offered on the _Token Sale_ screen. Defaults to `Juicycoin`
-  * `welcomeBanner` defines a dismissable welcome banner that can be
-    shown when first visiting the application.
-    * `showOnFirstStart` shows or hides the banner. Defaults to `true`.
-    * `title` defines the headline of the banner. Defaults to `Welcome
-      to OWASP Juice Shop!`.
-    * `message` defines the body of the banner. Can contain arbitrary
-      HTML. Defaults to `<p>Being a web application with a vast number
-      of intended security vulnerabilities, the <strong>OWASP Juice
-      Shop</strong> is supposed to be the opposite of a best practice or
-      template application for web developers: It is an awareness,
-      training, demonstration and exercise tool for security risks in
-      modern web applications. The <strong>OWASP Juice Shop</strong> is
-      an open-source project hosted by the non-profit <a
-      href='https://owasp.org' target='_blank'>Open Web Application
-      Security Project (OWASP)</a> and is developed and maintained by
-      volunteers. Check out the link below for more information and
-      documentation on the project.</p><h1><a
-      href='https://owasp-juice.shop'
-      target='_blank'>https://owasp-juice.shop</a></h1>`.
-  * `cookieConsent` defines the cookie consent dialog shown in the
-    bottom right corner
-    * `backgroundColor` of the cookie banner itself. Defaults to
-      `'#546e7a'`
-    * `textColor` of the `message` shown in the cookie banner. Defaults
-      to `'#ffffff'`
-    * `buttonColor` defines the color of the button to dismiss the
-      banner. Defaults to `'#558b2f'`
-    * `buttonTextColor` of the `dismissText` on the button. Defaults to
-      `'#ffffff'`
-    * `message` explains the cookie usage in the application. Defaults
-      to `'This website uses fruit cookies to ensure you get the
-      juiciest tracking experience.'`
-    * `dismissText` the text shown on the button to dismiss the banner.
-      Defaults to `'Me want it!'`
-    * `linkText` is shown after the `message` to refer to further
-      information. Defaults to `'But me wait!'`
-    * `linkUrl` provides further information about cookie usage.
-      Defaults to `'https://www.youtube.com/watch?v=9PnbKL3wuH4'`
-  * `privacyContactEmail` the email address shown as contact in the
-    _Privacy Policy_. Defaults to `donotreply@owasp-juice.shop`
-  * `securityTxt` defines the attributes for the `security.txt` file
-    based on the <https://securitytxt.org/> Internet draft
-    * `contact` an email address, phone number or URL to report security
-      vulnerabilities to. Can be fake obviously. Defaults to
-      `mailto:donotreply@owasp-juice.shop`
-    * `encryption` URL to a public encryption key for secure
-      communication. Can be fake obviously. Defaults to
-      `https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda`
-    * `acknowledgements` URL a "hall of fame" page. Can be fake
-      obviously. Defaults to `/#/score-board`
-  * `promotion` defines the attributes required for the `/promotion`
-    screen where a marketing video with subtitles is rendered that hosts
-    the
-    [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-our-promo-video)
-    challenge
-    * `video` name of a file with `video/mp4` content type in
-      `frontend/dist/frontend/assets/public/videos` _or_ URL of an image
-      to download to that folder and then use as the promotion video.
-      Defaults to `JuiceShopJingle.mp4`
-    * `subtitles` name of a
-      [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/)
-      file in `frontend/dist/frontend/assets/public/videos` _or_ URL of
-      an image to download to that folder and then use as the promotion
-      video. Defaults to `JuiceShopJingle.vtt`
-* `challenges`
-  * `safetyOverride` enables all
-    [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges)
-    regardless of any harm they might cause when running in a
-    containerized environment. Defaults to `false`
-  * `overwriteUrlForProductTamperingChallenge` the URL that should
-    replace the original URL defined in
-    `urlForProductTamperingChallenge` for the
-    [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description)
-    challenge. Defaults to `https://owasp.slack.com`
-* `products` list which, when specified, replaces **the entire list** of
-  default products
-  * `name` of the product (_mandatory_)
-  * `description` of the product (_optional_). Defaults to a static
-    placeholder text
-  * `price` of the product (_optional_). Defaults to a random price
-  * `image` (_optional_) filename in
-    `frontend/dist/frontend/assets/public/images/products` _or_ URL of
-    an image to download to that folder and then use as a product image.
-    Defaults to `undefined.png`
-  * `deletedDate` of the product in `YYYY-MM-DD` format (_optional_).
-    Defaults to `null`.
-  * `urlForProductTamperingChallenge` sets the original link of the
-    product which is the target for the
-    [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description)
-    challenge. Overrides `deletedDate` with `null` (_must be defined on
-    exactly one product_)
-  * `useForChristmasSpecialChallenge` marks a product as the target for
-    [the "christmas special" challenge](../part2/injection.md#order-the-christmas-special-offer-of-2014).
-    Overrides `deletedDate` with `2014-12-27` (_must be `true` on
-    exactly one product_)
-  * `fileForRetrieveBlueprintChallenge` (_must be `true` on exactly one
-    product_) filename in
-    `frontend/dist/frontend/assets/public/images/products` _or_ URL of a
-    file download to that folder and then use as the target for the
-    [Retrieve Blueprint](../part2/sensitive-data-exposure.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products)
-    challenge. If a filename is specified but the file does not exist in
-    `frontend/dist/frontend/assets/public/images/products` the challenge
-    is still solvable by just requesting it from the server. Defaults to
-    `JuiceShop.stl`. ℹ️ _To make this challenge realistically
-    solvable, include some kind of hint to the blueprint file's
-    name/type in the product image (e.g. its `Exif` metadata) or in the
-    product description_
-  * `keywordsForPastebinDataLeakChallenge` (_must be defined on exactly
-    one product_) list of keywords which are all mandatory to mention in
-    a feedback or complaint to solve the
-    [DLP Tier 1](../part2/sensitive-data-exposure.md#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous)
-    challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make
-    this challenge realistically solvable, provide the keywords on e.g.
-    PasteBin in an obscured way that works well with the "dangerous
-    ingredients of an unsafe product"" narrative_
-  * `reviews` a sub-list which adds reviews to a product (_optional_)
-    * `text` of the review (_mandatory_)
-    * `author` of the review from the following list of pre-defined
-      users in the database: `admin`, `jim`, `bender`, `ciso`,
-      `support`, `morty`, `amy`, `mc.safesearch`, `J12934`, `wurstbrot`
-      or `bjoern` (_mandatory_)
-* `memories` list which, when specified, replaces all default _Photo
-  Wall_ entries
-  * `image` filename in
-    `frontend/dist/frontend/assets/public/images/uploads/` _or_ URL of
-    an image to download to that folder and then use as a _Photo Wall_
-    image (_mandatory_)
-  * `caption` text to show when hovering over the image or sending a
-    Tweet about it (_optional_)
-  * `user` reference by `key` from `data/static/users.yml` to the owner
-    of the photo upload (_mandatory_)
-* `ctf`
-  * `showFlagsInNotifications` shows or hides the CTF flag codes in the
-    _"challenge solved"_-notifications. Is ignored when
-    `application.showChallengeSolvedNotifications` is set to `false`.
-    Defaults to `false`
-  * `showCountryDetailsInNotifications` determines if the country mapped
-    to the solved challenge is displayed in the notification. Can be
-    `none`, `name`, `flag` or `both`. Only useful for CTFs using
-    [FBCTF](ctf.md#running-fbctf). Defaults to `none`
-  * `countryMapping` list which maps challenges to countries on the
-    challenge map of [FBCTF](ctf.md#running-fbctf). Only needed for CTFs
-    using [FBCTF](ctf.md#running-fbctf). Defaults to empty `~`
-    * `<challengeName>`
-      * `name` the name of the country
-      * `code` the two-letter ISO code of the country
+### `server` section
 
-### Configuration example
+Offers technical configuration options for the web server hosting the
+application.
+
+| Property | Description                   | Default |
+|:---------|:------------------------------|:--------|
+| `port`   | Port to launch the server on. | `3000`  |
+
+### `application` section
+
+Defines customization options for texts, colors, images, URLs etc.
+within the application.
+
+| Property                                                | Description                                                                                                                                                                                                      | Default                                                                 |
+|:--------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
+| `domain`                                                | Domain used for all user email addresses.                                                                                                                                                                        | `'juice-sh.op'`                                                         |
+| `name`                                                  | Name as shown in title and menu bar.                                                                                                                                                                             | `'OWASP Juice Shop'`                                                    |
+| `logo`                                                  | Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as a logo.                                                            | `JuiceShop_Logo.png`                                                    |
+| `favicon`                                               | Filename in `frontend/dist/frontend/assets/public` _or_ a URL of an image in `.ico` format which will first be download to that folder and then used as a favicon.                                               | `favicon_v2.ico`                                                        |
+| `theme`                                                 | Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`.                  | `bluegrey-lightgreen`                                                   |
+| `showChallengeSolvedNotifications`                      | Shows or hides all instant _"challenge solved"_-notifications. Recommended to set to `false` for awareness demos.                                                                                                | `true`                                                                  |
+| `showChallengeHints`                                    | Shows or hides hints for each challenge on hovering over/clicking its _"unsolved"_ badge on the score board.                                                                                                     | `true`                                                                  |
+| `showVersionNumber`                                     | Shows or hides the software version from the title.                                                                                                                                                              | `true`                                                                  |
+| `showGitHubLinks`                                       | Shows or hides the _"GitHub"_ button in the navigation and side bar as well as the info box about contributing on the _Score Board_.                                                                             | `true`                                                                  |
+| `numberOfRandomFakeUsers`                               | Represents the number of random user accounts to be created on top of the pre-defined ones (which are required for several challenges).                                                                          | `0`, meaning no additional users are created                            |
+| `twitterUrl`                                            | URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.                                                                                                                  | `'https://twitter.com/owasp_juiceshop'`                                 |
+| `facebookUrl`                                           | URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen.                                                                                                                 | `'https://www.facebook.com/owasp.juiceshop'`                            |
+| `slackUrl`                                              | URL used as the Slack link on the _About Us_ screen.                                                                                                                                                             | `'http://owaspslack.com'`                                               |
+| `pressKitUrl`                                           | URL used as the link to logos and media files on the _About Us_ screen.                                                                                                                                          | `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'` |
+| `planetOverlayMap`                                      | Filename in `frontend/dist/frontend/assets/private` _or_ URL of an image to download to that folder and then use as an overlay texture for the 3D planet "easter egg".                                           | `orangemap2k.jpg`                                                       |
+| `planetName`                                            | Name of the 3D planet "easter egg" as shown in the page title.                                                                                                                                                   | `Orangeuze`                                                             |
+| `altcoinName`                                           | Defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen.                                                                                                                       | `Juicycoin`                                                             |
+| `privacyContactEmail`                                   | The email address shown as contact in the _Privacy Policy_.                                                                                                                                                      | `donotreply@owasp-juice.shop`                                           |
+| [`recyclePage` subsection](#recyclepage-subsection)     | Defines custom elements on the _Request Recycling Box_ page.                                                                                                                                                     |                                                                         |
+| [`welcomeBanner` subsection](#welcomebanner-subsection) | Defines a dismissable welcome banner that can be shown when first visiting the application.                                                                                                                      |                                                                         |
+| [`cookieConsent` subsection](#cookieconsent-subsection) | Defines the cookie consent dialog shown in the bottom right corner.                                                                                                                                              |                                                                         |
+| [`securityTxt` subsection](#securitytxt-subsection)     | Defines the attributes for the `security.txt` file based on thehttps://securitytxt.org/> Internet draft.                                                                                                         |                                                                         |
+| [`promotion` subsection](#promotion-subsection)         | Defines the attributes required for the `/promotion` screen where a marketing video with subtitles is rendered that hosts the [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-our-promo-video) challenge. |                                                                         |
+
+#### `recyclePage` subsection
+
+Defines custom elements on the _Request Recycling Box_ page.
+
+| Property             | Description                                                                                                                          | Default               |
+|:---------------------|:-------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
+| `topProductImage`    | Filename in `frontend/dist/frontend/assets/public/images/products` to use as the image on the top of the info column on the page.    | `fruit_press.jpg`     |
+| `bottomProductImage` | Filename in `frontend/dist/frontend/assets/public/images/products` to use as the image on the bottom of the info column on the page. | `apple_pressings.jpg` |
+
+#### `welcomeBanner` subsection
+
+Defines a dismissable welcome banner that can be shown when first
+visiting the application.
+
+| Property           | Description                                                 | Default                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|:-------------------|:------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `showOnFirstStart` | Shows or hides the banner.                                  | `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `title`            | Defines the headline of the banner.                         | `Welcome to OWASP Juice Shop!`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `message`          | Defines the body of the banner. Can contain arbitrary HTML. | `<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-juice.shop' target='_blank'>https://owasp-juice.shop</a></h1>` |
+
+#### `cookieConsent` subsection
+
+Defines the cookie consent dialog shown in the bottom right corner.
+
+| Property          | Description                                                                            | Default                                                                                 |
+|:------------------|:---------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|
+| `backgroundColor` | Color of the cookie banner itself.                                                     | `'#546e7a'`                                                                             |
+| `textColor`       | Color of the `message` shown in the cookie banner.                                     | `'#ffffff'`                                                                             |
+| `buttonColor`     | Defines the color of the button to dismiss the banner.                                 | `'#558b2f'`                                                                             |
+| `buttonTextColor` | Color of the `dismissText` on the button.                                              | `'#ffffff'`                                                                             |
+| `message`         | Explains the cookie usage in the application.                                          | `'This website uses fruit cookies to ensure you get the juiciest tracking experience.'` |
+| `dismissText`     | The text shown on the button to dismiss the banner.                                    | `'Me want it!'`                                                                         |
+| `linkText`        | Caption of the link that is shown after the `message` to refer to further information. | `'But me wait!'`                                                                        |
+| `linkUrl`         | URL that provides further information about cookie usage.                              | `'https://www.youtube.com/watch?v=9PnbKL3wuH4'`                                         |
+
+#### `securityTxt` subsection
+
+Defines the attributes for the `security.txt` file based on the
+<https://securitytxt.org/> Internet draft.
+
+| Property           | Description                                                                                         | Default                                                                                           |
+|:-------------------|:----------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
+| `contact`          | An email address, phone number or URL to report security vulnerabilities to. Can be fake obviously. | `mailto:donotreply@owasp-juice.shop`                                                              |
+| `encryption`       | URL to a public encryption key for secure communication. Can be fake obviously.                     | `https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda` |
+| `acknowledgements` | URL a "hall of fame" page. Can be fake obviously.                                                   | `/#/score-board`                                                                                  |
+
+#### `promotion` subsection
+
+Defines the attributes required for the `/promotion` screen where a
+marketing video with subtitles is rendered that hosts the
+[XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-our-promo-video)
+challenge.
+
+| Property    | Description                                                                                                                                                                                                         | Default               |
+|:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
+| `video`     | Name of a file with `video/mp4` content type in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.                                  | `JuiceShopJingle.mp4` |
+| `subtitles` | Name of a [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/) file in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video. | `JuiceShopJingle.vtt` |
+
+### `challenges` section
+
+Defines configuration options for the hacking challenges within the
+Juice Shop.
+
+| Property                                   | Description                                                                                                                                                                                                                       | Default                   |
+|:-------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
+| `safetyOverride`                           | Enables all [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges) regardless of any harm they might cause when running in a containerized environment.                                               | `false`                   |
+| `overwriteUrlForProductTamperingChallenge` | URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. | `https://owasp.slack.com` |
+
+### `hackingInstructor` section
+
+Allows to enable and customize the
+[Hacking Instructor](../part1/challenges.md#hacking-instructor) tutorial
+mode.
+
+| Property      | Description                                                                                                                                                                             | Default        |
+|:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------|
+| `isEnabled`   | Shows or hides the [Hacking Instructor](../part1/challenges.md#hacking-instructor) links from the _Score Board_ and _Welcome Banner_.                                                   | `true`         |
+| `avatarImage` | Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as an avatar in the tutorial speech bubbles. | `juicyBot.png` |
+
+### `products` sequence
+
+List of product mappings which, when specified, replaces **the entire
+list** of default products.
+
+| Property                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Conditions                             | Default                                                       |
+|:------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|:--------------------------------------------------------------|
+| `name`                                          | Name of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | mandatory                              |                                                               |
+| `description`                                   | Description of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | optional                               | `'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'` |
+| `price`                                         | Price of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | optional                               | A random price                                                |
+| `image`                                         | Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of an image to download to that folder and then use as a product image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | optional                               | `undefined.png`                                               |
+| `deletedDate`                                   | Deletion date of the product in `YYYY-MM-DD` format.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | optional                               | `null`                                                        |
+| `urlForProductTamperingChallenge`               | Sets the original link of the product which is the target for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. Overrides `deletedDate` with `null`.                                                                                                                                                                                                                                                                                                                                                                                                                                                       | must be defined on exactly one product |                                                               |
+| `useForChristmasSpecialChallenge`               | Marks a product as the target for [the "christmas special" challenge](../part2/injection.md#order-the-christmas-special-offer-of-2014). Overrides `deletedDate` with `2014-12-27`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | must be `true` on exactly one product  |                                                               |
+| `fileForRetrieveBlueprintChallenge`             | Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a file download to that folder and then use as the target for the [Retrieve Blueprint](../part2/sensitive-data-exposure.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products) challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ _To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image (e.g. its `Exif` metadata) or in the product description._ | must be defined on exactly one product |                                                               |
+| `keywordsForPastebinDataLeakChallenge`          | List of keywords which are all mandatory to mention in a feedback or complaint to solve the [DLP Tier 1](../part2/sensitive-data-exposure.md#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous) challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative._                                                                                                                                                                                  | must be defined on exactly one product |                                                               |
+| [`reviews` sub-sequence](#reviews-sub-sequence) | Sub-list which adds reviews to a product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | optional                               | `~`                                                           |
+
+#### `reviews` sub-sequence
+
+Sub-list which adds reviews to a product.
+
+| Property | Description                                                                                                                                                                                        | Conditions |
+|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| `text`   | Text of the review.                                                                                                                                                                                | mandatory  |
+| `author` | Author of the review from the following list of pre-defined users in the database: `admin`, `jim`, `bender`, `ciso`, `support`, `morty`, `amy`, `mc.safesearch`, `J12934`, `wurstbrot` or `bjoern` | mandatory  |
+
+### `memories` sequence
+
+List which, when specified, replaces all default _Photo Wall_ entries
+except a hard-coded one needed to solve the
+[Retrieve the photo of Bjoern's cat in "melee combat-mode"](../part2/improper-input-validation.md#retrieve-the-photo-of-bjoerns-cat-in-melee-combat-mode)
+challenge.
+
+| Property  | Description                                                                                                                                              | Conditions |
+|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| `image`   | Filename in `frontend/dist/frontend/assets/public/images/uploads/` _or_ URL of an image to download to that folder and then use as a _Photo Wall_ image. | mandatory  |
+| `caption` | Text to show when hovering over the image or sending a Tweet about it.                                                                                   | mandatory  |
+| `user`    | Reference by `key` from `data/static/users.yml` to the owner of the photo upload.                                                                        | mandatory  |
+
+### `ctf` section
+
+Section to enable and configure the Capture-the-Flag mode built into
+OWASP Juice Shop.
+
+| Property                                                    | Description                                                                                                                                                                                                           | Default |
+|:------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
+| `showFlagsInNotifications`                                  | Shows or hides the CTF flag codes in the _"challenge solved"_-notifications. Is ignored when `application.showChallengeSolvedNotifications` is set to `false`.                                                        | `false` |
+| `showCountryDetailsInNotifications`                         | Determines if the country (from `countryMapping`) mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using [FBCTF](ctf.md#running-fbctf). | `none`  |
+| [`countryMapping` sub-mapping](#countrymapping-sub-mapping) | List of mappings which associates challenges to countries on the challenge map of [FBCTF](ctf.md#running-fbctf). Only needed for CTFs using [FBCTF](ctf.md#running-fbctf).                                            | `~`     |
+
+#### `countryMapping` sub-mapping
+
+List of mappings which associates challenges to countries on the
+challenge map of [FBCTF](ctf.md#running-fbctf). Only needed for CTFs
+using [FBCTF](ctf.md#running-fbctf):
+
+* Challenge `key` from `data/static/challenges.yml`
+  * `name` the name of the country
+  * `code` the two-letter ISO code of the country
+
+ℹ️ _When specifying `countryMapping`, it is mandatory to map **all
+challenges** in order to produce a valid configuration file. It is
+recommended to use `config/fbctf.yml` as a template for that purpose._
+
+## Configuration example
 
 ```yaml
 server:
@@ -296,12 +264,11 @@ application:
   slackUrl: 'http://owaspslack.com'
   planetOverlayMap: orangemap2k.jpg
   planetName: Orangeuze
-  deluxePage:
-    deluxeDeliveryImage: delivery_juiceshop.png
+  altcoinName: Juicycoin
+  privacyContactEmail: donotreply@owasp-juice.shop
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
-  altcoinName: Juicycoin
   welcomeBanner:
     showOnFirstStart: true
     title: 'Welcome to OWASP Juice Shop!'
@@ -315,7 +282,6 @@ application:
     dismissText: 'Me want it!'
     linkText: 'But me wait!'
     linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
-  privacyContactEmail: donotreply@owasp-juice.shop
   securityTxt:
     contact: 'mailto:donotreply@owasp-juice.shop'
     encryption: 'https://pgp.mit.edu/pks/lookup?op=get&search=0x062A85A8CBFBDCDA'
@@ -326,6 +292,9 @@ application:
 challenges:
   safetyOverride: false
   overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
+hackingInstructor:
+  isEnabled: true
+  avatarImage: juicyBot.png
 products:
   -
     name: 'Apple Juice (1000ml)'
@@ -387,10 +356,10 @@ application:
   showVersionNumber: false
   showHackingInstructor: false
   showGitHubLinks: false
-  deluxePage:
-    deluxeDeliveryImage: delivery_ctf.png
   welcomeBanner:
     showOnFirstStart: false
+hackingInstructor:
+  isEnabled: false
 ctf:
   showFlagsInNotifications: true
 ```
