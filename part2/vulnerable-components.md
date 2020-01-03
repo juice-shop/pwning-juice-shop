@@ -5,15 +5,15 @@ libraries or other 3rd party components the application uses internally.
 
 ## Challenges covered in this chapter
 
-| Name                   | Description                                                                                                                                              | Difficulty |
-|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| Arbitrary File Write   | Overwrite the Legal Information file.                                                                                                                    | ⭐⭐⭐⭐⭐⭐  |
-| Forged Signed JWT      | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                                          | ⭐⭐⭐⭐⭐⭐  |
-| Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                           | ⭐⭐⭐⭐⭐   |
-| Legacy Typosquatting   | Inform the shop about a typosquatting trick it has been a victim of at least in `v6.2.0-SNAPSHOT`. (Mention the exact name of the culprit)               | ⭐⭐⭐⭐     |
-| Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or the CVE of this vulnerability) | ⭐⭐⭐⭐⭐   |
-| Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                  | ⭐⭐⭐⭐⭐   |
-| Vulnerable Library     | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)                                     | ⭐⭐⭐⭐     |
+| Name                   | Description                                                                                                                                                                            | Difficulty |
+|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| Arbitrary File Write   | Overwrite the Legal Information file.                                                                                                                                                  | ⭐⭐⭐⭐⭐⭐  |
+| Forged Signed JWT      | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                                                                        | ⭐⭐⭐⭐⭐⭐  |
+| Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                                                         | ⭐⭐⭐⭐⭐   |
+| Legacy Typosquatting   | Inform the shop about a typosquatting trick it has been a victim of at least in `v6.2.0-SNAPSHOT`. (Mention the exact name of the culprit)                                             | ⭐⭐⭐⭐     |
+| Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or an assigned CVE or another identifier of this vulnerability) | ⭐⭐⭐⭐⭐   |
+| Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                                                | ⭐⭐⭐⭐⭐   |
+| Vulnerable Library     | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)                                                                   | ⭐⭐⭐⭐     |
 
 ### Overwrite the Legal Information file
 
