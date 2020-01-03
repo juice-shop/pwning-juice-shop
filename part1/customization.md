@@ -181,8 +181,8 @@ Juice Shop.
 |:-------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
 | `showSolvedNotifications`                  | Shows or hides all instant _"challenge solved"_-notifications. Recommended to set to `false` for awareness demos.                                                                                                                 | `true`                    |
 | `showHints`                                | Shows or hides hints for each challenge on hovering over/clicking its _"unsolved"_ badge on the score board.                                                                                                                      | `true`                    |
-| `safetyOverride`                           | Enables all [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges) regardless of any harm they might cause when running in a containerized environment.                                               | `false`                   |
 | `overwriteUrlForProductTamperingChallenge` | URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. | `https://owasp.slack.com` |
+| `safetyOverride`                           | Enables all [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges) regardless of any harm they might cause when running in a containerized environment. ☠️ **Use at your own risk!**                | `false`                   |
 
 ### `hackingInstructor` section
 
@@ -200,18 +200,18 @@ mode.
 List of product mappings which, when specified, replaces **the entire
 list** of default products.
 
-| Property                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Conditions                             | Default                                                       |
-|:------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|:--------------------------------------------------------------|
-| `name`                                          | Name of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | mandatory                              |                                                               |
-| `description`                                   | Description of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | optional                               | `'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'` |
-| `price`                                         | Price of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | optional                               | A random price                                                |
-| `image`                                         | Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of an image to download to that folder and then use as a product image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | optional                               | `undefined.png`                                               |
-| `deletedDate`                                   | Deletion date of the product in `YYYY-MM-DD` format.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | optional                               | `null`                                                        |
-| `urlForProductTamperingChallenge`               | Sets the original link of the product which is the target for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. Overrides `deletedDate` with `null`.                                                                                                                                                                                                                                                                                                                                                                                                                                                        | must be defined on exactly one product |                                                               |
-| `useForChristmasSpecialChallenge`               | Marks a product as the target for [the "christmas special" challenge](../part2/injection.md#order-the-christmas-special-offer-of-2014). Overrides `deletedDate` with `2014-12-27`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | must be `true` on exactly one product  |                                                               |
+| Property                                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Conditions                             | Default                                                       |
+|:------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|:--------------------------------------------------------------|
+| `name`                                          | Name of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | mandatory                              |                                                               |
+| `description`                                   | Description of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | optional                               | `'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'` |
+| `price`                                         | Price of the product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | optional                               | A random price                                                |
+| `image`                                         | Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of an image to download to that folder and then use as a product image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | optional                               | `undefined.png`                                               |
+| `deletedDate`                                   | Deletion date of the product in `YYYY-MM-DD` format.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | optional                               | `null`                                                        |
+| `urlForProductTamperingChallenge`               | Sets the original link of the product which is the target for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. Overrides `deletedDate` with `null`.                                                                                                                                                                                                                                                                                                                                                                                                                                                       | must be defined on exactly one product |                                                               |
+| `useForChristmasSpecialChallenge`               | Marks a product as the target for [the "christmas special" challenge](../part2/injection.md#order-the-christmas-special-offer-of-2014). Overrides `deletedDate` with `2014-12-27`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | must be `true` on exactly one product  |                                                               |
 | `fileForRetrieveBlueprintChallenge`             | Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a file download to that folder and then use as the target for the [Retrieve Blueprint](../part2/sensitive-data-exposure.md#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products) challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ _To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image (e.g. its `Exif` metadata) or in the product description._ | must be defined on exactly one product |                                                               |
 | `keywordsForPastebinDataLeakChallenge`          | List of keywords which are all mandatory to mention in a feedback or complaint to solve the [DLP Tier 1](../part2/sensitive-data-exposure.md#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous) challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative._                                                                                                                                                                                  | must be defined on exactly one product |                                                               |
-| [`reviews` sub-sequence](#reviews-sub-sequence) | Sub-list which adds reviews to a product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | optional                               | `~`                                                           |
+| [`reviews` sub-sequence](#reviews-sub-sequence) | Sub-list which adds reviews to a product.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | optional                               | `~`                                                           |
 
 #### `reviews` sub-sequence
 
@@ -269,21 +269,19 @@ application:
   domain: juice-sh.op
   name: 'OWASP Juice Shop'
   logo: JuiceShop_Logo.png
-  favicon: favicon_v2.ico
+  favicon: favicon_js.ico
   theme: bluegrey-lightgreen
-  showChallengeSolvedNotifications: true
-  showChallengeHints: true
   showVersionNumber: true
-  showHackingInstructor: true
   showGitHubLinks: true
   numberOfRandomFakeUsers: 0
-  twitterUrl: 'https://twitter.com/owasp_juiceshop'
-  facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
-  slackUrl: 'http://owaspslack.com'
-  planetOverlayMap: orangemap2k.jpg
-  planetName: Orangeuze
   altcoinName: Juicycoin
   privacyContactEmail: donotreply@owasp-juice.shop
+  social:
+    twitterUrl: 'https://twitter.com/owasp_juiceshop'
+    facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
+    slackUrl: 'http://owaspslack.com'
+    redditUrl: 'https://www.reddit.com/r/owasp_juiceshop'
+    pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
@@ -292,22 +290,27 @@ application:
     title: 'Welcome to OWASP Juice Shop!'
     message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-juice.shop' target='_blank'>https://owasp-juice.shop</a></h1>"
   cookieConsent:
-    backgroundColor: '#eb6c44'
+    backgroundColor: '#546e7a'
     textColor: '#ffffff'
-    buttonColor: '#f5d948'
-    buttonTextColor: '#000000'
+    buttonColor: '#558b2f'
+    buttonTextColor: '#ffffff'
     message: 'This website uses fruit cookies to ensure you get the juiciest tracking experience.'
     dismissText: 'Me want it!'
     linkText: 'But me wait!'
     linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
   securityTxt:
     contact: 'mailto:donotreply@owasp-juice.shop'
-    encryption: 'https://pgp.mit.edu/pks/lookup?op=get&search=0x062A85A8CBFBDCDA'
+    encryption: 'https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda'
     acknowledgements: '/#/score-board'
   promotion:
     video: JuiceShopJingle.mp4
-    subtitles: jingleSubtitles.vtt
+    subtitles: JuiceShopJingle.vtt
+  easterEggPlanet:
+    name: Orangeuze
+    overlayMap: orangemap2k.jpg
 challenges:
+  showSolvedNotifications: true
+  showHints: true
   safetyOverride: false
   overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
 hackingInstructor:
@@ -352,7 +355,11 @@ memories:
   -
     image: 'magn(et)ificent!-1571814229653.jpg'
     caption: 'Magn(et)ificent!'
-    user: bjoernOwasp
+    user: bjoernGoogle
+  -
+    image: 'my-rare-collectors-item!-[̲̅$̲̅(̲̅-͡°-͜ʖ-͡°̲̅)̲̅$̲̅]-1572603645543.jpg'
+    caption: 'My rare collectors item! [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]'
+    user: bjoernGoogle
 ctf:
   showFlagsInNotifications: false
   showCountryDetailsInNotifications: none
@@ -370,12 +377,13 @@ is as short as this:
 application:
   logo: JuiceShopCTF_Logo.png
   favicon: favicon_ctf.ico
-  showChallengeHints: false
   showVersionNumber: false
-  showHackingInstructor: false
   showGitHubLinks: false
   welcomeBanner:
     showOnFirstStart: false
+challenges:
+  showHints: false
+  safetyOverride: true
 hackingInstructor:
   isEnabled: false
 ctf:
