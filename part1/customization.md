@@ -217,10 +217,10 @@ list** of default products.
 
 Sub-list which adds reviews to a product.
 
-| Property | Description                                                                                                                                                                                        | Conditions |
-|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| `text`   | Text of the review.                                                                                                                                                                                | mandatory  |
-| `author` | Author of the review from the following list of pre-defined users in the database: `admin`, `jim`, `bender`, `ciso`, `support`, `morty`, `amy`, `mc.safesearch`, `J12934`, `wurstbrot` or `bjoern` | mandatory  |
+| Property | Description                                                                 | Conditions |
+|:---------|:----------------------------------------------------------------------------|:-----------|
+| `text`   | Text of the review.                                                         | mandatory  |
+| `author` | Reference by `key` from `data/static/users.yml` to the author of the review | mandatory  |
 
 ### `memories` sequence
 
