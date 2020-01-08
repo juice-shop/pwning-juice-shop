@@ -62,16 +62,16 @@ want to encourage the students to hack very competitively.
 ### Hosting individual instances for multiple users
 
 A solution to host and manage individual Juice Shop instances for
-multiple users is [JuicyCTF](https://github.com/iteratec/juicy-ctf/).
-JuicyCTF is a Kubernetes based system to start up the required Juice
+multiple users is [MultiJuicer](https://github.com/iteratec/multi-juicer/).
+MultiJuicer is a Kubernetes based system to start up the required Juice
 Shop instances on demand. It will also clean up unused instances after a
 configured period of inactivity.
 
-JuicyCTF comes with a custom-built load balancer. It allows every
+MultiJuicer comes with a custom-built load balancer. It allows every
 participant to use the same URL, but their traffic will always be sent
 to their own personal instance.
 
-The JuicyCTF repository contains multiple guides on how to set up the
+The MultiJuicer repository contains multiple guides on how to set up the
 system on different cloud provider environments.
 
 ## Existing trainings
