@@ -56,7 +56,10 @@ docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myC
 ## YAML configuration file
 
 The YAML format for customizations is very straightforward. Below you
-find its syntax along with an excerpt of the default settings.
+find its schema along with an excerpt of the default settings.
+
+ℹ️ _You can validate your custom configuration file against the schema
+by running `npm run validate -- -f /path/to/myConfig.yml`._
 
 ### `server` section
 
