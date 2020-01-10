@@ -23,10 +23,7 @@
     "rtbVersion": "3.3 or higher",
     "juiceShopNumberOfChallenges": 90,
     "nodeVersions": "10.x, 12.x and 13.x",
-    "nodeVersionRange": "10 - 13",
     "recommendedNodeVersion": "12.x",
-    "herokuNodeVersion": "12.x",
-    "supportedPlatformRange": "win32,linux,darwin,freebsd,openbsd",
-    "supportedCpuRange": "x64,x32,arm64,arm"
+    "herokuNodeVersion": "12.x"
   }
 }
