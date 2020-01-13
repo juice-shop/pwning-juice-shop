@@ -58,9 +58,6 @@ docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myC
 The YAML format for customizations is very straightforward. Below you
 find its schema along with an excerpt of the default settings.
 
-ℹ️ _You can validate your custom configuration file against the schema
-by running `npm run validate -- -f /path/to/myConfig.yml`._
-
 ### `server` section
 
 Offers technical configuration options for the web server hosting the
@@ -394,6 +391,10 @@ ctf:
 ```
 
 ### Testing customizations
+
+You can validate your custom configuration file against the schema
+by running `npm run lint:config -- -f /path/to/myConfig.yml`. This
+validation automatically happens on server startup as well.
 
 To verify if your custom configuration will not break any of the
 challenges, you should run the end-to-end tests via `npm run
