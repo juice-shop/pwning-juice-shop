@@ -171,6 +171,25 @@ Defines the customizations for the 3D-rendered planet easter egg.
 | `name`       | Name of the 3D planet "easter egg" as shown in the page title.                                                                                                         | `Orangeuze`       |
 | `overlayMap` | Filename in `frontend/dist/frontend/assets/private` _or_ URL of an image to download to that folder and then use as an overlay texture for the 3D planet "easter egg". | `orangemap2k.jpg` |
 
+#### `googleOauth` subsection
+
+Defines the client identifier and allowed redirect URIs for Google OAuth
+integration.
+
+| Property                                                   | Description                                                                                                    | Default                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|:-----------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `clientId`                                                 | Client identifier of the Google Cloud Platform application to handle OAuth 2.0 requests from OWASP Juice Shop. | `'1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| [`authorizedRedirects`](#authorizedredirects-sub-sequence) | Sub-list for the redirect URIs authorized for Google OAuth.                                                    | <code>- { uri: 'https://demo.owasp-juice.shop' }<br> - { uri: 'http://demo.owasp-juice.shop' }<br> - { uri: 'https://juice-shop.herokuapp.com' }<br> - { uri: 'http://juice-shop.herokuapp.com' }<br> - { uri: 'https://preview.owasp-juice.shop' }<br> - { uri: 'http://preview.owasp-juice.shop' }<br> - { uri: 'https://juice-shop-staging.herokuapp.com' }<br> - { uri: 'http://juice-shop-staging.herokuapp.com' }<br> - { uri: 'http://juice-shop.wtf' }<br> - { uri: 'http://localhost:3000', proxy: 'http://local3000.owasp-juice.shop' }<br> - { uri: 'http://127.0.0.1:3000', proxy: 'http://local3000.owasp-juice.shop' }<br> - { uri: 'http://localhost:4200', proxy: 'http://local4200.owasp-juice.shop' }<br> - { uri: 'http://127.0.0.1:4200', proxy: 'http://local4200.owasp-juice.shop' }<br> - { uri: 'http://192.168.99.100:3000', proxy: 'http://localmac.owasp-juice.shop' }<br> - { uri: 'http://penguin.termina.linux.test:3000', proxy: 'http://localchromeos.owasp-juice.shop' }</code> |
+
+##### `authorizedRedirects` sub-sequence
+
+Defines the allowed redirect URIs and their optional proxy for Google
+OAuth integration.
+
+| Property | Description                                                                                                                                                                                                                                                         | Conditions | Default |
+|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|:--------|
+| `uri`    | URI authorized on [Google Cloud Platform](https://console.cloud.google.com/apis/credentials) the Juice Shop is expected to be running on.                                                                                                                           | mandatory  |         |
+| `proxy`  | Proxy URI authorized on [Google Cloud Platform](https://console.cloud.google.com/apis/credentials) that will itself redirect back to the original `uri`. Necessary for addresses not allowed as Google OAuth redirect targets, such as `localhost` or IP addresses. | optional   | `null`  |
 
 ### `challenges` section
 
@@ -308,6 +327,24 @@ application:
   easterEggPlanet:
     name: Orangeuze
     overlayMap: orangemap2k.jpg
+  googleOauth:
+    clientId: '1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'
+    authorizedRedirects:
+      - { uri: 'https://demo.owasp-juice.shop' }
+      - { uri: 'http://demo.owasp-juice.shop' }
+      - { uri: 'https://juice-shop.herokuapp.com' }
+      - { uri: 'http://juice-shop.herokuapp.com' }
+      - { uri: 'https://preview.owasp-juice.shop' }
+      - { uri: 'http://preview.owasp-juice.shop' }
+      - { uri: 'https://juice-shop-staging.herokuapp.com' }
+      - { uri: 'http://juice-shop-staging.herokuapp.com' }
+      - { uri: 'http://juice-shop.wtf' }
+      - { uri: 'http://localhost:3000', proxy: 'http://local3000.owasp-juice.shop' }
+      - { uri: 'http://127.0.0.1:3000', proxy: 'http://local3000.owasp-juice.shop' }
+      - { uri: 'http://localhost:4200', proxy: 'http://local4200.owasp-juice.shop' }
+      - { uri: 'http://127.0.0.1:4200', proxy: 'http://local4200.owasp-juice.shop' }
+      - { uri: 'http://192.168.99.100:3000', proxy: 'http://localmac.owasp-juice.shop' }
+      - { uri: 'http://penguin.termina.linux.test:3000', proxy: 'http://localchromeos.owasp-juice.shop' }
 challenges:
   showSolvedNotifications: true
   showHints: true
@@ -392,8 +429,8 @@ ctf:
 
 ### Testing customizations
 
-You can validate your custom configuration file against the schema
-by running `npm run lint:config -- -f /path/to/myConfig.yml`. This
+You can validate your custom configuration file against the schema by
+running `npm run lint:config -- -f /path/to/myConfig.yml`. This
 validation automatically happens on server startup as well.
 
 To verify if your custom configuration will not break any of the
@@ -474,6 +511,12 @@ to convince Google to show anything else for obvious trust and integrity
 reasons.
 
 ![OAuth Immersion Spoiler](/part1/img/oauth_immersion-spoiler.png)
+
+ℹ️ _Since v10.0.0 you can overwrite the
+[`googleOauth` subsection](#googleoauth-subsection) to use your own
+application on Google Cloud Platform for handling OAuth. This is a
+relatively high effort, so maybe you want to kill two birds with one
+stone instead as described in the next section._
 
 ### On-the-fly text replacement
 
