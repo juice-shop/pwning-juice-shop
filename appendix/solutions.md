@@ -58,7 +58,7 @@ error situation and solve this challenge immediately:
 
 1. Visit <http://localhost:3000/#/photo-wall>
 2. Right-click _Inspect_ the broken image in the entry labeled "😼
-   #zatschi #whoneedsfourlegs"
+   \#zatschi \#whoneedsfourlegs"
 3. You should find an image tag similar to `<img _ngcontent-akt-c18=""
    class="image"
    src="assets/public/images/uploads/😼-#zatschi-#whoneedsfourlegs-1572600969477.jpg"
@@ -715,8 +715,8 @@ pet cat.
 
 Retrieving another photo of his cat is the subject of the
 [Retrieve the photo of Bjoern's cat in "melee combat-mode"](../part2/improper-input-validation.md#retrieve-the-photo-of-bjoerns-cat-in-melee-combat-mode)
-challenge. The corresponding image caption `😼 #zatschi
-#whoneedsfourlegs` also leaks the nickname "Zatschi" of the pet - which
+challenge. The corresponding image caption "😼 \#zatschi
+\#whoneedsfourlegs" also leaks the nickname "Zatschi" of the pet - which
 is cute, but (intentionally) not very helpful to find out her real name,
 though.
 
@@ -2259,8 +2259,8 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is not
-   part of the Juice Shop repo itself and it is publicly accessible,
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
+   not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
@@ -2634,9 +2634,9 @@ in
 which `ass ets/ ` resides. 14. This actual directory structure on the
 server is created by the AngularCLI tool when it compiles the
 application and looks as follows: `frontend/dist/fron tend /assets/`.
-15\. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that contains
-the prescribed payload of ``</script><script>alert(`xss`)</script>``
-with `zip exploit.zip
+15\. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that
+contains the prescribed payload of
+``</script><script>alert(`xss`)</script>`` with `zip exploit.zip
 ../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt` (
 on Linux). 16. Upload the ZIP file on <http://localhost:300 0/#/
 complain>. 17. The challenge notification will not trigger immediately,

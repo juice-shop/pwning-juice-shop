@@ -92,7 +92,7 @@ The minimum requirements for code contributions are:
 3. New and changed challenges _must_ have a corresponding e2e test.
 4. Linting, as well as all unit, integration and e2e tests _should_ pass
    locally before opening a Pull Request.
-5. All Git commits within a PR must be
+5. All Git commits within a PR _must_ be
    [signed off](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--s)
    to indicate the contributor's agreement with the
    [Developer Certificate of Origin](https://developercertificate.org/).
@@ -110,7 +110,6 @@ The `npm run lint` script verifies code compliance with
 * the `standard` code style (for all server-side JavaScript code)
 * the `tslint` rules for the frontend TypeScript code (which are defined
   to be equal to `standard` by deriving from `tslint-config-standard`)
-* the `sass-lint` rules (for all frontend SCSS code)
 
 If PRs deviate from this coding style, they will the build and will not
 be merged until made compliant.
@@ -178,7 +177,7 @@ useful to e.g. run the tests through tools like
 [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
 or Burpsuite.
 
-### Testing packaged distributions
+### Manually testing packaged distributions
 
 During releases the application will be packaged into `.zip`/`.tgz`
 archives for another easy setup method. When you contribute a change
@@ -193,6 +192,23 @@ Then take the created archive from `/dist` and follow the steps
 described above in
 [Packaged Distributions](https://github.com/bkimminich/juice-shop#packaged-distributions--)
 to make sure nothing is broken or missing.
+
+#### Smoke tests
+
+The shell script `test/smoke/smoke-test.sh` performs some _very basic_
+checks on the availability of expected UI content and API endpoints.
+During CI/CD it is used to verify if the packaged distribution and
+Docker image start properly.
+
+To manually use it on a packaged distribution run the following in your
+local repository clone root folder:
+
+```bash
+npm install --production && grunt package
+cd dist && tar -zxf juice-shop-*.tgz && cd juice-shop_*
+npm start &
+../../test/smoke/smoke-test.sh http://localhost:3000
+```
 
 ### Developer Certificate of Origin
 
@@ -266,20 +282,20 @@ for the officially preferred Node.js version
 {{book.recommendedNodeVersion}}.
 
 
-| ➡️Stage Trigger⬇️  | Lint                                                           | Test                                                                                                                                                | Integration                                                                                                                                                                                                                        | E2e                                                                              | Deploy                                              |
-|:----------------------|:---------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:----------------------------------------------------|
-|                       | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                                                                          | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.herokuNodeVersion}} to Heroku |
-| **Push to `develop`** | ✔️                                                           | ✔️                                                                                                                                                | ✔️                                                                                                                                                                                                                                | ✔️                                                                              | ✔️ to <http://juice-shop-staging.herokuapp.com>    |
-| **Push to `master`**  | ✔️                                                           | ✔️                                                                                                                                                | ✔️                                                                                                                                                                                                                                | ✔️                                                                              | ✔️ to <http://juice-shop.herokuapp.com>            |
-| **Pull Request**      | ✔️                                                           | ✔️                                                                                                                                                | ✔️                                                                                                                                                                                                                                | ✔️                                                                              | ❌                                                   |
-| **Version tag**       | ❌                                                             | ❌ instead compile and release [pre-packaged distributions](#testing-packaged-distributions) for Linux with Node.js {{book.nodeVersions}} to GitHub | ❌                                                                                                                                                                                                                                  | ❌                                                                                | ❌                                                   |
+| ➡️Stage Trigger⬇️  | Lint                                                           | Test                                                                                                  | Integration                                                                                                                                                                                                                        | E2e                                                                              | Smoke                                                                  | Deploy                                              |
+|:----------------------|:---------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------|:----------------------------------------------------|
+|                       | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                            | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | [Smoke tests](#smoke-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.herokuNodeVersion}} to Heroku |
+| **Push to `develop`** | ✔️                                                           | ✔️                                                                                                   | ✔️                                                                                                                                                                                                                               | ✔️                                                                             | ✔️                                                                   | ✔️ to <http://juice-shop-staging.herokuapp.com>   |
+| **Push to `master`**  | ✔️                                                           | ✔️                                                                                                   | ✔️                                                                                                                                                                                                                               | ✔️                                                                             | ✔️                                                                   | ✔️ to <http://juice-shop.herokuapp.com>           |
+| **Pull Request**      | ✔️                                                           | ✔️                                                                                                   | ✔️                                                                                                                                                                                                                               | ✔️                                                                             | ✔️                                                                   | ❌                                                  |
+| **Version tag**       | ❌                                                             | ❌ instead compile and release pre-packaged distributions with Node.js {{book.nodeVersions}} to GitHub | ❌                                                                                                                                                                                                                                 | ❌                                                                               | ❌                                                                     | ❌                                                  |
 
-ℹ️ The stages in the table above are executed sequentially from left
+ℹ️ _The stages in the table above are executed sequentially from left
 to right. A failing job in any stage will break the build and all
 following stages will not be executed allowing a faster feedback loop.
-The table only depicts the setup for Linux, as this is where all tests
-are executed. In the MacOS and Windows jobs only `npm install` is
-executed and release-artifacts are assembled in tag-builds.
+The table only depicts the setup for Linux ands MacOS, as this is where
+all tests are executed. In the Windows jobs only `npm install` is
+executed and release-artifacts are assembled in tag-builds._
 
 [^1]: <http://semver.org>
 [^2]: <https://probot.github.io/apps/dco/>
