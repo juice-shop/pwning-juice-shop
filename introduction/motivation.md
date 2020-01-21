@@ -61,7 +61,7 @@ products cope with JavaScript-heavy application frontends and REST APIs.
 Two years after its inception the Juice Shop was submitted and accepted
 as an _OWASP Tool Project_ by the
 [Open Web Application Security Project](https://owasp.org) in September
-2016. This move increased the overall visibility and outreach of the
+2016\. This move increased the overall visibility and outreach of the
 project significantly, as it exposed it to a large community of
 application security practitioners.
 
