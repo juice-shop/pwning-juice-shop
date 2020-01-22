@@ -2656,6 +2656,6 @@ box and once you go _Back_ the challenge solution should trigge
 
 [^6]: <https://en.wikipedia.org/wiki/Billion_laughs_attack>
 
-[^7]: <https://www.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
+[^7]: <https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
 
 [^8]: <https://snyk.io/research/zip-slip-vulnerability>

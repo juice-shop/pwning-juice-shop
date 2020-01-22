@@ -20,8 +20,8 @@ motivate you to get as many challenges solved as possible - similar to
 unlocking achievements in many modern video games.
 
 Development of the Juice Shop started in September 2014 as the author's
-personal initiative, when his employer needed a more modern security 
-training exercise environment for an in-house web application.  The 
+personal initiative, when his employer needed a more modern security
+training exercise environment for an in-house web application.  The
 previously used environment was still from the era of server-side
 rendered ASP/JSP/Servlet and did not reflect the reality of current
 web technology. The Juice Shop was developed as open-source software
@@ -29,10 +29,10 @@ without any corporate branding right from the beginning. By the end of
 2014, most of the current e-commerce functionality was up and running
 - along with an initial number of planted vulnerabilities. Over the years
 more variants of vulnerabilities were added. In parallel, the application
-was kept up-to-date with the latest web technology (e.g.  WebSockets and 
+was kept up-to-date with the latest web technology (e.g.  WebSockets and
 OAuth 2.0) and frontend frameworks (i.e. by migrating from AngularJS with
-Bootstrap to Angular with Material Design). Some of these additional 
-capabilities brought the chance to add corresponding vulnerabilities - 
+Bootstrap to Angular with Material Design). Some of these additional
+capabilities brought the chance to add corresponding vulnerabilities -
 and the list of challenges has been growing ever since.
 
 Apart from the hacker and awareness training use case, penetration
@@ -106,7 +106,7 @@ chapter [Hosting a CTF event](../part1/ctf.md)):
 
 A considerable number of vulnerable web applications already existed
 before the Juice Shop was created. The
-[OWASP Vulnerable Web Applications Directory (VWAD)](https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project)
+[OWASP Vulnerable Web Applications Directory (VWAD)](https://wiki.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project)
 maintains a list of these applications. When the Juice Shop came to life
 there were only _server-side rendered_ applications in the VWAD, but
 _Rich Internet Application (RIA)_ or _Single Page Application (SPA)_
@@ -118,4 +118,4 @@ their functional scope. So the aim of the Juice Shop was also to give
 the impression of a functionally complete e-commerce application that
 could actually exist like this in the wild.
 
-[^1]: https://www.owasp.org
+[^1]: https://wiki.owasp.org

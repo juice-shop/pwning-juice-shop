@@ -94,4 +94,4 @@ run and troubleshoot the application. Not the slightest sign of
 * While it is also possible to use SQL Injection to log in as the
   support team, this will not solve the challenge.
 
-[^1]: https://www.owasp.org/index.php/Top_10_2007-Information_Leakage
+[^1]: https://wiki.owasp.org/index.php/Top_10_2007-Information_Leakage

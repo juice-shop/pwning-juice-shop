@@ -321,6 +321,6 @@ OWASP Juice Shop, please refer to the
 [Help with translation](/part3/translation.md) chapter in part III of
 this book._
 
-[^1]: https://www.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
+[^1]: https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
 
 [^2]: http://xunitpatterns.com/happy%20path.html

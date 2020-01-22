@@ -132,7 +132,7 @@ http://kimminich.de instead. It is important to exactly follow the
 challenge instruction to make it light up green on the score board:
 
 * Original link tag in the description: `<a
-  href="https://www.owasp.org/index.php/O-Saft"
+  href="https://wiki.owasp.org/index.php/O-Saft"
   target="_blank">More...</a>`
 * Expected link tag in the description: `<a href="http://kimminich.de"
   target="_blank">More...</a>`
@@ -187,4 +187,4 @@ to some arguments between the victim and the vendor.
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
-[^3]: https://www.owasp.org/index.php/Server_Side_Request_Forgery
+[^3]: https://wiki.owasp.org/index.php/Server_Side_Request_Forgery

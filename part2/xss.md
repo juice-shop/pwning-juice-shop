@@ -177,8 +177,8 @@ how hard it is to successfully place the XSS payload in the application.
 * This challenge will always partially keep you blindfolded, no matter
   how hard you do research and analysis.
 
-[^1]: https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)
-[^2]: https://www.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
-[^3]: https://www.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)
-[^4]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
+[^1]: https://wiki.owasp.org/index.php/Cross-site_Scripting_(XSS)
+[^2]: https://wiki.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
+[^3]: https://wiki.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)
+[^4]: https://wiki.owasp.org/index.php/Input_Validation_Cheat_Sheet#Client_Side_vs_Server_Side_Validation
 
