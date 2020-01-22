@@ -107,7 +107,7 @@ chapter [Hosting a CTF event](../part1/ctf.md)):
 
 A considerable number of vulnerable web applications already existed
 before the Juice Shop was created. The
-[OWASP Vulnerable Web Applications Directory (VWAD)](https://www.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project)
+[OWASP Vulnerable Web Applications Directory (VWAD)](https://wiki.owasp.org/index.php/OWASP_Vulnerable_Web_Applications_Directory_Project)
 maintains a list of these applications. When Juice Shop came to life
 there were only _server-side rendered_ applications in the VWAD. But
 _Rich Internet Application (RIA)_ or _Single Page Application (SPA)_
@@ -119,4 +119,4 @@ their functional scope. So the aim of the Juice Shop also was to give
 the impression of a functionally complete e-commerce application that
 could actually exist like this in the wild.
 
-[^1]: https://www.owasp.org
+[^1]: https://wiki.owasp.org

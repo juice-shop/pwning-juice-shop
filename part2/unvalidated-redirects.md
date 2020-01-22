@@ -34,4 +34,4 @@ location.
 > White list validation involves defining exactly what _is_ authorized,
 > and by definition, everything else is not authorized.[^1]
 
-[^1]: https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation
+[^1]: https://wiki.owasp.org/index.php/Input_Validation_Cheat_Sheet#White_List_Input_Validation

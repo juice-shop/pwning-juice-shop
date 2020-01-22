@@ -82,7 +82,7 @@ does not suffice to solve this challenge!
 
 * In previous releases of OWASP Juice Shop this challenge was wrongly
   accused of being based on
-  [Cross-Site Request Forgery](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
+  [Cross-Site Request Forgery](https://wiki.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)).
 * It might also have been put into the
   [Improper Input Validation](improper-input-validation.md) category.
 * Bender's current password is so strong that brute force, rainbow table

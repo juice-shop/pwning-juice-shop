@@ -193,5 +193,5 @@ contains known vulnerabilities.
 
 [^1]: https://en.wikipedia.org/wiki/Typosquatting
 [^2]: https://tools.ietf.org/html/rfc7519
-[^3]: https://www.owasp.org/index.php/Unrestricted_File_Upload
+[^3]: https://wiki.owasp.org/index.php/Unrestricted_File_Upload
 [^4]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm

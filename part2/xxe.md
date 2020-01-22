@@ -88,5 +88,5 @@ point.
 * The effectiveness of attack payloads for this challenge might depend
   on the operating system the Juice Shop is running on.
 
-[^1]: https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
+[^1]: https://wiki.owasp.org/index.php/XML_External_Entity_(XXE)_Processing
 

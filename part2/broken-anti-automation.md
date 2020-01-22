@@ -137,9 +137,9 @@ to impossible to solve without using a brute force approach.
 * Unfortunately, _Forgot your password?_ is protected by a rate limiting
   mechanism that prevents brute forcing. You need to beat this somehow.
 
-[^1]: https://www.owasp.org/index.php/OWASP_Automated_Threats_to_Web_Applications
-[^2]: https://www.owasp.org/index.php/Blocking_Brute_Force_Attacks#Sidebar:_Using_CAPTCHAS
-[^3]: https://www.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
-[^4]: https://www.owasp.org/index.php/Brute_force_attack
+[^1]: https://wiki.owasp.org/index.php/OWASP_Automated_Threats_to_Web_Applications
+[^2]: https://wiki.owasp.org/index.php/Blocking_Brute_Force_Attacks#Sidebar:_Using_CAPTCHAS
+[^3]: https://wiki.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements
+[^4]: https://wiki.owasp.org/index.php/Brute_force_attack
 [^5]: https://en.wikipedia.org/wiki/Race_condition
 [^6]: https://en.wikipedia.org/wiki/Race_condition#Computer_security

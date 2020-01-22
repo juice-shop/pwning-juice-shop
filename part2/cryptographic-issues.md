@@ -144,4 +144,4 @@ crypto library) that either
   challenge _do not count_ as they are only a developer's prank and not
   a serious security problem.
 
-[^1]: https://www.owasp.org/index.php/Guide_to_Cryptography
+[^1]: https://wiki.owasp.org/index.php/Guide_to_Cryptography

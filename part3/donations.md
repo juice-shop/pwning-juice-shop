@@ -43,7 +43,7 @@ recommended to forward your donation confirmation to
 bjoern.kimminich@owasp.org to allow verifying if the earmarking worked
 and the money is attributed to the Juice Shop budget. You should provide
 your full name and (optional) URL for the mention in the
-[Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
+[Sponsors](https://owasp.org/www-project-juice-shop/#div-sponsors)
 on the official project page. If you donated at least 1000 US$ you can
 choose to provide a logo to put on the page instead of your name. See
 [Sponsorship Rules](#sponsorship-rules) below for details._
@@ -76,7 +76,7 @@ choose to provide a logo to put on the page instead of your name. See
 ## Sponsorship Rules
 
 OWASP Juice Shop adheres to the
-[Project Sponsorship Operational Guidelines](https://www.owasp.org/index.php/Project_Sponsorship_Operational_Guidelines)
+[Project Sponsorship Operational Guidelines](https://wiki.owasp.org/index.php/Project_Sponsorship_Operational_Guidelines)
 of the OWASP Foundation. In one sentence, these allow named
 acknowledgements (with link) for all monetary donations. For amounts of
 least 1000 US$ a logo image (with link) can be added instead. The logo
@@ -86,5 +86,5 @@ the discretion of the Project Leader.
 
 You can find a list of all sponsors of the OWASP Juice Shop to date in
 the
-[Acknowledgements](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project#tab=Acknowledgements)
+[Sponsors](https://owasp.org/www-project-juice-shop/#div-sponsors)
 tab of the project homepage.
