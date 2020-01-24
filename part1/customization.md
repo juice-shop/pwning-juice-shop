@@ -97,12 +97,13 @@ within the application.
 Specifies all social links embedded on various screens such as _About
 Us_ or the _Photo Wall_.
 
-| Property      | Description                                                                                      | Default                                                                 |
-|:--------------|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
-| `twitterUrl`  | URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.  | `'https://twitter.com/owasp_juiceshop'`                                 |
-| `facebookUrl` | URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen. | `'https://www.facebook.com/owasp.juiceshop'`                            |
-| `slackUrl`    | URL used as the Slack link on the _About Us_ screen.                                             | `'http://owaspslack.com'`                                               |
-| `pressKitUrl` | URL used as the link to logos and media files on the _About Us_ screen.                          | `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'` |
+| Property           | Description                                                                                      | Default                                                                 |
+|:-------------------|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
+| `twitterUrl`       | URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.  | `'https://twitter.com/owasp_juiceshop'`                                 |
+| `facebookUrl`      | URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen. | `'https://www.facebook.com/owasp.juiceshop'`                            |
+| `slackUrl`         | URL used as the Slack link on the _About Us_ screen.                                             | `'http://owaspslack.com'`                                               |
+| `pressKitUrl`      | URL used as the link to logos and media files on the _About Us_ screen.                          | `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'` |
+| `questionnaireUrl` | URL used as the link to the user questionnaire on the _Score Board_ screen.                      | `'https://forms.gle/2Tr5m1pqnnesApxN8'`                                 |
 
 #### `recyclePage` subsection
 
@@ -301,6 +302,7 @@ application:
     slackUrl: 'http://owaspslack.com'
     redditUrl: 'https://www.reddit.com/r/owasp_juiceshop'
     pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'
+    questionnaireUrl: 'https://forms.gle/2Tr5m1pqnnesApxN8'
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
