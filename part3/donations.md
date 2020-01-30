@@ -1,5 +1,10 @@
 # Donations
 
+> **💸 _If you came to this chapter with a "Shut up and take my money!"
+> attitude, please click
+> [here](https://owasp.org/donate/?reponame=www-project-juice-shop&title=OWASP+Juice+Shop)
+> to donate!_**
+
 As a project of the OWASP Foundation the Juice Shop is and always will
 be
 
@@ -67,7 +72,7 @@ denied by OWASP for Juice Shop._
 If you tick the "Publicly list me as a supporter of OWASP Juice Shop"
 checkbox your name (but obviously **not** your email address) will be
 added to the
-[_Supporters tab of the project website](https://owasp.org/www-project-juice-shop/#div-supporters)
+[_Supporters_ tab of the project website](https://owasp.org/www-project-juice-shop/#div-supporters)
 automatically.
 
 ![Earmark donation for Juice Shop](img/donate03.png)
