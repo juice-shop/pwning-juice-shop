@@ -26,65 +26,54 @@ spend) money on:
 * Commercial support where the team lacks expertise (e.g. graphics
   design for this book's cover was paid from donations)
 
-## How can I donate?
+## Supporting Juice Shop
 
-The project gratefully accepts donations via PayPal or Credit Card:
+The OWASP Foundation gratefully accepts donations via Stripe. Projects
+such as Juice Shop can then request reimbursement for expenses (like
+those listed above) from the Foundation.
 
-| Provider             | Link                                                                                                                                                                                                                                                               |
-|:---------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **PayPal**           | [![PayPal Donate Button](img/paypal_donate.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=paypal%40owasp%2eorg&lc=BM&item_name=OWASP%20Juice%20Shop%20Project&item_number=OWASP%20Foundation&no_note=0&currency_code=USD&bn=PP%2dDonationsBF) |
-| **Credit Card**      | <https://www.regonline.com/Register/Checkin.aspx?EventID=1044369>                                                                                                                                                                                                  |
+![Donation button on the Juice Shop website](img/donate01.png)
 
-All donations are received and managed by the
-OWASP Foundation and must be earmarked properly to end up in the Juice Shop budget. You will receive an official donation receipt.
+If you'd like to express your support of the Juice Shop project, please
+make sure to use the green "Donate"-button _while on the Juice Shop
+website_ or simply use the following link for your donation:
 
-ℹ️ _Independent of your selected method it is
-recommended to forward your donation confirmation to
-bjoern.kimminich@owasp.org to allow verifying if the earmarking worked
-and the money is attributed to the Juice Shop budget. You should provide
-your full name and (optional) URL for the mention in the
-[Sponsors](https://owasp.org/www-project-juice-shop/#div-sponsors)
-on the official project page. If you donated at least 1000 US$ you can
-choose to provide a logo to put on the page instead of your name. See
-[Sponsorship Rules](#sponsorship-rules) below for details._
+<https://owasp.org/donate/?reponame=www-project-juice-shop&title=OWASP+Juice+Shop>
 
-### Credit card donation step-by-step
+![Donation form for Juice Shop](img/donate02.png)
 
-1. Go to
-   <https://www.regonline.com/Register/Checkin.aspx?EventID=1044369>.
-2. Register with your email address and select `Project Supporter` from
-   the _Donation Type_ dropdown list.
+Filling out the form is pretty straightforward. It will send you then
+redirect you to a Stripe payment page where you can at least choose to
+pay between the usual credit cards and depending on your decive also
+Google Pay or Apple Pay:
 
-   ![Registration step](img/regonline01.png)
-3. _Continue_ to the _Personal Info_ step and fill at least all
-   mandatory fields. Click _Continue_.
-4. In the _Agenda_ step select one of the available amounts or _Project
-   Supporter - Other_ to put in an individual amount.
-5. Enter `OWASP Juice Shop Project` into the mandatory field _Which
-   Project would you like to support?_ and click _Continue_.
+![Stripe page for an OWASP donation](img/stripe.png)
 
-   ![Registration step](img/regonline02.png)
-6. In the final _Checkout_ step choose a _Password_ for your account and
-   fill in your _Billing Information.
-7. Click _Finish_ to process your donation and be led to the
-   _Confirmation_ screen.
-8. Here you can download your _Receipt_ under the _Documents_ section on
-   the right.
+## Restricted gifts
 
-   ![Registration step](img/regonline03.png)
+All donations >1000 US$ to the OWASP Foundation can be restricted
+explicitly to be only used by the Juice Shop project in the current
+calendar year. To learn more about such earmarked donations please check
+OWASP's
+[Rules of Procedure on Donations](https://owasp.org/www-policy/operational/donations.html).
 
-## Sponsorship Rules
+ℹ️ _While the Juice Shop appreciates such dedicated donations, please
+note that these add an organizational overhead for the OWASP Foundation.
+To this day no expenses of the categories mentioned above have ever been
+denied by OWASP for Juice Shop._
 
-OWASP Juice Shop adheres to the
-[Project Sponsorship Operational Guidelines](https://wiki.owasp.org/index.php/Project_Sponsorship_Operational_Guidelines)
-of the OWASP Foundation. In one sentence, these allow named
-acknowledgements (with link) for all monetary donations. For amounts of
-least 1000 US$ a logo image (with link) can be added instead. The logo
+## Attribution
+
+If you tick the "Publicly list me as a supporter of OWASP Juice Shop"
+checkbox your name (but obviously **not** your email address) will be
+added to the
+[_Supporters tab of the project website](https://owasp.org/www-project-juice-shop/#div-supporters)
+automatically.
+
+![Earmark donation for Juice Shop](img/donate03.png)
+
+For donation amounts of at least 1000 US$ your corporate logo (with
+link) will be added to the _Top Supporters_ section as well. The logo
 size can be at most 300x300 pixels. Logo and name placements are
 guaranteed for 1 year after the donation but might stay there longer at
 the discretion of the Project Leader.
-
-You can find a list of all sponsors of the OWASP Juice Shop to date in
-the
-[Sponsors](https://owasp.org/www-project-juice-shop/#div-sponsors)
-tab of the project homepage.
