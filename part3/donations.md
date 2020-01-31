@@ -1,9 +1,9 @@
 # Donations
 
-> **💸 _If you came to this chapter with a "Shut up and take my money!"
-> attitude, please click
-> [here](https://owasp.org/donate/?reponame=www-project-juice-shop&title=OWASP+Juice+Shop)
-> to donate!_**
+> Please continue reading to learn more about supporting the OWASP Juice
+> Shop financially! As a shortcut you can also
+> [click here](https://owasp.org/donate/?reponame=www-project-juice-shop&title=OWASP+Juice+Shop)
+> to donate right now!
 
 As a project of the OWASP Foundation the Juice Shop is and always will
 be
@@ -13,8 +13,8 @@ be
 
 The entire project is licensed under the liberal
 [MIT license](https://opensource.org/licenses/MIT) which allows even
-commercial use and modifications. There will never be an "enterprise" or
-"premium" version of OWASP Juice Shop either.
+commercial use and modifications. There will never be an "enterprise",
+"pro" or "premium" version of OWASP Juice Shop either.
 
 This does not mean that a project like it can thrive without any
 funding. Some examples on what the OWASP Juice Shop spent (or might
@@ -65,7 +65,8 @@ OWASP's
 ℹ️ _While the Juice Shop appreciates such dedicated donations, please
 note that these add an organizational overhead for the OWASP Foundation.
 To this day no expenses of the categories mentioned above have ever been
-denied by OWASP for Juice Shop._
+denied by OWASP for Juice Shop. Feel free to use a regular donation with
+attribution instead._
 
 ## Attribution
 
