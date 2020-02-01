@@ -1,9 +1,9 @@
 # Donations
 
-> **💸 _If you came to this chapter with a "Shut up and take my money!"
-> attitude, please click
-> [here](https://owasp.org/donate/?reponame=www-project-juice-shop&title=OWASP+Juice+Shop)
-> to donate!_**
+> Please continue reading to learn more about supporting the OWASP Juice
+> Shop financially! As a shortcut you can also
+> [click here](https://owasp.org/donate/?reponame=www-project-juice-shop&title=OWASP+Juice+Shop)
+> to donate right now!
 
 As a project of the OWASP Foundation the Juice Shop is and always will
 be
@@ -13,8 +13,8 @@ be
 
 The entire project is licensed under the liberal
 [MIT license](https://opensource.org/licenses/MIT) which allows even
-commercial use and modifications. There will never be an "enterprise" or
-"premium" version of OWASP Juice Shop either.
+commercial use and modifications. There will never be an "enterprise",
+"pro" or "premium" version of OWASP Juice Shop either.
 
 This does not mean that a project like it can thrive without any
 funding. Some examples on what the OWASP Juice Shop spent (or might
@@ -47,25 +47,25 @@ website_ or simply use the following link for your donation:
 
 ![Donation form for Juice Shop](img/donate02.png)
 
-Filling out the form is pretty straightforward. It will send you then
-redirect you to a Stripe payment page where you can at least choose to
-pay between the usual credit cards and depending on your decive also
-Google Pay or Apple Pay:
+Filling out the form is pretty straightforward. It will ask you for some
+basic information and then redirect you to a Stripe payment page where
+you put in your credit card data and initiate the payment:
 
 ![Stripe page for an OWASP donation](img/stripe.png)
 
 ## Restricted gifts
 
-All donations >1000 US$ to the OWASP Foundation can be restricted
-explicitly to be only used by the Juice Shop project in the current
-calendar year. To learn more about such earmarked donations please check
-OWASP's
+All donations of at least 1000 US$ to the OWASP Foundation can be
+restricted explicitly to be only used by the Juice Shop project in the
+current calendar year. To learn more about such earmarked donations
+please check OWASP's
 [Rules of Procedure on Donations](https://owasp.org/www-policy/operational/donations.html).
 
 ℹ️ _While the Juice Shop appreciates such dedicated donations, please
 note that these add an organizational overhead for the OWASP Foundation.
 To this day no expenses of the categories mentioned above have ever been
-denied by OWASP for Juice Shop._
+denied by OWASP for Juice Shop. Feel free to use a regular donation with
+attribution instead._
 
 ## Attribution
 
