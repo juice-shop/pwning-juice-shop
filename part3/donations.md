@@ -47,19 +47,18 @@ website_ or simply use the following link for your donation:
 
 ![Donation form for Juice Shop](img/donate02.png)
 
-Filling out the form is pretty straightforward. It will send you then
-redirect you to a Stripe payment page where you can at least choose to
-pay between the usual credit cards and depending on your decive also
-Google Pay or Apple Pay:
+Filling out the form is pretty straightforward. It will ask you for some
+basic information and then redirect you to a Stripe payment page where
+you put in your credit card data and initiate the payment:
 
 ![Stripe page for an OWASP donation](img/stripe.png)
 
 ## Restricted gifts
 
-All donations >1000 US$ to the OWASP Foundation can be restricted
-explicitly to be only used by the Juice Shop project in the current
-calendar year. To learn more about such earmarked donations please check
-OWASP's
+All donations of at least 1000 US$ to the OWASP Foundation can be
+restricted explicitly to be only used by the Juice Shop project in the
+current calendar year. To learn more about such earmarked donations
+please check OWASP's
 [Rules of Procedure on Donations](https://owasp.org/www-policy/operational/donations.html).
 
 ℹ️ _While the Juice Shop appreciates such dedicated donations, please
