@@ -156,14 +156,13 @@ learn more about how to write
 
 Some challenges can cause potential harm or pose some danger for your
 computer, i.e. the XXE, SSTi and Deserialization challenges as well as
-two of the NoSQLi challenges. These simply cannot be sandboxed in a 100%
+two of the NoSQLi challenges and the possibility of an arbitrary file write. These simply cannot be sandboxed in a 100%
 secure way. These are only dangerous if you use actually malicious
 payloads, so please do not play with payloads you do not fully
-understand.
+understand. Furthermore be aware that all stored XSS vulnerabilities can - by their nature - be abused to perform harmful attacks on unsuspecting visitors. 
 
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) in containerized
-environments. By default this applies to Docker and Heroku. You can set
-`safetyOverride: true` in your
-[YAML configuration file](customization.md#yaml-configuration-file) you
-can re-enable these challenges. Please use at your own risk.
+environments. By default this applies to Docker and Heroku. To re-enable all challenges you can set the environment variable `NODE_ENV=unsafe` or you can set
+`safetyOverride: true` in your own
+[YAML configuration file](customization.md#yaml-configuration-file). Please use the unsafe mode at your own risk, especially on publically hosted instances.

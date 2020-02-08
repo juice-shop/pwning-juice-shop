@@ -56,12 +56,18 @@ issues tracker._
   [`node-gyp` installation instructions](https://github.com/nodejs/node-gyp#installation)
   for additional tools you might need to install (e.g. Python 2.7, GCC,
   Visual C++ Build Tools etc.)
+- If `npm install` runs into a `Unexpected end of JSON input` error you
+  might need to clean your NPM cache with `npm cache clean --force` and
+  then try again.
+
+### Linux
+
 - If `npm install` fails on Ubuntu with the pre-installed Node.js please
   install the latest release of Node.js {{book.recommendedNodeVersion}}
   from scratch and try again.
-- If `npm install` runs into a `Unexpected end of JSON input` error you
-  might need to clean your NPM cache with `npm cache clean --force` and
-  then try again
+- If `npm install` on Linux runs into `WARN cannot run in wd` problems
+  (e.g. during the frontend installation step) try running `npm install
+  --unsafe-perm` instead.
 
 ### Docker
 
