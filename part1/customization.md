@@ -84,7 +84,8 @@ within the application.
 | `numberOfRandomFakeUsers`                                   | Represents the number of random user accounts to be created on top of the pre-defined ones (which are required for several challenges).                                                                          | `0`, meaning no additional users are created |
 | `altcoinName`                                               | Defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen.                                                                                                                       | `Juicycoin`                                  |
 | `privacyContactEmail`                                       | The email address shown as contact in the _Privacy Policy_.                                                                                                                                                      | `donotreply@owasp-juice.shop`                |
-| [`social` subsection](#social-subsection)                   | Specifies all social links embedded on various screens such as _About Us_ or the _Photo Wall_.                                                                                                                   |                                              |
+| `customMetricsPrefix`                                       | Prefix for all custom Prometheus metrics. Must be a lowercase letter single world by Prometheus conventions.                                                                                                     | `donotreply@owasp-juice.shop`                |
+| [`social` subsection](#social-subsection)                   | Specifies all social links embedded on various screens such as _About Us_ or the _Photo Wall_.                                                                                                                   | `juiceshop`                                  |
 | [`recyclePage` subsection](#recyclepage-subsection)         | Defines custom elements on the _Request Recycling Box_ page.                                                                                                                                                     |                                              |
 | [`welcomeBanner` subsection](#welcomebanner-subsection)     | Defines a dismissable welcome banner that can be shown when first visiting the application.                                                                                                                      |                                              |
 | [`cookieConsent` subsection](#cookieconsent-subsection)     | Defines the cookie consent dialog shown in the bottom right corner.                                                                                                                                              |                                              |
@@ -202,7 +203,7 @@ Juice Shop.
 | `showSolvedNotifications`                  | Shows or hides all instant _"challenge solved"_-notifications. Recommended to set to `false` for awareness demos.                                                                                                                 | `true`                    |
 | `showHints`                                | Shows or hides hints for each challenge on hovering over/clicking its _"unsolved"_ badge on the score board.                                                                                                                      | `true`                    |
 | `overwriteUrlForProductTamperingChallenge` | URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. | `https://owasp.slack.com` |
-| `safetyOverride`                           | Enables all [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges) regardless of any harm they might cause when running in a containerized environment. ☠️ **Use at your own risk!**                | `false`                   |
+| `safetyOverride`                           | Enables all [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges) regardless of any harm they might cause when running in a containerized environment. ☠️ **Use at your own risk!**                 | `false`                   |
 
 ### `hackingInstructor` section
 
@@ -296,6 +297,7 @@ application:
   numberOfRandomFakeUsers: 0
   altcoinName: Juicycoin
   privacyContactEmail: donotreply@owasp-juice.shop
+  customMetricsPrefix: juiceshop
   social:
     twitterUrl: 'https://twitter.com/owasp_juiceshop'
     facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
