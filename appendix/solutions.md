@@ -384,7 +384,7 @@ in order to exploit and solve them:
 
 ## ⭐⭐⭐ Challenges
 
-###  Register as a user with administrator privileges
+### Register as a user with administrator privileges
 
 1. Submit a `POST` request to <http://localhost:3000/api/Users> with:
    * `{"email":"admin","password":"admin","role":"admin"}` as body
@@ -1386,7 +1386,7 @@ explains the problem and gives an exploit example:
 
    ![XSS alert box in admin area](img/xss4_alert-admin.png)
 
-###  Perform a persisted XSS attack through an HTTP header
+### Perform a persisted XSS attack through an HTTP header
 
 1. Log in as any user.
 2. Visit <http://localhost:3000/#/privacy-security/last-login-ip> where
@@ -1654,17 +1654,20 @@ payload in his blog post
    `401` indicate that this password change failed. This means the
    password could still be the current one of
    `0Y8rMnww$*9VFYE%C2%A759-!Fg1L6t&6lB`!
-8. Not knowing which user it belongs to, you can now
+8. This isn't the exact clear text password, though. It was logged as
+   part of a URL, so it needs to be URL-decoded into
+   `0Y8rMnww$*9VFYE§59-!Fg1L6t&6lB` first.
+9. Not knowing which user it belongs to, you can now
    * either perform a _Password Spraying_ attack by trying to log in
      with the password for all known user emails, e.g. from
      [Access the administration section of the store](#access-the-administration-section-of-the-store)
    * hash the known password with `MD5` and compare it to the password
      hashes harvested from
      [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-9. Either way you will conclude that the password belongs to
-   `J12934@juice-sh.op` so using this as _Email_ and
-   `0Y8rMnww$*9VFYE%C2%A759-!Fg1L6t&6lB` as _Password_ on
-   <http://localhost:3000/#/login> will solve the challenge
+10. Either way you will conclude that the password belongs to
+    `J12934@juice-sh.op` so using this as _Email_ and
+    `0Y8rMnww$*9VFYE§59-!Fg1L6t&6lB` as _Password_ on
+    <http://localhost:3000/#/login> will solve the challenge
 
 🤡 Did you notice that one of the next requests of `161.194.17.103` in
 the leaked access log went to <http://localhost:3000/api/Complaints> and
@@ -1672,7 +1675,7 @@ returned a `201 Created` HTTP status code? It seems the user
 successfully complained, but eventually didn't bother or was too
 frustrated to finish what he originally planned to do.
 
-###  Perform an unwanted information disclosure by accessing data cross-domain
+### Perform an unwanted information disclosure by accessing data cross-domain
 
 1. Find a request to the ```/rest/user/whoami``` API endpoint. Notice
    that you can remove the "Authorization" header and it still works.
@@ -1842,7 +1845,7 @@ Juice Shop on a hostname that is not recognized, you can still solve
 this challenge by logging in regularly but add `"oauth": true` to the
 JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
 
-###  All your orders are belong to us
+### All your orders are belong to us
 
 1. Open the network tab of your browser's DevTools.
 2. Visit <http://localhost:3000/#/track-order> and search for `x` to
@@ -2117,7 +2120,7 @@ loop`._
 >
 > ```xml
 > <?xml version="1.0"?>
-><!DOCTYPE lolz [
+> <!DOCTYPE lolz [
 > <!ENTITY lol "lol">
 > <!ELEMENT lolz (#PCDATA)>
 > <!ENTITY lol1 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
@@ -2129,13 +2132,13 @@ loop`._
 > <!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
 > <!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
 > <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
->]>
-><lolz>&lol9;</lolz>
+> ]>
+> <lolz>&lol9;</lolz>
 > ```
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 
-###  Overwrite the Legal Information file
+### Overwrite the Legal Information file
 
 1. Combing through the updates of the
    [@owasp_juiceshop](https://twitter.com/owasp_juiceshop) Twitter
@@ -2371,7 +2374,7 @@ totally different attack styles.
 👏 Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for providing
 this solution.
 
-###  Like any review at least three times as the same user
+### Like any review at least three times as the same user
 
 1. Liking a review normally results in a request to
    <http://localhost:3000/rest/products/reviews> which associates the
@@ -2506,7 +2509,7 @@ opened on those._
    later.` after roughly 2 seconds. This is due to a defined timeout so
    you do not really DoS your Juice Shop server.
 
-###  Request a hidden resource on server through server
+### Request a hidden resource on server through server
 
 1. Solve
    [Infect the server with "juicy malware" by abusing arbitrary command execution](#infect-the-server-with-juicy-malware-by-abusing-arbitrary-command-execution)
@@ -2541,7 +2544,7 @@ opened on those._
 11. Paste the URL in and click _Link Gravatar_ to get the expected
     challenge solved notification!
 
-###  Infect the server with juicy malware by abusing arbitrary command execution
+### Infect the server with juicy malware by abusing arbitrary command execution
 
 1. Perform the totally obvious Google search for `juicy malware` to find
    <https://github.com/J12934/juicy-malware>
@@ -2588,16 +2591,16 @@ r p romo video 1. The author
 from his personal account, openly spoilering the URL
 <http://juice-shop-staging.herokuapp.
 
-    <http://juice-shop-staging.herokuapp.com/promotion>
-       ![Tweet promoting a new in-app promotion video](img/tweet
-    _
+        <http://juice-shop-staging.herokuapp.com/promotion>
+           ![Tweet promoting a new in-app promotion video](img/tweet
+        _
 
 pro motion.png) 2. Visit <http://localhost:3000/promotion> to watch the
 video. You will notice that it comes with subtitles enabl
 
-    notice that it comes with subtitles enabled by default.
-       ![In-app promotion video](img/p
-    r
+        notice that it comes with subtitles enabled by default.
+           ![In-app promotion video](img/p
+        r
 
 omo _video.png) 3. Right-click and select _View Source_ on the page to
 learn that it loads its video from <http://localhost:3000/video> and
@@ -2659,3 +2662,4 @@ box and once you go _Back_ the challenge solution should trigge
 [^7]: <https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
 
 [^8]: <https://snyk.io/research/zip-slip-vulnerability>
+
