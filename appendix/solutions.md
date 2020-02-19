@@ -45,14 +45,14 @@ error situation and solve this challenge immediately:
   ![Object Error in Login form](img/login-error_js.png)
   ![SQL error in JS console](img/error_js-console.png)
 
-### Read our privacy policy
+### Find the endpoint that serves usage data to be scraped by a popular monitoring system
 
-1. Log in to the application with any user.
-2. Open the dropdown menu on your profile picture and choose _Privacy &
-   Security_.
-3. You will find yourself on
-   <http://localhost:3000/#/privacy-security/privacy-policy> which
-   instantly solves this challenge for you.
+1. Scroll through <https://prometheus.io/docs/introduction/first_steps>
+2. You should notice several mentions of `/metrics` as the default path
+   scraped by Prometheus, e.g. "Prometheus expects metrics to be
+   available on targets on a path of `/metrics`."
+3. Visit <http://localhost:3000/metrics> to view the actual Prometheus
+   metrics of the Juice Shop and solve this challenge
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
@@ -97,6 +97,15 @@ error situation and solve this challenge immediately:
 6. Open one of the three, e.g.
    <http://localhost:3000/redirect?to=https://blockchain.info/address/1AbKfgvw9psQ41NbLi8kufDQTezwG8DRZm>
    to solve the challenge.
+
+### Read our privacy policy
+
+1. Log in to the application with any user.
+2. Open the dropdown menu on your profile picture and choose _Privacy &
+   Security_.
+3. You will find yourself on
+   <http://localhost:3000/#/privacy-security/privacy-policy> which
+   instantly solves this challenge for you.
 
 ### Follow the DRY principle while registering a user
 
@@ -2262,8 +2271,8 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
-   not part of the Juice Shop repo itself and it is publicly accessible,
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is not
+   part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at

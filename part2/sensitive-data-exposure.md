@@ -5,17 +5,18 @@
 | Name                       | Description                                                                                                                                                                             | Difficulty |
 |:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | ⭐⭐⭐⭐     |
-| Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐         |
-| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐   |
+| Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐          |
+| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐    |
+| Exposed Metrics            | Find the endpoint that serves usage data to be scraped by a popular monitoring system.                                                                                                  | ⭐          |
 | Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | ⭐⭐⭐⭐     |
 | Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | ⭐⭐⭐⭐     |
 | GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | ⭐⭐⭐⭐     |
-| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐   |
+| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐    |
 | Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | ⭐⭐⭐⭐     |
-| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐      |
+| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐       |
 | Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | ⭐⭐        |
 | Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐     |
-| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐   |
+| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐    |
 
 ### Gain access to any access log file of the server
 
@@ -74,6 +75,28 @@ allow cross domain access under certain circumstances.
 * What ways are there to access data from a web application
   cross-domain?
 * This challenge uses an old way which is no longer recommended.
+
+### Find the endpoint that serves usage data to be scraped by a popular monitoring system
+
+The popular monitoring system being referred to in the challenge
+description is [Prometheus](https://github.com/prometheus/prometheus):
+
+> Prometheus is an open-source systems monitoring and alerting toolkit
+> originally built at SoundCloud. Since its inception in 2012, many
+> companies and organizations have adopted Prometheus, and the project
+> has a very active developer and user community. It is now a standalone
+> open source project and maintained independently of any company. To
+> emphasize this, and to clarify the project's governance structure,
+> Prometheus joined the Cloud Native Computing Foundation in 2016 as the
+> second hosted project, after Kubernetes. [^6]
+
+* The Juice Shop serves its metrics on the default path expected by
+  Prometheus
+* Guessing the path is probably just as quick as taking the RTFM route
+  via <https://prometheus.io/docs/introduction/first_steps>
+
+> RTFM is an initialism for the expression "read the fucking manual".
+> [^7]
 
 ### Access a developer's forgotten backup file
 
@@ -260,3 +283,6 @@ on the Score Board will tell you which one to look into._
 [^3]: https://www.gartner.com/it-glossary/security-information-and-event-management-siem/
 [^4]: https://github.com/Neo23x0/sigma#what-is-sigma
 [^5]: https://resources.infosecinstitute.com/password-spraying/
+[^6]: https://prometheus.io/docs/introduction/overview/
+[^7]: https://en.wikipedia.org/wiki/RTFM
+
