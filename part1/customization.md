@@ -488,6 +488,7 @@ Juice Shop:
   always be shown in English.
 * Configurations (except `default.yml`) do not support translation of
   custom product names and descriptions as of {{book.juiceShopVersion}}.
+* Several [Hacking Instructor](../part1/challenges.md#hacking-instructor) scripts depend on the product inventory and product reviews that might not exist in the required form when you overwrote the `products` list. Consider turning off the tutorials by setting `hackingInstructor.isEnabled` to `false` in that case. 
 
 ## Additional Browser tweaks
 
@@ -548,5 +549,3 @@ two text replacements:
 ![Coupon Immersion Replacement](/part1/img/coupon_immersion-replacement.png)
 
 ![OAuth Immersion Replacement](/part1/img/oauth_immersion-replacement.png)
-
-
