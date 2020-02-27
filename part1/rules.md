@@ -118,7 +118,7 @@ passive attacks that can be scripted automatically or while you are
 surfing the target application.
 
 The open-source
-[OWASP Zed Attack Proxy (ZAP)](https://wiki.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+[OWASP Zed Attack Proxy (ZAP)](https://www.zaproxy.org/)
 is such a software and offers many useful hacking tools for free:
 
 > ZAP is an easy to use integrated penetration testing tool for finding

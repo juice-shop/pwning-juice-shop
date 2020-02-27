@@ -174,7 +174,7 @@ and internet access to be able to pass.
 If you have a web proxy configured via `HTTP_PROXY` environment
 variable, the end-to-end tests will honor this setting. This can be
 useful to e.g. run the tests through tools like
-[OWASP ZAP](https://wiki.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project)
+[OWASP ZAP](https://www.zaproxy.org/)
 or Burpsuite.
 
 ### Manually testing packaged distributions
