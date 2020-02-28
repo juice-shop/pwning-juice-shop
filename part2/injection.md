@@ -324,8 +324,8 @@ café with free WiFi.
   [Exfiltrate the entire DB schema definition via SQL Injection](#exfiltrate-the-entire-db-schema-definition-via-sql-injection)
   this cannot be achieved through the application frontend.
 
-[^1]: https://wiki.owasp.org/index.php/Injection_Flaws
+[^1]: https://owasp.org/www-community/Injection_Flaws
 [^2]: https://wiki.owasp.org/index.php/Testing_for_NoSQL_injection
 [^3]: https://www.us-cert.gov/ncas/tips/ST04-015
-[^4]: https://wiki.owasp.org/index.php/Blind_SQL_Injection
+[^4]: https://owasp.org/www-community/attacks/Blind_SQL_Injection
 [^5]: https://portswigger.net/kb/issues/00101080_server-side-template-injection

@@ -83,7 +83,7 @@ except for not using it at all._
   _infinite loops_) which your attack must not trigger in order to solve
   this challenge.
 
-[^1]: https://wiki.owasp.org/index.php/Deserialization_Cheat_Sheet
-[^2]: https://wiki.owasp.org/index.php/Code_Injection
+[^1]: https://owasp.org/www-project-cheat-sheets/cheatsheets/Deserialization_Cheat_Sheet.html
+[^2]: https://owasp.org/www-community/attacks/Code_Injection
 [^3]: https://en.wikipedia.org/wiki/Arbitrary_code_execution
 [^4]: https://en.wikipedia.org/wiki/Infinite_loop

@@ -187,4 +187,4 @@ to some arguments between the victim and the vendor.
 
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
-[^3]: https://wiki.owasp.org/index.php/Server_Side_Request_Forgery
+[^3]: https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
