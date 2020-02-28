@@ -53,6 +53,10 @@ outside file system:
 docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myConfig.yml -p 3000:3000 --name juice-shop bkimminich/juice-shop
 ```
 
+### Overriding `default.yml` in Vagrant box
+
+🛠️ **TODO**
+
 ## YAML configuration file
 
 The YAML format for customizations is very straightforward. Below you
