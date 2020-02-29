@@ -147,9 +147,10 @@ Gravatar) and choose a username for your account.
 #### My saved addresses
 
 This page lists your saved addresses and provides you with the ability
-to edit or delete already saved addresses.
+to edit or delete already saved addresses as well as add new ones.
 
 ![Stored Address](/part1/img/stored-address.png)
+![Add Address](/part1/img/add-address.png)
 
 🚨 **Do not enter real address data here!**
 
