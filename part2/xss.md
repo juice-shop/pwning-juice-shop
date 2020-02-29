@@ -21,14 +21,14 @@
 
 | Name                       | Description                                                                                                                     | Difficulty |
 |:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | ⭐⭐⭐      |
-| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | ⭐⭐        |
-| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | ⭐⭐⭐      |
-| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | ⭐         |
-| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | ⭐⭐⭐⭐     |
-| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | ⭐         |
-| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | ⭐⭐⭐⭐     |
-| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                           | ⭐⭐⭐⭐⭐⭐  |
+| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | ⭐⭐⭐        |
+| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | ⭐⭐         |
+| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | ⭐⭐⭐        |
+| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | ⭐          |
+| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | ⭐⭐⭐⭐       |
+| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | ⭐⭐         |
+| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | ⭐⭐⭐⭐       |
+| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                           | ⭐⭐⭐⭐⭐⭐     |
 
 ### Perform a persisted XSS attack without using the frontend application at all
 
@@ -131,8 +131,8 @@ the actual exploit is rather business as usual.
 > the crafted URI or HTTP parameters, improperly processed by the
 > application, and returned to the victim.[^2]
 
-* Look for an input field where its content appears in the response when
-  its form is submitted.
+* Look for a URL parameter where its value appears on the page it is
+  leading to
 * Try probing for XSS vulnerabilities by submitting text wrapped in an
   HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
@@ -169,8 +169,8 @@ approach._
 As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.
 
-* Without utilizing the vulnerability behind another ⭐⭐⭐⭐⭐⭐ challenge
-  it is not possible to plant the XSS payload for this challenge
+* Without utilizing the vulnerability behind another ⭐⭐⭐⭐⭐⭐ challenge it
+  is not possible to plant the XSS payload for this challenge
 * The mentioned "marketing collateral" might have been publicly
   advertised by the Juice Shop but is not necessarily part of its
   sitemap yet

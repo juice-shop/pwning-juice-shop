@@ -137,17 +137,6 @@ error situation and solve this challenge immediately:
 5. From now on you will see the additional menu item _Score Board_ in
    the navigation bar.
 
-### Perform a reflected XSS attack
-
-1. Log in as any user.
-2. Click the _Track Orders_ button.
-3. Paste the attack string ``<iframe src="javascript:alert(`xss`)">``
-   into the _Order ID_ field.
-4. Click the _Track_ button.
-5. An alert box with the text "xss" should appear.
-
-   ![XSS alert box](img/xss0_alert.png)
-
 ### Perform a DOM XSS attack
 
 1. Paste the attack string ``<iframe src="javascript:alert(`xss`)">``
@@ -390,6 +379,25 @@ in order to exploit and solve them:
 8. The naive sanitizer only removes `<a|a` effectively changing the
    username into ``<script>alert(`xss`)</script>`` thus resulting in the
    expected alert box popping up.
+
+### Perform a reflected XSS attack
+
+1. Log in as any user.
+2. Do some shopping and then visit the _Order History_.
+3. Clicking on the little "Truck" button for any of your orders will
+   show you the delivery status of your order.
+4. Notice the `id` parameter in the URL
+   <http://localhost:3000/#/track-result?id=fe01-f885a0915b79f2a9> with
+   `fe01-f885a0915b79f2a9` being one of your order numbers?
+5. As the `fe01-f885a0915b79f2a9` is displayed on the screen, it might
+   be susceptible to an XSS attack.
+6. Paste the attack string ``<iframe src="javascript:alert(`xss`)">``
+   into that URL so that you have
+   <http://localhost:3000/#/track-result?id=%3Ciframe%20src%3D%22javascript:alert(%60xss%60)%22%3E>
+7. Refresh that URL to get the XSS payload executed and the challenge
+   marked as solved.
+
+   ![XSS alert box](img/xss0_alert.png)
 
 ## ⭐⭐⭐ Challenges
 
@@ -1987,8 +1995,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-📕: If you do not want to write your own script for this challenge,
-take a look at
+📕: If you do not want to write your own script for this challenge, take
+a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
 [philly-vanilly](https://github.com/philly-vanilly).
@@ -2590,8 +2598,8 @@ opened on those._
    && chmod +x malware && ./malware')}`. Submit this as _Username_ and
    (on a Linux server) the challenge should be marked as solved
 
-ℹ️ Remember that you need to use the right malware file for your
-server's operation system and also their synonym command for `wget`.
+ℹ️ Remember that you need to use the right malware file for your server's
+operation system and also their synonym command for `wget`.
 
 ### Embed an XSS payload into our promo video
 
