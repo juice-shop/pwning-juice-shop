@@ -91,6 +91,8 @@ troubleshooting as well.
 
 ![MultiJuicer dashboard](img/multi-juicer_dashboard.png)
 
+![MultiJuicer dashboard](img/multi-juicer_dashboard2.jpg)
+
 The MultiJuicer repository offers guidance on [how to set up the
 system on different cloud provider platforms](https://github.com/iteratec/multi-juicer#installation-guides-for-specific-cloud-providers),
 such as Digital Ocean, OpenShift, AWS or Azure.
