@@ -89,9 +89,8 @@ its Juice Shop instances. It shows challenge progress along with other
 functional and technical stats and can be very helpful in
 troubleshooting as well.
 
-![MultiJuicer dashboard](img/multi-juicer_dashboard.png)
-
-![MultiJuicer dashboard](img/multi-juicer_dashboard2.jpg)
+![MultiJuicer dashboard with technical metrics](img/multi-juicer_dashboard.png)
+![MultiJuicer dashboard with business metrics](img/multi-juicer_dashboard1.png)
 
 The MultiJuicer repository offers guidance on [how to set up the
 system on different cloud provider platforms](https://github.com/iteratec/multi-juicer#installation-guides-for-specific-cloud-providers),
