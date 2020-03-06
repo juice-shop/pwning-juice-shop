@@ -550,7 +550,7 @@ solutions, this one relies on CAPTCHA-pinning:
 # CAPTCHA Bypass
 # Save this as captcha-bypass.toml
 # Get Captcha information from this endpoint first: http://localhost:3000/rest/captcha/
-# Then repalce captchaId and captcha values in body parameter of this file
+# Then replace captchaId and captcha values in body parameter of this file
 # Launch this file by doing ./racethweb captcha-bypass.toml
 count = 10
 verbose = true

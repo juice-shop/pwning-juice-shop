@@ -117,8 +117,7 @@ with lots of attack patterns built in and offer active as well as
 passive attacks that can be scripted automatically or while you are
 surfing the target application.
 
-The open-source
-[OWASP Zed Attack Proxy (ZAP)](https://www.zaproxy.org/)
+The open-source [OWASP Zed Attack Proxy (ZAP)](https://www.zaproxy.org/)
 is such a software and offers many useful hacking tools for free:
 
 > ZAP is an easy to use integrated penetration testing tool for finding
@@ -175,15 +174,16 @@ now! Congratulations! In case you want to hack more on your own than
 [follow the breadcrumbs through the wood of challenges in part II](../part2/README.md),
 the most direct way to ask for specific hints for a particular challenge
 is the community chat on Gitter.im at
-https://gitter.im/bkimminich/juice-shop. You can simply log in to Gitter
-with your GitHub account.
+<https://gitter.im/bkimminich/juice-shop>. You can simply log in to
+Gitter with your GitHub account.
 
 If you prefer, you can also use the project's Slack channel at
-https://owasp.slack.com/messages/project-juiceshop. You just need to
-self-invite you to OWASP's Slack first at http://owasp.herokuapp.com. If
-you like it a bit more nostalgic, you can also join and post to the
-project mailing list at
-https://lists.owasp.org/mailman/listinfo/owasp_juice_shop_project.
+<https://owasp.slack.com/messages/project-juiceshop>. You just need to
+self-invite you to OWASP's Slack first at
+<https://owasp-slack.herokuapp.com>. If you like it a bit more
+nostalgic, you can also join and post to the project Google
+group/mailing list at
+<https://groups.google.com/a/owasp.org/forum/#!forum/juice-shop-project>.
 
 ## ❌ Things considered cheating
 

@@ -4,7 +4,7 @@
 
 | Name               | Description                                                                                    | Difficulty |
 |:-------------------|:-----------------------------------------------------------------------------------------------|:-----------|
-| Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | ⭐         |
+| Outdated Whitelist | Let us redirect you to one of our crypto currency addresses which are not promoted any longer. | ⭐          |
 | Whitelist Bypass   | Enforce a redirect to a page you are not supposed to redirect to.                              | ⭐⭐⭐⭐     |
 
 ### Let us redirect you to one of our crypto currency addresses
@@ -22,8 +22,8 @@ point.
 
 ### Enforce a redirect to a page you are not supposed to redirect to
 
-This challenge is about _redirecting_ to an entirely unallowed different
-location.
+This challenge is about _redirecting_ to an entirely disallowed
+different location.
 
 * You can find several places where redirects happen in the OWASP Juice
   Shop
@@ -35,3 +35,4 @@ location.
 > and by definition, everything else is not authorized.[^1]
 
 [^1]: https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html#whitelisting-vs-blacklisting
+

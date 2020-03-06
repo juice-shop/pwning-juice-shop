@@ -9,7 +9,7 @@ in case you get stuck at a particular challenge.
 
 In case you want to look up hints for a particular challenge, the
 following tables lists all challenges of the OWASP Juice Shop grouped by
-their difficulty and in the same order as thery appear on the Score
+their difficulty and in the same order as they appear on the Score
 Board.
 
 _The challenge hints found in this release of the companion guide are

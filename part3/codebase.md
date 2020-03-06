@@ -385,7 +385,7 @@ compliant to javascript (ES6) syntax.
 > when the route is matched.[^4]
 
 Routes are defined via the the [Express](http://expressjs.com) framework
-and can be handled by any of the following middlewares:
+and can be handled by any of the following middleware:
 
 * An [automatically generated API endpoint](#generated-api-endpoints)
   for one of the exposed tables from the application's
@@ -549,7 +549,7 @@ available authorization checks.
 #### Access control on routes
 
 For both the generated and hand-written middleware access can be
-retricted on the corresponding routes by adding `insecurity.denyAll()`
+restricted on the corresponding routes by adding `insecurity.denyAll()`
 or `insecurity.isAuthorized()` as an extra middleware. Examples for
 denying all access to certain HTTP verbs for the `SecurityQuestion` and
 `SecurityAnswer` models:

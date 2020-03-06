@@ -78,7 +78,7 @@ always be sent to their own personal instance.
 
 Registration at MultiJuicer is very straightforward for the users/teams.
 Messing with other instances is prevented by assigning a passcode to
-each of them which should only be shared among team membeers - or not at
+each of them which should only be shared among team members - or not at
 all for individuals.
 
 ![MultiJuicer registration](img/multi-juicer_register.jpeg)
