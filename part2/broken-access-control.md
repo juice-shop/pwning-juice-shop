@@ -25,12 +25,13 @@
 | Name               | Description                                                                                                                            | Difficulty |
 |:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Admin Section      | Access the administration section of the store.                                                                                        | ⭐⭐        |
+| CSRF               | Change the name of a user by performing Cross-Site Request Forgery from another origin.                                                | ⭐⭐⭐       |
 | Easter Egg         | Find the hidden easter egg.                                                                                                            | ⭐⭐⭐⭐     |
 | Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | ⭐⭐        |
-| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐      |
-| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐      |
-| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐      |
-| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐      |
+| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐       |
+| Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐       |
+| Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐       |
+| Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐       |
 | SSRF               | Request a hidden resource on server through server.                                                                                    | ⭐⭐⭐⭐⭐⭐  |
 | View Basket        | View another user's shopping basket.                                                                                                   | ⭐⭐        |
 
@@ -51,6 +52,10 @@ option available in the main menu.
   the score board link
 * There is some access control in place, but there are at least three
   ways to bypass it.
+
+### Change the name of a user by performing Cross-Site Request Forgery from another origin
+
+🛠️ **TODO**
 
 ### Find the hidden easter egg
 
@@ -188,3 +193,4 @@ to some arguments between the victim and the vendor.
 [^1]: https://en.wikipedia.org/wiki/Privilege_escalation
 [^2]: https://en.wikipedia.org/wiki/Easter_egg_(media)
 [^3]: https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
+

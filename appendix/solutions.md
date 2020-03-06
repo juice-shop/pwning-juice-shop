@@ -561,6 +561,10 @@ verbose = true
     headers = ["Content-Type: application/json"]
 ```
 
+### Change the name of a user by performing Cross-Site Request Forgery from another origin
+
+🛠️ **TODO**
+
 ### Post some feedback in another users name
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
@@ -1995,8 +1999,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-📕: If you do not want to write your own script for this challenge, take
-a look at
+📕: If you do not want to write your own script for this challenge,
+take a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
 [philly-vanilly](https://github.com/philly-vanilly).
@@ -2279,8 +2283,8 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is not
-   part of the Juice Shop repo itself and it is publicly accessible,
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
+   not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
@@ -2598,8 +2602,8 @@ opened on those._
    && chmod +x malware && ./malware')}`. Submit this as _Username_ and
    (on a Linux server) the challenge should be marked as solved
 
-ℹ️ Remember that you need to use the right malware file for your server's
-operation system and also their synonym command for `wget`.
+ℹ️ Remember that you need to use the right malware file for your
+server's operation system and also their synonym command for `wget`.
 
 ### Embed an XSS payload into our promo video
 
