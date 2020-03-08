@@ -61,7 +61,7 @@ Forgery (CSRF) attack within <http://htmledit.squarefree.com>, which represents 
 You can enter your HTML and Script code in the upper half of the page, while the result is instantly
 displayed in the lower half.
 
-* Take a look at what happens when you change the username within the user profile.
+* Take a look at what happens when you change the username within the [profile page](http://localhost:3000/profile).
 * Search for information about CSRF attacks and look out for examples that can be applied to this challenge.
 * Write the code for the CSRF attack within <http://htmledit.squarefree.com> and verify that it changes your username.
 
