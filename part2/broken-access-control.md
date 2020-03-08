@@ -55,7 +55,15 @@ option available in the main menu.
 
 ### Change the name of a user by performing Cross-Site Request Forgery from another origin
 
-🛠️ **TODO**
+For implementation reasons, this challenges requires you to craft the code for the Cross-Site Request
+Forgery (CSRF) attack within <http://htmledit.squarefree.com>, which represents another [origin]
+(https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy) than the Juice Shop.
+You can enter your HTML and Script code in the upper half of the page, while the result is instantly
+displayed in the lower half.
+
+* Take a look at what happens when you change the username within the user profile.
+* Learn more about CSRF attacks and find examples that can be applied to this challenge.
+* Write the code for the CSRF attack within <http://htmledit.squarefree.com> and verify that it changes your username.
 
 ### Find the hidden easter egg
 
