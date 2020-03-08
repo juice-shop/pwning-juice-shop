@@ -13,6 +13,10 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 ## ⭐ Challenges
 
+### Use the bonus payload in the DOM XSS challenge
+
+🛠️ **TODO**
+
 ### Access a confidential document
 
 1. Follow the link to titled _Check out our boring terms of use if you

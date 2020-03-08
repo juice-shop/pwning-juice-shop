@@ -19,16 +19,17 @@
 
 ## Challenges covered in this chapter
 
-| Name                       | Description                                                                                                                     | Difficulty |
-|:---------------------------|:--------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all. | ⭐⭐⭐        |
-| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                           | ⭐⭐         |
-| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.    | ⭐⭐⭐        |
-| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                     | ⭐          |
-| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                        | ⭐⭐⭐⭐       |
-| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                               | ⭐⭐         |
-| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.    | ⭐⭐⭐⭐       |
-| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                           | ⭐⭐⭐⭐⭐⭐     |
+| Name                       | Description                                                                                                                                                                                                                                                                                                                                                       | Difficulty |
+|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
+| API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all.                                                                                                                                                                                                                                   | ⭐⭐⭐       |
+| Bonus Payload              | Use the bonus payload `<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>` in the _DOM XSS_ challenge. | ⭐          |
+| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                                                                                                                                                                                                                                                             | ⭐⭐        |
+| Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.                                                                                                                                                                                                                                      | ⭐⭐⭐       |
+| DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                       | ⭐          |
+| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                                                                                                                                                                                                                                                          | ⭐⭐⭐⭐     |
+| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                 | ⭐⭐        |
+| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.                                                                                                                                                                                                                                      | ⭐⭐⭐⭐     |
+| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                                                                                                                                                                                                                                                             | ⭐⭐⭐⭐⭐⭐  |
 
 ### Perform a persisted XSS attack without using the frontend application at all
 
@@ -53,6 +54,10 @@ to master this challenge.
   the API can help you here
 * Careless developers might have exposed API methods that the client
   does not even need
+
+### Use the bonus payload in the DOM XSS challenge
+
+🛠️ **TODO**
 
 ### Perform an XSS attack on a legacy page within the application
 
@@ -169,8 +174,8 @@ approach._
 As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.
 
-* Without utilizing the vulnerability behind another ⭐⭐⭐⭐⭐⭐ challenge it
-  is not possible to plant the XSS payload for this challenge
+* Without utilizing the vulnerability behind another ⭐⭐⭐⭐⭐⭐ challenge
+  it is not possible to plant the XSS payload for this challenge
 * The mentioned "marketing collateral" might have been publicly
   advertised by the Juice Shop but is not necessarily part of its
   sitemap yet

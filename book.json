@@ -21,7 +21,7 @@
     "juiceShopCtfVersion": "v7.0.0",
     "ctfdVersion": "2.x",
     "rtbVersion": "3.3 or higher",
-    "juiceShopNumberOfChallenges": 92,
+    "juiceShopNumberOfChallenges": 93,
     "nodeVersions": "10.x, 12.x and 13.x",
     "recommendedNodeVersion": "12.x",
     "herokuNodeVersion": "12.x",
