@@ -51,6 +51,7 @@
 * [Challenge solutions](appendix/solutions.md)
 * [Trainer's guide](appendix/trainers.md)
 * [Troubleshooting](appendix/troubleshooting.md)
+* [Jingle lyrics](appendix/lyrics.md)
 
 ## Postface
 
