@@ -23,8 +23,8 @@
 |:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all.                                                                                                                                                                                                                                   | ⭐⭐⭐       |
 | Bonus Payload              | Use the bonus payload `<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>` in the _DOM XSS_ challenge. | ⭐          |
-| Classic Stored XSS         | Perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                                                                                                                                                                                                                                                             | ⭐⭐        |
 | Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.                                                                                                                                                                                                                                      | ⭐⭐⭐       |
+| CSP Bypass                 | Bypass the Content Security Policy and perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                                                                                                                                                                                                                      | ⭐⭐⭐⭐     |
 | DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                       | ⭐          |
 | HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                                                                                                                                                                                                                                                          | ⭐⭐⭐⭐     |
 | Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                 | ⭐⭐        |
@@ -59,7 +59,7 @@ to master this challenge.
 
 🛠️ **TODO**
 
-### Perform an XSS attack on a legacy page within the application
+### Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
 In the [Architecture overview](../introduction/architecture.md) you were
 told that the Juice Shop uses a modern _Single Page Application_
@@ -67,8 +67,26 @@ frontend. That was not entirely true.
 
 * Find a screen in the application that looks subtly odd and dated
   compared with all other screens
-* What is _even better_ than homegrown validation based on a RegEx?
-  Homegrown sanitization based on a RegEx!
+* Before trying any XSS attacks, you should understand how the page is
+  setting its Content Security Policy
+* For the subsequent XSS, make good use of the flaws in the homegrown
+  sanitization based on a RegEx!
+
+> Content Security Policy (CSP) is an added layer of security that helps
+> to detect and mitigate certain types of attacks, including Cross Site
+> Scripting (XSS) and data injection attacks. These attacks are used for
+> everything from data theft to site defacement to distribution of
+> malware.
+>
+> CSP is designed to be fully backward compatible (\[...\]). Browsers
+> that don't support it still work with servers that implement it, and
+> vice-versa: browsers that don't support CSP simply ignore it,
+> functioning as usual, defaulting to the standard same-origin policy
+> for web content. If the site doesn't offer the CSP header, browsers
+> likewise use the standard same-origin policy.
+>
+> To enable CSP, you need to configure your web server to return the
+> Content-Security-Policy HTTP header (\[...\]).[^5]
 
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 
@@ -186,4 +204,5 @@ how hard it is to successfully place the XSS payload in the application.
 [^2]: https://wiki.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)
 [^3]: https://wiki.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)
 [^4]: https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet
+[^5]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 
