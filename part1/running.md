@@ -178,6 +178,26 @@ docker run -d -p 80:3000 bkimminich/juice-shop
    `--name <app name> --deployment-container-image-name
    bkimminich/juice-shop`
 
+### Google Compute Engine Instance
+
+1. Login to the Google Cloud Console and
+   [open Cloud Shell](https://console.cloud.google.com/home/dashboard?cloudshell=true).
+2. Launch a new GCE instance based on the juice-shop container. Take
+   note of the `EXTERNAL_IP` provided in the output.
+
+```
+gcloud compute instances create-with-container owasp-juice-shop-app --container-image bkimminich/juice-shop
+```
+
+3. Create a firewall rule that allows inbound traffic to port 3000
+
+```
+gcloud compute firewall-rules create juice-rule --allow tcp:3000
+```
+
+4. Your container is now running and available at
+   `http://<EXTERNAL_IP>:3000/`
+
 ## Installing a specific release version
 
 The installation instructions above will all give you the latest
