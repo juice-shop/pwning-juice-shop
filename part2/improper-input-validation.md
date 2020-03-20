@@ -10,14 +10,15 @@
 
 | Name                    | Description                                                | Difficulty |
 |:------------------------|:-----------------------------------------------------------|:-----------|
-| Admin Registration      | Register as a user with administrator privileges.          | ⭐⭐⭐      |
+| Admin Registration      | Register as a user with administrator privileges.          | ⭐⭐⭐       |
+| Deluxe Fraud            | Obtain a Deluxe Membership without paying for it.       | ⭐⭐⭐     |
 | Expired Coupon          | Successfully redeem an expired campaign coupon code.       | ⭐⭐⭐⭐     |
-| Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode". | ⭐         |
-| Payback Time            | Place an order that makes you rich.                        | ⭐⭐⭐      |
-| Repetitive Registration | Follow the DRY principle while registering a user.         | ⭐         |
-| Upload Size             | Upload a file larger than 100 kB.                          | ⭐⭐⭐      |
-| Upload Type             | Upload a file that has no .pdf or .zip extension.          | ⭐⭐⭐      |
-| Zero Stars              | Give a devastating zero-star feedback to the store.        | ⭐         |
+| Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode". | ⭐          |
+| Payback Time            | Place an order that makes you rich.                        | ⭐⭐⭐       |
+| Repetitive Registration | Follow the DRY principle while registering a user.         | ⭐          |
+| Upload Size             | Upload a file larger than 100 kB.                          | ⭐⭐⭐       |
+| Upload Type             | Upload a file that has no .pdf or .zip extension.          | ⭐⭐⭐       |
+| Zero Stars              | Give a devastating zero-star feedback to the store.        | ⭐          |
 
 ### Register as a user with administrator privileges
 
@@ -30,6 +31,10 @@ chosen by simply leaving then admin features in the web shop itself and
   in this use case
 * Think of the simplest possible implementations of a distinction
   between regular users and administrators
+
+### Obtain a Deluxe Membership without paying for it
+
+🛠️ **TODO**
 
 ### Successfully redeem an expired campaign coupon code
 
