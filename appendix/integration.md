@@ -8,7 +8,7 @@ etc.
 ## Challenges API
 
 The endpoint `/api/Challenges` on your local Juice Shop instance (i.e.
-<http://localhost:3000/api7Challenges>) returns information on the
+<http://localhost:3000/api/Challenges>) returns information on the
 configured challenges along with their current state in an easily
 consumable JSON format:
 
@@ -115,8 +115,8 @@ The latest versions of the `challenges.yml` file can be found here:
 | Link to official step-by-step solution for a specific challenge                                                    | `https://pwning.owasp-juice.shop/appendix/solutions.html#<hash part of hintUrl>` |                                                  | <https://pwning.owasp-juice.shop/appendix/solutions.html#find-the-carefully-hidden-score-board-page> or <https://pwning.owasp-juice.shop/appendix/solutions.html#perform-a-dom-xss-attack> |
 | Direct link to a [Hacking Instructor](../part1/challenges.md#hacking-instructor) tutorial for a specific challenge | `/#/hacking-instructor?challenge=<name>`                                         | Only for challenges where `tutorial` is defined. | <http://localhost:3000/#/hacking-instructor?challenge=Score%20Board> or <http://preview.owasp-juice.shop/#/hacking-instructor?challenge=DOM%20XSS>                                         |
 
-🖼️ _As the utilized GitBook version does not set the
-`x-frame-options` header, it is possible to display content from
+🖼️ _As the utilized GitBook version does not set the `x-frame-options`
+header, it is possible to display content from
 <https://pwning.owasp-juice.shop> in an `<iframe>`._
 
 ### YAML integration example
@@ -131,3 +131,11 @@ The latest versions of the `challenges.yml` file can be found here:
 ## Prometheus metrics endpoint
 
 🔧 **TODO**
+
+### Prometheus integration example
+
+* The [MultiJuicer](https://github.com/iteratec/multi-juicer) platform
+  uses the Prometheus endpoints to populate
+  [some of its Grafana dashboard](trainers.md#hosting-individual-instances-for-multiple-users)
+  with information about challenge progress.
+
