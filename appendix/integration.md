@@ -115,8 +115,8 @@ The latest versions of the `challenges.yml` file can be found here:
 | Link to official step-by-step solution for a specific challenge                                                    | `https://pwning.owasp-juice.shop/appendix/solutions.html#<hash part of hintUrl>` |                                                  | <https://pwning.owasp-juice.shop/appendix/solutions.html#find-the-carefully-hidden-score-board-page> or <https://pwning.owasp-juice.shop/appendix/solutions.html#perform-a-dom-xss-attack> |
 | Direct link to a [Hacking Instructor](../part1/challenges.md#hacking-instructor) tutorial for a specific challenge | `/#/hacking-instructor?challenge=<name>`                                         | Only for challenges where `tutorial` is defined. | <http://localhost:3000/#/hacking-instructor?challenge=Score%20Board> or <http://preview.owasp-juice.shop/#/hacking-instructor?challenge=DOM%20XSS>                                         |
 
-🖼️ _As the utilized GitBook version does not set the `x-frame-options`
-header, it is possible to display content from
+🖼️ _As the utilized GitBook version does not set the
+`x-frame-options` header, it is possible to display content from
 <https://pwning.owasp-juice.shop> in an `<iframe>`._
 
 ### YAML integration example
@@ -130,7 +130,33 @@ header, it is possible to display content from
 
 ## Prometheus metrics endpoint
 
-🔧 **TODO**
+Every Juice Shop instance offers a metrics endpoint (finding it is
+actually the hacking challenge
+[Find the endpoint that serves usage data to be scraped by a popular monitoring system](../part2/sensitive-data-exposure.md#find-the-endpoint-that-serves-usage-data-to-be-scraped-by-a-popular-monitoring-system))
+to be consumed by the [Prometheus](https://prometheus.io/) monitoring
+system. Apart from "business" metrics and CPU/RAM usage the metrics
+contain summarized information about the current challenge progress on
+an instance of Juice Shop:
+
+```yaml
+# HELP juiceshop_challenges_solved Number of solved challenges grouped by difficulty.
+# TYPE juiceshop_challenges_solved gauge
+juiceshop_challenges_solved{difficulty="1",app="juiceshop"} 0
+juiceshop_challenges_solved{difficulty="2",app="juiceshop"} 0
+juiceshop_challenges_solved{difficulty="3",app="juiceshop"} 0
+juiceshop_challenges_solved{difficulty="4",app="juiceshop"} 0
+juiceshop_challenges_solved{difficulty="5",app="juiceshop"} 0
+juiceshop_challenges_solved{difficulty="6",app="juiceshop"} 0
+
+# HELP juiceshop_challenges_total Total number of challenges grouped by difficulty.
+# TYPE juiceshop_challenges_total gauge
+juiceshop_challenges_total{difficulty="1",app="juiceshop"} 11
+juiceshop_challenges_total{difficulty="2",app="juiceshop"} 10
+juiceshop_challenges_total{difficulty="3",app="juiceshop"} 22
+juiceshop_challenges_total{difficulty="4",app="juiceshop"} 23
+juiceshop_challenges_total{difficulty="5",app="juiceshop"} 17
+juiceshop_challenges_total{difficulty="6",app="juiceshop"} 11
+```
 
 ### Prometheus integration example
 
