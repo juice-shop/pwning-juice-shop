@@ -96,8 +96,6 @@ first place.
     - Docker
     - Heroku
     - Windows
-  tags: # (optional) additional tags displayed on the Score Board
-    - 'new in v10.1.0'
   tutorial: # (optional) present only on challenges with a Hacking Instructor tutorial
     order: 1 # a unique number to specify the recommended order of tutorials
 ```
