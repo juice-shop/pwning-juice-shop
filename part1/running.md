@@ -172,7 +172,7 @@ docker run -d -p 80:3000 bkimminich/juice-shop
 3. Create an app service plan by running `az appservice plan create
    --name <plan name> --resource-group <group name> --sku S1 --is-linux`
 4. Create a web app with the
-   [Juice Shop Docker](https://registry.hub.docker.com/u/bkimminich/juice-shop/)
+   [Juice Shop Docker](https://hub.docker.com/r/bkimminich/juice-shop/)
    image by running the following (on one line in the bash shell) `az
    webapp create --resource-group <group name> --plan <plan name> `
    `--name <app name> --deployment-container-image-name
