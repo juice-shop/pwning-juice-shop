@@ -102,9 +102,9 @@ first place.
 
 The latest versions of the `challenges.yml` file can be found here:
 
-* <https://github.com/bkimminich/juice-shop/blob/master/data/static/challenges.yml>
+* <https://raw.githubusercontent.com/bkimminich/juice-shop/master/data/static/challenges.yml>
   for the latest released version (`master` branch)
-* <https://github.com/bkimminich/juice-shop/blob/develop/data/static/challenges.yml>
+* <https://raw.githubusercontent.com/bkimminich/juice-shop/develop/data/static/challenges.yml>
   for the next version to be released (`develop` branch)
 
 ### Generating links to Juice Shop
