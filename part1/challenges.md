@@ -15,12 +15,12 @@ find out what needs to be done.
 
 ![Partly solved Score Board](img/score-board_partly.png)
 
-The challenges are rated with a difficulty level between ⭐ and
-⭐⭐⭐⭐⭐⭐, with more stars representing a higher difficulty. To make the
-list of challenges less daunting, they are clustered by difficulty. By
-default only the 1-star challenges are unfolded. You can open or
-collapse all challenge blocks as you like. Collapsing a block has _no
-impact_ on whether you can _solve_ any of its challenges.
+The challenges are rated with a difficulty level between ⭐ and ⭐⭐⭐⭐⭐⭐,
+with more stars representing a higher difficulty. To make the list of
+challenges less daunting, they are clustered by difficulty. By default
+only the 1-star challenges are unfolded. You can open or collapse all
+challenge blocks as you like. Collapsing a block has _no impact_ on
+whether you can _solve_ any of its challenges.
 
 The difficulty ratings have been continually adjusted over time based on
 user feedback. The ratings allow you to manage your own hacking pace and
@@ -73,11 +73,11 @@ each one individually, as you can simply `Shift`-click one of their
 _X_-buttons to dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
-might also show a 🏁 symbol with a character sequence next to it. If
-you are doing a hacking session just on your own, you can completely
-ignore this flag. The code is only relevant if you are participating in
-a CTF event. Please refer to chapter [Hosting a CTF event](ctf.md) for
-more information this topic.
+might also show a 🏁 symbol with a character sequence next to it. If you
+are doing a hacking session just on your own, you can completely ignore
+this flag. The code is only relevant if you are participating in a CTF
+event. Please refer to chapter [Hosting a CTF event](ctf.md) for more
+information this topic.
 
 !["Challenge solved!" notification with flag code](img/notification_with_flag.png)
 
@@ -144,11 +144,32 @@ summoned again for another hacking challenge via the Score Board.
 
 ![Hacking Instructor reports successful solution](img/hacking-instructor_3.png)
 
-ℹ️ The Hacking Instructor is a tool to help beginners getting started.
-It cannot offer a tutorial for _every challenge_ as some are too complex
-or require too many steps outside the application. In Part III you can
+ℹ️ The Hacking Instructor is a tool to help beginners getting started. It
+cannot offer a tutorial for _every challenge_ as some are too complex or
+require too many steps outside the application. In Part III you can
 learn more about how to write
 [Hacking Instructor tutorial scripts](../part3/tutorials.md).
+
+### Tutorial mode
+
+When using the Juice Shop in a classroom setup the trainer or teacher
+might want to set a slower pace at the beginning to give everyone a
+chance to get familiar with the application. Here the `tutorial.yml`
+configuration can be very useful, which is available since `v10.2.0` of
+Juice Shop. This mode hides all challenges without tutorials from the
+Score Board and disables all advanced filter options:
+
+![Only tier 1 tutorials unlocked](img/tutorial-mode1.png)
+
+In the tutorial mode challenges are only gradually unlocked by
+difficulty tiers. When for example all 1-star challenges with a tutorial
+have been solved, the 2-star challenges with tutorials are displayed:
+
+![Tier 2 tutorials unlocked after tier 1 was solved](img/tutorial-mode2.png)
+
+When all challenges with tutorials have been solved, the entire Score
+Board with all challenges is shown and all filters are enabled. Passing
+in the `NODE_ENV=tutorial` environment variable will activate this mode.
 
 {% endif %}
 
