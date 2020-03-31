@@ -210,6 +210,7 @@ Juice Shop.
 |:-------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `showSolvedNotifications`                  | Shows or hides all instant _"challenge solved"_-notifications. Recommended to set to `false` for awareness demos.                                                                                                                 | `true`                                                                                                                                                                                                                                                                                                            |
 | `showHints`                                | Shows or hides hints for each challenge on hovering over/clicking its _"unsolved"_ badge on the score board.                                                                                                                      | `true`                                                                                                                                                                                                                                                                                                            |
+| `restrictToTutorialsFirst`                 | Disables all _Score Board_ filter options and hides those of the {{book.juiceShopNumberOfChallenges}} challenges without a tutorial until all challenges with a tutorial have been solved.                                        | `false`                                                                                                                                                                                                                                                                                                           |
 | `overwriteUrlForProductTamperingChallenge` | URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the [Product Tampering](../part2/broken-access-control.md#change-the-href-of-the-link-within-the-o-saft-product-description) challenge. | `https://owasp.slack.com`                                                                                                                                                                                                                                                                                         |
 | `xssBonusPayload`                          | This XSS payload is expected during the [Bonus Payload](../part2/xss.md#use-the-bonus-payload-in-the-dom-xss-challenge) challenge.                                                                                                | `'<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'` |
 | `safetyOverride`                           | Enables all [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges) regardless of any harm they might cause when running in a containerized environment. ☠️ **Use at your own risk!**                 | `false`                                                                                                                                                                                                                                                                                                           |
@@ -361,6 +362,7 @@ application:
 challenges:
   showSolvedNotifications: true
   showHints: true
+  restrictToTutorialsFirst: false
   safetyOverride: false
   overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
   xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
@@ -453,8 +455,8 @@ protractor`. If they pass, all challenges will be working fine!
 
 ## Provided customizations
 
-The following three customizations are provided out of the box by OWASP
-Juice Shop:
+The following fully re-themed customizations are provided out of the box
+by OWASP Juice Shop for demonstration purposes:
 * [7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml):
   Full conversion <https://7ms.us>-theme for the first podcast that
   picked up the Juice Shop way before it was famous! 😎
@@ -470,6 +472,13 @@ Juice Shop:
   An homage to
   [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
   May it rest in JSPs! 💀
+* [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
+  If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
+  this customization is for you. 🧃
+
+Furthermore these convenience customizations are provided
+out-of-the-box to simplify usage of OWASP Juice Shop in specific use
+cases and situations:
 * [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
   Keeps the Juice Shop in its default layout but disabled hints while
   enabling CTF flag codes in the _"challenge solved"_-notifications.
@@ -478,9 +487,12 @@ Juice Shop:
 * [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
   Keeps the Juice Shop in its default layout but hides all _"challenge
   solved"_-notifications, GitHub ribbon and challenge hints. 🔇
-* [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
-  If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
-  this customization is for you. 🧃
+* [Tutorial mode](https://github.com/bkimminich/juice-shop/blob/master/config/tutorial.yml):
+  Restricts the user to first solve all challenges with
+  [Hacking Instructor](challenges.md#hacking-instructor) tutorials
+  before the entire _Score Board_ gets unlocked and filterable. 🏫
+  Hidden challenges can still be solved and users will receive
+  corresponding success notifications!
 * [Unsafe mode](https://github.com/bkimminich/juice-shop/blob/master/config/unsafe.yml):
   Keeps everything at default settings except _enabling_ all
   [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges)
