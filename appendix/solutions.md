@@ -1273,6 +1273,10 @@ to respond.
 8. Then type any _New Password_ and matching _Repeat New Password_
 9. Click _Change_ to solve this challenge
 
+### Reset Uvogin's password via the Forgot Password mechanism
+
+**TODO**
+
 ### Rat out a notorious character hiding in plain sight in the shop
 
 1. Looking for irregularities among the image files you will at some
