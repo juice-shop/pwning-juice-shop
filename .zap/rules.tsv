@@ -1,1 +1,5 @@
-3	IGNORE	(Source Code Disclosure - Perl)
+10099	IGNORE	(Source Code Disclosure - Perl)
+10099	IGNORE	(Source Code Disclosure - PHP)
+10099	IGNORE	(Source Code Disclosure - SQL)
+2	IGNORE	(Private IP Disclosure)
+10094	IGNORE	(Base64 Disclosure)
