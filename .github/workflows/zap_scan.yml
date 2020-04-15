@@ -2,12 +2,12 @@ name: "ZAP Baseline Scan"
 
 on:
   schedule:
-    - cron:  '0 1 * * *'
+    - cron:  '0 18 * * *'
 
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: Scan self-hosted Gitbook
+    name: 'Scan "Pwning OWASP Juice Shop" Gitbook instance'
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -18,4 +18,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           target: 'https://pwning.owasp-juice.shop'
-          cmd_options: '-a'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a -j -m 5'
