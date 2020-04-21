@@ -150,6 +150,29 @@ or require too many steps outside the application. In Part III you can
 learn more about how to write
 [Hacking Instructor tutorial scripts](../part3/tutorials.md).
 
+### Tutorial mode
+
+When using the Juice Shop in a classroom setup the trainer or teacher
+might want to set a slower pace at the beginning to give everyone a
+chance to get familiar with the application. Here the `tutorial.yml`
+configuration can be very useful, which is available since `v10.2.0` of
+Juice Shop. This mode hides all challenges without tutorials from the
+Score Board and disables all advanced filter options. In the tutorial
+mode challenges are only gradually unlocked by difficulty tiers.
+
+![Only tier 1 tutorials unlocked](img/tutorial-mode1.png)
+
+Only when for example all 1-star challenges with a tutorial have been
+solved, the 2-star challenges with tutorials are displayed:
+
+![Tier 2 tutorials unlocked after tier 1 was solved](img/tutorial-mode2.png)
+
+After solving **all** challenges with tutorials, the entire Score Board
+with all challenges is shown and all filters are enabled. Passing in the
+`NODE_ENV=tutorial` environment variable will activate this mode.
+
+![Locked advanced filters in tutorial mode](img/tutorial-mode3.png)
+
 {% endif %}
 
 ## Potentially dangerous challenges

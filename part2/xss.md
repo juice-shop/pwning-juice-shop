@@ -24,12 +24,12 @@
 | API-only XSS               | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` without using the frontend application at all.                                                                                                                                                                                                                                   | ⭐⭐⭐       |
 | Bonus Payload              | Use the bonus payload `<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>` in the _DOM XSS_ challenge. | ⭐          |
 | Client-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a client-side security mechanism.                                                                                                                                                                                                                                      | ⭐⭐⭐       |
-| CSP Bypass                 | Bypass the Content Security Policy and perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                                                                                                                                                                                                                      | ⭐⭐⭐⭐     |
+| CSP Bypass                 | Bypass the Content Security Policy and perform an XSS attack with ``<script>alert(`xss`)</script>`` on a legacy page within the application.                                                                                                                                                                                                                      | ⭐⭐⭐⭐      |
 | DOM XSS                    | Perform a _DOM_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                       | ⭐          |
-| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                                                                                                                                                                                                                                                          | ⭐⭐⭐⭐     |
-| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                 | ⭐⭐        |
-| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.                                                                                                                                                                                                                                      | ⭐⭐⭐⭐     |
-| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                                                                                                                                                                                                                                                             | ⭐⭐⭐⭐⭐⭐  |
+| HTTP-Header XSS            | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` through an HTTP header.                                                                                                                                                                                                                                                          | ⭐⭐⭐⭐      |
+| Reflected XSS              | Perform a _reflected_ XSS attack with ``<iframe src="javascript:alert(`xss`)">``.                                                                                                                                                                                                                                                                                 | ⭐⭐         |
+| Server-side XSS Protection | Perform a _persisted_ XSS attack with ``<iframe src="javascript:alert(`xss`)">`` bypassing a server-side security mechanism.                                                                                                                                                                                                                                      | ⭐⭐⭐⭐      |
+| Video XSS                  | Embed an XSS payload ``</script><script>alert(`xss`)</script>`` into our promo video.                                                                                                                                                                                                                                                                             | ⭐⭐⭐⭐⭐⭐    |
 
 ### Perform a persisted XSS attack without using the frontend application at all
 
@@ -57,7 +57,15 @@ to master this challenge.
 
 ### Use the bonus payload in the DOM XSS challenge
 
-🛠️ **TODO**
+The underlying vulnerability of this challenge is the same as for the
+[Perform a DOM XSS attack](#perform-a-dom-xss-attack) challenge. The
+effect of the payload is much more entertaining, though.
+
+* First, solve the [Perform a DOM XSS attack](#perform-a-dom-xss-attack)
+  challenge
+* Now it is just a question of copying and pasting the payload into the
+  same vulnerable field
+* Crank up the volume of your computer before submitting the payload! 🔊
 
 ### Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
