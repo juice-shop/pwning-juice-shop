@@ -113,8 +113,7 @@ last Juice Shop version with such an image available is
 
 ℹ️ This Docker image **does not** work on a Raspberry Pi 3 or older
 because some included native libraries were compiled on an `ARMv8`
-processor. You can still try to run Juice Shop
-[from sources](#from-sources) on previous RasPi models.
+processor.
 
 ### Vagrant
 
