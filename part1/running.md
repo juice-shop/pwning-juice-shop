@@ -97,18 +97,24 @@ that you also enable port forwarding from host `127.0.0.1:3000` to
 
 Using a [pre-packaged distribution](#from-pre-packaged-distribution) for
 Arm64 processors, [Omar Santos](https://github.com/santosomar) builds
-and publicly provides a Docker image that works on a Raspberry Pi. The
-last Juice Shop version with such an image available is
+and publicly provides a Docker image that works on a Raspberry Pi 4. The
+last Juice Shop version with such an image available is  
 {{book.armDockerImageVersion}}.
 
 1. Install [Ubuntu Server](https://ubuntu.com/download/raspberry-pi) or
    [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) on your
    Raspberry Pi
-2. Install [Docker](https://phoenixnap.com/kb/docker-on-raspberry-pi).
+2. Install [Docker](https://phoenixnap.com/kb/docker-on-raspberry-pi) on
+   your Raspberry Pi
 3. Run `docker pull santosomar/juice-shop-arm64`
 4. Run `docker run -d --rm -p 3000:3000 santosomar/juice-shop-arm64`
 5. Browse to your Raspberry Pi's IP address on port 3000, i.e.
    `http://<ip of your raspi>:3000`
+
+ℹ️ This Docker image **does not** work on a Raspberry Pi 3 or older
+because some included native libraries were compiled on an `ARMv8`
+processor. You can still try to run Juice Shop
+[from sources](#from-sources) on previous RasPi models.
 
 ### Vagrant
 
