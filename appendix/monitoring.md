@@ -29,7 +29,7 @@ very straightforward:
 ```
 scrape_configs:
   - job_name: 'juiceshop_local'
-    scrape_interval: 60s
+    scrape_interval: 30s
     scrape_timeout: 10s
     static_configs:
     - targets: ['localhost:3000']
