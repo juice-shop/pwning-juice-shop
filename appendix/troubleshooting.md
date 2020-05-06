@@ -75,6 +75,14 @@ issues tracker._
   forwarding from Host `127.0.0.1:3000` to `0.0.0.0:3000` for TCP for
   the `default` VM in VirtualBox.
 
+### SQLite
+
+- If all startup checks show `(OK)` but you see `SequelizeDatabaseError:
+  SQLITE_ERROR: no such table: <some table name>` errors right
+  afterwards, please check if the file `data/juiceshop.sqlite` exists.
+  If so just stop and restart your server and this suspected race
+  condition issue shouid go away.
+
 ### Vagrant
 
 - Using the Vagrant script (on Windows) might not work while your virus
@@ -85,23 +93,11 @@ issues tracker._
 
 - If you are missing the _Login with Google_ button, you are running
   OWASP Juice Shop under an unrecognized URL. **You can still solve the
-  OAuth related challenge!** If you want to manually make the OAuth
-  integration work to get the full user experience, follow these steps:
-  1. Add your server URL to variable `authorizedRedirectURIs` in
-     `/frontend/src/app/login/login.component.ts` using your URL for
-     both the property name and value.
-  2. Setup your own OAuth binding in Google
-     https://console.developers.google.com/apis/library by clicking
-     _Credentials_ and afterwards _Create credentials_.
-  3. Update the `clientId` variable in `login.component.ts` to use your
-     new OAuth client id from Google.
-  4. Re-deploy your server. You will now have the option to login with
-     Google on the login page.
-
-> One thing to note: Make sure that you setup the `redirect_uri` to
-> match your app's URL. If you for some reason have to modify the
-> `redirect_uri`, this gets cached on Google's end and takes longer than
-> you'll want to wait to reset.
+  OAuth related challenge!**
+- If you want to manually make the OAuth integration work to get the
+  full user experience, create your own customization file and define
+  all properties in the
+  [`googleOauth` subsection](../part1/customization.md#googleoauth-subsection)
 
 ### Miscellaneous
 
@@ -109,3 +105,4 @@ issues tracker._
   We strongly recommend
   [Zed Attack Proxy](https://code.google.com/p/zaproxy/) which is open
   source and very powerful, yet beginner friendly.
+

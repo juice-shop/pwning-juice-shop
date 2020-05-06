@@ -53,6 +53,7 @@
 * [Troubleshooting](appendix/troubleshooting.md)
 * [Jingle lyrics](appendix/lyrics.md)
 * [Integration](appendix/integration.md)
+* [Monitoring](appendix/monitoring.md)
 
 ## Postface
 

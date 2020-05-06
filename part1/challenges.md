@@ -115,7 +115,7 @@ restart, your score board will be blank.
 
 ## Hacking Instructor
 
-![Juicy Bot the mascot of the Hacking Instructor](img/juice_bot.png)
+![Juicy Bot the mascot of the Hacking Instructor](img/JuicyBot_MedicalMask.png)
 
 The built-in _Hacking Instructor_ offers tutorials for some of the Juice
 Shop challenges. By default the welcome banner shown upon first launch
