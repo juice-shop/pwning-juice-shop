@@ -75,6 +75,14 @@ issues tracker._
   forwarding from Host `127.0.0.1:3000` to `0.0.0.0:3000` for TCP for
   the `default` VM in VirtualBox.
 
+### SQLite
+
+- If all startup checks show `(OK)` but you see `SequelizeDatabaseError:
+  SQLITE_ERROR: no such table: <some table name>` errors right
+  afterwards, please check if the file `data/juiceshop.sqlite` exists.
+  If so just stop and restart your server and this suspected race
+  condition issue shouid go away.
+
 ### Vagrant
 
 - Using the Vagrant script (on Windows) might not work while your virus
