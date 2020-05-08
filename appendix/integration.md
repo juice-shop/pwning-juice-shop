@@ -127,3 +127,8 @@ The latest versions of the `challenges.yml` file can be found here:
   [its _Challenges_ tab](https://owasp.org/www-project-juice-shop/#div-challenges)
   with the help of
   [Liquid Filters](https://jekyllrb.com/docs/liquid/filters/).
+
+## Challenge solution webhook
+
+_DRAFT!_ \*\*\* _DRAFT!_ \*\*\* _DRAFT!_ \*\*\* _DRAFT!_ \*\*\* _DRAFT!_
+\*\*\* _DRAFT!_
