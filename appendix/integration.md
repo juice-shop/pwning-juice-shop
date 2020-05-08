@@ -130,5 +130,30 @@ The latest versions of the `challenges.yml` file can be found here:
 
 ## Challenge solution webhook
 
-_DRAFT!_ \*\*\* _DRAFT!_ \*\*\* _DRAFT!_ \*\*\* _DRAFT!_ \*\*\* _DRAFT!_
-\*\*\* _DRAFT!_
+Any Juice Shop instance can be configured to call a webhook whenever one of its {{book.juiceShopNumberOfChallenges}} hacking challenges is solved. To use this feature the following
+environment variables need to be defined on the server:
+
+| Environment variable | Expected value | Recommendations |
+| -------------------- | -------------- | -------- |
+| `WEBHOOK_URL` | URL of the webhook Juice Shop is supposed to call whenever a challenge is solved. | |
+| `ISSUER_TOKEN` | Token that uniquely identifies the Juice Shop instance at the webhook provider. | |
+| `RECIPIENT_ID` | Identifier of the person who solves the hacking challenges in Juice Shop. | GitHub username, MultiJuicer team name, corporate email address etc.|
+| `ISSUER_PRIVATE_KEY` | Private key used by the issuing Juice Shop instance to sign the solution | Private PGP/GPG key |
+| `ISSUER_PUBLIC_KEY_URL` | URL where the public key matching the `ISSUER_PRIVATE_KEY` can be found for the webhook provider to verify the signature | Public PGP/GPG key |
+
+### Webhook payload
+
+Juice Shop will send a `POST` request to the configured `WEBHOOK_URL` with the following payload:
+
+```json
+{ "solution":
+  { "issuer": "<ISSUER_TOKEN>",
+    "recipient": "<RECIPIENT_ID>",
+    "challenge": "<Property 'key' of the solved challenge from challenges.yml>",
+    "evidence": "<Optional URL to proof of solving the challenge>",
+    "issuedOn": "<yyyy-MM-ddThh:mm:ssZ>"
+  },
+  "signature": "<Optional 'solution' signed with ISSUER_PRIVATE_KEY>",
+  "verifyUrl": "<Optional ISSUER_PUBLIC_KEY_URL>"
+}
+```
