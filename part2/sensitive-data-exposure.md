@@ -267,7 +267,15 @@ for SIEM systems:
 
 ### Reset Uvogin's password via the Forgot Password mechanism
 
-**TODO**
+With the amount of personal information that people tend to reveal online,
+security questions are hardly reliable anymore.
+
+* People often reuse aliases online. You might be able to find something by
+  looking online for Uvogin's name or slight variations of it based on his
+  unique writing habits
+ 
+* You might be able to find some existing OSINT tools to help you in this
+  investigation
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 

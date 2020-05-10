@@ -1282,8 +1282,31 @@ to respond.
 
 ### Reset Uvogin's password via the Forgot Password mechanism
 
-**TODO**
+1. To reset Uvogin's password, you need the to find out what his
+   favorite movie is in order to answer his security question. This is
+   the kind of information that people often carelessly expose online.
+   
+2. People often tend to reuse aliases on different websites. 
+   [Sherlock](https://github.com/sherlock-project/sherlock) is a great 
+   tool for finding social media accounts with known aliases/pesudonyms.
+   
+3. Unfortunately, plugging _uvogin_ into sherlock yields nothing of interest. 
+   Reading the reviews left by uvogin on the various products, one can notice
+   that they have quite an affinity for _leetspeak_
+  
+4. Trying out a few variations of the alias uvogin, _uv0gin_ leads us to a
+   twitter account with a similarly written tweet which references a vulnerable
+   beverage store. However nothing about his favorite movie
 
+   ![Uvogin's Twitter](img/uvogin_twitter.png)   
+5. The [WayBack](https://archive.org/web/) can be used to check for older
+   versions of their profile page to look for deleted tweets. And indeed,
+   one of the snapshots available on WayBack contains a deleted tweet that
+   references `Silence of the Lambs` which is infact the correct answer
+   to his security question
+
+   ![Uvogin's Twitter Snapshot](img/uvogin_twitter_snap.png)
+   
 ### Rat out a notorious character hiding in plain sight in the shop
 
 1. Looking for irregularities among the image files you will at some
