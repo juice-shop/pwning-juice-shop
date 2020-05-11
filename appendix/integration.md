@@ -45,7 +45,7 @@ consumable JSON format:
          "updatedAt":"2020-03-23T12:00:34.259Z"
       },
       {
-        ...
+        "...":"..."
       }
    ]
 }
@@ -142,8 +142,8 @@ be supplied to the Juice Shop server:
 
 ### Webhook payload
 
-Juice Shop will send a `POST` request to the configured `WEBHOOK_URL`
-with the following payload:
+Juice Shop will send a `POST` request to the configured
+`SOLUTIONS_WEBHOOK` with the following payload:
 
 ```json
 { "solution":
