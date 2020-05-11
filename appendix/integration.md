@@ -133,16 +133,12 @@ The latest versions of the `challenges.yml` file can be found here:
 
 Any Juice Shop instance can be configured to call a webhook whenever one
 of its {{book.juiceShopNumberOfChallenges}} hacking challenges is
-solved. To use this feature the following environment variables need to
-be defined on the server:
+solved. To use this feature the following environment variable needs to
+be supplied to the Juice Shop server:
 
-| Environment variable | Expected value                                                                                                                      |                                                                             | Recommendations                                                                                                                                   |
-|:---------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
-| `WEBHOOK_URL`        | URL of the webhook Juice Shop is supposed to call whenever a challenge is solved.                                                   |                                                                             | HTTPS is obviously recommended but not mandatory.                                                                                                 |
-| `ISSUER_ID`          | Unique identifier or token of that Juice Shop instance at the webhook provider.                                                     | <code>juiceshop-{{book.juiceShopVersion}}@&lt;server os hostname&gt;</code> | If any kind of sensitive token is used: Encrypt before publishing!                                                                                |
-| `RECIPIENT_ID`       | Identifier of the person who solves the hacking challenges in Juice Shop.                                                           |                                                                             | GitHub username, MultiJuicer team name, corporate email address etc.                                                                              |
-| `ISSUER_PRIVATE_KEY` | Private key used by the issuing Juice Shop instance to sign the solution.                                                           |                                                                             | Private PGP/GPG key. **Do not publish unencrypted anywhere!**                                                                                     |
-| `ISSUER_PUBLIC_KEY`  | Public key (or URL pointing to it) matching the `ISSUER_PRIVATE_KEY` can be found for the webhook provider to verify the signature. |                                                                             | Link to public PGP/GPG key on [Keybase](https://keybase.io/) or public key server like <https://pgp.mit.edu>, <https://keyserver.ubuntu.com> etc. |
+| Environment variable | Expected value                                                                    | Recommendations                                                                                                                                                                                                                                                     |
+|:---------------------|:----------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `SOLUTIONS_WEBHOOK`  | URL of the webhook Juice Shop is supposed to call whenever a challenge is solved. | The webhook URL should be bound to the user who solved the challenge and allow its provider to verify the Juice Shop origin instance. In most cases **the webhook URL should be treated as sensitive information and not be published or transmitted unencrypted!** |
 
 ### Webhook payload
 
@@ -151,14 +147,11 @@ with the following payload:
 
 ```json
 { "solution":
-  { "issuer": "<ISSUER_ID>",
-    "recipient": "<RECIPIENT_ID>",
+  { "issuer": "owasp_juiceshop-<version>@<server os hostname>",
     "challenge": "<'key' of the solved challenge from challenges.yml>",
-    "evidence": "<Optional URL to proof of solving the challenge>",
+    "evidence": null,
     "issuedOn": "<yyyy-MM-ddThh:mm:ssZ>"
-  },
-  "signature": "<Optional 'solution' signed with ISSUER_PRIVATE_KEY>",
-  "verification": "<Optional ISSUER_PUBLIC_KEY>"
+  }
 }
 ```
 
@@ -166,14 +159,11 @@ with the following payload:
 
 ```json
 { "solution":
-  { "issuer": "aab6d73c-1176-4b3e-9d60-58cc5c073731",
-    "recipient": "bkimminich",
-    "challenge": "domXssChallenge",
-    "evidence": "https://imgur.com/gallery/yed5Zfk",
-    "issuedOn": "2020-03-25T12:00:00Z"
-  },
-  "signature": "-----BEGIN PGP MESSAGE----- Comment: https://keybase.io/download Version: Keybase Go 5.4.2 (linux)  xA0DAAgBo2/dHpKS1uABy+F0AOIAAAAA53sgImlzc3VlciI6ICJhYWI2ZDczYy0x MTc2LTRiM2UtOWQ2MC01OGNjNWMwNzM3MzEiLCAicmVjaXBpZW50IjogImJraW1t aW5pY2giLCAiY2hhbGxlbmdlIjogImRvbVhzc0NoYWxsZW5nZSIsICJldmlkZW5j ZSI6ICJodHRw5nM6Ly9pbWd1ci5jb20vZ2FsbGVyeS95ZWQ1WmZrIiwgImlzc3Vl ZE9uIjogIjIwMjAtMDMtMjVUMTI6MDA6MDDiWiIgfQDCwVwEAAEIABAFAl6zEhYJ EKNv3R6SktbgAAAabBAAfqnjyD27LZe+PjhbVgcCwPmk3b2m+XhrDbgXpZbWZIYY 8BCTQIw9S/9hXd2tRdMkXmaAA1BctA5HzZi4rZYiIB8/xQnRE1/7bkTX7f2tjIqA VOMD2STKM4gr7qwN3FdaU1X8Bns8b/a6geprg2OSNdxqCU75Y+5ggf4DLvV8FVW8 Qd97zV4XpcARJTsoXMPPY+bGqGCfvs2jLaYnP7tPEtjaSivNoBh7bGUV2gYQL1TE caikWmHSyIV6gnFYqDAg3SuA1j1BqqBHBTEMUxbTVtz1beWM5VIBZKj0prwHUx8I vtgi6LzWT9RJNQTV2pNypFnd5K8h+srtIYiSOcOM2T6khjbB1GaL9YE7JvozAMky Cl8RGDb9vW2QxeLeoAmxIvIHyzITevWWrVZTNeliBNphW4Qgk427WjC34LrqshFX 4EMkkDw60JkOikyBRiYcxH/lVnzViZnNV250KXD1D+XVa2lfBVm+ap5jGMW1C6+K yxqXpWefXrZVB8oro48bthQ3M11/zS/sw43CtV/Odh2UScyFXhl4eND8Q4ydghjm V62amqMTxcHCvR0k1OkCG4laDjZQpkiHJSdpQXm+vJlEpW1rkSovjSvxFjzSpQar Ds9oGTStv2yw9UrFm2JXRzEC44rfYlJ566cuRSh255eEF3pMMD4LsvMsldW8KbQ= =7ijC -----END PGP MESSAGE-----",
-  "verification": "https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda"
+  { "issuer": "owasp_juiceshop-11.0.0@661b2c39-4398-45b4-bfe5-5343096689d3",
+    "challenge": "localXssChallenge",
+    "evidence": null,
+    "issuedOn": "2020-05-10T21:39:15.916Z"
+  }
 }
 ```
 
