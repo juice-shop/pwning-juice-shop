@@ -17,9 +17,9 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v10.3.0",
+    "juiceShopVersion": "v10.3.2",
     "armDockerImageVersion": "v10.2.1",
-    "juiceShopCtfVersion": "v8.0.2",
+    "juiceShopCtfVersion": "v8.1.0",
     "ctfdVersion": "2.x",
     "rtbVersion": "3.3 or higher",
     "juiceShopNumberOfChallenges": 95,
