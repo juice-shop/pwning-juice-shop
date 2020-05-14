@@ -147,11 +147,11 @@ Juice Shop will send a `POST` request to the configured
 
 ```json
 { "solution":
-  { "issuer": "owasp_juiceshop-<version>@<server os hostname>",
-    "challenge": "<'key' of the solved challenge from challenges.yml>",
+  { "challenge": "<'key' of the solved challenge from challenges.yml>",
     "evidence": null,
     "issuedOn": "<yyyy-MM-ddThh:mm:ssZ>"
-  }
+  },
+  "issuer": "owasp_juiceshop-<version>@<server os hostname>"
 }
 ```
 
@@ -159,11 +159,11 @@ Juice Shop will send a `POST` request to the configured
 
 ```json
 { "solution":
-  { "issuer": "owasp_juiceshop-11.0.0@661b2c39-4398-45b4-bfe5-5343096689d3",
-    "challenge": "localXssChallenge",
+  { "challenge": "localXssChallenge",
     "evidence": null,
     "issuedOn": "2020-05-10T21:39:15.916Z"
-  }
+  },
+  "issuer": "owasp_juiceshop-11.0.0@661b2c39-4398-45b4-bfe5-5343096689d3"
 }
 ```
 
