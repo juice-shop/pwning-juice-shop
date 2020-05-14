@@ -153,7 +153,8 @@ Juice Shop will send a `POST` request to the configured
   },
   "issuer": {
     "hostName": "<server os hostname>",
-    "appName": "<'name' from loaded YAML configuration in ./config folder>",
+    "appName": "<'application.name' from loaded YAML configuration in ./config folder>",
+    "config": "<name of the loaded configuration>",
     "version": "<version from ./package.json>"
   }
 }
@@ -170,6 +171,7 @@ Juice Shop will send a `POST` request to the configured
   "issuer": {
     "hostName": "661b2c39-4398-45b4-bfe5-5343096689d3",
     "appName": "OWASP Juice Shop",
+    "config": "default",
     "version": "11.0.0-SNAPSHOT"
   }
 }
