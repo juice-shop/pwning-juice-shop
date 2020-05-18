@@ -18,7 +18,7 @@
 | Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐       |
 | Reset Uvogin's Password    | Reset Uvogin's password via the Forgot Password mechanism with _his original answer_ to his security question.                                                                          | ⭐⭐⭐⭐       |
 | Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐      |
-| Geo Stalking - Easy         | Determine the answer to someone's security question by looking at images on the Photo wall.                                                                                                      | ⭐⭐      |
+| Geo Stalking - Easy         | Determine the answer to someone's security question by looking at the metadata of images on the Photo wall.                                                                                                      | ⭐⭐      |
 | Geo Stalking - Hard        | Determine the answer to someone's security question by looking at images on the Photo wall.                                                                                                      | ⭐⭐⭐⭐      |
 
 ### Gain access to any access log file of the server
@@ -292,6 +292,17 @@ on its blueprint in order to make it yourself?
 ℹ️ _If you are running the Juice Shop with a custom theme and product
 inventory, the product to inspect will be a different one. The tooltip
 on the Score Board will tell you which one to look into._
+
+### Determine the answer to someone's security question by looking at the metadata of images on the Photo wall
+
+Who would have guessed that a simple walk in the park lead to an account compromise. 
+People these days are not careful with what they post online and are not aware of the
+possible consequences it can have when people exploit that.
+
+* Make use of tools that can inspect the metadata of images.
+* Use this information to answer the security question of the person who enjoys hiking in the park.
+
+### Determine the answer to someone's security question by looking at images on the Photo wall.
 
 [^1]: https://searchsecurity.techtarget.com/definition/access-log
 [^2]: https://en.wikipedia.org/wiki/Data_loss_prevention_software
