@@ -18,8 +18,8 @@
 | Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐       |
 | Reset Uvogin's Password    | Reset Uvogin's password via the Forgot Password mechanism with _his original answer_ to his security question.                                                                          | ⭐⭐⭐⭐       |
 | Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐      |
-| Geo Stalking - Easy         | Determine the answer to someone''s security question by looking at images on the Photo wall.                                                                                                      | ⭐⭐      |
-| Geo Stalking - Hard        | Determine the answer to someone''s security question by looking at images on the Photo wall.                                                                                                      | ⭐⭐⭐⭐      |
+| Geo Stalking - Easy         | Determine the answer to someone's security question by looking at images on the Photo wall.                                                                                                      | ⭐⭐      |
+| Geo Stalking - Hard        | Determine the answer to someone's security question by looking at images on the Photo wall.                                                                                                      | ⭐⭐⭐⭐      |
 
 ### Gain access to any access log file of the server
 
