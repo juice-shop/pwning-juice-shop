@@ -153,6 +153,7 @@ Juice Shop will send a `POST` request to the configured
   },
   "issuer": {
     "hostName": "<server os hostname>",
+    "os": "<server os type (and release)>",
     "appName": "<'application.name' from loaded YAML configuration in ./config folder>",
     "config": "<name of the loaded configuration>",
     "version": "<version from ./package.json>"
@@ -163,16 +164,18 @@ Juice Shop will send a `POST` request to the configured
 #### Webhook payload example
 
 ```json
-{ "solution":
-  { "challenge": "localXssChallenge",
+{
+  "solution": {
+    "challenge": "localXssChallenge",
     "evidence": null,
-    "issuedOn": "2020-05-10T21:39:15.916Z"
+    "issuedOn": "2020-05-26T22:03:20.059Z"
   },
   "issuer": {
-    "hostName": "661b2c39-4398-45b4-bfe5-5343096689d3",
+    "hostName": "Traviss-Mac-6.local",
+    "os": "Darwin (17.7.0)",
     "appName": "OWASP Juice Shop",
     "config": "default",
-    "version": "11.0.0-SNAPSHOT"
+    "version": "11.0.0"
   }
 }
 ```
