@@ -295,7 +295,7 @@ on the Score Board will tell you which one to look into._
 
 ### Determine the answer to someone's security question by looking at the metadata of images on the Photo wall
 
-Who would have guessed that a simple walk in the park lead to an account compromise. 
+Who would have guessed that a simple walk in the park could lead to an account compromise. 
 People these days are not careful with what they post online and are not aware of the
 possible consequences it can have when people exploit that.
 
@@ -303,6 +303,8 @@ possible consequences it can have when people exploit that.
 * Use this information to answer the security question of the person who enjoys hiking in the park.
 
 ### Determine the answer to someone's security question by looking at images on the Photo wall.
+
+
 
 [^1]: https://searchsecurity.techtarget.com/definition/access-log
 [^2]: https://en.wikipedia.org/wiki/Data_loss_prevention_software
