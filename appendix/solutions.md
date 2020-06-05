@@ -334,7 +334,7 @@ in order to exploit and solve them:
 
    ![XSS alert box](img/xss0_alert.png)
 
-### Determine the answer to someone's security question by looking at images on the Photo wall - Easy
+### Determine the answer to someone's security question by looking at the metadata of images on the Photo wall.
 1. Go to the photo wall and search for the photo that has been posted by the user geo1@gmail.com.
 2. Download that photo.
 3. Check the metadata of the photo. You can use various tools online like http://exif.regex.info/exif.cgi
@@ -1523,7 +1523,7 @@ explains the problem and gives an exploit example:
 
     ![XSS in Last Login IP address](img/xss5_lastLoginIp.png)
 
-### Determine the answer to someone's security question by looking at the images on the Photo wall - Hard
+### Determine the answer to someone's security question by looking at images on the Photo wall.
 1. Go the the photo wall and search for the photo that has been posted by the user geo2@gmail.com.
 2. Open the image so that you can zoom in on it.
 3. On the far left window on the first floor, you can see a logo of the company IT Sec.
