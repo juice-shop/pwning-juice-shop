@@ -72,10 +72,10 @@ issues tracker._
   (e.g. during the frontend installation step) try running `npm install
   --unsafe-perm` instead.
 - If `npm start` fails with `Error: ENOENT: no such file or directory,
-  copyfile` you might have had an error already during `npm install`.
-  That could indicate a lack of folder permissions. Make sure to check
-  if the file to copy from exists on your disk and if the target folder
-  for the copy is there.
+  copyfile` you might have had either an error already during `npm
+  install` _or_ you pulled changes from GitHub but did not re-run `npm
+  install` afterwards. Make sure to check if the file to copy from
+  exists on your disk and if the target folder for the copy is there.
 
 ### Docker
 
