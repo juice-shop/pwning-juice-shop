@@ -3,8 +3,7 @@
   "author": "Björn Kimminich",
   "language": "en",
   "variables": {
-    "juiceShopVersion": "v11.0.0",
-    "armDockerImageVersion": "v10.2.1",
+    "juiceShopVersion": "v11.1.1",
     "juiceShopCtfVersion": "v8.1.0",
     "ctfdVersion": "2.x",
     "rtbVersion": "3.3 or higher",
