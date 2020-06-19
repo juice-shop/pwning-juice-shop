@@ -308,8 +308,7 @@ It is also possible to determine where a picture was taken by looking at visual 
 A certain user has uploaded a picture of his old workplace. Take a look at what his security question is
 and see if you can find the answer by looking at his uploaded image.
 
-* Look at visual clues to determine what company is shown in the picture
-* Lookup the address of the company that you found and use that to answer the security question.
+* Look at visual clues to determine what company is shown in the picture and use that to answer the security question.
 
 [^1]: https://searchsecurity.techtarget.com/definition/access-log
 [^2]: https://en.wikipedia.org/wiki/Data_loss_prevention_software

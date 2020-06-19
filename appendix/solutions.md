@@ -335,12 +335,12 @@ in order to exploit and solve them:
    ![XSS alert box](img/xss0_alert.png)
 
 ### Determine the answer to someone's security question by looking at the metadata of images on the Photo wall.
-1. Go to the photo wall and search for the photo that has been posted by the user geo1@gmail.com.
+1. Go to the photo wall and search for the photo that has been posted by the user john@gmail.com.
 2. Download that photo.
 3. Check the metadata of the photo. You can use various tools online like http://exif.regex.info/exif.cgi
-4. When viewing the metadata, you can see that the location of where the photo was taken is located in a park.
-5. Google the exact address of the park by using it's name.
-6. Submit the address as answer to the security question of geo1@gmail.com.
+4. When viewing the metadata, you can see the coordinates of where the photo was taken.
+5. Search for these coordinates on Google to find out in which forest the photo was taken.
+6. Submit the name of the forest as the answer to the security question of john@gmail.com.
 
 ## ⭐⭐⭐ Challenges
 
@@ -1524,10 +1524,11 @@ explains the problem and gives an exploit example:
     ![XSS in Last Login IP address](img/xss5_lastLoginIp.png)
 
 ### Determine the answer to someone's security question by looking at images on the Photo wall.
-1. Go the the photo wall and search for the photo that has been posted by the user geo2@gmail.com.
+1. Go to the photo wall and search for the photo that has been posted by the user emma@gmail.com.
 2. Open the image so that you can zoom in on it.
-3. On the far left window on the first floor, you can see a logo of the company IT Sec.
-4. Submit the name of the company as an answer to the security question of geo2@gmail.com
+3. On the far left window on the middle floor, you can see a logo of a company.
+4. Submit the name of the company as an answer to the security question of emma@gmail.com
+
 
 ## ⭐⭐⭐⭐⭐ Challenges
 
