@@ -25,8 +25,7 @@ spend) money on:
 * Merchandise to reward awesome project contributions or marketing for
   the project (e.g.
   [apparel or mugs](http://shop.spreadshirt.com/juiceshop))
-* Bounties on features or fixes (via
-  [Bountysource](https://www.bountysource.com/teams/juice-shop))
+* Bounties on a small number of features or fixes
 * Software license costs (e.g. an extended icon library)
 * Commercial support where the team lacks expertise (e.g. graphics
   design for this book's cover was paid from donations)
