@@ -27,7 +27,7 @@ opposite of a _best practice_ or _template application_ for web
 developers: It is an awareness, training, demonstration and exercise
 tool for security risks in modern web applications. The OWASP Juice Shop
 is an open-source project hosted by the non-profit
-[Open Web Application Security Project (OWASP)](https://owasp.org) and
+[Open Web Application Security Project® (OWASP)](https://owasp.org) and
 is developed and maintained by volunteers. The content of this book was
 written for {{book.juiceShopVersion}} of OWASP Juice Shop.
 
@@ -88,5 +88,6 @@ __Official OWASP Juice Shop project homepage:__
 
 [![CC BY-NC-ND 4.0](introduction/img/cc_by-nc-nd_4.0.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-This work is licensed under a
+Open Web Application Security Project and OWASP are registered
+trademarks of the OWASP Foundation, Inc. This work is licensed under a
 [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
