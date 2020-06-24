@@ -335,12 +335,14 @@ in order to exploit and solve them:
    ![XSS alert box](img/xss0_alert.png)
 
 ### Determine the answer to someone's security question by looking at the metadata of images on the Photo wall.
-1. Go to the photo wall and search for the photo that has been posted by the user john@gmail.com.
+1. Go to the photo wall and search for the photo that has been posted by the user "john@juice-sh.op". (This is the default email, it is configurable in the default.yml file. It does however always start with "john@")
 2. Download that photo.
 3. Check the metadata of the photo. You can use various tools online like http://exif.regex.info/exif.cgi
-4. When viewing the metadata, you can see the coordinates of where the photo was taken.
-5. Search for these coordinates on Google to find out in which forest the photo was taken.
-6. Submit the name of the forest as the answer to the security question of john@gmail.com.
+4. When viewing the metadata, you can see the coordinates of where the photo was taken. The coordinates are "36.958717N 84.348217W"
+5. Search for these coordinates on Google to find out in which forest the photo was taken. It can be seen that the "Daniel Boone National Forest" is located on these coordinates. 
+4. Go to the login page and click on "Forgot your password?".
+5. Fill in "john@juice-sh.op" as the email and "Daniel Boone National Forest" as the answer of the security question.
+6. Choose a new password and click on "Change".
 
 ## ⭐⭐⭐ Challenges
 
@@ -1524,10 +1526,12 @@ explains the problem and gives an exploit example:
     ![XSS in Last Login IP address](img/xss5_lastLoginIp.png)
 
 ### Determine the answer to someone's security question by looking at images on the Photo wall.
-1. Go to the photo wall and search for the photo that has been posted by the user emma@gmail.com.
+1. Go to the photo wall and search for the photo that has been posted by the user "emma@juice-sh.op" (This is the default email, it is configurable in the default.yml file. It does however always start with "emma@")
 2. Open the image so that you can zoom in on it.
-3. On the far left window on the middle floor, you can see a logo of a company.
-4. Submit the name of the company as an answer to the security question of emma@gmail.com
+3. On the far left window on the middle floor, you can see a logo of a company. It can be seen that logo shows the name "ITSec".
+4. Go to the login page and click on "Forgot your password?".
+5. Fill in "emma@juice-sh.op" as the email and "ITSec" as the answer of the security question.
+6. Choose a new password and click on "Change".
 
 
 ## ⭐⭐⭐⭐⭐ Challenges
