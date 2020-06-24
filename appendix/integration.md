@@ -151,6 +151,7 @@ Juice Shop will send a `POST` request to the configured
     "evidence": null,
     "issuedOn": "<yyyy-MM-ddThh:mm:ssZ>"
   },
+  "ctfFlag": "<CTF flag code of the solved challenged based on the injected (or default) 'CTF_KEY'>",
   "issuer": {
     "hostName": "<server os hostname>",
     "os": "<server os type (and release)>",
@@ -170,12 +171,13 @@ Juice Shop will send a `POST` request to the configured
     "evidence": null,
     "issuedOn": "2020-05-26T22:03:20.059Z"
   },
+  "ctfFlag": "b0d70dce6cadadb85882ea498fac6785dba2349b",
   "issuer": {
     "hostName": "Traviss-Mac-6.local",
     "os": "Darwin (17.7.0)",
     "appName": "OWASP Juice Shop",
     "config": "default",
-    "version": "11.0.0"
+    "version": "11.2.0"
   }
 }
 ```
