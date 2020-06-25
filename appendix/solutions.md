@@ -334,15 +334,34 @@ in order to exploit and solve them:
 
    ![XSS alert box](img/xss0_alert.png)
 
-### Determine the answer to someone's security question by looking at the metadata of images on the Photo wall.
-1. Go to the photo wall and search for the photo that has been posted by the user "john@juice-sh.op". (This is the default email, it is configurable in the default.yml file. It does however always start with "john@")
+### Determine the answer to John's security question
+
+1. Go to the photo wall and search for the photo that has been posted by
+   the user `j0hNny`.
 2. Download that photo.
-3. Check the metadata of the photo. You can use various tools online like http://exif.regex.info/exif.cgi
-4. When viewing the metadata, you can see the coordinates of where the photo was taken. The coordinates are "36.958717N 84.348217W"
-5. Search for these coordinates on Google to find out in which forest the photo was taken. It can be seen that the "Daniel Boone National Forest" is located on these coordinates. 
-4. Go to the login page and click on "Forgot your password?".
-5. Fill in "john@juice-sh.op" as the email and "Daniel Boone National Forest" as the answer of the security question.
-6. Choose a new password and click on "Change".
+3. Check the metadata of the photo. You can use various tools online
+   like http://exif.regex.info/exif.cgi
+4. When viewing the metadata, you can see the coordinates of where the
+   photo was taken. The coordinates are `36.958717N 84.348217W`
+5. Search for these coordinates on Google to find out in which forest
+   the photo was taken. It can be seen that the `Daniel Boone National
+   Forest` is located on these coordinates.
+6. Go to the login page and click on _Forgot your password?_.
+7. Fill in `john@juice-sh.op` as the email and `Daniel Boone National
+   Forest` as the answer of the security question.
+8. Choose a new password and click on _Change_.
+
+### Determine the answer to Emma's security question
+
+1. Go to the photo wall and search for the photo that has been posted by
+   the user `E=ma²`.
+2. Open the image so that you can zoom in on it.
+3. On the far left window on the middle floor, you can see a logo of a
+   company. It can be seen that logo shows the name `ITSec`.
+4. Go to the login page and click on _Forgot your password?_.
+5. Fill in `emma@juice-sh.op` as the email and `ITSec` as the answer of
+   the security question.
+6. Choose a new password and click on _Change_.
 
 ## ⭐⭐⭐ Challenges
 
@@ -1295,28 +1314,28 @@ to respond.
 1. To reset Uvogin's password, you need the to find out what his
    favorite movie is in order to answer his security question. This is
    the kind of information that people often carelessly expose online.
-   
-2. People often tend to reuse aliases on different websites. 
-   [Sherlock](https://github.com/sherlock-project/sherlock) is a great 
-   tool for finding social media accounts with known aliases/pesudonyms.
-   
-3. Unfortunately, plugging _uvogin_ into sherlock yields nothing of interest. 
-   Reading the reviews left by uvogin on the various products, one can notice
-   that they have quite an affinity for _leetspeak_
-  
-4. Trying out a few variations of the alias uvogin, _uv0gin_ leads us to a
-   twitter account with a similarly written tweet which references a vulnerable
-   beverage store. However nothing about his favorite movie
 
-   ![Uvogin's Twitter](img/uvogin_twitter.png)   
-5. The [WayBack](https://archive.org/web/) can be used to check for older
-   versions of their profile page to look for deleted tweets. And indeed,
-   one of the snapshots available on WayBack contains a deleted tweet that
-   references `Silence of the Lambs` which is infact the correct answer
-   to his security question
+2. People often tend to reuse aliases on different websites.
+   [Sherlock](https://github.com/sherlock-project/sherlock) is a great
+   tool for finding social media accounts with known aliases/pesudonyms.
+
+3. Unfortunately, plugging _uvogin_ into sherlock yields nothing of
+   interest. Reading the reviews left by uvogin on the various products,
+   one can notice that they have quite an affinity for _leetspeak_
+
+4. Trying out a few variations of the alias uvogin, _uv0gin_ leads us to
+   a twitter account with a similarly written tweet which references a
+   vulnerable beverage store. However nothing about his favorite movie
+
+   ![Uvogin's Twitter](img/uvogin_twitter.png)
+5. The [WayBack](https://archive.org/web/) can be used to check for
+   older versions of their profile page to look for deleted tweets. And
+   indeed, one of the snapshots available on WayBack contains a deleted
+   tweet that references `Silence of the Lambs` which is infact the
+   correct answer to his security question
 
    ![Uvogin's Twitter Snapshot](img/uvogin_twitter_snap.png)
-   
+
 ### Rat out a notorious character hiding in plain sight in the shop
 
 1. Looking for irregularities among the image files you will at some
@@ -1524,15 +1543,6 @@ explains the problem and gives an exploit example:
     alert popup.
 
     ![XSS in Last Login IP address](img/xss5_lastLoginIp.png)
-
-### Determine the answer to someone's security question by looking at images on the Photo wall.
-1. Go to the photo wall and search for the photo that has been posted by the user "emma@juice-sh.op" (This is the default email, it is configurable in the default.yml file. It does however always start with "emma@")
-2. Open the image so that you can zoom in on it.
-3. On the far left window on the middle floor, you can see a logo of a company. It can be seen that logo shows the name "ITSec".
-4. Go to the login page and click on "Forgot your password?".
-5. Fill in "emma@juice-sh.op" as the email and "ITSec" as the answer of the security question.
-6. Choose a new password and click on "Change".
-
 
 ## ⭐⭐⭐⭐⭐ Challenges
 
@@ -2096,8 +2106,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-📕: If you do not want to write your own script for this challenge, take
-a look at
+📕: If you do not want to write your own script for this challenge,
+take a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
 [philly-vanilly](https://github.com/philly-vanilly).
@@ -2380,8 +2390,8 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is not
-   part of the Juice Shop repo itself and it is publicly accessible,
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
+   not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
@@ -2699,8 +2709,8 @@ opened on those._
    && chmod +x malware && ./malware')}`. Submit this as _Username_ and
    (on a Linux server) the challenge should be marked as solved
 
-ℹ️ Remember that you need to use the right malware file for your server's
-operation system and also their synonym command for `wget`.
+ℹ️ Remember that you need to use the right malware file for your
+server's operation system and also their synonym command for `wget`.
 
 ### Embed an XSS payload into our promo video
 
@@ -2709,16 +2719,16 @@ r p romo video 1. The author
 from his personal account, openly spoilering the URL
 <http://juice-shop-staging.herokuapp.
 
-                <http://juice-shop-staging.herokuapp.com/promotion>
-                   ![Tweet promoting a new in-app promotion video](img/tweet
-                _
+                            <http://juice-shop-staging.herokuapp.com/promotion>
+                               ![Tweet promoting a new in-app promotion video](img/tweet
+                            _
 
 pro motion.png) 2. Visit <http://localhost:3000/promotion> to watch the
 video. You will notice that it comes with subtitles enabl
 
-                notice that it comes with subtitles enabled by default.
-                   ![In-app promotion video](img/p
-                r
+                            notice that it comes with subtitles enabled by default.
+                               ![In-app promotion video](img/p
+                            r
 
 omo _video.png) 3. Right-click and select _View Source_ on the page to
 learn that it loads its video from <http://localhost:3000/video> and
