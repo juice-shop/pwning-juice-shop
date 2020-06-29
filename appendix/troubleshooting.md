@@ -107,6 +107,12 @@ issues tracker._
   all properties in the
   [`googleOauth` subsection](../part1/customization.md#googleoauth-subsection)
 
+### Challenge solution not working
+
+- If you see that a challenge solution is not working, check the challenge
+  is not one of the [potentially dangerous challenges](../part1/challenges.md#potentially-dangerous-challenges)
+  which does not work in shared platforms like Heroku.
+
 ### Miscellaneous
 
 - You may find it easier to find vulnerabilities using a pen test tool.
