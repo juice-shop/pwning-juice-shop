@@ -107,14 +107,11 @@ issues tracker._
   all properties in the
   [`googleOauth` subsection](../part1/customization.md#googleoauth-subsection)
 
-### Challenge solution not working
+### Challenges
 
-- If you see that a challenge solution is not working, check the challenge
-  is not one of the [potentially dangerous challenges](../part1/challenges.md#potentially-dangerous-challenges)
-  which does not work in shared platforms like Heroku.
-
-### Miscellaneous
-
+- If you notice that a challenge solution is not working, check on the _Score Board_ if that challenge
+  is one of the [potentially dangerous ones](../part1/challenges.md#potentially-dangerous-challenges)
+  which are by default disabled in Docker environments and shared platforms like Heroku.
 - You may find it easier to find vulnerabilities using a pen test tool.
   We strongly recommend
   [Zed Attack Proxy](https://code.google.com/p/zaproxy/) which is open
