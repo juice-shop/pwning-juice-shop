@@ -1,5 +1,18 @@
 # Troubleshooting
 
+If (and only if) none of the
+[Common support issues](#common-support-issues) described below could
+help resolve your issue, please ask for individual support on our
+[official Gitter Chat](https://gitter.im/bkimminich/juice-shop). If you
+are sure to have found a bug in the Juice Shop itself please
+[open a 🐛 Bug report issue](https://github.com/bkimminich/juice-shop/issues/new?assignees=&labels=bug&template=bug-report.md&title=%5B%F0%9F%90%9B%5D+)
+on GitHub.
+
+🛑 _Please **do not** file questions or support requests on the GitHub
+issues tracker._
+
+## Start-up validations
+
 During server start the Juice Shop runs a series of self-validations and
 print feedback about their success to the console:
 
@@ -9,8 +22,6 @@ Juice Shop will resist to launch as long as any of these validations
 fail:
 
 ![Failing start-up validations](img/failing_startup-validations.png)
-
-## Start-up validations
 
 The following checks are run during server startup and can typically be
 fixed in a straightforward fashion when they fail:
@@ -39,14 +50,9 @@ solve your issue.
 
 ## Common support issues
 
-If (and only if) none of the hints below could help you resolve your
-issue, please ask for support in our
-[official Gitter Chat](https://gitter.im/bkimminich/juice-shop). If you
-are sure to have found a bug in the Juice Shop itself please open a
-GitHub issue.
-
-🛑 _Please **do not** file questions or support requests on the GitHub
-issues tracker._
+The following issues have been seen (and solved/mitigated) more than
+once and can hopefully help you to narrow down a solution for your
+issue.
 
 ### Node.js / NPM
 
