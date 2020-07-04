@@ -527,11 +527,16 @@ verbose = true
 
 ### Change the name of a user by performing Cross-Site Request Forgery from another origin
 
-1. Login with a user account, this user is the victim of the attack.
-2. Navigate to <http://htmledit.squarefree.com>. It is intentional that
-   the site is accessed without TLS, as otherwise there might be issues
-   with the mixed-content policy of the browser.
-3. In the upper frame of the page, paste the following HTML fragment,
+1. Open Juice Shop in an older web browser, e.g.
+   [Mozilla Firefox 56](https://ftp.mozilla.org/pub/firefox/releases/56.0/)
+   from 2017. _(⚠️ You should not install such an old browser on your
+   actual computer! Use a VM for such experiments!)_
+2. Login with any user account. This user is going to be the victim of
+   the CSRF attack.
+3. Navigate to <http://htmledit.squarefree.com> in the same browser. It
+   is intentional that the site is accessed without TLS, as otherwise
+   there might be issues with the mixed-content policy of the browser.
+4. In the upper frame of the page, paste the following HTML fragment,
    which contains a self-submitting HTML form:
 
 ```html
