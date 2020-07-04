@@ -188,8 +188,10 @@ perform harmful attacks on unsuspecting visitors.
 
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) in containerized
-environments. By default this applies to Docker and Heroku. To re-enable
-all challenges you can set the environment variable `NODE_ENV=unsafe` or
+environments. By default this applies to Docker and Heroku. These challenges
+are marked as 'unavailable' in the scoreboard as can be seen in the screenshot above.
+
+To re-enable all challenges you can set the environment variable `NODE_ENV=unsafe` or
 you can set `safetyOverride: true` in your own
 [YAML configuration file](customization.md#yaml-configuration-file).
 Please use the unsafe mode at your own risk, especially on publicly
