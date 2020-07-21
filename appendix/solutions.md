@@ -1168,15 +1168,6 @@ more attention & a good portion of shrewdness.
 4. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
    solve the challenge.
 
-> By embedding NULL Bytes/characters into applications that do not
-> handle postfix NULL terminators properly, an attacker can exploit a
-> system using techniques such as Local File Inclusion. The Poison Null
-> Byte exploit takes advantage strings with a known length that can
-> contain null bytes, and whether or not the API being attacked uses
-> null terminated strings. By placing a NULL byte in the string at a
-> certain byte, the string will terminate at that point, nulling the
-> rest of the string, such as a file extension.[^2]
-
 ### Access a salesman's forgotten backup file
 
 1. Use the _Poison Null Byte_ attack described in
@@ -1292,6 +1283,10 @@ to respond.
 4. Craft a redirect URL so that the target-URL in `to` comes with an own
    parameter containing a URL from the whitelist, e.g.
    <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
+
+### Bypass a security control with a Poison Null Byte
+
+🛠️ **TODO**
 
 ### Reset Bender's password via the Forgot Password mechanism
 
@@ -2781,8 +2776,6 @@ as it requires you to actually execute the payload by visiting
 box and once you go _Back_ the challenge solution should trigge
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
-
-[^2]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^3]: <http://www.kli.org/about-klingon/klingon-history>
 

@@ -8,17 +8,18 @@
 
 ## Challenges covered in this chapter
 
-| Name                    | Description                                                | Difficulty |
-|:------------------------|:-----------------------------------------------------------|:-----------|
-| Admin Registration      | Register as a user with administrator privileges.          | ⭐⭐⭐       |
-| Deluxe Fraud            | Obtain a Deluxe Membership without paying for it.       | ⭐⭐⭐     |
-| Expired Coupon          | Successfully redeem an expired campaign coupon code.       | ⭐⭐⭐⭐     |
-| Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode". | ⭐          |
-| Payback Time            | Place an order that makes you rich.                        | ⭐⭐⭐       |
-| Repetitive Registration | Follow the DRY principle while registering a user.         | ⭐          |
-| Upload Size             | Upload a file larger than 100 kB.                          | ⭐⭐⭐       |
-| Upload Type             | Upload a file that has no .pdf or .zip extension.          | ⭐⭐⭐       |
-| Zero Stars              | Give a devastating zero-star feedback to the store.        | ⭐          |
+| Name                    | Description                                                                                 | Difficulty |
+|:------------------------|:--------------------------------------------------------------------------------------------|:-----------|
+| Admin Registration      | Register as a user with administrator privileges.                                           | ⭐⭐⭐       |
+| Deluxe Fraud            | Obtain a Deluxe Membership without paying for it.                                           | ⭐⭐⭐       |
+| Expired Coupon          | Successfully redeem an expired campaign coupon code.                                        | ⭐⭐⭐⭐     |
+| Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode".                                  | ⭐          |
+| Payback Time            | Place an order that makes you rich.                                                         | ⭐⭐⭐       |
+| Poison Null Byte        | Bypass a security control with a Poison Null Byte to access a file not meant for your eyes. | ⭐⭐⭐⭐     |
+| Repetitive Registration | Follow the DRY principle while registering a user.                                          | ⭐          |
+| Upload Size             | Upload a file larger than 100 kB.                                                           | ⭐⭐⭐       |
+| Upload Type             | Upload a file that has no .pdf or .zip extension.                                           | ⭐⭐⭐       |
+| Zero Stars              | Give a devastating zero-star feedback to the store.                                         | ⭐          |
 
 ### Register as a user with administrator privileges
 
@@ -50,9 +51,12 @@ offered some seasonal special campaign at least once.
 Who wouldn't want to see Bjoern's cat fighting fiercely with a furry
 green plush toy?
 
-* When you visit the _Photo Wall_ you will notice a broken image on one of the entries
-* You just have to (literally) inspect the problem to understand the basic issue
-* It can also help to try out the _Tweet_-button of the entry and observe what happens
+* When you visit the _Photo Wall_ you will notice a broken image on one
+  of the entries
+* You just have to (literally) inspect the problem to understand the
+  basic issue
+* It can also help to try out the _Tweet_-button of the entry and
+  observe what happens
 
 ![Broken image on photo wall](img/broken_image-photo_wall.png)
 
@@ -65,9 +69,23 @@ out away to _receive_ money instead of _paying_ for their purchase.
 * Investigate the shopping basket closely to understand how it prevents
   you from creating orders that would fulfil the challenge
 
+### Bypass a security control with a Poison Null Byte
+
+> By embedding NULL Bytes/characters into applications that do not
+> handle postfix NULL terminators properly, an attacker can exploit a
+> system using techniques such as Local File Inclusion. The Poison Null
+> Byte exploit takes advantage strings with a known length that can
+> contain null bytes, and whether or not the API being attacked uses
+> null terminated strings. By placing a NULL byte in the string at a
+> certain byte, the string will terminate at that point, nulling the
+> rest of the string, such as a file extension.[^2]
+
+🛠️ **TODO**
+
 ### Follow the DRY principle while registering a user
 
 > The DRY (Don't Repeat Yourself) Principle states:
+>
 > > Every piece of knowledge must have a single, unambiguous,
 > > authoritative representation within a system.
 
@@ -113,3 +131,5 @@ application into accepting a feedback with 0 stars.
   around with the UI a bit
 
 [^1]: https://cwe.mitre.org/data/definitions/20.html
+
+[^2]: <http://hakipedia.com/index.php/Poison_Null_Byte>
