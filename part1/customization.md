@@ -89,6 +89,7 @@ within the application.
 | `theme`                                                     | Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`. See [Material Color Themes](#material-color-themes) for a sample screenshot of each theme. | `bluegrey-lightgreen`                        |
 | `showVersionNumber`                                         | Shows or hides the software version from the title.                                                                                                                                                                                                                                        | `true`                                       |
 | `showGitHubLinks`                                           | Shows or hides the _"GitHub"_ button in the navigation and side bar as well as the info box about contributing on the _Score Board_.                                                                                                                                                       | `true`                                       |
+| `localBackupEnabled`                                        | Enabled or disables the local backup feature for hacking progress and filters/settings on the _Score Board_.                                                                                                                                                                               | `true`                                       |
 | `numberOfRandomFakeUsers`                                   | Represents the number of random user accounts to be created on top of the pre-defined ones (which are required for several challenges).                                                                                                                                                    | `0`, meaning no additional users are created |
 | `altcoinName`                                               | Defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen.                                                                                                                                                                                                 | `Juicycoin`                                  |
 | `privacyContactEmail`                                       | The email address shown as contact in the _Privacy Policy_.                                                                                                                                                                                                                                | `donotreply@owasp-juice.shop`                |
@@ -113,7 +114,7 @@ Us_ or the _Photo Wall_.
 | `facebookUrl`      | URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen. | `'https://www.facebook.com/owasp.juiceshop'`                            |
 | `slackUrl`         | URL used as the Slack link on the _About Us_ screen.                                             | `'http://owaspslack.com'`                                               |
 | `pressKitUrl`      | URL used as the link to logos and media files on the _About Us_ screen.                          | `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'` |
-| `questionnaireUrl` | URL used as the link to the user questionnaire on the _Score Board_ screen.                      | `'https://forms.gle/2Tr5m1pqnnesApxN8'`                                 |
+| `questionnaireUrl` | URL used as the link to a user questionnaire on the _Score Board_ screen.                        | `~`                                                                     |
 
 #### `recyclePage` subsection
 
@@ -312,6 +313,7 @@ application:
   theme: bluegrey-lightgreen
   showVersionNumber: true
   showGitHubLinks: true
+  localBackupEnabled: true
   numberOfRandomFakeUsers: 0
   altcoinName: Juicycoin
   privacyContactEmail: donotreply@owasp-juice.shop
@@ -322,7 +324,7 @@ application:
     slackUrl: 'http://owaspslack.com'
     redditUrl: 'https://www.reddit.com/r/owasp_juiceshop'
     pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'
-    questionnaireUrl: 'https://forms.gle/2Tr5m1pqnnesApxN8'
+    questionnaireUrl: ~
   recyclePage:
     topProductImage: fruit_press.jpg
     bottomProductImage: apple_pressings.jpg
