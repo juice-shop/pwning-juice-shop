@@ -25,6 +25,7 @@
     "nodeVersions": "10.x, 12.x and 14.x",
     "recommendedNodeVersion": "14.x",
     "herokuNodeVersion": "14.x",
+    "backupSchemaVersion": "1",
     "ctf": false
   }
 }

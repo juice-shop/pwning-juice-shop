@@ -142,6 +142,23 @@ If you want to start over with a fresh hacking session, simply click the
 _Delete cookie to clear hacking progress_ button. After the next server
 restart, your score board will be blank.
 
+## Manual progress and settings backup
+
+With the round _Backup_ and _Restore_ buttons on the Score Board you can
+save and later restore your hacking progress as well as language, Score
+Board filters, banner dismissal to a `JSON` file.
+
+![Manual backup and restore buttons on Score Board](img/manual_backup.png)
+
+The backup format is independent of your system or browser, meaning you
+can use the backup file to conveniently transfer your progress and
+settings from one computer to another.
+
+If during restore you see an error message `Version X is incompatible
+with expected version Y` your backup was taken before a semantically
+incompatible format change. The current backup schema version is
+{{book.backupSchemaVersion}}.
+
 {% if book.ctf == false %}
 
 ## Hacking Instructor
