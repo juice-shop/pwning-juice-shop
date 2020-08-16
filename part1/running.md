@@ -1,5 +1,25 @@
 # Running OWASP Juice Shop
 
+## System requirements
+
+To run a single instance of Juice Shop the following memory and CPU
+requirements apply. These resources are needed for the Juice Shop
+application process itself. Any additional resources needed by your
+environment (e.g. Docker or Vagrant) come on top.
+
+* **Minimum** system specification
+  * `128 MB` RAM
+  * `100 millicpu` CPU
+  * `300 MB` free disk space
+* **Recommended** system specification
+  * `256 MB` RAM
+  * `200 millicpu` CPU
+  * `800 MB` free disk space
+
+🗄️ _If installing [from sources](#from-sources) an additional `700
+MB` free disk space are required for the Git history in both minimum and
+recommended spec._
+
 ## Run options
 
 In the following sections you find step-by-step instructions to deploy a
