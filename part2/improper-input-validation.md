@@ -13,6 +13,7 @@
 | Admin Registration      | Register as a user with administrator privileges.                                           | ⭐⭐⭐       |
 | Deluxe Fraud            | Obtain a Deluxe Membership without paying for it.                                           | ⭐⭐⭐       |
 | Expired Coupon          | Successfully redeem an expired campaign coupon code.                                        | ⭐⭐⭐⭐     |
+| Kill Chatbot            | Permanently disable the support chatbot so that it can no longer answer customer queries.   | ⭐⭐⭐⭐⭐    |
 | Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode".                                  | ⭐          |
 | Payback Time            | Place an order that makes you rich.                                                         | ⭐⭐⭐       |
 | Poison Null Byte        | Bypass a security control with a Poison Null Byte to access a file not meant for your eyes. | ⭐⭐⭐⭐     |
@@ -45,6 +46,10 @@ offered some seasonal special campaign at least once.
 * Look for clues about the past campaign or holiday event somewhere in
   the application
 * Solving this challenge does not require actual time traveling
+
+### Permanently disable the support chatbot
+
+🛠️ **TODO**
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
@@ -133,3 +138,4 @@ application into accepting a feedback with 0 stars.
 [^1]: https://cwe.mitre.org/data/definitions/20.html
 
 [^2]: <http://hakipedia.com/index.php/Poison_Null_Byte>
+

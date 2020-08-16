@@ -2264,6 +2264,10 @@ loop`._
 > <lolz>&lol9;</lolz>
 > ```
 
+### Permanently disable the support chatbot
+
+🛠️ **TODO**
+
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 
 ### Overwrite the Legal Information file
