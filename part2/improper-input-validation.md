@@ -36,7 +36,14 @@ chosen by simply leaving then admin features in the web shop itself and
 
 ### Obtain a Deluxe Membership without paying for it
 
-🛠️ **TODO**
+The perks that come with a deluxe membership are reserved for paying customers
+only. There sure seem to be a lot of ways for a potential power user to give
+their money to juice shop. Perhaps, one of these payment methods could have some 
+unforseen loopholes
+
+* Go to the payment page for a deluxe membership and try paying through different methods
+* Try inspecting the requests that go out for each of these methods, using the browser's developer tools
+* Maybe playing around with the parameters in these requests could reveal something interesting
 
 ### Successfully redeem an expired campaign coupon code
 
@@ -49,7 +56,15 @@ offered some seasonal special campaign at least once.
 
 ### Permanently disable the support chatbot
 
-🛠️ **TODO**
+Juice shop's handy dandy chatbot is cute and all, but can it defend itself
+against malicious attackers looking to rob the customers of its services?
+
+* In order to disable the chatbot for all users, you must first get an
+understanding of how it works under the hood
+* The chatbot sure offers a lot of functionality. Could it be that juice-shop
+relies on a third party, possibly open source library for this?
+* Maybe you can try to gather clues from around juice shop and then go dumpster 
+dive the internet to get a hold of the bot's source
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
