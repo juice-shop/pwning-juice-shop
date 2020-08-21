@@ -620,7 +620,14 @@ frame of zero height and width.
 
 ### Obtain a Deluxe Membership without paying for it
 
-🛠️ **TODO**
+1. Go to the Deluxe membership page and try buying a deluxe membership
+ through different payment methods and inspect the outgoing requests 
+ using your browser's devtools
+ 
+2. Observe that the request includes a parameter called paymentMode 
+which specifies the mode of payment to be used for the transaction.
+ Send another request with this parameters set to null and viola! 
+ You have been upgraded to deluxe status for free!
 
 ### Post some feedback in another users name
 
@@ -2266,7 +2273,26 @@ loop`._
 
 ### Permanently disable the support chatbot
 
-🛠️ **TODO**
+1. The Chatbot is built using an npm module called 'juicy-chat-bot'. The source code
+for the same can be found [here](https://github.com/bkimminich/juicy-chat-bot)
+
+2. Looking through the source, one can determine that user messages are processed inside 
+a VM context, with a function called `process`
+
+3. The vulnerable segment of the code is [this statement](https://github.com/bkimminich/juicy-chat-bot/blob/15e424609dc59ada5bf0c114ca7a5ffc718501cc/index.js#L31), that the bot uses to remember usernames.  
+The command  **this.factory.run(\`users.addUser("${token}", "${name}")\`)** is equivalent to
+an eval statement inside the VM context. This can be exploited by including `"` and `)` in one's username
+
+4. If one sets their username to **admin"); process=null; users.addUser("1337", "test**, the 
+final statement that gets executed would be 
+
+  `users.addUser("token", "admin");`  
+  `process = null;`  
+  `users.addUser("1337", "test")`  
+
+The process function, is therefore set to null and any further attempt by the bot to process 
+a user's message would result in an error
+
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 
