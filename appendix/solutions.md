@@ -334,6 +334,35 @@ in order to exploit and solve them:
 
    ![XSS alert box](img/xss0_alert.png)
 
+### Determine the answer to John's security question
+
+1. Go to the photo wall and search for the photo that has been posted by
+   the user `j0hNny`.
+2. Download that photo.
+3. Check the metadata of the photo. You can use various tools online
+   like http://exif.regex.info/exif.cgi
+4. When viewing the metadata, you can see the coordinates of where the
+   photo was taken. The coordinates are `36.958717N 84.348217W`
+5. Search for these coordinates on Google to find out in which forest
+   the photo was taken. It can be seen that the `Daniel Boone National
+   Forest` is located on these coordinates.
+6. Go to the login page and click on _Forgot your password?_.
+7. Fill in `john@juice-sh.op` as the email and `Daniel Boone National
+   Forest` as the answer of the security question.
+8. Choose a new password and click on _Change_.
+
+### Determine the answer to Emma's security question
+
+1. Go to the photo wall and search for the photo that has been posted by
+   the user `E=ma²`.
+2. Open the image so that you can zoom in on it.
+3. On the far left window on the middle floor, you can see a logo of a
+   company. It can be seen that logo shows the name `ITSec`.
+4. Go to the login page and click on _Forgot your password?_.
+5. Fill in `emma@juice-sh.op` as the email and `ITSec` as the answer of
+   the security question.
+6. Choose a new password and click on _Change_.
+
 ## ⭐⭐⭐ Challenges
 
 ### Register as a user with administrator privileges
@@ -498,11 +527,16 @@ verbose = true
 
 ### Change the name of a user by performing Cross-Site Request Forgery from another origin
 
-1. Login with a user account, this user is the victim of the attack.
-2. Navigate to <http://htmledit.squarefree.com>. It is intentional that
-   the site is accessed without TLS, as otherwise there might be issues
-   with the mixed-content policy of the browser.
-3. In the upper frame of the page, paste the following HTML fragment,
+1. Open Juice Shop in an older web browser, e.g.
+   [Mozilla Firefox 56](https://ftp.mozilla.org/pub/firefox/releases/56.0/)
+   from 2017. _(⚠️ You should not install such an old browser on your
+   actual computer! Use a VM for such experiments!)_
+2. Login with any user account. This user is going to be the victim of
+   the CSRF attack.
+3. Navigate to <http://htmledit.squarefree.com> in the same browser. It
+   is intentional that the site is accessed without TLS, as otherwise
+   there might be issues with the mixed-content policy of the browser.
+4. In the upper frame of the page, paste the following HTML fragment,
    which contains a self-submitting HTML form:
 
 ```html
@@ -1134,15 +1168,6 @@ more attention & a good portion of shrewdness.
 4. <http://localhost:3000/ftp/package.json.bak%2500.md> will ultimately
    solve the challenge.
 
-> By embedding NULL Bytes/characters into applications that do not
-> handle postfix NULL terminators properly, an attacker can exploit a
-> system using techniques such as Local File Inclusion. The Poison Null
-> Byte exploit takes advantage strings with a known length that can
-> contain null bytes, and whether or not the API being attacked uses
-> null terminated strings. By placing a NULL byte in the string at a
-> certain byte, the string will terminate at that point, nulling the
-> rest of the string, such as a file extension.[^2]
-
 ### Access a salesman's forgotten backup file
 
 1. Use the _Poison Null Byte_ attack described in
@@ -1259,6 +1284,10 @@ to respond.
    parameter containing a URL from the whitelist, e.g.
    <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
 
+### Bypass a security control with a Poison Null Byte
+
+🛠️ **TODO**
+
 ### Reset Bender's password via the Forgot Password mechanism
 
 1. Trying to find out who "Bender" might be should _immediately_ lead
@@ -1282,7 +1311,30 @@ to respond.
 
 ### Reset Uvogin's password via the Forgot Password mechanism
 
-**TODO**
+1. To reset Uvogin's password, you need the to find out what his
+   favorite movie is in order to answer his security question. This is
+   the kind of information that people often carelessly expose online.
+
+2. People often tend to reuse aliases on different websites.
+   [Sherlock](https://github.com/sherlock-project/sherlock) is a great
+   tool for finding social media accounts with known aliases/pesudonyms.
+
+3. Unfortunately, plugging _uvogin_ into sherlock yields nothing of
+   interest. Reading the reviews left by uvogin on the various products,
+   one can notice that they have quite an affinity for _leetspeak_
+
+4. Trying out a few variations of the alias uvogin, _uv0gin_ leads us to
+   a twitter account with a similarly written tweet which references a
+   vulnerable beverage store. However nothing about his favorite movie
+
+   ![Uvogin's Twitter](img/uvogin_twitter.png)
+5. The [WayBack](https://archive.org/web/) can be used to check for
+   older versions of their profile page to look for deleted tweets. And
+   indeed, one of the snapshots available on WayBack contains a deleted
+   tweet that references `Silence of the Lambs` which is infact the
+   correct answer to his security question
+
+   ![Uvogin's Twitter Snapshot](img/uvogin_twitter_snap.png)
 
 ### Rat out a notorious character hiding in plain sight in the shop
 
@@ -2054,8 +2106,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-📕: If you do not want to write your own script for this challenge, take
-a look at
+📕: If you do not want to write your own script for this challenge,
+take a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
 [philly-vanilly](https://github.com/philly-vanilly).
@@ -2126,21 +2178,21 @@ from the Juice Shop (and other OWASP projects or chapters) is
 1. Request <http://localhost:3000/3rdpartylicenses.txt> to retrieve the
    3rd party license list generated by Angular CLI by default
 2. Combing through the list of modules you will come across
-   `ng2-bar-rating` which openly reveals its intent on
-   https://www.npmjs.com/package/ng2-bar-rating
+   `anuglar2-qrcode` which openly reveals its intent on
+   https://www.npmjs.com/package/anuglar2-qrcode
 
-   ![epilogue-js on NPM](img/npm_ng2-bar-rating.png)
+   ![anuglar2-qrcode on NPM](img/npm_anuglar2-qrcode.png)
 3. Visit <http://localhost:3000/#/contact>
-4. Submit your feedback with `ng2-bar-rating` in the comment to solve
+4. Submit your feedback with `anuglar2-qrcode` in the comment to solve
    this challenge
 
-You can probably imagine that the typosquatted `ng2-bar-rating` would be
-_a lot harder_ to distinguish from the original repository
+You can probably imagine that the typosquatted `anuglar2-qrcode` would
+be _a lot harder_ to distinguish from the original repository
 `ngx-bar-rating`, if it where not marked with the _THIS IS **NOT** THE
 MODULE YOU ARE LOOKING FOR!_-warning at the very top. Below you can see
 the original `ngx-bar-rating` module page on NPM:
 
-![ngx-bar-rating on NPM](img/npm_ngx-bar-rating.png)
+![angular2-qrcode on NPM](img/npm_angular2-qrcode.png)
 
 ### Give the server something to chew on for quite a while
 
@@ -2211,6 +2263,10 @@ loop`._
 > ]>
 > <lolz>&lol9;</lolz>
 > ```
+
+### Permanently disable the support chatbot
+
+🛠️ **TODO**
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 
@@ -2338,8 +2394,8 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is not
-   part of the Juice Shop repo itself and it is publicly accessible,
+   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
+   not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
    You can also look at the job results and logs at
@@ -2657,75 +2713,75 @@ opened on those._
    && chmod +x malware && ./malware')}`. Submit this as _Username_ and
    (on a Linux server) the challenge should be marked as solved
 
-ℹ️ Remember that you need to use the right malware file for your server's
-operation system and also their synonym command for `wget`.
+ℹ️ Remember that you need to use the right malware file for your
+server's operation system and also their synonym command for `wget`.
 
 ### Embed an XSS payload into our promo video
 
-r p romo video 1. The author
-[tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
-from his personal account, openly spoilering the URL
-<http://juice-shop-staging.herokuapp.
+1. The author
+   [tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
+   from his personal account, openly spoilering the URL
+   <http://juice-shop-staging.herokuapp.com/promotion>
 
-                <http://juice-shop-staging.herokuapp.com/promotion>
-                   ![Tweet promoting a new in-app promotion video](img/tweet
-                _
+   ![Tweet promoting a new in-app promotion video](img/tweet_promotion.png)
+2. Visit <http://localhost:3000/promotion> to watch the video. You will
+   notice that it comes with subtitles enabled by default.
 
-pro motion.png) 2. Visit <http://localhost:3000/promotion> to watch the
-video. You will notice that it comes with subtitles enabl
-
-                notice that it comes with subtitles enabled by default.
-                   ![In-app promotion video](img/p
-                r
-
-omo _video.png) 3. Right-click and select _View Source_ on the page to
-learn that it loads its video from <http://localhost:3000/video> and
-that the subtitles are directly embedded in th e p age itself. 4.
-Inspecting the response for <http://localhost:3000/video> in the
-_Network_ tab of your DevTools shows an interesting header
-`Content-Location: /assets/public/videos/JuiceS hop Jingle.mp4` 5.
-Trying to access the video directly at
-<http://localhost:3000/assets/public/videos/JuiceShopJingle.mp4> works
-fine. 6. Getting a directory listing for
-<http://localhost:3000/assets/public/videos> does not work unf
-ortunately. 7. Knowing that the subtitles are in
-[WebVTT](https://www.w3.org/TR/webvtt1/) format (from step 3) a lucky
-guess would be that a corresponding `.vtt` file is available alongs ide
-the video. 8. Accessing
-<http://localhost:3000/assets/public/videos/JuiceShopJingle.vtt> proves
-this assum pti on correct. 9. As the subtitles are not loaded separately
-by the client, they must be embedded on the server side. If this
-embedding happens without proper safeguards, an XSS attack would be
-possible if the subtitles files could b e ov erwritten. 10. The
-prescribed XSS payload also hints clearly at the intended attack against
-the subtitles, which are themselves enclosed in a `<script>` tag, which
-the payload will try to close prematurely with its startin g `<
-/script>`. 11. To successfully overwrite the file, the Zip Slip
-vulnerability behind the
-[Overwrite the Legal Information file](#overwrite-the-legal-information-file)
-challeng e ca n be used. 12. The blind part of this challenge is the
-actual file location in the server file system. Trying to create a Zip
-file with any path trying to traverse into `../../assets/public/videos/`
-will fail. Notice that `../../` was sufficient to get to the root folder
-in
-[Overwrite the Legal Information file](#overwrite-the-legal-information-file).
-13\. This likely means that there is a deeper directory structure in
-which `ass ets/ ` resides. 14. This actual directory structure on the
-server is created by the AngularCLI tool when it compiles the
-application and looks as follows: `frontend/dist/fron tend /assets/`.
-15\. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that
-contains the prescribed payload of
-``</script><script>alert(`xss`)</script>`` with `zip exploit.zip
-../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt` (
-on Linux). 16. Upload the ZIP file on <http://localhost:300 0/#/
-complain>. 17. The challenge notification will not trigger immediately,
-as it requires you to actually execute the payload by visiting
-<http://localhost:3000/pro moti on> again. 18. You will see the alert
-box and once you go _Back_ the challenge solution should trigge
+   ![In-app promotion video](img/promo_video.png)
+3. Right-click and select _View Source_ on the page to learn that it
+   loads its video from <http://localhost:3000/video> and that the
+   subtitles are directly embedded in the page itself.
+4. Inspecting the response for <http://localhost:3000/video> in the
+   _Network_ tab of your DevTools shows an interesting header
+   `Content-Location: /assets/public/videos/JuiceShopJingle.mp4`
+5. Trying to access the video directly at
+   <http://localhost:3000/assets/public/videos/JuiceShopJingle.mp4>
+   works fine.
+6. Getting a directory listing for
+   <http://localhost:3000/assets/public/videos> does not work
+   unfortunately.
+7. Knowing that the subtitles are in
+   [WebVTT](https://www.w3.org/TR/webvtt1/) format (from step 3) a lucky
+   guess would be that a corresponding `.vtt` file is available
+   alongside the video.
+8. Accessing
+   <http://localhost:3000/assets/public/videos/JuiceShopJingle.vtt>
+   proves this assumption correct.
+9. As the subtitles are not loaded separately by the client, they must
+   be embedded on the server side. If this embedding happens without
+   proper safeguards, an XSS attack would be possible if the subtitles
+   files could be overwritten.
+10. The prescribed XSS payload also hints clearly at the intended attack
+    against the subtitles, which are themselves enclosed in a `<script>`
+    tag, which the payload will try to close prematurely with its
+    starting `</script>`.
+11. To successfully overwrite the file, the Zip Slip vulnerability
+    behind the
+    [Overwrite the Legal Information file](#overwrite-the-legal-information-file)
+    challenge can be used.
+12. The blind part of this challenge is the actual file location in the
+    server file system. Trying to create a Zip file with any path trying
+    to traverse into `../../assets/public/videos/` will fail. Notice
+    that `../../` was sufficient to get to the root folder in
+    [Overwrite the Legal Information file](#overwrite-the-legal-information-file).
+13. This likely means that there is a deeper directory structure in
+    which `assets/` resides.
+14. This actual directory structure on the server is created by the
+    AngularCLI tool when it compiles the application and looks as
+    follows: `frontend/dist/frontend/assets/`.
+15. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that contains
+    the prescribed payload of ``</script><script>alert(`xss`)</script>``
+    with `zip exploit.zip
+    ../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt`
+    (on Linux).
+16. Upload the ZIP file on <http://localhost:3000/#/complain>.
+17. The challenge notification will not trigger immediately, as it
+    requires you to actually execute the payload by visiting
+    <http://localhost:3000/promotion> again.
+18. You will see the alert box and once you go _Back_ the challenge
+    solution should trigger accordingly.
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
-
-[^2]: <http://hakipedia.com/index.php/Poison_Null_Byte>
 
 [^3]: <http://www.kli.org/about-klingon/klingon-history>
 

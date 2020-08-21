@@ -4,20 +4,22 @@
 
 | Name                       | Description                                                                                                                                                                             | Difficulty |
 |:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
-| Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | ⭐⭐⭐⭐       |
+| Access Log                 | Gain access to any access log file of the server.                                                                                                                                       | ⭐⭐⭐⭐     |
 | Confidential Document      | Access a confidential document.                                                                                                                                                         | ⭐          |
-| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐      |
+| Email Leak                 | Perform an unwanted information disclosure by accessing data cross-domain.                                                                                                              | ⭐⭐⭐⭐⭐    |
 | Exposed Metrics            | Find the endpoint that serves usage data to be scraped by a popular monitoring system.                                                                                                  | ⭐          |
-| Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | ⭐⭐⭐⭐       |
-| Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | ⭐⭐⭐⭐       |
-| GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | ⭐⭐⭐⭐       |
-| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐      |
-| Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | ⭐⭐⭐⭐       |
-| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐        |
-| Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | ⭐⭐         |
-| Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐       |
-| Reset Uvogin's Password    | Reset Uvogin's password via the Forgot Password mechanism with _his original answer_ to his security question.                                                                          | ⭐⭐⭐⭐       |
-| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐      |
+| Forgotten Developer Backup | Access a developer's forgotten backup file.                                                                                                                                             | ⭐⭐⭐⭐     |
+| Forgotten Sales Backup     | Access a salesman's forgotten backup file.                                                                                                                                              | ⭐⭐⭐⭐     |
+| GDPR Data Theft            | Steal someone else's personal data without using Injection.                                                                                                                             | ⭐⭐⭐⭐     |
+| Leaked Access Logs         | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.) | ⭐⭐⭐⭐⭐    |
+| Leaked Unsafe Product      | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.                                                                          | ⭐⭐⭐⭐     |
+| Login Amy                  | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")    | ⭐⭐⭐       |
+| Login MC SafeSearch        | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.                                                                               | ⭐⭐        |
+| Meta Geo Stalking          | Determine the answer to John's security question by looking at an upload of him to the Photo Wall and use it to reset his password via the Forgot Password mechanism.                   | ⭐⭐        |
+| Misplaced Signature File   | Access a misplaced SIEM signature file.                                                                                                                                                 | ⭐⭐⭐⭐     |
+| Reset Uvogin's Password    | Reset Uvogin's password via the Forgot Password mechanism with _his original answer_ to his security question.                                                                          | ⭐⭐⭐⭐     |
+| Retrieve Blueprint         | Deprive the shop of earnings by downloading the blueprint for one of its products.                                                                                                      | ⭐⭐⭐⭐⭐    |
+| Visual Geo Stalking        | Determine the answer to Emma's security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.                   | ⭐⭐⭐⭐     |
 
 ### Gain access to any access log file of the server
 
@@ -236,6 +238,17 @@ not count.
 
   [!["Protect Ya Passwordz"](img/protect-ya-passwordz.jpg)](https://www.youtube.com/watch?v=v59CX2DiX0Y)
 
+### Determine the answer to John's security question
+
+Who would have guessed that a simple walk in the park could lead to an
+account compromise. People these days are not careful with what they
+post online and are not aware of the possible consequences it can have
+when people exploit that.
+
+* Make use of tools that can inspect the metadata of images.
+* Use this information to answer the security question of the John, who
+  enjoys hiking in the park.
+
 ### Access a misplaced SIEM signature file.
 
 > Security information and event management (SIEM) technology supports
@@ -267,7 +280,15 @@ for SIEM systems:
 
 ### Reset Uvogin's password via the Forgot Password mechanism
 
-**TODO**
+With the amount of personal information that people tend to reveal
+online, security questions are hardly reliable anymore.
+
+* People often reuse aliases online. You might be able to find something
+  by looking online for Uvogin's name or slight variations of it based
+  on his unique writing habits
+
+* You might be able to find some existing OSINT tools to help you in
+  this investigation
 
 ### Deprive the shop of earnings by downloading the blueprint for one of its products
 
@@ -282,6 +303,16 @@ on its blueprint in order to make it yourself?
 ℹ️ _If you are running the Juice Shop with a custom theme and product
 inventory, the product to inspect will be a different one. The tooltip
 on the Score Board will tell you which one to look into._
+
+### Determine the answer to Emma's security question
+
+It is also possible to determine where a picture was taken by looking at
+visual clues within the image. A certain user has uploaded a picture of
+his old workplace. Take a look at what his security question is and see
+if you can find the answer by looking at his uploaded image.
+
+* Look at visual clues to determine what company is shown in the picture
+  and use that to answer the security question.
 
 [^1]: https://searchsecurity.techtarget.com/definition/access-log
 [^2]: https://en.wikipedia.org/wiki/Data_loss_prevention_software

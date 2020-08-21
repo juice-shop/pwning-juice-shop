@@ -51,6 +51,37 @@ solved challenges to reduce the level of distraction on the Score Board.
 🐌 Selecting _Show all_ for all difficulties and all challenges might
 impact the load time of the Score Board significantly!
 
+### Challenge Tags
+
+Starting with `v12.0.0` tags were introduced to help classify challenges
+which either favor a certain hacking approach or share some trait
+orthogonal to the categories.
+
+* **Shenanigans** marks challenges which are not considered serious
+  and/or realistic but exist more for entertainment
+* **Contraption** indicates that a challenge is not exactly part of a
+  realistic scenario but might be a bit forced or crafted
+* **OSINT** marks challenges which require some Internet research or
+  **social stalking** actvitiy outside the application
+* **Good Practice** highlights challenges which are less about
+  vulnerabilities but promoting good (security) practices
+* **Danger Zone** marks
+  [potentially dangerous challenges](#potentially-dangerous-challenges)
+  which are disabled on Docker/Heroku by default due to RCE or other
+  risks
+* **Good for Demos** highlights
+  [challenges which are suitable for live demos](../appendix/trainers.md#challenges-for-demos)
+  or awareness trainings
+* **Prerequisite** marks challenges which need to be solved before one
+  or more other challenges can be (realistically) solved
+* **Brute Force** marks challenges where automation of some security
+  tool or custom script is an option or even prerequisite
+* **Tutorial** marks challenges for which a
+  [Hacking Instructor script](#hacking-instructor) exists to assist
+  newcomers
+* **Code Analysis** marks challenges where it can be helpful to rummage
+  through some source code of the application or a third party
+
 ## Success notifications
 
 The OWASP Juice Shop employs a simple yet powerful gamification
@@ -110,6 +141,23 @@ these can be bulk-dismissed by `Shift`-clicking any of the _X_-buttons.
 If you want to start over with a fresh hacking session, simply click the
 _Delete cookie to clear hacking progress_ button. After the next server
 restart, your score board will be blank.
+
+## Manual progress and settings backup
+
+With the round _Backup_ and _Restore_ buttons on the Score Board you can
+save and later restore your hacking progress as well as language, Score
+Board filters, banner dismissal to a `JSON` file.
+
+![Manual backup and restore buttons on Score Board](img/manual_backup.png)
+
+The backup format is independent of your system or browser, meaning you
+can use the backup file to conveniently transfer your progress and
+settings from one computer to another.
+
+If during restore you see an error message `Version X is incompatible
+with expected version Y` your backup was taken before a semantically
+incompatible format change. The current backup schema version is
+{{book.backupSchemaVersion}}.
 
 {% if book.ctf == false %}
 
@@ -188,9 +236,12 @@ perform harmful attacks on unsuspecting visitors.
 
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) in containerized
-environments. By default this applies to Docker and Heroku. To re-enable
-all challenges you can set the environment variable `NODE_ENV=unsafe` or
-you can set `safetyOverride: true` in your own
+environments. By default this applies to Docker and Heroku. These
+challenges are marked as 'unavailable' in the scoreboard as can be seen
+in the screenshot above.
+
+To re-enable all challenges you can set the environment variable
+`NODE_ENV=unsafe` or you can set `safetyOverride: true` in your own
 [YAML configuration file](customization.md#yaml-configuration-file).
 Please use the unsafe mode at your own risk, especially on publicly
 hosted instances.

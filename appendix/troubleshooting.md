@@ -1,5 +1,18 @@
 # Troubleshooting
 
+If (and only if) none of the
+[Common support issues](#common-support-issues) described below could
+help resolve your issue, please ask for individual support on our
+[official Gitter Chat](https://gitter.im/bkimminich/juice-shop). If you
+are sure to have found a bug in the Juice Shop itself please
+[open a 🐛 Bug report issue](https://github.com/bkimminich/juice-shop/issues/new?assignees=&labels=bug&template=bug-report.md&title=%5B%F0%9F%90%9B%5D+)
+on GitHub.
+
+🛑 _Please **do not** file questions or support requests on the GitHub
+issues tracker._
+
+## Start-up validations
+
 During server start the Juice Shop runs a series of self-validations and
 print feedback about their success to the console:
 
@@ -9,8 +22,6 @@ Juice Shop will resist to launch as long as any of these validations
 fail:
 
 ![Failing start-up validations](img/failing_startup-validations.png)
-
-## Start-up validations
 
 The following checks are run during server startup and can typically be
 fixed in a straightforward fashion when they fail:
@@ -25,8 +36,11 @@ fixed in a straightforward fashion when they fail:
 | `Required file ... is missing`                                                                                                       | If you installed [from sources](../part1/running.md#from-sources) re-run `npm install` and check for errors during its final step `Generating ES5 bundles for differential loading...`. In a [pre-packaged distribution](../part1/running.md#from-pre-packaged-distribution) you should **never** see this error.                                                       |
 | `Port ... is in use`                                                                                                                 | Make sure the port you intend to run Juice Shop on is actually available or use another port by setting the `PORT` environment variable.                                                                                                                                                                                                                                |
 | `Config schema validation failed with ... errors` followed by individual messages on wrong property types or unrecognized properties | Make sure that your customization complies with the schema of the [YAML configuration file](../part1/customization.md#yaml-configuration-file).                                                                                                                                                                                                                         |
-| `No product is configured as ... but one is required`                                                                                | Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on a single product in your custom inventory. See also [YAML configuration file](../part1/customization.md#yaml-configuration-file). |
-| `Product ... is used as ... and ... but can only be used for one challenge`                                                          | Make sure no single product is associated with more than one property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` in your custom inventory. See also [YAML configuration file](../part1/customization.md#yaml-configuration-file).                             |
+| `No product is configured as "..." challenge product but one is required`                                                            | Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on a single product in your custom inventory. See also [YAML configuration file](../part1/customization.md#yaml-configuration-file). |
+| `Product ... is used as "..." challenge product and "..." challenge product but can only be used for one challenge`                  | Make sure no single product is associated with more than one property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` in your custom inventory. See also [YAML configuration file](../part1/customization.md#yaml-configuration-file).                             |
+| `Restricted tutorial mode is enabled while Hacking Instructor is disabled`                                                           | Make sure `hackingInstructor.isenabled` is `true` when you also have configured `challenges.restrictToTutorialsFirst` set to `true`.                                                                                                                                                                                                                                    |
+| `CTF flags are enabled while challenge solved notifications are disabled`                                                            | Make sure `challenges.showSolvedNotifications` is `true` when you also have configured `ctf.showFlagsInNotifications` set to `true`.                                                                                                                                                                                                                                    |
+| `CTF country mappings for FBCTF are enabled while CTF flags are disabled`                                                            | Make sure `ctf.showFlagsInNotifications` is `true` when you also have configured `ctf.showCountryDetailsInNotifications` set to `name`, `flag` or `both`.                                                                                                                                                                                                               |
 
 If your installation did not even get to the point of running these
 checks _or_ all checks successfully pass with `(OK)` but the application
@@ -36,14 +50,9 @@ solve your issue.
 
 ## Common support issues
 
-If (and only if) none of the hints below could help you resolve your
-issue, please ask for support in our
-[official Gitter Chat](https://gitter.im/bkimminich/juice-shop). If you
-are sure to have found a bug in the Juice Shop itself please open a
-GitHub issue.
-
-🛑 _Please **do not** file questions or support requests on the GitHub
-issues tracker._
+The following issues have been seen (and solved/mitigated) more than
+once and can hopefully help you to narrow down a solution for your
+issue.
 
 ### Node.js / NPM
 
@@ -68,6 +77,11 @@ issues tracker._
 - If `npm install` on Linux runs into `WARN cannot run in wd` problems
   (e.g. during the frontend installation step) try running `npm install
   --unsafe-perm` instead.
+- If `npm start` fails with `Error: ENOENT: no such file or directory,
+  copyfile` you might have had either an error already during `npm
+  install` _or_ you pulled changes from GitHub but did not re-run `npm
+  install` afterwards. Make sure to check if the file to copy from
+  exists on your disk and if the target folder for the copy is there.
 
 ### Docker
 
@@ -99,8 +113,11 @@ issues tracker._
   all properties in the
   [`googleOauth` subsection](../part1/customization.md#googleoauth-subsection)
 
-### Miscellaneous
+### Challenges
 
+- If you notice that a challenge solution is not working, check on the _Score Board_ if that challenge
+  is one of the [potentially dangerous ones](../part1/challenges.md#potentially-dangerous-challenges)
+  which are by default disabled in Docker environments and shared platforms like Heroku.
 - You may find it easier to find vulnerabilities using a pen test tool.
   We strongly recommend
   [Zed Attack Proxy](https://code.google.com/p/zaproxy/) which is open

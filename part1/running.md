@@ -1,5 +1,25 @@
 # Running OWASP Juice Shop
 
+## System requirements
+
+To run a single instance of Juice Shop the following memory and CPU
+requirements apply. These resources are needed for the Juice Shop
+application process itself. Any additional resources needed by your
+environment (e.g. Docker or Vagrant) come on top.
+
+* **Minimum** system specification
+  * `128 MB` RAM
+  * `100 millicpu` CPU
+  * `300 MB` free disk space
+* **Recommended** system specification
+  * `256 MB` RAM
+  * `200 millicpu` CPU
+  * `800 MB` free disk space
+
+🗄️ _If installing [from sources](#from-sources) an additional `700
+MB` free disk space are required for the Git history in both minimum and
+recommended spec._
+
 ## Run options
 
 In the following sections you find step-by-step instructions to deploy a
@@ -93,29 +113,15 @@ If you are using Docker on Windows - inside a VirtualBox VM - make sure
 that you also enable port forwarding from host `127.0.0.1:3000` to
 `0.0.0.0:3000` for TCP.
 
-#### Raspberry Pi (Arm64) image
+#### Supported architectures
 
-Using a [pre-packaged distribution](#from-pre-packaged-distribution) for
-Arm64 processors, [Omar Santos](https://github.com/santosomar) builds
-and publicly provides a Docker image that works on a Raspberry Pi 3 or
-newer. The last Juice Shop version with such an image available is  
-{{book.armDockerImageVersion}}.
-
-1. Install a supported 64bit operating system on your Raspberry Pi
-   * [Ubuntu Server 64bit](https://ubuntu.com/download/raspberry-pi) or
-     [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) on a
-     RasPi 4 model
-   * [Ubuntu Server 64bit](https://ubuntu.com/download/raspberry-pi) on
-     a RasPi 3 model
-2. Install [Docker](https://phoenixnap.com/kb/docker-on-raspberry-pi) on
-   your Raspberry Pi
-3. Run `docker pull santosomar/juice-shop-arm64`
-4. Run `docker run -d --rm -p 3000:3000 santosomar/juice-shop-arm64`
-5. Browse to your Raspberry Pi's IP address on port 3000, i.e.
-   `http://<ip of your raspi>:3000`
-
-ℹ️ This Docker image **does not work on a 32bit Linux** installation
-on Raspberry Pi!
+The official Docker image is built automatically during CI/CD for
+`linux/amd64`. Beginning with `v11.1.1` an official `linux/arm` image is
+built for each tagged release as well as for `latest`. This build is
+currently executed manually on a RaspberryPi 4B model with Raspian
+32bit. If an `arm` image is available, a compatible computer will
+automatically pull that image instead of the `amd64` version when
+running `docker pull bkimminich/juice-shop`.
 
 ### Vagrant
 
