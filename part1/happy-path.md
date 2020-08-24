@@ -281,6 +281,14 @@ recent order at the Juice Shop.
 
 ![File Complaint](/part1/img/file-complaint.png)
 
+#### Support Chat
+
+In the _Support Chat_ you can talk to an (almost) AI-powered chat bot
+and get answers to questions like product prices, deluxe membership
+benefits and more.
+
+![Support Chat](/part1/img/support-chat.png)
+
 #### About Us
 
 Like every proper enterprise, the OWASP Juice Shop has of course an
@@ -325,3 +333,4 @@ this book._
 [^1]: https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)
 
 [^2]: http://xunitpatterns.com/happy%20path.html
+
