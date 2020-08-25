@@ -620,14 +620,26 @@ frame of zero height and width.
 
 ### Obtain a Deluxe Membership without paying for it
 
-1. Go to the Deluxe membership page and try buying a deluxe membership
- through different payment methods and inspect the outgoing requests 
- using your browser's devtools
- 
-2. Observe that the request includes a parameter called paymentMode 
-which specifies the mode of payment to be used for the transaction.
- Send another request with this parameters set to null and viola! 
- You have been upgraded to deluxe status for free!
+1. If wallet is empty:
+   a. Go to `https://juice-shop.herokuapp.com/#/payment/deluxe` and look at the
+      available payment options for upgrading to a deluxe account
+   b. Open devtools and inspect the pay button next to the "pay using wallet"
+      option.
+   c. Remove the disabled="true" attribute from the element to enable it.
+   d. Switch to the network tab and devtools and click on the button to initiate payment
+   e. See that there is a POST request sent, which only contains one parameter in the 
+      request payload, "paymentMode", which is set to "wallet". The response contains
+      an error saying your wallet doesn't contain sufficient funds
+   d. Right click on the request and select "edit and resend"
+   e. Change the paymentMode parameter to an empty string and press send. This solves
+      the challenge and juice-shop no longer knows where to deduct the money from
+2. If wallet isn't empty:
+   a. If your wallet contains funds, you cannot start a dummy transaction to
+      inspect the request structure because then you would be automatically 
+      upgraded to deluxe.
+   b. Set up a proxy like OWASP ZAP, Fiddler aur Burp Suite.
+   c. Click on the pay button
+   d. Intercept and edit the request as described above before forwarding it.
 
 ### Post some feedback in another users name
 
