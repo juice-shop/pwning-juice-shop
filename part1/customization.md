@@ -103,6 +103,19 @@ within the application.
 | [`easterEggPlanet` subsection](#eastereggplanet-subsection) | Defines the customizations for the 3D-rendered planet easter egg.                                                                                                                                                                                                                          |                                              |
 | [`googleOauth` subsection](#googleoauth-subsection)         | Defines the client identifier and allowed redirect URIs for Google OAuthintegration.                                                                                                                                                                                                       |                                              |
 
+#### `chatbot` subsection
+
+Specifies all characteristics of the bot answering user questions in the
+_Support Chat_.
+
+| Property          | Description                                                                                                                                                                                                                                                | Default                                                     |
+|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------|
+| `name`            | Name the chat bot introduces itself with.                                                                                                                                                                                                                  | `Juicy`                                                     |
+| `greeting`        | Initial greeting the chat bot uses when chatting with a user.                                                                                                                                                                                              | `"Nice to meet you <customer-name>, I'm <bot-name>"`        |
+| `trainingData`    | Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as [training data](https://github.com/axa-group/nlp.js/blob/HEAD/docs/v4/quickstart.md#extracting-the-corpus-into-a-file) for the chat bot. | `'botDefaultTrainingData.json'`                             |
+| `defaultResponse` | Default response the chat bot uses when it could not understand the user's actual question.                                                                                                                                                                | `"Sorry I couldn't understand what you were trying to say"` |
+| `avatar`          | Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as a chat bot avatar.                                                                                           | `'JuicyChatBot.png'`                                        |
+
 #### `social` subsection
 
 Specifies all social links embedded on various screens such as _About
@@ -318,6 +331,12 @@ application:
   altcoinName: Juicycoin
   privacyContactEmail: donotreply@owasp-juice.shop
   customMetricsPrefix: juiceshop
+  chatBot:
+    name: 'Juicy'
+    greeting: "Nice to meet you <customer-name>, I'm <bot-name>"
+    trainingData: 'botDefaultTrainingData.json'
+    defaultResponse: "Sorry I couldn't understand what you were trying to say"
+    avatar: 'JuicyChatBot.png'
   social:
     twitterUrl: 'https://twitter.com/owasp_juiceshop'
     facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
