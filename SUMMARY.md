@@ -54,6 +54,7 @@
 * [Jingle lyrics](appendix/lyrics.md)
 * [Integration](appendix/integration.md)
 * [Monitoring](appendix/monitoring.md)
+* [Chatbot training data](appendix/chatbot.md)
 
 ## Postface
 
