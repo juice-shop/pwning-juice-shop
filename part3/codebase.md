@@ -19,9 +19,8 @@ it adapt nicely to different screen sizes. The various icons used
 throughout the frontend are from the vast
 [Font Awesome 5](https://fontawesome.com/) collection.
 
-ℹ️ Please note that **all client-side code is written
-in Typescript** which is compiled into regular JavaScript during the
-build process.
+ℹ️ Please note that **all client-side code is written in Typescript**
+which is compiled into regular JavaScript during the build process.
 
 ![Client tier focus](img/architecture-client.png)
 
@@ -124,12 +123,12 @@ tasks:
   the `getCaptcha()` function
 * `FeedbackService` to eventually `save()` the user feedback
 
-☝️ As a universal rule for the entire Juice Shop codebase,
-unnecessary code duplication as well as deeply nested 🍝-code
-should be avoided by using well-named & small helper functions. This is
-demonstrated by the very simple `getNewCaptcha()` and `resetForm()`
-functions in the code snippet below. Helper functions should always be
-located as close to the calling code as possible.
+☝️ As a universal rule for the entire Juice Shop codebase, unnecessary
+code duplication as well as deeply nested 🍝-code should be avoided by
+using well-named & small helper functions. This is demonstrated by the
+very simple `getNewCaptcha()` and `resetForm()` functions in the code
+snippet below. Helper functions should always be located as close to the
+calling code as possible.
 
 ```typescript
 import { FeedbackService } from '../Services/feedback.service'
@@ -225,10 +224,10 @@ export class ContactComponent implements OnInit {
 }
 ```
 
-🚨 Unit tests for all components can be found in their
-subfolders within `frontend/src/app/` as `*.component.spec.ts` files.
-They are [Jasmine 2](https://jasmine.github.io) specifications which are
-executed by the [Karma](https://karma-runner.github.io) test runner.
+🚨 Unit tests for all components can be found in their subfolders
+within `frontend/src/app/` as `*.component.spec.ts` files. They are
+[Jasmine 2](https://jasmine.github.io) specifications which are executed
+by the [Karma](https://karma-runner.github.io) test runner.
 
 ### Templates
 
@@ -260,6 +259,7 @@ associated styles in `contact.component.scss` - represents the entire
 _Contact Us_ screen.
 
 {% raw %}
+
 ```html
 <div fxLayoutAlign="center">
   <mat-card>
@@ -317,11 +317,11 @@ _Contact Us_ screen.
   </mat-card>
 </div>
 ```
+
 {% endraw %}
 
-ℹ️ In the entire Juice Shop code base, inline
-templates are **never** used. Templates must **always** be described in
-separate `.html` files.
+ℹ️ In the entire Juice Shop code base, inline templates are **never**
+used. Templates must **always** be described in separate `.html` files.
 
 ### Internationalization
 
@@ -358,12 +358,12 @@ process (launched with `npm install`) of the application. This creates
 an `frontend/dist/frontend` folder, which is the one actually delivered
 to the Browser to load all application-specific client-side code.
 
-ℹ️ If you want to quickly test client-side code
-changes, it can be cumbersome and slow to launch `npm install` over and
-over again. Instead you can use `npm run serve` to keep let Angular
-watch for client-code changes and recompile the affected parts on the
-fly. You usually not even have to manually refresh your browser with
-`F5` to see your changes.
+ℹ️ If you want to quickly test client-side code changes, it can be
+cumbersome and slow to launch `npm install` over and over again. Instead
+you can use `npm run serve` to keep let Angular watch for client-code
+changes and recompile the affected parts on the fly. You usually not
+even have to manually refresh your browser with `F5` to see your
+changes.
 
 ## Server Tier
 
@@ -372,15 +372,15 @@ application based on the [Express](http://expressjs.com) web framework.
 
 ![Server tier focus](img/architecture-server.png)
 
-ℹ️ On the server side all JavaScript code must be
-compliant to javascript (ES6) syntax.
+ℹ️ On the server side all JavaScript code must be compliant to
+javascript (ES6) syntax.
 
 ### Routes
 
 > Routing refers to determining how an application responds to a client
 > request to a particular endpoint, which is a URI (or path) and a
 > specific HTTP request method (GET, POST, and so on).
-> 
+>
 > Each route can have one or more handler functions, which are executed
 > when the route is matched.[^4]
 
@@ -401,17 +401,18 @@ and can be handled by any of the following middleware:
   * catching unhandled exceptions and presenting a default error screen
     (via `errorhandler`)
 
-🚨 Integration tests for all routes can be found in the
-`test/api` folder alongside all other API endpoint tests, from where
+🚨 Integration tests for all routes can be found in the `test/api`
+folder alongside all other API endpoint tests, from where
 [Frisby.js](https://www.frisbyjs.com/)/[Jest](https://facebook.github.io/jest/)
 assert the functionality of the entire backend on HTTP-request/response
 level.
 
 #### Generated API endpoints
 
-Juice Shop uses the [finale-rest](https://www.npmjs.com/package/finale-rest)
-middleware to automatically create REST endpoints for most of its
-Sequelize models. For e.g. the `User` model the generated endpoints are:
+Juice Shop uses the
+[finale-rest](https://www.npmjs.com/package/finale-rest) middleware to
+automatically create REST endpoints for most of its Sequelize models.
+For e.g. the `User` model the generated endpoints are:
 
 * `/api/Users` accepting
   * `GET` requests to retrieve all (or a filtered list of) user records
@@ -541,10 +542,10 @@ all hand-written endpoints can be used anonymously. The upcoming section
 [Access control on routes](#access-control-on-routes) explains the
 available authorization checks.
 
-🚨 Unit tests for hand-written routes can be found in the
-`test/server` folder. These tests are written using the
-[Chai](http://chaijs.com/) assertion library in conjunction with the
-[Mocha](https://mochajs.org/) test framework.
+🚨 Unit tests for hand-written routes can be found in the `test/server`
+folder. These tests are written using the [Chai](http://chaijs.com/)
+assertion library in conjunction with the [Mocha](https://mochajs.org/)
+test framework.
 
 #### Access control on routes
 
@@ -797,10 +798,10 @@ jump back and forth between attacked pages and the
 [Score Board](../part1/challenges.md#the-score-board) letting you watch
 as the difficulty stars and progress bar slowly fill and ever more green
 "solved"-badges appear. There is a
-[video recording of this on YouTube](https://www.youtube.com/watch?v=oiFUdZlS7zI)
-for the 7.0.0 release of the Juice Shop.
+[video recording of this on YouTube](https://youtu.be/9LkWOWiLZoc) for
+the 9.1.0 release of the Juice Shop.
 
-[![OWASP Juice Shop 7.0.0 - Protractor test suite](img/protractor-youtube.png)](https://www.youtube.com/watch?v=oiFUdZlS7zI)
+[![OWASP Juice Shop 9.1.0 - Protractor test suite](img/protractor-youtube.png)](https://youtu.be/9LkWOWiLZoc)
 
 These tests are written and executed with
 [Protractor](https://www.protractortest.org) which uses
