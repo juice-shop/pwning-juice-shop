@@ -4,9 +4,14 @@
 
 | Name            | Description                                                        | Difficulty |
 |:----------------|:-------------------------------------------------------------------|:-----------|
-| Privacy Policy  | Read our privacy policy.                                           | ⭐         |
-| Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐         |
+| Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐⭐        |
+| Privacy Policy  | Read our privacy policy.                                           | ⭐          |
+| Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐          |
 | Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐        |
+
+### Receive a coupon code from the support chatbot
+
+🛠️ **TODO**
 
 ### Read our privacy policy
 
@@ -68,3 +73,4 @@ This challenge was already covered in
 
 [^1]: https://en.wikipedia.org/wiki/Privacy_policy
 [^2]: https://en.wikipedia.org/wiki/White_hat_(computer_security)
+

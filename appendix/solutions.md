@@ -210,6 +210,10 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the Angular client.
 
+### Receive a coupon code from the support chatbot
+
+🛠️ **TODO**
+
 ### Use a deprecated B2B interface that was not properly shut down
 
 1. Log in as any user.
@@ -620,26 +624,26 @@ frame of zero height and width.
 
 ### Obtain a Deluxe Membership without paying for it
 
-1. If wallet is empty:
-   a. Go to `https://juice-shop.herokuapp.com/#/payment/deluxe` and look at the
-      available payment options for upgrading to a deluxe account
-   b. Open devtools and inspect the pay button next to the "pay using wallet"
-      option.
-   c. Remove the disabled="true" attribute from the element to enable it.
-   d. Switch to the network tab and devtools and click on the button to initiate payment
-   e. See that there is a POST request sent, which only contains one parameter in the 
-      request payload, "paymentMode", which is set to "wallet". The response contains
-      an error saying your wallet doesn't contain sufficient funds
-   d. Right click on the request and select "edit and resend"
-   e. Change the paymentMode parameter to an empty string and press send. This solves
-      the challenge and juice-shop no longer knows where to deduct the money from
-2. If wallet isn't empty:
-   a. If your wallet contains funds, you cannot start a dummy transaction to
-      inspect the request structure because then you would be automatically 
-      upgraded to deluxe.
-   b. Set up a proxy like OWASP ZAP, Fiddler aur Burp Suite.
-   c. Click on the pay button
-   d. Intercept and edit the request as described above before forwarding it.
+1. If wallet is empty: a. Go to
+   `https://juice-shop.herokuapp.com/#/payment/deluxe` and look at the
+   available payment options for upgrading to a deluxe account b. Open
+   devtools and inspect the pay button next to the "pay using wallet"
+   option. c. Remove the disabled="true" attribute from the element to
+   enable it. d. Switch to the network tab and devtools and click on the
+   button to initiate payment e. See that there is a POST request sent,
+   which only contains one parameter in the request payload,
+   "paymentMode", which is set to "wallet". The response contains an
+   error saying your wallet doesn't contain sufficient funds d. Right
+   click on the request and select "edit and resend" e. Change the
+   paymentMode parameter to an empty string and press send. This solves
+   the challenge and juice-shop no longer knows where to deduct the
+   money from
+2. If wallet isn't empty: a. If your wallet contains funds, you cannot
+   start a dummy transaction to inspect the request structure because
+   then you would be automatically upgraded to deluxe. b. Set up a proxy
+   like OWASP ZAP, Fiddler aur Burp Suite. c. Click on the pay button d.
+   Intercept and edit the request as described above before forwarding
+   it.
 
 ### Post some feedback in another users name
 
@@ -2285,25 +2289,31 @@ loop`._
 
 ### Permanently disable the support chatbot
 
-1. The Chatbot is built using an npm module called 'juicy-chat-bot'. The source code
-for the same can be found [here](https://github.com/bkimminich/juicy-chat-bot)
+1. The Chatbot is built using an npm module called 'juicy-chat-bot'. The
+   source code for the same can be found
+   [here](https://github.com/bkimminich/juicy-chat-bot)
 
-2. Looking through the source, one can determine that user messages are processed inside 
-a VM context, with a function called `process`
+2. Looking through the source, one can determine that user messages are
+   processed inside a VM context, with a function called `process`
 
-3. The vulnerable segment of the code is [this statement](https://github.com/bkimminich/juicy-chat-bot/blob/15e424609dc59ada5bf0c114ca7a5ffc718501cc/index.js#L31), that the bot uses to remember usernames.  
-The command  **this.factory.run(\`users.addUser("${token}", "${name}")\`)** is equivalent to
-an eval statement inside the VM context. This can be exploited by including `"` and `)` in one's username
+3. The vulnerable segment of the code is
+   [this statement](https://github.com/bkimminich/juicy-chat-bot/blob/15e424609dc59ada5bf0c114ca7a5ffc718501cc/index.js#L31),
+   that the bot uses to remember usernames.
+   The command **this.factory.run(\`users.addUser("${token}",
+   "${name}")\`)** is equivalent to an eval statement inside the VM
+   context. This can be exploited by including `"` and `)` in one's
+   username
 
-4. If one sets their username to **admin"); process=null; users.addUser("1337", "test**, the 
-final statement that gets executed would be 
+4. If one sets their username to **admin"); process=null;
+   users.addUser("1337", "test**, the final statement that gets executed
+   would be
 
-  `users.addUser("token", "admin");`  
-  `process = null;`  
-  `users.addUser("1337", "test")`  
+   `users.addUser("token", "admin");`  
+   `process = null;`  
+   `users.addUser("1337", "test")`
 
-The process function, is therefore set to null and any further attempt by the bot to process 
-a user's message would result in an error
+The process function, is therefore set to null and any further attempt
+by the bot to process a user's message would result in an error
 
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
