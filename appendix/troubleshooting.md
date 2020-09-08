@@ -41,6 +41,8 @@ fixed in a straightforward fashion when they fail:
 | `Restricted tutorial mode is enabled while Hacking Instructor is disabled`                                                           | Make sure `hackingInstructor.isenabled` is `true` when you also have configured `challenges.restrictToTutorialsFirst` set to `true`.                                                                                                                                                                                                                                    |
 | `CTF flags are enabled while challenge solved notifications are disabled`                                                            | Make sure `challenges.showSolvedNotifications` is `true` when you also have configured `ctf.showFlagsInNotifications` set to `true`.                                                                                                                                                                                                                                    |
 | `CTF country mappings for FBCTF are enabled while CTF flags are disabled`                                                            | Make sure `ctf.showFlagsInNotifications` is `true` when you also have configured `ctf.showCountryDetailsInNotifications` set to `name`, `flag` or `both`.                                                                                                                                                                                                               |
+| `Intent ... is missing in chatbot training data`                                                                                     | Make sure that your chatbot training data defines all mandatory `intent` objects defined in the [Chatbot training data](chatbot.md) specification.                                                                                                                                                                                                                      |
+| `Answer with ... action and handler ... is missing for intent ...`                                                                   | Make sure that your chatbot training data defines the expected `{ "action": "...", "handler": "..." }` on the mentioned mandatory `intent` object as defined in the [Chatbot training data](chatbot.md) specification.                                                                                                                                                  |
 
 If your installation did not even get to the point of running these
 checks _or_ all checks successfully pass with `(OK)` but the application
@@ -115,9 +117,11 @@ issue.
 
 ### Challenges
 
-- If you notice that a challenge solution is not working, check on the _Score Board_ if that challenge
-  is one of the [potentially dangerous ones](../part1/challenges.md#potentially-dangerous-challenges)
-  which are by default disabled in Docker environments and shared platforms like Heroku.
+- If you notice that a challenge solution is not working, check on the
+  _Score Board_ if that challenge is one of the
+  [potentially dangerous ones](../part1/challenges.md#potentially-dangerous-challenges)
+  which are by default disabled in Docker environments and shared
+  platforms like Heroku.
 - You may find it easier to find vulnerabilities using a pen test tool.
   We strongly recommend
   [Zed Attack Proxy](https://code.google.com/p/zaproxy/) which is open
