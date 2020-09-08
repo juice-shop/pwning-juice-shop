@@ -9,10 +9,11 @@ libraries or other 3rd party components the application uses internally.
 |:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------|
 | Arbitrary File Write   | Overwrite the Legal Information file.                                                                                                                                                  | ⭐⭐⭐⭐⭐⭐  |
 | Forged Signed JWT      | Forge an almost properly RSA-signed JWT token that impersonates the (non-existing) user _rsa_lord@juice-sh.op_.                                                                        | ⭐⭐⭐⭐⭐⭐  |
-| Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                                                         | ⭐⭐⭐⭐⭐   |
+| Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                                                         | ⭐⭐⭐⭐⭐    |
+| Kill Chatbot           | Permanently disable the support chatbot so that it can no longer answer customer queries.                                                                                              | ⭐⭐⭐⭐⭐    |
 | Legacy Typosquatting   | Inform the shop about a typosquatting trick it has been a victim of at least in `v6.2.0-SNAPSHOT`. (Mention the exact name of the culprit)                                             | ⭐⭐⭐⭐     |
-| Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or an assigned CVE or another identifier of this vulnerability) | ⭐⭐⭐⭐⭐   |
-| Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                                                | ⭐⭐⭐⭐⭐   |
+| Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or an assigned CVE or another identifier of this vulnerability) | ⭐⭐⭐⭐⭐    |
+| Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                                                | ⭐⭐⭐⭐⭐    |
 | Vulnerable Library     | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)                                                                   | ⭐⭐⭐⭐     |
 
 ### Overwrite the Legal Information file
@@ -112,6 +113,20 @@ is completely harmless. Just keep in mind that in reality, a case like
 this could come with negative consequences and would sometimes be even
 harder to identify.
 
+### Permanently disable the support chatbot
+
+Juice shop's handy dandy chatbot is cute and all, but can it defend
+itself against malicious attackers looking to rob the customers of its
+services?
+
+* In order to disable the chatbot for all users, you must first get an
+  understanding of how it works under the hood
+* The chatbot sure offers a lot of functionality. Could it be that
+  juice-shop relies on a third party, possibly open source library for
+  this?
+* Maybe you can try to gather clues from around juice shop and then go
+  dumpster dive the internet to get a hold of the bot's source
+
 ### Inform the shop about a typosquatting trick it has been a victim of
 
 This challenge is about identifying and reporting (via the
@@ -195,3 +210,4 @@ contains known vulnerabilities.
 [^2]: https://tools.ietf.org/html/rfc7519
 [^3]: https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
 [^4]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm
+
