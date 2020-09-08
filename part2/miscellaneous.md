@@ -4,7 +4,7 @@
 
 | Name            | Description                                                        | Difficulty |
 |:----------------|:-------------------------------------------------------------------|:-----------|
-| Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐⭐        |
+| Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐        |
 | Privacy Policy  | Read our privacy policy.                                           | ⭐          |
 | Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐          |
 | Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐        |
