@@ -212,7 +212,16 @@ If the challenge is not immediately solved, you might have to
 
 ### Receive a coupon code from the support chatbot
 
-🛠️ **TODO**
+1. Log in as any user.
+2. Click _Support Chat_ in the sidebar menu to visit
+   <http://localhost:3000/#/chatbot>.
+3. After telling the chatbot your name you can start chatting with it.
+4. Ask it something similar to "Can I have a coupon code?" or "Please
+   give me a discount!" and it will most likely decline with some
+   unlikely excuse.
+5. Keep asking for discount again and again until you finally receive a
+   10% coupon code for the current month! This also solves the challenge
+   immediately.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
@@ -2298,11 +2307,10 @@ loop`._
 
 3. The vulnerable segment of the code is
    [this statement](https://github.com/bkimminich/juicy-chat-bot/blob/15e424609dc59ada5bf0c114ca7a5ffc718501cc/index.js#L31),
-   that the bot uses to remember usernames.
-   The command **this.factory.run(\`users.addUser("${token}",
-   "${name}")\`)** is equivalent to an eval statement inside the VM
-   context. This can be exploited by including `"` and `)` in one's
-   username
+   that the bot uses to remember usernames. The command
+   **this.factory.run(\`users.addUser("${token}", "${name}")\`)** is
+   equivalent to an eval statement inside the VM context. This can be
+   exploited by including `"` and `)` in one's username
 
 4. If one sets their username to **admin"); process=null;
    users.addUser("1337", "test**, the final statement that gets executed

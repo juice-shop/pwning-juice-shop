@@ -4,14 +4,21 @@
 
 | Name            | Description                                                        | Difficulty |
 |:----------------|:-------------------------------------------------------------------|:-----------|
-| Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐        |
+| Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐          |
 | Privacy Policy  | Read our privacy policy.                                           | ⭐          |
 | Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐          |
 | Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐        |
 
 ### Receive a coupon code from the support chatbot
 
-🛠️ **TODO**
+This challenge is about nagging the support chatbot to hand out a coupon
+code that can subsequently be used to get discount during the checkout
+process.
+
+* The bot is reluctant to give you a coupon as it's coming up with
+  various excuses for not giving you one
+* Asking over and over again like a little kid might actually help you
+  succeed in this case
 
 ### Read our privacy policy
 
