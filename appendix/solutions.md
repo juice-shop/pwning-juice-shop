@@ -1324,7 +1324,12 @@ to respond.
 
 ### Bypass a security control with a Poison Null Byte
 
-🛠️ **TODO**
+1. Solve
+   [Access a developer's forgotten backup file](#access-a-developers-forgotten-backup-file),
+   [Access a salesman's forgotten backup file](#access-a-salesmans-forgotten-backup-file),
+   [Access a misplaced SIEM signature file](#access-a-misplaced-siem-signature-file)
+   or [Find the hidden easter egg](#find-the-hidden-easter-egg) to solve
+   this challenge as a by-product.
 
 ### Reset Bender's password via the Forgot Password mechanism
 

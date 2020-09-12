@@ -90,7 +90,19 @@ out away to _receive_ money instead of _paying_ for their purchase.
 > certain byte, the string will terminate at that point, nulling the
 > rest of the string, such as a file extension.[^2]
 
-🛠️ **TODO**
+* Analyze and tamper with links in the application until you get to an
+  unprotected directory listing.
+* Some files in there are not directly accessible because a security
+  mechanism prevents access.
+* The _Poison Null Byte_ can trick the security mechanism into thinking
+  that the file you want has a valid file type.
+* Depending on the files you try to retrieve you will probably solve
+  [Access a developer's forgotten backup file](sensitive-data-exposure.md#access-a-developers-forgotten-backup-file),
+  [Access a salesman's forgotten backup file](sensitive-data-exposure.md#access-a-salesmans-forgotten-backup-file),
+  [Access a misplaced SIEM signature file.](sensitive-data-exposure.md#access-a-misplaced-siem-signature-file)
+  or
+  [Find the hidden easter egg](broken-access-control.md#find-the-hidden-easter-egg)
+  along the way.
 
 ### Follow the DRY principle while registering a user
 
