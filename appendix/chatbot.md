@@ -1,3 +1,305 @@
 # Chatbot training data
 
-🛠️ **TODO**
+Under the hood of the _Support Chat_ an NLP-powered chatbot is used to
+anwer customer questions. Upon server start it is initialized with a
+training data set, so it can give some meaningful answers and replies.
+
+The general structure of the file is straightforward:
+
+```json
+{
+  "lang": "en",
+  "data": [
+    {
+      "intent": "unique identifier for a conversation intent",
+      "utterances": [
+        "something a user might ask",
+        "something else a user might ask",
+        "..."
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "an answer the bot will give"
+        },
+        {
+          "action": "response",
+          "body": "another anwer the bot will give"
+        },
+        {
+          "action": "response",
+          "body": "..."
+        }
+      ]
+    },
+    {
+      "...": "..."
+    }
+  ]
+}
+```
+
+## Defining conversational `intent`s
+
+A simple conversational intent, e.g. for exchanging a friendly greeting,
+could be specified like this:
+
+```json
+{
+  "intent": "greetings.hello",
+  "utterances": [
+    "hello",
+    "hi",
+    "howdy",
+    "hey",
+    "good morning",
+    "good afternoon"
+  ],
+  "answers": [
+    {
+      "action": "response",
+      "body": "Hello there!"
+    },
+    {
+      "action": "response",
+      "body": "Hi there!"
+    },
+    {
+      "action": "response",
+      "body": "\uD83D\uDC4B"
+    }
+  ]
+}
+```
+
+## Special `function` actions
+
+Apart from normal text conversations, the chatbot also supports three
+distinct `function` actions. These do not reply with a text from the
+data set, but trigger a code function and respond with its return value
+to the user.
+
+1. `productPrice` - Uses fuzzy matching to find product names in the
+   query of the user and replies with their price. The easiest to do is
+   just copy it from the `botDefaultTrainingData.json` file.
+2. `couponCode` - This function will respond with a 10% coupon code for
+   the current month. It should be used alongside at least 10 other
+   regular `response`s, so that the user will not immediately get the
+   coupon when asking for it. This makes the challenge
+   [Receive a coupon code from the support chatbot](../part2/miscellaneous.md#receive-a-coupon-code-from-the-support-chatbot)
+   more interesting. See the
+   [Training data example](#training-data-example) on how to set this up
+   optimally.
+3. `testFunction` - This should be the singular entry in `answers` to a
+   singular entry in `utterances` and is only used for testing purposes.
+
+```json
+{
+  "intent": "queries.productPrice <or> queries.couponCode <or> queries.functionTest",
+  "utterances": [
+    "..."
+  ],
+  "answers": [
+    {
+      "action": "function",
+      "handler": "productPrice <or> couponCode <or> testFunction"
+    }
+  ]
+}
+```
+
+If you write your own training data file from scratch, you need exactly
+one `intent` for each of these three `handler`s. If you do not have
+these defined, Juice Shop will tell you during the
+[Start-up validations](troubleshooting.md#start-up-validations). To
+avoid any such issues, it is recommended to just start with a copy of
+the `botDefaultTrainingData.json` file when definiing your own chatbot
+conversations.
+
+## Training data example
+
+```json
+{
+  "lang": "en",
+  "data": [
+    {
+      "intent": "greetings.hello",
+      "utterances": [
+        "hello",
+        "hi",
+        "howdy",
+        "hey",
+        "good morning",
+        "good afternoon"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "Hello there!"
+        },
+        {
+          "action": "response",
+          "body": "Hi there!"
+        },
+        {
+          "action": "response",
+          "body": "\uD83D\uDC4B"
+        }
+      ]
+    },
+    {
+      "intent": "greetings.bye",
+      "utterances": [
+        "goodbye for now",
+        "bye bye take care",
+        "see you soon",
+        "till next time",
+        "ciao",
+        "cya"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "Ok, cya <customer-name>!"
+        },
+        {
+          "action": "response",
+          "body": "Bye, <customer-name>!"
+        },
+        {
+          "action": "response",
+          "body": "Have a fantastic day, <customer-name>!"
+        }
+      ]
+    },
+    {
+      "intent": "queries.deluxeMembership",
+      "utterances": [
+        "What are deluxe membership benefits",
+        "What goodies do deluxe members get",
+        "Why would I become a deluxe member"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "Deluxe members get free fast shipping, special discounts on many items and can enjoy unlimited purchase quantities even on our rarer products!"
+        },
+        {
+          "action": "response",
+          "body": "Deluxe members get special discounts on many products, have free fast shipping and can enjoy unlimited purchase quantities even on our rare products!"
+        },
+        {
+          "action": "response",
+          "body": "Deluxe members can purchase unlimited quantities even on our rarest products, get special discounts and enjoy free fast shipping!"
+        }
+      ]
+    },
+    {
+      "intent": "queries.blockchain",
+      "utterances": [
+        "Do you know anything about Blockchain",
+        "Can you tell me anything about cryptocurrency",
+        "Do you use blockchain",
+        "When does the token sale start",
+        "where do I find the token sale page"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "I don't know anything about cryptocurrency and blockchains!"
+        },
+        {
+          "action": "response",
+          "body": "I have no clue about a token sale or other blockchainy thingies!"
+        },
+        {
+          "action": "response",
+          "body": "Sorry, but they don't tell me secret stuff like this!"
+        }
+      ]
+    },
+    {
+      "intent": "queries.productPrice",
+      "utterances": [
+        "how much is X",
+        "how much does X cost",
+        "how much do X and Y cost",
+        "how much do X,Y cost",
+        "how much is X and Y",
+        "what is the price of X",
+        "what is the price of X and Y"
+      ],
+      "answers": [
+        {
+          "action": "function",
+          "handler": "productPrice"
+        }
+      ]
+    },
+    {
+      "intent": "queries.couponCode",
+      "utterances": [
+        "can I have a coupon code",
+        "give me a discount code",
+        "I want to save some money"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "Sorry, I am not allowed to hand out coupon codes."
+        },
+        {
+          "action": "response",
+          "body": "You should check our social media channels for monthly coupons."
+        },
+        {
+          "action": "response",
+          "body": "Sorry, no \uD83C\uDE39!"
+        },
+        {
+          "action": "response",
+          "body": "Sorry, but our CFO might have my memory wiped if I do that."
+        },
+        {
+          "action": "response",
+          "body": "Did you consider a Deluxe membership to save some \uD83D\uDCB0?"
+        },
+        {
+          "action": "response",
+          "body": "Not possible, sorry. We're out of coupons!"
+        },
+        {
+          "action": "response",
+          "body": "I have to ask my manager, please try again later!"
+        },
+        {
+          "action": "response",
+          "body": "I̷͇͌ ̶̢̠̹̘̮̔͒̊̅̀̇̎̓̔̒̂̾̍̔̋ć̸͕̪̲̲͓̪̝͖̈́͐̃͊͑͐̂̏͛̒̍͝a̴̢̞̞͔̝̩͙̱̣͍̞͆n̶̫͓̔'̶̘̙̗̻̖̣̘̈́̈̿̾͊̒t̸̨̢̨͚̰̫̣̩̻͉̣͔͔͖̦̓́̾͂̆̄͋̽̐͂̆̐̊͠ ̸̼̱̪͍̙͎̣̠͆̂̌̾̐͐̇̏́͆̊͗͝͠͠h̸̨̡̧̗̭̮̩̣̜̲̮̖̲̜̰̉̍̇̒͂̄̆̂̓͋͑͝ȩ̴͎̞̺͖̟̪͕̝̘̺́̂̌͐̔͌͌́͗͝͝ͅą̴̙̰̠̟͔̱̺̣̬̦̰̮̬̪͒̉̀̉͌̈́͂̑̇͊̐̕͝r̴̨̡̛̟̲̩̥̣̰̹͙̹͐͗́́̈́͗͘̕͝ ̵̨̛̯͓͈͎̖͕̥̥̐̇̈̇͌̓̒̅̑͂͊̕͠ͅy̵̛̱̹͖̳̻̤̺̗͈̰̯̋̃̋̑̂͆͗͝ȯ̶̡̮̰͈̖͙̣̘̈́̍̑͗̈̅͋̏͆̐̌̚̚̚ṷ̶̢̠̠̝͓̮̱̦̰̜̋̄̃͒̌̀̒̔̿́̏͝͠,̵̧̧̹̟̞̤̯̲̥̻̞̞̼̤͋̈́̋ ̴͍̔̊̑͛̌͛͊͑̄͜͝ţ̶̗͇̌̆̕̚ͅo̷̻͍̰̱͊͜ṏ̶̙͖̿ ̴̧̛̝̻͉̺̦͚̮̦̲͈̣̰͈̾́̓̌̐͂́ḿ̴̻̤͍̈̓͛̈̕͜͝u̷̗̳̙̦̠̼͙̗̣͉͖̎̂̚͜͝c̷͍̠̦̮̞̤͖͕̲̈́̆͂̀́͝ͅh̷̛͙̱͕̼̤̗͕̮͖͇̘̩̋̈́̅̃̍̈́̊̕͠ ̷̡͕̦̠̩̺̟̫͉͚̲͎͍͈̫̓̒̓͂̊̿͛̇̿̽̒́s̷̨̬̩̬̫̻̝̙̅̑͆̒̐̆̈̓̏͠ͅţ̶̢̘͇̭̙̝̙̲̜̓̅͑̍͛̔͜a̶̡̨̬͔͍̭̬̻͎̦̦̓́̂͑̓͛́̈́̈́̌͠͠t̸̲̯̆̂̑͆̀̆͒́̚i̵̢̝̜̭̖͓͇̟̬̙͚͙͍̎̈́͊̃́̽̈̕͘̚͜c̸̛̛̹̣̫̹̰͖̱̦̭̗̀͛̈́͆͐̈́̇͂̎̄͒!̴̨̥̮̺̹̯̓̈͒͗͑̇̎̈́͘ ̷̘̭͇̤̭̯̉͌́͐͛͘̕͝P̵̣̙̬͎̝̙̐̊̐̆́͛́̑̏́͝͝l̴̛̦̭̾͊̂͆̋̈͘ẹ̵̢̛̛̤̹̰̳̺͎̊̏͛̏̉͛̄̄̂̾͝ͅa̶̢̧̘̯̮̰͕͕̤̩̝͋̍̑̅͛̍͊͐̋͌̕̚͜͝s̴̨͇̥̣͕͉̻͍̫̜̻͒͂͌̀́͂̚̕e̸̡̧̡̘̺͍̝̱̭̣̮͎͂͛̉͛ ̴̧̛̫̞̼̱̲͍͇̪̣̓̀́̓̈̚͘͝ċ̷̨͖͎̝̮͛́͆͛̚ḫ̴̛͕̲̺̩̣̼̮͒̃̃̈́͐̿̿͝͠ȩ̴̛͔̣͓͛͐̀͐̌̂͑̌̑̀̕͝ć̴̡̘̠̳̰̣̲̜̮͍̦̍̾̑̆͝k̶͈̘̮͓̥̤̭̙̒̇̏͂̓̕͠ ̵̩̻͇̺̯͇̓̀̋̄͛̏̄͊̄͆͊ỳ̷̡̫̪̭̰̥̒̔̑̉̾̓̒͋͌̄ö̷̜̗͍̩̺͔̞̼̣̘̭̾͋̈́u̷̡̼̦̫̯͍̺̞͔̬͕̱̓͗̔̀̔͋̐̂͝r̵̘͙̞̺̻̩̥̪͉̰̩̘̀̑ ̵̮̺̗̀̎̑̔I̶̧͇̺̩͕̖̰̪͖̪̰̙͙̦̎́̋n̶͔̫̼͔̥͇̻͔̱̼̂̏̊̐̍̋̌̿̈́̊̍̃͝t̴̺̘͖̯̖̖͇̤̱̫̤̠̥̥̓̍̐̿͆̔́̍̓̚ė̵͇͕̗͌̇͊͂͊̊̈̉͋͌r̴͇͖̼̗̦͓͖͖̩̰̰̔̀n̸̰̠̊̊͊̽͑̐̃̎͒̕͝͠͝e̴̮͇̲̘͇̓̈́t̸̛̐̌̕͜͝ ̸̟̊̉́͆ċ̶̢̡̧̳̥̱̗͊̽́͐͗̕͝͝ǫ̴̞̹̥͙͖̣̭͎̆̑͒̽̓̆n̶̢̧̠̭̮̥͚̺̺̬͙̯̤̝͐͐̏̔́͌̎͘͝n̷͔̹͕͖͙̝͋̏̾̉̌́̂̓͛̿͐̿͘͝͠ȩ̷̖͕̱̏̋̆̀̌̀͋͑̀̎̕͠ĉ̷̳͉̺͚̐̎̾̿͑̎͝͝ͅt̴̨̰͉̹̒͗ĭ̷͈̗̳̈̎̈́̈̆͘͝o̴̯̗̣̹̰̩̯̖̹̯͈͐̒̇̈́͂̿͗̆͠ͅņ̴̢̲̪̜̺̞̭͕͇̬̍̓̇̉̏͂͛͒̓̑̓̏͘͜͝!̷̧͚̹̞͇̪͉̠̮̅̒̒͛͛̀̂̆̾͗."
+        },
+        {
+          "action": "function",
+          "handler": "couponCode"
+        }
+      ]
+    },
+    {
+      "intent": "queries.functionTest",
+      "utterances": [
+        "function test command b8a8ba1ecea1607e1713e31a3d9e5e19"
+      ],
+      "answers": [
+        {
+          "action": "function",
+          "handler": "testFunction"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Customized training data example
+
+You can find the alternative training data of the _7 Minute Security_
+custom theme here for further reference:
+<https://gist.github.com/bkimminich/d62bd52a1df4831a0fae7fb06062e3f0>
