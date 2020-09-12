@@ -1171,17 +1171,23 @@ more attention & a good portion of shrewdness.
    `campaign`.
 
    ![Campaign code in minified JavaScript](img/minified_js-campaigncode.png)
-2. You will find a function `applyCoupon()` that contains a static
-   comparison `"WMNSDY2019" === this.couponControl.value` pointing to
-   `WMNSDY2019` as the solution.
-3. Submitting `WMNSDY2019` will yield an `Invalid Coupon.` error,
-   though. This is because of the second part of the validity check
-   `15519996e5 === this.clientDate`.
-4. Converting this number into a JavaScript date will tell you that this
-   campaign was active on March 8th 2019 only: Women's Day!
-5. Set the time of your computer to March 8th 2019 and try to submit the
+2. You will find a `this.campaigns` assignment of an object containing
+   various campaign codes. Depending on when you are reading this book,
+   one or more of these might be expired. Let's continue with the oldest
+   available one, which is `WMNSDY2019`.
+3. A bit further down in the minified code you will notice a function
+   `applyCoupon()` that uses `this.campaigns` and in particular the
+   contained `validOn` timestamp of a coupon.
+4. Ignoring that validity check and just submitting `WMNSDY2019` will
+   yield an `Invalid Coupon.` error, as you would expect. This is
+   because of the second part of the assertion `this.clientDate ===
+   e.validOn`.
+5. Converting `validOn: 15519996e5` of the `WMNSDY2019` coupon into a
+   JavaScript date will tell you that this campaign was active on March
+   8th 2019 only: Women's Day!
+6. Set the time of your computer to March 8th 2019 and try to submit the
    code again.
-6. This time it will be accepted! Proceed to _Checkout_ to get the
+7. This time it will be accepted! Proceed to _Checkout_ to get the
    challenge solved.
 
 ### Access a developer's forgotten backup file
