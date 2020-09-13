@@ -1023,8 +1023,29 @@ simultaneously.
    ``<script>alert(`xss`)</script>`` is part of the DOM. It seems that
    its execution was blocked by the Content Security Policy (CSP) of the
    page.
-10. 🛠️ **TODO** (add CSP bypass steps)
-11. Refresh the page to give the browser the chance to load the tampered
+10. Bypassing the CSP requires to exploit a totally different attack
+    vector on the profile page: The _Image URL_ field.
+11. Set the _Image URL_ to some valid image URL, e.g.
+    <https://placekitten.com/300/300> and click _Link Image_ while
+    inspecting the network traffic via your browser's DevTools.
+12. Notice how the `Content-Security-Policy` response header has been
+    changed in the subsequent call to <http://localhost:3000/profile>?
+    It now contains an entry like
+    `/assets/public/images/uploads/17.jpg;`, which is the location of
+    the successfully uploaded image.
+13. Try setting the _Image URL_ again, but now to some invalid image
+    URL, e.g. <http://definitely.not.an/image.png>. While the linking
+    fails and your profile will show a broken image, the CSP header will
+    now contain `http://definitely.not.an/image.png;` - the originally
+    supplied URL.
+14. This influence on the CSP header - plus the fact that the first
+    encountered entry in case of duplicates always wins - is fatal for
+    the application. We can basically overwrite the CSP with one of our
+    own choosing.
+15. Set `https://a.png; script-src 'unsafe-inline' 'self' 'unsafe-eval'
+    https://code.getmdl.io http://ajax.googleapis.com` as _Image URL_
+    and click _Link Image.
+16. Refresh the page to give the browser the chance to load the tampered
     CSP and enjoy the alert box popping up!
 
 ### Order the Christmas special offer of 2014
