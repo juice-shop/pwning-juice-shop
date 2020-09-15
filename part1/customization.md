@@ -42,7 +42,7 @@ container with one of the provided configs, you can pass in the
 `NODE_ENV` environment variable with the `-e` parameter:
 
 ```bash
-docker run -d -e "NODE_ENV=bodgeit" -p 3000:3000
+docker run -d -e "NODE_ENV=bodgeit" -p 3000:3000 bkimminich/juice-shop
 ```
 
 In order to inject your own configuration, you can use `-v` to mount the
