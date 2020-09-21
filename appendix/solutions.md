@@ -370,9 +370,9 @@ in order to exploit and solve them:
    the user `E=ma²`.
 2. Open the image so that you can zoom in on it.
 3. On the far left window on the middle floor, you can see a logo of a
-   company. It can be seen that logo shows the name `ITSec`.
+   company. It can be seen that logo shows the name `ITsec`.
 4. Go to the login page and click on _Forgot your password?_.
-5. Fill in `emma@juice-sh.op` as the email and `ITSec` as the answer of
+5. Fill in `emma@juice-sh.op` as the email and `ITsec` as the answer of
    the security question.
 6. Choose a new password and click on _Change_.
 
