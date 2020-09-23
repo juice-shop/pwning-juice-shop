@@ -33,6 +33,28 @@ local storage being used by the application.
 
 ![DevTools Application tab](img/devtools_cookies.png)
 
+You can find a comprehensive list of useful browser features for hacking
+endeavors at
+[Web app security testing with browsers](https://getmantra.com/web-app-security-testing-with-browsers/).
+Take a look at the
+[Support Matrix](https://getmantra.com/web-app-security-testing-with-browsers/#thematrix)
+to get an overview of the capabilities offered by different popular
+browsers. Spoiler alert: Mozilla Firefox is your best friend as an
+entry-level hacking tool!
+
+| Function                   | Google Chrome | Mozilla Firefox | Edge/IE | Safari |
+|:---------------------------|:--------------|:----------------|:--------|:-------|
+| Switching User Agents      | ✔             | ✔              | ✔       | ✔     |
+| Edit and Replay Requests   | ✖             | ✔              | ✖       | ✖     |
+| Editing Cookies            | ✔             | ✔              | ✔       | ✖     |
+| Editing Local Storage      | ✔             | ✔              | ✔       | ✖     |
+| Disable CSS                | ✔             | ✔              | ✔       | ✔     |
+| Disable Javascript         | ✔             | ✔              | ✖       | ✔     |
+| View Headers               | ✔             | ✔              | ✔       | ✔     |
+| Native screen-shot capture | ✔             | ✔              | ✔       | ✖     |
+| Offline mode               | ✔             | ✔              | ✖       | ✖     |
+| Encode and Decode          | ✔             | ✔              | ✔       | ✔     |
+
 #### Tools for HTTP request tampering
 
 [Tamper Chrome](https://chrome.google.com/webstore/detail/tamper-chrome-extension/hifhgpdkfodlpnlmlnmhchnkepplebkb)
