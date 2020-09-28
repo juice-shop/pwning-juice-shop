@@ -97,6 +97,10 @@ issue.
 - If using Docker Toolbox on Windows make sure that you also enable port
   forwarding from Host `127.0.0.1:3000` to `0.0.0.0:3000` for TCP for
   the `default` VM in VirtualBox.
+  
+### Heroku
+
+- The ["Deploy to Heroku" button on the `README`](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno) only works from browsers where no plugins or settings interfere with `Referer` HTTP headers
 
 ### SQLite
 
