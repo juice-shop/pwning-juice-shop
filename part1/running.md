@@ -8,7 +8,7 @@ application process itself. Any additional resources needed by your
 environment (e.g. Docker or Vagrant) come on top.
 
 * **Minimum** system specification
-  * `128 MB` RAM
+  * `160 MB` RAM
   * `100 millicpu` CPU
   * `300 MB` free disk space
 * **Recommended** system specification
