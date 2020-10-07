@@ -646,7 +646,7 @@ application, but of course mostly in some broken or flawed way:
   authentication token (JWT) in `authenticatedUsers`
 * Coupon code creation and verification functions `generateCoupon()` and
   `discountFromCoupon()`
-* A whitelist of allowed redirect URLs and a corresponding check
+* A allowlist of allowed redirect URLs and a corresponding check
   function `isRedirectAllowed()`
 * CAPTCHA verification via `verifyCaptcha()` which compares the user's
   answer against the requested CAPTCHA from the database

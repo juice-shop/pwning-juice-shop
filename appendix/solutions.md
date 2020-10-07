@@ -1333,14 +1333,14 @@ to respond.
 1. Pick one of the redirect links in the application, e.g.
    <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
    from the _GitHub_-button in the navigation bar.
-2. Trying to redirect to some unrecognized URL fails due to whitelist
+2. Trying to redirect to some unrecognized URL fails due to allowlist
    validation with `406 Error: Unrecognized target URL for redirect`.
 3. Removing the `to` parameter (<http://localhost:3000/redirect>) will
    instead yield a `500 TypeError: Cannot read property 'indexOf' of
    undefined` where the `indexOf` indicates a severe flaw in the way the
-   whitelist works.
+   allowlist works.
 4. Craft a redirect URL so that the target-URL in `to` comes with an own
-   parameter containing a URL from the whitelist, e.g.
+   parameter containing a URL from the allowlist, e.g.
    <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
 
 ### Bypass a security control with a Poison Null Byte
@@ -1813,7 +1813,7 @@ payload in his blog post
     like
     <http://localhost:3000/#/deluxe-membership?testDecal=..%2F..%2F..%2F..%2Fredirect%3Fto%3Dhttps:%2F%2Fplacekitten.com%2Fg%2F400%2F500%3Fx%3Dhttps:%2F%2Fgithub.com%2Fbkimminich%2Fjuice-shop>
     where the most difficult part is to get the URL encoding just right
-    to bypass the redirect whitelist and still get the intended image
+    to bypass the redirect allowlist and still get the intended image
     returned cross-domain.
 
     ![Placekitten images put on the delivery boxes](img/delivery-boxes_placeKitten.png)
