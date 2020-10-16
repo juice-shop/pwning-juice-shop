@@ -2596,7 +2596,7 @@ totally different attack styles.
 👏 Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for providing
 this solution.
 
-#### With linux and online tools
+#### With Linux and online tools
 
 1. Download the application's public JWT key from
    <http://localhost:3000/encryptionkeys/jwt.pub>
@@ -2624,6 +2624,9 @@ disregarding the algorithm specified in the header.
 
 
 7. Place the new token in a cookie or send an authenticated request with the it to solve the challenge.
+
+👏 Kudos to [teodor440](https://github.com/teodor440) for providing
+this solution.
 
 ### Like any review at least three times as the same user
 
