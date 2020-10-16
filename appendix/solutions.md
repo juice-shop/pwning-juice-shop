@@ -2561,6 +2561,8 @@ totally different attack styles.
 
 ### Forge an almost properly RSA-signed JWT token
 
+#### With Burp Suite
+
 1. Use your favorite forced directory browsing tool (or incredible
    guessing luck) to identify <http://localhost:3000/encryptionkeys> as
    having directory listing enabled.
@@ -2593,6 +2595,34 @@ totally different attack styles.
 
 👏 Kudos to [Tyler Rosonke](https://github.com/ZonkSec) for providing
 this solution.
+
+#### With linux and online tools
+
+1. Download the application's public JWT key from
+   <http://localhost:3000/encryptionkeys/jwt.pub>
+
+2. The authentication token is of form `{header_base64url}.{payload_base64url}.{signature_base64url}`.
+Copy the JWT header from a request, decode it and change the algorithm to HS256
+using a tool like https://cryptii.com/.  
+The server uses a private RSA key to sign the token
+and a public one to verify it when using RS256,
+but when using HS256 there is only one key for both,
+and, for verification, the server always uses the public RSA key
+disregarding the algorithm specified in the header.
+![edit header](img/token_header_encode.png)
+
+3. Edit the email in the payload to `rsa_lord@juice-sh.op`.
+![edit body](img/token_payload_encode.png)
+
+4. Encode the server key to hex `cat jwt.pub | xxd -p | tr -d "\\n"`
+
+5. Sign your new token with the server key with hmac
+`echo -n "{new_header}.{new_payload}" | openssl dgst -sha256 -mac HMAC -macopt hexkey:{server_key}`
+
+6. Encode your signature to base64url:
+`echo "{signature}" | xxd -r -p | base64 |  sed 's/+/-/g; s/\//_/g';`
+
+7. Place the new token in a cookie or send an authenticated request with the it to solve the challenge.
 
 ### Like any review at least three times as the same user
 
@@ -2882,4 +2912,3 @@ server's operation system and also their synonym command for `wget`.
 [^7]: <https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
 
 [^8]: <https://snyk.io/research/zip-slip-vulnerability>
-
