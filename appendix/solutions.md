@@ -2776,7 +2776,7 @@ opened on those._
 4. Type any URL (e.g. <https://placekitten.com/100/100>) into _Gravatr
    URL_ and click _Link Gravatar_. You will realize a request
    <http://juice-shop-staging.herokuapp.com/profile/image/url> with the
-   chosen <https://placekitten.com/100/100> as paramter `imageUrl`.
+   chosen <https://placekitten.com/100/100> as parameter `imageUrl`.
 5. You will find no HTTP request to <https://placekitten.com/100/100>
    going out from your browser, though. As the image was retrieved and
    associated with your profile, it must have been downloaded _by the
