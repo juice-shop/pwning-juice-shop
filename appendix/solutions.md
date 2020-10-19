@@ -41,10 +41,10 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 Any request that cannot be properly handled by the server will
 eventually be passed to a global error handling component that sends an
 error page to the client that includes a stack trace and other sensitive
-information. The restful API behaves in a similar way, passing back a
+information. The restful API behaves similarly, passing back a
 JSON error object with sensitive data, such as SQL query strings.
 
-Here are two examples (out of many different ways) to provoke such an
+Here are two examples (out of many ways) to provoke such an
 error situation and solve this challenge immediately:
 
 * Visit <http://localhost:3000/rest/qwertz>
@@ -88,7 +88,7 @@ error situation and solve this challenge immediately:
    <http://localhost:3000/assets/public/images/uploads/😼-%23zatschi-%23whoneedsfourlegs-1572600969477.jpg>
    and enjoy the incredibly cute photo of this pet being happy despite
    missing half a hind leg
-9. Go back to the application and the challenge will be solved.
+9. Go back to the application, and the challenge will be solved.
 
 ![Zaya in melee combat mode](img/zaya_melee.jpg)
 
@@ -125,9 +125,9 @@ error situation and solve this challenge immediately:
    Password_ field.
 3. Type e.g. `12345` into the _Password_ field.
 4. Now type `12345` into the _Repeat Password_ field. While typing the
-   numbers you will see a _Passwords do not match_ error until you reach
+   numbers you will see _Passwords do not match_ errors until you reach
    `12345`.
-5. Finally go back to the _Password_ field and change it into any other
+5. Finally, go back to the _Password_ field and change it into any other
    password. The _Repeat Password_ field does not show the expected
    error.
 6. Submit the form with _Register_ which will solve this challenge.
@@ -140,7 +140,7 @@ error situation and solve this challenge immediately:
 2. If your browser offers pretty-printing of this minified messy code,
    best use this offer. In Chrome this can be done with the "{}"-button.
 3. Search for `score` and iterate through each finding to come across
-   one that looks like a route mapping section:
+   one looking like a route mapping section:
 
    ![Route Mapping the the Score Board](/appendix/img/score-board_route.png)
 4. Navigate to http://localhost:3000/#/score-board to solve the
@@ -2776,7 +2776,7 @@ opened on those._
 4. Type any URL (e.g. <https://placekitten.com/100/100>) into _Gravatr
    URL_ and click _Link Gravatar_. You will realize a request
    <http://juice-shop-staging.herokuapp.com/profile/image/url> with the
-   chosen <https://placekitten.com/100/100> as paramter `imageUrl`.
+   chosen <https://placekitten.com/100/100> as parameter `imageUrl`.
 5. You will find no HTTP request to <https://placekitten.com/100/100>
    going out from your browser, though. As the image was retrieved and
    associated with your profile, it must have been downloaded _by the
