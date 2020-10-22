@@ -2,7 +2,7 @@
 
 When investigating an application for security vulnerabilities, you
 should _never_ blindly start throwing attack payloads at it. Instead,
-__make sure that you understand how it works__ before attempting any
+__make sure you understand how it works__ before attempting any
 exploits.
 
 > Before commencing security testing, understanding the structure of the
@@ -42,10 +42,10 @@ Authenticated users can upvote reviews they like.
 
 ![Product Details](/part1/img/product-details.png)
 
-You can use the _Search..._ box in the navigation bar on the top of the
+You can use the _Search..._ box in the navigation bar at the top of the
 screen to filter the table for specific products by their name and
 description. Using the controls at the bottom of the table, you can
-navigate through a the result list that exceeds the _Items per page_
+navigate through the result list that exceeds the _Items per page_
 limit.
 
 ![Search Results](/part1/img/search-results.png)
@@ -67,7 +67,7 @@ In case you are a new customer, you must first register by following the
 corresponding link on the login screen to `#/register`. There you must
 enter your email address and a password to create a new user account.
 With these credentials you can then log in... and finally start
-shopping! During registration you also choose and answer a security
+shopping! During registration, you also choose and answer a security
 question that will let you recover the account if you ever forget your
 password.
 
@@ -97,22 +97,22 @@ purchase:
 
 ### Checkout
 
-During checkout you will be guided through a series of steps to set your
-delivery address, desired delivery method and credit card.
+During checkout, you will be guided through a series of steps to set
+your delivery address, desired delivery method and credit card.
 
 ![Delivery address selection](img/select-address.png)
 ![Delivery method selection](img/delivery-method.png)
 ![Payment card selection](img/payment.png)
 
 🚨 **Do not enter any real credit card or address data anywhere in the
-Juice Shop! Always remember that it is not a real shop and it is
+Juice Shop! Always remember that it is not a real shop, and it is
 intentionally riddled with security and privacy flaws!**
 
 In the _Add a coupon_ section you can redeem a code for a discount.
 Unfold the _Other payment options_ section to see links with donation
 and merchandise links of the Juice Shop open source project.
 
-Finally you can click the _Checkout_ button to issue an order. You will
+Finally, you can click the _Checkout_ button to issue an order. You will
 be forwarded to a confirmation of your order right away. It also
 includes a link to a printable PDF confirmation for your order and as
 well as a tracking link.
@@ -276,8 +276,8 @@ mathematical problem before being allowed to submit your feedback.
 
 The _Complain?_ menu item is shown only to logged in users. It brings
 you to the `#/complain` page where you can leave a free text _Message_
-and also attach an _Invoice_ file in case you had some issues with a
-recent order at the Juice Shop.
+and attach an _Invoice_ file in case you had some issues with a recent
+order at the Juice Shop.
 
 ![File Complaint](/part1/img/file-complaint.png)
 
@@ -294,7 +294,7 @@ benefits and more.
 Like every proper enterprise, the OWASP Juice Shop has of course an
 `#/about` page titled _About Us_. There you find a summary of the
 interesting history of the shop along with a link to its official Terms
-of Use document. Additionally the page displays a fancy illustrated
+of Use document. Additionally, the page displays a fancy illustrated
 slideshow of all [customer feedback](#customer-feedback). Beneath that
 you can find all important social media contact information of the shop.
 
