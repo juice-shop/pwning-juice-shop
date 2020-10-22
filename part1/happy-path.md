@@ -45,7 +45,7 @@ Authenticated users can upvote reviews they like.
 You can use the _Search..._ box in the navigation bar on the top of the
 screen to filter the table for specific products by their name and
 description. Using the controls at the bottom of the table, you can
-navigate through a the result list that exceeds the _Items per page_
+navigate through the result list that exceeds the _Items per page_
 limit.
 
 ![Search Results](/part1/img/search-results.png)
