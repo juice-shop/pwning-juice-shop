@@ -4,7 +4,7 @@
 
 In order to motivate you to hunt for vulnerabilities, it makes sense to
 give you at least an idea what challenges are available in the
-application. Also you should know when you actually solved a challenge
+application. Also, you should know when you actually solved a challenge
 successfully, so you can move on to another task. Both these cases are
 covered by the application's score board.
 
@@ -18,7 +18,7 @@ find out what needs to be done.
 The challenges are rated with a difficulty level between ⭐ and
 ⭐⭐⭐⭐⭐⭐, with more stars representing a higher difficulty. To make the
 list of challenges less daunting, they are clustered by difficulty. By
-default only the 1-star challenges are unfolded. You can open or
+default, only the 1-star challenges are unfolded. You can open or
 collapse all challenge blocks as you like. Collapsing a block has _no
 impact_ on whether you can _solve_ any of its challenges.
 
@@ -62,7 +62,7 @@ orthogonal to the categories.
 * **Contraption** indicates that a challenge is not exactly part of a
   realistic scenario but might be a bit forced or crafted
 * **OSINT** marks challenges which require some Internet research or
-  **social stalking** actvitiy outside the application
+  **social stalking** activity outside the application
 * **Good Practice** highlights challenges which are less about
   vulnerabilities but promoting good (security) practices
 * **Danger Zone** marks
@@ -80,7 +80,7 @@ orthogonal to the categories.
   [Hacking Instructor script](#hacking-instructor) exists to assist
   newcomers
 * **Code Analysis** marks challenges where it can be helpful to rummage
-  through some source code of the application or a third party
+  through some source code of the application or that of a third party
 
 ## Success notifications
 
@@ -91,11 +91,11 @@ challenge, a notification is _immediately_ shown on the user interface.
 !["Challenge solved!" push notification](img/challenge_solved_notification.png)
 
 This feature makes it unnecessary to switch back and forth between the
-screen you are attacking and the score board to verify if you succeeded.
-Some challenges will force you to perform an attack outside of the Juice
-Shop web interface, e.g. by interacting with the REST API directly. In
-these cases the success notification will light up when you come back to
-the regular web UI the next time.
+screen you are attacking, and the score board to verify if you
+succeeded. Some challenges will force you to perform an attack outside
+of the Juice Shop web interface, e.g. by interacting with the REST API
+directly. In these cases the success notification will light up when you
+come back to the regular web UI the next time.
 
 To make sure you do not miss any notifications they do not disappear
 automatically after a timeout. You have to dismiss them explicitly. In
@@ -165,16 +165,16 @@ incompatible format change. The current backup schema version is
 
 ![Juicy Bot the mascot of the Hacking Instructor](img/JuicyBot_MedicalMask.png)
 
-The built-in _Hacking Instructor_ offers tutorials for some of the Juice
-Shop challenges. By default the welcome banner shown upon first launch
-of the application has a 🎓-button which will help you
+The built-in _Hacking Instructor_ offers tutorials for some Juice Shop
+challenges. By default, the welcome banner shown upon first launch of
+the application has a 🎓-button which will help you
 [Find the carefully hidden 'Score Board' page](../part2/score-board.md#find-the-carefully-hidden-score-board-page).
 
 ![Welcome Banner](img/welcome-banner.png)
 
 On the Score Board itself you will then find similar 🎓-buttons on some
-of the challenges which will launch a corresponding tutorial for each as
-well. All tutorials consist of a scripted sequence of helpful hints and
+challenges which will launch a corresponding tutorial for each as well.
+All tutorials consist of a scripted sequence of helpful hints and
 instructions.
 
 ![Hacking Instructor spoilering SQL Injection](img/hacking-instructor_1.png)
@@ -227,21 +227,21 @@ with all challenges is shown and all filters are enabled. Passing in the
 
 Some challenges can cause potential harm or pose some danger for your
 computer, i.e. the XXE, SSTi and Deserialization challenges as well as
-two of the NoSQLi challenges and the possibility of an arbitrary file
+two of the NoSQLi challenges, and the possibility of an arbitrary file
 write. These simply cannot be sandboxed in a 100% secure way. These are
 only dangerous if you use actually malicious payloads, so please do not
-play with payloads you do not fully understand. Furthermore be aware
-that all stored XSS vulnerabilities can - by their nature - be abused to
+play with payloads you do not fully understand. Furthermore, be aware
+all stored XSS vulnerabilities can - by their nature - be abused to
 perform harmful attacks on unsuspecting visitors.
 
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) in containerized
-environments. By default this applies to Docker and Heroku. These
+environments. By default, this applies to Docker and Heroku. These
 challenges are marked as 'unavailable' in the scoreboard as can be seen
 in the screenshot above.
 
 To re-enable all challenges you can set the environment variable
-`NODE_ENV=unsafe` or you can set `safetyOverride: true` in your own
+`NODE_ENV=unsafe`, or you can set `safetyOverride: true` in your own
 [YAML configuration file](customization.md#yaml-configuration-file).
 Please use the unsafe mode at your own risk, especially on publicly
 hosted instances.
