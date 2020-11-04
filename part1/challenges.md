@@ -62,7 +62,7 @@ orthogonal to the categories.
 * **Contraption** indicates that a challenge is not exactly part of a
   realistic scenario but might be a bit forced or crafted
 * **OSINT** marks challenges which require some Internet research or
-  **social stalking** actvitiy outside the application
+  **social stalking** activity outside the application
 * **Good Practice** highlights challenges which are less about
   vulnerabilities but promoting good (security) practices
 * **Danger Zone** marks
