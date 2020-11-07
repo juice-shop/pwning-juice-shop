@@ -272,10 +272,7 @@ If the challenge is not immediately solved, you might have to
   `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
   the user data
   * by solving
-    [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-  * or via REST API call <http://localhost:3000/api/Users> while
-    providing any valid `Authorization Bearer` token (even one of a
-    self-registered user).
+    [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
 
 ### Log in with MC SafeSearch's original user credentials
 
