@@ -62,7 +62,7 @@ orthogonal to the categories.
 * **Contraption** indicates that a challenge is not exactly part of a
   realistic scenario but might be a bit forced or crafted
 * **OSINT** marks challenges which require some Internet research or
-  **social stalking** activity outside the application
+  _social stalking_ activity outside the application
 * **Good Practice** highlights challenges which are less about
   vulnerabilities but promoting good (security) practices
 * **Danger Zone** marks
@@ -222,6 +222,15 @@ with all challenges is shown and all filters are enabled. Passing in the
 ![Locked advanced filters in tutorial mode](img/tutorial-mode3.png)
 
 {% endif %}
+
+## Mitigation Links
+
+For many solved challenges links to mitigation techniques are presented
+on the Score Board. Where available they typically lead to a
+corresponding [OWASP Cheat Sheet](https://cheatsheetseries.owasp.org/)
+explaining how to avoid that kind of vulnerability in the first place.
+
+![Mitigation link for DOM XSS challenge](img/mitigation_links.png)
 
 ## Potentially dangerous challenges
 
