@@ -154,6 +154,8 @@ The backup format is independent of your system or browser, meaning you
 can use the backup file to conveniently transfer your progress and
 settings from one computer to another.
 
+![Local bckup file example](img/local_backup_file.png)
+
 If during restore you see an error message `Version X is incompatible
 with expected version Y` your backup was taken before a semantically
 incompatible format change. The current backup schema version is
