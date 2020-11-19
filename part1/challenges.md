@@ -152,9 +152,26 @@ Board filters, banner dismissal to a `JSON` file.
 
 The backup format is independent of your system or browser, meaning you
 can use the backup file to conveniently transfer your progress and
-settings from one computer to another.
+settings from one computer to another. Example:
 
-![Local bckup file example](img/local_backup_file.png)
+```json
+{
+  "version": 1,
+  "scoreBoard": {
+    "displayedDifficulties": [ 1, 2, 3 ],
+    "displayedChallengeCategories": [
+      "Broken Access Control",
+      "Broken Anti Automation"
+    ]
+  },
+  "banners": {
+    "welcomeBannerStatus": "dismiss",
+    "cookieConsentStatus": "dismiss"
+  },
+  "language": "de_DE",
+  "continueCode": "rzJBXpa...bm45J2okY7LX4v7o"
+}
+```
 
 If during restore you see an error message `Version X is incompatible
 with expected version Y` your backup was taken before a semantically
