@@ -3,7 +3,7 @@
   "author": "Björn Kimminich",
   "language": "en",
   "variables": {
-    "juiceShopVersion": "v12.2.0-SNAPSHOT",
+    "juiceShopVersion": "v12.2.0",
     "juiceShopCtfVersion": "v8.1.1",
     "ctfdVersion": "2.x or higher",
     "rtbVersion": "3.3 or higher",
