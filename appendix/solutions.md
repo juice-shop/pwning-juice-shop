@@ -270,9 +270,7 @@ If the challenge is not immediately solved, you might have to
 * or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
   if you looked up the administrator's password hash
   `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
-  the user data
-  * by solving
-    [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
+  the user data by [retrieving a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
 
 ### Log in with MC SafeSearch's original user credentials
 
