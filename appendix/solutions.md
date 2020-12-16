@@ -2485,13 +2485,14 @@ totally different attack styles.
    <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
    not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
-3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
-   You can also look at the job results and logs at
-   <https://travis-ci.org/bkimminich/juicy-coupon-bot>.
-4. You will realize that there is a `deploy` step that is only executed
-   when the build was triggered by a (monthly) cron job on Travis-CI.
-   This is probably the origin of the monthly tweets! But where does the
-   bot get its coupon code from?
+3. Open the
+   [`.github/workflows/coupon-distribution.yml`](https://github.com/bkimminich/juicy-coupon-bot/blob/master/.github/workflows/coupon-distribution.yml)
+   to see how the bot's _Monthly Coupon Distribution_ workflow is set
+   up. You can also look at the job results and logs at
+   <https://github.com/bkimminich/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22>.
+4. If you read the logs of the _Distribute coupons_ step, you will
+   notice an `info: [✔] API lookup success` message at the very
+   beginning. But where exactly does the bot get its coupon code from?
 5. Read the code of the `juicy-coupon-bot` carefully and optionally try
    to play with it locally after installing it via `npm i -g
    juicy-coupon-bot`. You can learn a few things that way:
