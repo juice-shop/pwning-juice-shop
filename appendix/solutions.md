@@ -41,11 +41,11 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 Any request that cannot be properly handled by the server will
 eventually be passed to a global error handling component that sends an
 error page to the client that includes a stack trace and other sensitive
-information. The restful API behaves similarly, passing back a
-JSON error object with sensitive data, such as SQL query strings.
+information. The restful API behaves similarly, passing back a JSON
+error object with sensitive data, such as SQL query strings.
 
-Here are two examples (out of many ways) to provoke such an
-error situation and solve this challenge immediately:
+Here are two examples (out of many ways) to provoke such an error
+situation and solve this challenge immediately:
 
 * Visit <http://localhost:3000/rest/qwertz>
 
@@ -296,8 +296,8 @@ If the challenge is not immediately solved, you might have to
 1. Visit <https://securitytxt.org/> to learn about a proposed standard
    which allows websites to define security policies.
 2. Request the security policy file from the server at
-   <http://localhost:3000/.well-known/security.txt> to solve the
-   challenge.
+   <http://localhost:3000/.well-known/security.txt> or
+   <http://localhost:3000/security.txt> to solve the challenge.
 3. Optionally, write an email to the mentioned contact address
    <mailto:donotreply@owasp-juice.shop> and see what happens... :e-mail:
 
@@ -2165,8 +2165,8 @@ JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
    solved.
 9. Feel free to cancel the script execution at this point.
 
-📕: If you do not want to write your own script for this challenge,
-take a look at
+📕: If you do not want to write your own script for this challenge, take
+a look at
 [juice-shop-mortys-question-brute-force.py](https://gist.github.com/philly-vanilly/70cd34a7686e4bb75b08d3caa1f6a820)
 which was kindly published as a Gist on GitHub by
 [philly-vanilly](https://github.com/philly-vanilly).
@@ -2480,13 +2480,14 @@ totally different attack styles.
    <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
    not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
-3. Open the `.travis.yml` to see how the bot's CI/CD process is set up.
-   You can also look at the job results and logs at
-   <https://travis-ci.org/bkimminich/juicy-coupon-bot>.
-4. You will realize that there is a `deploy` step that is only executed
-   when the build was triggered by a (monthly) cron job on Travis-CI.
-   This is probably the origin of the monthly tweets! But where does the
-   bot get its coupon code from?
+3. Open the
+   [`.github/workflows/coupon-distribution.yml`](https://github.com/bkimminich/juicy-coupon-bot/blob/master/.github/workflows/coupon-distribution.yml)
+   to see how the bot's _Monthly Coupon Distribution_ workflow is set
+   up. You can also look at the job results and logs at
+   <https://github.com/bkimminich/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22>.
+4. If you read the logs of the _Distribute coupons_ step, you will
+   notice an `info: [✔] API lookup success` message at the very
+   beginning. But where exactly does the bot get its coupon code from?
 5. Read the code of the `juicy-coupon-bot` carefully and optionally try
    to play with it locally after installing it via `npm i -g
    juicy-coupon-bot`. You can learn a few things that way:
@@ -2596,32 +2597,34 @@ this solution.
 1. Download the application's public JWT key from
    <http://localhost:3000/encryptionkeys/jwt.pub>
 
-2. The authentication token is of form `header_base64url.payload_base64url.signature_base64url`.
-Copy the JWT header from a request, decode it and change the algorithm to HS256
-using a tool like https://cryptii.com/.  
-The server uses a private RSA key to sign the token
-and a public one to verify it when using RS256,
-but when using HS256 there is only one key for both,
-and, for verification, the server always uses the public RSA key
-disregarding the algorithm specified in the header.
-![edit header](img/token_header_encode.png)
+2. The authentication token is of form
+   `header_base64url.payload_base64url.signature_base64url`. Copy the
+   JWT header from a request, decode it and change the algorithm to
+   HS256 using a tool like https://cryptii.com/.  
+   The server uses a private RSA key to sign the token and a public one
+   to verify it when using RS256, but when using HS256 there is only one
+   key for both, and, for verification, the server always uses the
+   public RSA key disregarding the algorithm specified in the header.
+   ![edit header](img/token_header_encode.png)
 
 3. Edit the email in the payload to `rsa_lord@juice-sh.op`.
-![edit body](img/token_payload_encode.png)
+   ![edit body](img/token_payload_encode.png)
 
 4. Encode the server key to hex `cat jwt.pub | xxd -p | tr -d "\\n"`
 
-5. Sign your new token with the server key with hmac
-`echo -n "new_header.new_payload" | openssl dgst -sha256 -mac HMAC -macopt hexkey:server_key_hex`
+5. Sign your new token with the server key with hmac `echo -n
+   "new_header.new_payload" | openssl dgst -sha256 -mac HMAC -macopt
+   hexkey:server_key_hex`
 
-6. Encode your signature to base64url:
-`echo -n "signature" | xxd -r -p | base64 |  sed 's/+/-/g; s/\//_/g; s/=//g' | tr -d "\\n"`
+6. Encode your signature to base64url: `echo -n "signature" | xxd -r -p
+   | base64 | sed 's/+/-/g; s/\//_/g; s/=//g' | tr -d "\\n"`
 
 
-7. Place the new token in a cookie or send an authenticated request with the it to solve the challenge.
+7. Place the new token in a cookie or send an authenticated request with
+   the it to solve the challenge.
 
-👏 Kudos to [teodor440](https://github.com/teodor440) for providing
-this solution.
+👏 Kudos to [teodor440](https://github.com/teodor440) for providing this
+solution.
 
 ### Like any review at least three times as the same user
 
@@ -2911,3 +2914,4 @@ server's operation system and also their synonym command for `wget`.
 [^7]: <https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
 
 [^8]: <https://snyk.io/research/zip-slip-vulnerability>
+

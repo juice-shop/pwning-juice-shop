@@ -126,9 +126,9 @@ npm run frisby     # run all API integration tests
 npm run protractor # run all end-to-end tests
 ```
 
-Pull Requests are verified to pass all of the following test stages
-during the
-[continuous integration build](https://travis-ci.org/bkimminich/juice-shop).
+Pull Requests are verified to pass all the following test stages during
+the
+[continuous integration build](https://github.com/bkimminich/juice-shop/actions).
 It is recommended that you run these tests on your local computer to
 verify they pass before submitting a PR. New features should be
 accompanied by an appropriate number of corresponding tests to verify
@@ -259,42 +259,34 @@ npm start &
 
 ## Continuous integration & deployment
 
-### Travis-CI
+The CI/CD and release pipelines for OWASP Juice Shop are set up as
+GitHub Action workflows:
 
-The main build and CI server for OWASP Juice Shop is set up on
-Travis-CI:
+<https://github.com/bkimminich/juice-shop/actions>
 
-<https://travis-ci.org/bkimminich/juice-shop>
+### CI/CD Pipeline
 
-On every push to GitHub, a build is triggered on Travis-CI. A build
-consists of several stages in which one or more jobs are executed. Not
-only direct pushes to the `master` and `develop` branches are built, but
-Pull Requests from other branches or forks as well. This helps the
-project team to assess if a PR can be safely merged into the codebase.
-For tag-builds (i.e. versions to be released) the some additional steps
-are necessary to package the
+On every push to GitHub, a workflow consisting of several jobs is
+triggered on GitHub. Not only direct pushes to the `master` and
+`develop` branches are built, but Pull Requests from other branches or
+forks as well. This helps the project team to assess if a PR can be
+safely merged into the codebase. While unit and integration tests are
+executed on different combinations of Node.js and OS, the e2e tests are
+only run on the officially preferred Node.js version
+{{book.recommendedNodeVersion}} in order to avoid unnecessary feedback
+delays.
+
+![CI/CD Pipeline workflow on GitHub](img/ci-workflow.png)
+
+### Release Pipeline
+
+For tag-builds (i.e. versions to be released) another workflow is
+triggered which packages the
 [release-artifacts for Linux, MacOS and Windows for each supported Node.js version](../part1/running.md#from-pre-packaged-distribution)
-and attach these to the release page on GitHub. Lastly, not all stages
-are executed for all supported Node.js versions in order to shorten the
-feedback loop. The higher-level integration and e2e tests are only run
-for the officially preferred Node.js version
-{{book.recommendedNodeVersion}}.
+and attach these to the release page on GitHub and also published Docker
+images for the released version.
 
-
-| ➡️Stage Trigger⬇️  | Lint                                                           | Test                                                                                                   | Integration                                                                                                                                                                                                                        | E2e                                                                              | Smoke                                                                  | Deploy                                              | Docker                                                                                                | Manifest                                                                                                   |
-|:----------------------|:---------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:-----------------------------------------------------------------------|:----------------------------------------------------|:------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-|                       | [Linting](#linting) on Node.js {{book.recommendedNodeVersion}} | [Unit tests](#unit-tests) on Node.js {{book.nodeVersions}}                                             | [Integration tests](#integration-tests) and re-run [Unit tests](#unit-tests) on Node.js {{book.recommendedNodeVersion}} and publish combined coverage data to [Code Climate](https://codeclimate.com/github/bkimminich/juice-shop) | [End-to-end tests](#end-to-end-tests) on Node.js {{book.recommendedNodeVersion}} | [Smoke tests](#smoke-tests) on Node.js {{book.recommendedNodeVersion}} | Deploy Node.js {{book.herokuNodeVersion}} to Heroku | Build Docker image and push to [DockerHub repository](https://hub.docker.com/r/bkimminich/juice-shop) | Push multi-architecture manifest to [DockerHub repository](https://hub.docker.com/r/bkimminich/juice-shop) |
-| **Push to `develop`** | ✔️                                                           | ✔️                                                                                                   | ✔️                                                                                                                                                                                                                                | ✔️                                                                             | ✔️                                                                   | ✔️ to <http://juice-shop-staging.herokuapp.com>   | ✔️ as `latest` tag                                                                                   | ✔️                                                                                                       |
-| **Push to `master`**  | ✔️                                                           | ✔️                                                                                                   | ✔️                                                                                                                                                                                                                                | ✔️                                                                             | ✔️                                                                   | ✔️ to <http://juice-shop.herokuapp.com>           | ✔️ as `snapshot` tag                                                                                 | ✔️                                                                                                       |
-| **Pull Request**      | ✔️                                                           | ✔️                                                                                                   | ✔️                                                                                                                                                                                                                                | ✔️                                                                             | ✔️                                                                   | ❌                                                  | ❌                                                                                                     | ❌                                                                                                         |
-| **Version tag**       | ❌                                                             | ❌ instead compile and release pre-packaged distributions with Node.js {{book.nodeVersions}} to GitHub | ❌                                                                                                                                                                                                                                  | ❌                                                                               | ❌                                                                     | ❌                                                  | ✔️ as version tag                                                                                    | ✔️                                                                                                       |
-
-ℹ️ _The stages in the table above are executed sequentially from left
-to right. A failing job in any stage will break the build and all
-following stages will not be executed allowing a faster feedback loop.
-The table only depicts the setup for Linux ands MacOS, as this is where
-all tests are executed. In the Windows jobs only `npm install` is
-executed and release-artifacts are assembled in tag-builds._
+![Release Pipeline workflow on GitHub](img/release-workflow.png)
 
 [^1]: <http://semver.org>
 [^2]: <https://probot.github.io/apps/dco/>
