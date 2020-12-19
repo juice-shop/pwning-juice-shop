@@ -1058,7 +1058,7 @@ simultaneously.
    <http://localhost:3000/rest/products/search> endpoint would not even
    be needed, but might be a relic from a different implementation of
    the search functionality. Test this theory by submitting
-   <http://localhost:3000/rest/products/searchq=orange> which should
+   <http://localhost:3000/rest/products/search?q=orange> which should
    give you a result such as
 
    ![JSON search result for "orange" keyword](img/search-result_orange.png)
