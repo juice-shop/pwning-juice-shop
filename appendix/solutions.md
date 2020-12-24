@@ -270,12 +270,7 @@ If the challenge is not immediately solved, you might have to
 * or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
   if you looked up the administrator's password hash
   `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
-  the user data
-  * by solving
-    [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection)
-  * or via REST API call <http://localhost:3000/api/Users> while
-    providing any valid `Authorization Bearer` token (even one of a
-    self-registered user).
+  the user data by [retrieving a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
 
 ### Log in with MC SafeSearch's original user credentials
 
@@ -1063,7 +1058,7 @@ simultaneously.
    <http://localhost:3000/rest/products/search> endpoint would not even
    be needed, but might be a relic from a different implementation of
    the search functionality. Test this theory by submitting
-   <http://localhost:3000/rest/products/searchq=orange> which should
+   <http://localhost:3000/rest/products/search?q=orange> which should
    give you a result such as
 
    ![JSON search result for "orange" keyword](img/search-result_orange.png)
