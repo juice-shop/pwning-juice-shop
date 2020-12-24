@@ -86,7 +86,7 @@ The minimum requirements for code contributions are:
 
 1. The code _must_ be compliant with the
    [JS Standard Code Style rules](http://standardjs.com) or their
-   correspondingly configured TSLint and Sass Lint rules.
+   correspondingly configured ESLint rules.
 2. All new and changed code _should_ have a corresponding unit and/or
    integration test.
 3. New and changed challenges _must_ have a corresponding e2e test.
@@ -108,8 +108,8 @@ npm run lint
 The `npm run lint` script verifies code compliance with
 
 * the `standard` code style (for all server-side JavaScript code)
-* the `tslint` rules for the frontend TypeScript code (which are defined
-  to be equal to `standard` by deriving from `tslint-config-standard`)
+* the `eslint` rules for the frontend TypeScript code (which are defined
+  to be equal to `standard` by deriving from `standard-with-typescript`)
 
 If PRs deviate from this coding style, they will the build and will not
 be merged until made compliant.
