@@ -84,9 +84,8 @@ branch for a PR afterwards some time ago.
 
 The minimum requirements for code contributions are:
 
-1. The code _must_ be compliant with the
-   [JS Standard Code Style rules](http://standardjs.com) or their
-   correspondingly configured ESLint rules.
+1. The code _must_ be compliant with the configured ESLint rules based
+   on the [JS Standard Code Style](http://standardjs.com).
 2. All new and changed code _should_ have a corresponding unit and/or
    integration test.
 3. New and changed challenges _must_ have a corresponding e2e test.
