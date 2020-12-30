@@ -107,15 +107,17 @@ npm run lint
 
 The `npm run lint` script verifies code compliance with
 
-* the `standard` code style (for all server-side JavaScript code)
-* the `eslint` rules for the frontend TypeScript code (which are defined
-  to be equal to `standard` by deriving from `standard-with-typescript`)
+* the `eslintrc.js` rules derived from `standard` for all server-side
+  JavaScript code
+* the `frontend/eslintrc.js` rules derived from
+  `standard-with-typescript` for the frontend TypeScript code
 
-If PRs deviate from this coding style, they will the build and will not
-be merged until made compliant.
+If PRs deviate from this coding style, they will break the CI/CD
+pipeline and will not be merged until refactored to match the coding
+rules.
 
 In case your PR is failing from style guide issues try running `npm run
-lint:fix` over your code - this will fix all syntax or code style issues
+lint:fix` over your code - this will fix many syntax issues
 automatically without breaking your code.
 
 ### Testing
