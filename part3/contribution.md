@@ -80,6 +80,13 @@ It is usually not a big deal if you accidentally open a PR for the
 `master` branch. GitHub added the possibility to change the target
 branch for a PR afterwards some time ago.
 
+In case you want to open a PR before actually being finished with your
+work (e.g. because you'd like to see some intermediate CI/CD results)
+please  
+put either "`[WIP]`" or `[`:construction:`]` into the title. This will
+signal the [WIP app](https://github.com/marketplace/wip) we're using on
+GitHub to mark this PR as not ready for merge.
+
 ## Contribution guidelines
 
 The minimum requirements for code contributions are:
