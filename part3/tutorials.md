@@ -180,7 +180,7 @@ import {
   waitForInputToNotBeEmpty,
   waitForElementToGetClicked,
   waitInMs,
-  sleep, waitForAngularRouteToBeVisited
+  waitForAngularRouteToBeVisited, waitForLogOut
 } from '../helpers/helpers'
 import { ChallengeInstruction } from '../'
 
@@ -192,19 +192,13 @@ export const LoginAdminInstruction: ChallengeInstruction = {
         "To start this challenge, you'll have to log out first.",
       fixture: '#navbarAccount',
       unskippable: true,
-      async resolved () {
-        while (true) {
-          if (localStorage.getItem('token') === null) {
-            break
-          }
-          await sleep(100)
-        }
-      }
+      resolved: waitForLogOut()
     },
     {
       text:
         "Let's try if we find a way to log in with the administrator's user account. To begin, go to the _Login_ page via the _Account_ menu.",
       fixture: 'app-navbar',
+      fixtureAfter: true,
       unskippable: true,
       resolved: waitForAngularRouteToBeVisited('login')
     },
