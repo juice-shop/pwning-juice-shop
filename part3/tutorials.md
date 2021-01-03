@@ -126,15 +126,19 @@ You can import various helper functions from
 `frontend/src/hacking-instructor/helpers/helpers.ts` and use them
 conveniently as your `resolved` function in any challenge hint:
 
-| Helper function                                                                                     | Usage example                                                                      |
-|:----------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
-| `waitInMs (timeInMs: number)`                                                                       | `resolved: waitInMs(5000)`                                                         |
-| `waitForElementToGetClicked (elementSelector: string)`                                              | `resolved: waitForElementToGetClicked('#loginButton')`                             |
-| `waitForInputToNotBeEmpty (inputSelector: string)`                                                  | `resolved: waitForInputToNotBeEmpty('#password')`                                  |
-| `waitForInputToHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })`    | `resolved: waitForInputToHaveValue('#email', "' OR true--")`                       |
-| `waitForInputToNotHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })` | `resolved: waitForInputToNotHaveValue('#comment', "WTF?!", { ignoreCase: false })` |
-| `waitForElementsInnerHtmlToBe (elementSelector: string, value: String)`                             | `resolved: waitForInputToHaveValue('#searchQuery input', 'owasp')`                 |
-| `waitForAngularRouteToBeVisited (route: String)`                                                    | `resolved: waitForAngularRouteToBeVisited('login')`                                |
+| Helper function                                                                                                  | Usage example                                                                                   |
+|:-----------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
+| `waitInMs (timeInMs: number)`                                                                                    | `resolved: waitInMs(5000)`                                                                      |
+| `waitForElementToGetClicked (elementSelector: string)`                                                           | `resolved: waitForElementToGetClicked('#loginButton')`                                          |
+| `waitForInputToNotBeEmpty (inputSelector: string)`                                                               | `resolved: waitForInputToNotBeEmpty('#password')`                                               |
+| `waitForInputToHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })`                 | `resolved: waitForInputToHaveValue('#email', "' OR true--")`                                    |
+| `waitForInputToNotHaveValue (inputSelector: string, value: string, options = { ignoreCase: true })`              | `resolved: waitForInputToNotHaveValue('#comment', "WTF?!", { ignoreCase: false })`              |
+| `waitForInputToNotHaveValueAndNotBeEmpty (inputSelector: string, value: string, options = { ignoreCase: true })` | `resolved: waitForInputToNotHaveValueAndNotBeEmpty('#comment', "WTF?!", { ignoreCase: false })` |
+| `waitForElementsInnerHtmlToBe (elementSelector: string, value: String)`                                          | `resolved: waitForInputToHaveValue('#searchQuery input', 'owasp')`                              |
+| `waitForAngularRouteToBeVisited (route: String)`                                                                 | `resolved: waitForAngularRouteToBeVisited('login')`                                             |
+| `waitForLogIn ()`                                                                                                | `resolved: waitForLogIn()`                                                                      |
+| `waitForLogOut ()`                                                                                               | `resolved: waitForLogOut()`                                                                     |
+| `waitForDevTools ()`                                                                                             | `resolved: waitForDevTools()`                                                                   |
 
 ℹ️ The helper functions are supposed to be self-explanatory enough on
 their own. Please check out the [Reference example](#reference-example)
