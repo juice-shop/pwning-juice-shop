@@ -45,13 +45,18 @@ export interface ChallengeHint {
    */
   fixture: string
   /**
+   * Set to true if the hint should be displayed after the target
+   * Defaults to false (hint displayed before target)
+   */
+  fixtureAfter?: boolean
+  /**
    * Set to true if the hint should not be able to be skipped by clicking on it.
    * Defaults to false
    */
   unskippable?: boolean
   /**
-  * Function declaring the condition under which the tutorial will continue.
-  */
+   * Function declaring the condition under which the tutorial will continue.
+   */
   resolved: () => Promise<void>
 }
 ```
@@ -85,9 +90,17 @@ selectors for `fixture` are:
 `<mat-search-bar id="searchQuery">` but _not_ the tag <span
 id="searchQuery">.
 
+### `fixtureAfter`
+
+By default, thje speech bubbles are displayed _before_ the target
+element selected via `fixture`. This can cause it to appear at the top
+edge of the screen or over relevant input elements, e.g. in the
+navigation bar. In such cases, try setting `fixtureAfter: true` to place
+the speech bubble after the target element instead.
+
 ### `unskippable`
 
-By default you can skip all hints of a script by simply clicking on the
+By default, you can skip all hints of a script by simply clicking on the
 speech bubble. The script will then continue with the next step. For
 non-interactive hints that are simply shown for a number of seconds and
 then move on, this is mostly fine and intended. For interactive or
@@ -289,3 +302,4 @@ export const LoginAdminInstruction: ChallengeInstruction = {
   ]
 }
 ```
+
