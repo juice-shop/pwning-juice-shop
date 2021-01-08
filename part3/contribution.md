@@ -117,6 +117,8 @@ The `npm run lint` script verifies code compliance with
   JavaScript code
 * the `frontend/eslintrc.js` rules derived from
   `standard-with-typescript` for the frontend TypeScript code
+* the `frontend/stylelintrc.js` rules derived from
+  `stylelint-config-sass-guidelines` for the frontend SCSS stylesheets
 
 If PRs deviate from this coding style, they will break the CI/CD
 pipeline and will not be merged until refactored to match the coding
