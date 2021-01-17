@@ -270,7 +270,8 @@ If the challenge is not immediately solved, you might have to
 * or log in with _Email_ `admin@juice-sh.op` and _Password_ `admin123`
   if you looked up the administrator's password hash
   `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
-  the user data by [retrieving a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
+  the user data by
+  [retrieving a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection).
 
 ### Log in with MC SafeSearch's original user credentials
 
@@ -2840,12 +2841,14 @@ server's operation system and also their synonym command for `wget`.
 
 1. The author
    [tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
-   from his personal account, openly spoilering the URL
+   back in `v8.5.0` from his personal account, openly spoilering the URL
    <http://juice-shop-staging.herokuapp.com/promotion>
 
    ![Tweet promoting a new in-app promotion video](img/tweet_promotion.png)
-2. Visit <http://localhost:3000/promotion> to watch the video. You will
-   notice that it comes with subtitles enabled by default.
+2. Visit <http://localhost:3000/promotion> to watch the video, which is
+   no longer the one advertised in the Tweet but one advertising
+   [the benefits of an OWASP membership](https://owasp.org/membership/)!
+   You will notice that it comes with subtitles enabled by default.
 
    ![In-app promotion video](img/promo_video.png)
 3. Right-click and select _View Source_ on the page to learn that it
@@ -2853,10 +2856,10 @@ server's operation system and also their synonym command for `wget`.
    subtitles are directly embedded in the page itself.
 4. Inspecting the response for <http://localhost:3000/video> in the
    _Network_ tab of your DevTools shows an interesting header
-   `Content-Location: /assets/public/videos/JuiceShopJingle.mp4`
+   `Content-Location: /assets/public/videos/owasp_promo.mp4`
 5. Trying to access the video directly at
-   <http://localhost:3000/assets/public/videos/JuiceShopJingle.mp4>
-   works fine.
+   <http://localhost:3000/assets/public/videos/owasp_promo.mp4> works
+   fine.
 6. Getting a directory listing for
    <http://localhost:3000/assets/public/videos> does not work
    unfortunately.
@@ -2865,8 +2868,8 @@ server's operation system and also their synonym command for `wget`.
    guess would be that a corresponding `.vtt` file is available
    alongside the video.
 8. Accessing
-   <http://localhost:3000/assets/public/videos/JuiceShopJingle.vtt>
-   proves this assumption correct.
+   <http://localhost:3000/assets/public/videos/owasp_promo.vtt> proves
+   this assumption correct.
 9. As the subtitles are not loaded separately by the client, they must
    be embedded on the server side. If this embedding happens without
    proper safeguards, an XSS attack would be possible if the subtitles
@@ -2889,10 +2892,10 @@ server's operation system and also their synonym command for `wget`.
 14. This actual directory structure on the server is created by the
     AngularCLI tool when it compiles the application and looks as
     follows: `frontend/dist/frontend/assets/`.
-15. Prepare a ZIP file with a `JuiceShopJingle.vtt` inside that contains
-    the prescribed payload of ``</script><script>alert(`xss`)</script>``
+15. Prepare a ZIP file with a `owasp_promo.vtt` inside that contains the
+    prescribed payload of ``</script><script>alert(`xss`)</script>``
     with `zip exploit.zip
-    ../../frontend/dist/frontend/assets/public/video/JuiceShopJingle.vtt`
+    ../../frontend/dist/frontend/assets/public/video/owasp_promo.vtt`
     (on Linux).
 16. Upload the ZIP file on <http://localhost:3000/#/complain>.
 17. The challenge notification will not trigger immediately, as it
