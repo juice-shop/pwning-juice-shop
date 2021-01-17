@@ -183,10 +183,10 @@ marketing video with subtitles is rendered that hosts the
 [XSS Tier 6](../part2/xss.md#embed-an-xss-payload-into-our-promo-video)
 challenge.
 
-| Property    | Description                                                                                                                                                                                                         | Default               |
-|:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
-| `video`     | Name of a file with `video/mp4` content type in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.                                  | `JuiceShopJingle.mp4` |
-| `subtitles` | Name of a [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/) file in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video. | `JuiceShopJingle.vtt` |
+| Property    | Description                                                                                                                                                                                                         | Default           |
+|:------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------|
+| `video`     | Name of a file with `video/mp4` content type in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.                                  | `owasp_promo.mp4` |
+| `subtitles` | Name of a [Web Video Text Tracks Format](https://www.w3.org/TR/webvtt1/) file in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video. | `owasp_promo.vtt` |
 
 #### `easterEggPlanet` subsection
 

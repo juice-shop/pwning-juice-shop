@@ -2845,63 +2845,69 @@ server's operation system and also their synonym command for `wget`.
    <http://juice-shop-staging.herokuapp.com/promotion>
 
    ![Tweet promoting a new in-app promotion video](img/tweet_promotion.png)
-2. Visit <http://localhost:3000/promotion> to watch the video, which is
-   no longer the one advertised in the Tweet but one advertising
+2. After changing the video sported on the promotion page in `v12.5.0`,
+   the Juice Shop's own Twitter account
+   [published another message](https://twitter.com/owasp_juiceshop/status/1350381894010077184),
+   this time spoilering the URL <http://demo.owasp-juice.shop/promotion>
+
+   ![Tweet promoting the OWASP membership ad promotion video](img/tweet_promotion2.png)
+3. Visit <http://localhost:3000/promotion> to watch the video
+   advertising
    [the benefits of an OWASP membership](https://owasp.org/membership/)!
    You will notice that it comes with subtitles enabled by default.
 
    ![In-app promotion video](img/promo_video.png)
-3. Right-click and select _View Source_ on the page to learn that it
+4. Right-click and select _View Source_ on the page to learn that it
    loads its video from <http://localhost:3000/video> and that the
    subtitles are directly embedded in the page itself.
-4. Inspecting the response for <http://localhost:3000/video> in the
+5. Inspecting the response for <http://localhost:3000/video> in the
    _Network_ tab of your DevTools shows an interesting header
    `Content-Location: /assets/public/videos/owasp_promo.mp4`
-5. Trying to access the video directly at
+6. Trying to access the video directly at
    <http://localhost:3000/assets/public/videos/owasp_promo.mp4> works
    fine.
-6. Getting a directory listing for
+7. Getting a directory listing for
    <http://localhost:3000/assets/public/videos> does not work
    unfortunately.
-7. Knowing that the subtitles are in
+8. Knowing that the subtitles are in
    [WebVTT](https://www.w3.org/TR/webvtt1/) format (from step 3) a lucky
    guess would be that a corresponding `.vtt` file is available
    alongside the video.
-8. Accessing
+9. Accessing
    <http://localhost:3000/assets/public/videos/owasp_promo.vtt> proves
    this assumption correct.
-9. As the subtitles are not loaded separately by the client, they must
-   be embedded on the server side. If this embedding happens without
-   proper safeguards, an XSS attack would be possible if the subtitles
-   files could be overwritten.
-10. The prescribed XSS payload also hints clearly at the intended attack
+10. As the subtitles are not loaded separately by the client, they must
+    be embedded on the server side. If this embedding happens without
+    proper safeguards, an XSS attack would be possible if the subtitles
+    files could be overwritten.
+11. The prescribed XSS payload also hints clearly at the intended attack
     against the subtitles, which are themselves enclosed in a `<script>`
     tag, which the payload will try to close prematurely with its
     starting `</script>`.
-11. To successfully overwrite the file, the Zip Slip vulnerability
+12. To successfully overwrite the file, the Zip Slip vulnerability
     behind the
     [Overwrite the Legal Information file](#overwrite-the-legal-information-file)
     challenge can be used.
-12. The blind part of this challenge is the actual file location in the
+13. The blind part of this challenge is the actual file location in the
     server file system. Trying to create a Zip file with any path trying
     to traverse into `../../assets/public/videos/` will fail. Notice
     that `../../` was sufficient to get to the root folder in
     [Overwrite the Legal Information file](#overwrite-the-legal-information-file).
-13. This likely means that there is a deeper directory structure in
+14. This likely means that there is a deeper directory structure in
     which `assets/` resides.
-14. This actual directory structure on the server is created by the
+15. This actual directory structure on the server is created by the
     AngularCLI tool when it compiles the application and looks as
     follows: `frontend/dist/frontend/assets/`.
-15. Prepare a ZIP file with a `owasp_promo.vtt` inside that contains the
+16. Prepare a ZIP file with a `owasp_promo.vtt` inside that contains the
     prescribed payload of ``</script><script>alert(`xss`)</script>``
     with `zip exploit.zip
     ../../frontend/dist/frontend/assets/public/video/owasp_promo.vtt`
     (on Linux).
-16. Upload the ZIP file on <http://localhost:3000/#/complain>.
-17. The challenge notification will not trigger immediately, as it
+17. Upload the ZIP file on <http://localhost:3000/#/complain>.
+18. The challenge notification will not trigger immediately, as it
     requires you to actually execute the payload by visiting
     <http://localhost:3000/promotion> again.
-18. You will see the alert box and once you go _Back_ the challenge
+19. You will see the alert box and once you go _Back_ the challenge
     solution should trigger accordingly.
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
