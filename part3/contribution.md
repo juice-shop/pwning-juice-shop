@@ -219,6 +219,20 @@ npm start &
 ../../test/smoke/smoke-test.sh http://localhost:3000
 ```
 
+### Development mode for Angular frontend
+
+Running `npm install` over and over for frontend code or view changes
+can be very time-consuming. Juice Shop can be run in a development mode
+provided through Angular CLI to avoid this. Run `npm run serve` from the
+root project folder and navigate to <http://localhost:4200> instead of
+the usual port `3000`. Whenever you change code in the `frontend/src`
+folder, the UI will recompile the affected bit and auto-reload the
+browser window for you.
+
+Please note that the backend is still running on <http://localhost:3000>
+in this mode and that changes in the backend code are not automatically
+applied.
+
 ### Developer Certificate of Origin
 
 > The Developer Certificate of Origin (DCO) is a lightweight way for
