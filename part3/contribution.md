@@ -233,6 +233,36 @@ Please note that the backend is still running on <http://localhost:3000>
 in this mode and that changes in the backend code are not automatically
 applied.
 
+### Developing in a GitHub codespace
+
+If you have access to
+[GitHub Codespaces](https://github.com/features/codespaces) (which is in
+closed beta at the time of writing this), you can run an almost complete
+development environment for OWASP Juice Shop in the Cloud. It allows you
+to program and run the application entirely from your browser. The
+author has tested this to work very well even on a weak Chromebook.
+
+1. Go to <https://github.com/codespaces>.
+2. Click _New codespace_ and select `bkimminich/juice-shop` as
+   _Repository_ and `develop` as _Branch_. Then click _Create
+   codespace_.
+3. Your codespace will be set up and launched. It automatically installs
+   some plugins to make contributing easier our of the box:
+   - Angular Language Service
+   - ESLint
+   - npm
+   - stylelint
+4. After the container initializes, all application dependencies are
+   automatically installed. This sometimes runs into some hang-up, so
+   you might have to run `npm install` from the codespace terminal again
+   if you see errors on `npm start` or ESLint complains about missing
+   plugins.
+5. That's it! You're ready for developing on OWASP Juice Shop!
+
+🚨 Please note that the client-side [Unit tests](#unit-tests) and
+[End-to-end tests](#end-to-end-tests) will not work on GitHub Codespaces
+due to the lack of a Chrome installation in the underlying container.
+
 ### Developer Certificate of Origin
 
 > The Developer Certificate of Origin (DCO) is a lightweight way for
