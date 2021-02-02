@@ -148,7 +148,8 @@ Juice Shop will send a `POST` request to the configured
 ```json
 { "solution":
   { "challenge": "<'key' of the solved challenge from ./data/static/challenges.yml>",
-    "evidence": null,
+    "cheatScore": "<probability of 0..1 that this solution has been cheated>",
+    "totalCheatScore": "<average probability of 0..1 that solutions up until now have been cheated>",
     "issuedOn": "<yyyy-MM-ddThh:mm:ssZ>"
   },
   "ctfFlag": "<CTF flag code of the solved challenged based on the injected (or default) 'CTF_KEY'>",
@@ -168,7 +169,8 @@ Juice Shop will send a `POST` request to the configured
 {
     "solution": {
         "challenge": "key",
-        "evidence": null,
+        "cheatScore": 0,
+        "totalCheatScore": 0,
         "issuedOn": "2020-12-15T18:24:33.027Z"
     },
     "ctfFlag": "b0d70dce6cadadb85882ea498fac6785dba2349b",
@@ -182,3 +184,53 @@ Juice Shop will send a `POST` request to the configured
 }
 ```
 
+### Cheat Detection
+
+The webhook payload contains a `cheatScore` between 0 and 1 that
+indicates how likely the challenge solution has been achieved with
+cheating. The calculation curently relies only on the time difference
+between current and previous solve in relation to the difficulty of the
+current challenge:
+
+```javascript
+cheatScore += Math.max(0, 1 - (minutesSincePreviousSolve / (2 * challenge.difficulty)))
+```
+
+This formula assumes that a non-cheating user requires a certain
+absolute minimum amount of time to solve hacking challenges:
+
+* 2 minutes for :star:-challenges
+* 4 minutes for :star::star:-challenges
+* 6 minutes for :star::star::star:-challenges
+* 8 minutes for :star::star::star::star:-challenges
+* 10 minutes for :star::star::star::star::star:-challenges
+* 12 minutes for :star::star::star::star::star::star:-challenges
+
+The server also keeps track of the average `cheatScore` across all
+solved challenges in `totalCheatScore` which is sent with each webhook
+call. This value is not persisted across server restarts, but it is also
+not irritated by
+[automatic](../part1/challenges.md#automatic-saving-and-restoring-hacking-progress)
+or
+[manual restoring of hacking progress](../part1/challenges.md#manual-progress-and-settings-backup).
+
+The following values for `totalCheatScore` were measured during
+activities that are
+[definitely considered cheating](../part1/rules.md#-things-considered-cheating):
+
+* \>0.97 on final webhook call when executing all
+  [Integration tests](../part3/contribution.md#integration-tests)
+* \>0.95 on final webhook call when executing all
+  [End-to-end tests](../part3/codebase.md#end-to-end-tests)
+
+The cheat scoring assumes that
+[a single user is hacking the Juice Shop](../part1/running.md#single-user-restriction)
+instance. If the application is used by a team, the values need to be
+considered less reliable, as extra solve speed might come from
+parallelization of challenges across team members. Similarly,
+experienced Juice Shop users will also solve challenges faster than a
+new user, so their speed is likely to trigger cheat detection as well.
+
+All in all, the cheat score should never blindly be used as a tool to
+caution or sanction somebody. Vice versa a low score should also never
+blindly be used to determine monetary rewards etc.
