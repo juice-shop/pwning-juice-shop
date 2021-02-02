@@ -17,7 +17,7 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v12.5.0",
+    "juiceShopVersion": "v12.6.0-SNAPSHOT",
     "juiceShopCtfVersion": "v8.1.3",
     "ctfdVersion": "2.x or higher",
     "rtbVersion": "3.3 or higher",

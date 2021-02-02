@@ -104,11 +104,11 @@ each one individually, as you can simply `Shift`-click one of their
 _X_-buttons to dismiss all at the same time.
 
 Depending on your application configuration, each challenge notification
-might also show a 🏁 symbol with a character sequence next to it. If
-you are doing a hacking session just on your own, you can completely
-ignore this flag. The code is only relevant if you are participating in
-a CTF event. Please refer to chapter [Hosting a CTF event](ctf.md) for
-more information this topic.
+might also show a 🏁 symbol with a character sequence next to it. If you
+are doing a hacking session just on your own, you can completely ignore
+this flag. The code is only relevant if you are participating in a CTF
+event. Please refer to chapter [Hosting a CTF event](ctf.md) for more
+information this topic.
 
 !["Challenge solved!" notification with flag code](img/notification_with_flag.png)
 
@@ -172,6 +172,16 @@ settings from one computer to another. Example:
   "continueCode": "rzJBXpa...bm45J2okY7LX4v7o"
 }
 ```
+
+When the backup restore is successful, you must click "Apply changes
+now" in the corresponding message to trigger the hacking progress
+restore as well as the language changes in backend data.
+
+![Success message for backup restore with "Apply changes now" action](img/manual_backup-restore.png)
+
+If you do not click that button before the message vanishes, you can
+also restart your application server to apply the backup of hacking
+progress.
 
 If during restore you see an error message `Version X is incompatible
 with expected version Y` your backup was taken before a semantically
