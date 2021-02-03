@@ -51,10 +51,11 @@
 * [Challenge solutions](appendix/solutions.md)
 * [Trainer's guide](appendix/trainers.md)
 * [Troubleshooting](appendix/troubleshooting.md)
-* [Jingle lyrics](appendix/lyrics.md)
+* [Cheat detection](appendix/cheat-detection.md)
 * [Integration](appendix/integration.md)
 * [Monitoring](appendix/monitoring.md)
 * [Chatbot training data](appendix/chatbot.md)
+* [Jingle lyrics](appendix/lyrics.md)
 
 ## Postface
 
