@@ -26,6 +26,22 @@ It is important to note, that this does not imply that you are
 **expected to only need** this minimum minutes for a challenge of
 certain difficulty.
 
+### Coupled challenges
+
+The cheat scoring takes into account that some challenges will be solved
+in the same HTTP request, for example:
+
+* logging in the admin user _with his weak password_ solves logging in
+  the admin _by any means_ (e.g. SQL Injection), too
+* both XXE challenge automatically solve using a deprecated B2B
+  interface
+* the generic null byte challenge is typically solved along with the
+  first actual exploit to access some sensitive file from `/ftp`
+
+To avoid false positive cheat scoring, the second of two coupled
+challenge solves will never count as cheating when they happen in
+sequence.
+
 ## Total cheat score
 
 The server also keeps track of the average `cheatScore` across all
@@ -43,10 +59,12 @@ The following values for `totalCheatScore` were measured during
 activities that are
 [definitely considered cheating](../part1/rules.md#-things-considered-cheating):
 
-* \>0.97 on final webhook call when executing all
-  [Integration tests](../part3/contribution.md#integration-tests)
-* \>0.95 on final webhook call when executing all
-  [End-to-end tests](../part3/codebase.md#end-to-end-tests)
+* \>93% on final webhook call when executing all
+  [Integration tests](../part3/contribution.md#integration-tests) in <1
+  minute on the authors Windows 10 laptop
+* \>92% on final webhook call when executing all
+  [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <20
+  minutes on the authors Windows 10 laptop
 
 ## Limitations
 
@@ -57,6 +75,9 @@ considered less reliable, as extra solve speed might come from
 parallelization of challenges across team members. Similarly,
 experienced Juice Shop users will also solve challenges faster than a
 new user, so their speed is likely to trigger cheat detection as well.
+
+If the Juice Shop instance is under the control of the user, any cheat
+score it reports via Prometheus or Webhook cannot be trusted.
 
 All in all, the cheat score should never blindly be used as a tool to
 caution or sanction somebody. Vice versa a low score should also never
