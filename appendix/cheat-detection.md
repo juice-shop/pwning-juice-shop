@@ -4,6 +4,8 @@ Whenever a challenge is solved, a `cheatScore` between 0 and 1 is
 internally assigned to the solution. This indicates how likely the
 challenge solution has been achieved with cheating.
 
+![Cheat detection log entries](img/cheat-detection_logs.png)
+
 ## Cheat score calculation
 
 The calculation curently relies only on the time difference between
@@ -54,6 +56,16 @@ restarts, but its calculation is also not irritated by
 [automatic](../part1/challenges.md#automatic-saving-and-restoring-hacking-progress)
 or
 [manual restoring of hacking progress](../part1/challenges.md#manual-progress-and-settings-backup).
+
+After the individual challenge cheat scores from the screenshot at the
+beginning of this chapter, you would get the `totalCheatScore` metric
+seen below:
+
+```yaml
+# HELP juiceshop_cheat_score Overall probability that any challenges were solved by cheating.
+# TYPE juiceshop_cheat_score gauge
+juiceshop_cheat_score{app="juiceshop"} 0.49485416666666665
+```
 
 The following values for `totalCheatScore` were measured during
 activities that are
