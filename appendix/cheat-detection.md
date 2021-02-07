@@ -13,20 +13,20 @@ current and previous solve in relation to the difficulty of the current
 challenge. The cheat score also factors in if hints and/or tutorials are
 enabled or disabled on the Score Board.
 
-| Challenge Difficulty                 | Minimum solve time | w/o hints | w/ tutorial |
-|:-------------------------------------|:-------------------|:----------|:------------|
-| :star:                               | 2 minutes          | +1 min    | ÷2          |
-| :star::star:                         | 4 minutes          | +2 min    | ÷2          |
-| :star::star::star:                   | 6 minutes          | +3 min    | ÷2          |
-| :star::star::star::star:             | 8 minutes          | +4 min    | n/a         |
-| :star::star::star::star::star:       | 10 minutes         | +5 min    | n/a         |
-| :star::star::star::star::star::star: | 12 minutes         | +6 min    | n/a         |
+| Challenge Difficulty | Minimum solve time | w/o hints | w/ tutorial |
+|:---------------------|:-------------------|:----------|:------------|
+| ⭐                    | 2 minutes          | +1 min    | ÷2          |
+| ⭐⭐                  | 4 minutes          | +2 min    | ÷2          |
+| ⭐⭐⭐                 | 6 minutes          | +3 min    | ÷2          |
+| ⭐⭐⭐⭐               | 8 minutes          | +4 min    | n/a         |
+| ⭐⭐⭐⭐⭐              | 10 minutes         | +5 min    | n/a         |
+| ⭐⭐⭐⭐⭐⭐            | 12 minutes         | +6 min    | n/a         |
 
 The underlying formula assumes that a non-cheating user requires a
 certain _absolute minimum amount of time_ to solve hacking challenges.
-It is important to note, that this does not imply that you are
-_expected to only need_ this minimum minutes for a challenge of
-certain difficulty.
+It is important to note, that this does not imply that you are _expected
+to only need_ this minimum minutes for a challenge of certain
+difficulty.
 
 ### Coupled challenges
 
