@@ -23,9 +23,9 @@ enabled or disabled on the Score Board.
 | :star::star::star::star::star::star: | 12 minutes         | +6 min    | n/a         |
 
 The underlying formula assumes that a non-cheating user requires a
-certain **absolute minimum amount of time** to solve hacking challenges.
+certain _absolute minimum amount of time_ to solve hacking challenges.
 It is important to note, that this does not imply that you are
-**expected to only need** this minimum minutes for a challenge of
+_expected to only need_ this minimum minutes for a challenge of
 certain difficulty.
 
 ### Coupled challenges
@@ -73,10 +73,10 @@ activities that are
 
 * \>93% on final webhook call when executing all
   [Integration tests](../part3/contribution.md#integration-tests) in <1
-  minute on the authors Windows 10 laptop
+  minute on the author's Windows 10 laptop
 * \>92% on final webhook call when executing all
   [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <20
-  minutes on the authors Windows 10 laptop
+  minutes on the author's Windows 10 laptop
 
 ## Limitations
 
