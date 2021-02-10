@@ -44,6 +44,18 @@ To avoid false positive cheat scoring, the second of two coupled
 challenge solves will never count as cheating when they happen in
 sequence.
 
+### Trivial Challenges
+
+Some challenges are so frequently solved by accident or coincident, that
+it would be unfair to take them into account for cheat scoring at all.
+This includes:
+
+* triggering any kind of error that is improperly handled by the
+  application, which if often solved as a by-product of solving other
+  challenges
+* reading the privacy policy of the shop, which is merely a challenge
+  making fun of the fact that almost nobody reads those in real life
+
 ## Total cheat score
 
 The server also keeps track of the average `cheatScore` across all
@@ -89,7 +101,7 @@ experienced Juice Shop users will also solve challenges faster than a
 new user, so their speed is likely to trigger cheat detection as well.
 
 If the Juice Shop instance is under the control of the user, any cheat
-score it reports via Prometheus or Webhook cannot be trusted.
+score it reports via Prometheus or Webhook cannot be trusted at all.
 
 All in all, the cheat score should never blindly be used as a tool to
 caution or sanction somebody. Vice versa a low score should also never
