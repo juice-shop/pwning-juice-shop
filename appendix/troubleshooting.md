@@ -65,7 +65,7 @@ issue.
 ### Node.js / NPM
 
 - After changing to a different Node.js version it is a good idea to
-  delete `npm_modules` and re-install all dependencies from scratch with
+  delete `node_modules` and re-install all dependencies from scratch with
   `npm install`
 - If during `npm install` the `sqlite3` or `libxmljs2` binaries cannot
   be downloaded for your system, the setup falls back to building from
