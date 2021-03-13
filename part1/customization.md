@@ -126,7 +126,7 @@ Us_ or the _Photo Wall_.
 |:-------------------|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
 | `twitterUrl`       | URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.  | `'https://twitter.com/owasp_juiceshop'`                                 |
 | `facebookUrl`      | URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen. | `'https://www.facebook.com/owasp.juiceshop'`                            |
-| `slackUrl`         | URL used as the Slack link on the _About Us_ screen.                                             | `'http://owaspslack.com'`                                               |
+| `slackUrl`         | URL used as the Slack link on the _About Us_ screen.                                             | `'https://owasp.org/slack/invite'`                                      |
 | `pressKitUrl`      | URL used as the link to logos and media files on the _About Us_ screen.                          | `'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'` |
 | `questionnaireUrl` | URL used as the link to a user questionnaire on the _Score Board_ screen.                        | `~`                                                                     |
 
@@ -341,7 +341,7 @@ application:
   social:
     twitterUrl: 'https://twitter.com/owasp_juiceshop'
     facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
-    slackUrl: 'http://owaspslack.com'
+    slackUrl: 'https://owasp.org/slack/invite'
     redditUrl: 'https://www.reddit.com/r/owasp_juiceshop'
     pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'
     questionnaireUrl: ~
