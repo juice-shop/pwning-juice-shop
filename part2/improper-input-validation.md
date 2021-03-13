@@ -25,7 +25,7 @@
 
 The Juice Shop does not bother to separate administrative functionality
 into a deployment unit of its own. Instead, the cheapest solution was
-chosen by simply leaving then admin features in the web shop itself and
+chosen by simply leaving the admin features in the web shop itself and
 (allegedly) demanding a higher level of access to use them.
 
 * Register as an ordinary user to learn what API endpoints are involved
