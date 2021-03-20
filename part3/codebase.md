@@ -87,11 +87,11 @@ export class FeedbackService {
 }
 ```
 
-🚨 Unit tests for all services can be found next to their
-`*.service.ts` files in the `frontend/src/app/Services` folder as
-`*.service.spec.ts` files. They are
-[Jasmine 2](https://jasmine.github.io) specifications which are executed
-by the [Karma](https://karma-runner.github.io) test runner.
+🚨 Unit tests for all services can be found next to their `*.service.ts`
+files in the `frontend/src/app/Services` folder as `*.service.spec.ts`
+files. They are [Jasmine 2](https://jasmine.github.io) specifications
+which are executed by the [Karma](https://karma-runner.github.io) test
+runner.
 
 ### Components
 
@@ -224,8 +224,8 @@ export class ContactComponent implements OnInit {
 }
 ```
 
-🚨 Unit tests for all components can be found in their subfolders
-within `frontend/src/app/` as `*.component.spec.ts` files. They are
+🚨 Unit tests for all components can be found in their subfolders within
+`frontend/src/app/` as `*.component.spec.ts` files. They are
 [Jasmine 2](https://jasmine.github.io) specifications which are executed
 by the [Karma](https://karma-runner.github.io) test runner.
 
@@ -369,11 +369,10 @@ changes.
 
 The backend of OWASP Juice Shop is a [Node.js](https://nodejs.org)
 application based on the [Express](http://expressjs.com) web framework.
+Before `v12.7.0` the backend code base was JavaScript (ES6), but since
+then it has been gradually migrated into TypeScript.
 
 ![Server tier focus](img/architecture-server.png)
-
-ℹ️ On the server side all JavaScript code must be compliant to
-javascript (ES6) syntax.
 
 ### Routes
 
@@ -431,7 +430,7 @@ endpoints are protected against anonymous access and can only be used by
 an authenticated user. This is described later in section
 [Access control on routes](#access-control-on-routes).
 
-```javascript
+```typescript
 finale.initialize({
   app,
   sequelize: models.sequelize
@@ -471,10 +470,10 @@ These middleware components are directly mapped to
 [Express](http://expressjs.com) routes.
 
 Each middleware exposes a single function which encapsulates their
-responsibility. For example, the `angular.js` middleware delivers the
+responsibility. For example, the `angular.ts` middleware delivers the
 `index.html` page to the client:
 
-```javascript
+```typescript
 const path = require('path')
 const utils = require('../lib/utils')
 
@@ -491,12 +490,12 @@ module.exports = function serveAngularClient () {
 
 If a hand-written middleware is involved in a hacking challenge, it must
 assess on its own if the challenge has been solved. For example, in the
-`basket.js` middleware where successfully accessing another user's
+`basket.ts` middleware where successfully accessing another user's
 shopping basket is verified:
 
-```javascript
+```typescript
 const utils = require('../lib/utils')
-const insecurity = require('../lib/insecurity')
+const security = require('../lib/security')
 const models = require('../models/index')
 const challenges = require('../data/datacache').challenges
 
@@ -506,7 +505,7 @@ module.exports = function retrieveBasket () {
     models.Basket.find({ where: { id }, include: [ { model: models.Product, paranoid: false } ] })
       .then(basket => {
         if (utils.notSolved(challenges.basketChallenge)) {
-          const user = insecurity.authenticatedUsers.from(req)
+          const user = security.authenticatedUsers.from(req)
           if (user && id && id !== 'undefined' && user.bid != id) {
             utils.solve(challenges.basketChallenge)
           }
@@ -519,7 +518,7 @@ module.exports = function retrieveBasket () {
 }
 ```
 
-The only middleware deviating from above specification is `verify.js`.
+One particular middleware deviating from above approach is `verify.ts`.
 It contains no business functionality. Instead of one function it
 exposes several named functions on challenge verification for
 [Generated API endpoints](#generated-api-endpoints), for example:
@@ -529,7 +528,7 @@ app.post('/api/Feedbacks', verify.forgedFeedbackChallenge())
 app.post('/api/Feedbacks', verify.captchaBypassChallenge())
 ```
 
-The same applied for any challenges on top of third-party middleware,
+The same applies for any challenges on top of third-party middleware,
 for example:
 
 ```
@@ -550,19 +549,19 @@ test framework.
 #### Access control on routes
 
 For both the generated and hand-written middleware access can be
-restricted on the corresponding routes by adding `insecurity.denyAll()`
-or `insecurity.isAuthorized()` as an extra middleware. Examples for
+restricted on the corresponding routes by adding `security.denyAll()`
+or `security.isAuthorized()` as an extra middleware. Examples for
 denying all access to certain HTTP verbs for the `SecurityQuestion` and
 `SecurityAnswer` models:
 
-```javascript
+```typescript
 /* SecurityQuestions: Only GET list of questions allowed. */
-app.post('/api/SecurityQuestions', insecurity.denyAll())
-app.use('/api/SecurityQuestions/:id', insecurity.denyAll())
+app.post('/api/SecurityQuestions', security.denyAll())
+app.use('/api/SecurityQuestions/:id', security.denyAll())
 
 /* SecurityAnswers: Only POST of answer allowed. */
-app.get('/api/SecurityAnswers', insecurity.denyAll())
-app.use('/api/SecurityAnswers/:id', insecurity.denyAll())
+app.get('/api/SecurityAnswers', security.denyAll())
+app.use('/api/SecurityAnswers/:id', security.denyAll())
 ```
 
 The following snippet show the authorization settings for the `User`
@@ -570,30 +569,30 @@ model which allows only `POST` to anonymous users (for registration) and
 requires to be logged-in for retrieving the list of users or individual
 user records. Deleting users is completely forbidden:
 
-```javascript
-app.get('/api/Users', insecurity.isAuthorized())
+```typescript
+app.get('/api/Users', security.isAuthorized())
 app.route('/api/Users/:id')
-  .get(insecurity.isAuthorized())
-  .put(insecurity.denyAll()) // Updating users is forbidden to make the password change challenge harder
-  .delete(insecurity.denyAll()) // Deleting users is forbidden entirely to keep login challenges solvable
+  .get(security.isAuthorized())
+  .put(security.denyAll()) // Updating users is forbidden to make the password change challenge harder
+  .delete(security.denyAll()) // Deleting users is forbidden entirely to keep login challenges solvable
 ```
 
 ### Custom libraries
 
 Two important and widely used custom libraries reside in the `lib`
-folder, one containing useful utilities (`lib/utils.js`) and the other
+folder, one containing useful utilities (`lib/utils.ts`) and the other
 encapsulating many of the broken security features (`lib/insecurity.js`)
 of the application.
 
 #### Useful utilities
 
-The main responsibility of the `utils.js` module is setting challenges
+The main responsibility of the `utils.ts` module is setting challenges
 as solved and sending associated notifications, optionally including a
 CTF flag code. It can also retrieve any challenge by its name and check
 if a passed challenge is not yet solved, to avoid unnecessary (and
 sometimes expensive) repetitive solving of the same challenge.
 
-```javascript
+```typescript
 exports.solve = function (challenge, isRestore) {
   const self = this
   challenge.solved = true
@@ -629,7 +628,7 @@ It also offers some basic `String` and `Date` utilities along with data
 (un-)wrapper functions and a method for the synchronous file download
 used during [Customization](../part1/customization.md).
 
-#### Insecurity features
+#### security features
 
 The `insecurity.js` module offers all security-relevant utilities of the
 application, but of course mostly in some broken or flawed way:
@@ -721,12 +720,12 @@ All interaction with MarsDB happens via the MongoDB query syntax.
 
 ### Populating the databases
 
-The OWASP Juice Shop comes with a `data/datacreator.js` module that is
+The OWASP Juice Shop comes with a `data/datacreator.ts` module that is
 automatically executed on every server start after the SQLite file and
 in-memory MarsDB have been cleared. It populates all tables with some
 initial data which makes the application usable out-of-the-box:
 
-```javascript
+```typescript
 module.exports = async () => {
   const creators = [
     createUsers,
@@ -756,7 +755,7 @@ the active configuration file. By default this is `config/default.yml`).
 
 The data in the `Feedbacks`, `SecurityQuestions`, `SecurityAnswers`,
 `Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically
-defined within the `datacreator.js` script. They are so simple that a
+defined within the `datacreator.ts` script. They are so simple that a
 YAML declaration file seemed like overkill.
 
 The `Captchas` table remains empty on startup, as it will dynamically
