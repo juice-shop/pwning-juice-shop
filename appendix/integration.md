@@ -184,3 +184,22 @@ Juice Shop will send a `POST` request to the configured
 }
 ```
 
+## Vulnerable code snippets API
+
+Any running Juice Shop instance since `v12.7.0` provides two REST
+endpoints `/snippets` and `/snippets/<challengeKey>` which can be used
+to retrieve the actual vulnerable code snippets for many of the
+challenges. These are described in the
+[REST endpoints](code-snippets.md#rest-endpoints) section of the
+[Vulnerable code snippets](code-snippets.md) appendix.
+
+### API integration example
+
+* The Score Board itself is using these endpoints to decide for which
+  challenges to show a code snippet button, and then to subsequently
+  retrieve a code snippet when such a button in clicked.
+* The
+  [Juice Shop CTF Extension](https://www.npmjs.com/package/juice-shop-ctf-cli)
+  calls the API of a specified Juice Shop instance
+  [to retrieve the snippets to later offer them as a hint on a CTF score server](../part1/ctf.md#generating-challenge-import-files-with-juice-shop-ctf-cli).
+
