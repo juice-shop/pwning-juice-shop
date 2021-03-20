@@ -250,9 +250,31 @@ with all challenges is shown and all filters are enabled. Passing in the
 
 ![Locked advanced filters in tutorial mode](img/tutorial-mode3.png)
 
+## Vulnerable code snippets
+
+For many (solved) challenges an additional button is displayed on the
+Score Board which  
+will open a dialog containing the actual code snippet responsible for
+the vulnerability.
+
+![Code snippet button for a challenge on the Score Board](img/code_snippet1.png)
+
+This snippet is loaded in real-time from the running application's
+actual code base and is sanitized to not show any "challenge check" or
+similar code that would not be present in a real-world application.
+
+![Code snippet dialog for a hacking challenge](img/code_snippet2.png)
+
+The user can try to identify the actually line(s) of code responsible
+for the vulnerability behind the particular challenge. To verify their
+deduction, they can simply hover over the spoiler badge below the
+snippet, to reveal those line numbers.
+
+![Vulnerable code line hover spoiler for a hacking challenge](img/code_snippet3.png)
+
 {% endif %}
 
-## Mitigation Links
+## Mitigation links
 
 For many solved challenges links to mitigation techniques are presented
 on the Score Board. Where available they typically lead to a

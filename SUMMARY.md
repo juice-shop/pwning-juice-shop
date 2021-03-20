@@ -52,6 +52,7 @@
 * [Trainer's guide](appendix/trainers.md)
 * [Troubleshooting](appendix/troubleshooting.md)
 * [Cheat detection](appendix/cheat-detection.md)
+* [Vulnerable code snippets](appendix/code-snippets.md)
 * [Integration](appendix/integration.md)
 * [Monitoring](appendix/monitoring.md)
 * [Chatbot training data](appendix/chatbot.md)
