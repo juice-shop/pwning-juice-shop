@@ -221,20 +221,31 @@ answers available which you can choose by simply hitting `ENTER`.
    * `Paid hint URLs` adds a hint per challenge like described above.
      Viewing this hint costs the team 20% of that challenge's score
      value.
+7. **Insert a code snippet as hint for each challenge?** Offers a
+   selectable choice between
+   * `No hint snippets` will not add any code snippets as hints to the
+     challenges. This is the default choice.
+   * `Free hint snippets` will add the response from REST endpoint
+     `/snippets/<challengeKey>` from the Juice Shop server as a hint to
+     the corresponding challenge on the CTF score server. Viewing this
+     hint is free.
+   * `Paid hint snippets` adds a hint per challenge like described
+     above. Viewing this hint costs the team 30% of that challenge's
+     score value.
 
 The category of each challenge is identical to its
 [category in the Juice Shop](categories.md) database. The score value
 and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 
-| Difficulty | Score value | Paid hint costs (Text / URL) |
-|:-----------|:------------|:-----------------------------|
-| ⭐          | 100 points  | (10 points / 20 points)      |
-| ⭐⭐        | 250 points  | (25 points / 50 points)      |
-| ⭐⭐⭐       | 450 points  | (45 points / 90 points)      |
-| ⭐⭐⭐⭐     | 700 points  | (70 points / 140 points)     |
-| ⭐⭐⭐⭐⭐    | 1000 points | (100 points / 200 points)    |
-| ⭐⭐⭐⭐⭐⭐  | 1350 points | (135 points / 260 points)    |
+| Difficulty | Score value | Paid hint costs (Text / URL / Snippet) |
+|:-----------|:------------|:---------------------------------------|
+| ⭐          | 100 points  | (10 / 20 / 30 points)                  |
+| ⭐⭐        | 250 points  | (25 / 50 / 75 points)                  |
+| ⭐⭐⭐       | 450 points  | (45 / 90 / 135 points)                 |
+| ⭐⭐⭐⭐     | 700 points  | (70 / 140 / 210 points)                |
+| ⭐⭐⭐⭐⭐    | 1000 points | (100 / 200 / 300 points)               |
+| ⭐⭐⭐⭐⭐⭐  | 1350 points | (135 / 260 / 395 points)               |
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
@@ -264,6 +275,7 @@ ctfKey: https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key #
 countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
 insertHints: none | free | paid
 insertHintUrls: none | free | paid # optional for FBCTF
+insertHintSnippets: none | free | paid # optional for FBCTF
 ```
 
 You can then pass this YAML file into the CLI the generator with the
