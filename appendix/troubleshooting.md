@@ -33,7 +33,7 @@ fixed in a straightforward fashion when they fail:
 | `Detected Node version ... is not in the supported version range of ...`                                                             | Install one of the officially supported Node.js versions {{book.nodeVersions}}. If you use a [pre-packaged distribution](../part1/running.md#from-pre-packaged-distribution), make sure its version matches your installed Node.js version.                                                                                                                                |
 | `Detected OS ... is not in the list of supported platforms ...`                                                                      | Make sure you use a supported operating system. If you use a [pre-packaged distribution](../part1/running.md#from-pre-packaged-distribution), make sure you downloaded the one for your OS.                                                                                                                                                                                |
 | `Detected CPU ... is not in the list of supported architectures ...`                                                                 | Make sure you use a supported processor architecture. If you use a [pre-packaged distribution](../part1/running.md#from-pre-packaged-distribution), make sure you downloaded the one for your processor.                                                                                                                                                                   |
-| `Required file ... is missing`                                                                                                       | If you installed [from sources](../part1/running.md#from-sources) re-run `npm install` and check for errors during its final step `Generating ES5 bundles for differential loading...`. In a [pre-packaged distribution](../part1/running.md#from-pre-packaged-distribution) you should **never** see this error.                                                          |
+| `Required file ... is missing`                                                                                                       | If you installed [from sources](../part1/running.md#from-sources) re-run `npm install` and check for errors, especially during its final step `Generating ES5 bundles for differential loading...`. In a [pre-packaged distribution](../part1/running.md#from-pre-packaged-distribution) you should **never** see this error.                                              |
 | `Port ... is in use`                                                                                                                 | Make sure the port you intend to run Juice Shop on is actually available or use another port by setting the `PORT` environment variable.                                                                                                                                                                                                                                   |
 | `Config schema validation failed with ... errors` followed by individual messages on wrong property types or unrecognized properties | Make sure that your customization complies with the schema of the [YAML configuration file](../part1/customization.md#yaml-configuration-file).                                                                                                                                                                                                                            |
 | `Only ... products are configured but at least four are required`                                                                    | Make sure that at least four items are present in the `products` array of your configuration. See also [YAML configuration file](../part1/customization.md#yaml-configuration-file).                                                                                                                                                                                       |
@@ -65,8 +65,8 @@ issue.
 ### Node.js / NPM
 
 - After changing to a different Node.js version it is a good idea to
-  delete `node_modules` and re-install all dependencies from scratch with
-  `npm install`
+  delete `node_modules` and re-install all dependencies from scratch
+  with `npm install`
 - If during `npm install` the `sqlite3` or `libxmljs2` binaries cannot
   be downloaded for your system, the setup falls back to building from
   source with `node-gyp`. Check the
@@ -97,10 +97,13 @@ issue.
 - If using Docker Toolbox on Windows make sure that you also enable port
   forwarding from Host `127.0.0.1:3000` to `0.0.0.0:3000` for TCP for
   the `default` VM in VirtualBox.
-  
+
 ### Heroku
 
-- The ["Deploy to Heroku" button on the `README`](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno) only works from browsers where no plugins or settings interfere with `Referer` HTTP headers
+- The
+  ["Deploy to Heroku" button on the `README`](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno)
+  only works from browsers where no plugins or settings interfere with
+  `Referer` HTTP headers
 
 ### SQLite
 
