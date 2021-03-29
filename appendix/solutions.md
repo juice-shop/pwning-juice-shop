@@ -536,10 +536,9 @@ verbose = true
 
 ### Change the name of a user by performing Cross-Site Request Forgery from another origin
 
-1. Open Juice Shop in an older web browser, e.g.
-   [Mozilla Firefox 56](https://ftp.mozilla.org/pub/firefox/releases/56.0/)
-   from 2017. _(⚠️ You should not install such an old browser on your
-   actual computer! Use a VM for such experiments!)_
+1. Open Juice Shop in a web browser which sets cookies with `SameSite=None`
+   by default (Firefox should be fine, see remarks in challenge
+   description).
 2. Login with any user account. This user is going to be the victim of
    the CSRF attack.
 3. Navigate to <http://htmledit.squarefree.com> in the same browser. It
