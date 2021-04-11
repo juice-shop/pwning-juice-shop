@@ -24,7 +24,7 @@
     "juiceShopNumberOfChallenges": 100,
     "nodeVersions": "12.x, 14.x and 15.x",
     "recommendedNodeVersion": "14.x",
-    "herokuNodeVersion": "14.x",
+    "herokuNodeVersion": "15.x",
     "backupSchemaVersion": "1",
     "ctf": false
   }
