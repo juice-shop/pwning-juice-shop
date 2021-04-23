@@ -81,7 +81,7 @@ Messing with other instances is prevented by assigning a passcode to
 each of them which should only be shared among team members - or not at
 all for individuals.
 
-![MultiJuicer registration](img/multi-juicer_register.jpeg)
+![MultiJuicer registration](img/multi-juicer_register.png)
 
 As a helpful feature for the trainer MultiJuicer offers an optional
 dashboard which automatically consumes and displays metrics from each of
