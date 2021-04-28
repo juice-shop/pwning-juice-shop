@@ -2350,6 +2350,9 @@ loop`._
 The process function, is therefore set to null and any further attempt
 by the bot to process a user's message would result in an error
 
+### Gain read access to an arbitrary local file on the web server
+
+🛠️ **TODO**
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 

@@ -12,6 +12,7 @@ libraries or other 3rd party components the application uses internally.
 | Frontend Typosquatting | Inform the shop about a typosquatting imposter that dug itself deep into the frontend. (Mention the exact name of the culprit)                                                         | ⭐⭐⭐⭐⭐    |
 | Kill Chatbot           | Permanently disable the support chatbot so that it can no longer answer customer queries.                                                                                              | ⭐⭐⭐⭐⭐    |
 | Legacy Typosquatting   | Inform the shop about a typosquatting trick it has been a victim of at least in `v6.2.0-SNAPSHOT`. (Mention the exact name of the culprit)                                             | ⭐⭐⭐⭐     |
+| Local File Read        | Gain read access to an arbitrary local file on the web server.                                                                                                                         | ⭐⭐⭐⭐⭐    |
 | Supply Chain Attack    | Inform the development team about a danger to some of _their_ credentials. (Send them the URL of the _original report_ or an assigned CVE or another identifier of this vulnerability) | ⭐⭐⭐⭐⭐    |
 | Unsigned JWT           | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.                                                                                | ⭐⭐⭐⭐⭐    |
 | Vulnerable Library     | Inform the shop about a vulnerable library it is using. (Mention the exact library name and version in your comment)                                                                   | ⭐⭐⭐⭐     |
@@ -142,6 +143,10 @@ it is not in use any more in {{book.juiceShopVersion}}.
   might bring some insight.
 * [Malicious packages in npm](https://iamakulov.com/notes/npm-malicious-packages/)
   is a worthwhile read on [Ivan Akulov’s blog](https://iamakulov.com).
+
+### Gain read access to an arbitrary local file on the web server
+
+🛠️ **TODO**
 
 ### Inform the development team about a danger to some of their credentials
 
