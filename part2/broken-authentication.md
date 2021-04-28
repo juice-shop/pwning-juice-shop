@@ -8,7 +8,6 @@
 | Change Bender's Password  | Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password.                                           | ⭐⭐⭐⭐     |
 | GDPR Data Erasure         | Log in with Chris' erased user account.                                                                                                | ⭐⭐⭐      |
 | Login Bjoern              | Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.    | ⭐⭐⭐⭐     |
-| Login CISO                | Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account.                                                | ⭐⭐⭐⭐⭐   |
 | Password Strength         | Log in with the administrator's user credentials without previously changing them or applying SQL Injection.                           | ⭐⭐        |
 | Reset Bender's Password   | Reset Bender's password via the Forgot Password mechanism with _the truthful answer_ to his security question.                         | ⭐⭐⭐⭐     |
 | Reset Bjoern's Password   | Reset the password of Bjoern's internal account via the Forgot Password mechanism with _the truthful answer_ to his security question. | ⭐⭐⭐⭐⭐   |
@@ -146,20 +145,6 @@ The unremarkable side note _**without** hacking his Google account_ in
 the challenge description is _not a joke_. Please do not try to break
 into Bjoern's (or anyone else's) Google account. This would be a
 criminal act.
-
-### Exploit OAuth 2.0 to log in with the CISO's user account
-
-You should expect a Chief Information Security Officer knows everything
-there is to know about password policies and best practices. The Juice
-Shop CISO took it even one step further and chose an incredibly long
-random password with all kinds of regular and special characters. Good
-luck brute forcing that!
-
-* The challenge description already suggests that the flaw is to be
-  found somewhere in the OAuth 2.0 login process.
-* While it is also possible to use SQL Injection to log in as the CISO,
-  this will not solve the challenge.
-* Try to utilize a broken convenience feature in your attack.
 
 ### Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 

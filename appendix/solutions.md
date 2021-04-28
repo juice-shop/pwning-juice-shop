@@ -2004,34 +2004,6 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
    request. Alternatively you can set the `token` cookie to the JWT
    which be used to populate any future request with that header.
 
-### Exploit OAuth 2.0 to log in with the Chief Information Security Officer's user account
-
-1. Visit <http://localhost:3000/#/login> and enter some known
-   credentials.
-2. Tick the _Remember me_ checkbox and _Log in_.
-3. Inspecting the application cookies shows a new `email` cookie storing
-   the plaintext email address.
-4. _Log out_ and go back to <http://localhost:3000/#/login>. Make sure
-   _Remember me_ is still ticked.
-5. Using `ciso@juice-sh.op` as _Email_ and anything as _Password_
-   perform a failed login attempt.
-6. Inspecting the `email` cookie shows it was set to `ciso@juice-sh.op`
-   even when login failed.
-7. Inspecting any request being sent from now on you will notice a new
-   custom HTTP header `X-User-Email: ciso@juice-sh.op`.
-8. Now visit <http://localhost:3000/#/login> again, but this time choose
-   the _Log in with Google_ button to log in with your own Google
-   account.
-9. Visit <http://localhost:3000/#/contact> and check the _Author_ field
-   to be surprised that you are logged in as `ciso@juice-sh.op` instead
-   with your Google email address, because
-   [the OAuth integration for login will accept the 'X-User-Email' header as gospel regardless of the account that just logged in](https://incognitjoe.github.io/hacking-the-juice-shop.html).
-
-If you do not own a Google account to log in with or are running the
-Juice Shop on a hostname that is not recognized, you can still solve
-this challenge by logging in regularly but add `"oauth": true` to the
-JSON payload `POST`ed to <http://localhost:3000/rest/user/login>.
-
 ### All your orders are belong to us
 
 1. Open the network tab of your browser's DevTools.
