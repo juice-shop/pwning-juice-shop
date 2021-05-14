@@ -18,7 +18,7 @@ install:
   - 'npm i -g gitbook-cli'
   - 'choco install calibre'
   - 'refreshenv'
-  - 'npm i -g svgexport@0.3.2'
+  - 'npm i -g svgexport@0.4.2'
 build_script:
   - 'if exist _book rd /Q /S _book'
   - 'gitbook install'
