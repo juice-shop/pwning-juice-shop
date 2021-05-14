@@ -76,7 +76,7 @@ __Read the book online at:__
 
 __Contribute content, suggestions, and fixes on GitHub:__
 
-* https://github.com/bkimminich/pwning-juice-shop
+* https://github.com/juice-shop/pwning-juice-shop
 
 __Official OWASP Juice Shop project homepage:__
 
