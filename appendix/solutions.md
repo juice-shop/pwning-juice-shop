@@ -2327,13 +2327,13 @@ loop`._
 
 1. The Chatbot is built using an npm module called 'juicy-chat-bot'. The
    source code for the same can be found
-   [here](https://github.com/bkimminich/juicy-chat-bot)
+   [here](https://github.com/juice-shop/juicy-chat-bot)
 
 2. Looking through the source, one can determine that user messages are
    processed inside a VM context, with a function called `process`
 
 3. The vulnerable segment of the code is
-   [this statement](https://github.com/bkimminich/juicy-chat-bot/blob/15e424609dc59ada5bf0c114ca7a5ffc718501cc/index.js#L31),
+   [this statement](https://github.com/juice-shop/juicy-chat-bot/blob/15e424609dc59ada5bf0c114ca7a5ffc718501cc/index.js#L31),
    that the bot uses to remember usernames. The command
    **this.factory.run(\`users.addUser("${token}", "${name}")\`)** is
    equivalent to an eval statement inside the VM context. This can be
@@ -2477,14 +2477,14 @@ totally different attack styles.
 2. Some Internet research will bring you to the
    [NPM module `juicy-coupon-bot`](https://www.npmjs.com/package/juicy-coupon-bot)
    and its associated GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>. ℹ️ _As this is
+   <https://github.com/juice-shop/juicy-coupon-bot>. ℹ️ _As this is
    not part of the Juice Shop repo itself and it is publicly accessible,
    analyzing this repository is **not** considered cheating!_
 3. Open the
-   [`.github/workflows/coupon-distribution.yml`](https://github.com/bkimminich/juicy-coupon-bot/blob/master/.github/workflows/coupon-distribution.yml)
+   [`.github/workflows/coupon-distribution.yml`](https://github.com/juice-shop/juicy-coupon-bot/blob/master/.github/workflows/coupon-distribution.yml)
    to see how the bot's _Monthly Coupon Distribution_ workflow is set
    up. You can also look at the job results and logs at
-   <https://github.com/bkimminich/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22>.
+   <https://github.com/juice-shop/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22>.
 4. If you read the logs of the _Distribute coupons_ step, you will
    notice an `info: [✔] API lookup success` message at the very
    beginning. But where exactly does the bot get its coupon code from?
@@ -2492,7 +2492,7 @@ totally different attack styles.
    to play with it locally after installing it via `npm i -g
    juicy-coupon-bot`. You can learn a few things that way:
    * Running `juicy-coupon-bot` locally will
-     [prepare the text for a tweet with a coupon code](https://github.com/bkimminich/juicy-coupon-bot/blob/master/lib/statusText.js)
+     [prepare the text for a tweet with a coupon code](https://github.com/juice-shop/juicy-coupon-bot/blob/master/lib/statusText.js)
      for the current month and with a discount between 10% and 40% and
      log it to your console.
    * The coupon code is actually retrieved
@@ -2506,11 +2506,11 @@ totally different attack styles.
    only with more recent coupons.
 7. For an easier and more satisfying victory over this challenge, take a
    look at the commit history of the GitHub repository
-   <https://github.com/bkimminich/juicy-coupon-bot>, though.
+   <https://github.com/juice-shop/juicy-coupon-bot>, though.
 8. Going back in time a bit, you will learn that the coupon retrieval
    via AWS API backed by a Lambda function was not the original
    implementation. Commit
-   [`fde2003`](https://github.com/bkimminich/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)
+   [`fde2003`](https://github.com/juice-shop/juicy-coupon-bot/commit/fde2003535598ad3c4edc17ad9ffcdc9c589d3c5)
    introduced the API call, replacing the previous programmatic creation
    of a coupon code.
 
