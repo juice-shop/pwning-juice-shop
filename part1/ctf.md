@@ -141,7 +141,7 @@ score server's user interface, typically via their browser:
 ## Setting up CTF score servers for Juice Shop
 
 Juice Shop comes with
-[the convenient `juice-shop-ctf-cli` tool](https://github.com/bkimminich/juice-shop-ctf)
+[the convenient `juice-shop-ctf-cli` tool](https://github.com/juice-shop/juice-shop-ctf)
 to to simplify the hosting of CTFs using popular open source frameworks
 or game servers. This can significantly speed up your setup time for an
 event, because things like using the same secret key for the flag codes
@@ -436,7 +436,7 @@ in the Juice Shop's underlying database. The `ctfKey` has been described
 in the [Overriding the `ctf.key`](#overriding-the-ctfkey) section above.
 
 Feel free to use
-[the implementation within `juice-shop-ctf-cli`](https://github.com/bkimminich/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
+[the implementation within `juice-shop-ctf-cli`](https://github.com/juice-shop/juice-shop-ctf/blob/master/lib/generateSql.js#L25)
 as an example:
 
 ```javascript
