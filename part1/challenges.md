@@ -82,6 +82,8 @@ orthogonal to the categories.
 * **Code Analysis** marks challenges where it can be helpful to rummage
   through some source code of the application or that of a third party
 
+![Tag breakdown](img/tags.png)
+
 ## Success notifications
 
 The OWASP Juice Shop employs a simple yet powerful gamification
