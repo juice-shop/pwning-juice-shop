@@ -1,15 +1,21 @@
-# Vulnerable code snippets
+# Coding challenges
 
-Starting with `v12.7.0`, Juice Shop allows associating vulnerable code
-snippets with hacking challenges. These will be displayed on the Score
-Board with the click of a button
-[as briefly illustrated in Part 1 of this book](../part1/challenges.md#vulnerable-code-snippets).
+Starting with `v12.9.0`, OWASP Juice Shop offers a new developer-focused challenge for
+some of its existing hacking challenges: Coding challenges. These were [briefly illustrated in Part 1 of this book](../part1/challenges.md#coding-challenges)
+from a user's perspective. This appendix explains how a coding challenge can be added
+to newly created hacking challenges.
 
-To outfit new challenges with such a code snippet, some conditions must
-be met, and a certain syntax for marking the code snippet have to be
-used.
+Each coding challenge consists of two phases:
 
-## Supported source files
+1. **Find It** where the user is tasked to select vulnerable line(s) of code in an actual code snippet from Juice Shop
+2. **Fix It** where the user is presented with 3-4 options to choose from to fix that vulnerability and has to decide which one would be the best
+
+## Vulnerable code snippets
+
+Juice Shop allows associating its own vulnerable code with its own hacking challenges. To outfit new challenges with
+such a code snippet, some conditions must be met, and a certain syntax for marking the code snippet have to be used.
+
+### Supported source files
 
 Juice Shop will perform a lookup for code snippets in these source files
 or folders:
@@ -45,9 +51,9 @@ a leading `//` or `#` for a single-line comment. This makes them usable
 in TypeScript, JavaScript and YAML files, but not in HTML. Code markers
 are only found in files residing in one of the above-mentioned folders.
 
-### Complete examples
+#### Complete examples
 
-#### TypeScript
+##### TypeScript
 
 The following code shows markers for two challenges with the same
 vulnerable line, and a hidden code block:
@@ -119,7 +125,7 @@ function handleZipFileUpload ({ file }, res, next) {
 // vuln-code-snippet end fileWriteChallenge
 ```
 
-#### YAML
+##### YAML
 
 In this example, multiple challenges are defined in a shared code block
 but each with their own vulnerable line:
@@ -157,14 +163,14 @@ but each with their own vulnerable line:
 # vuln-code-snippet end resetPasswordBjoernOwaspChallenge resetPasswordBjoernChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge
 ```
 
-### Overlapping markers
+#### Overlapping markers
 
 After a code snippet has been retrieved and processed, all "dangling"
 markers inside starting with `vuln-code-snippet` will be removed. This
 allows to have overlapping `start` and `end` blocks for different
 challenges that might share some but not all code.
 
-## REST endpoints
+### REST endpoints
 
 The Score Board retrieves the actual code snippets via two REST
 endpoints:
@@ -176,7 +182,7 @@ endpoints:
   list of vulnerable lines in JSON format (e.g. `{"snippet":"filterTable
   () {\n let queryParam: string = ... }\n }","vulnLines":[6]}`)
 
-### Error handling
+#### Error handling
 
 The following errors can occur when calling the REST endpoints:
 
@@ -186,7 +192,7 @@ The following errors can occur when calling the REST endpoints:
 | `/snippets/<challengeKey>` | `404`            | `No code snippet available for: <challengeKey>`      |
 | `/snippets/<challengeKey>` | `422`            | `Broken code snippet boundaries for: <challengeKey>` |
 
-### Real-time retrieval
+#### Real-time retrieval
 
 As the code snippets are retrieved in real-time from the actual code
 base, all changes to the marker syntax while the application is running
@@ -194,3 +200,7 @@ are immediately applied and can be tested by re-opening the particular
 snippet from the Score Board. Newly added code snippets are similarly
 recognized by reloading the Score Board page. No frontend complation or
 server restart is required.
+
+## Fix option files
+
+🛠️ **TODO**

@@ -252,29 +252,46 @@ with all challenges is shown and all filters are enabled. Passing in the
 
 ![Locked advanced filters in tutorial mode](img/tutorial-mode3.png)
 
-## Vulnerable code snippets
+{% endif %}
 
-For many (solved) challenges an additional button is displayed on the
+## Coding challenges
+
+For many (solved) challenges an additional button is available on the
 Score Board which  
 will open a dialog containing the actual code snippet responsible for
-the vulnerability.
+the security vulnerability behind the particular challenge. Note that by default
+this button is only enabled for solved hacking challenges. For challenge where
+no such button is shown, there is no coding challenge available.
 
-![Code snippet button for a challenge on the Score Board](img/code_snippet1.png)
+![Coding challenge button for a challenge on the Score Board](img/code_snippet1.png)
 
 This snippet is loaded in real-time from the running application's
 actual code base and is sanitized to not show any "challenge check" or
 similar code that would not be present in a real-world application.
 
-![Code snippet dialog for a hacking challenge](img/code_snippet2.png)
+![Code snippet for a hacking challenge](img/code_snippet2.png)
 
-The user can try to identify the actually line(s) of code responsible
-for the vulnerability behind the particular challenge. To verify their
-deduction, they can simply hover over the spoiler badge below the
-snippet, to reveal those line numbers.
+The user can try to identify the actual line(s) of code responsible
+for the vulnerability behind the particular challenge. When they submit
+their selection, the server will provide feedback on the choice.
 
-![Vulnerable code line hover spoiler for a hacking challenge](img/code_snippet3.png)
+![Correctly identified vulnerable line of code for a coding challenge](img/code_snippet3.png)
 
-{% endif %}
+If the correct line(s) were submitted, the user will be presented with 3-4
+possible options to fix the vulnerability. They can use the built-in code
+comparison to view them and then make a selection of what they think to be
+the correct fix. Submitting their choice to the server will again lead to
+feedback.
+
+![One of four possible fixes for a coding challenge](img/code_snippet4.png)
+
+The progress with coding challenges is not factored into the percentage bar at the top
+of the Score Board. For each coding challenge the current status is represented
+by the button to launch it. Once the "Find It" and "Fix It" part are solved, the
+button turns green. While only the "Find It" part was solved, a small green "1/2"-badge
+indicates having made it half-way.
+
+![Progress with coding challenges indicated by their launch button](img/code_snippet5.png)
 
 ## Mitigation links
 
