@@ -203,4 +203,57 @@ server restart is required.
 
 ## Fix option files
 
-🛠️ **TODO**
+For the second stage of the Coding Challenges, users must by supplied with some code fix options to choose from.
+The structural requirements here are very straightforward, it is rather the content that can get a bit difficult
+depending on the complexity of the underlying vulnerability.
+
+All fix option files have to be put into the folder `data/static/codefixes` and should have the same
+file type as the original source file with the [vulnerability marker](#vuln-code-snippet-marker-comments).
+
+For each coding challenge exactly one "correct" and two or more "wrong" option files must be provided.
+
+### Naming conventions
+
+The name of a fix option file must be either of the following:
+
+* `<challengeKey>_<unique number>.<file suffix>` for "wrong" options
+  * e.g. `localXssChallenge_1.ts`, `localXssChallenge_3.ts` and `localXssChallenge_4.ts`
+* `<challengeKey>_<unique number>_correct.<file suffix>` for the "correct" option
+  * e.g. `localXssChallenge_2_correct.ts`
+
+### Fix option source
+
+As the Coding Challenges rely on a code diff view it is crucial to avoid any accidental differences between the
+original vulnerable code snippet and each fix option files.
+
+This means that spacing, blank lines etc. need to be exactly the same. If for example the vulnerable
+snippet is in a function that is indented by 4 spaces then the fix option source must be indented by 4 spaces as well.
+As this would trigger many code linting errors, `npm run lint` will ignore the `data/static/codefixes` folder.
+
+The following additional rules must be adhered to when creating fix option files:
+
+* No indentation on the first line of the file
+* No blank line at the end of the file
+* Remove all `vuln-code-snippet` comments in [the exact same way](#vuln-code-snippet-marker-comments) the code snipper parser will
+
+The recommended way to get properly formatted code fixing options, is to create one and copy it as many times
+as total fix options should be provided, then performing the necessary changes to create a correct and several wrong
+options from the source.
+
+#### Vulnerable code snippet example
+
+![Vulnerable code snippet for "DOM XSS" challenge](img/coding_challenge_snippet.png)
+
+#### Wrong fix option example
+
+![Wrong fix option for "DOM XSS" coding challenge](img/coding_challenge_wrong-fix.png)
+
+#### Correct fix option example
+
+![Correct fix option for "DOM XSS" coding challenge](img/coding_challenge_correct-fix.png)
+
+### Maintenance burden
+
+The downside of this implementation is a certain maintenance burden for Coding Challenges. When the
+original source file is changed or refactored, the developer must keep in mind updating all fix option files
+accordingly to prevent confusing differences. There is currently no automation in place to warn about this.
