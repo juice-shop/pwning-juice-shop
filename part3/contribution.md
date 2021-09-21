@@ -2,7 +2,7 @@
 
 If you would like to contribute to OWASP Juice Shop but need some idea
 what task to address, the best place to look is in the GitHub issue
-lists at <https://github.com/bkimminich/juice-shop/issues>.
+lists at <https://github.com/juice-shop/juice-shop/issues>.
 
 !["help wanted" label on GitHub](img/help_wanted-label.png)
 !["good first issue" label on GitHub](img/good_first_issue-label.png)
@@ -29,7 +29,7 @@ The project uses `git` as its version control system and GitHub as the
 central server and collaboration platform. OWASP Juice Shop resides in
 the following repository:
 
-<https://github.com/bkimminich/juice-shop>
+<https://github.com/juice-shop/juice-shop>
 
 ### Branching model
 
@@ -138,7 +138,7 @@ npm run protractor # run all end-to-end tests
 
 Pull Requests are verified to pass all the following test stages during
 the
-[continuous integration build](https://github.com/bkimminich/juice-shop/actions).
+[continuous integration build](https://github.com/juice-shop/juice-shop/actions).
 It is recommended that you run these tests on your local computer to
 verify they pass before submitting a PR. New features should be
 accompanied by an appropriate number of corresponding tests to verify
@@ -199,7 +199,7 @@ npm install --production && grunt package
 
 Then take the created archive from `/dist` and follow the steps
 described above in
-[Packaged Distributions](https://github.com/bkimminich/juice-shop#packaged-distributions--)
+[Packaged Distributions](https://github.com/juice-shop/juice-shop#packaged-distributions--)
 to make sure nothing is broken or missing.
 
 #### Smoke tests
@@ -243,7 +243,7 @@ to program and run the application entirely from your browser. The
 author has tested this to work very well even on a weak Chromebook.
 
 1. Go to <https://github.com/codespaces>.
-2. Click _New codespace_ and select `bkimminich/juice-shop` as
+2. Click _New codespace_ and select `juice-shop/juice-shop` as
    _Repository_ and `develop` as _Branch_. Then click _Create
    codespace_.
 3. Your codespace will be set up and launched. It automatically installs
@@ -316,7 +316,7 @@ due to the lack of a Chrome installation in the underlying container.
 The CI/CD and release pipelines for OWASP Juice Shop are set up as
 GitHub Action workflows:
 
-<https://github.com/bkimminich/juice-shop/actions>
+<https://github.com/juice-shop/juice-shop/actions>
 
 ### CI/CD Pipeline
 

@@ -51,12 +51,12 @@ files where `??` is a language code (e.g. `en` or `de`).
 If you do not find the language you would like to provide a translation
 for in the list, please contact the OWASP Juice Shop
 [project leader](mailto:bjoern.kimminich@owasp.org) or
-[raise an issue on GitHub](https://github.com/bkimminich/juice-shop/issues/new)
+[raise an issue on GitHub](https://github.com/juice-shop/juice-shop/issues/new)
 asking for the missing language. It will be added asap!
 
 ## Translating directly via GitHub PR
 
-1. Fork the repository https://github.com/bkimminich/juice-shop
+1. Fork the repository https://github.com/juice-shop/juice-shop
 2. Translate the labels in the desired language-`.json` file in
    `/frontend/src/assets/i18n` or `/data/static/i18n`
 3. Commit, push and open a Pull Request

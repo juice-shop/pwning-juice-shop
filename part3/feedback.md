@@ -10,7 +10,7 @@
 * Did you spot a misbehaving UI component or broken image?
 * Did you enjoy a conference talk, podcast or video about OWASP Juice
   Shop that is missing in our
-  [references compilation on GitHub](https://github.com/bkimminich/juice-shop/blob/master/REFERENCES.md)?
+  [references compilation on GitHub](https://github.com/juice-shop/juice-shop/blob/master/REFERENCES.md)?
 
 In all the above (as well as other similar) cases, please reach out to
 the OWASP Juice Shop team, project leader or community!
@@ -24,7 +24,7 @@ the OWASP Juice Shop team, project leader or community!
 | Reddit                                  | <https://www.reddit.com/r/owasp_juiceshop>                                                                 |
 | Google Groups Forum                     | <https://groups.google.com/a/owasp.org/forum/#!forum/juice-shop-project>                                   |
 | Project Mailing List (on Google Groups) | <mailto:juice-shop-project@owasp.org>                                                                      |
-| GitHub Issues                           | <https://github.com/bkimminich/juice-shop/issues>                                                          |
+| GitHub Issues                           | <https://github.com/juice-shop/juice-shop/issues>                                                          |
 
 Your honest feedback is always appreciated, no matter if it is positive
 or negative!

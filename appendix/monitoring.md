@@ -60,7 +60,7 @@ all metrics gathered via Prometheus as seen in the screenshots above.
 6. Now go to _Dashboards_ > _Manage_ at
    <http://localhost:3000/dashboards>
 7. Click _Import_ and either upload or paste the contents of the
-   [`monitoring/grafana-dashboard.json`](https://github.com/bkimminich/juice-shop/blob/master/monitoring/grafana-dashboard.json)
+   [`monitoring/grafana-dashboard.json`](https://github.com/juice-shop/juice-shop/blob/master/monitoring/grafana-dashboard.json)
    found in the Juice Shop's GitHub repository.
 8. Now visit the imported _Juice Shop Instance Dashboard_ by clicking on
    its name to view it! Voilá!

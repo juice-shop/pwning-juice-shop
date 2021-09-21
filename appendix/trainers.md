@@ -25,13 +25,13 @@ this.
 
 Several custom configurations already come packaged with the Juice Shop
 source code, the two most sophisticated ones being
-[7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml)
+[7 Minute Security](https://github.com/juice-shop/juice-shop/blob/master/config/7ms.yml)
 and
-[Mozilla](https://github.com/bkimminich/juice-shop/blob/master/config/mozilla.yml).
+[Mozilla](https://github.com/juice-shop/juice-shop/blob/master/config/mozilla.yml).
 
 In addition, you might want to disable all challenge notifications
 during awareness trainings to avoid distraction. The
-[Quiet](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml)
+[Quiet](https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml)
 configuration demonstrates the necessary options to achieve this.
 
 ![Quiet mode](img/quiet_mode.png)
@@ -117,7 +117,7 @@ follow a similar pattern of
 4. Explaining mitigation and prevention
 
 You can find more links to existing material in the
-[Lectures and Trainings section](https://github.com/bkimminich/juice-shop/blob/master/REFERENCES.md#lectures-and-trainings)
+[Lectures and Trainings section](https://github.com/juice-shop/juice-shop/blob/master/REFERENCES.md#lectures-and-trainings)
 of the project references on on GitHub.
 
 ## Challenges for demos

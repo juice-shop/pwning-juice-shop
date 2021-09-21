@@ -1326,7 +1326,7 @@ to respond.
 ### Enforce a redirect to a page you are not supposed to redirect to
 
 1. Pick one of the redirect links in the application, e.g.
-   <http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop>
+   <http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop>
    from the _GitHub_-button in the navigation bar.
 2. Trying to redirect to some unrecognized URL fails due to allowlist
    validation with `406 Error: Unrecognized target URL for redirect`.
@@ -1336,7 +1336,7 @@ to respond.
    allowlist works.
 4. Craft a redirect URL so that the target-URL in `to` comes with an own
    parameter containing a URL from the allowlist, e.g.
-   <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop>
+   <http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/juice-shop/juice-shop>
 
 ### Bypass a security control with a Poison Null Byte
 

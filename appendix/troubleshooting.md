@@ -5,7 +5,7 @@ If (and only if) none of the
 help resolve your issue, please ask for individual support on our
 [official Gitter Chat](https://gitter.im/bkimminich/juice-shop). If you
 are sure to have found a bug in the Juice Shop itself please
-[open a 🐛 Bug report issue](https://github.com/bkimminich/juice-shop/issues/new?assignees=&labels=bug&template=bug-report.md&title=%5B%F0%9F%90%9B%5D+)
+[open a 🐛 Bug report issue](https://github.com/juice-shop/juice-shop/issues/new?assignees=&labels=bug&template=bug-report.md&title=%5B%F0%9F%90%9B%5D+)
 on GitHub.
 
 🛑 _Please **do not** file questions or support requests on the GitHub
@@ -101,7 +101,7 @@ issue.
 ### Heroku
 
 - The
-  ["Deploy to Heroku" button on the `README`](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno)
+  ["Deploy to Heroku" button on the `README`](https://github.com/juice-shop/juice-shop#deploy-on-heroku-free-0month-dyno)
   only works from browsers where no plugins or settings interfere with
   `Referer` HTTP headers
 

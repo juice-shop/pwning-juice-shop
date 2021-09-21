@@ -193,14 +193,14 @@ answers available which you can choose by simply hitting `ENTER`.
 3. **Secret key <or> URL to ctf.key file?** Either a secret key to use
    for the CTF flag codes _or_ a URL to a file containing such a key.
    Defaults to
-   `https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key`
+   `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key`
    which is the key file provided with the latest official OWASP Juice
    Shop release. See [Overriding the `ctf.key`](#overriding-the-ctfkey)
    for more information.
 4. **URL to country-mapping.yml file?** URL of a mapping configuration
    of challenges to countries, which is only asked when `FBCTF` was
    selected. Defaults to
-   `https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml`
+   `https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml`
 5. **Insert a text hint along with each challenge?** Offers a selectable
    choice between
    * `No text hints` will not add any hint texts to the challenges. This
@@ -271,8 +271,8 @@ format:
 ```yaml
 ctfFramework: CTFd | FBCTF | RootTheBox
 juiceShopUrl: https://juice-shop.herokuapp.com
-ctfKey: https://raw.githubusercontent.com/bkimminich/juice-shop/master/ctf.key # can also be actual key instead URL
-countryMapping: https://raw.githubusercontent.com/bkimminich/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
+ctfKey: https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key # can also be actual key instead URL
+countryMapping: https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
 insertHints: none | free | paid
 insertHintUrls: none | free | paid # optional for FBCTF
 insertHintSnippets: none | free | paid # optional for FBCTF

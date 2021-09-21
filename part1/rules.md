@@ -242,7 +242,7 @@ reviewed.
 ### GitHub repository
 
 While stated earlier that "the Internet" is fine as a helpful resource,
-consider the GitHub repository https://github.com/bkimminich/juice-shop
+consider the GitHub repository https://github.com/juice-shop/juice-shop
 as entirely off limits. First and foremost because it contains the
 source code (see above).
 
@@ -254,7 +254,7 @@ just should not read issues labelled `challenge` as they might contain
 spoilers or solutions.
 
 Of course you are explicitly allowed to view
-[the repository's README.md page](https://github.com/bkimminich/juice-shop/blob/master/README.md),
+[the repository's README.md page](https://github.com/juice-shop/juice-shop/blob/master/README.md),
 which contains no spoilers but merely covers project introduction, setup
 and troubleshooting. Just do not "dig deeper" than that into the
 repository files and folders.

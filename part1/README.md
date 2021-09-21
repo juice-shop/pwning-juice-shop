@@ -19,6 +19,6 @@ Should you run into issues during installation or launch of the
 application, please do not hesitate to
 [ask for help in the community chat](https://gitter.im/bkimminich/juice-shop)
 or by
-[opening a GitHub issue](https://github.com/bkimminich/juice-shop/issues)!
+[opening a GitHub issue](https://github.com/juice-shop/juice-shop/issues)!
 Please just make sure that you flipped through
 [the appendix on troubleshooting](../appendix/troubleshooting.md) first.

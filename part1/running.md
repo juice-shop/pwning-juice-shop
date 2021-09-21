@@ -32,13 +32,13 @@ endeavours.
 
 The quickest way to get a running instance of Juice Shop is to click the
 _Deploy to Heroku_ button in the
-[_Setup_ section of the `README.md` on GitHub](https://github.com/bkimminich/juice-shop#deploy-on-heroku-free-0month-dyno).
+[_Setup_ section of the `README.md` on GitHub](https://github.com/juice-shop/juice-shop#deploy-on-heroku-free-0month-dyno).
 You have to log in with your Heroku account and will then receive a
 single instance (or _dyno_ in Heroku lingo) hosting the application. If
 you have forked the Juice Shop repository on GitHub, the _Deploy to
 Heroku_ button will deploy your forked version of the application. To
 deploy the latest official version you must use the button of the
-original repository at https://github.com/bkimminich/juice-shop.
+original repository at https://github.com/juice-shop/juice-shop.
 
 As the Juice Shop is supposed to be hacked and attacked - maybe even
 with aggressive brute-force scripts or automated scanner software - one
@@ -76,7 +76,7 @@ release.
 
 1. Install [Node.js](http://nodejs.org/) on your computer.
 2. On the command line run `git clone
-   https://github.com/bkimminich/juice-shop.git`.
+   https://github.com/juice-shop/juice-shop.git`.
 3. Go into the cloned folder with `cd juice-shop`
 4. Run `npm install`. This only has to be done before the first start or
    after you changed the source code.
@@ -89,7 +89,7 @@ release.
    or Linux machine.
 2. Download `juice-shop-<version>_<node-version>_<os>_x64.zip` (or
    `.tgz`) attached to the
-   [latest release on GitHub](https://github.com/bkimminich/juice-shop/releases/latest).
+   [latest release on GitHub](https://github.com/juice-shop/juice-shop/releases/latest).
 3. Unpack the archive and run `npm start` in unpacked folder to launch
    the application
 4. Browse to <http://localhost:3000>
@@ -132,8 +132,8 @@ launch a Docker container instance of the `latest` Juice Shop image
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and
    [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
-2. Run `git clone https://github.com/bkimminich/juice-shop.git` (or
-   clone [your own fork](https://github.com/bkimminich/juice-shop/fork)
+2. Run `git clone https://github.com/juice-shop/juice-shop.git` (or
+   clone [your own fork](https://github.com/juice-shop/juice-shop/fork)
    of the repository)
 3. Run `cd vagrant && vagrant up`
 4. Browse to [192.168.33.10](http://192.168.33.10)
@@ -244,7 +244,7 @@ example:
   bkimminich/juice-shop`
 * [From pre-packaged distribution](#from-pre-packaged-distribution) -
   Just download the older release from
-  <https://github.com/bkimminich/juice-shop/releases> or
+  <https://github.com/juice-shop/juice-shop/releases> or
   <https://sourceforge.net/projects/juice-shop/files/>
 
 To experience a preview of the next upcoming Juice Shop version you can

@@ -509,43 +509,43 @@ schemes. The table below shows sample screenshots for each of these.
 
 The following fully re-themed customizations are provided out of the box
 by OWASP Juice Shop for demonstration purposes:
-* [7 Minute Security](https://github.com/bkimminich/juice-shop/blob/master/config/7ms.yml):
+* [7 Minute Security](https://github.com/juice-shop/juice-shop/blob/master/config/7ms.yml):
   Full conversion <https://7ms.us>-theme for the first podcast that
   picked up the Juice Shop way before it was famous! 😎
-* [Mozilla-CTF](https://github.com/bkimminich/juice-shop/blob/master/config/mozilla.yml):
+* [Mozilla-CTF](https://github.com/juice-shop/juice-shop/blob/master/config/mozilla.yml):
   Another full conversion theme harvested and refined from the
   [Mozilla Austin CTF-event](https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop)!
   🦊
-* [AllDayDeflOps](https://github.com/bkimminich/juice-shop/blob/master/config/addo.yml):
+* [AllDayDeflOps](https://github.com/juice-shop/juice-shop/blob/master/config/addo.yml):
   This full conversion had its live debut at the
   [All Day DevOps 2019](https://www.alldaydevops.com/) conference and
   was released the same day! 🎀
-* [The BodgeIt Store](https://github.com/bkimminich/juice-shop/blob/master/config/bodgeit.yml):
+* [The BodgeIt Store](https://github.com/juice-shop/juice-shop/blob/master/config/bodgeit.yml):
   An homage to
   [our server-side rendered ancestor](https://github.com/psiinon/bodgeit).
   May it rest in JSPs! 💀
-* [OWASP Juice Box](https://github.com/bkimminich/juice-shop/blob/master/config/juicebox.yml):
+* [OWASP Juice Box](https://github.com/juice-shop/juice-shop/blob/master/config/juicebox.yml):
   If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
   this customization is for you. 🧃
 
 Furthermore these convenience customizations are provided out-of-the-box
 to simplify usage of OWASP Juice Shop in specific use cases and
 situations:
-* [CTF-mode](https://github.com/bkimminich/juice-shop/blob/master/config/ctf.yml):
+* [CTF-mode](https://github.com/juice-shop/juice-shop/blob/master/config/ctf.yml):
   Keeps the Juice Shop in its default layout but disabled hints while
   enabling CTF flag codes in the _"challenge solved"_-notifications.
   Refer to [Hosting a CTF event](ctf.md) to learn more about running a
   CTF-event with OWASP Juice Shop. 🚩
-* [Quiet mode](https://github.com/bkimminich/juice-shop/blob/master/config/quiet.yml):
+* [Quiet mode](https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml):
   Keeps the Juice Shop in its default layout but hides all _"challenge
   solved"_-notifications, GitHub ribbon and challenge hints. 🔇
-* [Tutorial mode](https://github.com/bkimminich/juice-shop/blob/master/config/tutorial.yml):
+* [Tutorial mode](https://github.com/juice-shop/juice-shop/blob/master/config/tutorial.yml):
   Restricts the user to first solve all challenges with
   [Hacking Instructor](challenges.md#hacking-instructor) tutorials
   before the entire _Score Board_ gets unlocked and filterable. 🏫
   Hidden challenges can still be solved and users will receive
   corresponding success notifications!
-* [Unsafe mode](https://github.com/bkimminich/juice-shop/blob/master/config/unsafe.yml):
+* [Unsafe mode](https://github.com/juice-shop/juice-shop/blob/master/config/unsafe.yml):
   Keeps everything at default settings except _enabling_ all
   [potentially dangerous challenges](challenges.md#potentially-dangerous-challenges)
   even in containerized environments. ☠️ **Use at your own risk!**
