@@ -114,6 +114,12 @@ information this topic.
 
 !["Challenge solved!" notification with flag code](img/notification_with_flag.png)
 
+Apart from the success notifications, OWASP Juice Shop also fires a
+confetti cannon on each side of the screen whenever a user solves a
+hacking challenge.
+
+![Confetti on solved hacking challenge](img/confetti1.png)
+
 ## Automatic saving and restoring hacking progress
 
 The [_self-healing_ feature](running.md#self-healing-feature) - by
@@ -292,6 +298,12 @@ button turns green. While only the "Find It" part was solved, a small green "1/2
 indicates having made it half-way.
 
 ![Progress with coding challenges indicated by their launch button](img/code_snippet5.png)
+
+When either of the two steps is solved correctly, the confetti cannons fire both barrels
+to celebrate the user's success. 
+
+![Confetti on solved hacking challenge](img/confetti2.png)
+
 
 ## Mitigation links
 
