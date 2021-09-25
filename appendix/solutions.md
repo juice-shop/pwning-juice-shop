@@ -793,6 +793,24 @@ only a `404 Error: ENOENT: no such file or directory, stat
 
 ### Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
+1. Visit <http://localhost:3000/#/forgot-password> and provide
+      `bjoern@owasp.org` as your _Email_.
+2. You will notice that the security question Bjoern chose is _Name of your
+   favorite pet?_
+3. Find Bjoern's Twitter profile at <https://twitter.com/bkimminich>
+4. Going through his status updates or media you'll spot a few photos of a cute cat and eventually also find the Tweet <https://twitter.com/bkimminich/status/1441659996589207555>
+5. The text of this Tweet spoilers the name of the cat as "Zaya"
+8. Visit <http://localhost:3000/#/forgot-password> again and once more provide
+   `bjoern@owasp.org` as your _Email_.
+9. In the subsequently appearing form, provide `Zaya` as _Name of your
+   favorite pet?_
+10. Then type any _New Password_ and matching _Repeat New Password_
+11. Click _Change_ to solve this challenge
+
+![Zaya "rowing" with a half-amputated hind leg in a Tweet of Bjoern](img/zaya_rowing.png)
+
+#### Alternative name-drop on YouTube
+
 1. Find Bjoern's
    [_OWASP Juice Shop_ playlist on Youtube](https://www.youtube.com/playlist?list=PLV9O4rIovHhO1y8_78GZfMbH6oznyx2g2)
 2. Watch
@@ -803,14 +821,8 @@ only a `404 Error: ENOENT: no such file or directory, stat
 4. Bjoern picks _Name of your favorite pet?_ as his security question
    and - live on camera - answers it truthfully with "Zaya", the name of
    his family's adorable three-legged cat.
-5. Visit <http://localhost:3000/#/forgot-password> and provide
-   `bjoern@owasp.org` as your _Email_.
-6. In the subsequently appearing form, provide `Zaya` as _Name of your
-   favorite pet?_
-7. Then type any _New Password_ and matching _Repeat New Password_
-8. Click _Change_ to solve this challenge
 
-#### Other hints about Bjoern's choice of security answer
+#### Partial hints about Bjoern's choice of security answer
 
 The **user profile picture** of his account at
 <http://localhost:3000/assets/public/images/uploads/12.jpg> shows his
