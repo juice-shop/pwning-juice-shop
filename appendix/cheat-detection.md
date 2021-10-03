@@ -44,7 +44,7 @@ To avoid false positive cheat scoring, the second of two coupled
 challenge solves will never count as cheating when they happen in
 sequence.
 
-### Trivial Challenges
+### Trivial challenges
 
 Some challenges are so frequently solved by accident or coincident, that
 it would be unfair to take them into account for cheat scoring at all.
@@ -55,6 +55,42 @@ This includes:
   challenges
 * reading the privacy policy of the shop, which is merely a challenge
   making fun of the fact that almost nobody reads those in real life
+
+## Coding challenges
+
+For coding challenges the cheat score is also calculated based on expected solving time
+since the previous solved hacking or coding challenge. As the difficulty of a hacking
+challenge does not necessarily correlate with its associated coding challenge, the
+cheat score formulas are based on different criteria.
+
+### "Find It" cheat score calculation
+
+The cheat score to find the vulnerable line(s) of code in the given code snippet
+is based on the length of that code snippet and the number of lines that need to
+be selected as the correct answer.
+
+| Snippet length | Minimum solve time | # vulnerable lines |
+|:---------------------|:-------------------|:----------|
+| up to 1000 characters                    | 1 minutes          | ×#    | 
+| up to 2000 characters                  | 2 minutes          | ×#    | 
+| up to 3000 characters                 | 3 minutes          | ×#    | 
+| up to 4000 characters               | 4 minutes          | ×#    | 
+| etc.              |          |    | 
+
+### "Fix It" cheat score calculation
+
+The cheat score to detect the right fix for an identified vulnerability depends
+only on the number of provided fix choices.
+
+| Provided choices | Minimum solve time | 
+|:---------------------|:-------------------|
+| 3                  | 1 minute  | 
+| 4                 | 2 minutes  | 
+| 5               | 2 minutes  | 
+| 6               | 3 minutes  |
+
+Please note that Juice Shop does not allow coding challenges with less than 3 fix options
+to choose from.
 
 ## Total cheat score
 
@@ -69,9 +105,7 @@ restarts, but its calculation is also not irritated by
 or
 [manual restoring of hacking progress](../part1/challenges.md#manual-progress-and-settings-backup).
 
-After the individual challenge cheat scores from the screenshot at the
-beginning of this chapter, you would get the `totalCheatScore` metric
-seen below:
+An example of the `totalCheatScore` metric can be seen below:
 
 ```yaml
 # HELP juiceshop_cheat_score Overall probability that any challenges were solved by cheating.
@@ -81,7 +115,8 @@ juiceshop_cheat_score{app="juiceshop"} 0.49485416666666665
 
 The following values for `totalCheatScore` were measured during
 activities that are
-[definitely considered cheating](../part1/rules.md#-things-considered-cheating):
+[definitely considered cheating](../part1/rules.md#-things-considered-cheating) while
+solving the available hacking challenges:
 
 * \>93% on final webhook call when executing all
   [Integration tests](../part3/contribution.md#integration-tests) in <1

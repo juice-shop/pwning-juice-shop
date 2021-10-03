@@ -3,7 +3,9 @@
 You can monitor your local or cloud-hosted OWASP Juice Shop instance
 using internally gathered metrics and visualize those on dashboards.
 
-![Challenge and business metrics in Grafana](img/grafana_01.png)
+![Challenge metrics in Grafana](img/grafana_01.png)
+
+![Business metrics in Grafana](img/grafana_03.png)
 
 ![Technical metrics in Grafana](img/grafana_02.png)
 
