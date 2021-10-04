@@ -108,9 +108,9 @@ or
 An example of the `totalCheatScore` metric can be seen below:
 
 ```yaml
-# HELP juiceshop_cheat_score Overall probability that any challenges were solved by cheating.
+# HELP juiceshop_cheat_score Overall probability that any hacking or coding challenges were solved by cheating.
 # TYPE juiceshop_cheat_score gauge
-juiceshop_cheat_score{app="juiceshop"} 0.49485416666666665
+juiceshop_cheat_score{app="juiceshop"} 0.1201909090909091
 ```
 
 The following values for `totalCheatScore` were measured during
