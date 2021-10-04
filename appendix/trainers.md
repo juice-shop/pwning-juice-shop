@@ -83,8 +83,8 @@ all for individuals.
 
 ![MultiJuicer registration](img/multi-juicer_register.png)
 
-As a helpful feature for the trainer MultiJuicer offers an optional
-dashboard which automatically consumes and displays metrics from each of
+As a helpful feature for the trainer MultiJuicer offers an [optional
+dashboard which automatically consumes and displays metrics](https://github.com/iteratec/multi-juicer/blob/master/guides/monitoring-setup/monitoring.md) from each of
 its Juice Shop instances. It shows challenge progress along with other
 functional and technical stats and can be very helpful in
 troubleshooting as well.
