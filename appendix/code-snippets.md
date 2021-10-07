@@ -295,8 +295,8 @@ have more vague hints at the top and more specific ones at the bottom of the `hi
 ![Second hint displayed for "DOM XSS" challenge](img/coding_challenge_second-hint.png)
 ![Third hint displayed for "DOM XSS" challenge](img/coding_challenge_third-hint.png)
 
-Once all hints have been used up, Juice Shop will outright tell the user the correct answer
-so they have a chance to proceed and not remain stuck infinitely.
+Once all hints have been used up, Juice Shop will outright tell the user the correct answer, so they have a chance to proceed and not remain stuck infinitely.
+This answer does not need to be provided in the `hints` list, as it will be generated on-the-fly by Juice Shop when needed.
 
 ![Final hint displayed for "DOM XSS" challenge](img/coding_challenge_final-hint.png)
 
