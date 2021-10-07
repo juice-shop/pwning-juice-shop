@@ -257,3 +257,80 @@ options from the source.
 The downside of this implementation is a certain maintenance burden for Coding Challenges. When the
 original source file is changed or refactored, the developer must keep in mind updating all fix option files
 accordingly to prevent confusing differences. There is currently no automation in place to warn about this.
+
+## Info YAML file
+
+It is possible to provide hints and explanations for Coding Challenges via an optional YAML file. It needs
+to follow the naming convention `<challengeKey>.info.yml` and be placed in `data/static/codefixes`. This file can
+contain the following:
+
+```yaml
+fixes:
+  - id: 1
+    explanation: 'Explanation why fix option file #1 is right/wrong.'
+  - id: 2
+    explanation: 'Explanation why fix option file #2 is right/wrong.'
+  - id: 3
+    explanation: 'Explanation why fix option file #3 is right/wrong.'
+  - id: 4
+    explanation: 'Explanation why fix option file #4 is right/wrong.'
+hints:
+  - "Hint offered after 2nd failed 'Find It' attempt to submit the vulnerable line."
+  - "Hint offered after 3nd failed 'Find It' attempt to submit the vulnerable line."
+  - "Hint offered after 4th failed 'Find It' attempt to submit the vulnerable line."
+```
+
+### "Find It" hints
+
+When the user submits wrongly selected vulnerable line(s) of code during
+the "Find It" phase of a Coding Challenge, Juice Shop can display a hint to help them out.
+This process starts after the second failed submission.
+
+![First hint displayed for "DOM XSS" challenge](img/coding_challenge_first-hint.png)
+
+The hints will be picked in order of appearance in the `hints` list of the YAML info file.
+One hint will be displayed at a time per submission attempt. It therefore makes sense to
+have more vague hints at the top and more specific ones at the bottom of the `hints` list.
+
+![Second hint displayed for "DOM XSS" challenge](img/coding_challenge_second-hint.png)
+![Third hint displayed for "DOM XSS" challenge](img/coding_challenge_third-hint.png)
+
+Once all hints have been used up, Juice Shop will outright tell the user the correct answer
+so they have a chance to proceed and not remain stuck infinitely.
+
+![Final hint displayed for "DOM XSS" challenge](img/coding_challenge_final-hint.png)
+
+### "Fix It" explanations
+
+In the `fixes` list an explanation can be mapped to every available fix option of a Coding Challenge.
+The `id` must be identical to the `unique nuber` part of a fix option file name `<challengeKey>_<unique number>.<file suffix>` in order to be loaded when appropriate.
+
+The `explanation` should give a reason as to why a fix option is either correct or incorrect. The
+explanation will be displayed after the user submitted a chosen fix option.
+
+![Explanation for wrong fix option to "DOM XSS" challenge](img/coding_challenge_explanation_wrong-option.png)
+
+Other than with the hints for
+finding the vulnerable line of code, the explanation is displayed independently of the verdict. Therefore, it
+is important to also provide an explanation for the correct fix option.
+
+![Explanation for right fix option to "DOM XSS" challenge](img/coding_challenge_explanation_right-option.png)
+
+### Info YAML file example
+
+```yaml
+fixes:
+  - id: 1
+    explanation: 'Using bypassSecurityTrustResourceUrl() instead of bypassSecurityTrustHtml() changes the context for which input sanitization is bypassed. This switch might only accidentally keep XSS prevention intact, but the new URL context does not make any sense here.'
+  - id: 2
+    explanation: "Removing the bypass of sanitization entirely is the best way to fix this vulnerability. Fiddling with Angular's built-in sanitization was entirely unnecessary as the user input for a text search should not be expected to contain HTML that needs to be rendered but merely plain text."
+  - id: 3
+    explanation: 'Using bypassSecurityTrustScript() instead of bypassSecurityTrustHtml() changes the context for which input sanitization is bypassed. If at all, this switch might only accidentally keep XSS prevention intact. The context where the parameter is used is not a script either, so this switch would be nonsensical.'
+  - id: 4
+    explanation: 'Using bypassSecurityTrustStyle() instead of bypassSecurityTrustHtml() changes the context for which input sanitization is bypassed. If at all, this switch might only accidentally keep XSS prevention intact. The context where the parameter is used is not CSS, making this switch totally pointless.'
+hints:
+  - "Try to identify where (potentially malicious) user input is coming into the code."
+  - "What is the code doing with the user input other than using it to filter the data source?"
+  - "Look for a line where the developers fiddled with Angular's built-in security model."
+```
+
