@@ -291,6 +291,8 @@ This process starts after the second failed submission.
 The hints will be picked in order of appearance in the `hints` list of the YAML info file.
 One hint will be displayed at a time per submission attempt. It therefore makes sense to
 have more vague hints at the top and more specific ones at the bottom of the `hints` list.
+Although the number of hints that can be provided per coding challenge is not restricted,
+the author recommends to have no less than 2 and no more than 5 hints on average.
 
 ![Second hint displayed for "DOM XSS" challenge](img/coding_challenge_second-hint.png)
 ![Third hint displayed for "DOM XSS" challenge](img/coding_challenge_third-hint.png)
