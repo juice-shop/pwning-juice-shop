@@ -118,10 +118,10 @@ activities that are
 [definitely considered cheating](../part1/rules.md#-things-considered-cheating) while
 solving the available hacking challenges:
 
-* \>93% on final webhook call when executing all
+* \>89% after executing all
   [Integration tests](../part3/contribution.md#integration-tests) in <1
   minute on the author's Windows 10 laptop
-* \>92% on final webhook call when executing all
+* \>88% after executing all
   [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <20
   minutes on the author's Windows 10 laptop
 
