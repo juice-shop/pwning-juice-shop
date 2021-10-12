@@ -42,6 +42,7 @@ followed by the challenge key(s) the marker should be applied to.
 | `start`      | Yes              | Beginning of a snippet for one or more challenges.                                                                     | `// vuln-code-snippet start localXssChallenge xssBonusChallenge`     |
 | `end`        | Yes              | End of a snippet for one or more challenges.                                                                           | `// vuln-code-snippet end localXssChallenge xssBonusChallenge`       |
 | `vuln-line`  | Yes              | Vulnerable code line for one or more challenges. Can appear multiple times within a corresponding `start`-`end` block. | `// vuln-code-snippet vuln-line localXssChallenge xssBonusChallenge` |
+| `neutral-line`  | Yes              | Code line for one or more challenges with no impact on verdict if selected. Can appear multiple times within a corresponding `start`-`end` block. | `// vuln-code-snippet neutral-line adminSectionChallenge` |
 | `hide-line`  | No               | That particular line will be removed from all code snippets.                                                           | `// vuln-code-snippet hide-line`                                     |
 | `hide-start` | No               | Beginning of a block that will be removed from all code snippets.                                                      | `// vuln-code-snippet hide-start`                                    |
 | `hide-end`   | No               | End of a block that will be removed from all code snippets.                                                            | `// vuln-code-snippet hide-end`                                      |
@@ -128,11 +129,12 @@ function handleZipFileUpload ({ file }, res, next) {
 ##### YAML
 
 In this example, multiple challenges are defined in a shared code block
-but each with their own vulnerable line:
+but each with their own vulnerable line. Each also comes with a neutral line that would
+have no impact on the verdict if selected or not by the user:
 
 ```yaml
 # vuln-code-snippet start resetPasswordBjoernOwaspChallenge resetPasswordBjoernChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge
--
+- # vuln-code-snippet neutral-line resetPasswordJimChallenge
   question: 'Your eldest siblings middle name?' # vuln-code-snippet vuln-line resetPasswordJimChallenge
 -
   question: "Mother's maiden name?"
@@ -144,17 +146,17 @@ but each with their own vulnerable line:
   question: "Maternal grandmother's first name?"
 -
   question: "Paternal grandmother's first name?"
--
+- # vuln-code-snippet neutral-line resetPasswordBjoernOwaspChallenge
   question: 'Name of your favorite pet?' # vuln-code-snippet vuln-line resetPasswordBjoernOwaspChallenge
 -
   question: "Last name of dentist when you were a teenager? (Do not include 'Dr.')"
--
+- # vuln-code-snippet neutral-line resetPasswordBjoernChallenge
   question: 'Your ZIP/postal code when you were a teenager?' # vuln-code-snippet vuln-line resetPasswordBjoernChallenge
--
+- # vuln-code-snippet neutral-line resetPasswordBenderChallenge
   question: 'Company you first work for as an adult?' # vuln-code-snippet vuln-line resetPasswordBenderChallenge
 -
   question: 'Your favorite book?'
--
+- # vuln-code-snippet neutral-line resetPasswordUvoginChallenge
   question: 'Your favorite movie?' # vuln-code-snippet vuln-line resetPasswordUvoginChallenge
 -
   question: 'Number of one of your customer or ID cards?'
