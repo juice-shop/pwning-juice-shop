@@ -342,6 +342,35 @@ images for the released version.
 
 ![Release Pipeline workflow on GitHub](img/release-workflow.png)
 
+### Handling of spam PRs
+
+A small percentage of Pull Requests to <https://github.com/juice-shop/juice-shop> are opened
+by GitHub users e.g. when "playing" with SCA / SAST tools or other automation tooling. Sometimes those
+users notice their mistake and close the PR right away, sometimes they don't. Independent of
+who closed the PR (i.e. the original submitter or a Juice Shop core team member) it will be
+[marked with the **spam** label](https://github.com/juice-shop/juice-shop/pulls?q=is%3Apr+label%3Aspam).
+
+#### Ban stages
+
+Users who open a **spam** PR will be put on a 7-day ban for interaction with the <https://github.com/juice-shop>
+organization. If a previously blocked user opens another **spam** PR, they will be blocked for
+30 days, or even permanently after a third reoccurence.
+
+These measures ensure that the core team can concentrate on the actual contributions to the project
+and not be kept busy by handling accidental or intentional spammers.
+
+#### Instant permanent ban
+
+Submitting obviously non-accidental **spam**
+PRs - especially during events like Hacktoberfest or Google Summer of Code - can lead to a
+permanent ban right away. The same applies for PRs with obviously malicious or abusive intent as
+detailed in the Juice Shop's [Code of Conduct](https://github.com/juice-shop/juice-shop/blob/master/CODE_OF_CONDUCT.md).
+
+#### Redemption from banishment
+
+In the unlikely case that a user ended on the ban list by mistake or without comprehensible
+cause, they may contact [bjoern.kimminich@owasp.org](mailto:bjoern.kimminich@owasp.org)
+and request to be removed from the ban list.
+
 [^1]: <http://semver.org>
 [^2]: <https://probot.github.io/apps/dco/>
-
