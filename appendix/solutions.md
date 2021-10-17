@@ -1533,8 +1533,8 @@ solution for this challenge.
 
 Juice Shop depends on a JavaScript library with known vulnerabilities.
 Having the `package.json.bak` and using an online vulnerability database
-like [Retire.js](https://retirejs.github.io/) or
-[Snyk](https://snyk.io/vuln) makes it rather easy to identify it.
+like [Retire.js](https://retirejs.github.io/) or a CLI tool like
+[npm-audit](https://docs.npmjs.com/cli/audit/) that comes with Node.js, makes it rather easy to identify it.
 
 1. Solve
    [Access a developer's forgotten backup file](../part2/sensitive-data-exposure.md#access-a-developers-forgotten-backup-file)
@@ -1543,10 +1543,10 @@ like [Retire.js](https://retirejs.github.io/) or
    * `sanitize-html`: Sanitization of HTML strings is not applied
      recursively to input, allowing an attacker to potentially inject
      script and other markup (see
-     <https://snyk.io/vuln/npm:sanitize-html:20160801>)
-   * `express-jwt`: Inherits an authentication bypass and other
+     <https://github.com/advisories/GHSA-3j7m-hmh3-9jmp>)
+   * `express-jwt`: Inherits a JWT verification bypass and other
      vulnerabilities from its dependencies (see
-     <https://app.snyk.io/test/npm/express-jwt/0.1.3>)
+     <https://github.com/advisories/GHSA-c7hr-j4mj-j2w6>)
 3. Visit <http://localhost:3000/#/contact>
    1. Submit your feedback with the string pair `sanitize-html` and
       `1.4.2` appearing somewhere in the comment. Alternatively you can
@@ -1556,10 +1556,10 @@ like [Retire.js](https://retirejs.github.io/) or
 
 In the `package.json.bak` you might have noticed the pinned dependency
 `"sanitize-html": "1.4.2"`. Internet research will yield a reported
-[Cross-site Scripting (XSS)](https://snyk.io/vuln/npm:sanitize-html:20160801)
+[Cross-site Scripting (XSS)](https://github.com/advisories/GHSA-3j7m-hmh3-9jmp)
 vulnerability, which was fixed with version 1.4.3 - one release later
 than used by the Juice Shop. The referenced
-[GitHub issue](https://github.com/punkave/sanitize-html/issues/29)
+[GitHub issue](https://github.com/apostrophecms/sanitize-html/issues/29)
 explains the problem and gives an exploit example:
 
 > Sanitization is not applied recursively, leading to a vulnerability to
@@ -2349,7 +2349,7 @@ by the bot to process a user's message would result in an error
 
    ![Tweet advertising ZIP uploads in "File Complaint"](img/tweet_zip-complaints.png)
 2. Researching ZIP-based vulnerabilities should also yield
-   [Zip Slip](https://snyk.io/research/zip-slip-vulnerability) which
+   [Zip Slip](https://res.cloudinary.com/snyk/image/upload/v1528192501/zip-slip-vulnerability/technical-whitepaper.pdf) which
    exploits directory traversal filenames in file archives.
 3. As the Legal Information file you need to override lives in
    <http://localhost:3000/ftp/legal.md> and uploading files via _File
@@ -2372,7 +2372,7 @@ by the bot to process a user's message would result in an error
 > of the file system outside of the target folder in which they should
 > reside. The attacker can then overwrite executable files and either
 > invoke them remotely or wait for the system or user to call them, thus
-> achieving remote command execution on the victim’s machine. The
+> achieving **remote command execution** on the victim’s machine. The
 > vulnerability can also cause damage by overwriting configuration files
 > or other sensitive resources, and can be exploited on both client
 > (user) machines and servers. [^8]
@@ -2908,5 +2908,5 @@ server's operation system and also their synonym command for `wget`.
 
 [^7]: <https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)>
 
-[^8]: <https://snyk.io/research/zip-slip-vulnerability>
+[^8]: <https://res.cloudinary.com/snyk/image/upload/v1528192501/zip-slip-vulnerability/technical-whitepaper.pdf>
 
