@@ -10,4 +10,4 @@ plenty of ways to stay tuned.
 |:---------------------|:-------------------------------------------------------------------------|
 | Twitter              | https://twitter.com/owasp_juiceshop                                      |
 | Facebook             | https://www.facebook.com/owasp.juiceshop                                 |
-| Youtube Playlist     | https://www.youtube.com/playlist?list=PLV9O4rIovHhO1y8_78GZfMbH6oznyx2g2 |
+| Youtube Channeö     | https://www.youtube.com/channel/UCjkQ1Y-bxYAqwwD1SyQpBvw |
