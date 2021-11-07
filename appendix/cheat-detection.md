@@ -77,6 +77,10 @@ be selected as the correct answer.
 | up to 4000 characters               | 4 minutes          | ×#    | 
 | etc.              |          |    | 
 
+For the _Score Board_ coding challenge the expected solve time is reduced by 50% if
+the [Hacking Instructor](../part1/challenges.md#hacking-instructor) is enabled, as there is a _Coding Challenges_ tutorial attached
+to it.
+
 ### "Fix It" cheat score calculation
 
 The cheat score to detect the right fix for an identified vulnerability depends
