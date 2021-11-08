@@ -128,7 +128,7 @@ solving the available hacking challenges:
 * \>88% after executing all
   [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <20
   minutes on the author's Windows 10 laptop
-* \>88% after executing all
+* \>89% after executing all
   [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <30
   minutes during CI/CD on Windows Server 2019 
 
