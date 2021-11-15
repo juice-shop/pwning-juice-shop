@@ -6,7 +6,7 @@
   the score board?
 * Do you think you found an _accidental_ vulnerability that could be
   included and tracked on the score board?
-* Do you disagree with the difficulty rating for some of the challenges?
+* Do you disagree with the difficulty rating for some challenges?
 * Did you spot a misbehaving UI component or broken image?
 * Did you enjoy a conference talk, podcast or video about OWASP Juice
   Shop that is missing in our
@@ -15,7 +15,7 @@
 In all the above (as well as other similar) cases, please reach out to
 the OWASP Juice Shop team, project leader or community!
 
-## Feedback Channels
+## Feedback channels
 
 | Channel                                 | Link                                                                                                       |
 |:----------------------------------------|:-----------------------------------------------------------------------------------------------------------|
@@ -29,3 +29,22 @@ the OWASP Juice Shop team, project leader or community!
 Your honest feedback is always appreciated, no matter if it is positive
 or negative!
 
+## Challenge feedback
+
+You can provide feedback on all solved [hacking](../part1/challenges.md) and [coding challenges](../part1/challenges.md#coding-challenges) directly from the
+[Score Board](../part1/challenges.md#the-score-board) and Coding Challenge modal dialog. Clicking the respective like/dislike button
+will send you to a Google Form pre-filled with the challenge information and your positive or negative
+verdict.
+
+![Feedback buttons on Score Board](img/challenge_feedback1.png)
+![Feedback buttons on Coding Challenge modal dialog](img/challenge_feedback2.png)
+
+You can just submit the Google Form right away, or you can add some extra free text feedback
+before doing so.
+
+![Pre-filled Google Form for hacking challenge feedback](img/challenge_feedback3.png)
+![Pre-filled Google Form for coding challenge feedback](img/challenge_feedback4.png)
+
+To prevent spamming and duplicate feedback, you have to be signed in with a Google account to
+submit the form. Neither your email address nor any other personal information will be submitted
+along with the form.
