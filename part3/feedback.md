@@ -21,6 +21,7 @@ the OWASP Juice Shop team, project leader or community!
 |:----------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | OWASP Slack Channel                     | <https://owasp.slack.com/messages/project-juiceshop> ([Self-registration](https://owasp.org/slack/invite)) |
 | Gitter Chat                             | <https://gitter.im/bkimminich/juice-shop>                                                                  |
+| Matrix Chat                             | <https://matrix.to/#/#bkimminich_juice-shop:gitter.im>                                                                  |
 | Reddit                                  | <https://www.reddit.com/r/owasp_juiceshop>                                                                 |
 | Google Groups Forum                     | <https://groups.google.com/a/owasp.org/forum/#!forum/juice-shop-project>                                   |
 | Project Mailing List (on Google Groups) | <mailto:juice-shop-project@owasp.org>                                                                      |
