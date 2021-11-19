@@ -99,7 +99,7 @@ situation and solve this challenge immediately:
    _Merchandise_ sections with the "credit card"-button.
 3. Perceive that all donation links are passed through the `to`
    parameter of the route `/redirect`
-4. Open `main-es2015.js` in your browser's DevTools
+4. Open `main.js` in your browser's DevTools
 5. Searching for `/redirect?to=` and stepping through all matches you
    will notice three functions that are called only from hidden buttons
    on the _Your Basket_ page:
@@ -136,7 +136,7 @@ situation and solve this challenge immediately:
 ### Find the carefully hidden 'Score Board' page
 
 1. Go to the _Sources_ tab of your browsers DevTools and open the
-   `main-es2015.js` file.
+   `main.js` file.
 2. If your browser offers pretty-printing of this minified messy code,
    best use this offer. In Chrome this can be done with the "{}"-button.
 3. Search for `score` and iterate through each finding to come across
@@ -181,12 +181,12 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
 ### Access the administration section of the store
 
-1. Open the `main-es2015.js` in your browser's developer tools and
+1. Open the `main.js` in your browser's developer tools and
    search for "admin".
 2. One of the matches will be a route mapping to `path:
    "administration"`.
 
-   ![Administration page route in main-es2015.js](img/minified_js-admin.png)
+   ![Administration page route in main.js](img/minified_js-admin.png)
 3. Navigating to http://localhost:3000/#/administration will give a `403
    Forbidden` error.
 4. Log in to an administrator's account by solving the challenge
@@ -234,12 +234,12 @@ If the challenge is not immediately solved, you might have to
 4. Trying to upload another other file will probably give you an error
    message on the UI stating exactly that: `Forbidden file type. Only
    PDF, ZIP allowed.`
-5. Open the `main-es2015.js` in your DevTools and find the declaration
+5. Open the `main.js` in your DevTools and find the declaration
    of the file upload (e.g. by searching for `zip`)
 6. In the `allowedMimeType` array you will notice `"application/xml"`
    and `"text/xml"` along with the expected PDF and ZIP types
 
-   ![Possible XML upload spoilered in main-es2015.js](img/complaint_xml_mime-type.png)
+   ![Possible XML upload spoilered in main.js](img/complaint_xml_mime-type.png)
 7. Click on the _Choose File_ button.
 8. In the _File Name_ field enter `*.xml` and select any arbitrary XML
    file (<100KB) you have available. Then press _Open_.
@@ -1195,7 +1195,7 @@ more attention & a good portion of shrewdness.
 
 ### Successfully redeem an expired campaign coupon code
 
-1. Open `main-es2015.js` in your Browser's dev tools and search for
+1. Open `main.js` in your Browser's dev tools and search for
    `campaign`.
 
    ![Campaign code in minified JavaScript](img/minified_js-campaigncode.png)
@@ -1247,10 +1247,10 @@ more attention & a good portion of shrewdness.
    <bjoern.kimminich@googlemail.com>.
 2. Cracking his password hash will probably not work.
 3. To find out how the OAuth registration and login work, inspect the
-   `main-es2015.js` and search for `oauth`, which will eventually reveal
+   `main.js` and search for `oauth`, which will eventually reveal
    a function `userService.oauthLogin()`.
 
-   ![oauthLogin function in main-es2015.js](img/minified_js-oauth.png)
+   ![oauthLogin function in main.js](img/minified_js-oauth.png)
 4. In the function body you will notice a call to `userService.save()` -
    which is used to create a user account in the non-Google _User
    Registration_ process - followed by a call to the regular
@@ -1619,18 +1619,18 @@ explains the problem and gives an exploit example:
 
 ### Learn about the Token Sale before its official announcement
 
-1. Open the `main-es2015.js` in your browser's developer tools and
+1. Open the `main.js` in your browser's developer tools and
    search for some keywords like "ico", "token", "bitcoin" or "altcoin".
 2. Note the names of the JavaScript functions where these occur in, like
    `Vu()` and `Hu(l)`. These names are obfuscated, so they might be
    different for you.
 
-   ![Obfuscated token sale related functions in main-es2015.js](img/minified_js-tokensale.png)
-3. Searching for references to those functions in `main-es2015.js` might
+   ![Obfuscated token sale related functions in main.js](img/minified_js-tokensale.png)
+3. Searching for references to those functions in `main.js` might
    yield some more functions, like `zu(l)` and some possible route name
    `app-token-sale`
 
-   ![More token sale related functions in main-es2015.js](img/minified_js-tokensale_trail.png)
+   ![More token sale related functions in main.js](img/minified_js-tokensale_trail.png)
 4. Navigate to <http://localhost:3000/#/app-token-sale> or variations
    like <http://localhost:3000/#/token-sale> just to realize that these
    routes do not exist.
@@ -1643,11 +1643,11 @@ explains the problem and gives an exploit example:
    but not to a static title. It is mapped to another variable `Ca`
    (which might be named differently for you)
 
-   ![Tokensale route mapping in main-es2015.js](img/minified_js-tokensale_route.png)
+   ![Tokensale route mapping in main.js](img/minified_js-tokensale_route.png)
 6. Search for `function Ca(` to find the declaration of the function
    that should return a matcher to the route name you are looking for.
 
-   ![Tokensale route matcher in main-es2015.js](img/minified_js-tokensale_matcher.png)
+   ![Tokensale route matcher in main.js](img/minified_js-tokensale_matcher.png)
 7. Copy the obfuscating function into the JavaScript console of your
    browser and execute it immediately by appending a `()`. This will
    probably yield a `Uncaught SyntaxError: Unexpected token )`. When you
@@ -1761,7 +1761,7 @@ payload in his blog post
    `assets/public/images/deluxe/blankBoxes.png` and the other five load
    `assets/public/images/JuiceShop_Logo.png` in different sizes and
    positions onto the SVG graphic.
-4. Open the `main-es2015.js` in your browser DevTools and search for the
+4. Open the `main.js` in your browser DevTools and search for the
    corresponding Angular controller code related to that page and SVG
    image
 5. You will be able to spot six `:svg:image` references, one of them
@@ -2663,7 +2663,7 @@ opened on those._
 2. Get the support team's KeePass database file from
    <http://localhost:3000/ftp/incident-support.kdbx> (note how this file
    is conveniently _not blocked_ by the file type filter).
-3. Inspecting `main-es2015.js` for information leakage (e.g. by
+3. Inspecting `main.js` for information leakage (e.g. by
    searching for `support`) will yield an interesting log statement that
    is printed when the support logs in with the wrong password:
 

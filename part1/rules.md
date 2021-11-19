@@ -286,7 +286,7 @@ feature to work properly.
 
 If enabled, the
 [Hacking Instructor](../part1/challenges.md#hacking-instructor) script
-`tutorial-es2015.js` (or `tutorial-es5.js` in legacy browsers) including
+`tutorial.js` including
 all on-screen tutorials is loaded lazily by the _Score Board_ and the
 _Welcome Banner_. You should exclude this file from all your manual or
 automated frontend code analysis. It contains step-by-step hints and
