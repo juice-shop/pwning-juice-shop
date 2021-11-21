@@ -649,7 +649,7 @@ frame of zero height and width.
    Intercept and edit the request as described above before forwarding
    it.
 
-### Post some feedback in another users name
+### Post some feedback in another user's name
 
 1. Go to the _Contact Us_ form on <http://localhost:3000/#/contact>.
 2. Inspect the DOM of the form in your browser to spot this suspicious

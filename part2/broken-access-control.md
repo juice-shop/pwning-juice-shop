@@ -28,7 +28,7 @@
 | CSRF               | Change the name of a user by performing Cross-Site Request Forgery from another origin.                                                | ⭐⭐⭐       |
 | Easter Egg         | Find the hidden easter egg.                                                                                                            | ⭐⭐⭐⭐     |
 | Five-Star Feedback | Get rid of all 5-star customer feedback.                                                                                               | ⭐⭐        |
-| Forged Feedback    | Post some feedback in another users name.                                                                                              | ⭐⭐⭐       |
+| Forged Feedback    | Post some feedback in another user's name.                                                                                              | ⭐⭐⭐       |
 | Forged Review      | Post a product review as another user or edit any user's existing review.                                                              | ⭐⭐⭐       |
 | Manipulate Basket  | Put an additional product into another user's shopping basket.                                                                         | ⭐⭐⭐       |
 | Product Tampering  | Change the `href` of the link within the OWASP SSL Advanced Forensic Tool (O-Saft) product description into _https://owasp.slack.com_. | ⭐⭐⭐       |
@@ -118,7 +118,7 @@ deleting the 5-star feedback is very easy.
 * Nothing happens when you try to delete feedback entries? Check the
   JavaScript console for errors!
 
-### Post some feedback in another users name
+### Post some feedback in another user's name
 
 The Juice Shop allows users to provide general feedback including a star
 rating and some free text comment. When logged in, the feedback will be
@@ -145,7 +145,7 @@ products. This challenge is about vilifying another user by posting a
 * Analyze the form used for review submission and try to find a leverage
   point.
 * This challenge is pretty similar to
-  [Post some feedback in another users name](#post-some-feedback-in-another-users-name)
+  [Post some feedback in another user's name](#post-some-feedback-in-another-users-name)
   challenge.
 
 ### Put an additional product into another user's shopping basket
