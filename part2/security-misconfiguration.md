@@ -83,10 +83,10 @@ and then threw it over the fence to an operations and support team to
 run and troubleshoot the application. Not the slightest sign of
 [DevOps](https://en.wikipedia.org/wiki/DevOps) culture here.
 
-* The support team is located in some low-cost country and the team
+* The support team is located in a low-cost country and the team
   structure fluctuates a lot due to people leaving for jobs with even
   just slightly better wages.
-* To prevent abuse the password for the support team account is very
+* To prevent abuse the password for the support team account itself is actually very
   strong.
 * To allow easy access during an incident, the support team utilizes a
   3rd party tool which every support engineer can access to get the

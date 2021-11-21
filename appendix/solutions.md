@@ -2659,43 +2659,39 @@ installed on your computer. If you are using a non-Windows OS you can
 try using some unofficial port but there is no guarantee the file can be
 opened on those._
 
-1. Download and install KeePass 2.x from <http://keepass.info>
-2. Get the support team's KeePass database file from
-   <http://localhost:3000/ftp/incident-support.kdbx> (note how this file
-   is conveniently _not blocked_ by the file type filter).
-3. Inspecting `main.js` for information leakage (e.g. by
+1. Find out that the support team's email address is `support@juice-sh.op` eiher via deduction of the pattern from other users or by completing the [Retrieve a list of all user credentials via SQL Injection](#retrieve-a-list-of-all-user-credentials-via-sql-injection) challenge.
+2. Brute forcing the password on of this user <httpc://localhost:3000/#/login> is an entirely hopeless approach.
+3. You might notice that the support team has a KeePass database file located in
+   <http://localhost:3000/ftp/incident-support.kdbx> and that it
+   is conveniently _not blocked_ by the file type filter otherwise protecting this folder.
+4. Download and install KeePass 2.x from <http://keepass.info>
+5. Trying to brute force the password on this KeePass file is unlikely to succeed at this stage.
+6. Inspecting `main.js` for information leakage (e.g. by
    searching for `support`) will yield an interesting log statement that
    is printed when the support logs in with the wrong password:
 
-   ![Support team login hint in minified JS](/appendix/img/minified-js_support-hint.png)
-4. The logged text is in Romanian language: `<!-- @echipa de suport:
-   Secretul nostru comun este încă Caoimhe cu parola de master gol! -->`
-5. Running this through an online translator yields something like:
-   `Support Team: Our secret is still common Caoimhe master password
-   empty!`
-6. From `master password empty` you can derive, that the KeePass file is
-   protected with **only a key file** instead of a password!
-7. The key file must be something the support team has easy access to
-   from everywhere - how else would they achieve 24/7 with expectedly
-   high staff rotation?
-8. The second important hint is the reference to `Caoimhe`, which
-   happens to be an Irish feminine given name.
-9. Visit <http://localhost:3000/#/about> and cycle through the photos of
-   all support staff that are displayed in the background feedback
-   carousel. There is one woman with red hair, which is a
-   (stereo-)typical attribute of Irish people - so maybe she actually
-   _is_ "Caoimhe"?
-
-   ![Photo of Caoimhe in About Use carousel](img/caoimhe.png)
-10. Download the photo
-    <http://localhost:3000/public/images/carousel/6.jpg> and use it as a
-    key file to unlock the KeePass database.
-11. Find the password for the support team user account in the `prod`
+   ![Support team login hint in minified JS](img/minified-js_support-hint.png)
+7. The logged text is in Romanian language: `Parola echipei de asistență nu respectă politica corporativă pentru conturile privilegiate! Vă rugăm să schimbați parola în consecință!`
+8. Running this through an online translator yields something like:
+   `The password of the support team does not respect the corporate policy for privileged accounts! Please change your password accordingly!`
+9. More interesting even is the Regular Expression `(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,30}` being used to check for a specific password pattern. You can assume that this is the equivalent of the mentioned corporate policy.
+10. This RegEx translates into the following password requirements
+  * a minimum length of 12 characters
+  * a maximum length of 30 characters
+  * at least one lowercase character `a-z` 
+  * at least one uppercase character `A-Z`
+  * at least one number `0-9`
+  * at least one special character `@$!%*?&`
+11. Note also, that this RegEx would not accept _any other_ special characters or letters than the ones mentioned above.
+12. Assume that the support team followed the password policy for its user password _and_ also for its KeePass file.
+13. Furthermore, presume that they might have used a weaker password on their KeePass database, because their normal workflow might involve getting the user credentials from it when logging in to the application. Therefore, the KeePass file should be easier to break into.
+14. Use a brute force script (applying the password pattern restrictions known to you) to break into the KeePass file with the terribly chosen password `Support2022!`. 
+15. Find the password for the support team user account in the `prod`
     entry of the KeePass file.
 
     ![Unlocked KeePass file](img/keepass-list.png)
-12. Log in with `support@juice-sh.op` as _Email_ and
-    `J6aVjTgOpRs$?5l+Zkq2AYnCE@RF§P` as _Password_ to beat this
+16. Log in with `support@juice-sh.op` as _Email_ and
+    `J6aVjTgOpRs@?5l!Zkq2AYnCE@RF$P` as _Password_ to beat this
     challenge.
 
     ![Credentials of the support team in the KeePass file](img/keepass-prod_entry.png)
