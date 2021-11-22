@@ -1,7 +1,7 @@
 # Customization
 
 One of the core usage scenarios for OWASP Juice Shop is in employee
-trainings in order to facilitating security awareness. With its not
+trainings in order to facilitate security awareness. With its not
 entirely serious user roster and product inventory the application might
 not be suited for all audiences alike.
 
@@ -29,7 +29,7 @@ The customization is powered by a YAML configuration file placed in
 3. Run `npm start`
 
 You can also run a config directly in one command (on Linux) via
-`NODE_ENV=nameOfYourConfig npm start`. By default the
+`NODE_ENV=nameOfYourConfig npm start`. By default, the
 `config/default.yml` config is used which generates the original OWASP
 Juice Shop look & feel and inventory. Please note that it is not
 necessary to run `npm install` after switching customization
@@ -94,7 +94,7 @@ within the application.
 | `altcoinName`                                               | Defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen.                                                                                                                                                                                                 | `Juicycoin`                                  |
 | `privacyContactEmail`                                       | The email address shown as contact in the _Privacy Policy_.                                                                                                                                                                                                                                | `donotreply@owasp-juice.shop`                |
 | `customMetricsPrefix`                                       | Prefix for all custom Prometheus metrics. Must be a lowercase letter single world by Prometheus conventions.                                                                                                                                                                               | `juiceshop`                                  |
-| [`chatbot` subsection](#chatbot-subsection)                 | Specifies all characteristics of the bot answering user questions in the _Support Chat_.                                                                                                                                                                                                   |                                              |
+| [`chatBot` subsection](#chatbot-subsection)                 | Specifies all characteristics of the bot answering user questions in the _Support Chat_.                                                                                                                                                                                                   |                                              |
 | [`social` subsection](#social-subsection)                   | Specifies all social links embedded on various screens such as _About Us_ or the _Photo Wall_.                                                                                                                                                                                             |                                              |
 | [`recyclePage` subsection](#recyclepage-subsection)         | Defines custom elements on the _Request Recycling Box_ page.                                                                                                                                                                                                                               |                                              |
 | [`welcomeBanner` subsection](#welcomebanner-subsection)     | Defines a dismissable welcome banner that can be shown when first visiting the application.                                                                                                                                                                                                |                                              |
@@ -104,7 +104,7 @@ within the application.
 | [`easterEggPlanet` subsection](#eastereggplanet-subsection) | Defines the customizations for the 3D-rendered planet easter egg.                                                                                                                                                                                                                          |                                              |
 | [`googleOauth` subsection](#googleoauth-subsection)         | Defines the client identifier and allowed redirect URIs for Google OAuthintegration.                                                                                                                                                                                                       |                                              |
 
-#### `chatbot` subsection
+#### `chatBot` subsection
 
 Specifies all characteristics of the bot answering user questions in the
 _Support Chat_.
@@ -236,7 +236,7 @@ Juice Shop.
 
 ### `hackingInstructor` section
 
-Allows to enable and customize the
+Allows enabling and customizing the
 [Hacking Instructor](../part1/challenges.md#hacking-instructor) tutorial
 mode.
 
