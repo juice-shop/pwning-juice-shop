@@ -53,7 +53,7 @@ notifications:
   -
     provider: Webhook
     url:
-      secure: c4xwvfA2YpTyASkpasFt2hJalN+xy/+cM/0l4sD1NX/OU2wVLtnmFO0tkWF2M/XRIT43etP3fFr6vlXpC6cmPw==
+      secure: c4xwvfA2YpTyASkpasFt2oTuz51teT2qAgq9gU45flir+cdJeT1/utEXowV/TsvmjrsUPRawd/ZNch9ZnAMZCg==
     method: GET
   -
     provider: Slack
