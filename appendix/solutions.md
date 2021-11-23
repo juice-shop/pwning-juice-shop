@@ -901,8 +901,8 @@ simultaneously.
 ### Perform a persisted XSS attack bypassing a client-side security mechanism
 
 1. Submit a POST request to http://localhost:3000/api/Users with
-   * `{"email": "<iframe src=\"javascript:alert(`xss`)\">", "password":
-     "xss"}` as body
+   * ``{"email": "<iframe src=\"javascript:alert(`xss`)\">", "password":
+     "xss"}`` as body
    * and `application/json` as `Content-Type` header.
 
    ![XSS request in PostMan](img/xss2_postman.png)
@@ -925,8 +925,8 @@ simultaneously.
 2. Copy your `Authorization` header from any HTTP request submitted via
    browser.
 3. Submit a POST request to <http://localhost:3000/api/Products> with
-   * `{"name": "XSS", "description": "<iframe
-     src=\"javascript:alert(`xss`)\">", "price": 47.11}` as body,
+   * ``{"name": "XSS", "description": "<iframe
+     src=\"javascript:alert(`xss`)\">", "price": 47.11}`` as body,
    * `application/json` as `Content-Type`
    * and `Bearer ?` as `Authorization` header, replacing the `?` with
      the token you copied from the browser.
@@ -1572,7 +1572,7 @@ explains the problem and gives an exploit example:
 > the output html.
 
 1. Visit http://localhost:3000/#/contact.
-2. Enter `<<script>Foo</script>iframe src="javascript:alert(`xss`)">` as
+2. Enter ``<<script>Foo</script>iframe src="javascript:alert(`xss`)">`` as
    _Comment_
 3. Choose a rating and click _Submit_
 4. Visit http://localhost:3000/#/about for a first "xss" alert (from the
