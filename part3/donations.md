@@ -58,7 +58,9 @@ All donations of at least 1000 US$ to the OWASP Foundation can be
 restricted explicitly to be only used by the Juice Shop project in the
 current calendar year. To learn more about such earmarked donations
 please check OWASP's
-[Rules of Procedure on Donations](https://owasp.org/www-policy/operational/donations.html).
+[Donations Policy](https://owasp.org/www-policy/operational/donations.html).
+
+![Restricted gift for Juice Shop](img/donate04.png)
 
 ℹ️ _While the Juice Shop appreciates such dedicated donations, please
 note that these add an organizational overhead for the OWASP Foundation.
