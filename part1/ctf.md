@@ -308,14 +308,12 @@ CTFd run-mode below.
 3. Perform steps 1 and 3 from
    [the CTFd installation instructions](https://github.com/CTFd/CTFd#install).
 4. Browse to your CTFd instance UI (by default <http://127.0.0.1:4000>)
-   and create an admin user and CTF name.
-5. Go to the section _Admin_ > _Config_ > _Backup_ and choose _Import_
+   and perform the basic _Setup_ filling out all mandatory information minimalistially (as it will be deleted during the import again) and clicking _Next_ on each tab before the last. On the last tab click _Finish_.
+5. Go to the section _Admin Panel_ > _Config_ > _Backup_ and choose _Import_
 6. Select the generated `.zip` file and make sure only the _Challenges_
    box is ticket. Press _Import_.
-7. _(Only for CTFd 2.0.x)_ Dismiss any occurring `Internal Server Error`
-   alert popup after import and restart your CTFd server.
-8. _(Only for CTFd 2.x)_ Repeat the initial admin and CTF setup from
-   step 4. to regain access to the CTF game. It is now pre-populated
+8. Repeat the initial _Setup_ from
+   step 4. (providing all actually intended game information and settings this time) to regain access to the CTF game. It is now pre-populated
    with the Juice Shop challenges.
 
 #### Docker container setup
