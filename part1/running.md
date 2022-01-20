@@ -116,12 +116,11 @@ that you also enable port forwarding from host `127.0.0.1:3000` to
 #### Supported architectures
 
 The official Docker image is built automatically during CI/CD for
-`linux/amd64`. Beginning with `v11.1.1` an official `linux/arm` image is
-built for each tagged release as well as for `latest`. This build is
-currently executed manually on a RaspberryPi 4B model with Raspian
-32bit. If an `arm` image is available, a compatible computer will
-automatically pull that image instead of the `amd64` version when
-running `docker pull bkimminich/juice-shop`.
+`linux/amd64` (based on a Node.js {{book.recommendedNodeVersion}} image) as well as `linux/arm64` and `linux/arm/v7` (based on a Node.js 14 image) and both are pushed to DockerHub. The following tagged images are available on DockerHub:
+
+* Stable version from `master` branch: `latest` for AMD and `latest-arm` for ARM
+* Development version from `develop` branch: `snapshot` for AMD and `snapshot-arm` for ARM
+* Tagged versioned releases: `vX.Y.Z` for AMD and `vX.Y.Z-arm` for ARM
 
 ### Vagrant
 
