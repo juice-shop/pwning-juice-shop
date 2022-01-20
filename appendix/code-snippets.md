@@ -258,7 +258,16 @@ options from the source.
 
 The downside of this implementation is a certain maintenance burden for Coding Challenges. When the
 original source file is changed or refactored, the developer must keep in mind updating all fix option files
-accordingly to prevent confusing differences. There is currently no automation in place to warn about this.
+accordingly to prevent confusing differences. 
+
+#### Refactoring Safety Net
+
+Starting with v13.2.0, the maintenance burden is eased by a utility that detects many (but not all) accidental or
+forgotten code changes in fix option files or the original code snippet that made them deviate from each other. It runs
+automatically as a job of the [CI/CD pipeline](../part3/contribution.md#cicd-pipeline) but can also be launched locally
+with `npm run rsn`.
+
+🛠️ **TODO**
 
 ## Info YAML file
 
