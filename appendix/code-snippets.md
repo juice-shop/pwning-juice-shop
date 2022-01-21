@@ -267,7 +267,31 @@ forgotten code changes in fix option files or the original code snippet that mad
 automatically as a job of the [CI/CD pipeline](../part3/contribution.md#cicd-pipeline) but can also be launched locally
 with `npm run rsn`.
 
-🛠️ **TODO**
+If no unexpected changes occured to any lines of code in either the original snippet or any corresponding fix option files
+occured, `npm run rsn` will produce a list of all current differences and a success message:
+
+![Console output from successful RSN run](img/rsn_no-new-diffs.png)
+
+If instead some unexpected file differences came up, the tool will still print the list of current differences as well
+as a list of the affected files and terminate with an error.
+
+![Console output from failed RSN run](img/rsn_new-diffs.png)
+
+The author of the code change that broke the RSN check can now investigate the reason for the new differences either in the
+[Coding Challenge dialog of the running application](../part1/challenges.md#coding-challenges) or by comparing the source code files.
+After either reverting any accidental changes in e.g. indentation or simply re-applying refactorings (e.g. parameters or functions being
+renamed) to the missed piece of code, running `npm run rsn:update` will lock the new state of
+differences in place.
+
+![Console output from RSN cache update](img/rsn_update.png)
+
+Any subsequent run of `npm run rsn` will now succeed again, until another accidental difference occurs.
+
+#### Limitations
+
+As the RSN utility checks and caches differences on a per-line level, accidental changes to lines which are already expected
+to be different, will not trigger a failure of `npm run rsn`. This should be very rare coincidence in daily development on the
+project, so the Juice Shop team rather accepts the small risk instead of overengineering the RSN to catch those edge cases.
 
 ## Info YAML file
 
