@@ -31,6 +31,16 @@ the following repository:
 
 <https://github.com/juice-shop/juice-shop>
 
+### Forking & cloning
+
+You can clone the original repository with `git clone https://github.com/juice-shop/juice-shop.git` but
+in order to contribute to the project via [Pull Requests](#pull-requests) you probably want to [fork the repository
+instead](https://github.com/juice-shop/juice-shop/fork) and then clone that fork to work on with
+
+```
+git clone https://github.com/<your GitHub username>/juice-shop.git
+```
+
 ### Branching model
 
 OWASP Juice Shop is maintained in a simplified

@@ -18,7 +18,7 @@ come on top.
   * `200 millicpu` CPU
   * `800 MB` free disk space
 
-🗄️ _If installing [from sources](#from-sources) an additional `700
+🗄️ _If installing [from sources](#from-sources) without the ` --depth 1` option, an additional `700
 MB` free disk space are required for the Git history in both minimum and
 recommended spec._
 
@@ -78,7 +78,7 @@ release.
 
 1. Install [Node.js](http://nodejs.org/) on your computer.
 2. On the command line run `git clone
-   https://github.com/juice-shop/juice-shop.git`.
+   https://github.com/juice-shop/juice-shop.git --depth 1`.
 3. Go into the cloned folder with `cd juice-shop`
 4. Run `npm install`. This only has to be done before the first start or
    after you changed the source code.
