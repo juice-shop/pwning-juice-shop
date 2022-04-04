@@ -1270,29 +1270,27 @@ more attention & a good portion of shrewdness.
 
 1. Log in as any user, put some items into your basket and create an
    order from these.
-2. Copy the order ID from the confirmation PDF. It should look similar
-   to `5267-829f123593e9d098` in its format.
-3. Visit <http://localhost:3000/#/track-order>, paste in your _Order ID_
-   and then click _Track_.
-4. In the network tab of your browser you should find a request similar
-   to <http://localhost:3000/rest/track-order/7962-6e31e50a0c6f2ea3>.
-5. Inspecting the response closely, you might notice that the user email
+2. Notice that you end up on a URL with a seemingly generated random part, like <http://localhost:3000/#/order-completion/5267-829f123593e9d098>
+3. On that _Order Summary_ page, click on the _Track Orders_ link under the _Thank you for your purchase!_ message to end up on a URL simular to <http://localhost:3000/#/track-result/new?id=5267-829f123593e9d098>
+6. Open the network tab of your browser's DevTools and refresh that page. You should notice a request similar
+   to <http://localhost:3000/rest/track-order/5267-829f123593e9d098>.
+7. Inspecting the response closely, you might notice that the user email
    address is partially obfuscated:
    `{"status":"success","data":[{"orderId":"5267-829f123593e9d098","email":"*dm*n@j**c*-sh.*p","totalPrice":2.88,"products":[{"quantity":1,"name":"Apple
    Juice
    (1000ml)","price":1.99,"total":1.99,"bonus":0},{"quantity":1,"name":"Apple
    Pomace","price":0.89,"total":0.89,"bonus":0}],"bonus":0,"eta":"2","_id":"tosmfPsDaWcEnzRr3"}]}`
-6. It looks like certain letters - seemingly all vowels - were replaced
+8. It looks like certain letters - seemingly all vowels - were replaced
    with `*` characters before the order was stored in the database.
-7. Register a new user with an email address that would result in _the
+9. Register a new user with an email address that would result in _the
    exact same_ obfuscated email address. For example register
    `edmin@juice-sh.op` to steal the data of `admin@juice-sh.op`.
-8. Log in with your new user and immediately get your data exported via
-   <http://localhost:3000/#/privacy-security/data-export>.
-9. You will notice that the order belonging to the existing user
-   `admin@juice-sh.op` (in this example `5267-829f123593e9d098`) is part
-   of your new user's data export due to the clash when obfuscating
-   emails!
+10. Log in with your new user and immediately get your data exported via
+    <http://localhost:3000/#/privacy-security/data-export>.
+11. You will notice that the order belonging to the existing user
+    `admin@juice-sh.op` (in this example `5267-829f123593e9d098`) is part
+    of your new user's data export due to the clash when obfuscating
+    emails!
 
 ### Access a misplaced SIEM signature file
 
@@ -2019,25 +2017,26 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 ### All your orders are belong to us
 
 1. Open the network tab of your browser's DevTools.
-2. Visit <http://localhost:3000/#/track-order> and search for `x` to
-   witness a `GET` request <http://localhost:3000/rest/track-order/x>
-   being sent returning `{"status":"success","data":[{"orderId":"x"}]}`.
-3. Search for `'` (single quote) as _Order ID_ now.
+2. Log in with any user that previously ordered something and visit <http://localhost:3000/#/order-history>
+3. Click on the _Track Order_ button (depicting a truck) of any order
+4. Witness a `GET` request to a URL starting with `http://localhost:3000/rest/track-order/` and ending with a seemingly random sequence of characters (which is actually the _Order ID_)
+5. Try out <http://localhost:3000/rest/track-order/x> to receive a response of `{"status":"success","data":[{"orderId":"x"}]}`.
+6. Search for `'` (single quote) as _Order ID_ now.
    <http://localhost:3000/rest/track-order/'> will throw an error
 
    ![NoSQL query error from invalid token](img/error_page-nosqli.png)
-4. Searching for `''` (two single quotes) as _Order ID_ now will let
+7. Searching for `''` (two single quotes) as _Order ID_ now will let
    <http://localhost:3000/rest/track-order/''> throw an `Unexpected
    string` error instead of the previous `Invalid or unexpected token`.
-5. While not stated anywhere in the error messages, it can be assumed
+8. While not stated anywhere in the error messages, it can be assumed
    with some MongoDB background that the query probably resembles
    something like `{ $where: "property === '" + payload + "'" }`.
-6. The required `payload` for the challenge needs to make sure all data
+9. The required `payload` for the challenge needs to make sure all data
    is matched while squeezing itself into the query in a non-breaking
    way.
-7. Search for `' || true || '` resulting in
-   <http://localhost:3000/rest/track-order/'%20%7C%7C%20true%20%7C%7C%20'>
-   which will in fact query and return all orders from the MarsDB.
+10. Search for `' || true || '` resulting in
+    <http://localhost:3000/rest/track-order/'%20%7C%7C%20true%20%7C%7C%20'>
+    which will in fact query and return all orders from the MarsDB.
 
 ### Perform a Remote Code Execution that would keep a less hardened application busy forever
 
