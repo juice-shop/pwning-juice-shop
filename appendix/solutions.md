@@ -2019,7 +2019,7 @@ corresponding flag will eventually spoiler the language code `tlh_AA`.
 ### All your orders are belong to us
 
 1. Open the network tab of your browser's DevTools.
-2. Visit <http://localhost:3000/#/track-order> and search for `x` to
+2. Visit <http://127.0.0.1:3000/#/track-result?id=x> and
    witness a `GET` request <http://localhost:3000/rest/track-order/x>
    being sent returning `{"status":"success","data":[{"orderId":"x"}]}`.
 3. Search for `'` (single quote) as _Order ID_ now.
