@@ -422,8 +422,7 @@ For e.g. the `User` model the generated endpoints are:
   * `DELETE` requests to delete a user record
 
 Apart from the `User` model also the `Product`, `Feedback`,
-`BasketItem`, `Challenge`, `Complaint`, `Recycle`, `SecurityQuestion`
-and `SecurityAnswer` models are exposed in this fashion.
+`BasketItem`, `Challenge`, `Complaint`, `Recycle`, `SecurityQuestion`, `SecurityAnswer`, `Address`, `PrivacyRequest`, `Card` and `Quantity` models are exposed in this fashion.
 
 Not all HTTP verbs are accepted by every endpoint. Furthermore, some
 endpoints are protected against anonymous access and can only be used by
@@ -431,30 +430,31 @@ an authenticated user. This is described later in section
 [Access control on routes](#access-control-on-routes).
 
 ```typescript
-finale.initialize({
-  app,
-  sequelize: models.sequelize
-})
+finale.initialize({ app, sequelize })
 
-const autoModels = ['User', 'Product', 'Feedback',
-'BasketItem', 'Challenge', 'Complaint', 'Recycle',
-'SecurityQuestion', 'SecurityAnswer']
+const autoModels = [
+  { name: 'User', exclude: ['password', 'totpSecret'], model: UserModel },
+  { name: 'Product', exclude: [], model: ProductModel },
+  { name: 'Feedback', exclude: [], model: FeedbackModel },
+  { name: 'BasketItem', exclude: [], model: BasketItemModel },
+  { name: 'Challenge', exclude: [], model: ChallengeModel },
+  { name: 'Complaint', exclude: [], model: ComplaintModel },
+  { name: 'Recycle', exclude: [], model: RecycleModel },
+  { name: 'SecurityQuestion', exclude: [], model: SecurityQuestionModel },
+  { name: 'SecurityAnswer', exclude: [], model: SecurityAnswerModel },
+  { name: 'Address', exclude: [], model: AddressModel },
+  { name: 'PrivacyRequest', exclude: [], model: PrivacyRequestModel },
+  { name: 'Card', exclude: [], model: CardModel },
+  { name: 'Quantity', exclude: [], model: QuantityModel }
+]
 
-for (const modelName of autoModels) {
+for (const { name, exclude, model } of autoModels) {
   const resource = finale.resource({
-    model: models[modelName],
-    endpoints: [`/api/${modelName}s`, `/api/${modelName}s/:id`]
+    model,
+    endpoints: [`/api/${name}s`, `/api/${name}s/:id`],
+    excludeAttributes: exclude
   })
-
-  // fix the api difference between finale (fka epilogue) and previously
-  // used sequlize-restful
-  resource.all.send.before((req, res, context) => {
-    context.instance = {
-      status: 'success',
-      data: context.instance
-    }
-    return context.continue
-  })
+  // ...
 }
 ```
 
@@ -474,13 +474,15 @@ responsibility. For example, the `angular.ts` middleware delivers the
 `index.html` page to the client:
 
 ```typescript
-const path = require('path')
+import path = require('path')
+import { Request, Response, NextFunction } from 'express'
+
 const utils = require('../lib/utils')
 
 module.exports = function serveAngularClient () {
-  return ({url}, res, next) => {
+  return ({ url }: Request, res: Response, next: NextFunction) => {
     if (!utils.startsWith(url, '/api') && !utils.startsWith(url, '/rest')) {
-      res.sendFile(path.resolve(__dirname, '../app/index.html'))
+      res.sendFile(path.resolve('frontend/dist/frontend/index.html'))
     } else {
       next(new Error('Unexpected path: ' + url))
     }
@@ -491,29 +493,37 @@ module.exports = function serveAngularClient () {
 If a hand-written middleware is involved in a hacking challenge, it must
 assess on its own if the challenge has been solved. For example, in the
 `basket.ts` middleware where successfully accessing another user's
-shopping basket is verified:
+shopping basket is verified in the `utils.solveIf()` function call:
 
 ```typescript
+import { Request, Response, NextFunction } from 'express'
+import { ProductModel } from '../models/product'
+import { BasketModel } from '../models/basket'
+
 const utils = require('../lib/utils')
-const security = require('../lib/security')
-const models = require('../models/index')
+const security = require('../lib/insecurity')
 const challenges = require('../data/datacache').challenges
 
 module.exports = function retrieveBasket () {
-  return (req, res, next) => {
+  return (req: Request, res: Response, next: NextFunction) => {
     const id = req.params.id
-    models.Basket.find({ where: { id }, include: [ { model: models.Product, paranoid: false } ] })
-      .then(basket => {
-        if (utils.notSolved(challenges.basketChallenge)) {
-          const user = security.authenticatedUsers.from(req)
-          if (user && id && id !== 'undefined' && user.bid != id) {
-            utils.solve(challenges.basketChallenge)
-          }
-        }
-        res.json(utils.queryResultToJson(basket))
-      }).catch(error => {
-        next(error)
-      })
+    BasketModel.findOne({ where: { id }, include: [{ model: ProductModel, paranoid: false, as: 'Products' }] })
+            .then((basket: BasketModel | null) => {
+              /* jshint eqeqeq:false */
+              utils.solveIf(challenges.basketAccessChallenge, () => {
+                const user = security.authenticatedUsers.from(req)
+                return user && id && id !== 'undefined' && id !== 'null' && id !== 'NaN' && user.bid && user.bid != id // eslint-disable-line eqeqeq
+              })
+              if (basket?.Products && basket.Products.length > 0) {
+                for (let i = 0; i < basket.Products.length; i++) {
+                  basket.Products[i].name = req.__(basket.Products[i].name)
+                }
+              }
+
+              res.json(utils.queryResultToJson(basket))
+            }).catch((error: Error) => {
+      next(error)
+    })
   }
 }
 ```
@@ -523,15 +533,17 @@ It contains no business functionality. Instead of one function it
 exposes several named functions on challenge verification for
 [Generated API endpoints](#generated-api-endpoints), for example:
 
-```
+```typescript
 app.post('/api/Feedbacks', verify.forgedFeedbackChallenge())
 app.post('/api/Feedbacks', verify.captchaBypassChallenge())
+app.post('/api/Users', verify.registerAdminChallenge())
+app.post('/api/Users', verify.passwordRepeatChallenge())
 ```
 
 The same applies for any challenges on top of third-party middleware,
 for example:
 
-```
+```typescript
 app.use(verify.errorHandlingChallenge())
 app.use(errorhandler())
 ```
@@ -685,18 +697,21 @@ features the following tables:
   questions a user has to choose from during registration. The provided
   answer is stored in the table `SecurityAnswers`.
 * The `Products` table contains the products available in the shop
-  including price data.
+  including price data with their associated inventory stock data being persisted in the `Quantities` table.
 * When logging in every user receives a shopping basket represented by a
   row in the `Baskets` table. When putting products into the basket this
   is reflected by entries in `BasketItems` linking a product to a basket
   together with a quantity.
+* Users have digital `Wallets` and optionally credit `Cards` which they can use to pay for orders. 
+* Orders are shipped to user `Addresses` and the delivery speed and shipping costs are determined by options stored in the `Deliveries` table.
 * Users can interact further with the shop by
   * giving feedback which is stored in the `Feedbacks` table
   * complaining about recent orders which creates entries in the
     `Complaints` table
   * asking for fruit-pressing leftovers to be collected for recycled via
     the `Recycles` table.
-* The table `Captchas` stores all generated CAPTCHA questions and
+  * references to uploaded user photos and associated descriptions are stored in the `Memories` table.
+* The tables `Captchas` and `ImageCaptchas` store all generated CAPTCHA questions and
   answers for comparison with the users response.
 * The `Challenges` table would not be part of the data model of a normal
   e-commerce application, but for simplicities sake it is kept in the
@@ -707,13 +722,17 @@ features the following tables:
 
 ### Non-relational database
 
-Not all data of the Juice Shop resides in a relational schema. The
-product `reviews` are stored in a non-relational in-memory
-[MarsDB](https://github.com/c58/marsdb) instance. An example user
-`reviews` entry might look like the following inside MarsDB:
+Not all data of the Juice Shop resides in a relational schema. The user's product reviews are stored in a collection `reviews` within a non-relational in-memory
+[MarsDB](https://github.com/c58/marsdb) instance. All customer `orders` are also persisted in this fashion. An example user `reviews` entry might look like the following inside MarsDB:
 
 ```
 {"message":"One of my favorites!","author":"admin@juice-sh.op","product":1,"_id":"PaZjAKKMaxWieSF65"}
+```
+
+An `orders` entry might look like this:
+
+```
+{ "orderId": "fe01-28005c57431f8587", "totalPrice": 30.92, "products": [ { "quantity": 3, "name": "Apple Juice (1000ml)", "price": 1.99, "total": 5.97, "bonus": 0 }, { "quantity": 5, "name": "Raspberry Juice (1000ml)", "price": 4.99, "total": 24.950000000000003, "bonus": 0 } ], "bonus": 0, "eta": "0" }
 ```
 
 All interaction with MarsDB happens via the MongoDB query syntax.
@@ -728,17 +747,21 @@ initial data which makes the application usable out-of-the-box:
 ```typescript
 module.exports = async () => {
   const creators = [
+    createSecurityQuestions,
     createUsers,
     createChallenges,
     createRandomFakeUsers,
     createProducts,
     createBaskets,
     createBasketItems,
-    createFeedback,
+    createAnonymousFeedback,
     createComplaints,
-    createRecycles,
-    createSecurityQuestions,
-    createSecurityAnswers
+    createRecycleItem,
+    createOrders,
+    createQuantity,
+    createWallet,
+    createDeliveryMethods,
+    createMemories
   ]
 
   for (const creator of creators) {
@@ -747,19 +770,19 @@ module.exports = async () => {
 }
 ```
 
-For the `Users` and `Challenges` tables the rows to be inserted are
-defined via YAML files in the `data/static` folder. As the contents of
-the `Products` table and the non-relational `reviews` collection
-[can be customized](../part1/customization.md), it is populated based on
-the active configuration file. By default this is `config/default.yml`).
+For the default `Users` along with their `SecurityAnswers`, `Feedbacks`, `Addresses`, `Cards` and `Wallets` the data is hard-coded in a YAML file `data/static/users.yml`. For the static enumerations `SecurityQuestions` and `Deliveries` as well as Juice Shop's {{book.juiceShopNumberOfChallenges}} hacking `Challenges`, similar YAML files exist in `data/static`.
 
-The data in the `Feedbacks`, `SecurityQuestions`, `SecurityAnswers`,
-`Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically
+As the contents of
+the `Products` and `Memories` table as well as the non-relational `reviews` collection
+[can be customized](../part1/customization.md), they are populated based on
+the active configuration file. By default, this is `config/default.yml`.
+
+The data in the `Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically
 defined within the `datacreator.ts` script. They are so simple that a
-YAML declaration file seemed like overkill.
+YAML declaration file seemed like overkill. The same applies for some anonymous `Feedbacks` entries.
 
-The `Captchas` table remains empty on startup, as it will dynamically
-generate a new CAPTCHA every time the _Contact us_ page is visited.
+The `Captchas` and `ImageCaptchas` tables remain empty on startup, as they will dynamically
+generate a new CAPTCHA every time the _Customer Feedback_ or _Request Data Export_ pages are visited.
 
 ### File system
 
