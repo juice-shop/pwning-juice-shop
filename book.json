@@ -17,12 +17,12 @@
     }
   },
   "variables": {
-    "juiceShopVersion": "v13.3.0",
+    "juiceShopVersion": "v14.0.0-SNAPSHOT",
     "juiceShopCtfVersion": "v9.0.0",
     "ctfdVersion": "3.4 or higher",
     "rtbVersion": "3.3 or higher",
     "juiceShopNumberOfChallenges": 100,
-    "nodeVersions": "12.x, 14.x, 16.x and 17.x",
+    "nodeVersions": "14.x, 16.x and 17.x",
     "recommendedNodeVersion": "16.x",
     "herokuNodeVersion": "17.x",
     "backupSchemaVersion": "1",
