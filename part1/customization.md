@@ -70,10 +70,10 @@ find its schema along with an excerpt of the default settings.
 Offers technical configuration options for the web server hosting the
 application.
 
-| Property   | Description                                                                                                                        | Default |
-|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------|:--------|
-| `port`     | Port to launch the server on. Would be overwritten by `PORT` environment variable.                                                 | `3000`  |
-| `basePath` | When proxied in a subdirectory, this base path is used during redirects. Would be overwritten by `BASE_PATH` environment variable. | `''`    |
+| Property   | Description                                                                                                                                                                             | Default |
+|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
+| `port`     | Port to launch the server on. Would be overwritten by `PORT` environment variable.                                                                                                      | `3000`  |
+| `basePath` | When proxied in a subdirectory, this base path is used _during redirects_. The actual web server's base path is not affected. Would be overwritten by `BASE_PATH` environment variable. | `''`    |
 
 ### `application` section
 
