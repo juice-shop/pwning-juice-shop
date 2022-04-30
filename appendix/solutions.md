@@ -629,7 +629,7 @@ frame of zero height and width.
 ### Obtain a Deluxe Membership without paying for it
 
 1. If wallet is empty: a. Go to
-   `https://juice-shop.herokuapp.com/#/payment/deluxe` and look at the
+   `https://localhost:3000/#/payment/deluxe` and look at the
    available payment options for upgrading to a deluxe account b. Open
    devtools and inspect the pay button next to the "pay using wallet"
    option. c. Remove the disabled="true" attribute from the element to
