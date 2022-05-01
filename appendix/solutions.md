@@ -629,7 +629,7 @@ frame of zero height and width.
 ### Obtain a Deluxe Membership without paying for it
 
 1. If wallet is empty: a. Go to
-   `https://juice-shop.herokuapp.com/#/payment/deluxe` and look at the
+   <http://localhost:3000/#/payment/deluxe> and look at the
    available payment options for upgrading to a deluxe account b. Open
    devtools and inspect the pay button next to the "pay using wallet"
    option. c. Remove the disabled="true" attribute from the element to
@@ -2755,7 +2755,7 @@ opened on those._
    URL_. Open your browser's DevTools and watch the _Network_ tab.
 4. Type any URL (e.g. <https://placekitten.com/100/100>) into _Gravatr
    URL_ and click _Link Gravatar_. You will realize a request
-   <http://juice-shop-staging.herokuapp.com/profile/image/url> with the
+   <http://localhost:3000/profile/image/url> with the
    chosen <https://placekitten.com/100/100> as parameter `imageUrl`.
 5. You will find no HTTP request to <https://placekitten.com/100/100>
    going out from your browser, though. As the image was retrieved and
@@ -2823,7 +2823,7 @@ server's operation system and also their synonym command for `wget`.
 1. The author
    [tweeted about a new promotion video](https://twitter.com/bkimminich/status/1114621693299916800)
    back in `v8.5.0` from his personal account, openly spoilering the URL
-   <http://juice-shop-staging.herokuapp.com/promotion>
+   <http://localhost:3000/promotion>
 
    ![Tweet promoting a new in-app promotion video](img/tweet_promotion.png)
 2. After changing the video sported on the promotion page in `v12.5.0`,
