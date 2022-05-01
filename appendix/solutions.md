@@ -2181,7 +2181,7 @@ which was kindly published as a Gist on GitHub by
    program to create 3D models, which works with `.stl` files
 4. As no further hint on the blueprint filename or anything is given, a
    lucky guess or brute force attack is your only choice
-5. Download http://localhost:3000/public/images/products/JuiceShop.stl
+5. Download http://localhost:3000/assets/public/images/products/JuiceShop.stl
    to solve this challenge
 6. This model will actually allow you to 3D-print your own OWASP Juice
    Shop logo models!
