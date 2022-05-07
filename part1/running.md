@@ -137,7 +137,7 @@ launch a Docker container instance of the `latest` Juice Shop image
    clone [your own fork](https://github.com/juice-shop/juice-shop/fork)
    of the repository)
 3. Run `cd vagrant && vagrant up`
-4. Browse to [192.168.33.10](http://192.168.33.10)
+4. Browse to [http://192.168.56.110](http://192.168.56.110)
 
 ### Amazon EC2 Instance
 
