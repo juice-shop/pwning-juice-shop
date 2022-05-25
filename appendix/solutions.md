@@ -2333,6 +2333,8 @@ loop`._
 The process function, is therefore set to null and any further attempt
 by the bot to process a user's message would result in an error
 
+![Killed chatbot](img/killed-chatbot.png))
+
 ### Gain read access to an arbitrary local file on the web server
 
 🛠️ **TODO**
