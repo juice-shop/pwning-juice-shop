@@ -75,7 +75,7 @@ This challenge was already covered in
 * This challenge asks you to act like an ethical hacker
 * As one of the good guys, would you just start attacking an application
   without consent of the owner?
-* You also might want to ready the security policy or any bug bounty
+* You also might want to read the security policy or any bug bounty
   program that is in place
 
 [^1]: https://en.wikipedia.org/wiki/Privacy_policy
