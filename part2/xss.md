@@ -205,6 +205,7 @@ how hard it is to successfully place the XSS payload in the application.
 * The mentioned "marketing collateral" might have been publicly
   advertised by the Juice Shop but is not necessarily part of its
   sitemap yet
+* It might help to perform some online searches for structurally similar web projects once you get stuck.
 * This challenge will always partially keep you blindfolded, no matter
   how hard you do research and analysis.
 

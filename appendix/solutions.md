@@ -2879,18 +2879,25 @@ server's operation system and also their synonym command for `wget`.
 14. This likely means that there is a deeper directory structure in
     which `assets/` resides.
 15. This actual directory structure on the server is created by the
-    AngularCLI tool when it compiles the application and looks as
-    follows: `frontend/dist/frontend/assets/`.
-16. Prepare a ZIP file with a `owasp_promo.vtt` inside that contains the
+    AngularCLI tool when it compiles the application, but is unfortunately not fully leaked anywhere in the client-side code.
+16. You can get a hint on a possible base directory `frontend/` from <http://localhost:3000/main.js> and several other JavaScript files you find in the _Sources_ tab of your Browser's DevTools from the fact that they all start with `"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[])` where `frontend` is the Angular project name.
+17. Trying `../../frontend/assets/public/videos/` will still fail as your Zip Slip directory traversal payload.
+18. Either by intense brute-forcing, lucky guessing or heavy googling you might eventually end up with a path prefix of
+    `frontend/dist/frontend/` in which `assets/` resides on the server. Thus, the path you need to work with, is `frontend/dist/frontend/assets/`. Note that there really is no "right" way to find this out, but here are some possible ways:
+    * You can easily find many Angular examples where some `dist/` folder is involved in the application packaging
+    * Via Google you might stumble across <https://vorozco.com/blog/2019/2019-09-11-Packagin-Angular-8-Apps-War.html> which mentions `<directory>src/main/frontend/dist/frontend</directory>` as their package folder.
+    * You could create a list of possible involved package names and then create different Zip Slip payloads for these, adding one and eventually two additional recursions into deeper directory levels. 
+    * As long as `frontend` and `dist` are in your list, you will end up with the right permutation of `frontend/dist/frontend` on a depth level of 3 eventually.
+20. Prepare a ZIP file with a `owasp_promo.vtt` inside that contains the
     prescribed payload of ``</script><script>alert(`xss`)</script>``
     with `zip exploit.zip
     ../../frontend/dist/frontend/assets/public/video/owasp_promo.vtt`
     (on Linux).
-17. Upload the ZIP file on <http://localhost:3000/#/complain>.
-18. The challenge notification will not trigger immediately, as it
+21. Upload the ZIP file on <http://localhost:3000/#/complain>.
+22. The challenge notification will not trigger immediately, as it
     requires you to actually execute the payload by visiting
     <http://localhost:3000/promotion> again.
-19. You will see the alert box and once you go _Back_ the challenge
+23. You will see the alert box and once you go _Back_ the challenge
     solution should trigger accordingly.
 
 [^1]: <https://en.wikipedia.org/wiki/ROT13>
