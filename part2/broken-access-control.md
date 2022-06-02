@@ -174,7 +174,7 @@ challenge instruction to make it light up green on the score board:
 * Original link tag in the description: `<a
   href="https://wiki.owasp.org/index.php/O-Saft"
   target="_blank">More...</a>`
-* Expected link tag in the description: `<a href="http://kimminich.de"
+* Expected link tag in the description: `<a href="https://owasp.slack.com"
   target="_blank">More...</a>`
 
 * _Theoretically_ there are three possible ways to beat this challenge:
