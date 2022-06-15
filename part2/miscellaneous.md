@@ -7,12 +7,12 @@
 | Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐          |
 | Privacy Policy  | Read our privacy policy.                                           | ⭐          |
 | Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐          |
-| Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐        |
+| Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐         |
 
 ### Receive a coupon code from the support chatbot
 
 This challenge is about nagging the support chatbot to hand out a coupon
-code that can subsequently be used to get discount during the checkout
+code that can subsequently be used to get a discount during the checkout
 process.
 
 * The bot is reluctant to give you a coupon as it's coming up with
@@ -75,7 +75,7 @@ This challenge was already covered in
 * This challenge asks you to act like an ethical hacker
 * As one of the good guys, would you just start attacking an application
   without consent of the owner?
-* You also might want to ready the security policy or any bug bounty
+* You also might want to read the security policy or any bug bounty
   program that is in place
 
 [^1]: https://en.wikipedia.org/wiki/Privacy_policy
