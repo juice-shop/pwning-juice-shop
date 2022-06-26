@@ -79,6 +79,7 @@ issue.
 
 ### Linux
 
+- **If you are using Kali Linux to build and/or run OWASP Juice Shop, please try another Linux distro.** Kali has proven to be very flaky as a regular runtime environment.
 - If `npm install` fails on Ubuntu with the pre-installed Node.js please
   install the latest release of Node.js {{book.recommendedNodeVersion}}
   from scratch and try again.
@@ -107,11 +108,11 @@ issue.
 
 ### SQLite
 
-- If all startup checks show `(OK)` but you see `SequelizeDatabaseError:
+- ~~If all startup checks show `(OK)` but you see `SequelizeDatabaseError:
   SQLITE_ERROR: no such table: <some table name>` errors right
   afterwards, please check if the file `data/juiceshop.sqlite` exists.
   If so just stop and restart your server and this suspected race
-  condition issue shouid go away.
+  condition issue shouid go away.~~ _(Should no longer occur with v14.1.0 or later)_
 
 ### Vagrant
 
@@ -138,6 +139,6 @@ issue.
   platforms like Heroku.
 - You may find it easier to find vulnerabilities using a pen test tool.
   We strongly recommend
-  [Zed Attack Proxy](https://code.google.com/p/zaproxy/) which is open
+  [OWASP ZAP (Zed Attack Proxy)](https://www.zaproxy.org/) which is open
   source and very powerful, yet beginner friendly.
 
