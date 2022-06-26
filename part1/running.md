@@ -4,18 +4,20 @@
 
 To run a single instance of Juice Shop the following memory and CPU
 requirements apply. These resources are needed for the Juice Shop
-application process itself, and they are based on the 14-day average
-process CPU and RAM usage of the official public demo instance running
-`v13.2.1`. Any additional resources needed by your environment (e.g. Docker or Vagrant)
-come on top.
+application process itself, and they are based on
+* a 30-day average
+process CPU and RAM usage of the official public demo instance running `v14.0.1` of Juice Shop
+* a training with ~30 participants on a [MultiJuicer](../appendix/trainers.md#hosting-individual-instances-for-multiple-users) cluster hosted on OpenShift with Juice Shop `v14.0.1`
+
+Please note that any additional resources needed by your environment (e.g. Docker or Vagrant) come on top.
 
 * **Minimum** system specification
-  * `160 MB` RAM
-  * `100 millicpu` CPU
-  * `300 MB` free disk space
-* **Recommended** system specification
   * `256 MB` RAM
   * `200 millicpu` CPU
+  * `300 MB` free disk space
+* **Recommended** system specification
+  * `384 MB` RAM
+  * `400 millicpu` CPU
   * `800 MB` free disk space
 
 🗄️ _If installing [from sources](#from-sources) without the ` --depth 1` option, an additional `700
