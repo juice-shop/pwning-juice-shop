@@ -9,7 +9,7 @@ skip_commits:
   files:
     - LICENSE
 environment:
-  nodejs_version: 18
+  nodejs_version: 12
 platform:
   - x64
 install:
