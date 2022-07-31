@@ -4,7 +4,7 @@
   "language": "en",
   "variables": {
     "juiceShopVersion": "v14.1.0",
-    "juiceShopCtfVersion": "v9.0.0",
+    "juiceShopCtfVersion": "v9.1.0",
     "ctfdVersion": "3.4 or higher",
     "rtbVersion": "3.3 or higher",
     "juiceShopNumberOfChallenges": 100,
