@@ -18,12 +18,12 @@
 
 | Name                   | Description                                                                                                     | Difficulty |
 |:-----------------------|:----------------------------------------------------------------------------------------------------------------|:-----------|
-| CAPTCHA Bypass         | Submit 10 or more customer feedbacks within 10 seconds.                                                         | ⭐⭐⭐      |
+| CAPTCHA Bypass         | Submit 10 or more customer feedbacks within 20 seconds.                                                         | ⭐⭐⭐      |
 | Extra Language         | Retrieve the language file that never made it into production.                                                  | ⭐⭐⭐⭐⭐   |
 | Multiple Likes         | Like any review at least three times as the same user.                                                          | ⭐⭐⭐⭐⭐⭐  |
 | Reset Morty's Password | Reset Morty's password via the Forgot Password mechanism with _his obfuscated answer_ to his security question. | ⭐⭐⭐⭐⭐   |
 
-### Submit 10 or more customer feedbacks within 10 seconds
+### Submit 10 or more customer feedbacks within 20 seconds
 
 The _Contact Us_ form for customer feedback contains a CAPTCHA to
 protect it from being abused through scripting. This challenge is about
@@ -44,7 +44,7 @@ beating this automation protection.
 
 * You could prepare 10 browser tabs, solving every CAPTCHA and filling
   out the each feedback form. Then you'd need to very quickly switch
-  through the tabs and submit the forms in under 10 seconds total.
+  through the tabs and submit the forms in under 20 seconds total.
 * Should the Juice Shop ever decide to change the challenge into
   _"Submit 100 or more customer feedbacks within 60 seconds"_ or worse,
   you'd probably have a hard time keeping up with any tab-switching
