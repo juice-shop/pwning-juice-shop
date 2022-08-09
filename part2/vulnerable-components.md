@@ -146,7 +146,13 @@ it is not in use any more in {{book.juiceShopVersion}}.
 
 ### Gain read access to an arbitrary local file on the web server
 
-🛠️ **TODO**
+In this challenge you need to exploit a vulnerable component to read arbitrary files on the web server. Local File Read (LFR) vulnerability together with [Directory Traversal attacks](https://en.wikipedia.org/wiki/Directory_traversal_attack) can be very dangerous because allow attackers to gain unauthorized access to the file system.
+
+* You should read up on vulnerabilities in popular NodeJs template engines
+* Look for the vulnerable endpoint (hint: once you find it, you might forget it)
+* `500 Internal Server Error` is always an interesting status code
+* Fuzzing can help
+
 
 ### Inform the development team about a danger to some of their credentials
 
