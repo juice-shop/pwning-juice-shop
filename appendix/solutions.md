@@ -2337,7 +2337,19 @@ by the bot to process a user's message would result in an error
 
 ### Gain read access to an arbitrary local file on the web server
 
-🛠️ **TODO**
+To solve this challenge, the easiest way would be to look for ["ExpressJs Local File Read vulnerability"](https://www.google.com/search?q=ExpressJs+Local+File+Read+vulnerability) in Google. Another approach (the one described below) is to fuzz the parameters to look for an unhandled error.
+
+1. Login with any user account and go to "Account"-> "Privacy and Security" -> "Request Data Erasure".
+There is a form where you can ask for data erasure (as per article 17 GDPR) 
+
+2. Fill in the fields ("Confirm Email Address" and "Answer") with random data and submit. Using browser's developer tools or an intercepting proxy, notice that a POST request is issued with 2 body parameters (`email` and `securityAnswer`)
+
+3. Using your favorite fuzzing tool and wordlist, start to fuzz the body parameters. 
+You'll notice an unhandled error when the `layout` parameter is provided (the server returns a `500 Internal Server Error` response status code). Also, notice that the body of the response says **"Error: ENOENT: no such file or directory"** indicating that we hit the LFR vulnerability. We can also see the full pathname of the file the application is trying to access (which is `<root_directory>/juice-shop/views/<our_input_filename>`)
+
+4. Based on previous error message, we can guess (or bruteforce) a valid filename. For example, issuing a POST request with the following body will solve the challenge: `layout=../package.json` 
+
+This vulnerability arises when ExpressJs is using Handlebars as template engine and it can even lead to RCE in some cases (more details [here](https://blog.shoebpatel.com/2021/01/23/The-Secret-Parameter-LFR-and-Potential-RCE-in-NodeJS-Apps/)).
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 
