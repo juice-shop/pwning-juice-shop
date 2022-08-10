@@ -146,13 +146,16 @@ it is not in use any more in {{book.juiceShopVersion}}.
 
 ### Gain read access to an arbitrary local file on the web server
 
-In this challenge you need to exploit a vulnerable component to read arbitrary files on the web server. Local File Read (LFR) vulnerability together with [Directory Traversal attacks](https://en.wikipedia.org/wiki/Directory_traversal_attack) can be very dangerous because allow attackers to gain unauthorized access to the file system.
+> A **file inclusion vulnerability** is a type of web vulnerability that is most commonly found to affect web applications that rely on a scripting run time. This issue is caused when an application builds a path to executable code using an attacker-controlled variable in a way that allows the attacker to control which file is executed at run time. A file include vulnerability is distinct from a generic directory traversal attack, in that directory traversal is a way of gaining unauthorized file system access, and a file inclusion vulnerability subverts how an application loads code for execution. Successful exploitation of a file inclusion vulnerability will result in remote code execution on the web server that runs the affected web application. An attacker can use remote code execution to create a web shell on the web server, which can be used for website defacement.
+>
+> **Remote file inclusion (RFI)** occurs when the web application downloads and executes a remote file. These remote files are usually obtained in the form of an HTTP or FTP URI as a user-supplied parameter to the web application.
+>
+> **Local file inclusion (LFI)** is similar to a remote file inclusion vulnerability except instead of including remote files, only local files i.e. files on the current server can be included for execution. This issue can still lead to remote code execution by including a file that contains attacker-controlled data such as the web server's access logs.[^5]
 
-* You should read up on vulnerabilities in popular NodeJs template engines
-* Look for the vulnerable endpoint (hint: once you find it, you might forget it)
+* You should read up on Local File Read (LFR) vulnerabilities in popular NodeJS template engines
+* Look for an easily forgettable endpoint in Juice Shop to test out the LFR attack
 * `500 Internal Server Error` is always an interesting status code
-* Fuzzing can help
-
+* Fuzzing can also help with this challenge
 
 ### Inform the development team about a danger to some of their credentials
 
@@ -221,4 +224,5 @@ contains known vulnerabilities.
 [^2]: https://tools.ietf.org/html/rfc7519
 [^3]: https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
 [^4]: https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm
+[^5]: https://en.wikipedia.org/wiki/File_inclusion_vulnerability
 
