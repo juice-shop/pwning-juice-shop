@@ -2337,7 +2337,13 @@ by the bot to process a user's message would result in an error
 
 ### Gain read access to an arbitrary local file on the web server
 
-🛠️ **TODO**
+1. Log in with any user account and go to _Account_ > _Privacy and Security_ > _Request Data Erasure_.
+2. Fill in the fields _Confirm Email Address_ and _Answer_ with random data and submit. Using your browser's developer tools or an intercepting proxy, notice that a `POST` request is issued with two body parameters (`email` and `securityAnswer`)
+3. Using your favorite fuzzing tool and wordlist, start to fuzz the body parameters. 
+4. Notice an unhandled `500 Internal Server Error` when a parameter `layout` is provided in the request. Also, notice that the error response says `Error: ENOENT: no such file or directory` indicating that we might have hit the LFR vulnerability. We can also see the full pathname of the file the application is trying to access: `<root_directory>/juice-shop/views/<value_of_layout_parameter>`
+4. Based on the previous error message, we can guess (or bruteforce) a valid filename. For example, issuing another `POST` request with the following body will solve the challenge: `layout=../package.json` 
+
+This vulnerability arises when ExpressJS is using Handlebars as a template engine and it can even lead to RCE in some cases. You can read more about it in this [blog post by Juice Shop's former Google Summer of Code student Shoeb Patel](https://blog.shoebpatel.com/2021/01/23/The-Secret-Parameter-LFR-and-Potential-RCE-in-NodeJS-Apps/).
 
 ## ⭐⭐⭐⭐⭐⭐ Challenges
 
