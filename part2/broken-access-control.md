@@ -84,13 +84,13 @@ the default cookie handling of browsers. It is strongly recommended to
 understand these changes before attempting this challenge, as otherwise
 it might not be solvable:
 * An overview of the planned changes to `SameSite` can be found in https://web.dev/samesite-cookie-recipes/.
-* At the time of this writing, the challenge should work fine with Firefox.
+* At the time of this writing, the challenge should work fine with Firefox 96.x or older.
 * If you are in doubt, you can check the behavior of your browser using
   the website https://samesite-sandbox.glitch.me/ - if you see the text
   "set ❌" in the first row below the column "Cross-site?", your browser
   uses the old default and should be able to solve the challenge.
-* Chrome can be temporarily switched back to the old behavior by starting
-  it with the option `--disable-features=SameSiteByDefaultCookies`.
+* Although Chrome can be temporarily switched back to the old behavior by starting
+  it with the option `--disable-features=SameSiteByDefaultCookies`, the CSRF attack could still not be executed anymore in Chrome 104.x or newer.
 
 ### Find the hidden easter egg
 
