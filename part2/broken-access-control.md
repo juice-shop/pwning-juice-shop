@@ -90,7 +90,7 @@ it might not be solvable:
   "set ❌" in the first row below the column "Cross-site?", your browser
   uses the old default and should be able to solve the challenge.
 * Although Chrome can be temporarily switched back to the old behavior by starting
-  it with the option `--disable-features=SameSiteByDefaultCookies`, the CSRF attack could still not be executed anymore in Chrome 104.x or newer.
+  it with the option `--disable-features=SameSiteByDefaultCookies`, the CSRF attack will probably not execute anymore in Chrome 80.x or newer.
 
 ### Find the hidden easter egg
 
