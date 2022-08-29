@@ -17,7 +17,7 @@ install:
   - 'node --version && npm --version'
   - 'npm install graceful-fs@latest --save'
   - 'npm i -g gitbook-cli'
-  - 'choco install calibre'
+  - 'choco install calibre --version 5.44.0'
   - 'refreshenv'
   - 'npm i -g svgexport@0.4.2'
 build_script:
