@@ -124,9 +124,9 @@ that you also enable port forwarding from host `127.0.0.1:3000` to
 The official Docker image is built automatically during CI/CD for
 `linux/amd64` (based on a Node.js {{book.recommendedNodeVersion}} image) as well as `linux/arm64` and `linux/arm/v7` (based on a Node.js 14 image) and both are pushed to DockerHub. The following tagged images are available on DockerHub:
 
-* Stable version from `master` branch: `latest` for AMD and `latest-arm` for ARM
-* Development version from `develop` branch: `snapshot` for AMD and `snapshot-arm` for ARM
-* Tagged versioned releases: `vX.Y.Z` for AMD and `vX.Y.Z-arm` for ARM
+* Stable version from `master` branch: `latest` for AMD/ARM64 and `latest-arm` for ARMv7
+* Development version from `develop` branch: `snapshot` for AMD/ARM64 and `snapshot-arm` for ARMv7
+* Tagged versioned releases: `vX.Y.Z` for AMD/ARM64 and `vX.Y.Z-arm` for ARMv7
 
 ### Vagrant
 
