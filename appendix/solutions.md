@@ -13,6 +13,19 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 ## ⭐ Challenges
 
+### Receive a coupon code from the support chatbot
+
+1. Log in as any user.
+2. Click _Support Chat_ in the sidebar menu to visit
+   <http://localhost:3000/#/chatbot>.
+3. After telling the chatbot your name you can start chatting with it.
+4. Ask it something similar to "Can I have a coupon code?" or "Please
+   give me a discount!" and it will most likely decline with some
+   unlikely excuse.
+5. Keep asking for discount again and again until you finally receive a
+   10% coupon code for the current month! This also solves the challenge
+   immediately.
+
 ### Use the bonus payload in the DOM XSS challenge
 
 1. Solve the [Perform a DOM XSS attack](#perform-a-dom-xss-attack)
@@ -64,6 +77,11 @@ situation and solve this challenge immediately:
    available on targets on a path of `/metrics`."
 3. Visit <http://localhost:3000/metrics> to view the actual Prometheus
    metrics of the Juice Shop and solve this challenge
+
+### Close multiple "Challenge solved"-notifications in one go
+
+🛠️ **TODO**
+
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
@@ -209,19 +227,6 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the Angular client.
-
-### Receive a coupon code from the support chatbot
-
-1. Log in as any user.
-2. Click _Support Chat_ in the sidebar menu to visit
-   <http://localhost:3000/#/chatbot>.
-3. After telling the chatbot your name you can start chatting with it.
-4. Ask it something similar to "Can I have a coupon code?" or "Please
-   give me a discount!" and it will most likely decline with some
-   unlikely excuse.
-5. Keep asking for discount again and again until you finally receive a
-   10% coupon code for the current month! This also solves the challenge
-   immediately.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
