@@ -112,7 +112,7 @@ issue.
   SQLITE_ERROR: no such table: <some table name>` errors right
   afterwards, please check if the file `data/juiceshop.sqlite` exists.
   If so just stop and restart your server and this suspected race
-  condition issue shouid go away.~~ _(Should no longer occur with v14.1.0 or later)_
+  condition issue shouid go away.~~ _(Should no longer occur with v14.3.0 or later)_
 
 ### Vagrant
 
