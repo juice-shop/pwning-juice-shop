@@ -486,8 +486,7 @@ running `npm run lint:config -- -f /path/to/myConfig.yml`. This
 validation automatically happens on server startup as well.
 
 To verify if your custom configuration will not break any of the
-challenges, you should run the end-to-end tests via `npm run
-protractor`. If they pass, all challenges will be working fine!
+challenges, you should run the end-to-end tests via `npm start & npm run cypress:open &`. If they pass, all challenges will be working fine!
 
 ## Material Color Themes
 

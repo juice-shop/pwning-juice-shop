@@ -125,12 +125,9 @@ solving the available hacking challenges:
 * \>89% after executing all
   [Integration tests](../part3/contribution.md#integration-tests) in <1
   minute on the author's Windows 10 laptop
-* \>88% after executing all
+* \>90% after executing all
   [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <20
-  minutes on the author's Windows 10 laptop
-* \>89% after executing all
-  [End-to-end tests](../part3/codebase.md#end-to-end-tests) in <30
-  minutes during CI/CD on Windows Server 2019 
+  minutes during GitHub CI/CD on Ubuntu 
 
 ## Limitations
 
