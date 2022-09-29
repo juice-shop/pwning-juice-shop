@@ -5,6 +5,7 @@
 | Name            | Description                                                        | Difficulty |
 |:----------------|:-------------------------------------------------------------------|:-----------|
 | Bully Chatbot   | Receive a coupon code from the support chatbot.                    | ⭐          |
+| Mass Dispel     | Close multiple "Challenge solved"-notifications in one go.         | ⭐          |
 | Privacy Policy  | Read our privacy policy.                                           | ⭐          |
 | Score Board     | Find the carefully hidden 'Score Board' page.                      | ⭐          |
 | Security Policy | Behave like any "white hat" should before getting into the action. | ⭐⭐         |
@@ -19,6 +20,10 @@ process.
   various excuses for not giving you one
 * Asking over and over again like a little kid might actually help you
   succeed in this case
+ 
+### Close multiple "Challenge solved"-notifications in one go
+
+🛠️ **TODO** 
 
 ### Read our privacy policy
 

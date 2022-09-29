@@ -13,6 +13,19 @@ are compatible with {{book.juiceShopVersion}} of OWASP Juice Shop._
 
 ## ⭐ Challenges
 
+### Receive a coupon code from the support chatbot
+
+1. Log in as any user.
+2. Click _Support Chat_ in the sidebar menu to visit
+   <http://localhost:3000/#/chatbot>.
+3. After telling the chatbot your name you can start chatting with it.
+4. Ask it something similar to "Can I have a coupon code?" or "Please
+   give me a discount!" and it will most likely decline with some
+   unlikely excuse.
+5. Keep asking for discount again and again until you finally receive a
+   10% coupon code for the current month! This also solves the challenge
+   immediately.
+
 ### Use the bonus payload in the DOM XSS challenge
 
 1. Solve the [Perform a DOM XSS attack](#perform-a-dom-xss-attack)
@@ -64,6 +77,11 @@ situation and solve this challenge immediately:
    available on targets on a path of `/metrics`."
 3. Visit <http://localhost:3000/metrics> to view the actual Prometheus
    metrics of the Juice Shop and solve this challenge
+
+### Close multiple "Challenge solved"-notifications in one go
+
+🛠️ **TODO**
+
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
@@ -209,19 +227,6 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
 
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the Angular client.
-
-### Receive a coupon code from the support chatbot
-
-1. Log in as any user.
-2. Click _Support Chat_ in the sidebar menu to visit
-   <http://localhost:3000/#/chatbot>.
-3. After telling the chatbot your name you can start chatting with it.
-4. Ask it something similar to "Can I have a coupon code?" or "Please
-   give me a discount!" and it will most likely decline with some
-   unlikely excuse.
-5. Keep asking for discount again and again until you finally receive a
-   10% coupon code for the current month! This also solves the challenge
-   immediately.
 
 ### Use a deprecated B2B interface that was not properly shut down
 
@@ -478,37 +483,48 @@ The latter is actually the way it is implemented in the end-to-end test
 for this challenge:
 
 ```javascript
-  let comment, rating, submitButton, captcha
-
-  beforeEach(() => {
-    browser.get('/#/contact')
-    comment = element(by.id('comment'))
-    rating = $$('.br-unit').last()
-    captcha = element(by.id('captchaControl'))
-    submitButton = element(by.id('submitButton'))
-    solveNextCaptcha()
-  })
-
   describe('challenge "captchaBypass"', () => {
-    it('should be possible to post 10 or more customer feedbacks in less than 10 seconds', () => {
-      for (var i = 0; i < 11; i++) {
-        comment.sendKeys('Spam #' + i)
-        rating.click()
-        submitButton.click()
-        browser.sleep(200)
-        solveNextCaptcha() // first CAPTCHA was already solved in beforeEach
-      }
-    })
+   it('should be possible to post 10 or more customer feedbacks in less than 20 seconds', () => {
+      cy.window().then(async () => {
+         for (let i = 0; i < 15; i++) {
+            const response = await fetch(
+                    `${Cypress.env('baseUrl')}/rest/captcha/`,
+                    {
+                       method: 'GET',
+                       headers: {
+                          'Content-type': 'text/plain'
+                       }
+                    }
+            )
+            if (response.status === 200) {
+               const responseJson = await response.json()
 
-    protractor.expect.challengeSolved({ challenge: 'CAPTCHA Bypass Tier 1' })
-  })
+               await sendPostRequest(responseJson)
+            }
 
-  function solveNextCaptcha () {
-    element(by.id('captcha')).getText().then((text) => {
-      const answer = eval(text).toString() // eslint-disable-line no-eval
-      captcha.sendKeys(answer)
-    })
-  }
+            async function sendPostRequest (captcha: {
+               captchaId: number
+               answer: string
+            }) {
+               await fetch(`${Cypress.env('baseUrl')}/api/Feedbacks`, {
+                  method: 'POST',
+                  cache: 'no-cache',
+                  headers: {
+                     'Content-type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                     captchaId: captcha.captchaId,
+                     captcha: `${captcha.answer}`,
+                     comment: `Spam #${i}`,
+                     rating: 3
+                  })
+               })
+            }
+         }
+      })
+      cy.expectChallengeSolved({ challenge: 'CAPTCHA Bypass' })
+   })
+})
 ```
 
 _It is worth noting that both alternate solutions would still work even

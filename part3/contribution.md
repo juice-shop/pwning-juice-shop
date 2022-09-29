@@ -141,9 +141,9 @@ automatically without breaking your code.
 ### Testing
 
 ```bash
-npm test           # run all unit tests
-npm run frisby     # run all API integration tests
-npm run protractor # run all end-to-end tests
+npm test                           # run all unit tests
+npm run frisby                     # run all API integration tests
+npm start & npm run cypress:open & # run all end-to-end tests
 ```
 
 Pull Requests are verified to pass all the following test stages during
@@ -159,7 +159,7 @@ they behave as intended.
 There is a full suite containing isolated unit tests
 
 * for all client-side code in `frontend/src/app/**/*.spec.ts`
-* for the server-side routes and libraries in `test/server/*Spec.js`
+* for the server-side routes and libraries in `test/server/*Spec.ts`
 
 ```bash
 npm test
@@ -167,7 +167,7 @@ npm test
 
 #### Integration tests
 
-The integration tests in `test/api/*Spec.js` verify if the backend for
+The integration tests in `test/api/*Spec.ts` verify if the backend for
 all normal use cases of the application works. All server-side
 vulnerabilities are also tested.
 
@@ -180,19 +180,19 @@ working internet connection is recommended.
 
 #### End-to-end tests
 
-The e2e test suite in `test/e2e/*Spec.js` verifies if all client- and
+The e2e test suite in `cypress/integration/e2e/*Spec.ts` verifies if all client- and
 server-side vulnerabilities are exploitable. It passes only when all
 challenges are solvable on the score board.
 
 ```bash
-npm run protractor
+npm start & npm run cypress:open &
 ```
 
 The end-to-end tests require a locally installed Google Chrome browser
 and internet access to be able to pass.
 
 If you have a web proxy configured via `HTTP_PROXY` environment
-variable, the end-to-end tests will honor this setting. This can be
+variable, the end-to-end tests [will honor this setting](https://docs.cypress.io/guides/references/proxy-configuration). This can be
 useful to e.g. run the tests through tools like
 [OWASP ZAP](https://www.zaproxy.org/) or Burpsuite.
 

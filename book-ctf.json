@@ -3,11 +3,11 @@
   "author": "Björn Kimminich",
   "language": "en",
   "variables": {
-    "juiceShopVersion": "v14.2.0",
+    "juiceShopVersion": "v14.3.0",
     "juiceShopCtfVersion": "v9.1.2",
     "ctfdVersion": "3.4 or higher",
     "rtbVersion": "3.3 or higher",
-    "juiceShopNumberOfChallenges": 100,
+    "juiceShopNumberOfChallenges": 101,
     "nodeVersions": "14.x, 16.x and 18.x",
     "recommendedNodeVersion": "16.x",
     "herokuNodeVersion": "18.x",
