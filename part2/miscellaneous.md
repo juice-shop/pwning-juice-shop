@@ -23,7 +23,12 @@ process.
  
 ### Close multiple "Challenge solved"-notifications in one go
 
-🛠️ **TODO** 
+This "challenge" is nothing more than an opportunity to learn about a convenience feature that allows users to close
+multiple "Challenge solved"-notifications at once.
+
+* This challenge is most easily solvable immediately [after a server restart](../part1/running.md#_self-healing_-feature)
+* You can find all the information you need to solve this challenge in the [Challenge tracking](../part1/challenges.md) chapter
+* Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature
 
 ### Read our privacy policy
 

@@ -80,8 +80,11 @@ situation and solve this challenge immediately:
 
 ### Close multiple "Challenge solved"-notifications in one go
 
-🛠️ **TODO**
+1. Read the [Success Notifications](../part1/challenges.md#success-notifications) section
+2. It will explain that `Shift`-clicking the _X_-button on any "Challenge solved"-notification will close all open notifications of this kind
+3. Solve any other challenge (or multiple) and then `Shift`-click the _X_-button on it to solve this challenge
 
+If you already have solved all but this challenge, you can just restart your Juice Shop instance to see all previous notifications again and then perform step 3 as described above.
 
 ### Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
