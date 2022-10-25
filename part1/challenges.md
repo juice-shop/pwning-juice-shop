@@ -326,8 +326,8 @@ all stored XSS vulnerabilities can - by their nature - be abused to
 perform harmful attacks on unsuspecting visitors.
 
 For safety reasons all potentially dangerous challenges are disabled
-(along with their underlying vulnerabilities) in containerized
-environments. By default, this applies to Docker and Heroku. These
+(along with their underlying vulnerabilities) when a containerized
+environment is detected. By default, this applies to Docker, Heroku, and Gitpod. Dangerous
 challenges are marked as 'unavailable' in the scoreboard as can be seen
 in the screenshot above.
 
