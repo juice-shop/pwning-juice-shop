@@ -30,39 +30,6 @@ In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
 endeavours.
 
-### One-click cloud instance
-
-!["Deploy to Heroku" button](img/deploy-to-heroku.svg)
-
-☠️ _Please note that [the Heroku free tier **will become unavailable in November 2022**](https://blog.heroku.com/next-chapter)! If and when a suitable replacement PaaS has been found for free, individual and legally hackable instances of Juice Shop, it will be documented here and in the project's `README.md`!_
-
-~~The quickest way to get a running instance of Juice Shop is to click the
-_Deploy to Heroku_ button in the
-[_Setup_ section of the `README.md` on GitHub](https://github.com/juice-shop/juice-shop#deploy-on-heroku-free-0month-dyno).
-You have to log in with your Heroku account and will then receive a
-single instance (or _dyno_ in Heroku lingo) hosting the application. If
-you have forked the Juice Shop repository on GitHub, the _Deploy to
-Heroku_ button will deploy your forked version of the application. To
-deploy the latest official version you must use the button of the
-original repository at https://github.com/juice-shop/juice-shop.~~
-
-~~As the Juice Shop is supposed to be hacked and attacked - maybe even
-with aggressive brute-force scripts or automated scanner software - one
-might think that Heroku would not allow such activities on their cloud
-platform. Quite the opposite! When describing the intended use of Juice
-Shop to the Heroku support team they answered with:~~
-
-> ~~That sounds like a great idea. So long as you aren't asking people to
-> DDoS it that should be fine. People are certainly welcome to try their
-> luck against the platform and your app so long as it's not DDoS.~~
-
-~~As a little related anecdote, the OWASP Juice Shop was even crowned
-[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6)
-and once more
-[in March 2019](https://hello.heroku.com/webmail/36622/844098776/9fe33b8eda9eb79bca7ee569888b1874):~~
-
-!["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
-
 ### Local installation
 
 To run the Juice Shop locally you need to have
@@ -232,6 +199,26 @@ gcloud compute firewall-rules create juice-rule --allow tcp:3000
 
 4. Your container is now running and available at
    `http://<EXTERNAL_IP>:3000/`
+
+### Heroku
+
+!["Deploy to Heroku" button](img/deploy-to-heroku.svg)
+
+1. Click the
+   _Deploy to Heroku_ button in the
+   [_Setup_ section of the `README.md` on GitHub](https://github.com/juice-shop/juice-shop#heroku)
+
+If you have forked the Juice Shop repository on GitHub, the _Deploy to
+Heroku_ button will deploy your forked version of the application. To
+deploy the latest official version you must use the button of the
+original repository at <https://github.com/juice-shop/juice-shop>.
+
+_As a little related anecdote, the OWASP Juice Shop was crowned
+[Heroku Button of the Month in November 2017](https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6)
+and once more
+[in March 2019](https://hello.heroku.com/webmail/36622/844098776/9fe33b8eda9eb79bca7ee569888b1874):_
+
+!["Heroku Button of the Month" November 2017](img/heroku-button-of-the-month.png)
 
 ### Gitpod
 
