@@ -816,7 +816,7 @@ only a `404 Error: ENOENT: no such file or directory, stat
 2. You will notice that the security question Bjoern chose is _Name of your
    favorite pet?_
 3. Find Bjoern's Twitter profile at <https://twitter.com/bkimminich>
-4. Going through his status updates or media you'll spot a few photos of a cute cat and eventually also find the Tweet <https://twitter.com/bkimminich/status/1441659996589207555>
+4. Going through his status updates or media you'll spot a few photos of a cute cat and eventually also find the Tweet <https://twitter.com/bkimminich/status/1441659996589207555> or maybe the more recent <https://twitter.com/bkimminich/status/1594985736650035202>
 5. The text of this Tweet spoilers the name of the cat as "Zaya"
 8. Visit <http://localhost:3000/#/forgot-password> again and once more provide
    `bjoern@owasp.org` as your _Email_.
@@ -826,6 +826,8 @@ only a `404 Error: ENOENT: no such file or directory, stat
 11. Click _Change_ to solve this challenge
 
 ![Zaya "rowing" with a half-amputated hind leg in a Tweet of Bjoern](img/zaya_rowing.png)
+
+![Zaya in a box in another Tweet of Bjoern](img/zaya_flippered.png)
 
 #### Alternative name-drop on YouTube
 
