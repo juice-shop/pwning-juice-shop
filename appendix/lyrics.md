@@ -46,3 +46,19 @@ You can order tasty beverages in any quantity
 Juice Shop! Juice Shop!
 Just don't test the site with Burp Suite or you won't like what you see
 ```
+
+## Guitar tab sheet
+
+Below you find [the guitar tab sheet for the chorus](https://github.com/juice-shop/juice-shop/issues/1286#issuecomment-579997025) of the jingle.
+
+```
+When you [D] want to shop online then you had [G] better be [D] sure
+The [D] experience is safe, and [A] also secure
+Don't wanna [D] let no SQLi or cross-site [G] scripting ruin your [D] day
+No you [D] wanna break into a joyous [G] song [A] and [D] say
+
+[G] Juice [D] Shop, [G walk-up to A] Juice [Bm] Shop
+You can [D] order tasty beverages in [A] any quantity
+[G] Juice [D] Shop, [G walk-up to A] Juice [Bm] Shop
+Just don't [D] test the site with Burp Suite or you [G] won't like [A] what you [D] see
+```
