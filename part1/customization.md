@@ -552,6 +552,17 @@ situations:
 
 ![BodgeIt Store theme](/part1/img/theme_bodgeit.png)
 
+## Proprietary customization
+
+Below you find screenshots of a custom theme the author of this book created for awareness and demo sessions at work. It was presented to various groups and individuals, from Project Manager rounds over workers council members up to the company CEO at that time.
+
+![Product list in Kuehne+Nagel theme](/part1/img/theme_kn1.png)
+
+![Shopping basket in Kuehne+Nagel theme](/part1/img/theme_kn2.png)
+
+![2FA setup in Kuehne+Nagel theme](/part1/img/theme_kn3.png)
+![Customer feedback in Kuehne+Nagel theme](/part1/img/theme_kn4.png)
+
 ## Limitations
 
 * When running a customization (except `default.yml`) that overwrites
