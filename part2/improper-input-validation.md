@@ -10,15 +10,16 @@
 
 | Name                    | Description                                                                                 | Difficulty |
 |:------------------------|:--------------------------------------------------------------------------------------------|:-----------|
-| Admin Registration      | Register as a user with administrator privileges.                                           | ⭐⭐⭐       |
-| Deluxe Fraud            | Obtain a Deluxe Membership without paying for it.                                           | ⭐⭐⭐       |
-| Expired Coupon          | Successfully redeem an expired campaign coupon code.                                        | ⭐⭐⭐⭐     |
+| Admin Registration      | Register as a user with administrator privileges.                                           | ⭐⭐⭐        |
+| Deluxe Fraud            | Obtain a Deluxe Membership without paying for it.                                           | ⭐⭐⭐        |
+| Empty User Registration | Register a user with an empty email and password.                                           | ⭐⭐         |
+| Expired Coupon          | Successfully redeem an expired campaign coupon code.                                        | ⭐⭐⭐⭐       |
 | Missing Encoding        | Retrieve the photo of Bjoern's cat in "melee combat-mode".                                  | ⭐          |
-| Payback Time            | Place an order that makes you rich.                                                         | ⭐⭐⭐       |
-| Poison Null Byte        | Bypass a security control with a Poison Null Byte to access a file not meant for your eyes. | ⭐⭐⭐⭐     |
+| Payback Time            | Place an order that makes you rich.                                                         | ⭐⭐⭐        |
+| Poison Null Byte        | Bypass a security control with a Poison Null Byte to access a file not meant for your eyes. | ⭐⭐⭐⭐       |
 | Repetitive Registration | Follow the DRY principle while registering a user.                                          | ⭐          |
-| Upload Size             | Upload a file larger than 100 kB.                                                           | ⭐⭐⭐       |
-| Upload Type             | Upload a file that has no .pdf or .zip extension.                                           | ⭐⭐⭐       |
+| Upload Size             | Upload a file larger than 100 kB.                                                           | ⭐⭐⭐        |
+| Upload Type             | Upload a file that has no .pdf or .zip extension.                                           | ⭐⭐⭐        |
 | Zero Stars              | Give a devastating zero-star feedback to the store.                                         | ⭐          |
 
 ### Register as a user with administrator privileges
@@ -46,6 +47,10 @@ payment methods could have some unforseen loopholes
   using the browser's developer tools
 * Maybe playing around with the parameters in these requests could
   reveal something interesting
+
+### Register a user with an empty email and password
+
+⚒️ **TODO**
 
 ### Successfully redeem an expired campaign coupon code
 

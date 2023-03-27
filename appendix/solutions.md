@@ -217,6 +217,10 @@ in a _Comment_ text. Also solve the CAPTCHA at the bottom of the form.
      first and then navigate to http://localhost:3000/#/administration
      will solve the challenge.
 
+### Register a user with an empty email and password
+
+⚒️ **TODO**
+
 ### View another user's shopping basket
 
 1. Log in as any user.
