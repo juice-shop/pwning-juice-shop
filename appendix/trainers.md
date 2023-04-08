@@ -82,10 +82,15 @@ each of them which should only be shared among team members - or not at
 all for individuals.
 
 ![MultiJuicer registration](img/multi-juicer_register.png)
+ 
+MultiJuicer comes with a rudimentary Score Board of its own, which allows teams to compare their progress through
+the Juice Shop challenges.
 
-As a helpful feature for the trainer MultiJuicer offers an [optional
+![MultiJuicer score board](img/multi-juicer_scoreboard.png)
+
+Another helpful feature for the trainer MultiJuicer is the [optional
 dashboard which automatically consumes and displays metrics](https://github.com/iteratec/multi-juicer/blob/master/guides/monitoring-setup/monitoring.md) from each of
-its Juice Shop instances. It shows challenge progress along with other
+its Juice Shop instances. It shows individual challenge progress along with other
 functional and technical stats and can be very helpful in
 troubleshooting as well.
 
