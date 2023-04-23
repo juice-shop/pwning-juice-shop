@@ -22,7 +22,7 @@
     "ctfdVersion": "3.4 or higher",
     "rtbVersion": "3.3 or higher",
     "juiceShopNumberOfChallenges": 102,
-    "nodeVersions": "16.x and 18.x",
+    "nodeVersions": "16.x, 18.x and 20.x",
     "recommendedNodeVersion": "18.x",
     "backupSchemaVersion": "1",
     "ctf": false
