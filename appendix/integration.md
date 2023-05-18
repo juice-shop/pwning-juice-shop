@@ -14,40 +14,48 @@ consumable JSON format:
 
 ```json
 {
-   "status":"success",
-   "data":[
-      {
-         "id":1,
-         "key":"restfulXssChallenge",
-         "name":"API-only XSS",
-         "category":"XSS",
-         "description":"Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src=\"javascript:alert(`xss`)\"&gt;</code> without using the frontend application at all. <em>(This challenge is <strong>not available</strong> on Heroku!)</em>",
-         "difficulty":3,
-         "hint":"You need to work with the server-side API directly. Try different HTTP verbs on different entities exposed through the API.",
-         "hintUrl":"https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all",
-         "solved":false,
-         "disabledEnv":"Heroku",
-         "createdAt":"2020-03-23T12:00:34.258Z",
-         "updatedAt":"2020-03-23T12:00:34.258Z"
-      },
-      {
-         "id":2,
-         "key":"accessLogDisclosureChallenge",
-         "name":"Access Log",
-         "category":"Sensitive Data Exposure",
-         "description":"Gain access to any access log file of the server.",
-         "difficulty":4,
-         "hint":"Who would want a server access log to be accessible through a web application?",
-         "hintUrl":"https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#gain-access-to-any-access-log-file-of-the-server",
-         "solved":false,
-         "disabledEnv":null,
-         "createdAt":"2020-03-23T12:00:34.259Z",
-         "updatedAt":"2020-03-23T12:00:34.259Z"
-      },
-      {
-        "...":"..."
-      }
-   ]
+  "status": "success",
+  "data": [
+    {
+      "id": 1,
+      "key": "restfulXssChallenge",
+      "name": "API-only XSS",
+      "category": "XSS",
+      "tags": "Danger Zone",
+      "description": "Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src=\"javascript:alert(`xss`)\"&gt;</code> without using the frontend application at all. <em>(This challenge is <strong>not available</strong> on Heroku!)</em>",
+      "difficulty": 3,
+      "hint": "You need to work with the server-side API directly. Try different HTTP verbs on different entities exposed through the API.",
+      "hintUrl": "https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all",
+      "mitigationUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "solved": false,
+      "disabledEnv": "Heroku",
+      "tutorialOrder": null,
+      "codingChallengeStatus": 0,
+      "createdAt": "2023-05-18T14:03:24.232Z",
+      "updatedAt": "2023-05-18T14:03:24.232Z"
+    },
+    {
+      "id": 2,
+      "key": "accessLogDisclosureChallenge",
+      "name": "Access Log",
+      "category": "Sensitive Data Exposure",
+      "tags": null,
+      "description": "Gain access to any access log file of the server.",
+      "difficulty": 4,
+      "hint": "Who would want a server access log to be accessible through a web application?",
+      "hintUrl": "https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#gain-access-to-any-access-log-file-of-the-server",
+      "mitigationUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "solved": false,
+      "disabledEnv": null,
+      "tutorialOrder": null,
+      "codingChallengeStatus": 0,
+      "createdAt": "2023-05-18T14:03:24.232Z",
+      "updatedAt": "2023-05-18T14:03:24.232Z"
+    },
+    {
+      "...":"..."
+    }
+  ]
 }
 ```
 
@@ -87,14 +95,27 @@ first place.
 -
   name: 'Some Name'
   category: 'Category of the challenge'
+  tags: # (optional) for grouping by aspects beyond category-level
+    - Brute Force
+    - Code Analysis
+    - Contraption
+    - Danger Zone
+    - Good Practice
+    - Good for Demos
+    - OSINT
+    - Prerequisite
+    - Shenanigans
+    - Tutorial
   description: 'Here the actual task for the attacker is described.'
   difficulty: 1 # a number between 1 and 6
   hint: 'A text hint to display on the Score Board when hovering over the challenge'
   hintUrl: 'https://pwning.owasp-juice.shop/part2/<category>.html#<shortened description>'
+  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/<corresponding cheat sheet>.html' # can be null/~ if none is available
   key: someNameChallenge
   disabledEnv: # (optional) to disable challenges dangerous or incompatible in certain environments
     - Docker
     - Heroku
+    - Gitpod
     - Windows
   tutorial: # (optional) present only on challenges with a Hacking Instructor tutorial
     order: 1 # a unique number to specify the recommended order of tutorials
@@ -111,6 +132,7 @@ The latest versions of the `challenges.yml` file can be found here:
 
 | Description                                                                                                        | Link composition                                                                 | Condition                                        | Examples                                                                                                                                                                                   |
 |:-------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:-------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scroll to a specific challenge on the Score Board _(unless hidden by a filter)_                                    | `/#/score-board/challenge=<name>`                                                |                                                  | <http://localhost:3000/#/score-board?challenge=Score%20Board>                                                                                                                              |
 | Link to official hints for a specific challenge                                                                    | `<hintUrl>`                                                                      |                                                  | <https://pwning.owasp-juice.shop/part2/score-board.html#find-the-carefully-hidden-score-board-page> or <https://pwning.owasp-juice.shop/part2/xss.html#perform-a-dom-xss-attack>           |
 | Link to official step-by-step solution for a specific challenge                                                    | `https://pwning.owasp-juice.shop/appendix/solutions.html#<hash part of hintUrl>` |                                                  | <https://pwning.owasp-juice.shop/appendix/solutions.html#find-the-carefully-hidden-score-board-page> or <https://pwning.owasp-juice.shop/appendix/solutions.html#perform-a-dom-xss-attack> |
 | Direct link to a [Hacking Instructor](../part1/challenges.md#hacking-instructor) tutorial for a specific challenge | `/#/hacking-instructor?challenge=<name>`                                         | Only for challenges where `tutorial` is defined. | <http://localhost:3000/#/hacking-instructor?challenge=Score%20Board> or <http://preview.owasp-juice.shop/#/hacking-instructor?challenge=DOM%20XSS>                                         |
