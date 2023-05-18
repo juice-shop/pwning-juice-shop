@@ -110,7 +110,7 @@ first place.
   difficulty: 1 # a number between 1 and 6
   hint: 'A text hint to display on the Score Board when hovering over the challenge'
   hintUrl: 'https://pwning.owasp-juice.shop/part2/<category>.html#<shortened description>'
-  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/<corresponding cheat sheet>.html' # can be null/~ if none is available
+  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/<corresponding cheat sheet>.html' # will be empty if n/a
   key: someNameChallenge
   disabledEnv: # (optional) to disable challenges dangerous or incompatible in certain environments
     - Docker
