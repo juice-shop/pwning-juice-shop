@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hosting a CTF event :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customization.html">Customization</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part I - Hacking preparations</li>
+    <li><a href="ctf.html">Hosting a CTF event</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part1/ctf.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Hosting a CTF event</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>In computer security, Capture the Flag (CTF) is a computer security
+competition. CTF contests are usually designed to serve as an
+educational exercise to give participants experience in securing a
+machine, as well as conducting and reacting to the sort of attacks
+found in the real world. Reverse-engineering, network sniffing,
+protocol analysis, system administration, programming, and
+cryptanalysis are all skills which have been required by prior CTF
+contests at DEF CON. There are two main styles of capture the flag
+competitions: attack/defense and jeopardy.</p>
+</div>
+<div class="paragraph">
+<p>In an attack/defense style competition, each team is given a machine
+(or a small network) to defend on an isolated network. Teams are
+scored on both their success in defending their assigned machine and
+on their success in attacking the other team&#8217;s machines. Depending on
+the nature of the particular CTF game, teams may either be attempting
+to take an opponent&#8217;s flag from their machine or teams may be
+attempting to plant their own flag on their opponent&#8217;s machine. Two of
+the more prominent attack/defense CTF&#8217;s are held every year at DEF
+CON, the largest hacker conference, and the NYU-CSAW (Cyber Security
+Awareness Week), the largest student cyber-security contest.</p>
+</div>
+<div class="paragraph">
+<p>Jeopardy-style competitions usually involve multiple categories of
+problems, each of which contains a variety of questions of different
+point values and difficulties. Teams attempt to earn the most points
+in the competition&#8217;s time frame (for example 24 hours), but do not
+directly attack each other. Rather than a race, this style of game
+play encourages taking time to approach challenges and prioritizes
+quantity of correct submissions over the timing.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/introduction/JuiceShopCTF_Logo.png" alt="OWASP Juice Shop CTF logo">
+</div>
+</div>
+<div class="paragraph">
+<p>OWASP Juice Shop can be run in a special configuration that allows to
+use it in Capture-the-flag (CTF) events. This can add some extra
+motivation and fun competition for the participants of a security
+training or workshop.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_juice_shop_in_ctf_mode"><a class="anchor" href="#_running_juice_shop_in_ctf_mode"></a>Running Juice Shop in CTF-mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Juice Shop supports <em>Jeopardy-style CTFs</em> by generating a unique <em>CTF
+flag code</em> for each solved challenge.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/notification_with_flag.png" alt="Challenge solved!" width="notification with flag code">
+</div>
+</div>
+<div class="paragraph">
+<p>These codes are not displayed by default, but can be made visible by
+running the application with the <code>config/ctf.yml</code> configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">set NODE_ENV=ctf     # on Windows
+export NODE_ENV=ctf  # on Linux
+
+npm start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On Linux you can also pass the <code>NODE_ENV</code> in directly in a single
+command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">NODE_ENV=ctf npm start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When running the application as a Docker container instead execute</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -d -e "NODE_ENV=ctf" -p 3000:3000 bkimminich/juice-shop</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>ctf.yml</code> configuration furthermore hides the GitHub ribbon in the
+top right corner of the screen. It also hides all hints from the score
+board. Instead it will make the <em>solved</em>-labels on the score board
+clickable which results in the corresponding <em>"challenge
+solved!"</em>-notification being repeated. This can be useful in case you
+forgot to copy a flag code before closing the corresponding
+notification.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/repeat_notification.png" alt="Repeat notification via Score Board">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overriding_the_ctf_key"><a class="anchor" href="#_overriding_the_ctf_key"></a>Overriding the <code>ctf.key</code></h3>
+<div class="paragraph">
+<p>Juice Shop uses the content of the provided <code>ctf.key</code> file as the secret
+component of the generated CTF flag codes. If you want to make sure that
+your flag codes are not the same for every hosted CTF event, you need to
+override that secret key.</p>
+</div>
+<div class="paragraph">
+<p>The simplest way to do so, is by providing an alternative secret key via
+the <code>CTF_KEY</code> environment variable:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">set CTF_KEY=xxxxxxxxxxxxxxx     # on Windows
+export CTF_KEY=xxxxxxxxxxxxxxx  # on Linux</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or when using Docker</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run -d -e "CTF_KEY=xxxxxxxxxxxxxxx" -e "NODE_ENV=ctf" -p 3000:3000 bkimminich/juice-shop</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ctf_event_infrastructure"><a class="anchor" href="#_ctf_event_infrastructure"></a>CTF event infrastructure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The pivotal point of any Jeopardy-style CTF event is a central
+score-tracking server. It manages the status of the CTF, typically
+including</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>registration dialogs for teams and users</p>
+</li>
+<li>
+<p>leader board of users/teams participating in the event</p>
+</li>
+<li>
+<p>challenge board with the open/solved hacking tasks and their score
+value</p>
+</li>
+<li>
+<p>which challenges have been solved already and by whom</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Apart from the score-tracking server, each participant must have their
+own instance of OWASP Juice Shop. As explained in the
+<a href="running.adoc#single-user-restriction">Single-user restriction</a> section,
+having a shared instance for each team is strongly discouraged, because
+Juice Shop is programmed as a single-user application.</p>
+</div>
+<div class="paragraph">
+<p>If you want to centrally host Juice Shop instances for any number of CTF
+participants you find more information in section
+<a href="../appendix/trainers.adoc#hosting-individual-instances-for-multiple-users">Hosting individual instances for multiple users</a>
+of the trainer&#8217;s guide.</p>
+</div>
+<div class="paragraph">
+<p>It is absolutely important that all Juice Shop instances participating
+in a CTF use the same
+<a href="#overriding-the-ctfkey">secret key to generate their CTF flag codes</a>.
+The score server must be set up accordingly to accept exactly those flag
+codes for solving the hacking challenges and allocating their score to
+the first team/user that solved it.</p>
+</div>
+<div class="paragraph">
+<p>As long as the flag code key is identical for all of them, it does not
+matter which run option for the Juice Shop each participant uses: Local
+Node.js, Docker container or Heroku/Amazon EC2 instances all work fine
+as they are independently running anyway! <em>There is no runtime
+dependency to the score server</em> either, as participants simply enter the
+flag code they see upon solving a challenge manually somewhere on the
+score server&#8217;s user interface, typically via their browser:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/CTF_Infrastructure.png" alt="CTF Infrastructure Example">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_up_ctf_score_servers_for_juice_shop"><a class="anchor" href="#_setting_up_ctf_score_servers_for_juice_shop"></a>Setting up CTF score servers for Juice Shop</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Juice Shop comes with
+<a href="https://github.com/juice-shop/juice-shop-ctf">the convenient <code>juice-shop-ctf-cli</code> tool</a>
+to to simplify the hosting of CTFs using popular open source frameworks
+or game servers. This can significantly speed up your setup time for an
+event, because things like using the same secret key for the flag codes
+are taken care of mostly automatic.</p>
+</div>
+<div class="sect2">
+<h3 id="_generating_challenge_import_files_with_juice_shop_ctf_cli"><a class="anchor" href="#_generating_challenge_import_files_with_juice_shop_ctf_cli"></a>Generating challenge import files with <code>juice-shop-ctf-cli</code></h3>
+<div class="paragraph">
+<p>The
+<a href="https://www.npmjs.com/package/juice-shop-ctf-cli"><code>juice-shop-ctf-cli</code></a>
+is a simple command line tool, which will generate a file compatible
+with your chosen CTF framework&#8217;s data backup format. This can be
+imported to populate its database and generate mirror images of all
+current Juice Shop challenges on the score server. The following
+instructions were written for v9.1.2 of
+<code>juice-shop-ctf-cli</code>.</p>
+</div>
+<div class="paragraph">
+<p>To install <code>juice-shop-ctf-cli</code> you need to have Node.js 8.x or higher
+installed. Simply execute</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install -g juice-shop-ctf-cli</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and then run the tool with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">juice-shop-ctf</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The tool will now ask a series of questions. All questions have default
+answers available which you can choose by simply hitting <code>ENTER</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/cli_usage_screenshot.png" alt="juice-shop-ctf CLI in action">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>CTF framework to generate data for?</strong> Offers a selectable choice
+between the supported CTF frameworks, which for
+v9.1.2 are</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CTFd</code> which is a very well-written and stable piece of Open Source
+Software. This is the default choice.</p>
+</li>
+<li>
+<p><code>FBCTF</code> from Facebook which is visually more advanced though not as
+frequently updated at CTFd.</p>
+</li>
+<li>
+<p><code>RootTheBox</code> a very sophisticated framework which comes even with
+category logos and embedded Juice Shop theme.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Juice Shop URL to retrieve challenges?</strong> URL of a <em>running</em> Juice
+Shop server where the tool will retrieve the existing challenges from
+via the <code>/api/Challenges</code> API. Defaults to
+<code>https://juice-shop.herokuapp.com</code> which always hosts the latest
+official released version of OWASP Juice Shop.</p>
+</li>
+<li>
+<p><strong>Secret key <or>URL to ctf.key file?</strong> Either a secret key to use for the CTF flag codes <em>or</em> a URL to a file containing such a key. Defaults to <code><a href="https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key" class="bare">https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key</a></code> which is the key file provided with the latest official OWASP Juice Shop release. See [Overriding the <code>ctf.key</code>](#overriding-the-ctfkey) for more information.</or></p>
+</li>
+<li>
+<p><strong>URL to country-mapping.yml file?</strong> URL of a mapping configuration
+of challenges to countries, which is only asked when <code>FBCTF</code> was
+selected. Defaults to
+<code>https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml</code></p>
+</li>
+<li>
+<p><strong>Insert a text hint along with each challenge?</strong> Offers a selectable
+choice between</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>No text hints</code> will not add any hint texts to the challenges. This
+is the default choice.</p>
+</li>
+<li>
+<p><code>Free text hints</code> will add the <code>Challenge.hint</code> property from the
+Juice Shop database as hint to the corresponding challenge on the
+CTF score server. Viewing this hint is free.</p>
+</li>
+<li>
+<p><code>Paid text hints</code> adds a hint per challenge like described above.
+Viewing this hint costs the team 10% of that challenge&#8217;s score
+value.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Insert a hint URL along with each challenge?</strong> Offers a selectable
+choice between</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>No hint URLs</code> will not add any hint URLs to the challenges. This
+is the default choice.</p>
+</li>
+<li>
+<p><code>Free hint URLs</code> will add the <code>Challenge.hintUrl</code> property from the
+Juice Shop database as a hint to the corresponding challenge on the
+CTF score server. Viewing this hint is free.</p>
+</li>
+<li>
+<p><code>Paid hint URLs</code> adds a hint per challenge like described above.
+Viewing this hint costs the team 20% of that challenge&#8217;s score
+value.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Insert a code snippet as hint for each challenge?</strong> Offers a
+selectable choice between</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>No hint snippets</code> will not add any code snippets as hints to the
+challenges. This is the default choice.</p>
+</li>
+<li>
+<p><code>Free hint snippets</code> will add the response from REST endpoint
+<code>/snippets/&lt;challengeKey&gt;</code> from the Juice Shop server as a hint to
+the corresponding challenge on the CTF score server. Viewing this
+hint is free.</p>
+</li>
+<li>
+<p><code>Paid hint snippets</code> adds a hint per challenge like described
+above. Viewing this hint costs the team 30% of that challenge&#8217;s
+score value.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The category of each challenge is identical to its
+<a href="categories.html" class="xref page">category in the Juice Shop</a> database. The score value
+and optional costs for hints of each challenge are calculated by the
+<code>juice-shop-ctf-cli</code> program as follows:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+<th class="tableblock halign-left valign-top">Score value</th>
+<th class="tableblock halign-left valign-top">Paid hint costs (Text / URL / Snippet)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(10 / 20 / 30 points)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">250 points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(25 / 50 / 75 points)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">450 points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(45 / 90 / 135 points)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">700 points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(70 / 140 / 210 points)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1000 points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(100 / 200 / 300 points)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1350 points</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(135 / 260 / 395 points)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The generated output of the tool will finally be written into in the
+folder the program was started in. By default the output files are named
+<code>OWASP_Juice_Shop.YYYY-MM-DD.CTFd2.zip</code>,
+<code>OWASP_Juice_Shop.YYYY-MM-DD.CTFd.zip</code>,
+<code>OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json</code> or
+<code>OWASP_Juice_Shop.YYYY-MM-DD.RTB.xml</code> depending on your initial
+framework choice.</p>
+</div>
+<div class="paragraph">
+<p>Optionally you can choose the name of the output file with the
+<code>--output</code> parameter on startup:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>juice-shop-ctf --output challenges.out</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_non_interactive_generator_mode"><a class="anchor" href="#_non_interactive_generator_mode"></a>Non-interactive generator mode</h4>
+<div class="paragraph">
+<p>Instead of answering questions in the CLI you can also provide your
+desired configuration in a file with the following straightforward
+format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">ctfFramework: CTFd | FBCTF | RootTheBox
+juiceShopUrl: https://juice-shop.herokuapp.com
+ctfKey: https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key # can also be actual key instead URL
+countryMapping: https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
+insertHints: none | free | paid
+insertHintUrls: none | free | paid # optional for FBCTF
+insertHintSnippets: none | free | paid # optional for FBCTF</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then pass this YAML file into the CLI the generator with the
+<code>--config</code> parameter:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>juice-shop-ctf --config myconfig.yml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As in interactive mode, you can also choose the name of the output file
+with the <code>--output</code> parameter:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>juice-shop-ctf --config myconfig.yml --output challenges.out</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_running_ctfd"><a class="anchor" href="#_running_ctfd"></a>Running CTFd</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/ctfd_logo.png" alt="CTFd logo">
+</div>
+</div>
+<div class="paragraph">
+<p>This setup guide assumes that you use CTFd 3.4 or higher. To
+apply the generated <code>.zip</code>, follow the steps describing your preferred
+CTFd run-mode below.</p>
+</div>
+<div class="sect3">
+<h4 id="_local_server_setup"><a class="anchor" href="#_local_server_setup"></a>Local server setup</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Get CTFd with <code>git clone https://github.com/CTFd/CTFd.git</code>.</p>
+</li>
+<li>
+<p>Run <code>git checkout tags/&lt;version&gt;</code> to retrieve version
+3.4 or higher.</p>
+</li>
+<li>
+<p>Perform steps 1 and 3 from
+<a href="https://github.com/CTFd/CTFd#install">the CTFd installation instructions</a>.</p>
+</li>
+<li>
+<p>Browse to your CTFd instance UI (by default <a href="http://127.0.0.1:4000" class="bare">http://127.0.0.1:4000</a>)
+and perform the basic <em>Setup</em> filling out all mandatory information minimalistially (as it will be deleted during the import again) and clicking <em>Next</em> on each tab before the last. On the last tab click <em>Finish</em>.</p>
+</li>
+<li>
+<p>Go to the section <em>Admin Panel</em> &gt; <em>Config</em> &gt; <em>Backup</em> and choose <em>Import</em></p>
+</li>
+<li>
+<p>Select the generated <code>.zip</code> file and make sure only the <em>Challenges</em>
+box is ticket. Press <em>Import</em>.</p>
+</li>
+<li>
+<p>Repeat the initial <em>Setup</em> from
+step 4. (providing all actually intended game information and settings this time) to regain access to the CTF game. It is now pre-populated
+with the Juice Shop challenges.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_docker_container_setup"><a class="anchor" href="#_docker_container_setup"></a>Docker container setup</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setup
+<a href="https://docs.docker.com/compose/install/">Docker host and Docker compose</a>.</p>
+</li>
+<li>
+<p>Follow all steps from
+<a href="https://github.com/CTFd/CTFd/wiki/Basic-Deployment">the CTFd Docker setup</a>
+to install Docker, download the source code, create containers (for
+3.4 or higher) and start them.</p>
+</li>
+<li>
+<p>After running <code>docker-compose up</code> from previous step, you should be
+able to browse to your CTFd instance UI (<code><a href="#docker host IP">[docker host IP]</a>:8000</code> by
+default) and create an admin user and CTF name.</p>
+</li>
+<li>
+<p>Follow the steps 5-8 from the
+<a href="#local-server-setup">Local server setup</a> described above.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="_non_production_docker_image"><a class="anchor" href="#_non_production_docker_image"></a>Non-production Docker image</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install Docker</p>
+</li>
+<li>
+<p>Run <code>docker pull ctfd/ctfd:&lt;version&gt;</code> the retrieve tag
+3.4 or higher</p>
+</li>
+<li>
+<p>Execute <code>docker run --rm -p 8000:8000 ctfd/ctfd:&lt;version&gt;</code> to run
+3.4 or higher</p>
+</li>
+<li>
+<p>Follow the steps 5-8 from the
+<a href="#local-server-setup">Local server setup</a> described above</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you have CTFd up and running, you should see all the created data
+in the <em>Challenges</em> tab:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/ctfd_1.png" alt="CTFd Challenge view">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/ctfd_2.png" alt="CTFd Scoreboard view">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/ctfd_3.png" alt="CTFd Statistics view">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/ctfd_4.png" alt="CTFd Team view">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_running_fbctf"><a class="anchor" href="#_running_fbctf"></a>Running FBCTF</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/fbctf_logo.jpg" alt="FBCTF logo">
+</div>
+</div>
+<div class="paragraph">
+<p>Please note that Facebook does not publish any versioned releases of
+FBCTF. They recommend to use the <code>master</code>-branch content from GitHub
+(<a href="https://github.com/facebook/fbctf" class="bare">https://github.com/facebook/fbctf</a>) in all their setup methods. There
+is also no official image on Docker Hub for FBCTF.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Follow any of the options described in the
+<a href="https://github.com/facebook/fbctf/wiki/Quick-Setup-Guide">FBCTF Quick Setup Guide</a>.</p>
+</li>
+<li>
+<p>Browse to your FBCTF instance UI.</p>
+</li>
+<li>
+<p>Click the <em>Controls</em> tab under the <em>Game Admin</em> panel.</p>
+</li>
+<li>
+<p>Choose <em>Import Full Game</em> and select the generated <code>.json</code> file.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following screenshots were taken during a CTF event where Facebook&#8217;s
+game server was used. Juice Shop instances were running in a Docker
+cluster and individually assigned to a participant via a load balancer.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/fbctf_1.png" alt="FBCTF World Map">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/fbctf_2.png" alt="FBCTF Highlighted target country">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/fbctf_3.png" alt="FBCTF Hacking Challenge">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/fbctf_4.png" alt="FBCTF Score Board">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_running_rootthebox"><a class="anchor" href="#_running_rootthebox"></a>Running RootTheBox</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/rtb_logo.png" alt="RootTheBox logo">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Follow either the
+<a href="https://github.com/moloch--/RootTheBox/wiki/Installation">Installation Tutorial</a>
+or
+<a href="https://github.com/moloch--/RootTheBox/wiki/Docker-Deployment">Docker Deployment</a>
+guide to install RootTheBox version 3.3 or higher.</p>
+</li>
+<li>
+<p>Log in with the admin credentials displayed during server start-up.</p>
+</li>
+<li>
+<p>In the <em>Backup/Restore</em> menu select <em>Import XML</em> and select the
+generated <code>.xml</code> file.</p>
+</li>
+<li>
+<p>You can now see the challenges under <em>Game Management</em> in <em>Flags /
+Boxes / Corps.</em></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following screenshots show the look &amp; feel of RootTheBox as it was
+imported from the XML which by default has all the banners and category
+logos embedded:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/rtb_0.png" alt="RootTheBox Welcome Screen">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/rtb_1.png" alt="RootTheBox Missions">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/rtb_2.png" alt="RootTheBox Failed Flag Submission">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/rtb_3.png" alt="RootTheBox Successful Flag Submission">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/rtb_4.png" alt="RootTheBox Score Board">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_other_ctf_frameworks"><a class="anchor" href="#_using_other_ctf_frameworks"></a>Using other CTF frameworks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://ctfd.io">CTFd</a>, <a href="https://github.com/facebook/fbctf">FBCTF</a> and
+<a href="https://github.com/moloch--/RootTheBox">RootTheBox</a> are not the only
+possible score servers you can use. Open Source alternatives are for
+example <a href="https://github.com/Nakiami/mellivora">Mellivora</a> or
+<a href="https://github.com/UnrealAkama/NightShade">NightShade</a>. You can find a
+nicely curated list of CTF platforms and related tools &amp; resources in
+<a href="https://github.com/apsdehal/awesome-ctf">Awesome CTF</a> on GitHub.</p>
+</div>
+<div class="paragraph">
+<p>All these platforms have one thing in common: Unless you write a
+dedicated <code>lib/generators/</code>-file 😉, you have to set up the challenges
+inside them manually on your own. Of course you can choose aspects like
+score per challenge, description etc. like you want. For the CTF to
+<em>actually work</em> there is only one mandatory prerequisite:</p>
+</div>
+<div class="paragraph">
+<p>The flag code for each challenge must be declared as the result of</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>HMAC_SHA1(ctfKey, challenge.name)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>with <code>challenge.name</code> being the <code>name</code> column of the <code>Challenges</code> table
+in the Juice Shop&#8217;s underlying database. The <code>ctfKey</code> has been described
+in the <a href="#overriding-the-ctfkey">Overriding the <code>ctf.key</code></a> section above.</p>
+</div>
+<div class="paragraph">
+<p>Feel free to use
+<a href="https://github.com/juice-shop/juice-shop-ctf/blob/master/lib/generateSql.js#L25">the implementation within <code>juice-shop-ctf-cli</code></a>
+as an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">var jsSHA = require('jssha')
+
+function hmacSha1 (secretKey, text) {
+  var shaObj = new jsSHA('SHA-1', 'TEXT')
+  shaObj.setHMACKey(secretKey, 'TEXT')
+  shaObj.update(text)
+  return shaObj.getHMAC('HEX')
+}</code></pre>
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>In cryptography, a keyed-hash message authentication code (HMAC) is a
+specific type of message authentication code (MAC) involving a
+cryptographic hash function and a secret cryptographic key. It may be
+used to simultaneously verify both the data integrity and the
+authentication of a message, as with any MAC. Any cryptographic hash
+function, such as MD5 or SHA-1, may be used in the calculation of an
+HMAC; the resulting MAC algorithm is termed HMAC-MD5 or HMAC-SHA1
+accordingly. The cryptographic strength of the HMAC depends upon the
+cryptographic strength of the underlying hash function, the size of
+its hash output, and on the size and quality of the key.</p>
+</div>
+<div class="paragraph">
+<p>An iterative hash function breaks up a message into blocks of a fixed
+size and iterates over them with a compression function. For example,
+MD5 and SHA-1 operate on 512-bit blocks. The size of the output of
+HMAC is the same as that of the underlying hash function (128 or 160
+bits in the case of MD5 or SHA-1, respectively), although it can be
+truncated if desired.</p>
+</div>
+<div class="paragraph">
+<p>HMAC does not encrypt the message. Instead, the message (encrypted or
+not) must be sent alongside the HMAC hash. Parties with the secret key
+will hash the message again themselves, and if it is authentic, the
+received and computed hashes will match.<sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_commercial_use_disclaimer"><a class="anchor" href="#_commercial_use_disclaimer"></a>Commercial use disclaimer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bear in mind: With the increasing number of challenge solutions (this
+book included) available on the Internet <em>it might <strong>not</strong> be wise to
+host a professional CTF for prize money</em> with OWASP Juice Shop!</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security" class="bare">https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code" class="bare">https://en.wikipedia.org/wiki/Hash-based_message_authentication_code</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

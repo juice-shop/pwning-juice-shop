@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Challenge tracking :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part I - Hacking preparations</li>
+    <li><a href="challenges.html">Challenge tracking</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part1/challenges.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Challenge tracking</h1>
+<div class="sect1">
+<h2 id="_the_score_board"><a class="anchor" href="#_the_score_board"></a>The Score Board</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to motivate you to hunt for vulnerabilities, it makes sense to
+give you at least an idea what challenges are available in the
+application. Also, you should know when you actually solved a challenge
+successfully, so you can move on to another task. Both these cases are
+covered by the application&#8217;s score board.</p>
+</div>
+<div class="paragraph">
+<p>On the score board you can view a list of all available challenges with
+a brief description. Some descriptions are <em>very explicit</em> hacking
+instructions. Others are just <em>vague hints</em> that leave it up to you to
+find out what needs to be done.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/score-board_partly.png" alt="Partly solved Score Board">
+</div>
+</div>
+<div class="paragraph">
+<p>The challenges are rated with a difficulty level between ⭐ and
+⭐⭐⭐⭐⭐⭐, with more stars representing a higher difficulty. To make the
+list of challenges less daunting, they are clustered by difficulty. By
+default, only the 1-star challenges are unfolded. You can open or
+collapse all challenge blocks as you like. Collapsing a block has <em>no
+impact</em> on whether you can <em>solve</em> any of its challenges.</p>
+</div>
+<div class="paragraph">
+<p>The difficulty ratings have been continually adjusted over time based on
+user feedback. The ratings allow you to manage your own hacking pace and
+learning curve significantly. When you pick a 5- or 6-star challenge you
+should <em>expect</em> a real challenge and should be less frustrated if you
+fail on it several times. On the other hand if hacking a 1- or 2-star
+challenge takes very long, you might realize quickly that you are on a
+wrong track with your chosen hacking approach.</p>
+</div>
+<div class="paragraph">
+<p>Finally, each challenge states if it is currently <em>unsolved</em> or
+<em>solved</em>. The current overall progress is represented in a progress bar
+on top of the score board. Especially in group hacking sessions this
+allows for a bit of competition between the participants.</p>
+</div>
+<div class="paragraph">
+<p>If not deliberately turned off (see <a href="customization.html" class="xref page">Customization</a>)
+you can hover over each <em>unsolved</em> label to see a hint for that
+challenge. If a "book" icon is also displayed within the label, you can
+click on it to be redirected to the corresponding hints section in
+<a href="../part2/README.html" class="xref page">Part 2</a> of this book.</p>
+</div>
+<div class="sect2">
+<h3 id="_challenge_filters"><a class="anchor" href="#_challenge_filters"></a>Challenge Filters</h3>
+<div class="paragraph">
+<p>Additional to the filtering by difficulty, you can filter the Score
+Board by <a href="categories.html" class="xref page">challenge categories</a>, e.g. to focus your
+hacking efforts on specific vulnerabilities. You can also hide all
+solved challenges to reduce the level of distraction on the Score Board.</p>
+</div>
+<div class="paragraph">
+<p>🐌 Selecting <em>Show all</em> for all difficulties and all challenges might
+impact the load time of the Score Board significantly!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_challenge_tags"><a class="anchor" href="#_challenge_tags"></a>Challenge Tags</h3>
+<div class="paragraph">
+<p>Starting with <code>v12.0.0</code> tags were introduced to help classify challenges
+which either favor a certain hacking approach or share some trait
+orthogonal to the categories.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Shenanigans</strong> marks challenges which are not considered serious
+and/or realistic but exist more for entertainment</p>
+</li>
+<li>
+<p><strong>Contraption</strong> indicates that a challenge is not exactly part of a
+realistic scenario but might be a bit forced or crafted</p>
+</li>
+<li>
+<p><strong>OSINT</strong> marks challenges which require some Internet research or
+<em>social stalking</em> activity outside the application</p>
+</li>
+<li>
+<p><strong>Good Practice</strong> highlights challenges which are less about
+vulnerabilities but promoting good (security) practices</p>
+</li>
+<li>
+<p><strong>Danger Zone</strong> marks
+<a href="#potentially-dangerous-challenges">potentially dangerous challenges</a>
+which are disabled on Docker/Heroku by default due to RCE or other
+risks</p>
+</li>
+<li>
+<p><strong>Good for Demos</strong> highlights
+<a href="../appendix/trainers.adoc#challenges-for-demos">challenges which are suitable for live demos</a>
+or awareness trainings</p>
+</li>
+<li>
+<p><strong>Prerequisite</strong> marks challenges which need to be solved before one
+or more other challenges can be (realistically) solved</p>
+</li>
+<li>
+<p><strong>Brute Force</strong> marks challenges where automation of some security
+tool or custom script is an option or even prerequisite</p>
+</li>
+<li>
+<p><strong>Tutorial</strong> marks challenges for which a
+<a href="#hacking-instructor">Hacking Instructor script</a> exists to assist
+newcomers</p>
+</li>
+<li>
+<p><strong>Code Analysis</strong> marks challenges where it can be helpful to rummage
+through some source code of the application or that of a third party</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/tags.png" alt="Tag breakdown">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_success_notifications"><a class="anchor" href="#_success_notifications"></a>Success notifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The OWASP Juice Shop employs a simple yet powerful gamification
+mechanism: Instant success feedback! Whenever you solve a hacking
+challenge, a notification is <em>immediately</em> shown on the user interface.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/challenge_solved_notification.png" alt="Challenge solved!" width="push notification">
+</div>
+</div>
+<div class="paragraph">
+<p>This feature makes it unnecessary to switch back and forth between the
+screen you are attacking, and the score board to verify if you
+succeeded. Some challenges will force you to perform an attack outside
+of the Juice Shop web interface, e.g. by interacting with the REST API
+directly. In these cases the success notification will light up when you
+come back to the regular web UI the next time.</p>
+</div>
+<div class="paragraph">
+<p>To make sure you do not miss any notifications they do not disappear
+automatically after a timeout. You have to dismiss them explicitly. In
+case a number of notifications "piled up" it is not necessary to dismiss
+each one individually, as you can simply <code>Shift</code>-click one of their
+<em>X</em>-buttons to dismiss all at the same time.</p>
+</div>
+<div class="paragraph">
+<p>Depending on your application configuration, each challenge notification
+might also show a 🏁 symbol with a character sequence next to it. If you
+are doing a hacking session just on your own, you can completely ignore
+this flag. The code is only relevant if you are participating in a CTF
+event. Please refer to chapter <a href="ctf.html" class="xref page">Hosting a CTF event</a> for more
+information this topic.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/notification_with_flag.png" alt="Challenge solved!" width="notification with flag code">
+</div>
+</div>
+<div class="paragraph">
+<p>Apart from the success notifications, OWASP Juice Shop also fires a
+confetti cannon on each side of the screen whenever a user solves a
+hacking challenge.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/confetti1.png" alt="Confetti on solved hacking challenge">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_automatic_saving_and_restoring_hacking_progress"><a class="anchor" href="#_automatic_saving_and_restoring_hacking_progress"></a>Automatic saving and restoring hacking progress</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="running.adoc#self-healing-feature"><em>self-healing</em> feature</a> - by
+wiping the entire database on server start - of Juice Shop was
+advertised as a benefit just a few pages before. This feature comes at a
+cost, though: As the challenges are also part of the database schema,
+they will be wiped along with all the other data. This means, that after
+every restart you start with a clean 0% score board and all challenges
+in <em>unsolved</em> state.</p>
+</div>
+<div class="paragraph">
+<p>To keep the resilience against data corruption but allow users to <em>pick
+up where they left off</em> after a server restart, your hacking progress is
+automatically saved whenever you solve a challenge - as long as you
+allow Browser cookies!</p>
+</div>
+<div class="paragraph">
+<p>After restarting the server, once you visit the application your hacking
+progress is automatically restored:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/autorestore-hacking-progress.png" alt="Auto-restoring hacking progress">
+</div>
+</div>
+<div class="paragraph">
+<p>The auto-save mechanism keeps your progress for up to 30 days after your
+previous hacking session. When the score board is restored to its prior
+state, a torrent of success notifications will light up - depending on
+how many challenges you solved up to that point. As mentioned earlier
+these can be bulk-dismissed by <code>Shift</code>-clicking any of the <em>X</em>-buttons.</p>
+</div>
+<div class="paragraph">
+<p>If you want to start over with a fresh hacking session, simply click the
+<em>Delete cookie to clear hacking progress</em> button. After the next server
+restart, your score board will be blank.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manual_progress_and_settings_backup"><a class="anchor" href="#_manual_progress_and_settings_backup"></a>Manual progress and settings backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the round <em>Backup</em> and <em>Restore</em> buttons on the Score Board you can
+save and later restore your hacking progress as well as language, Score
+Board filters, banner dismissal to a <code>JSON</code> file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/manual_backup.png" alt="Manual backup and restore buttons on Score Board">
+</div>
+</div>
+<div class="paragraph">
+<p>The backup format is independent of your system or browser, meaning you
+can use the backup file to conveniently transfer your progress and
+settings from one computer to another. Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "version": 1,
+  "scoreBoard": {
+    "displayedDifficulties": [ 1, 2, 3 ],
+    "displayedChallengeCategories": [
+      "Broken Access Control",
+      "Broken Anti Automation"
+    ]
+  },
+  "banners": {
+    "welcomeBannerStatus": "dismiss",
+    "cookieConsentStatus": "dismiss"
+  },
+  "language": "de_DE",
+  "continueCode": "rzJBXpa...bm45J2okY7LX4v7o"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the backup restore is successful, you must click "Apply changes
+now" in the corresponding message to trigger the hacking progress
+restore as well as the language changes in backend data.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/manual_backup-restore.png" alt="Success message for backup restore with &quot;Apply changes now&quot; action">
+</div>
+</div>
+<div class="paragraph">
+<p>If you do not click that button before the message vanishes, you can
+also restart your application server to apply the backup of hacking
+progress.</p>
+</div>
+<div class="paragraph">
+<p>If during restore you see an error message <code>Version X is incompatible
+with expected version Y</code> your backup was taken before a semantically
+incompatible format change. The current backup schema version is
+1.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hacking_instructor"><a class="anchor" href="#_hacking_instructor"></a>Hacking Instructor</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/JuicyBot_MedicalMask.png" alt="Juicy Bot the mascot of the Hacking Instructor">
+</div>
+</div>
+<div class="paragraph">
+<p>The built-in <em>Hacking Instructor</em> offers tutorials for some Juice Shop
+challenges. By default, the welcome banner shown upon first launch of
+the application has a 🎓-button which will help you
+<a href="../part2/score-board.adoc#find-the-carefully-hidden-score-board-page">Find the carefully hidden 'Score Board' page</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/welcome-banner.png" alt="Welcome Banner">
+</div>
+</div>
+<div class="paragraph">
+<p>On the Score Board itself you will then find similar 🎓-buttons on some
+challenges which will launch a corresponding tutorial for each as well.
+All tutorials consist of a scripted sequence of helpful hints and
+instructions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/hacking-instructor_1.png" alt="Hacking Instructor spoilering SQL Injection">
+</div>
+</div>
+<div class="paragraph">
+<p>The scripts often provide some interaction, like waiting for the user to
+make some specific input or having them visit another dialog before
+continuing. Some hints or instructions can be skipped by just clicking
+on them.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/hacking-instructor_2.png" alt="Hacking Instructor awaiting specific input">
+</div>
+</div>
+<div class="paragraph">
+<p>After successfully completing all steps of a tutorial, the Hacking
+Instructor will usually congratulate you and then go into hiding until
+summoned again for another hacking challenge via the Score Board.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/hacking-instructor_3.png" alt="Hacking Instructor reports successful solution">
+</div>
+</div>
+<div class="paragraph">
+<p>ℹ️ The Hacking Instructor is a tool to help beginners getting started.
+It cannot offer a tutorial for <em>every challenge</em> as some are too complex
+or require too many steps outside the application. In Part III you can
+learn more about how to write
+<a href="../part3/tutorials.html" class="xref page">Hacking Instructor tutorial scripts</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_tutorial_mode"><a class="anchor" href="#_tutorial_mode"></a>Tutorial mode</h3>
+<div class="paragraph">
+<p>When using the Juice Shop in a classroom setup the trainer or teacher
+might want to set a slower pace at the beginning to give everyone a
+chance to get familiar with the application. Here the <code>tutorial.yml</code>
+configuration can be very useful, which is available since <code>v10.2.0</code> of
+Juice Shop. This mode hides all challenges without tutorials from the
+Score Board and disables all advanced filter options. In the tutorial
+mode challenges are only gradually unlocked by difficulty tiers.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/tutorial-mode1.png" alt="Only tier 1 tutorials unlocked">
+</div>
+</div>
+<div class="paragraph">
+<p>Only when for example all 1-star challenges with a tutorial have been
+solved, the 2-star challenges with tutorials are displayed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/tutorial-mode2.png" alt="Tier 2 tutorials unlocked after tier 1 was solved">
+</div>
+</div>
+<div class="paragraph">
+<p>After solving <strong>all</strong> challenges with tutorials, the entire Score Board
+with all challenges is shown and all filters are enabled. Passing in the
+<code>NODE_ENV=tutorial</code> environment variable will activate this mode.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/tutorial-mode3.png" alt="Locked advanced filters in tutorial mode">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coding_challenges"><a class="anchor" href="#_coding_challenges"></a>Coding challenges</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For many (solved) challenges an additional button is available on the
+Score Board which<br>
+will open a dialog containing the actual code snippet responsible for
+the security vulnerability behind the particular challenge. Note that by default
+this button is only enabled for solved hacking challenges. For challenge where
+no such button is shown, there is no coding challenge available.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/code_snippet1.png" alt="Coding challenge button for a challenge on the Score Board">
+</div>
+</div>
+<div class="paragraph">
+<p>This snippet is loaded in real-time from the running application&#8217;s
+actual code base and is sanitized to not show any "challenge check" or
+similar code that would not be present in a real-world application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/code_snippet2.png" alt="Code snippet for a hacking challenge">
+</div>
+</div>
+<div class="paragraph">
+<p>The user can try to identify the actual line(s) of code responsible
+for the vulnerability behind the particular challenge. When they submit
+their selection, the server will provide feedback on the choice.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/code_snippet3.png" alt="Correctly identified vulnerable line of code for a coding challenge">
+</div>
+</div>
+<div class="paragraph">
+<p>If the correct line(s) were submitted, the user will be presented with 3-4
+possible options to fix the vulnerability. They can use the built-in code
+comparison to view them and then make a selection of what they think to be
+the correct fix. Submitting their choice to the server will again lead to
+feedback.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/code_snippet4.png" alt="One of four possible fixes for a coding challenge">
+</div>
+</div>
+<div class="paragraph">
+<p>The progress with coding challenges is not factored into the percentage bar at the top
+of the Score Board. For each coding challenge the current status is represented
+by the button to launch it. Once the "Find It" and "Fix It" part are solved, the
+button turns green. While only the "Find It" part was solved, a small green "1/2"-badge
+indicates having made it half-way.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/code_snippet5.png" alt="Progress with coding challenges indicated by their launch button">
+</div>
+</div>
+<div class="paragraph">
+<p>When either of the two steps is solved correctly, the confetti cannons fire both barrels
+to celebrate the user&#8217;s success.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/confetti2.png" alt="Confetti on solved hacking challenge">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mitigation_links"><a class="anchor" href="#_mitigation_links"></a>Mitigation links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For many solved challenges links to mitigation techniques are presented
+on the Score Board. Where available they typically lead to a
+corresponding <a href="https://cheatsheetseries.owasp.org/">OWASP Cheat Sheet</a>
+explaining how to avoid that kind of vulnerability in the first place.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/mitigation_links.png" alt="Mitigation link for DOM XSS challenge">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_potentially_dangerous_challenges"><a class="anchor" href="#_potentially_dangerous_challenges"></a>Potentially dangerous challenges</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some challenges can cause potential harm or pose some danger for your
+computer, i.e. the XXE, SSTi and Deserialization challenges as well as
+two of the NoSQLi challenges, and the possibility of an arbitrary file
+write. These simply cannot be sandboxed in a 100% secure way. These are
+only dangerous if you use actually malicious payloads, so please do not
+play with payloads you do not fully understand. Furthermore, be aware
+all stored XSS vulnerabilities can - by their nature - be abused to
+perform harmful attacks on unsuspecting visitors.</p>
+</div>
+<div class="paragraph">
+<p>For safety reasons all potentially dangerous challenges are disabled
+(along with their underlying vulnerabilities) when a containerized
+environment is detected. By default, this applies to Docker, Heroku, and Gitpod. Dangerous
+challenges are marked as 'unavailable' in the scoreboard as can be seen
+in the screenshot above.</p>
+</div>
+<div class="paragraph">
+<p>To re-enable all challenges you can set the environment variable
+<code>NODE_ENV=unsafe</code>, or you can set <code>safetyOverride: true</code> in your own
+<a href="customization.adoc#yaml-configuration-file">YAML configuration file</a>.
+Please use the unsafe mode at your own risk, especially on publicly
+hosted instances.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

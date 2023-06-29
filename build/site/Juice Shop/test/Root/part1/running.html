@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Running OWASP Juice Shop :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part I - Hacking preparations</li>
+    <li><a href="running.html">Running OWASP Juice Shop</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part1/running.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Running OWASP Juice Shop</h1>
+<div class="sect1">
+<h2 id="_system_requirements"><a class="anchor" href="#_system_requirements"></a>System requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run a single instance of Juice Shop the following memory and CPU
+requirements apply. These resources are needed for the Juice Shop
+application process itself, and they are based on</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a 30-day average
+process CPU and RAM usage of the official public demo instance running <code>v14.0.1</code> of Juice Shop</p>
+</li>
+<li>
+<p>a training with ~30 participants on a <a href="../appendix/trainers.html#_hosting_individual_instances_for_multiple_users" class="xref page">MultiJuicer</a> cluster hosted on OpenShift with Juice Shop <code>v14.0.1</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Please note that any additional resources needed by your environment (e.g. Docker or Vagrant) come on top.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Minimum</strong> system specification</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>256 MB</code> RAM</p>
+</li>
+<li>
+<p><code>200 millicpu</code> CPU</p>
+</li>
+<li>
+<p><code>300 MB</code> free disk space</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Recommended</strong> system specification</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>384 MB</code> RAM</p>
+</li>
+<li>
+<p><code>400 millicpu</code> CPU</p>
+</li>
+<li>
+<p><code>800 MB</code> free disk space</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🗄️ <em>If installing <a href="#from-sources">from sources</a> without the <code>--depth 1</code> option, an additional <code>700
+MB</code> free disk space are required for the Git history in both minimum and
+recommended spec.</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_options"><a class="anchor" href="#_run_options"></a>Run options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the following sections you find step-by-step instructions to deploy a
+running instance of OWASP Juice Shop for your personal hacking
+endeavours.</p>
+</div>
+<div class="sect2">
+<h3 id="_local_installation"><a class="anchor" href="#_local_installation"></a>Local installation</h3>
+<div class="paragraph">
+<p>To run the Juice Shop locally you need to have
+<a href="http://nodejs.org/">Node.js</a> installed on your computer. The Juice Shop
+officially runs on versions 14.x, 16.x and 18.x of Node.js, closely
+following the official
+<a href="https://github.com/nodejs/LTS">Node.js Long-term Support Release Schedule</a>.
+During development and Continuous Integration (CI) the application is
+automatically tested with these current versions of Node.js. The
+officially recommended version to run Juice Shop is either the most
+recent <em>Long-term Support (LTS)</em> version or the <em>Current Release</em>
+version. Therefore Juice Shop recommends Node.js
+18.x for its own v14.5.0
+release.</p>
+</div>
+<div class="sect3">
+<h4 id="_from_sources"><a class="anchor" href="#_from_sources"></a>From sources</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install <a href="http://nodejs.org/">Node.js</a> on your computer.</p>
+</li>
+<li>
+<p>On the command line run <code>git clone
+https://github.com/juice-shop/juice-shop.git --depth 1</code>.</p>
+</li>
+<li>
+<p>Go into the cloned folder with <code>cd juice-shop</code></p>
+</li>
+<li>
+<p>Run <code>npm install</code>. This only has to be done before the first start or
+after you changed the source code.</p>
+</li>
+<li>
+<p>Run <code>npm start</code> to launch the application.</p>
+</li>
+<li>
+<p>Browse to <a href="http://localhost:3000" class="bare">http://localhost:3000</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_from_pre_packaged_distribution"><a class="anchor" href="#_from_pre_packaged_distribution"></a>From pre-packaged distribution</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install a 64bit <a href="http://nodejs.org/">Node.js</a> on your Windows, MacOS
+or Linux machine.</p>
+</li>
+<li>
+<p>Download <code>juice-shop-&lt;version&gt;_&lt;node-version&gt;_&lt;os&gt;_x64.zip</code> (or
+<code>.tgz</code>) attached to the
+<a href="https://github.com/juice-shop/juice-shop/releases/latest">latest release on GitHub</a>.</p>
+</li>
+<li>
+<p>Unpack the archive and run <code>npm start</code> in unpacked folder to launch
+the application</p>
+</li>
+<li>
+<p>Browse to <a href="http://localhost:3000" class="bare">http://localhost:3000</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_image"><a class="anchor" href="#_docker_image"></a>Docker image</h3>
+<div class="paragraph">
+<p>You need to have <a href="https://www.docker.com/">Docker</a> installed to run
+Juice Shop as a container inside it. Following the instructions below
+will download the current stable version (built from <code>master</code> branch on
+GitHub) which internally runs the application on the currently
+recommended Node.js version 18.x.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install <a href="https://www.docker.com/">Docker</a> on your computer.</p>
+</li>
+<li>
+<p>On the command line run <code>docker pull bkimminich/juice-shop</code> to
+download the <code>latest</code> image described above.</p>
+</li>
+<li>
+<p>Run <code>docker run -d -p 3000:3000 bkimminich/juice-shop</code> to launch the
+container with that image.</p>
+</li>
+<li>
+<p>Browse to <a href="http://localhost:3000" class="bare">http://localhost:3000</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you are using Docker on Windows - inside a VirtualBox VM - make sure
+that you also enable port forwarding from host <code>127.0.0.1:3000</code> to
+<code>0.0.0.0:3000</code> for TCP.</p>
+</div>
+<div class="sect3">
+<h4 id="_supported_architectures"><a class="anchor" href="#_supported_architectures"></a>Supported architectures</h4>
+<div class="paragraph">
+<p>The official Docker image is built automatically during CI/CD for
+<code>linux/amd64</code> (based on a Node.js 18.x image) as well as <code>linux/arm64</code> and <code>linux/arm/v7</code> (based on a Node.js 14 image) and both are pushed to DockerHub. The following tagged images are available on DockerHub:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stable version from <code>master</code> branch: <code>latest</code> for AMD/ARM64 and <code>latest-arm</code> for ARMv7</p>
+</li>
+<li>
+<p>Development version from <code>develop</code> branch: <code>snapshot</code> for AMD/ARM64 and <code>snapshot-arm</code> for ARMv7</p>
+</li>
+<li>
+<p>Tagged versioned releases: <code>vX.Y.Z</code> for AMD/ARM64 and <code>vX.Y.Z-arm</code> for ARMv7</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vagrant"><a class="anchor" href="#_vagrant"></a>Vagrant</h3>
+<div class="paragraph">
+<p>Vagrant is an open-source solution for building and maintaining virtual
+software development environments. It creates a Virtualbox VM that will
+launch a Docker container instance of the <code>latest</code> Juice Shop image
+v14.5.0.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install <a href="https://www.vagrantup.com/downloads.html">Vagrant</a> and
+<a href="https://www.virtualbox.org/wiki/Downloads">Virtualbox</a></p>
+</li>
+<li>
+<p>Run <code>git clone https://github.com/juice-shop/juice-shop.git</code> (or
+clone <a href="https://github.com/juice-shop/juice-shop/fork">your own fork</a>
+of the repository)</p>
+</li>
+<li>
+<p>Run <code>cd vagrant &amp;&amp; vagrant up</code></p>
+</li>
+<li>
+<p>Browse to <a href="http://192.168.56.110" class="bare">http://192.168.56.110</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_amazon_ec2_instance"><a class="anchor" href="#_amazon_ec2_instance"></a>Amazon EC2 Instance</h3>
+<div class="paragraph">
+<p>You need to have an account at
+<a href="https://aws.amazon.com">Amazon Web Services</a> in order to create a
+server hosting the Juice Shop there.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <em>EC2</em> sidenav select <em>Instances</em> and click <em>Launch Instance</em></p>
+</li>
+<li>
+<p>In <em>Step 1: Choose an Amazon Machine Image (AMI)</em> choose an <em>Amazon
+Linux AMI</em> or <em>Amazon Linux 2 AMI</em></p>
+</li>
+<li>
+<p>In <em>Step 3: Configure Instance Details</em> unfold <em>Advanced Details</em> and
+copy the script below into <em>User Data</em></p>
+</li>
+<li>
+<p>In <em>Step 6: Configure Security Group</em> add a <em>Rule</em> that opens port 80
+for HTTP</p>
+</li>
+<li>
+<p>Launch your instance</p>
+</li>
+<li>
+<p>Browse to your instance&#8217;s public DNS</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/bin/bash
+yum update -y
+yum install -y docker
+service docker start
+docker pull bkimminich/juice-shop
+docker run -d -p 80:3000 bkimminich/juice-shop</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_aws_ec2_launch_template"><a class="anchor" href="#_aws_ec2_launch_template"></a>AWS EC2 Launch Template</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <em>EC2</em> sidenav select <em>Launch Templates</em> and click <em>Create
+launch template</em></p>
+</li>
+<li>
+<p>Under <em>Launch template contents</em> select as <em>AMI ID</em> either <em>Amazon
+Linux AMI</em> or <em>Amazon Linux 2 AMI</em> (by using <em>Search for AMI</em>)</p>
+</li>
+<li>
+<p>In the same section add a <em>Security Group</em> that opens port 80 for
+HTTP</p>
+</li>
+<li>
+<p>Unfold <em>Advanced details</em> at the bottom of the screen and paste in
+the script above into <em>User Data</em></p>
+</li>
+<li>
+<p>Create your launch template</p>
+</li>
+<li>
+<p>Launch one or multiple EC2 instances from your template</p>
+</li>
+<li>
+<p>Browse to your instance&#8217;s public DNS</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_azure_container_instance"><a class="anchor" href="#_azure_container_instance"></a>Azure Container Instance</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open and login (via <code>az login</code>) to your
+<a href="https://azure.github.io/projects/clis/">Azure CLI</a> <strong>or</strong> login to
+the <a href="https://portal.azure.com">Azure Portal</a>, open the <em>CloudShell</em>
+and then choose <em>Bash</em> (not PowerShell).</p>
+</li>
+<li>
+<p>Create a resource group by running <code>az group create --name &lt;group
+name&gt; --location &lt;location name, e.g. "centralus"&gt;</code></p>
+</li>
+<li>
+<p>Create a new container by running <code>az container create
+--resource-group &lt;group name&gt; --name &lt;container name&gt; --image
+bkimminich/juice-shop --dns-name-label &lt;dns name label&gt; --ports 3000
+--ip-address public</code></p>
+</li>
+<li>
+<p>Your container will be available at <code><a href="http://&lt;dns" class="bare">http://&lt;dns</a> name
+label&gt;.&lt;location name&gt;.azurecontainer.io:3000</code></p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_azure_web_app_for_containers"><a class="anchor" href="#_azure_web_app_for_containers"></a>Azure Web App for Containers</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your <a href="https://azure.github.io/projects/clis/">Azure CLI</a> <strong>or</strong>
+login to the <a href="https://portal.azure.com">Azure Portal</a>, open the
+<em>CloudShell</em> and then choose <em>Bash</em> (not PowerShell).</p>
+</li>
+<li>
+<p>Create a resource group by running <code>az group create --name &lt;group
+name&gt; --location &lt;location name, e.g. "East US"&gt;</code></p>
+</li>
+<li>
+<p>Create an app service plan by running <code>az appservice plan create
+--name &lt;plan name&gt; --resource-group &lt;group name&gt; --sku S1 --is-linux</code></p>
+</li>
+<li>
+<p>Create a web app with the
+<a href="https://hub.docker.com/r/bkimminich/juice-shop/">Juice Shop Docker</a>
+image by running the following (on one line in the bash shell) <code>az
+webapp create --resource-group &lt;group name&gt; --plan &lt;plan name&gt; `
+`--name &lt;app name&gt; --deployment-container-image-name
+bkimminich/juice-shop</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_google_compute_engine_instance"><a class="anchor" href="#_google_compute_engine_instance"></a>Google Compute Engine Instance</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login to the Google Cloud Console and
+<a href="https://console.cloud.google.com/home/dashboard?cloudshell=true">open Cloud Shell</a>.</p>
+</li>
+<li>
+<p>Launch a new GCE instance based on the juice-shop container. Take
+note of the <code>EXTERNAL_IP</code> provided in the output.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gcloud compute instances create-with-container owasp-juice-shop-app --container-image bkimminich/juice-shop</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a firewall rule that allows inbound traffic to port 3000</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gcloud compute firewall-rules create juice-rule --allow tcp:3000</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Your container is now running and available at
+<code><a href="http://&lt;EXTERNAL_IP&gt;:3000/" class="bare">http://&lt;EXTERNAL_IP&gt;:3000/</a></code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_heroku"><a class="anchor" href="#_heroku"></a>Heroku</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/deploy-to-heroku.svg" alt="Deploy to Heroku" width="button">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the
+<em>Deploy to Heroku</em> button in the
+<a href="https://github.com/juice-shop/juice-shop#heroku"><em>Setup</em> section of the <code>README.adoc</code> on GitHub</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you have forked the Juice Shop repository on GitHub, the <em>Deploy to
+Heroku</em> button will deploy your forked version of the application. To
+deploy the latest official version you must use the button of the
+original repository at <a href="https://github.com/juice-shop/juice-shop" class="bare">https://github.com/juice-shop/juice-shop</a>.</p>
+</div>
+<div class="paragraph">
+<p><em>As a little related anecdote, the OWASP Juice Shop was crowned
+<a href="https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6">Heroku Button of the Month in November 2017</a>
+and once more
+<a href="https://hello.heroku.com/webmail/36622/844098776/9fe33b8eda9eb79bca7ee569888b1874">in March 2019</a>:</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/heroku-button-of-the-month.png" alt="Heroku Button of the Month" width="November 2017">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gitpod"><a class="anchor" href="#_gitpod"></a>Gitpod</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Login to <a href="https://gitpod.io">gitpod.io</a> and use <a href="https://gitpod.io/#https://github.com/juice-shop/juice-shop/" class="bare">https://gitpod.io/#https://github.com/juice-shop/juice-shop/</a> to start a new workspace. If you want to spin up a forked repository, your URL needs to be adjusted accordingly.</p>
+</li>
+<li>
+<p>After the Gitpod workspace is loaded, Gitpod tasks is still running to install <code>npm install</code>  and launch the website. Despite Gitpod showing your workspace state already as <em>Running</em>, you need to wait until the installation process is done, before the website becomes accessable. The <em>Open Preview Window (Internal Browser)</em>, will open automatically and refresh itself automatically when the server has started.</p>
+</li>
+<li>
+<p>Your Juice Shop instance is now also available at <code>https://3000-&lt;GITPOD_WORKSPACE_ID&gt;.&lt;GITPOD_HOSTING_ZONE&gt;.gitpod.io</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installing_a_specific_release_version"><a class="anchor" href="#_installing_a_specific_release_version"></a>Installing a specific release version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The installation instructions above will all give you the latest
+official release version of the Juice Shop. If you want to install a
+specific older version, you can easily do so by retrieving the
+corresponding tag from GitHub or Docker. For release v7.5.1 - which was
+the last version with the original AngularJS/Bootstrap frontend - for
+example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#from-sources">From sources</a> - Run <code>git fetch --tags</code> and then <code>git
+checkout v7.5.1</code> before running <code>npm install</code></p>
+</li>
+<li>
+<p><a href="#docker-image">Docker image</a> - Run <code>docker pull
+bkimminich/juice-shop:v7.5.1</code> instead of the usual <code>docker pull
+bkimminich/juice-shop</code></p>
+</li>
+<li>
+<p><a href="#from-pre-packaged-distribution">From pre-packaged distribution</a> -
+Just download the older release from
+<a href="https://github.com/juice-shop/juice-shop/releases" class="bare">https://github.com/juice-shop/juice-shop/releases</a> or
+<a href="https://sourceforge.net/projects/juice-shop/files/" class="bare">https://sourceforge.net/projects/juice-shop/files/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To experience a preview of the next upcoming Juice Shop version you can
+do as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Simply visit <a href="https://juice-shop-staging.herokuapp.com" class="bare">https://juice-shop-staging.herokuapp.com</a> and take a
+look</p>
+</li>
+<li>
+<p><a href="#from-sources">From sources</a> - Run <code>git fetch</code> and then <code>git checkout
+develop</code> before running <code>npm install</code></p>
+</li>
+<li>
+<p><a href="#docker-image">Docker image</a> - Run <code>docker pull
+bkimminich/juice-shop:snapshot</code> instead of the usual <code>docker pull
+bkimminich/juice-shop</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ℹ️ Please be aware that support by the core team or community is
+limited (at best) for outdated and unreleased versions alike. To fully
+enjoy your OWASP Juice Shop experience, it is recommended to always use
+the latest version.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_self_healing_feature"><a class="anchor" href="#_self_healing_feature"></a><em>Self-healing</em>-feature</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OWASP Juice Shop was not exactly designed and built with a high
+availability and reactive enterprise-scale architecture in mind. It runs
+perfectly fine and fast when it is attacked via a browser by a human.
+When under attack by an automated tool - especially aggressive brute
+force scripts - the server might crash under the load. This could - in
+theory - leave the database and file system in an unpredictable state
+that prevents a restart of the application.</p>
+</div>
+<div class="paragraph">
+<p>That is why - in practice - Juice Shop wipes the entire database and the
+folder users might have modified during hacking. After performing this
+<em>self-healing</em> the application is supposed to be restartable, no matter
+what kind of problem originally caused it to crash. For convenience the
+<em>self-healing</em> happens during the start-up (i.e. <code>npm start</code>) of the
+server, so no extra command needs to be issued to trigger it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_single_user_restriction"><a class="anchor" href="#_single_user_restriction"></a>Single-user restriction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is one fundamental restriction that needs to be taken into account
+when working with the OWASP Juice Shop, especially in group trainings or
+lectures:</p>
+</div>
+<div class="paragraph">
+<p><strong>A server instance of OWASP Juice Shop is supposed to be used by only a
+single-user!</strong></p>
+</div>
+<div class="paragraph">
+<p>This restriction applies to all the <a href="#run-options">Run Options</a>
+explained above. It is technically necessary to make the
+<a href="#self-healing-feature"><em>Self-healing</em>-feature</a> work properly and
+consistently. Furthermore, when multiple users would attack the same
+instance of the Juice Shop all their progress tracking would be mixed
+leading to inevitable confusion for the individual hacker. The upcoming
+<a href="challenges.html" class="xref page">Challenge tracking</a> chapter will illustrate this topic.</p>
+</div>
+<div class="paragraph">
+<p>It should not go unmentioned that it is of course okay to have multiple
+users hack the same instance from a shared machine in a kind of
+<em>pair-hacking</em>-style.</p>
+</div>
+<div class="paragraph">
+<p>If you want to centrally host Juice Shop instances for multiple users
+you find more information in section
+<a href="../appendix/trainers.adoc#hosting-individual-instances-for-multiple-users">Hosting individual instances for multiple users</a>
+of the trainer&#8217;s guide.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

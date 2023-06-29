@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vulnerability Categories :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part I - Hacking preparations</li>
+    <li><a href="categories.html">Vulnerability categories</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part1/categories.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Vulnerability Categories</h1>
+<div class="paragraph">
+<p>The vulnerabilities found in the OWASP Juice Shop are categorized into
+several different classes. Most of them cover different risk or
+vulnerability types from well-known lists or documents, such as
+<a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a>,
+<a href="https://owasp.org/www-project-application-security-verification-standard/">OWASP ASVS</a>,
+<a href="https://owasp.org/www-project-automated-threats-to-web-applications/">OWASP Automated Threat Handbook</a>,
+<a href="https://owasp.org/www-project-api-security/">OWASP API Security Top 10</a>
+and
+<a href="https://owasp.org/www-project-top-10-privacy-risks">OWASP Top 10 Privacy Risks</a>
+or MITRE&#8217;s <a href="https://cwe.mitre.org/">Common Weakness Enumeration</a>. The
+following table presents a mapping of the Juice Shop&#8217;s categories to
+OWASP, CWE and WASC threats, risks and attacks (without claiming to be
+complete).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/categories.png" alt="Category breakdown">
+</div>
+</div>
+<h3 id="_category_mappings" class="discrete">Category Mappings</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">OWASP</th>
+<th class="tableblock halign-left valign-top">CWE</th>
+<th class="tableblock halign-left valign-top">WASC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broken Access Control</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control/">A1:2021</a>, <a href="https://owasp.org/www-project-api-security">API1:2019</a>, <a href="https://owasp.org/www-project-api-security">API5:2019</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/22.html">CWE-22</a>, <a href="https://cwe.mitre.org/data/definitions/285.html">CWE-285</a>, <a href="https://cwe.mitre.org/data/definitions/639.html">CWE-639</a>, <a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246940/Insufficient%20Authorization">WASC-02</a>, <a href="http://projects.webappsec.org/w/page/13246919/Cross%20Site%20Request%20Forgery">WASC-09</a>, <a href="http://projects.webappsec.org/w/page/13246922/Directory%20Indexing">WASC-16</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broken Anti-Automation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://wiki.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29">OWASP-AT-004</a>, <a href="https://owasp.org/www-project-api-security">API4:2019</a>, <a href="https://wiki.owasp.org/index.php/Testing_for_Race_Conditions_%28OWASP-AT-010%29">OWASP-AT-010</a>, <a href="https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-009_CAPTCHA_Defeat.html">OAT-009</a>, <a href="https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-015_Denial_of_Service.html">OAT-015</a>, <a href="https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-008_Credential_Stuffing.html">OAT-008</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://cwe.mitre.org/data/definitions/362.html">CWE-362</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246915/Brute%20Force">WASC-11</a>, <a href="http://projects.webappsec.org/w/page/13246938/Insufficient%20Anti-automation">WASC-21</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broken Authentication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/">A7:2021</a>, <a href="https://owasp.org/www-project-api-security">API2:2019</a>, <a href="https://owasp.org/www-project-top-10-privacy-risks">P6:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/287.html">CWE-287</a>, <a href="https://cwe.mitre.org/data/definitions/352.html">CWE-352</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246939/Insufficient%20Authentication">WASC-01</a>, <a href="http://projects.webappsec.org/w/page/13246942/Insufficient%20Password%20Recovery">WASC-49</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cross Site Scripting (XSS)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A03_2021-Injection/">A3:2021</a>, <a href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_%28XSS%29">A7:2017</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/79.html">CWE-79</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting">WASC-8</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cryptographic Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures/">A2:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/326.html">CWE-326</a>, <a href="https://cwe.mitre.org/data/definitions/327.html">CWE-327</a>, <a href="https://cwe.mitre.org/data/definitions/328.html">CWE-328</a>, <a href="https://cwe.mitre.org/data/definitions/950.html">CWE-950</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Improper Input Validation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://wiki.owasp.org/index.php/ASVS_V5_Input_validation_and_output_encoding">ASVS V5</a>, <a href="https://owasp.org/www-project-api-security">API6:2019</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/20.html">CWE-20</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246933/Improper%20Input%20Handling">WASC-20</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Injection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A03_2021-Injection/">A3:2021</a>, <a href="https://owasp.org/www-project-api-security">API8:2019</a>, <a href="https://owasp.org/www-project-top-10-privacy-risks">P1:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/74.html">CWE-74</a>, <a href="https://cwe.mitre.org/data/definitions/89.html">CWE-89</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection">WASC-19</a>, <a href="http://projects.webappsec.org/w/page/13246949/Null%20Byte%20Injection">WASC-28</a>, <a href="http://projects.webappsec.org/w/page/13246950/OS%20Commanding">WASC-31</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insecure Deserialization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/">A8:2021</a>, <a href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization">A8:2017</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Miscellaneous</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/www-project-top-10-privacy-risks">P5:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security Misconfiguration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">A5:2021</a>, <a href="https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/">A9:2021</a>, <a href="https://owasp.org/www-project-api-security">API7:2019</a>, <a href="https://owasp.org/www-project-api-security">API9:2019</a>, <a href="https://owasp.org/www-project-api-security">API10:2019</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/209.html">CWE-209</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246959/Server%20Misconfiguration">WASC-14</a>, <a href="http://projects.webappsec.org/w/page/13246914/Application%20Misconfiguration">WASC-15</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security through Obscurity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A04_2021-Insecure_Design/">A4:2021</a>, <a href="https://owasp.org/www-project-top-10-privacy-risks">P5:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/656.html">CWE-656</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitive Data Exposure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure">A3:2017</a>, <a href="https://owasp.org/www-project-api-security">API3:2019</a>, <a href="https://wiki.owasp.org/index.php/Review_Old" class="bare">https://wiki.owasp.org/index.php/Review_Old</a>,<em>Backup_and_Unreferenced_Files_for_Sensitive_Information</em>%28OTG-CONFIG-004%29[OTG-CONFIG-004], <a href="https://owasp.org/www-project-top-10-privacy-risks">P2:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/200.html">CWE-200</a>, <a href="https://cwe.mitre.org/data/definitions/530.html">CWE-530</a>, <a href="https://cwe.mitre.org/data/definitions/548.html">CWE-548</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246936/Information%20Leakage">WASC-13</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unvalidated Redirects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards">A10:2013</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/601.html">CWE-601</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13246981/URL%20Redirector%20Abuse">WASC-38</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vulnerable Components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/">A6:2021</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/829.html">CWE-829</a>, <a href="https://cwe.mitre.org/data/definitions/506.html">CWE-506</a>, <a href="https://cwe.mitre.org/data/definitions/1104.html">CWE-1104</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML External Entities (XXE)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration/">A5:2021</a>, <a href="https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A4-XML_External_Entities_%28XXE%29">A4:2017</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://cwe.mitre.org/data/definitions/611.html">CWE-611</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://projects.webappsec.org/w/page/13247003/XML%20External%20Entities">WASC-43</a></p></td>
+</tr>
+</tbody>
+</table>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>XML External Entities (XXE) :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part II - Challenge hunting</li>
+    <li><a href="xxe.html">XML External Entities (XXE)</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part2/xxe.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">XML External Entities (XXE)</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An XML External Entity attack is a type of attack against an
+application that parses XML input. This attack occurs when XML input
+containing a reference to an external entity is processed by a weakly
+configured XML parser. This attack may lead to the disclosure of
+confidential data, denial of service, server side request forgery,
+port scanning from the perspective of the machine where the parser is
+located, and other system impacts.</p>
+</div>
+<div class="paragraph">
+<p>The XML 1.0 standard defines the structure of an XML document. The
+standard defines a concept called an entity, which is a storage unit
+of some type. There are a few different types of entities, external
+general/parameter parsed entity often shortened to external entity,
+that can access local or remote content via a declared system
+identifier. The system identifier is assumed to be a URI that can be
+dereferenced (accessed) by the XML processor when processing the
+entity. The XML processor then replaces occurrences of the named
+external entity with the contents dereferenced by the system
+identifier. If the system identifier contains tainted data and the XML
+processor dereferences this tainted data, the XML processor may
+disclose confidential information normally not accessible by the
+application. Similar attack vectors apply the usage of external DTDs,
+external stylesheets, external schemas, etc. which, when included,
+allow similar external resource inclusion style attacks.</p>
+</div>
+<div class="paragraph">
+<p>Attacks can include disclosing local files, which may contain
+sensitive data such as passwords or private user data, using file:
+schemes or relative paths in the system identifier. Since the attack
+occurs relative to the application processing the XML document, an
+attacker may use this trusted application to pivot to other internal
+systems, possibly disclosing other internal content via http(s)
+requests or launching a CSRF attack to any unprotected internal
+services. In some situations, an XML processor library that is
+vulnerable to client-side memory corruption issues may be exploited by
+dereferencing a malicious URI, possibly allowing arbitrary code
+execution under the application account. Other attacks can access
+local resources that may not stop returning data, possibly impacting
+application availability if too many threads or processes are not
+released.</p>
+</div>
+<div class="paragraph">
+<p>Note that the application does not need to explicitly return the
+response to the attacker for it to be vulnerable to information
+disclosures. An attacker can leverage DNS information to exfiltrate
+data through subdomain names to a DNS server that he/she controls.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_challenges_covered_in_this_chapter"><a class="anchor" href="#_challenges_covered_in_this_chapter"></a>Challenges covered in this chapter</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXE Data Access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve the content of <code>C:\Windows\system.ini</code> or <code>/etc/passwd</code> from the server.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXE DoS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Give the server something to chew on for quite a while.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>ℹ️ <em>Please note that both XXE challenges described below are <strong>not
+available</strong> when running the Juice Shop in either a Docker container or
+on a Heroku dyno! Certain aggressive attacks against the underlying XML
+parser caused the process to die from "Segmentation Fault" (<code>segfault</code>)
+errors. This happens despite the fact that the parsing actually happens
+in a sandbox with a timeout. While it is unfortunate to not have XXE
+challenges on containerized environments, this somewhat nicely shows how
+incredibly dangerous ill-configured XML parsers actually are.</em></p>
+</div>
+<div class="sect2">
+<h3 id="_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server"><a class="anchor" href="#_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server"></a>Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server</h3>
+<div class="paragraph">
+<p>In this challenge you are tasked to disclose a local file from the
+server the Juice Shop backend is hosted on.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You already found the leverage point for this challenge if you solved
+<a href="security-misconfiguration.adoc#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down">Use a deprecated B2B interface that was not properly shut down</a>.</p>
+</li>
+<li>
+<p>This challenge sounds a lot harder than it actually is, which
+amplifies how bad the underlying vulnerability is.</p>
+</li>
+<li>
+<p>Doing some research on typical XEE attack patterns basically gives
+away the solution for free.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_give_the_server_something_to_chew_on_for_quite_a_while"><a class="anchor" href="#_give_the_server_something_to_chew_on_for_quite_a_while"></a>Give the server something to chew on for quite a while</h3>
+<div class="paragraph">
+<p>Similar to
+<a href="injection.adoc#let-the-server-sleep-for-some-time">Let the server sleep for some time</a>
+this challenge is about performing a stripped-down <em>denial-of-service</em>
+attack. But this one is going against an entirely different leverage
+point.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The leverage point for this is obviously the same as for the
+<a href="#retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server">XXE Tier 1</a>
+challenge above.</p>
+</li>
+<li>
+<p>You can only solve this challenge by keeping the server busy for &gt;2sec
+with your attack.</p>
+</li>
+<li>
+<p>The effectiveness of attack payloads for this challenge might depend
+on the operating system the Juice Shop is running on.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing" class="bare">https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

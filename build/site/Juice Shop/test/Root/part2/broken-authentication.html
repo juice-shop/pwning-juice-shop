@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Broken Authentication :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="injection.html">Injection</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part II - Challenge hunting</li>
+    <li><a href="broken-authentication.html">Broken Authentication</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part2/broken-authentication.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Broken Authentication</h1>
+<div class="sect1">
+<h2 id="_challenges_covered_in_this_chapter"><a class="anchor" href="#_challenges_covered_in_this_chapter"></a>Challenges covered in this chapter</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bjoern&#8217;s Favorite Pet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset the password of Bjoern&#8217;s OWASP account via the Forgot Password mechanism with <em>the truthful answer</em> to his security question.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change Bender&#8217;s Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change Bender&#8217;s password into <em>slurmCl4ssic</em> without using SQL Injection or Forgot Password.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GDPR Data Erasure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with Chris' erased user account.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Login Bjoern</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with Bjoern&#8217;s Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Password Strength</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with the administrator&#8217;s user credentials without previously changing them or applying SQL Injection.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Bender&#8217;s Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Bender&#8217;s password via the Forgot Password mechanism with <em>the truthful answer</em> to his security question.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Bjoern&#8217;s Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset the password of Bjoern&#8217;s internal account via the Forgot Password mechanism with <em>the truthful answer</em> to his security question.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Jim&#8217;s Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Jim&#8217;s password via the Forgot Password mechanism with <em>the truthful answer</em> to his security question.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Two Factor Authentication</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solve the 2FA challenge for user "wurstbrot". (Disabling, bypassing or overwriting his 2FA settings does not count as a solution)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_reset_the_password_of_bjoerns_owasp_account_via_the_forgot_password_mechanism"><a class="anchor" href="#_reset_the_password_of_bjoerns_owasp_account_via_the_forgot_password_mechanism"></a>Reset the password of Bjoern&#8217;s OWASP account via the Forgot Password mechanism</h3>
+<div class="paragraph">
+<p>This challenge is not about any technical vulnerability. Instead it is
+about finding out the answer to user Bjoern&#8217;s chosen security question
+and use it to reset the password of his OWASP account.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Many website registrations use security questions for both password
+retrieval/reset and sign-in verification. Some also ask the same
+security questions when users call on the phone. Security questions
+are one method to verify the user and stop unauthorized access. But
+there are problems with security questions. Websites may use poor
+security questions that may have negative results:</p>
+</div>
+<div class="paragraph">
+<p>The user can&#8217;t accurately remember the answer or the answer changed,
+The question doesn&#8217;t work for the user, The question is not safe and
+could be discovered or guessed by others. It is essential that we use
+good questions. Good security questions meet five criteria. The answer
+to a good security question is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Safe</strong>: cannot be guessed or researched</p>
+</li>
+<li>
+<p><strong>Stable</strong>: does not change over time</p>
+</li>
+<li>
+<p><strong>Memorable</strong>: can remember</p>
+</li>
+<li>
+<p><strong>Simple</strong>: is precise, easy, consistent</p>
+</li>
+<li>
+<p><strong>Many</strong>: has many possible answers</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is difficult to find questions that meet all five criteria which
+means that some questions are good, some fair, and most are poor. <strong>In
+reality, there are few if any GOOD security questions.</strong> People share
+so much personal information on social media, blogs, and websites,
+that it is hard to find questions that meet the criteria above. In
+addition, many questions are not applicable to some people; for
+example, what is your oldest child&#8217;s nickname&#8201;&#8212;&#8201;but you don&#8217;t have a
+child.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hints to the answer to Bjoern&#8217;s question can be found by looking him
+up on the Internet.</p>
+</li>
+<li>
+<p>More precisely, Bjoern might have accidentally (😜) doxxed himself by
+mentioning his security answer on at least one occasion where a camera
+was running.</p>
+</li>
+<li>
+<p>Brute forcing the answer might be very well possible with a
+sufficiently extensive list of common pet names.</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Doxing (from dox, abbreviation of documents) or doxxing is the
+Internet-based practice of researching and broadcasting private or
+identifiable information (especially personally identifiable
+information) about an individual or organization.</p>
+</div>
+<div class="paragraph">
+<p>The methods employed to acquire this information include searching
+publicly available databases and social media websites (like
+Facebook), hacking, and social engineering. It is closely related to
+Internet vigilantism and hacktivism.</p>
+</div>
+<div class="paragraph">
+<p>Doxing may be carried out for various reasons, including to aid law
+enforcement, business analysis, risk analytics, extortion, coercion,
+inflicting harm, harassment, online shaming, and vigilante
+justice.<sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_change_benders_password_into_slurmcl4ssic_without_using_sql_injection_or_forgot_password"><a class="anchor" href="#_change_benders_password_into_slurmcl4ssic_without_using_sql_injection_or_forgot_password"></a>Change Bender&#8217;s password into slurmCl4ssic without using SQL Injection or Forgot Password</h3>
+<div class="paragraph">
+<p>This challenge can only be solved by changing the password of user
+Bender into <em>slurmCl4ssic</em>. Using any sort of SQL Injection will <em>not</em>
+solve the challenge, even if the password is successfully changed in the
+process. Beating Bender&#8217;s security question to change his password also
+does not suffice to solve this challenge!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In previous releases of OWASP Juice Shop this challenge was wrongly
+accused of being based on
+<a href="https://owasp.org/www-community/attacks/csrf">Cross-Site Request Forgery</a>.</p>
+</li>
+<li>
+<p>It might also have been put into the
+<a href="improper-input-validation.html" class="xref page">Improper Input Validation</a> category.</p>
+</li>
+<li>
+<p>Bender&#8217;s current password is so strong that brute force, rainbow table
+or guessing attacks will probably not work.</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A rainbow table is a precomputed table for reversing cryptographic
+hash functions, usually for cracking password hashes. Tables are
+usually used in recovering a plaintext password up to a certain length
+consisting of a limited set of characters. It is a practical example
+of a space/time trade-off, using less computer processing time and
+more storage than a brute-force attack which calculates a hash on
+every attempt, but more processing time and less storage than a simple
+lookup table with one entry per hash. Use of a key derivation function
+that employs a salt makes this attack infeasible.<sup class="footnote" id="_footnote_3">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_in_with_chris_erased_user_account"><a class="anchor" href="#_log_in_with_chris_erased_user_account"></a>Log in with Chris' erased user account</h3>
+<div class="paragraph">
+<p>This challenge is about loggin in with the account of a user who
+previously insisted on his "right to be forgotten" in accordance with
+Art. 17 GDPR.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Trying out the <em>Request Data Erasure</em> functionality might be
+interesting, but cannot help you solve this challenge in real time.</p>
+</li>
+<li>
+<p>If you have solved the challenge
+<a href="injection.adoc#retrieve-a-list-of-all-user-credentials-via-sql-injection">Retrieve a list of all user credentials via SQL Injection</a>
+you might have already retrieved some information about how the Juice
+Shop "deletes" users upon their request.</p>
+</li>
+<li>
+<p>What the Juice Shop does here is totally incompliant with GDPR.
+Luckily a 4% fine on a gross income of 0$ is still 0$.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_in_with_bjoerns_gmail_account"><a class="anchor" href="#_log_in_with_bjoerns_gmail_account"></a>Log in with Bjoern&#8217;s Gmail account</h3>
+<div class="paragraph">
+<p>The author of the OWASP Juice Shop (and of this book) was bold enough to
+link his Google account to the application. His account even ended up in
+the initial user records that are shipped with the Juice Shop for your
+hacking pleasure!</p>
+</div>
+<div class="paragraph">
+<p>If you do not see the <em>Log in with Google</em> button, do not despair! The
+hostname your Juice Shop is running on is simply not configured in the
+OAuth integration with Google. The OAuth-related challenges are still
+solvable! It might just take a little bit more detective work to find
+out how an OAuth login is handled.</p>
+</div>
+<div class="paragraph">
+<p>You can always use the official demo instance at
+<a href="http://demo.owasp-juice.shop" class="bare">http://demo.owasp-juice.shop</a> to play with Google login and learn how
+it works there, then apply what you learned on your local instance.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>There are essentially two ways to light up this challenge in green on
+the score board:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In case you, dear reader, happen to be Bjoern Kimminich, just log in
+with your Google account to automatically solve this challenge!
+Congratulations!</p>
+</li>
+<li>
+<p>Everybody else might want to take detailed look into how the OAuth
+login with Google is implemented.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>It could bring you some insight to register with your own Google
+account and analyze closely what happens behind the scenes.</p>
+</li>
+<li>
+<p>The security flaw behind this challenge is 100% Juice Shop&#8217;s fault and
+0% Google&#8217;s.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The unremarkable side note <em>*without* hacking his Google account</em> in
+the challenge description is <em>not a joke</em>. Please do not try to break
+into Bjoern&#8217;s (or anyone else&#8217;s) Google account. This would be a
+criminal act.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection"><a class="anchor" href="#_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection"></a>Log in with the administrator&#8217;s user credentials without previously changing them or applying SQL Injection</h3>
+<div class="paragraph">
+<p>You might have already solved this challenge along with
+<a href="injection.adoc#log-in-with-the-administrators-user-account">Log in with the administrator&#8217;s user account</a>
+if you chose not to use SQL Injection. This challenge can only be solved
+if you use the original password of the administrator. If you changed
+the password previously, do not despair: The original password will
+<em>always</em> be accepted to make sure you can solve this challenge.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Guessing might work just fine.</p>
+</li>
+<li>
+<p>If you harvested the admin&#8217;s password hash, you can try to attack
+that.</p>
+</li>
+<li>
+<p>In case you use some hacker tool, you can also go for a <em>brute force
+attack</em> using a generic <em>password list</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reset_benders_password_via_the_forgot_password_mechanism"><a class="anchor" href="#_reset_benders_password_via_the_forgot_password_mechanism"></a>Reset Bender&#8217;s password via the Forgot Password mechanism</h3>
+<div class="paragraph">
+<p>This challenge is about finding the answer to user Bender&#8217;s security
+question. It is probably slightly harder to find out than Jim&#8217;s answer.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have no idea who Bender is, please put down this book <em>right
+now</em> and watch the first episodes of
+<a href="http://www.imdb.com/title/tt0149460/">Futurama</a> before you come back.</p>
+</li>
+<li>
+<p>Unexpectedly, Bender also chose to answer his chosen question
+truthfully.</p>
+</li>
+<li>
+<p>Hints to the answer to Bender&#8217;s question can be found in publicly
+available information on the Internet.</p>
+</li>
+<li>
+<p>If a seemingly correct answer is not accepted, you <em>might</em> just need
+to try some alternative spelling.</p>
+</li>
+<li>
+<p>Brute forcing the answer should be next to impossible.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reset_the_password_of_bjoerns_internal_account_via_the_forgot_password_mechanism"><a class="anchor" href="#_reset_the_password_of_bjoerns_internal_account_via_the_forgot_password_mechanism"></a>Reset the password of Bjoern&#8217;s internal account via the Forgot Password mechanism</h3>
+<div class="paragraph">
+<p>This challenge is about finding the answer to the security question of
+Bjoern&#8217;s internal user account <code>bjoern@juice-sh.op</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Other than with
+<a href="#reset-the-password-of-bjoerns-owasp-account-via-the-forgot-password-mechanism">his OWASP account</a>,
+Bjoern was a bit less careless with his choice of security and answer
+to his internal account.</p>
+</li>
+<li>
+<p>Bjoern chose to answer his chosen question truthfully but tried to
+make it harder for attackers by applying sort of a historical twist.</p>
+</li>
+<li>
+<p>Again, hints to the answer to Bjoern&#8217;s question can be found by
+looking him up on the Internet.</p>
+</li>
+<li>
+<p>Brute forcing the answer should be next to impossible.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reset_jims_password_via_the_forgot_password_mechanism"><a class="anchor" href="#_reset_jims_password_via_the_forgot_password_mechanism"></a>Reset Jim&#8217;s password via the Forgot Password mechanism</h3>
+<div class="paragraph">
+<p>This challenge is about finding the answer to user Jim&#8217;s security
+question.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The hardest part of this challenge is actually to find out who Jim
+actually is</p>
+</li>
+<li>
+<p>Jim picked one of the worst security questions and chose to answer it
+truthfully</p>
+</li>
+<li>
+<p>As Jim is a celebrity, the answer to his question is quite easy to
+find in publicly available information on the internet</p>
+</li>
+<li>
+<p>Even brute forcing the answer should be possible with the right kind
+of word list</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solve_the_2fa_challenge_for_user_wurstbrot"><a class="anchor" href="#_solve_the_2fa_challenge_for_user_wurstbrot"></a>Solve the 2FA challenge for user "wurstbrot"</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Multi-factor authentication (MFA)</strong> is an authentication method in
+which a computer user is granted access only after successfully
+presenting two or more pieces of evidence (or factors) to an
+authentication mechanism: knowledge (something the user and only the
+user knows), possession (something the user and only the user has),
+and inherence (something the user and only the user is).</p>
+</div>
+<div class="paragraph">
+<p><strong>Two-factor authentication</strong> (also known as <strong>2FA</strong>) is a type, or
+subset, of multi-factor authentication. It is a method of confirming
+users' claimed identities by using a combination of two different
+factors: 1) something they know, 2) something they have, or 3)
+something they are.</p>
+</div>
+<div class="paragraph">
+<p>A good example of two-factor authentication is the withdrawing of
+money from an ATM; only the correct combination of a bank card
+(something the user possesses) and a PIN (something the user knows)
+allows the transaction to be carried out.</p>
+</div>
+<div class="paragraph">
+<p>Two other examples are to supplement a user-controlled password with a
+one-time password (OTP) or code generated or received by an
+authenticator (e.g. a security token or smartphone) that only the user
+possesses.<sup class="footnote" id="_footnote_4">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>In the Juice Shop one customer was very security-aware and set up 2FA
+for his account. He goes by the hilarious username <em>wurstbrot</em>.<sup class="footnote" id="_footnote_5">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As always, first learn how the feature under attack is used and
+behaves under normal conditions.</p>
+</li>
+<li>
+<p>Make sure you understand how 2FA with TOTP (time-based one-time
+password) works and which part of it is the critically sensitive one.</p>
+</li>
+<li>
+<p>Solving the challenge
+<a href="injection.adoc#retrieve-a-list-of-all-user-credentials-via-sql-injection">Retrieve a list of all user credentials via SQL Injection</a>
+before tackling this one will definitely help. But it will not carry
+you all the way.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="http://goodsecurityquestions.com" class="bare">http://goodsecurityquestions.com</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://en.wikipedia.org/wiki/Doxing" class="bare">https://en.wikipedia.org/wiki/Doxing</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://en.wikipedia.org/wiki/Rainbow_table" class="bare">https://en.wikipedia.org/wiki/Rainbow_table</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://en.wikipedia.org/wiki/Multi-factor_authentication" class="bare">https://en.wikipedia.org/wiki/Multi-factor_authentication</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://www.dict.cc/?s=wurstbrot" class="bare">https://www.dict.cc/?s=wurstbrot</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sensitive Data Exposure :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part II - Challenge hunting</li>
+    <li><a href="sensitive-data-exposure.html">Sensitive Data Exposure</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/part2/sensitive-data-exposure.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Sensitive Data Exposure</h1>
+<div class="sect1">
+<h2 id="_challenges_covered_in_this_chapter"><a class="anchor" href="#_challenges_covered_in_this_chapter"></a>Challenges covered in this chapter</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Log</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gain access to any access log file of the server.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Confidential Document</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access a confidential document.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email Leak</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Perform an unwanted information disclosure by accessing data cross-domain.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exposed Metrics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find the endpoint that serves usage data to be scraped by a popular monitoring system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forgotten Developer Backup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access a developer&#8217;s forgotten backup file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forgotten Sales Backup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access a salesman&#8217;s forgotten backup file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GDPR Data Theft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steal someone else&#8217;s personal data without using Injection.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leaked Access Logs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leaked Unsafe Product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Login Amy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with Amy&#8217;s original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Login MC SafeSearch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with MC SafeSearch&#8217;s original user credentials without applying SQL Injection or any other bypass.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta Geo Stalking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determine the answer to John&#8217;s security question by looking at an upload of him to the Photo Wall and use it to reset his password via the Forgot Password mechanism.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Misplaced Signature File</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access a misplaced SIEM signature file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Uvogin&#8217;s Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Uvogin&#8217;s password via the Forgot Password mechanism with <em>his original answer</em> to his security question.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve Blueprint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprive the shop of earnings by downloading the blueprint for one of its products.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visual Geo Stalking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determine the answer to Emma&#8217;s security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_gain_access_to_any_access_log_file_of_the_server"><a class="anchor" href="#_gain_access_to_any_access_log_file_of_the_server"></a>Gain access to any access log file of the server</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>An access log is a list of all the requests for individual files that
+people have requested from a Web site. These files will include the
+HTML files and their imbedded graphic images and any other associated
+files that get transmitted. The access log (sometimes referred to as
+the "raw data") can be analyzed and summarized by another program.</p>
+</div>
+<div class="paragraph">
+<p>In general, an access log can be analyzed to tell you:</p>
+</div>
+<div class="paragraph">
+<p>The number of visitors (unique first-time requests) to a home page The
+origin of the visitors in terms of their associated server&#8217;s domain
+name (for example, visitors from .edu, .com, and .gov sites and from
+the online services) How many requests for each page at the site,
+which can be presented with the pages with most requests listed first
+Usage patterns in terms of time of day, day of week, and seasonally
+Access log keepers and analyzers can be found as shareware on the Web
+or may come with a Web server.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The Juice Shop application server is writing access logs, which can
+contain interesting information that competitors might also be
+interested in.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Normally, server log files are written to disk on server side and are
+not accessible from the outside.</p>
+</li>
+<li>
+<p>Which raises the question: Who would want a server access log to be
+accessible through a web application?</p>
+</li>
+<li>
+<p>One particular file found in the folder you might already have found
+during the
+<a href="#access-a-confidential-document">Access a confidential document</a>
+challenge might give you an idea who is interested in such a public
+exposure.</p>
+</li>
+<li>
+<p>Drilling down one level into the file system might not be sufficient.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_a_confidential_document"><a class="anchor" href="#_access_a_confidential_document"></a>Access a confidential document</h3>
+<div class="paragraph">
+<p>Somewhere in the application you can find a file that contains sensitive
+information about some - potentially hostile - takeovers the Juice Shop
+top management has planned.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Analyze and tamper with links in the application that deliver a file
+directly.</p>
+</li>
+<li>
+<p>The file you are looking for is not protected in any way. Once you
+<em>found it</em> you can also <em>access it</em>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_perform_an_unwanted_information_disclosure_by_accessing_data_cross_domain"><a class="anchor" href="#_perform_an_unwanted_information_disclosure_by_accessing_data_cross_domain"></a>Perform an unwanted information disclosure by accessing data cross-domain</h3>
+<div class="paragraph">
+<p>Somewhere in the application there is an API endpoint which will allow
+data to be accessed cross domain. Usually the same-origin policy would
+prevent this but this endpoint has a special feature enabled which will
+allow cross domain access under certain circumstances.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Try to find and attack an endpoint that responds with user
+information. SQL Injection is not the solution here.</p>
+</li>
+<li>
+<p>What ways are there to access data from a web application
+cross-domain?</p>
+</li>
+<li>
+<p>This challenge uses an old way which is no longer recommended.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system"><a class="anchor" href="#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system"></a>Find the endpoint that serves usage data to be scraped by a popular monitoring system</h3>
+<div class="paragraph">
+<p>The popular monitoring system being referred to in the challenge
+description is <a href="https://github.com/prometheus/prometheus">Prometheus</a>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Prometheus is an open-source systems monitoring and alerting toolkit
+originally built at SoundCloud. Since its inception in 2012, many
+companies and organizations have adopted Prometheus, and the project
+has a very active developer and user community. It is now a standalone
+open source project and maintained independently of any company. To
+emphasize this, and to clarify the project&#8217;s governance structure,
+Prometheus joined the Cloud Native Computing Foundation in 2016 as the
+second hosted project, after Kubernetes. <sup class="footnote" id="_footnote_6">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Juice Shop serves its metrics on the default path expected by
+Prometheus</p>
+</li>
+<li>
+<p>Guessing the path is probably just as quick as taking the RTFM route
+via <a href="https://prometheus.io/docs/introduction/first_steps" class="bare">https://prometheus.io/docs/introduction/first_steps</a></p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>RTFM is an initialism for the expression "read the fucking manual".
+<sup class="footnote" id="_footnote_7">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_a_developers_forgotten_backup_file"><a class="anchor" href="#_access_a_developers_forgotten_backup_file"></a>Access a developer&#8217;s forgotten backup file</h3>
+<div class="paragraph">
+<p>During an emergency incident and the hotfix that followed, a developer
+accidentally pasted an application configuration file into the wrong
+place. Downloading this file will not only solve the <em>Access a
+developer&#8217;s forgotten backup file</em> challenge but might also prove
+crucial in several other challenges later on.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Analyze and tamper with links in the application that deliver a file
+directly.</p>
+</li>
+<li>
+<p>The file is not directly accessible because a security mechanism
+prevents access to it.</p>
+</li>
+<li>
+<p>You need to trick the security mechanism into thinking that the file
+has a valid file type.</p>
+</li>
+<li>
+<p>For this challenge there is only <em>one approach</em> to pull this trick.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_a_salesmans_forgotten_backup_file"><a class="anchor" href="#_access_a_salesmans_forgotten_backup_file"></a>Access a salesman&#8217;s forgotten backup file</h3>
+<div class="paragraph">
+<p>A salesperson as accidentally uploaded a list of (by now outdated)
+coupon codes to the application. Downloading this file will not only
+solve the <em>Access a salesman&#8217;s forgotten backup file</em> challenge but
+might also prove useful in another challenge later on.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Analyze and tamper with links in the application that deliver a file
+directly.</p>
+</li>
+<li>
+<p>The file is not directly accessible because a security mechanism
+prevents access to it.</p>
+</li>
+<li>
+<p>You need to trick the security mechanism into thinking that the file
+has a valid file type.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_steal_someone_elses_personal_data_without_using_injection"><a class="anchor" href="#_steal_someone_elses_personal_data_without_using_injection"></a>Steal someone else&#8217;s personal data without using Injection</h3>
+<div class="paragraph">
+<p>In order to comply with GDPR, the Juice Shop offers a <em>Request Data
+Export</em> function for its registered customers. It is possible to exploit
+a flaw in the feature to retrieve more data than intended. Injection
+attacks will not count to solve this one.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You should not try to steal data from a "vanilla" user who never even
+ordered something at the shop.</p>
+</li>
+<li>
+<p>As everything about this data export functionality happens on the
+server-side, it won&#8217;t be possible to just tamper with some HTTP
+requests to solve this challenge.</p>
+</li>
+<li>
+<p>Inspecting various server responses which contain user-specific data
+might give you a clue about the mistake the developers made.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to"><a class="anchor" href="#_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to"></a>Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to</h3>
+<div class="paragraph">
+<p>The company behind the Juice Shop failed miserably at implementing any
+data loss prevention measures for itself. This challenge simulates a
+seemingly harmless data leak that - upon closer inspection -
+subsequently allows an account takeover.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>Data loss prevention software</strong> detects potential data breaches/data
+ex-filtration transmissions and prevents them by monitoring, detecting
+and blocking sensitive data while in use (endpoint actions), in motion
+(network traffic), and at rest (data storage).</p>
+</div>
+<div class="paragraph">
+<p>The terms "data loss" and "data leak" are related and are often used
+interchangeably. Data loss incidents turn into data leak incidents in
+cases where media containing sensitive information is lost and
+subsequently acquired by an unauthorized party. However, a data leak
+is possible without losing the data on the originating side. Other
+terms associated with data leakage prevention are information leak
+detection and prevention (ILDP), information leak prevention (ILP),
+content monitoring and filtering (CMF), information protection and
+control (IPC) and extrusion prevention system (EPS), as opposed to
+intrusion prevention system. <sup class="footnote" id="_footnote_2">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As the challenge name implies, your task is to find some leaked access
+logs which happen to have a fairly common format.</p>
+</li>
+<li>
+<p>A very popular help platform for developers might contain breadcrumbs
+towards solving this challenge</p>
+</li>
+<li>
+<p>The actual log file was copied &amp; paste onto a platform often used to
+share data quickly with externals or even just internal peers.</p>
+</li>
+<li>
+<p>Once you found and harvested the important piece of information from
+the log, you could employ a technique called <em>Password Spraying</em> to
+solve this challenge.</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Password spraying refers to the attack method that takes a large
+number of usernames and loops them with a single password. We can use
+multiple iterations using a number of different passwords, but the
+number of passwords attempted is usually low when compared to the
+number of users attempted. This method avoids password lockouts, and
+it is often more effective at uncovering weak passwords than targeting
+specific users.<sup class="footnote" id="_footnote_5">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_identify_an_unsafe_product_that_was_removed_from_the_shop_and_inform_the_shop_which_ingredients_are_dangerous"><a class="anchor" href="#_identify_an_unsafe_product_that_was_removed_from_the_shop_and_inform_the_shop_which_ingredients_are_dangerous"></a>Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous</h3>
+<div class="paragraph">
+<p>Similar to
+<a href="#dumpster-dive-the-internet-for-a-leaked-password-and-log-in-to-the-original-user-account-it-belongs-to">Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to</a>
+this challenge further highlights the risks from a lack of data loss
+prevention.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must first identify the "unsafe product" which ist not available
+any more in the shop.</p>
+</li>
+<li>
+<p>Solving the
+<a href="injection.adoc#order-the-christmas-special-offer-of-2014">Order the Christmas special offer of 2014</a>
+challenge might give it to you as by-catch.</p>
+</li>
+<li>
+<p>The actual data you need to solve this challenge was leaked on the
+same platform that was involved in
+<a href="#dumpster-dive-the-internet-for-a-leaked-password-and-log-in-to-the-original-user-account-it-belongs-to">Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to</a></p>
+</li>
+<li>
+<p>Google is a particularly good accomplice in this challenge.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_in_with_amys_original_user_credentials"><a class="anchor" href="#_log_in_with_amys_original_user_credentials"></a>Log in with Amy&#8217;s original user credentials</h3>
+<div class="paragraph">
+<p>This challenge is similar to
+<a href="broken-authentication.adoc#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection">Log in with the administrators user credentials without previously changing them or applying SQL Injection</a>
+in the sense that only using her original credentials will work as a
+challenge solutions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part2/amy_and_kif.jpg" alt="Amy and Kif Kroker">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As with so many other characters from
+<a href="http://www.imdb.com/title/tt0149460/">Futurama</a> this challenge is of
+course about logging in as Amy from that show. In the picture above
+you see her together with her alien husband Kif.</p>
+</li>
+<li>
+<p>The challenge description contains a few sentences which give away
+some information how Amy decided to strengthen her password.</p>
+</li>
+<li>
+<p>Obviously, Amy - being a little dimwitted - did not put nearly enough
+effort and creativity into the password selection process.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_in_with_mc_safesearchs_original_user_credentials"><a class="anchor" href="#_log_in_with_mc_safesearchs_original_user_credentials"></a>Log in with MC SafeSearch&#8217;s original user credentials</h3>
+<div class="paragraph">
+<p>Another user login challenge where only the original password is
+accepted as a solution. Employing SQL Injection or other attacks does
+not count.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MC SafeSearch is a rapper who produced the song
+<a href="https://www.youtube.com/watch?v=v59CX2DiX0Y">"Protect Ya' Passwordz"</a>
+which explains password &amp; sensitive data protection very nicely.</p>
+</li>
+<li>
+<p>After watching
+<a href="https://www.youtube.com/watch?v=v59CX2DiX0Y">the music video of this song</a>,
+you should agree that even ⭐⭐ is a slightly exaggerated difficulty
+rating for this challenge.</p>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.youtube.com/watch?v=v59CX2DiX0Y"><img src="../_images/part2/protect-ya-passwordz.jpg" alt="Protect Ya Passwordz"></a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_determine_the_answer_to_johns_security_question"><a class="anchor" href="#_determine_the_answer_to_johns_security_question"></a>Determine the answer to John&#8217;s security question</h3>
+<div class="paragraph">
+<p>Who would have guessed that a simple walk in the park could lead to an
+account compromise. People these days are not careful with what they
+post online and are not aware of the possible consequences it can have
+when people exploit that.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make use of tools that can inspect the metadata of images.</p>
+</li>
+<li>
+<p>Use this information to answer the security question of the John, who
+enjoys hiking in the park.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_access_a_misplaced_siem_signature_file"><a class="anchor" href="#_access_a_misplaced_siem_signature_file"></a>Access a misplaced SIEM signature file.</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Security information and event management (SIEM) technology supports
+threat detection and security incident response through the real-time
+collection and historical analysis of security events from a wide
+variety of event and contextual data sources. It also supports
+compliance reporting and incident investigation through analysis of
+historical data from these sources. The core capabilities of SIEM
+technology are a broad scope of event collection and the ability to
+correlate and analyze events across disparate sources.<sup class="footnote" id="_footnote_3">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The misplaced signature file is actually a rule file for
+<a href="https://github.com/Neo23x0/sigma">Sigma</a>, a generic signature format
+for SIEM systems:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Sigma is a generic and open signature format that allows you to
+describe relevant log events in a straight forward manner. The rule
+format is very flexible, easy to write and applicable to any type of
+log file. The main purpose of this project is to provide a structured
+form in which researchers or analysts can describe their once
+developed detection methods and make them shareable with others.</p>
+</div>
+<div class="paragraph">
+<p>Sigma is for log files what Snort is for network traffic and YARA is
+for files.<sup class="footnote" id="_footnote_4">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you solved one of the other four file access challenges, you
+already know where the SIEM signature file is located</p>
+</li>
+<li>
+<p>Simply reuse the trick that already worked for the files above</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reset_uvogins_password_via_the_forgot_password_mechanism"><a class="anchor" href="#_reset_uvogins_password_via_the_forgot_password_mechanism"></a>Reset Uvogin&#8217;s password via the Forgot Password mechanism</h3>
+<div class="paragraph">
+<p>With the amount of personal information that people tend to reveal
+online, security questions are hardly reliable anymore.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>People often reuse aliases online. You might be able to find something
+by looking online for Uvogin&#8217;s name or slight variations of it based
+on his unique writing habits</p>
+</li>
+<li>
+<p>You might be able to find some existing OSINT tools to help you in
+this investigation</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products"><a class="anchor" href="#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products"></a>Deprive the shop of earnings by downloading the blueprint for one of its products</h3>
+<div class="paragraph">
+<p>Why waste money for a product when you can just as well get your hands
+on its blueprint in order to make it yourself?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The product you might want to give a closer look is the <em>OWASP Juice
+Shop Logo (3D-printed)</em></p>
+</li>
+<li>
+<p>For your inconvenience the blueprint was <em>not</em> misplaced into the same
+place like so many others forgotten files covered in this chapter</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ℹ️ <em>If you are running the Juice Shop with a custom theme and product
+inventory, the product to inspect will be a different one. The tooltip
+on the Score Board will tell you which one to look into.</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_determine_the_answer_to_emmas_security_question"><a class="anchor" href="#_determine_the_answer_to_emmas_security_question"></a>Determine the answer to Emma&#8217;s security question</h3>
+<div class="paragraph">
+<p>It is also possible to determine where a picture was taken by looking at
+visual clues within the image. A certain user has uploaded a picture of
+his old workplace. Take a look at what his security question is and see
+if you can find the answer by looking at his uploaded image.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Look at visual clues to determine what company is shown in the picture
+and use that to answer the security question.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://searchsecurity.techtarget.com/definition/access-log" class="bare">https://searchsecurity.techtarget.com/definition/access-log</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://prometheus.io/docs/introduction/overview/" class="bare">https://prometheus.io/docs/introduction/overview/</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://en.wikipedia.org/wiki/RTFM" class="bare">https://en.wikipedia.org/wiki/RTFM</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://en.wikipedia.org/wiki/Data_loss_prevention_software" class="bare">https://en.wikipedia.org/wiki/Data_loss_prevention_software</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://resources.infosecinstitute.com/password-spraying/" class="bare">https://resources.infosecinstitute.com/password-spraying/</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. <a href="https://www.gartner.com/it-glossary/security-information-and-event-management-siem/" class="bare">https://www.gartner.com/it-glossary/security-information-and-event-management-siem/</a>
+</div>
+<div class="footnote" id="_footnotedef_7">
+<a href="#_footnoteref_7">7</a>. <a href="https://github.com/Neo23x0/sigma#what-is-sigma" class="bare">https://github.com/Neo23x0/sigma#what-is-sigma</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
