@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contribute to development :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part III - Getting involved</li>
+    <li><a href="contribution.html">Contribute to development</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/part3/contribution.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Contribute to development</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you would like to contribute to OWASP Juice Shop but need some idea
+what task to address, the best place to look is in the GitHub issue
+lists at <a href="https://github.com/juice-shop/juice-shop/issues" class="bare">https://github.com/juice-shop/juice-shop/issues</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/part3/help_wanted-label.png" alt="help wanted" width="label on GitHub"></span>
+<span class="image"><img src="../_images/part3/good_first_issue-label.png" alt="good first issue" width="label on GitHub"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Issues labelled with <strong>help wanted</strong> indicate tasks where the project
+team would very much appreciate help from the community</p>
+</li>
+<li>
+<p>Issues labelled with <strong>good first issue</strong> indicate tasks that are
+isolated and not too hard to implement, so they are well-suited for
+new contributors</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following sections describe in detail the most important rules and
+processes when contributing to the OWASP Juice Shop project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tips_for_newcomers"><a class="anchor" href="#_tips_for_newcomers"></a>Tips for newcomers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are new to application development - particularly with Angular
+and Express.js - it is recommended to read the
+<a href="codebase.html" class="xref page">Codebase 101</a> to get an overview what belongs where. It
+will lower the entry barrier for you significantly.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_control"><a class="anchor" href="#_version_control"></a>Version control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The project uses <code>git</code> as its version control system and GitHub as the
+central server and collaboration platform. OWASP Juice Shop resides in
+the following repository:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/juice-shop/juice-shop" class="bare">https://github.com/juice-shop/juice-shop</a></p>
+</div>
+<div class="sect2">
+<h3 id="_forking_cloning"><a class="anchor" href="#_forking_cloning"></a>Forking &amp; cloning</h3>
+<div class="paragraph">
+<p>You can clone the original repository with <code>git clone https://github.com/juice-shop/juice-shop.git</code> but
+in order to contribute to the project via <a href="#pull-requests">Pull Requests</a> you probably want to <a href="https://github.com/juice-shop/juice-shop/fork">fork the repository
+instead</a> and then clone that fork to work on with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git clone https://github.com/&lt;your GitHub username&gt;/juice-shop.git</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_branching_model"><a class="anchor" href="#_branching_model"></a>Branching model</h3>
+<div class="paragraph">
+<p>OWASP Juice Shop is maintained in a simplified
+<a href="http://jeffkreeftmeijer.com/2010/why-arent-you-using-git-flow/">Gitflow</a>
+fashion, where all active development happens on the <code>develop</code> branch
+while <code>master</code> is used to deploy stable versions to the
+<a href="https://juice-shop.herokuapp.com">Heroku demo instance</a> and later
+create tagged releases from.</p>
+</div>
+<div class="paragraph">
+<p>Feature branches are only used for long-term tasks that could jeopardize
+regular releases from <code>develop</code> in the meantime. Likewise prototypes and
+experiments must be developed on an individual branch or a distinct fork
+of the entire project.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_versioning"><a class="anchor" href="#_versioning"></a>Versioning</h3>
+<div class="paragraph">
+<p>Any release from <code>master</code> is tagged with a unique version in the format
+<code>vMAJOR.MINOR.PATCH</code>, for example <code>v1.3.0</code> or <code>v4.1.2</code>.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Given a version number <code>MAJOR.MINOR.PATCH</code>, increment the:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MAJOR</code> version when you make incompatible API changes,</p>
+</li>
+<li>
+<p><code>MINOR</code> version when you add functionality in a
+backwards-compatible manner, and</p>
+</li>
+<li>
+<p><code>PATCH</code> version when you make backwards-compatible bug fixes.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+</ol>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The current version of the project (omitting the leading <code>v</code>) must be
+manually maintained in the following three places:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/package.json</code> in the <code>"version"</code> property</p>
+</li>
+<li>
+<p><code>/frontend/package.json</code> in the <code>"version"</code> property</p>
+</li>
+<li>
+<p><code>/Dockerfile</code> in the <code>LABEL</code> named <code>org.opencontainers.image.version</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All other occurrences of the version (i.e. packaged releases &amp; the menu
+bar of the application itself) are resolved through the <code>"version"</code>
+property of <code>/package.json</code> automatically.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pull_requests"><a class="anchor" href="#_pull_requests"></a>Pull requests</h3>
+<div class="paragraph">
+<p>Using Git-Flow means that PRs have the highest chance of getting
+accepted and merged when you open them on the <code>develop</code> branch of your
+fork. That allows for some post-merge changes by the team without
+directly compromising the <code>master</code> branch, which is supposed to hold
+always be in a release-ready state.</p>
+</div>
+<div class="paragraph">
+<p>It is usually not a big deal if you accidentally open a PR for the
+<code>master</code> branch. GitHub added the possibility to change the target
+branch for a PR afterwards some time ago.</p>
+</div>
+<div class="paragraph">
+<p>In case you want to open a PR before actually being finished with your
+work (e.g. because you&#8217;d like to see some intermediate CI/CD results)
+please<br>
+put either "<code class="code">[WIP]</code>" or <code>[</code>:construction:<code>]</code> into the title. This will
+signal the <a href="https://github.com/marketplace/wip">WIP app</a> we&#8217;re using on
+GitHub to mark this PR as not ready for merge.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contribution_guidelines"><a class="anchor" href="#_contribution_guidelines"></a>Contribution guidelines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The minimum requirements for code contributions are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The code <em>must</em> be compliant with the configured ESLint rules based
+on the <a href="http://standardjs.com">JS Standard Code Style</a>.</p>
+</li>
+<li>
+<p>All new and changed code <em>should</em> have a corresponding unit and/or
+integration test.</p>
+</li>
+<li>
+<p>New and changed challenges <em>must</em> have a corresponding e2e test.</p>
+</li>
+<li>
+<p>Linting, as well as all unit, integration and e2e tests <em>should</em> pass
+locally before opening a Pull Request.</p>
+</li>
+<li>
+<p>All Git commits within a PR <em>must</em> be
+<a href="https://git-scm.com/docs/git-commit#Documentation/git-commit.txt&#8212;&#8203;s">signed off</a>
+to indicate the contributor&#8217;s agreement with the
+<a href="https://developercertificate.org/">Developer Certificate of Origin</a>.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_linting"><a class="anchor" href="#_linting"></a>Linting</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/badge.svg" alt="JavaScript Style Guide">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run lint</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>npm run lint</code> script verifies code compliance with</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <code>eslintrc.js</code> rules derived from <code>standard</code> for all server-side
+JavaScript code</p>
+</li>
+<li>
+<p>the <code>frontend/eslintrc.js</code> rules derived from
+<code>standard-with-typescript</code> for the frontend TypeScript code</p>
+</li>
+<li>
+<p>the <code>frontend/stylelintrc.js</code> rules derived from
+<code>stylelint-config-sass-guidelines</code> for the frontend SCSS stylesheets</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If PRs deviate from this coding style, they will break the CI/CD
+pipeline and will not be merged until refactored to match the coding
+rules.</p>
+</div>
+<div class="paragraph">
+<p>In case your PR is failing from style guide issues try running <code>npm run
+lint:fix</code> over your code - this will fix many syntax issues
+automatically without breaking your code.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing"><a class="anchor" href="#_testing"></a>Testing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm test                           # run all unit tests
+npm run frisby                     # run all API integration tests
+npm start &amp; npm run cypress:open &amp; # run all end-to-end tests</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pull Requests are verified to pass all the following test stages during
+the
+<a href="https://github.com/juice-shop/juice-shop/actions">continuous integration build</a>.
+It is recommended that you run these tests on your local computer to
+verify they pass before submitting a PR. New features should be
+accompanied by an appropriate number of corresponding tests to verify
+they behave as intended.</p>
+</div>
+<div class="sect3">
+<h4 id="_unit_tests"><a class="anchor" href="#_unit_tests"></a>Unit tests</h4>
+<div class="paragraph">
+<p>There is a full suite containing isolated unit tests</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>for all client-side code in <code>frontend/src/app/**/*.spec.ts</code></p>
+</li>
+<li>
+<p>for the server-side routes and libraries in <code>test/server/*Spec.ts</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm test</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_integration_tests"><a class="anchor" href="#_integration_tests"></a>Integration tests</h4>
+<div class="paragraph">
+<p>The integration tests in <code>test/api/*Spec.ts</code> verify if the backend for
+all normal use cases of the application works. All server-side
+vulnerabilities are also tested.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm run frisby</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These tests automatically start a server and run the tests against it. A
+working internet connection is recommended.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_end_to_end_tests"><a class="anchor" href="#_end_to_end_tests"></a>End-to-end tests</h4>
+<div class="paragraph">
+<p>The e2e test suite in <code>cypress/integration/e2e/*Spec.ts</code> verifies if all client- and
+server-side vulnerabilities are exploitable. It passes only when all
+challenges are solvable on the score board.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm start &amp; npm run cypress:open &amp;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The end-to-end tests require a locally installed Google Chrome browser
+and internet access to be able to pass.</p>
+</div>
+<div class="paragraph">
+<p>If you have a web proxy configured via <code>HTTP_PROXY</code> environment
+variable, the end-to-end tests <a href="https://docs.cypress.io/guides/references/proxy-configuration">will honor this setting</a>. This can be
+useful to e.g. run the tests through tools like
+<a href="https://www.zaproxy.org/">OWASP ZAP</a> or Burpsuite.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_manually_testing_packaged_distributions"><a class="anchor" href="#_manually_testing_packaged_distributions"></a>Manually testing packaged distributions</h3>
+<div class="paragraph">
+<p>During releases the application will be packaged into <code>.zip</code>/<code>.tgz</code>
+archives for another easy setup method. When you contribute a change
+that impacts what the application needs to include, make sure you test
+this manually on your system.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install --production &amp;&amp; grunt package</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then take the created archive from <code>/dist</code> and follow the steps
+described above in
+<a href="https://github.com/juice-shop/juice-shop#packaged-distributions--">Packaged Distributions</a>
+to make sure nothing is broken or missing.</p>
+</div>
+<div class="sect3">
+<h4 id="_smoke_tests"><a class="anchor" href="#_smoke_tests"></a>Smoke tests</h4>
+<div class="paragraph">
+<p>The shell script <code>test/smoke/smoke-test.sh</code> performs some <em>very basic</em>
+checks on the availability of expected UI content and API endpoints.
+During CI/CD it is used to verify if the packaged distribution and
+Docker image start properly.</p>
+</div>
+<div class="paragraph">
+<p>To manually use it on a packaged distribution run the following in your
+local repository clone root folder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">npm install --production &amp;&amp; grunt package
+cd dist &amp;&amp; tar -zxf juice-shop-*.tgz &amp;&amp; cd juice-shop_*
+npm start &amp;
+../../test/smoke/smoke-test.sh http://localhost:3000</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_development_mode_for_angular_frontend"><a class="anchor" href="#_development_mode_for_angular_frontend"></a>Development mode for Angular frontend</h3>
+<div class="paragraph">
+<p>Running <code>npm install</code> over and over for frontend code or view changes
+can be very time-consuming. Juice Shop can be run in a development mode
+provided through Angular CLI to avoid this. Run <code>npm run serve</code> from the
+root project folder and navigate to <a href="http://localhost:4200" class="bare">http://localhost:4200</a> instead of
+the usual port <code>3000</code>. Whenever you change code in the <code>frontend/src</code>
+folder, the UI will recompile the affected bit and auto-reload the
+browser window for you.</p>
+</div>
+<div class="paragraph">
+<p>Please note that the backend is still running on <a href="http://localhost:3000" class="bare">http://localhost:3000</a>
+in this mode and that changes in the backend code are not automatically
+applied.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_developing_in_a_github_codespace"><a class="anchor" href="#_developing_in_a_github_codespace"></a>Developing in a GitHub codespace</h3>
+<div class="paragraph">
+<p>If you have access to
+<a href="https://github.com/features/codespaces">GitHub Codespaces</a> (which is in
+closed beta at the time of writing this), you can run an almost complete
+development environment for OWASP Juice Shop in the Cloud. It allows you
+to program and run the application entirely from your browser. The
+author has tested this to work very well even on a weak Chromebook.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="https://github.com/codespaces" class="bare">https://github.com/codespaces</a>.</p>
+</li>
+<li>
+<p>Click <em>New codespace</em> and select <code>juice-shop/juice-shop</code> as
+<em>Repository</em> and <code>develop</code> as <em>Branch</em>. Then click <em>Create
+codespace</em>.</p>
+</li>
+<li>
+<p>Your codespace will be set up and launched. It automatically installs
+some plugins to make contributing easier our of the box:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Angular Language Service</p>
+</li>
+<li>
+<p>ESLint</p>
+</li>
+<li>
+<p>npm</p>
+</li>
+<li>
+<p>stylelint</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>After the container initializes, all application dependencies are
+automatically installed. This sometimes runs into some hang-up, so
+you might have to run <code>npm install</code> from the codespace terminal again
+if you see errors on <code>npm start</code> or ESLint complains about missing
+plugins.</p>
+</li>
+<li>
+<p>That&#8217;s it! You&#8217;re ready for developing on OWASP Juice Shop!</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>🚨 Please note that the client-side <a href="#unit-tests">Unit tests</a> and
+<a href="#end-to-end-tests">End-to-end tests</a> will not work on GitHub Codespaces
+due to the lack of a Chrome installation in the underlying container.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_developer_certificate_of_origin"><a class="anchor" href="#_developer_certificate_of_origin"></a>Developer Certificate of Origin</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The Developer Certificate of Origin (DCO) is a lightweight way for
+contributors to certify that they wrote or otherwise have the right to
+submit the code they are contributing to the project. Here is the full
+<a href="https://developercertificate.org/">text of the DCO</a>, reformatted for
+readability:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>By making a contribution to this project, I certify that:</p>
+</div>
+<div class="paragraph">
+<p>(a) The contribution was created in whole or in part by me and I
+have the right to submit it under the open source license indicated
+in the file; or</p>
+</div>
+<div class="paragraph">
+<p>(b) The contribution is based upon previous work that, to the best
+of my knowledge, is covered under an appropriate open source license
+and I have the right under that license to submit that work with
+modifications, whether created in whole or in part by me, under the
+same open source license (unless I am permitted to submit under a
+different license), as indicated in the file; or</p>
+</div>
+<div class="paragraph">
+<p>(c) The contribution was provided directly to me by some other
+person who certified (a), (b) or (c) and I have not modified it.</p>
+</div>
+<div class="paragraph">
+<p>(d) I understand and agree that this project and the contribution
+are public and that a record of the contribution (including all
+personal information I submit with it, including my sign-off) is
+maintained indefinitely and may be redistributed consistent with
+this project or the open source license(s) involved.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Contributors sign-off that they adhere to these requirements by adding
+a Signed-off-by line to commit messages.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>This is my commit message
+
+Signed-off-by: Random J Developer &lt;random@developer.example.org&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Git even has a <code>-s</code> command line option to append this automatically
+to your commit message:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ git commit -s -m 'This is my commit message'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_continuous_integration_deployment"><a class="anchor" href="#_continuous_integration_deployment"></a>Continuous integration &amp; deployment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CI/CD and release pipelines for OWASP Juice Shop are set up as
+GitHub Action workflows:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/juice-shop/juice-shop/actions" class="bare">https://github.com/juice-shop/juice-shop/actions</a></p>
+</div>
+<div class="sect2">
+<h3 id="_cicd_pipeline"><a class="anchor" href="#_cicd_pipeline"></a>CI/CD Pipeline</h3>
+<div class="paragraph">
+<p>On every push to GitHub, a workflow consisting of several jobs is
+triggered on GitHub. Not only direct pushes to the <code>master</code> and
+<code>develop</code> branches are built, but Pull Requests from other branches or
+forks as well. This helps the project team to assess if a PR can be
+safely merged into the codebase. While unit and integration tests are
+executed on different combinations of Node.js and OS, the e2e tests are
+only run on the officially preferred Node.js version
+18.x in order to avoid unnecessary feedback
+delays.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/ci-workflow.png" alt="CI/CD Pipeline workflow on GitHub">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_release_pipeline"><a class="anchor" href="#_release_pipeline"></a>Release Pipeline</h3>
+<div class="paragraph">
+<p>For tag-builds (i.e. versions to be released) another workflow is
+triggered which packages the
+<a href="../part1/running.adoc#from-pre-packaged-distribution">release-artifacts for Linux, MacOS and Windows for each supported Node.js version</a>
+and attach these to the release page on GitHub and also published Docker
+images for the released version.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/release-workflow.png" alt="Release Pipeline workflow on GitHub">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_handling_of_spam_prs"><a class="anchor" href="#_handling_of_spam_prs"></a>Handling of spam PRs</h3>
+<div class="paragraph">
+<p>A small percentage of Pull Requests to <a href="https://github.com/juice-shop/juice-shop" class="bare">https://github.com/juice-shop/juice-shop</a> are opened
+by GitHub users e.g. when "playing" with SCA / SAST tools or other automation tooling. Sometimes those
+users notice their mistake and close the PR right away, sometimes they don&#8217;t. Independent of
+who closed the PR (i.e. the original submitter or a Juice Shop core team member) it will be
+<a href="https://github.com/juice-shop/juice-shop/pulls?q=is%3Apr+label%3Aspam">marked with the <strong>spam</strong> label</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_ban_stages"><a class="anchor" href="#_ban_stages"></a>Ban stages</h4>
+<div class="paragraph">
+<p>Users who open a <strong>spam</strong> PR will be put on a 7-day ban for interaction with the <a href="https://github.com/juice-shop" class="bare">https://github.com/juice-shop</a>
+organization. If a previously blocked user opens another <strong>spam</strong> PR, they will be blocked for
+30 days, or even permanently after a third reoccurence.</p>
+</div>
+<div class="paragraph">
+<p>These measures ensure that the core team can concentrate on the actual contributions to the project
+and not be kept busy by handling accidental or intentional spammers.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_instant_permanent_ban"><a class="anchor" href="#_instant_permanent_ban"></a>Instant permanent ban</h4>
+<div class="paragraph">
+<p>Submitting obviously non-accidental <strong>spam</strong>
+PRs - especially during events like Hacktoberfest or Google Summer of Code - can lead to a
+permanent ban right away. The same applies for PRs with obviously malicious or abusive intent as
+detailed in the Juice Shop&#8217;s <a href="https://github.com/juice-shop/juice-shop/blob/master/CODE_OF_CONDUCT.adoc">Code of Conduct</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_redemption_from_banishment"><a class="anchor" href="#_redemption_from_banishment"></a>Redemption from banishment</h4>
+<div class="paragraph">
+<p>In the unlikely case that a user ended on the ban list by mistake or without comprehensible
+cause, they may contact <a href="mailto:bjoern.kimminich@owasp.org">bjoern.kimminich@owasp.org</a>
+and request to be removed from the ban list.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="http://semver.org" class="bare">http://semver.org</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://probot.github.io/apps/dco/" class="bare">https://probot.github.io/apps/dco/</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

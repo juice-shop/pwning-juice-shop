@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Security Misconfiguration :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part II - Challenge hunting</li>
+    <li><a href="security-misconfiguration.html">Security Misconfiguration</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/part2/security-misconfiguration.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Security Misconfiguration</h1>
+<div class="sect1">
+<h2 id="_challenges_covered_in_this_chapter"><a class="anchor" href="#_challenges_covered_in_this_chapter"></a>Challenges covered in this chapter</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cross-Site Imaging</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stick cute cross-domain kittens all over our delivery boxes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deprecated Interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use a deprecated B2B interface that was not properly shut down.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error Handling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provoke an error that is neither very gracefully nor consistently handled.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Login Support Team</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Log in with the support team&#8217;s original user credentials without applying SQL Injection or any other bypass.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_stick_cute_cross_domain_kittens_all_over_our_delivery_boxes"><a class="anchor" href="#_stick_cute_cross_domain_kittens_all_over_our_delivery_boxes"></a>Stick cute cross-domain kittens all over our delivery boxes</h3>
+<div class="paragraph">
+<p>The Juice Shop offers a <em>Deluxe Membership</em> that comes with reduced
+delivery fees and other perks. On the page advertising it, a heap of
+delivery boxes can be seen - all with the Juice Shop logo on them.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part2/deluxe-membership_page.png" alt="Vanilla Deluxe Membership page">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Loading this page with an empty browser cache and on a slow (or
+throttled) connection will give you an idea on what the delivery box
+image is made of. Of course inspecting the page source will tell you
+just as much.</p>
+</li>
+<li>
+<p>You need to dive deep into the actual Angular code to understand this
+one.</p>
+</li>
+<li>
+<p>This challenge requires the exploitation of another vulnerability
+which even has its own two challenges in its very own category</p>
+</li>
+<li>
+<p>This challenge can only be solved by strictly using the mentioned
+"cross-domain kittens". No other kittens from anywhere else can solve
+this challenge.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down"><a class="anchor" href="#_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down"></a>Use a deprecated B2B interface that was not properly shut down</h3>
+<div class="paragraph">
+<p>The Juice Shop represents a classic Business-to-Consumer (B2C)
+application, but it also has some enterprise customers for which it
+would be inconvenient to order large quantities of juice through the
+webshop UI. For those customers there is a dedicated B2B interface.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The old B2B interface was replaced with a more modern version
+recently.</p>
+</li>
+<li>
+<p>When deprecating the old interface, not all of its parts were cleanly
+removed from the code base.</p>
+</li>
+<li>
+<p>Simply using the deprecated interface suffices to solve this
+challenge. No attack or exploit is necessary.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_provoke_an_error_that_is_neither_very_gracefully_nor_consistently_handled"><a class="anchor" href="#_provoke_an_error_that_is_neither_very_gracefully_nor_consistently_handled"></a>Provoke an error that is neither very gracefully nor consistently handled</h3>
+<div class="paragraph">
+<p>The OWASP Juice Shop is quite <em>forgiving</em> when it comes to bad input,
+broken requests or other failure situations. It is just not very
+sophisticated at <em>handling</em> errors properly. You can harvest a lot of
+interesting information from error messages that contain too much
+information. Sometimes you will even see error messages that should not
+be visible at all.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Applications can unintentionally leak information about their
+configuration, internal workings, or violate privacy through a variety
+of application problems. Applications can also leak internal state via
+how long they take to process certain operations or via different
+responses to differing inputs, such as displaying the same error text
+with different error numbers. Web applications will often leak
+information about their internal state through detailed or debug error
+messages. Often, this information can be leveraged to launch or even
+automate more powerful attacks.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This challenge actually triggers from various possible error
+conditions.</p>
+</li>
+<li>
+<p>You can try to submit bad input to forms to provoke an improper error
+handling</p>
+</li>
+<li>
+<p>Tampering with URL paths or parameters might also trigger an
+unforeseen error</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you see the success notification for this challenge but no error
+message on screen, the error was probably logged on the JavaScript
+console of the browser. You were supposed to have it open all the time
+anyway, remember?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_in_with_the_support_teams_original_user_credentials"><a class="anchor" href="#_log_in_with_the_support_teams_original_user_credentials"></a>Log in with the support team&#8217;s original user credentials</h3>
+<div class="paragraph">
+<p>This is another <em>follow-the-breadcrumbs</em> challenge of the tougher sort.
+As a little background story, imagine that the OWASP Juice Shop was
+developed in the <em>classic style</em>: The development team wrote the code
+and then threw it over the fence to an operations and support team to
+run and troubleshoot the application. Not the slightest sign of
+<a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a> culture here.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The support team is located in a low-cost country and the team
+structure fluctuates a lot due to people leaving for jobs with even
+just slightly better wages.</p>
+</li>
+<li>
+<p>To prevent abuse the password for the support team account itself is actually very
+strong.</p>
+</li>
+<li>
+<p>To allow easy access during an incident, the support team utilizes a
+3rd party tool which every support engineer can access to get the
+current account password from.</p>
+</li>
+<li>
+<p>While it is also possible to use SQL Injection to log in as the
+support team, this will not solve the challenge.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://wiki.owasp.org/index.php/Top_10_2007-Information_Leakage" class="bare">https://wiki.owasp.org/index.php/Top_10_2007-Information_Leakage</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

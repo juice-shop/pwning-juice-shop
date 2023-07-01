@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Why the Juice Shop exists :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="readme.html">Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Preface</li>
+    <li><a href="motivation.html">Why OWASP Juice Shop exists</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/development/juice-shop-documentation-test/modules/Root/pages/introduction/motivation.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Why the Juice Shop exists</h1>
+<div class="paragraph">
+<p>To the unsuspecting user the Juice Shop just looks like a small online
+shop which sells - <em>surprise!</em> - fruit &amp; vegetable juice and associated
+products. Except for the entirely overrated payment and delivery aspect
+of the e-commerce business, the Juice Shop is fully functional. But this
+is just the tip of the iceberg. The Juice Shop contains
+101 challenges of varying difficulty
+where you are supposed to exploit underlying security vulnerabilities.
+These vulnerabilities were intentionally planted in the application for
+exactly that purpose, but in a way that actually happens in "real-life"
+web development as well!</p>
+</div>
+<div class="paragraph">
+<p>Your hacking progress is tracked by the application using immediate push
+notifications for successful exploits as well as a score board for
+progress overview. Finding this score board is actually one of the
+(easiest) challenges! The idea behind this is to utilize
+<a href="https://en.wikipedia.org/wiki/Gamification">gamification</a> techniques to
+motivate you to get as many challenges solved as possible - similar to
+unlocking achievements in many modern video games.</p>
+</div>
+<div class="paragraph">
+<p>Development of the Juice Shop started in September 2014 as the author&#8217;s
+personal initiative, when his employer needed a more modern security
+training exercise environment for an in-house web application. The
+previously used environment was still from the era of server-side
+rendered ASP/JSP/Servlet and did not reflect the reality of current web
+technology. The Juice Shop was developed as open-source software without
+any corporate branding right from the beginning. By the end of 2014,
+most of the current e-commerce functionality was up and running</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>along with an initial number of planted vulnerabilities. Over the
+years more variants of vulnerabilities were added. In parallel, the
+application was kept up-to-date with the latest web technology (e.g.
+WebSockets and OAuth 2.0) and frontend frameworks (i.e. by migrating
+from AngularJS with Bootstrap to Angular with Material Design). Some
+of these additional capabilities brought the chance to add
+corresponding vulnerabilities - and the list of challenges has been
+growing ever since.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Apart from the hacker and awareness training use case, penetration
+testing tools and automated security scanners are invited to use the
+Juice Shop as a sort of guinea pig-application to check how well their
+products cope with JavaScript-heavy application frontends and REST APIs.</p>
+</div>
+<h3 id="_why_owasp_juice_shop" class="discrete">Why <em>OWASP</em> Juice Shop?</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The Open Web Application Security Project (OWASP) is a nonprofit
+foundation that works to improve the security of software. Our
+programming includes:</p>
+</div>
+<div class="paragraph">
+<p>Community-led open source software projects Over 275 local chapters
+worldwide Tens of thousands of members Industry-leading educational
+and training conferences We are an open community dedicated to
+enabling organizations to conceive, develop, acquire, operate, and
+maintain applications that can be trusted. All of our projects, tools,
+documents, forums, and chapters are free and open to anyone interested
+in improving application security. The OWASP Foundation launched on
+December 1st, 2001, becoming incorporated as a United States
+non-profit charity on April 21, 2004. <sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Two years after its inception the Juice Shop was submitted and accepted
+as an <em>OWASP Tool Project</em> by the
+<a href="https://owasp.org">Open Web Application Security Project</a> in September
+2016. This move increased the overall visibility and outreach of the
+project significantly, as it exposed it to a large community of
+application security practitioners.</p>
+</div>
+<div class="paragraph">
+<p>Once in the OWASP project portfolio it took only eight months until
+Juice Shop was promoted from the initial <em>Incubator</em> maturity level to
+<em>Lab Projects</em> level. By the end of July 2018 the Juice Shop was
+promoted to the final <em>Flagship</em> maturity stage for OWASP projects.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/introduction/Flagship_big.jpg" alt="OWASP Flagship Projects">
+</div>
+</div>
+<h3 id="_why_the_name_juice_shop" class="discrete">Why the name "Juice Shop"?</h3>
+<div class="paragraph">
+<p>In German there is a dedicated word for <em>dump</em>, i.e. a store that sells
+lousy wares and does not exactly have customer satisfaction as a
+priority: <em>Saftladen</em>. Reverse-translating this separately as <em>Saft</em> and
+<em>Laden</em> yields <em>juice</em> and <em>shop</em> in English. That is where the project
+name comes from. The fact that the initials <em>JS</em> match with those
+commonly used for <em>JavaScript</em> was purely coincidental and not related
+to the choice of implementation technology.</p>
+</div>
+<h3 id="_why_the_logo" class="discrete">Why the logo?</h3>
+<div class="paragraph">
+<p>Other than the name, the Juice Shop logo was designed explicitly with
+<em>JavaScript</em> in mind:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/introduction/JS_Shield.png" alt="Inofficial JS Shield">
+</div>
+</div>
+<div class="paragraph">
+<p>The author&#8217;s idea was to convert one of the (unofficial but popular)
+<em>JavaScript</em> shield-logos into a <strong>leaking juice box</strong> because it had a
+quite matching shape for this shenanigans:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/introduction/JuiceShop_RetroLogo.png" alt="Original JuiceShop logo">
+</div>
+</div>
+<div class="paragraph">
+<p>In 2017 the logo received a facelift and a spin-off when the Juice Shop
+introduced its Capture-the-flag extension (which is discussed in its own</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/introduction/JuiceShop_Logo.png" alt="OWASP Juice Shop logo"></span>
+<span class="image"><img src="../_images/introduction/JuiceShopCTF_Logo.png" alt="OWASP Juice Shop CTF logo"></span></p>
+</div>
+<h3 id="_why_yet_another_vulnerable_web_application" class="discrete">Why yet another vulnerable web application?</h3>
+<div class="paragraph">
+<p>A considerable number of vulnerable web applications already existed
+before the Juice Shop was created. The
+<a href="https://owasp.org/www-project-vulnerable-web-applications-directory/">OWASP Vulnerable Web Applications Directory (VWAD)</a>
+maintains a list of these applications. When the Juice Shop came to life
+there were only <em>server-side rendered</em> applications in the VWAD, but
+<em>Rich Internet Application (RIA)</em> or <em>Single Page Application (SPA)</em>
+style applications were already a commodity at that time. Juice Shop was
+meant to fill that gap.</p>
+</div>
+<div class="paragraph">
+<p>Many of the existing vulnerable web applications were very rudimentary
+in their functional scope. So the aim of the Juice Shop was also to give
+the impression of a functionally complete e-commerce application that
+could actually exist like this in the wild.</p>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://owasp.org/about/" class="bare">https://owasp.org/about/</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

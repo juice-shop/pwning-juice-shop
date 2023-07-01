@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Coding challenges :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Appendix</li>
+    <li><a href="code-snippets.html">Coding challenges</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/appendix/code-snippets.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Coding challenges</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starting with <code>v12.9.0</code>, OWASP Juice Shop offers a new developer-focused challenge for
+some of its existing hacking challenges: Coding challenges. These were <a href="../part1/challenges.adoc#coding-challenges">briefly illustrated in Part 1 of this book</a>
+from a user&#8217;s perspective. This appendix explains how a coding challenge can be added
+to newly created hacking challenges.</p>
+</div>
+<div class="paragraph">
+<p>Each coding challenge consists of two phases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Find It</strong> where the user is tasked to select vulnerable line(s) of code in an actual code snippet from Juice Shop</p>
+</li>
+<li>
+<p><strong>Fix It</strong> where the user is presented with 3-4 options to choose from to fix that vulnerability and has to decide which one would be the best</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vulnerable_code_snippets"><a class="anchor" href="#_vulnerable_code_snippets"></a>Vulnerable code snippets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Juice Shop allows associating its own vulnerable code with its own hacking challenges. To outfit new challenges with
+such a code snippet, some conditions must be met, and a certain syntax for marking the code snippet have to be used.</p>
+</div>
+<div class="sect2">
+<h3 id="_supported_source_files"><a class="anchor" href="#_supported_source_files"></a>Supported source files</h3>
+<div class="paragraph">
+<p>Juice Shop will perform a lookup for code snippets in these source files
+or folders:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>./server.ts
+./routes
+./lib
+./data
+./frontend/src/app</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These are equally available when cloning the source code repo, running
+the official Docker image or unpacking an official pre-packaged archive.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vuln-code-snippet-marker-comments"><a class="anchor" href="#vuln-code-snippet-marker-comments"></a><code>vuln-code-snippet</code> marker comments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All marker comments relevant for the code snippet processing start with
+the <code>vuln-code-snippet</code> prefix followed by the type of marker, often
+followed by the challenge key(s) the marker should be applied to.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marker Type</th>
+<th class="tableblock halign-left valign-top">Challenge Key(s)</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beginning of a snippet for one or more challenges.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet start localXssChallenge xssBonusChallenge</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>end</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End of a snippet for one or more challenges.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet end localXssChallenge xssBonusChallenge</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>vuln-line</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vulnerable code line for one or more challenges. Can appear multiple times within a corresponding <code>start</code>-<code>end</code> block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet vuln-line localXssChallenge xssBonusChallenge</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>neutral-line</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code line for one or more challenges with no impact on verdict if selected. Can appear multiple times within a corresponding <code>start</code>-<code>end</code> block.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet neutral-line adminSectionChallenge</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide-line</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">That particular line will be removed from all code snippets.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet hide-line</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide-start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beginning of a block that will be removed from all code snippets.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet hide-start</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hide-end</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End of a block that will be removed from all code snippets.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>// vuln-code-snippet hide-end</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Code snippet markers are recognized in any files as long as they support
+a leading <code>//</code> or <code>#</code> for a single-line comment. This makes them usable
+in TypeScript, JavaScript and YAML files, but not in HTML. Code markers
+are only found in files residing in one of the above-mentioned folders.</p>
+</div>
+<h4 id="_complete_examples" class="discrete">Complete examples</h4>
+<h5 id="_typescript" class="discrete">TypeScript</h5>
+<div class="paragraph">
+<p>The following code shows markers for two challenges with the same
+vulnerable line, and a hidden code block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// vuln-code-snippet start localXssChallenge xssBonusChallenge
+filterTable () {
+let queryParam: string = this.route.snapshot.queryParams.q
+if (queryParam) {
+  queryParam = queryParam.trim()
+  this.ngZone.runOutsideAngular(() =&gt; { // vuln-code-snippet hide-start
+    this.io.socket().emit('verifyLocalXssChallenge', queryParam)
+  }) // vuln-code-snippet hide-end
+  this.dataSource.filter = queryParam.toLowerCase()
+  this.searchValue = this.sanitizer.bypassSecurityTrustHtml(queryParam) // vuln-code-snippet vuln-line localXssChallenge xssBonusChallenge
+  this.gridDataSource.subscribe((result: any) =&gt; {
+    if (result.length === 0) {
+      this.emptyState = true
+    } else {
+      this.emptyState = false
+    }
+  })
+} else {
+  this.dataSource.filter = ''
+  this.searchValue = undefined
+  this.emptyState = false
+}
+}
+// vuln-code-snippet end localXssChallenge xssBonusChallenge</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next example explains how to mark one challenge with two vulnerable
+lines, and some individually hidden lines:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">// vuln-code-snippet start fileWriteChallenge
+function handleZipFileUpload ({ file }, res, next) {
+  if (utils.endsWith(file.originalname.toLowerCase(), '.zip')) {
+    if (file.buffer &amp;&amp; !utils.disableOnContainerEnv()) { // vuln-code-snippet hide-line
+      const buffer = file.buffer
+      const filename = file.originalname.toLowerCase()
+      const tempFile = path.join(os.tmpdir(), filename)
+      fs.open(tempFile, 'w', function (err, fd) {
+        if (err != null) { next(err) }
+        fs.write(fd, buffer, 0, buffer.length, null, function (err) {
+          if (err != null) { next(err) }
+          fs.close(fd, function () {
+            fs.createReadStream(tempFile)
+              .pipe(unzipper.Parse()) // vuln-code-snippet vuln-line fileWriteChallenge
+              .on('entry', function (entry) {
+                const fileName = entry.path
+                const absolutePath = path.resolve('uploads/complaints/' + fileName)
+                utils.solveIf(challenges.fileWriteChallenge, () =&gt; { return absolutePath === path.resolve('ftp/legal.adoc') }) // vuln-code-snippet hide-line
+                if (absolutePath.includes(path.resolve('.'))) {
+                  entry.pipe(fs.createWriteStream('uploads/complaints/' + fileName).on('error', function (err) { next(err) })) // vuln-code-snippet vuln-line fileWriteChallenge
+                } else {
+                  entry.autodrain()
+                }
+              }).on('error', function (err) { next(err) })
+          })
+        })
+      })
+    } // vuln-code-snippet hide-line
+    res.status(204).end()
+  } else {
+    next()
+  }
+}
+// vuln-code-snippet end fileWriteChallenge</code></pre>
+</div>
+</div>
+<h5 id="_yaml" class="discrete">YAML</h5>
+<div class="paragraph">
+<p>In this example, multiple challenges are defined in a shared code block
+but each with their own vulnerable line. Each also comes with a neutral line that would
+have no impact on the verdict if selected or not by the user:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># vuln-code-snippet start resetPasswordBjoernOwaspChallenge resetPasswordBjoernChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge
+- # vuln-code-snippet neutral-line resetPasswordJimChallenge
+  question: 'Your eldest siblings middle name?' # vuln-code-snippet vuln-line resetPasswordJimChallenge
+-
+  question: "Mother's maiden name?"
+-
+  question: "Mother's birth date? (MM/DD/YY)"
+-
+  question: "Father's birth date? (MM/DD/YY)"
+-
+  question: "Maternal grandmother's first name?"
+-
+  question: "Paternal grandmother's first name?"
+- # vuln-code-snippet neutral-line resetPasswordBjoernOwaspChallenge
+  question: 'Name of your favorite pet?' # vuln-code-snippet vuln-line resetPasswordBjoernOwaspChallenge
+-
+  question: "Last name of dentist when you were a teenager? (Do not include 'Dr.')"
+- # vuln-code-snippet neutral-line resetPasswordBjoernChallenge
+  question: 'Your ZIP/postal code when you were a teenager?' # vuln-code-snippet vuln-line resetPasswordBjoernChallenge
+- # vuln-code-snippet neutral-line resetPasswordBenderChallenge
+  question: 'Company you first work for as an adult?' # vuln-code-snippet vuln-line resetPasswordBenderChallenge
+-
+  question: 'Your favorite book?'
+- # vuln-code-snippet neutral-line resetPasswordUvoginChallenge
+  question: 'Your favorite movie?' # vuln-code-snippet vuln-line resetPasswordUvoginChallenge
+-
+  question: 'Number of one of your customer or ID cards?'
+-
+  question: "What's your favorite place to go hiking?"
+# vuln-code-snippet end resetPasswordBjoernOwaspChallenge resetPasswordBjoernChallenge resetPasswordJimChallenge resetPasswordBenderChallenge resetPasswordUvoginChallenge</code></pre>
+</div>
+</div>
+<h4 id="_overlapping_markers" class="discrete">Overlapping markers</h4>
+<div class="paragraph">
+<p>After a code snippet has been retrieved and processed, all "dangling"
+markers inside starting with <code>vuln-code-snippet</code> will be removed. This
+allows to have overlapping <code>start</code> and <code>end</code> blocks for different
+challenges that might share some but not all code.</p>
+</div>
+<div class="sect2">
+<h3 id="_rest_endpoints"><a class="anchor" href="#_rest_endpoints"></a>REST endpoints</h3>
+<div class="paragraph">
+<p>The Score Board retrieves the actual code snippets via two REST
+endpoints:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/snippets</code> returns the list of all challenge keys where code snippets
+are available in JSON format (e.g.
+<code>{"challenges":["directoryListingChallenge",...,"xssBonusChallenge"]}</code>)</p>
+</li>
+<li>
+<p><code>/snippets/&lt;challengeKey&gt;</code> returns the actual code snippet plus the
+list of vulnerable lines in JSON format (e.g. <code>{"snippet":"filterTable
+() {\n let queryParam: string = ... }\n }","vulnLines":[6]}</code>)</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_error_handling"><a class="anchor" href="#_error_handling"></a>Error handling</h4>
+<div class="paragraph">
+<p>The following errors can occur when calling the REST endpoints:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Endpoint</th>
+<th class="tableblock halign-left valign-top">HTTP status code</th>
+<th class="tableblock halign-left valign-top">Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/snippets/&lt;challengeKey&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>412</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Unknown challenge key: &lt;challengeKey&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/snippets/&lt;challengeKey&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>404</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>No code snippet available for: &lt;challengeKey&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/snippets/&lt;challengeKey&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>422</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Broken code snippet boundaries for: &lt;challengeKey&gt;</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_real_time_retrieval"><a class="anchor" href="#_real_time_retrieval"></a>Real-time retrieval</h4>
+<div class="paragraph">
+<p>As the code snippets are retrieved in real-time from the actual code
+base, all changes to the marker syntax while the application is running
+are immediately applied and can be tested by re-opening the particular
+snippet from the Score Board. Newly added code snippets are similarly
+recognized by reloading the Score Board page. No frontend complation or
+server restart is required.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fix_option_files"><a class="anchor" href="#_fix_option_files"></a>Fix option files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For the second stage of the Coding Challenges, users must by supplied with some code fix options to choose from.
+The structural requirements here are very straightforward, it is rather the content that can get a bit difficult
+depending on the complexity of the underlying vulnerability.</p>
+</div>
+<div class="paragraph">
+<p>All fix option files have to be put into the folder <code>data/static/codefixes</code> and should have the same
+file type as the original source file with the <a href="#vuln-code-snippet-marker-comments">vulnerability marker</a>.</p>
+</div>
+<div class="paragraph">
+<p>For each coding challenge exactly one "correct" and two or more "wrong" option files must be provided.</p>
+</div>
+<div class="sect2">
+<h3 id="_naming_conventions"><a class="anchor" href="#_naming_conventions"></a>Naming conventions</h3>
+<div class="paragraph">
+<p>The name of a fix option file must be either of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;challengeKey&gt;_&lt;unique number&gt;.&lt;file suffix&gt;</code> for "wrong" options</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>localXssChallenge_1.ts</code>, <code>localXssChallenge_3.ts</code> and <code>localXssChallenge_4.ts</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>&lt;challengeKey&gt;_&lt;unique number&gt;_correct.&lt;file suffix&gt;</code> for the "correct" option</p>
+<div class="ulist">
+<ul>
+<li>
+<p>e.g. <code>localXssChallenge_2_correct.ts</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fix_option_source"><a class="anchor" href="#_fix_option_source"></a>Fix option source</h3>
+<div class="paragraph">
+<p>As the Coding Challenges rely on a code diff view it is crucial to avoid any accidental differences between the
+original vulnerable code snippet and each fix option files.</p>
+</div>
+<div class="paragraph">
+<p>This means that spacing, blank lines etc. need to be exactly the same. If for example the vulnerable
+snippet is in a function that is indented by 4 spaces then the fix option source must be indented by 4 spaces as well.
+As this would trigger many code linting errors, <code>npm run lint</code> will ignore the <code>data/static/codefixes</code> folder.</p>
+</div>
+<div class="paragraph">
+<p>The following additional rules must be adhered to when creating fix option files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>No indentation on the first line of the file</p>
+</li>
+<li>
+<p>No blank line at the end of the file</p>
+</li>
+<li>
+<p>Remove all <code>vuln-code-snippet</code> comments in <a href="#vuln-code-snippet-marker-comments">the exact same way</a> the code snipper parser will</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The recommended way to get properly formatted code fixing options, is to create one and copy it as many times
+as total fix options should be provided, then performing the necessary changes to create a correct and several wrong
+options from the source.</p>
+</div>
+<div class="sect3">
+<h4 id="_vulnerable_code_snippet_example"><a class="anchor" href="#_vulnerable_code_snippet_example"></a>Vulnerable code snippet example</h4>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_snippet.png" alt="Vulnerable code snippet for &quot;DOM XSS&quot; challenge">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wrong_fix_option_example"><a class="anchor" href="#_wrong_fix_option_example"></a>Wrong fix option example</h4>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_wrong-fix.png" alt="Wrong fix option for &quot;DOM XSS&quot; coding challenge">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_correct_fix_option_example"><a class="anchor" href="#_correct_fix_option_example"></a>Correct fix option example</h4>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_correct-fix.png" alt="Correct fix option for &quot;DOM XSS&quot; coding challenge">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_maintenance_burden"><a class="anchor" href="#_maintenance_burden"></a>Maintenance burden</h3>
+<div class="paragraph">
+<p>The downside of this implementation is a certain maintenance burden for Coding Challenges. When the
+original source file is changed or refactored, the developer must keep in mind updating all fix option files
+accordingly to prevent confusing differences.</p>
+</div>
+<div class="sect3">
+<h4 id="_refactoring_safety_net"><a class="anchor" href="#_refactoring_safety_net"></a>Refactoring Safety Net</h4>
+<div class="paragraph">
+<p>Starting with v13.2.0, the maintenance burden is eased by a utility that detects many (but not all) accidental or
+forgotten code changes in fix option files or the original code snippet that made them deviate from each other. It runs
+automatically as a job of the <a href="../part3/contribution.adoc#cicd-pipeline">CI/CD pipeline</a> but can also be launched locally
+with <code>npm run rsn</code>.</p>
+</div>
+<div class="paragraph">
+<p>If no unexpected changes occured to any lines of code in either the original snippet or any corresponding fix option files
+occured, <code>npm run rsn</code> will produce a list of all current differences and a success message:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/rsn_no-new-diffs.png" alt="Console output from successful RSN run">
+</div>
+</div>
+<div class="paragraph">
+<p>If instead some unexpected file differences came up, the tool will still print the list of current differences as well
+as a list of the affected files and terminate with an error.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/rsn_new-diffs.png" alt="Console output from failed RSN run">
+</div>
+</div>
+<div class="paragraph">
+<p>The author of the code change that broke the RSN check can now investigate the reason for the new differences either in the
+<a href="../part1/challenges.adoc#coding-challenges">Coding Challenge dialog of the running application</a> or by comparing the source code files.
+After either reverting any accidental changes in e.g. indentation or simply re-applying refactorings (e.g. parameters or functions being
+renamed) to the missed piece of code, running <code>npm run rsn:update</code> will lock the new state of
+differences in place.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/rsn_update.png" alt="Console output from RSN cache update">
+</div>
+</div>
+<div class="paragraph">
+<p>Any subsequent run of <code>npm run rsn</code> will now succeed again, until another accidental difference occurs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_limitations"><a class="anchor" href="#_limitations"></a>Limitations</h4>
+<div class="paragraph">
+<p>As the RSN utility checks and caches differences on a per-line level, accidental changes to lines which are already expected
+to be different, will not trigger a failure of <code>npm run rsn</code>. This should be very rare coincidence in daily development on the
+project, so the Juice Shop team rather accepts the small risk instead of overengineering the RSN to catch those edge cases.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_info_yaml_file"><a class="anchor" href="#_info_yaml_file"></a>Info YAML file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to provide hints and explanations for Coding Challenges via an optional YAML file. It needs
+to follow the naming convention <code>&lt;challengeKey&gt;.info.yml</code> and be placed in <code>data/static/codefixes</code>. This file can
+contain the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">fixes:
+  - id: 1
+    explanation: 'Explanation why fix option file #1 is right/wrong.'
+  - id: 2
+    explanation: 'Explanation why fix option file #2 is right/wrong.'
+  - id: 3
+    explanation: 'Explanation why fix option file #3 is right/wrong.'
+  - id: 4
+    explanation: 'Explanation why fix option file #4 is right/wrong.'
+hints:
+  - "Hint offered after 2nd failed 'Find It' attempt to submit the vulnerable line."
+  - "Hint offered after 3nd failed 'Find It' attempt to submit the vulnerable line."
+  - "Hint offered after 4th failed 'Find It' attempt to submit the vulnerable line."</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_find_it_hints"><a class="anchor" href="#_find_it_hints"></a>"Find It" hints</h3>
+<div class="paragraph">
+<p>When the user submits wrongly selected vulnerable line(s) of code during
+the "Find It" phase of a Coding Challenge, Juice Shop can display a hint to help them out.
+This process starts after the second failed submission.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_first-hint.png" alt="First hint displayed for &quot;DOM XSS&quot; challenge">
+</div>
+</div>
+<div class="paragraph">
+<p>The hints will be picked in order of appearance in the <code>hints</code> list of the YAML info file.
+One hint will be displayed at a time per submission attempt. It therefore makes sense to
+have more vague hints at the top and more specific ones at the bottom of the <code>hints</code> list.
+Although the number of hints that can be provided per coding challenge is not restricted,
+the author recommends to have no less than 2 and no more than 5 hints on average.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/appendix/coding_challenge_second-hint.png" alt="Second hint displayed for &quot;DOM XSS&quot; challenge"></span>
+<span class="image"><img src="../_images/appendix/coding_challenge_third-hint.png" alt="Third hint displayed for &quot;DOM XSS&quot; challenge"></span></p>
+</div>
+<div class="paragraph">
+<p>Once all hints have been used up, Juice Shop will outright tell the user the correct answer, so they have a chance to proceed and not remain stuck infinitely.
+This answer does not need to be provided in the <code>hints</code> list, as it will be generated on-the-fly by Juice Shop when needed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_final-hint.png" alt="Final hint displayed for &quot;DOM XSS&quot; challenge">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fix_it_explanations"><a class="anchor" href="#_fix_it_explanations"></a>"Fix It" explanations</h3>
+<div class="paragraph">
+<p>In the <code>fixes</code> list an explanation can be mapped to every available fix option of a Coding Challenge.
+The <code>id</code> must be identical to the <code>unique nuber</code> part of a fix option file name <code>&lt;challengeKey&gt;_&lt;unique number&gt;.&lt;file suffix&gt;</code> in order to be loaded when appropriate.</p>
+</div>
+<div class="paragraph">
+<p>The <code>explanation</code> should give a reason as to why a fix option is either correct or incorrect. The
+explanation will be displayed after the user submitted a chosen fix option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_explanation_wrong-option.png" alt="Explanation for wrong fix option to &quot;DOM XSS&quot; challenge">
+</div>
+</div>
+<div class="paragraph">
+<p>Other than with the hints for
+finding the vulnerable line of code, the explanation is displayed independently of the verdict. Therefore, it
+is important to also provide an explanation for the correct fix option.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/coding_challenge_explanation_right-option.png" alt="Explanation for right fix option to &quot;DOM XSS&quot; challenge">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_info_yaml_file_example"><a class="anchor" href="#_info_yaml_file_example"></a>Info YAML file example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">fixes:
+  - id: 1
+    explanation: 'Using bypassSecurityTrustResourceUrl() instead of bypassSecurityTrustHtml() changes the context for which input sanitization is bypassed. This switch might only accidentally keep XSS prevention intact, but the new URL context does not make any sense here.'
+  - id: 2
+    explanation: "Removing the bypass of sanitization entirely is the best way to fix this vulnerability. Fiddling with Angular's built-in sanitization was entirely unnecessary as the user input for a text search should not be expected to contain HTML that needs to be rendered but merely plain text."
+  - id: 3
+    explanation: 'Using bypassSecurityTrustScript() instead of bypassSecurityTrustHtml() changes the context for which input sanitization is bypassed. If at all, this switch might only accidentally keep XSS prevention intact. The context where the parameter is used is not a script either, so this switch would be nonsensical.'
+  - id: 4
+    explanation: 'Using bypassSecurityTrustStyle() instead of bypassSecurityTrustHtml() changes the context for which input sanitization is bypassed. If at all, this switch might only accidentally keep XSS prevention intact. The context where the parameter is used is not CSS, making this switch totally pointless.'
+hints:
+  - "Try to identify where (potentially malicious) user input is coming into the code."
+  - "What is the code doing with the user input other than using it to filter the data source?"
+  - "Look for a line where the developers fiddled with Angular's built-in security model."</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

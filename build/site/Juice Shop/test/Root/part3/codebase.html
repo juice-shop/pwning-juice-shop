@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Codebase 101 :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part III - Getting involved</li>
+    <li><a href="codebase.html">Codebase 101</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/part3/codebase.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Codebase 101</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jumping head first into any foreign codebase can cause a little
+headache. This section is there to help you find your way through the
+code of OWASP Juice Shop. On its top level the Juice Shop codebase is
+mainly separated into a client and a server tier, the latter with an
+underlying lightweight database and file system as storage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_client_tier"><a class="anchor" href="#_client_tier"></a>Client Tier</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OWASP Juice Shop uses the popular <a href="https://angular.io/">Angular</a>
+framework as the core of its client-side. Thanks to
+<a href="https://material.angular.io/">Angular Material</a> - an Angular-specific
+implementation of Google&#8217;s <a href="https://material.io/">Material Design</a> - the
+UI looks nicely familiar and is easy to use. It is also built to be
+responsive with the help of
+<a href="https://github.com/angular/flex-layout">Angular Flex-Layout</a>, letting
+it adapt nicely to different screen sizes. The various icons used
+throughout the frontend are from the vast
+<a href="https://fontawesome.com/">Font Awesome 5</a> collection.</p>
+</div>
+<div class="paragraph">
+<p>ℹ️ Please note that <strong>all client-side code is written in Typescript</strong>
+which is compiled into regular JavaScript during the build process.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/architecture-client.png" alt="Client tier focus">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_services"><a class="anchor" href="#_services"></a>Services</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><em>Service</em> is a broad category encompassing any value, function, or
+feature that an app needs. A service is typically a class with a
+narrow, well-defined purpose. It should do something specific and do
+it well.</p>
+</div>
+<div class="paragraph">
+<p>Angular distinguishes components from services to increase modularity
+and reusability. By separating a component&#8217;s view-related
+functionality from other kinds of processing, you can make your
+component classes lean and efficient.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The client-side Angular services reside in the
+<code>frontend/src/app/Services</code> folder. Each service file handles all
+RESTful HTTP calls to the Node.js backend for a specific domain entity
+or functional aspect of the application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/servicesFolder.png" alt="Angular Services folder">
+</div>
+</div>
+<div class="paragraph">
+<p>Service functions must <strong>always</strong> use Angular&#8217;s own <code>HttpClient</code> to make
+any backend calls.</p>
+</div>
+<div class="paragraph">
+<p>The following code snippet shows how all services in the OWASP Juice
+Shop client are structured using the example of <code>FeedbackService</code>. It
+wraps the <code>/api/Feedback</code> API which offers a <code>GET</code>, <code>POST</code> and <code>DELETE</code>
+endpoint to find, create and delete <code>Feedback</code> of users:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { environment } from '../../environments/environment'
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { catchError, map } from 'rxjs/operators'
+
+@Injectable({
+  providedIn: 'root'
+})
+export class FeedbackService {
+
+  private hostServer = environment.hostServer
+  private host = this.hostServer + '/api/Feedbacks'
+
+  constructor (private http: HttpClient) { }
+
+  find (params?: any) {
+    return this.http.get(this.host + '/' , {
+      params: params
+    }).pipe(map((response: any) =&gt; response.data), catchError((err) =&gt; {
+      throw err
+    }))
+  }
+
+  save (params) {
+    return this.http.post(this.host + '/', params).pipe(map((response: any) =&gt;
+      response.data), catchError((err) =&gt; { throw err }))
+  }
+
+  del (id) {
+    return this.http.delete(this.host + '/' + id).pipe(map((response: any) =&gt;
+      response.data), catchError((err) =&gt; { throw err }))
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>🚨 Unit tests for all services can be found next to their <code><strong>.service.ts</code>
+files in the <code>frontend/src/app/Services</code> folder as <code></strong>.service.spec.ts</code>
+files. They are <a href="https://jasmine.github.io">Jasmine 2</a> specifications
+which are executed by the <a href="https://karma-runner.github.io">Karma</a> test
+runner.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_components"><a class="anchor" href="#_components"></a>Components</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A <em>component</em> controls a patch of screen called a <em>view</em>.</p>
+</div>
+<div class="paragraph">
+<p>You define a component&#8217;s application logic&#8212;&#8203;what it does to support the
+view&#8212;&#8203;inside a class. The class interacts with the view through an API
+of properties and methods.<sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The Angular components reside inside <code>frontend/src/app</code> as a subfolder
+for each individual component. Each component is responsible for one
+screen portion of the application. It consists of the component itself
+(<code><strong>.component.ts</code>) and the HTML <a href="#templates">Template</a>
+(<code></strong>.component.html</code>) along with its styles (<code>*.component.scss</code>).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/componentFolders.png" alt="Angular Component folders">
+</div>
+</div>
+<div class="paragraph">
+<p>Components must <strong>always</strong> go through one or more <a href="#services">Services</a>
+when communicating with the application backend.</p>
+</div>
+<div class="paragraph">
+<p>The code snippet below shows the <code>ContactComponent</code> which handles the
+<em>Contact Us</em> screen and uses three different services to fulfill its
+tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>UserService</code> to retrieve data about the currently logged in user (if
+applicable) via the <code>whoAmi()</code> function</p>
+</li>
+<li>
+<p><code>CaptchaService</code> to retrieve a new CAPTCHA for the user to solve via
+the <code>getCaptcha()</code> function</p>
+</li>
+<li>
+<p><code>FeedbackService</code> to eventually <code>save()</code> the user feedback</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>☝️ As a universal rule for the entire Juice Shop codebase, unnecessary
+code duplication as well as deeply nested 🍝-code should be avoided by
+using well-named &amp; small helper functions. This is demonstrated by the
+very simple <code>getNewCaptcha()</code> and <code>resetForm()</code> functions in the code
+snippet below. Helper functions should always be located as close to the
+calling code as possible.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { FeedbackService } from '../Services/feedback.service'
+import { CaptchaService } from '../Services/captcha.service'
+import { UserService } from '../Services/user.service'
+import { FormControl, Validators } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faPaperPlane, faStar } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faStar, faPaperPlane)
+dom.watch()
+
+@Component({
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
+})
+export class ContactComponent implements OnInit {
+
+  public authorControl: FormControl =
+    new FormControl({ value: '', disabled: true }, [])
+  public feedbackControl: FormControl =
+    new FormControl('', [Validators.required, Validators.maxLength(160)])
+  public captchaControl: FormControl =
+    new FormControl('', [Validators.required])
+  public userIdControl: FormControl = new FormControl('', [])
+  public rating: number = 0
+  public feedback: any = undefined
+  public captcha: any
+  public captchaId: any
+  public confirmation: any
+  public error: any
+
+  constructor (
+    private userService: UserService,
+    private captchaService: CaptchaService,
+    private feedbackService: FeedbackService) { }
+
+  ngOnInit () {
+    this.userService.whoAmI().subscribe((data: any) =&gt; {
+      this.feedback = {}
+      this.userIdControl.setValue(data.id)
+      this.feedback.UserId = data.id
+      this.authorControl.setValue(data.email || 'anonymous')
+    }, (err) =&gt; {
+      this.feedback = undefined
+      console.log(err)
+    })
+    this.getNewCaptcha()
+  }
+
+  getNewCaptcha () {
+    this.captchaService.getCaptcha().subscribe((data: any) =&gt; {
+      this.captcha = data.captcha
+      this.captchaId = data.captchaId
+    }, (err) =&gt; err)
+  }
+
+  save () {
+    this.feedback.captchaId = this.captchaId
+    this.feedback.captcha = this.captchaControl.value
+    this.feedback.comment = this.feedbackControl.value
+    this.feedback.rating = this.rating
+    this.feedback.UserId = this.userIdControl.value
+    this.feedbackService.save(this.feedback).subscribe((savedFeedback) =&gt; {
+      this.error = null
+      this.confirmation = 'Thank you for your feedback' +
+        (savedFeedback.rating === 5 ? ' and your 5-star rating!' : '.')
+      this.feedback = {}
+      this.ngOnInit()
+      this.resetForm()
+    }, (error) =&gt; {
+      this.error = error.error
+      this.confirmation = null
+      this.feedback = {}
+      this.resetForm()
+    })
+  }
+
+  resetForm () {
+    this.authorControl.markAsUntouched()
+    this.authorControl.markAsPristine()
+    this.authorControl.setValue('')
+    this.feedbackControl.markAsUntouched()
+    this.feedbackControl.markAsPristine()
+    this.feedbackControl.setValue('')
+    this.captchaControl.markAsUntouched()
+    this.captchaControl.markAsPristine()
+    this.captchaControl.setValue('')
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>🚨 Unit tests for all components can be found in their subfolders within
+<code>frontend/src/app/</code> as <code>*.component.spec.ts</code> files. They are
+<a href="https://jasmine.github.io">Jasmine 2</a> specifications which are executed
+by the <a href="https://karma-runner.github.io">Karma</a> test runner.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_templates"><a class="anchor" href="#_templates"></a>Templates</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The Angular application manages what the user sees and can do,
+achieving this through the interaction of a component class instance
+(the <em>component</em>) and its user-facing template.</p>
+</div>
+<div class="paragraph">
+<p>You may be familiar with the component/template duality from your
+experience with model-view-controller (MVC) or model-view-viewmodel
+(MVVM). In Angular, the component plays the part of the
+controller/viewmodel, and the template represents the view.<sup class="footnote" id="_footnote_3">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Each screen within the application is defined in a HTML view template
+along with its <a href="#components">Component</a> in the subfolders beneath
+<code>frontend/src/app/</code>. The views are written as HTML using
+<a href="https://material.angular.io/">Angular Material</a> for styling and
+<a href="https://github.com/angular/flex-layout">Angular Flex-Layout</a> for
+responsiveness. Furthermore most views incorporate icons from the
+<a href="https://fontawesome.com/">Font Awesome 5</a> collection.</p>
+</div>
+<div class="paragraph">
+<p>ℹ️ Understanding the
+<a href="https://github.com/angular/flex-layout/wiki/API-Documentation#html-api-declarative">Declarative HTML APIs of the Angular Layout</a>
+is crucial to be able to write UI elements or entire screens without
+breaking responsiveness!</p>
+</div>
+<div class="paragraph">
+<p>The following code snippet shows the <code>contact.component.html</code> view which
+- together with the previously shown <code>ContractComponent</code> class and its
+associated styles in <code>contact.component.scss</code> - represents the entire
+<em>Contact Us</em> screen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div fxLayoutAlign="center"&gt;
+  &lt;mat-card&gt;
+    &lt;h3 translate&gt;TITLE_CONTACT&lt;/h3&gt;
+
+    &lt;div *ngIf="confirmation"&gt;
+      &lt;p class="confirmation"&gt;{{confirmation}}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf="error"&gt;
+      &lt;p class="error"&gt;{{error}}&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="form-container"&gt;
+
+      &lt;input hidden type="text" id="userId" [formControl]="userIdControl"/&gt;
+
+      &lt;mat-form-field appearance="outline"&gt;
+        &lt;mat-label translate&gt;LABEL_AUTHOR&lt;/mat-label&gt;
+        &lt;input [formControl]="authorControl" matInput type="text"&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field appearance="outline"&gt;
+        &lt;mat-label translate&gt;LABEL_COMMENT&lt;/mat-label&gt;
+        &lt;textarea id="comment" [formControl]="feedbackControl" matInput&gt;&lt;/textarea&gt;
+        &lt;mat-error *ngIf="feedbackControl.invalid &amp;&amp; feedbackControl.errors.required" translate&gt;
+          MANDATORY_COMMENT
+        &lt;/mat-error&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;div style="margin-top:5px;" class="rating-container"&gt;
+        &lt;label style="font-weight:bold; margin-right: 8px;" translate&gt;
+          LABEL_RATING
+        &lt;/label&gt;
+        &lt;bar-rating [(rate)]="rating" [max]="5"&gt;&lt;/bar-rating&gt;
+      &lt;/div&gt;
+
+      &lt;mat-form-field&gt;
+        &lt;label style="font-weight:bold;" translate&gt;LABEL_CAPTCHA&lt;/label&gt;&amp;nbsp;
+        &lt;code id="captcha"&gt;{{captcha}}&lt;/code&gt;&amp;nbsp;&lt;label&gt;?&lt;/label&gt;
+        &lt;input id="captchaControl" [formControl]="captchaControl" matInput type="text"&gt;
+        &lt;mat-error *ngIf="captchaControl.invalid &amp;&amp; captchaControl.errors.required" translate&gt;
+          MANDATORY_CAPTCHA
+        &lt;/mat-error&gt;
+      &lt;/mat-form-field&gt;
+
+    &lt;/div&gt;
+
+    &lt;button type="submit" id="submitButton" style="margin-top:5px;"
+            mat-raised-button color="primary"
+            [disabled]="authorControl.invalid || feedbackControl.invalid || captchaControl.invalid || !rating"
+            (click)="save()"&gt;
+      &lt;i class="fas fa-paper-plane fa-lg"&gt;&lt;/i&gt; {{'BTN_SUBMIT' | translate}}
+    &lt;/button&gt;
+
+  &lt;/mat-card&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ℹ️ In the entire Juice Shop code base, inline templates are <strong>never</strong>
+used. Templates must <strong>always</strong> be described in separate <code>.html</code> files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_internationalization"><a class="anchor" href="#_internationalization"></a>Internationalization</h3>
+<div class="paragraph">
+<p>All static texts in the user interface are fully internationalized using
+the <code>ngx-translate</code> module. Texts coming from the server (e.g. product
+descriptions or server error messages) are always in English.</p>
+</div>
+<div class="paragraph">
+<p>No hard-coded texts are allowed in any of the <a href="#templates">Templates</a> or
+<a href="#components">Components</a>. Instead, property keys have to be defined and
+are usually applied with a <code>translate</code> attribute that can be placed in
+most HTML tags. You might have noticed several of these <code>translate</code>
+attributes in the <code>contact.component.html</code> code snippet from the
+<a href="#templates">Templates</a> section.</p>
+</div>
+<div class="paragraph">
+<p>The different translations are maintained in JSON files in the
+<code>/frontend/src/assets/i18n</code> folder. The only file that is allowed to be
+touched by developers is the <code>en.json</code> file for the original English
+texts. New properties are exclusively added here. When pushing the
+<code>develop</code> branch to GitHub, the online translation provider will pick up
+changes in <code>en.json</code> and adapt all other language files accordingly. All
+this happens behind the scenes in a distinct branch <code>l10n_develop</code> which
+will be manually merged back into <code>develop</code> on a regular basis.</p>
+</div>
+<div class="paragraph">
+<p>To learn about the actual translation process please refer to the
+chapter <a href="translation.html" class="xref page">Helping with translations</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_side_code_compilation"><a class="anchor" href="#_client_side_code_compilation"></a>Client-side code compilation</h3>
+<div class="paragraph">
+<p>All client side Angular code is compiled into JavaScript and afterwards
+<em>uglified</em> (for
+<a href="https://en.wikipedia.org/wiki/Security_through_obscurity">security by obscurity</a>)
+and <em>minified</em> (for initial load time reduction) during the build
+process (launched with <code>npm install</code>) of the application. This creates
+an <code>frontend/dist/frontend</code> folder, which is the one actually delivered
+to the Browser to load all application-specific client-side code.</p>
+</div>
+<div class="paragraph">
+<p>ℹ️ If you want to quickly test client-side code changes, it can be
+cumbersome and slow to launch <code>npm install</code> over and over again. Instead
+you can use <code>npm run serve</code> to keep let Angular watch for client-code
+changes and recompile the affected parts on the fly. You usually not
+even have to manually refresh your browser with <code>F5</code> to see your
+changes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_server_tier"><a class="anchor" href="#_server_tier"></a>Server Tier</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The backend of OWASP Juice Shop is a <a href="https://nodejs.org">Node.js</a>
+application based on the <a href="http://expressjs.com">Express</a> web framework.
+Before <code>v12.7.0</code> the backend code base was JavaScript (ES6), but since
+then it has been gradually migrated into TypeScript.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/architecture-server.png" alt="Server tier focus">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_routes"><a class="anchor" href="#_routes"></a>Routes</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Routing refers to determining how an application responds to a client
+request to a particular endpoint, which is a URI (or path) and a
+specific HTTP request method (GET, POST, and so on).</p>
+</div>
+<div class="paragraph">
+<p>Each route can have one or more handler functions, which are executed
+when the route is matched.<sup class="footnote" id="_footnote_4">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Routes are defined via the the <a href="http://expressjs.com">Express</a> framework
+and can be handled by any of the following middleware:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An <a href="#generated-api-endpoints">automatically generated API endpoint</a>
+for one of the exposed tables from the application&#8217;s
+<a href="#data-model">Data model</a></p>
+</li>
+<li>
+<p>A <a href="#hand-written-middleware">hand-written middleware</a> which
+encapsulates some business or technical responsibility</p>
+</li>
+<li>
+<p>Some third-party middleware that fulfills a non-functional requirement
+such as</p>
+<div class="ulist">
+<ul>
+<li>
+<p>file serving (via <code>serve-index</code> and <code>serve-favicon</code>)</p>
+</li>
+<li>
+<p>adding HTTP security headers (via <code>helmet</code> and <code>cors</code>)</p>
+</li>
+<li>
+<p>extracting cookies from HTTP requests (via <code>cookie-parser</code>)</p>
+</li>
+<li>
+<p>writing access logs (via <code>morgan</code>)</p>
+</li>
+<li>
+<p>catching unhandled exceptions and presenting a default error screen
+(via <code>errorhandler</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚨 Integration tests for all routes can be found in the <code>test/api</code>
+folder alongside all other API endpoint tests, from where
+<a href="https://www.frisbyjs.com/">Frisby.js</a>/ <a href="https://facebook.github.io/jest/">Jest</a>
+assert the functionality of the entire backend on HTTP-request/response
+level.</p>
+</div>
+<div class="sect3">
+<h4 id="_generated_api_endpoints"><a class="anchor" href="#_generated_api_endpoints"></a>Generated API endpoints</h4>
+<div class="paragraph">
+<p>Juice Shop uses the
+<a href="https://www.npmjs.com/package/finale-rest">finale-rest</a> middleware to
+automatically create REST endpoints for most of its Sequelize models.
+For e.g. the <code>User</code> model the generated endpoints are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/api/Users</code> accepting</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GET</code> requests to retrieve all (or a filtered list of) user records</p>
+</li>
+<li>
+<p>and <code>POST</code> requests to create a new user record</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>/api/Users/{id}</code> accepting</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GET</code> requests to retrieve a single user record by its database ID</p>
+</li>
+<li>
+<p><code>PATCH</code> requests to update a user record</p>
+</li>
+<li>
+<p><code>DELETE</code> requests to delete a user record</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Apart from the <code>User</code> model also the <code>Product</code>, <code>Feedback</code>,
+<code>BasketItem</code>, <code>Challenge</code>, <code>Complaint</code>, <code>Recycle</code>, <code>SecurityQuestion</code>, <code>SecurityAnswer</code>, <code>Address</code>, <code>PrivacyRequest</code>, <code>Card</code> and <code>Quantity</code> models are exposed in this fashion.</p>
+</div>
+<div class="paragraph">
+<p>Not all HTTP verbs are accepted by every endpoint. Furthermore, some
+endpoints are protected against anonymous access and can only be used by
+an authenticated user. This is described later in section
+<a href="#access-control-on-routes">Access control on routes</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">finale.initialize({ app, sequelize })
+
+const autoModels = [
+  { name: 'User', exclude: ['password', 'totpSecret'], model: UserModel },
+  { name: 'Product', exclude: [], model: ProductModel },
+  { name: 'Feedback', exclude: [], model: FeedbackModel },
+  { name: 'BasketItem', exclude: [], model: BasketItemModel },
+  { name: 'Challenge', exclude: [], model: ChallengeModel },
+  { name: 'Complaint', exclude: [], model: ComplaintModel },
+  { name: 'Recycle', exclude: [], model: RecycleModel },
+  { name: 'SecurityQuestion', exclude: [], model: SecurityQuestionModel },
+  { name: 'SecurityAnswer', exclude: [], model: SecurityAnswerModel },
+  { name: 'Address', exclude: [], model: AddressModel },
+  { name: 'PrivacyRequest', exclude: [], model: PrivacyRequestModel },
+  { name: 'Card', exclude: [], model: CardModel },
+  { name: 'Quantity', exclude: [], model: QuantityModel }
+]
+
+for (const { name, exclude, model } of autoModels) {
+  const resource = finale.resource({
+    model,
+    endpoints: [`/api/${name}s`, `/api/${name}s/:id`],
+    excludeAttributes: exclude
+  })
+  // ...
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hand_written_middleware"><a class="anchor" href="#_hand_written_middleware"></a>Hand-written middleware</h4>
+<div class="paragraph">
+<p>The business functionality in the application backend is separated into
+tightly scoped middleware components which are placed in the <code>routes</code>
+folder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/routesFolder.png" alt="Express routes folder">
+</div>
+</div>
+<div class="paragraph">
+<p>These middleware components are directly mapped to
+<a href="http://expressjs.com">Express</a> routes.</p>
+</div>
+<div class="paragraph">
+<p>Each middleware exposes a single function which encapsulates their
+responsibility. For example, the <code>angular.ts</code> middleware delivers the
+<code>index.html</code> page to the client:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import path = require('path')
+import { Request, Response, NextFunction } from 'express'
+
+const utils = require('../lib/utils')
+
+module.exports = function serveAngularClient () {
+  return ({ url }: Request, res: Response, next: NextFunction) =&gt; {
+    if (!utils.startsWith(url, '/api') &amp;&amp; !utils.startsWith(url, '/rest')) {
+      res.sendFile(path.resolve('frontend/dist/frontend/index.html'))
+    } else {
+      next(new Error('Unexpected path: ' + url))
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If a hand-written middleware is involved in a hacking challenge, it must
+assess on its own if the challenge has been solved. For example, in the
+<code>basket.ts</code> middleware where successfully accessing another user&#8217;s
+shopping basket is verified in the <code>utils.solveIf()</code> function call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { Request, Response, NextFunction } from 'express'
+import { ProductModel } from '../models/product'
+import { BasketModel } from '../models/basket'
+
+const utils = require('../lib/utils')
+const security = require('../lib/insecurity')
+const challenges = require('../data/datacache').challenges
+
+module.exports = function retrieveBasket () {
+  return (req: Request, res: Response, next: NextFunction) =&gt; {
+    const id = req.params.id
+    BasketModel.findOne({ where: { id }, include: [{ model: ProductModel, paranoid: false, as: 'Products' }] })
+            .then((basket: BasketModel | null) =&gt; {
+              /* jshint eqeqeq:false */
+              utils.solveIf(challenges.basketAccessChallenge, () =&gt; {
+                const user = security.authenticatedUsers.from(req)
+                return user &amp;&amp; id &amp;&amp; id !== 'undefined' &amp;&amp; id !== 'null' &amp;&amp; id !== 'NaN' &amp;&amp; user.bid &amp;&amp; user.bid != id // eslint-disable-line eqeqeq
+              })
+              if (basket?.Products &amp;&amp; basket.Products.length &gt; 0) {
+                for (let i = 0; i &lt; basket.Products.length; i++) {
+                  basket.Products[i].name = req.__(basket.Products[i].name)
+                }
+              }
+
+              res.json(utils.queryResultToJson(basket))
+            }).catch((error: Error) =&gt; {
+      next(error)
+    })
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One particular middleware deviating from above approach is <code>verify.ts</code>.
+It contains no business functionality. Instead of one function it
+exposes several named functions on challenge verification for
+<a href="#generated-api-endpoints">Generated API endpoints</a>, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">app.post('/api/Feedbacks', verify.forgedFeedbackChallenge())
+app.post('/api/Feedbacks', verify.captchaBypassChallenge())
+app.post('/api/Users', verify.registerAdminChallenge())
+app.post('/api/Users', verify.passwordRepeatChallenge())</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The same applies for any challenges on top of third-party middleware,
+for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">app.use(verify.errorHandlingChallenge())
+app.use(errorhandler())</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Similar to the <a href="#generated-api-endpoints">Generated API endpoints</a>, not
+all hand-written endpoints can be used anonymously. The upcoming section
+<a href="#access-control-on-routes">Access control on routes</a> explains the
+available authorization checks.</p>
+</div>
+<div class="paragraph">
+<p>🚨 Unit tests for hand-written routes can be found in the <code>test/server</code>
+folder. These tests are written using the <a href="http://chaijs.com/">Chai</a>
+assertion library in conjunction with the <a href="https://mochajs.org/">Mocha</a>
+test framework.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_access_control_on_routes"><a class="anchor" href="#_access_control_on_routes"></a>Access control on routes</h4>
+<div class="paragraph">
+<p>For both the generated and hand-written middleware access can be
+restricted on the corresponding routes by adding <code>security.denyAll()</code>
+or <code>security.isAuthorized()</code> as an extra middleware. Examples for
+denying all access to certain HTTP verbs for the <code>SecurityQuestion</code> and
+<code>SecurityAnswer</code> models:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">/* SecurityQuestions: Only GET list of questions allowed. */
+app.post('/api/SecurityQuestions', security.denyAll())
+app.use('/api/SecurityQuestions/:id', security.denyAll())
+
+/* SecurityAnswers: Only POST of answer allowed. */
+app.get('/api/SecurityAnswers', security.denyAll())
+app.use('/api/SecurityAnswers/:id', security.denyAll())</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following snippet show the authorization settings for the <code>User</code>
+model which allows only <code>POST</code> to anonymous users (for registration) and
+requires to be logged-in for retrieving the list of users or individual
+user records. Deleting users is completely forbidden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">app.get('/api/Users', security.isAuthorized())
+app.route('/api/Users/:id')
+  .get(security.isAuthorized())
+  .put(security.denyAll()) // Updating users is forbidden to make the password change challenge harder
+  .delete(security.denyAll()) // Deleting users is forbidden entirely to keep login challenges solvable</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_libraries"><a class="anchor" href="#_custom_libraries"></a>Custom libraries</h3>
+<div class="paragraph">
+<p>Two important and widely used custom libraries reside in the <code>lib</code>
+folder, one containing useful utilities (<code>lib/utils.ts</code>) and the other
+encapsulating many of the broken security features (<code>lib/insecurity.js</code>)
+of the application.</p>
+</div>
+<div class="sect3">
+<h4 id="_useful_utilities"><a class="anchor" href="#_useful_utilities"></a>Useful utilities</h4>
+<div class="paragraph">
+<p>The main responsibility of the <code>utils.ts</code> module is setting challenges
+as solved and sending associated notifications, optionally including a
+CTF flag code. It can also retrieve any challenge by its name and check
+if a passed challenge is not yet solved, to avoid unnecessary (and
+sometimes expensive) repetitive solving of the same challenge.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">exports.solve = function (challenge, isRestore) {
+  const self = this
+  challenge.solved = true
+  challenge.save().then(solvedChallenge =&gt; {
+    solvedChallenge.description = entities.decode(sanitizeHtml(solvedChallenge.description, {
+      allowedTags: [],
+      allowedAttributes: []
+    }))
+    console.log(colors.green('Solved') + ' challenge ' + colors.cyan(solvedChallenge.name) + ' (' + solvedChallenge.description + ')')
+    self.sendNotification(solvedChallenge, isRestore)
+  })
+}
+
+exports.sendNotification = function (challenge, isRestore) {
+  if (!this.notSolved(challenge)) {
+    const flag = this.ctfFlag(challenge.name)
+    const notification = {
+      name: challenge.name,
+      challenge: challenge.name + ' (' + challenge.description + ')',
+      flag: flag,
+      hidden: !config.get('application.showChallengeSolvedNotifications'),
+      isRestore: isRestore
+    }
+    notifications.push(notification)
+    if (global.io) {
+      global.io.emit('challenge solved', notification)
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It also offers some basic <code>String</code> and <code>Date</code> utilities along with data
+(un-)wrapper functions and a method for the synchronous file download
+used during <a href="../part1/customization.html" class="xref page">Customization</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_features"><a class="anchor" href="#_security_features"></a>security features</h4>
+<div class="paragraph">
+<p>The <code>insecurity.js</code> module offers all security-relevant utilities of the
+application, but of course mostly in some broken or flawed way:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hashing functions both weak (<code>hash()</code>) and relatively strong
+(<code>hmac()</code>)</p>
+</li>
+<li>
+<p><a href="#routes">Route</a> authorization via JWT with <code>denyAll()</code> and
+<code>isAuthorized()</code> (see
+<a href="#access-control-on-routes">Access control on routes</a>) and
+corresponding grant of permission for a users with <code>authorize()</code></p>
+</li>
+<li>
+<p>HTML sanitization by exposing a (vulnerable) external library as
+function <code>sanitizeHtml()</code></p>
+</li>
+<li>
+<p>Keeping a bi-directional map of users with their current
+authentication token (JWT) in <code>authenticatedUsers</code></p>
+</li>
+<li>
+<p>Coupon code creation and verification functions <code>generateCoupon()</code> and
+<code>discountFromCoupon()</code></p>
+</li>
+<li>
+<p>A allowlist of allowed redirect URLs and a corresponding check
+function <code>isRedirectAllowed()</code></p>
+</li>
+<li>
+<p>CAPTCHA verification via <code>verifyCaptcha()</code> which compares the user&#8217;s
+answer against the requested CAPTCHA from the database</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_storage_tier"><a class="anchor" href="#_storage_tier"></a>Storage Tier</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.sqlite.org">SQLite</a> and
+<a href="https://github.com/c58/marsdb">MarsDB</a> form the backbone of the Juice
+Shop, as an e-commerce application without storage for its product,
+customer and associated data would not be very realistic. The Juice Shop
+uses light-weight implementations on the database layer to keep it
+runnable as a single "all-inclusive" server which
+<a href="../part1/running.adoc#run-options">can be deployed in various ways</a> with
+ease.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/architecture-database.png" alt="DB tier focus">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_database"><a class="anchor" href="#_database"></a>Database</h3>
+<div class="paragraph">
+<p>For the main database of the Juice Shop the file-based
+<a href="https://www.sqlite.org">SQLite</a> engine is used. It does not require a
+separate server but is accessed directly from <code>data/juiceshop.sqlite</code> on
+the file system of the Node.js server. For ease of use and more
+flexibility the relational mapping framework
+<a href="http://docs.sequelizejs.com">Sequelize</a> is used to actually access the
+data through a querying API. Sometime plain SQL is used as well, and of
+course in an unsafe way that allows <a href="../part2/injection.html" class="xref page">Injection</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_data_model"><a class="anchor" href="#_data_model"></a>Data model</h4>
+<div class="paragraph">
+<p>The relational data model of the Juice Shop is very straightforward. It
+features the following tables:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Users</code> which contains all registered users (i.e. potential customers)
+of the web shop.</p>
+</li>
+<li>
+<p>The table <code>SecurityQuestions</code> contains a fixed number of security
+questions a user has to choose from during registration. The provided
+answer is stored in the table <code>SecurityAnswers</code>.</p>
+</li>
+<li>
+<p>The <code>Products</code> table contains the products available in the shop
+including price data with their associated inventory stock data being persisted in the <code>Quantities</code> table.</p>
+</li>
+<li>
+<p>When logging in every user receives a shopping basket represented by a
+row in the <code>Baskets</code> table. When putting products into the basket this
+is reflected by entries in <code>BasketItems</code> linking a product to a basket
+together with a quantity.</p>
+</li>
+<li>
+<p>Users have digital <code>Wallets</code> and optionally credit <code>Cards</code> which they can use to pay for orders.</p>
+</li>
+<li>
+<p>Orders are shipped to user <code>Addresses</code> and the delivery speed and shipping costs are determined by options stored in the <code>Deliveries</code> table.</p>
+</li>
+<li>
+<p>Users can interact further with the shop by</p>
+<div class="ulist">
+<ul>
+<li>
+<p>giving feedback which is stored in the <code>Feedbacks</code> table</p>
+</li>
+<li>
+<p>complaining about recent orders which creates entries in the
+<code>Complaints</code> table</p>
+</li>
+<li>
+<p>asking for fruit-pressing leftovers to be collected for recycled via
+the <code>Recycles</code> table.</p>
+</li>
+<li>
+<p>references to uploaded user photos and associated descriptions are stored in the <code>Memories</code> table.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The tables <code>Captchas</code> and <code>ImageCaptchas</code> store all generated CAPTCHA questions and
+answers for comparison with the users response.</p>
+</li>
+<li>
+<p>The <code>Challenges</code> table would not be part of the data model of a normal
+e-commerce application, but for simplicities sake it is kept in the
+same schema. This table stores all hacking challenges that the OWASP
+Juice Shop offers and persists if the user already solved them or not.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/erm-diagram.png" alt="ERM Diagram">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_non_relational_database"><a class="anchor" href="#_non_relational_database"></a>Non-relational database</h3>
+<div class="paragraph">
+<p>Not all data of the Juice Shop resides in a relational schema. The user&#8217;s product reviews are stored in a collection <code>reviews</code> within a non-relational in-memory
+<a href="https://github.com/c58/marsdb">MarsDB</a> instance. All customer <code>orders</code> are also persisted in this fashion. An example user <code>reviews</code> entry might look like the following inside MarsDB:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{"message":"One of my favorites!","author":"admin@juice-sh.op","product":1,"_id":"PaZjAKKMaxWieSF65"}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An <code>orders</code> entry might look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{ "orderId": "fe01-28005c57431f8587", "totalPrice": 30.92, "products": [ { "quantity": 3, "name": "Apple Juice (1000ml)", "price": 1.99, "total": 5.97, "bonus": 0 }, { "quantity": 5, "name": "Raspberry Juice (1000ml)", "price": 4.99, "total": 24.950000000000003, "bonus": 0 } ], "bonus": 0, "eta": "0" }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All interaction with MarsDB happens via the MongoDB query syntax.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_populating_the_databases"><a class="anchor" href="#_populating_the_databases"></a>Populating the databases</h3>
+<div class="paragraph">
+<p>The OWASP Juice Shop comes with a <code>data/datacreator.ts</code> module that is
+automatically executed on every server start after the SQLite file and
+in-memory MarsDB have been cleared. It populates all tables with some
+initial data which makes the application usable out-of-the-box:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">module.exports = async () =&gt; {
+  const creators = [
+    createSecurityQuestions,
+    createUsers,
+    createChallenges,
+    createRandomFakeUsers,
+    createProducts,
+    createBaskets,
+    createBasketItems,
+    createAnonymousFeedback,
+    createComplaints,
+    createRecycleItem,
+    createOrders,
+    createQuantity,
+    createWallet,
+    createDeliveryMethods,
+    createMemories
+  ]
+
+  for (const creator of creators) {
+    await creator()
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For the default <code>Users</code> along with their <code>SecurityAnswers</code>, <code>Feedbacks</code>, <code>Addresses</code>, <code>Cards</code> and <code>Wallets</code> the data is hard-coded in a YAML file <code>data/static/users.yml</code>. For the static enumerations <code>SecurityQuestions</code> and <code>Deliveries</code> as well as Juice Shop&#8217;s 101 hacking <code>Challenges</code>, similar YAML files exist in <code>data/static</code>.</p>
+</div>
+<div class="paragraph">
+<p>As the contents of
+the <code>Products</code> and <code>Memories</code> table as well as the non-relational <code>reviews</code> collection
+<a href="../part1/customization.html" class="xref page">can be customized</a>, they are populated based on
+the active configuration file. By default, this is <code>config/default.yml</code>.</p>
+</div>
+<div class="paragraph">
+<p>The data in the <code>Basket</code>, <code>BasketItem</code>, <code>Complaints</code> and <code>Recycles</code> tables is statically
+defined within the <code>datacreator.ts</code> script. They are so simple that a
+YAML declaration file seemed like overkill. The same applies for some anonymous <code>Feedbacks</code> entries.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Captchas</code> and <code>ImageCaptchas</code> tables remain empty on startup, as they will dynamically
+generate a new CAPTCHA every time the <em>Customer Feedback</em> or <em>Request Data Export</em> pages are visited.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_file_system"><a class="anchor" href="#_file_system"></a>File system</h3>
+<div class="paragraph">
+<p>The folder <code>ftp</code> contains some files which are directly accessible. When
+a user completes a purchase, an order confirmation PDF is generated and
+placed into this folder. Other than that the <code>ftp</code> folder is also used
+to deliver the shop&#8217;s terms of use to interested customers.</p>
+</div>
+<div class="sect3">
+<h4 id="_uploaded_complaint_files"><a class="anchor" href="#_uploaded_complaint_files"></a>Uploaded complaint files</h4>
+<div class="paragraph">
+<p>The <em>File complaint</em> page contains a file upload field to attach one of
+the previously mentioned order confirmation PDFs. While these are really
+uploaded to the server, they are <em>not written</em> to the file system but
+discarded for security reasons: Publicly hosted Juice Shop instances are
+not supposed to be abused as malware distribution sites or file shares.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_end_to_end_tests"><a class="anchor" href="#_end_to_end_tests"></a>End-to-end tests</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>As applications grow in size and complexity, it becomes unrealistic to
+rely on manual testing to verify the correctness of new features,
+catch bugs and notice regressions. Unit tests are the first line of
+defense for catching bugs, but sometimes issues come up with
+integration between components which can&#8217;t be captured in a unit test.
+End-to-end tests are made to find these problems.<sup class="footnote" id="_footnote_5">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The folder <code>cypress/integration/e2e</code> contains an extensive suite of end-to-end tests
+which <strong>automatically solves <em>every</em> challenge</strong> in the Juice Shop
+application. Whenever a new challenge is added, a corresponding
+end-to-end test needs to be included, to prove that it can be exploited.</p>
+</div>
+<div class="paragraph">
+<p>It is quite an impressive sight to see how
+101 hacking challenges are solved
+without any human interaction in a few minutes. These tests are written and executed with
+<a href="https://cypress.io">Cypress</a> which and their results and stats are posted to
+on a <a href="https://dashboard.cypress.io/projects/3hrkhu/runs">public dashboard</a>.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://angular.io/guide/architecture-services" class="bare">https://angular.io/guide/architecture-services</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://angular.io/guide/architecture-components" class="bare">https://angular.io/guide/architecture-components</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://angular.io/guide/template-syntax" class="bare">https://angular.io/guide/template-syntax</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="http://expressjs.com/en/starter/basic-routing.html" class="bare">http://expressjs.com/en/starter/basic-routing.html</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://docs.angularjs.org/guide/e2e-testing" class="bare">https://docs.angularjs.org/guide/e2e-testing</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

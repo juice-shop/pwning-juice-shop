@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Broken Anti-Automation :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part II - Challenge hunting</li>
+    <li><a href="broken-anti-automation.html">Broken Anti-Automation</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/part2/broken-anti-automation.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Broken Anti-Automation</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Web applications are subjected to unwanted automated usage&#8201;&#8212;&#8201;day in,
+day out. Often these events relate to misuse of inherent valid
+functionality, rather than the attempted exploitation of unmitigated
+vulnerabilities. Also, excessive misuse is commonly mistakenly
+reported as application denial-of-service (DoS) like HTTP-flooding,
+when in fact the DoS is a side-effect instead of the primary intent.
+Frequently these have sector-specific names. Most of these problems
+seen regularly by web application owners are not listed in any OWASP
+Top Ten or other top issue list. Furthermore, they are not enumerated
+or defined adequately in existing dictionaries. These factors have
+contributed to inadequate visibility, and an inconsistency in naming
+such threats, with a consequent lack of clarity in attempts to address
+the issues. <sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_challenges_covered_in_this_chapter"><a class="anchor" href="#_challenges_covered_in_this_chapter"></a>Challenges covered in this chapter</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CAPTCHA Bypass</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Submit 10 or more customer feedbacks within 20 seconds.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extra Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve the language file that never made it into production.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple Likes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Like any review at least three times as the same user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Morty&#8217;s Password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset Morty&#8217;s password via the Forgot Password mechanism with <em>his obfuscated answer</em> to his security question.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_submit_10_or_more_customer_feedbacks_within_20_seconds"><a class="anchor" href="#_submit_10_or_more_customer_feedbacks_within_20_seconds"></a>Submit 10 or more customer feedbacks within 20 seconds</h3>
+<div class="paragraph">
+<p>The <em>Contact Us</em> form for customer feedback contains a CAPTCHA to
+protect it from being abused through scripting. This challenge is about
+beating this automation protection.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A completely automated public Turing test to tell computers and humans
+apart, or CAPTCHA, is a program that allows you to distinguish between
+humans and computers. First widely used by Alta Vista to prevent
+automated search submissions, CAPTCHAs are particularly effective in
+stopping any kind of automated abuse, including brute-force attacks.
+They work by presenting some test that is easy for humans to pass but
+difficult for computers to pass; therefore, they can conclude with
+some certainty whether there is a human on the other end.</p>
+</div>
+<div class="paragraph">
+<p>For a CAPTCHA to be effective, humans must be able to answer the test
+correctly as close to 100 percent of the time as possible. Computers
+must fail as close to 100 percent of the time as possible.<sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You could prepare 10 browser tabs, solving every CAPTCHA and filling
+out the each feedback form. Then you&#8217;d need to very quickly switch
+through the tabs and submit the forms in under 20 seconds total.</p>
+</li>
+<li>
+<p>Should the Juice Shop ever decide to change the challenge into
+<em>"Submit 100 or more customer feedbacks within 60 seconds"</em> or worse,
+you&#8217;d probably have a hard time keeping up with any tab-switching
+approach.</p>
+</li>
+<li>
+<p>Investigate closely how the CAPTCHA mechanism works and try to find
+either a bypass or some automated way of solving it dynamically.</p>
+</li>
+<li>
+<p>Wrap this into a script (in whatever programming language you prefer)
+that repeats this 10 times.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_retrieve_the_language_file_that_never_made_it_into_production"><a class="anchor" href="#_retrieve_the_language_file_that_never_made_it_into_production"></a>Retrieve the language file that never made it into production</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A project is internationalized when all of the project&#8217;s materials and
+deliverables are consumable by an international audience. This can
+involve translation of materials into different languages, and the
+distribution of project deliverables into different countries.<sup class="footnote" id="_footnote_3">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Following this requirement OWASP sets for all its projects, the Juice
+Shop&#8217;s user interface is available in different languages. One extra
+language is actually available that you will not find in the selection
+menu.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part3/languages.png" alt="Language selection dropdown">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>First you should find out how the languages are technically changed in
+the user interface.</p>
+</li>
+<li>
+<p>Guessing will most definitely not work in this challenge.</p>
+</li>
+<li>
+<p>You should rather choose between the following two ways to beat this
+challenge:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Apply brute force</em> (and don&#8217;t give up to quickly) to find it.</p>
+</li>
+<li>
+<p><em>Investigate online</em> what languages are actually available.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A brute force attack can manifest itself in many different ways, but
+primarily consists in an attacker configuring predetermined values,
+making requests to a server using those values, and then analyzing the
+response. For the sake of efficiency, an attacker may use a dictionary
+attack (with or without mutations) or a traditional brute-force attack
+(with given classes of characters e.g.: alphanumerical, special, case
+(in)sensitive). Considering a given method, number of tries,
+efficiency of the system which conducts the attack, and estimated
+efficiency of the system which is attacked the attacker is able to
+calculate approximately how long it will take to submit all chosen
+predetermined values.<sup class="footnote" id="_footnote_4">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_like_any_review_at_least_three_times_as_the_same_user"><a class="anchor" href="#_like_any_review_at_least_three_times_as_the_same_user"></a>Like any review at least three times as the same user</h3>
+<div class="paragraph">
+<p>Any online shop with a review or rating functionality for its products
+should be very keen on keeping fake or inappropriate reviews out. The
+Juice Shop decided to give its customers the ability to give a "like" to
+their favorite reviews. Of course, each user should be able to do so
+only once for each review.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Every user is (almost) immediately associated with the review they
+"liked" to prevent abuse of that functionality</p>
+</li>
+<li>
+<p>Did you really think clicking the "like" button three times in a row
+<em>really fast</em> would be enough to solve a ⭐⭐⭐⭐⭐⭐ challenge?</p>
+</li>
+<li>
+<p>The underlying flaw of this challenge is a Race Condition</p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A race condition or race hazard is the behavior of an electronics,
+software, or other system where the output is dependent on the
+sequence or timing of other uncontrollable events. It becomes a bug
+when events do not happen in the order the programmer intended.<sup class="footnote" id="_footnote_5">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Many software race conditions have associated computer security
+implications. A race condition allows an attacker with access to a
+shared resource to cause other actors that utilize that resource to
+malfunction, resulting in effects including denial of service and
+privilege escalation.</p>
+</div>
+<div class="paragraph">
+<p>A specific kind of race condition involves checking for a predicate
+(e.g. for authentication), then acting on the predicate, while the
+state can change between the time of check and the time of use. When
+this kind of bug exists in security-sensitive code, a security
+vulnerability called a time-of-check-to-time-of-use (TOCTTOU) bug is
+created.<sup class="footnote" id="_footnote_6">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reset_mortys_password_via_the_forgot_password_mechanism"><a class="anchor" href="#_reset_mortys_password_via_the_forgot_password_mechanism"></a>Reset Morty&#8217;s password via the Forgot Password mechanism</h3>
+<div class="paragraph">
+<p>This password reset challenge is different from those from the
+<a href="broken-authentication.html" class="xref page">Broken Authentication</a> category as it is next
+to impossible to solve without using a brute force approach.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Finding out who Morty actually is, will help to reduce the solution
+space.</p>
+</li>
+<li>
+<p>You can assume that Morty answered his security question truthfully
+but employed some obfuscation to make it more secure.</p>
+</li>
+<li>
+<p>Morty&#8217;s answer is less than 10 characters long and does not include
+any special characters.</p>
+</li>
+<li>
+<p>Unfortunately, <em>Forgot your password?</em> is protected by a rate limiting
+mechanism that prevents brute forcing. You need to beat this somehow.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://owasp.org/www-project-automated-threats-to-web-applications/" class="bare">https://owasp.org/www-project-automated-threats-to-web-applications/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks" class="bare">https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://wiki.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements" class="bare">https://wiki.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://owasp.org/www-community/attacks/Brute_force_attack" class="bare">https://owasp.org/www-community/attacks/Brute_force_attack</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://en.wikipedia.org/wiki/Race_condition" class="bare">https://en.wikipedia.org/wiki/Race_condition</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. <a href="https://en.wikipedia.org/wiki/Race_condition#Computer_security" class="bare">https://en.wikipedia.org/wiki/Race_condition#Computer_security</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

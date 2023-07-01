@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Integration :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Appendix</li>
+    <li><a href="integration.html">Integration</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/appendix/integration.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Integration</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>OWASP Juice Shop follows strict conventions for describing challenges.
+These allow you to easily integrate Juice Shop tutorials, hints and
+solutions into your own security guides, knowledge bases, testing labs
+etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="challenges-api"><a class="anchor" href="#challenges-api"></a>Challenges API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The endpoint <code>/api/Challenges</code> on your local Juice Shop instance (i.e.
+<a href="http://localhost:3000/api/Challenges" class="bare">http://localhost:3000/api/Challenges</a>) returns information on the
+configured challenges along with their current state in an easily
+consumable JSON format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+   "status":"success",
+   "data":[
+      {
+         "id":1,
+         "key":"restfulXssChallenge",
+         "name":"API-only XSS",
+         "category":"XSS",
+         "description":"Perform a &lt;i&gt;persisted&lt;/i&gt; XSS attack with &lt;code&gt;&amp;lt;iframe src=\"javascript:alert(`xss`)\"&amp;gt;&lt;/code&gt; without using the frontend application at all. &lt;em&gt;(This challenge is &lt;strong&gt;not available&lt;/strong&gt; on Heroku!)&lt;/em&gt;",
+         "difficulty":3,
+         "hint":"You need to work with the server-side API directly. Try different HTTP verbs on different entities exposed through the API.",
+         "hintUrl":"https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all",
+         "solved":false,
+         "disabledEnv":"Heroku",
+         "createdAt":"2020-03-23T12:00:34.258Z",
+         "updatedAt":"2020-03-23T12:00:34.258Z"
+      },
+      {
+         "id":2,
+         "key":"accessLogDisclosureChallenge",
+         "name":"Access Log",
+         "category":"Sensitive Data Exposure",
+         "description":"Gain access to any access log file of the server.",
+         "difficulty":4,
+         "hint":"Who would want a server access log to be accessible through a web application?",
+         "hintUrl":"https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#gain-access-to-any-access-log-file-of-the-server",
+         "solved":false,
+         "disabledEnv":null,
+         "createdAt":"2020-03-23T12:00:34.259Z",
+         "updatedAt":"2020-03-23T12:00:34.259Z"
+      },
+      {
+        "...":"..."
+      }
+   ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instead of your own local instance you can also use the API of the
+publicly available demo instances to pull challenge information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://demo.owasp-juice.shop/api/Challenges" class="bare">http://demo.owasp-juice.shop/api/Challenges</a> for the latest released
+version (<code>master</code> branch)</p>
+</li>
+<li>
+<p><a href="http://preview.owasp-juice.shop/api/Challenges" class="bare">http://preview.owasp-juice.shop/api/Challenges</a> for the next version
+to be released (<code>develop</code> branch)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>🚨 <em>There is no uptime guarantee for either of these as they are both
+only free Heroku dynos. Please refrain from making unnecessary amounts
+of requests.</em></p>
+</div>
+<div class="sect2">
+<h3 id="_api_integration_example"><a class="anchor" href="#_api_integration_example"></a>API integration example</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The
+<a href="https://www.npmjs.com/package/juice-shop-ctf-cli">Juice Shop CTF Extension</a>
+calls the API of a specified Juice Shop instance
+<a href="../part1/ctf.adoc#generating-challenge-import-files-with-juice-shop-ctf-cli">to retrieve the challenges to later import into a CTF score server</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_challenge_declaration_file"><a class="anchor" href="#_challenge_declaration_file"></a>Challenge declaration file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The single source of truth for challenges in OWASP Juice Shop is its
+<code>data/static/challenges.yml</code> file. It is used during start-up of the
+application to populate the <code>Challenges</code> table which is then exposed via
+the <a href="#challenges-api">Challenges API</a> endpoint.</p>
+</div>
+<div class="paragraph">
+<p>Parsing this file directly for integration makes sense when you do not
+rely on changed settings (e.g. hints being turned off) from an
+individual <a href="../part1/customization.adoc#customization">Customization</a>
+and/or you do not have a running Juice Shop instance available in the
+first place.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">-
+  name: 'Some Name'
+  category: 'Category of the challenge'
+  description: 'Here the actual task for the attacker is described.'
+  difficulty: 1 # a number between 1 and 6
+  hint: 'A text hint to display on the Score Board when hovering over the challenge'
+  hintUrl: 'https://pwning.owasp-juice.shop/part2/&lt;category&gt;.html#&lt;shortened description&gt;'
+  key: someNameChallenge
+  disabledEnv: # (optional) to disable challenges dangerous or incompatible in certain environments
+    - Docker
+    - Heroku
+    - Windows
+  tutorial: # (optional) present only on challenges with a Hacking Instructor tutorial
+    order: 1 # a unique number to specify the recommended order of tutorials</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The latest versions of the <code>challenges.yml</code> file can be found here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://raw.githubusercontent.com/juice-shop/juice-shop/master/data/static/challenges.yml" class="bare">https://raw.githubusercontent.com/juice-shop/juice-shop/master/data/static/challenges.yml</a>
+for the latest released version (<code>master</code> branch)</p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/juice-shop/juice-shop/develop/data/static/challenges.yml" class="bare">https://raw.githubusercontent.com/juice-shop/juice-shop/develop/data/static/challenges.yml</a>
+for the next version to be released (<code>develop</code> branch)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_generating_links_to_juice_shop"><a class="anchor" href="#_generating_links_to_juice_shop"></a>Generating links to Juice Shop</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Link composition</th>
+<th class="tableblock halign-left valign-top">Condition</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to official hints for a specific challenge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;hintUrl&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pwning.owasp-juice.shop/part2/score-board.html#find-the-carefully-hidden-score-board-page" class="bare">https://pwning.owasp-juice.shop/part2/score-board.html#find-the-carefully-hidden-score-board-page</a> or <a href="https://pwning.owasp-juice.shop/part2/xss.html#perform-a-dom-xss-attack" class="bare">https://pwning.owasp-juice.shop/part2/xss.html#perform-a-dom-xss-attack</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to official step-by-step solution for a specific challenge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://pwning.owasp-juice.shop/appendix/solutions.html#&lt;hash part of hintUrl&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://pwning.owasp-juice.shop/appendix/solutions.html#find-the-carefully-hidden-score-board-page" class="bare">https://pwning.owasp-juice.shop/appendix/solutions.html#find-the-carefully-hidden-score-board-page</a> or <a href="https://pwning.owasp-juice.shop/appendix/solutions.html#perform-a-dom-xss-attack" class="bare">https://pwning.owasp-juice.shop/appendix/solutions.html#perform-a-dom-xss-attack</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direct link to a <a href="../part1/challenges.adoc#hacking-instructor">Hacking Instructor</a> tutorial for a specific challenge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/#/hacking-instructor?challenge=&lt;name&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for challenges where <code>tutorial</code> is defined.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://localhost:3000/" class="bare">http://localhost:3000/</a><mark>/hacking-instructor?challenge=Score%20Board or <a href="http://preview.owasp-juice.shop/" class="bare">http://preview.owasp-juice.shop/</a></mark>/hacking-instructor?challenge=DOM%20XSS</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>🖼️ <em>As the utilized GitBook version does not set the
+<code>x-frame-options</code> header, it is possible to display content from
+<a href="https://pwning.owasp-juice.shop" class="bare">https://pwning.owasp-juice.shop</a> in an <code>&lt;iframe&gt;</code>.</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_yaml_integration_example"><a class="anchor" href="#_yaml_integration_example"></a>YAML integration example</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The official project website <a href="https://owasp-juice.shop" class="bare">https://owasp-juice.shop</a> uses (a copy
+of) the <code>challenges.yml</code> to render
+<a href="https://owasp.org/www-project-juice-shop/#div-challenges"><em>Challenge Categories</em></a>
+and <a href="https://owasp.org/www-project-juice-shop/#div-tutorials"><em>Hacking
+Instructor Tutorials</em></a>
+tables with the help of
+<a href="https://jekyllrb.com/docs/liquid/filters/">Liquid Filters</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_challenge_solution_webhook"><a class="anchor" href="#_challenge_solution_webhook"></a>Challenge solution webhook</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Any Juice Shop instance can be configured to call a webhook whenever one
+of its 101 hacking challenges is
+solved. To use this feature the following environment variable needs to
+be supplied to the Juice Shop server:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Environment variable</th>
+<th class="tableblock halign-left valign-top">Expected value</th>
+<th class="tableblock halign-left valign-top">Recommendations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SOLUTIONS_WEBHOOK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL of the webhook Juice Shop is supposed to call whenever a challenge is solved.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The webhook URL should be bound to the user who solved the challenge and allow its provider to verify the Juice Shop origin instance. In most cases <strong>the webhook URL should be treated as sensitive information and not be published or transmitted unencrypted!</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_webhook_payload"><a class="anchor" href="#_webhook_payload"></a>Webhook payload</h3>
+<div class="paragraph">
+<p>Juice Shop will send a <code>POST</code> request to the configured
+<code>SOLUTIONS_WEBHOOK</code> with the following payload:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{ "solution":
+  { "challenge": "&lt;'key' of the solved challenge from ./data/static/challenges.yml&gt;",
+    "cheatScore": "&lt;probability of 0..1 that this solution has been cheated&gt;",
+    "totalCheatScore": "&lt;average probability of 0..1 that solutions up until now have been cheated&gt;",
+    "issuedOn": "&lt;yyyy-MM-ddThh:mm:ssZ&gt;"
+  },
+  "ctfFlag": "&lt;CTF flag code of the solved challenged based on the injected (or default) 'CTF_KEY'&gt;",
+  "issuer": {
+    "hostName": "&lt;server os hostname&gt;",
+    "os": "&lt;server os type (and release)&gt;",
+    "appName": "&lt;'application.name' from loaded YAML configuration in ./config folder&gt;",
+    "config": "&lt;name of the loaded configuration&gt;",
+    "version": "&lt;version from ./package.json&gt;"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_webhook_payload_example"><a class="anchor" href="#_webhook_payload_example"></a>Webhook payload example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "solution": {
+        "challenge": "key",
+        "cheatScore": 0,
+        "totalCheatScore": 0,
+        "issuedOn": "2020-12-15T18:24:33.027Z"
+    },
+    "ctfFlag": "b0d70dce6cadadb85882ea498fac6785dba2349b",
+    "issuer": {
+        "hostName": "fv-az116-673",
+        "os": "Linux (5.4.0-1031-azure)",
+        "appName": "OWASP Juice Shop",
+        "config": "default",
+        "version": "12.3.0-SNAPSHOT"
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vulnerable_code_snippets_api"><a class="anchor" href="#_vulnerable_code_snippets_api"></a>Vulnerable code snippets API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Any running Juice Shop instance since <code>v12.7.0</code> provides two REST
+endpoints <code>/snippets</code> and <code>/snippets/&lt;challengeKey&gt;</code> which can be used
+to retrieve the actual vulnerable code snippets for many of the
+challenges. These are described in the
+<a href="code-snippets.adoc#rest-endpoints">REST endpoints</a> section of the
+<a href="code-snippets.html" class="xref page">Vulnerable code snippets</a> appendix.</p>
+</div>
+<div class="sect2">
+<h3 id="_api_integration_example_2"><a class="anchor" href="#_api_integration_example_2"></a>API integration example</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The Score Board itself is using these endpoints to decide for which
+challenges to show a code snippet button, and then to subsequently
+retrieve a code snippet when such a button in clicked.</p>
+</li>
+<li>
+<p>The
+<a href="https://www.npmjs.com/package/juice-shop-ctf-cli">Juice Shop CTF Extension</a>
+calls the API of a specified Juice Shop instance
+<a href="../part1/ctf.adoc#generating-challenge-import-files-with-juice-shop-ctf-cli">to retrieve the snippets to later offer them as a hint on a CTF score server</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

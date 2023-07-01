@@ -1,0 +1,979 @@
+= Customization
+
+One of the core usage scenarios for OWASP Juice Shop is in employee
+trainings in order to facilitate security awareness. With its not
+entirely serious user roster and product inventory the application might
+not be suited for all audiences alike.
+
+In some particularly traditional domains or conservative enterprises it
+would be beneficial to have the demo application look and behave more
+like an internal application.
+
+OWASP Juice Shop can be customized in its product inventory and look &
+feel to accommodate this requirement. It also allows to add an arbitrary
+number of fake users to make demonstrations - particularly those of
+`UNION-SQL` injection attacks - even more impressive. Furthermore the
+Challenge solved!-notifications can be turned off in order to keep the
+impression of a "real" application undisturbed.
+
+== How to customize the application
+
+The customization is powered by a YAML configuration file placed in
+`/config`. To run a customized OWASP Juice Shop you need to:
+
+. Place your own `.yml` configuration file into `/config`
+. Set the environment variable `NODE_ENV` to the filename of your
+config without the `.yml` extension
+ ** On Windows: `set NODE_ENV=nameOfYourConfig`
+ ** On Linux: `export NODE_ENV=nameOfYourConfig`
+. Run `npm start`
+
+You can also run a config directly in one command (on Linux) via
+`NODE_ENV=nameOfYourConfig npm start`. By default, the
+`config/default.yml` config is used which generates the original OWASP
+Juice Shop look & feel and inventory. Please note that it is not
+necessary to run `npm install` after switching customization
+configurations.
+
+=== Overriding `default.yml` in Docker container
+
+In order to override the default configuration inside your Docker
+container with one of the provided configs, you can pass in the
+`NODE_ENV` environment variable with the `-e` parameter:
+
+[,bash]
+----
+docker run -d -e "NODE_ENV=bodgeit" -p 3000:3000 bkimminich/juice-shop
+----
+
+In order to inject your own configuration, you can use `-v` to mount the
+`default.yml` path inside the container to any config file on your
+outside file system:
+
+[,bash]
+----
+docker run -d -e "NODE_ENV=myConfig" -v /tmp/myConfig.yml:/juice-shop/config/myConfig.yml -p 3000:3000 --name juice-shop bkimminich/juice-shop
+----
+
+=== Overriding `default.yml` in Vagrant box
+
+Currently it is not possible to override the default configuration in
+the Vagrant box. It is not set up in a way where it could pass the
+`NODE_ENV` environment variable to the Docker container that is spun up
+inside the box.
+
+== YAML configuration file
+
+The YAML format for customizations is very straightforward. Below you
+find its schema along with an excerpt of the default settings.
+
+=== `server` section
+
+Offers technical configuration options for the web server hosting the
+application.
+
+|===
+| Property | Description | Default
+
+| `port`
+| Port to launch the server on. Would be overwritten by `PORT` environment variable.
+| `3000`
+
+| `basePath`
+| When proxied in a subdirectory, this base path is used _during redirects_. The actual web server's base path is not affected. Would be overwritten by `BASE_PATH` environment variable.
+| `''`
+|===
+
+=== `application` section
+
+Defines customization options for texts, colors, images, URLs etc.
+within the application.
+
+|===
+| Property | Description | Default
+
+| `domain`
+| Domain used for all user email addresses.
+| `'juice-sh.op'`
+
+| `name`
+| Name as shown in title and menu bar.
+| `'OWASP Juice Shop'`
+
+| `logo`
+| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as a logo.
+| `JuiceShop_Logo.png`
+
+| `favicon`
+| Filename in `frontend/dist/frontend/assets/public` _or_ a URL of an image in `.ico` format which will first be download to that folder and then used as a favicon.
+| `favicon_v2.ico`
+
+| `theme`
+| Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`. See <<material-color-themes,Material Color Themes>> for a sample screenshot of each theme.
+| `bluegrey-lightgreen`
+
+| `showVersionNumber`
+| Shows or hides the software version from the title.
+| `true`
+
+| `showGitHubLinks`
+| Shows or hides the _"GitHub"_ button in the navigation and side bar as well as the info box about contributing on the _Score Board_.
+| `true`
+
+| `localBackupEnabled`
+| Enabled or disables the local backup feature for hacking progress and filters/settings on the _Score Board_.
+| `true`
+
+| `numberOfRandomFakeUsers`
+| Represents the number of random user accounts to be created on top of the pre-defined ones (which are required for several challenges).
+| `0`, meaning no additional users are created
+
+| `altcoinName`
+| Defines the name of the (fake) crypto currency that is offered on the _Token Sale_ screen.
+| `Juicycoin`
+
+| `privacyContactEmail`
+| The email address shown as contact in the _Privacy Policy_.
+| `donotreply@owasp-juice.shop`
+
+| `customMetricsPrefix`
+| Prefix for all custom Prometheus metrics. Must be a lowercase letter single world by Prometheus conventions.
+| `juiceshop`
+
+| <<chatbot-subsection,`chatBot` subsection>>
+| Specifies all characteristics of the bot answering user questions in the _Support Chat_.
+|
+
+| <<social-subsection,`social` subsection>>
+| Specifies all social links embedded on various screens such as _About Us_ or the _Photo Wall_.
+|
+
+| <<recyclepage-subsection,`recyclePage` subsection>>
+| Defines custom elements on the _Request Recycling Box_ page.
+|
+
+| <<welcomebanner-subsection,`welcomeBanner` subsection>>
+| Defines a dismissable welcome banner that can be shown when first visiting the application.
+|
+
+| <<cookieconsent-subsection,`cookieConsent` subsection>>
+| Defines the cookie consent dialog shown in the bottom right corner.
+|
+
+| <<securitytxt-subsection,`securityTxt` subsection>>
+| Defines the attributes for the `security.txt` file based on the https://securitytxt.org/ Internet draft.
+|
+
+| <<promotion-subsection,`promotion` subsection>>
+| Defines the attributes required for the `/promotion` screen where a marketing video with subtitles is rendered that hosts the link:../part2/xss.adoc#embed-an-xss-payload-into-our-promo-video[XSS Tier 6] challenge.
+|
+
+| <<eastereggplanet-subsection,`easterEggPlanet` subsection>>
+| Defines the customizations for the 3D-rendered planet easter egg.
+|
+
+| <<googleoauth-subsection,`googleOauth` subsection>>
+| Defines the client identifier and allowed redirect URIs for Google OAuthintegration.
+|
+|===
+
+==== `chatBot` subsection
+
+Specifies all characteristics of the bot answering user questions in the
+_Support Chat_.
+
+|===
+| Property | Description | Default
+
+| `name`
+| Name the chat bot introduces itself with.
+| `Juicy`
+
+| `greeting`
+| Initial greeting the chat bot uses when chatting with a user.
+| `"Nice to meet you <customer-name>, I'm <bot-name>"`
+
+| `trainingData`
+| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:../appendix/chatbot.adoc[training data] for the chat bot.
+| `'botDefaultTrainingData.json'`
+
+| `defaultResponse`
+| Default response the chat bot uses when it could not understand the user's actual question.
+| `"Sorry I couldn't understand what you were trying to say"`
+
+| `avatar`
+| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as a chat bot avatar.
+| `'JuicyChatBot.png'`
+|===
+
+==== `social` subsection
+
+Specifies all social links embedded on various screens such as _About
+Us_ or the _Photo Wall_.
+
+|===
+| Property | Description | Default
+
+| `twitterUrl`
+| URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.
+| `+'https://twitter.com/owasp_juiceshop'+`
+
+| `facebookUrl`
+| URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen.
+| `+'https://www.facebook.com/owasp.juiceshop'+`
+
+| `slackUrl`
+| URL used as the Slack link on the _About Us_ screen.
+| `+'https://owasp.org/slack/invite'+`
+
+| `pressKitUrl`
+| URL used as the link to logos and media files on the _About Us_ screen.
+| `+'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'+`
+
+| `questionnaireUrl`
+| URL used as the link to a user questionnaire on the _Score Board_ screen.
+| `~`
+|===
+
+==== `recyclePage` subsection
+
+Defines custom elements on the _Request Recycling Box_ page.
+
+|===
+| Property | Description | Default
+
+| `topProductImage`
+| Filename in `frontend/dist/frontend/assets/public/images/products` to use as the image on the top of the info column on the page.
+| `fruit_press.jpg`
+
+| `bottomProductImage`
+| Filename in `frontend/dist/frontend/assets/public/images/products` to use as the image on the bottom of the info column on the page.
+| `apple_pressings.jpg`
+|===
+
+==== `welcomeBanner` subsection
+
+Defines a dismissable welcome banner that can be shown when first
+visiting the application.
+
+|===
+| Property | Description | Default
+
+| `showOnFirstStart`
+| Shows or hides the banner.
+| `true`
+
+| `title`
+| Defines the headline of the banner.
+| `Welcome to OWASP Juice Shop!`
+
+| `message`
+| Defines the body of the banner. Can contain arbitrary HTML.
+| `+<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-juice.shop' target='_blank'>https://owasp-juice.shop</a></h1>+`
+|===
+
+==== `cookieConsent` subsection
+
+Defines the cookie consent dialog shown in the bottom right corner.
+
+|===
+| Property | Description | Default
+
+| `backgroundColor`
+| Color of the cookie banner itself.
+| `'#546e7a'`
+
+| `textColor`
+| Color of the `message` shown in the cookie banner.
+| `'#ffffff'`
+
+| `buttonColor`
+| Defines the color of the button to dismiss the banner.
+| `'#558b2f'`
+
+| `buttonTextColor`
+| Color of the `dismissText` on the button.
+| `'#ffffff'`
+
+| `message`
+| Explains the cookie usage in the application.
+| `'This website uses fruit cookies to ensure you get the juiciest tracking experience.'`
+
+| `dismissText`
+| The text shown on the button to dismiss the banner.
+| `'Me want it!'`
+
+| `linkText`
+| Caption of the link that is shown after the `message` to refer to further information.
+| `'But me wait!'`
+
+| `linkUrl`
+| URL that provides further information about cookie usage.
+| `+'https://www.youtube.com/watch?v=9PnbKL3wuH4'+`
+|===
+
+==== `securityTxt` subsection
+
+Defines the attributes for the `security.txt` file based on the
+https://securitytxt.org/ Internet draft.
+
+|===
+| Property | Description | Default
+
+| `contact`
+| An email address, phone number or URL to report security vulnerabilities to. Can be fake obviously.
+| `mailto:donotreply@owasp-juice.shop`
+
+| `encryption`
+| URL to a public encryption key for secure communication. Can be fake obviously.
+| `+https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda+`
+
+| `acknowledgements`
+| URL a "hall of fame" page. Can be fake obviously.
+| `/#/score-board`
+|===
+
+==== `promotion` subsection
+
+Defines the attributes required for the `/promotion` screen where a
+marketing video with subtitles is rendered that hosts the
+link:../part2/xss.adoc#embed-an-xss-payload-into-our-promo-video[XSS Tier 6]
+challenge.
+
+|===
+| Property | Description | Default
+
+| `video`
+| Name of a file with `video/mp4` content type in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.
+| `owasp_promo.mp4`
+
+| `subtitles`
+| Name of a https://www.w3.org/TR/webvtt1/[Web Video Text Tracks Format] file in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.
+| `owasp_promo.vtt`
+|===
+
+==== `easterEggPlanet` subsection
+
+Defines the customizations for the 3D-rendered planet easter egg.
+
+|===
+| Property | Description | Default
+
+| `name`
+| Name of the 3D planet "easter egg" as shown in the page title.
+| `Orangeuze`
+
+| `overlayMap`
+| Filename in `frontend/dist/frontend/assets/private` _or_ URL of an image to download to that folder and then use as an overlay texture for the 3D planet "easter egg".
+| `orangemap2k.jpg`
+|===
+
+==== `googleOauth` subsection
+
+Defines the client identifier and allowed redirect URIs for Google OAuth
+integration.
+
+|===
+| Property | Description | Default
+
+| `clientId`
+| Client identifier of the Google Cloud Platform application to handle OAuth 2.0 requests from OWASP Juice Shop.
+| `'1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'`
+
+| <<authorizedredirects-sub-sequence,`authorizedRedirects` sub-sequence>>
+| Sub-list for the redirect URIs authorized for Google OAuth.
+| `+- { uri: 'https://demo.owasp-juice.shop' }- { uri: 'https://juice-shop.herokuapp.com' }- { uri: 'https://preview.owasp-juice.shop' }- { uri: 'https://juice-shop-staging.herokuapp.com' }- { uri: 'https://juice-shop.wtf' }- { uri: 'http://localhost:3000', proxy: 'https://local3000.owasp-juice.shop' }- { uri: 'http://127.0.0.1:3000', proxy: 'https://local3000.owasp-juice.shop' }- { uri: 'http://localhost:4200', proxy: 'https://local4200.owasp-juice.shop' }- { uri: 'http://127.0.0.1:4200', proxy: 'https://local4200.owasp-juice.shop' }- { uri: 'http://192.168.99.100:3000', proxy: 'https://localmac.owasp-juice.shop' }- { uri: 'http://192.168.99.100:4200', proxy: 'https://localmac.owasp-juice.shop' }- { uri: 'http://penguin.termina.linux.test:3000', proxy: 'https://localchromeos.owasp-juice.shop' }- { uri: 'http://penguin.termina.linux.test:4200', proxy: 'https://localchromeos.owasp-juice.shop' }+`
+|===
+
+===== `authorizedRedirects` sub-sequence
+
+Defines the allowed redirect URIs and their optional proxy for Google
+OAuth integration.
+
+|===
+| Property | Description | Conditions | Default
+
+| `uri`
+| URI authorized on https://console.cloud.google.com/apis/credentials[Google Cloud Platform] the Juice Shop is expected to be running on.
+| mandatory
+|
+
+| `proxy`
+| Proxy URI authorized on https://console.cloud.google.com/apis/credentials[Google Cloud Platform] that will itself redirect back to the original `uri`. Necessary for addresses not allowed as Google OAuth redirect targets, such as `localhost` or IP addresses.
+| optional
+| `null`
+|===
+
+=== `challenges` section
+
+Defines configuration options for the hacking challenges within the
+Juice Shop.
+
+|===
+| Property | Description | Default
+
+| `showSolvedNotifications`
+| Shows or hides all instant _"challenge solved"_-notifications. Recommended to set to `false` for awareness demos.
+| `true`
+
+| `showHints`
+| Shows or hides hints for each challenge on hovering over/clicking its _"unsolved"_ badge on the score board.
+| `true`
+
+| `showMitigations`
+| Shows or hides a mitigation link for each solved challenge on the score board (if available).
+| `true`
+
+| `codingChallengesEnabled`
+| Shows or hides the associated link:../part1/challenges.adoc#coding-challenges[Coding challenge] button for each challenge (if available) on the score board. Can be `never`, `solved` (to show but disable the corresponding button until the hacking challenge is solved) or `always`.
+| `solved`
+
+| `restrictToTutorialsFirst`
+| Disables all _Score Board_ filter options and hides those of the {juiceShopNumberOfChallenges} challenges without a tutorial until all challenges with a tutorial have been solved.
+| `false`
+
+| `overwriteUrlForProductTamperingChallenge`
+| URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the link:../part2/broken-access-control.adoc#change-the-href-of-the-link-within-the-o-saft-product-description[Product Tampering] challenge.
+| `+https://owasp.slack.com+`
+
+| `xssBonusPayload`
+| This XSS payload is expected during the link:../part2/xss.adoc#use-the-bonus-payload-in-the-dom-xss-challenge[Bonus Payload] challenge.
+| `+'<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'+`
+
+| `safetyOverride`
+| Enables all link:challenges.adoc#potentially-dangerous-challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. ☠️ *Use at your own risk!*
+| `false`
+
+| `showFeedbackButtons`
+| Shows or hides like/dislike buttons for solved hacking & coding challenges that open an accordingly pre-filled Google Form.
+| `true`
+|===
+
+=== `hackingInstructor` section
+
+Allows enabling and customizing the
+link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor] tutorial
+mode.
+
+|===
+| Property | Description | Default
+
+| `isEnabled`
+| Shows or hides the link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor] links from the _Score Board_ and _Welcome Banner_.
+| `true`
+
+| `avatarImage`
+| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as an avatar in the tutorial speech bubbles.
+| `juicyBot.png`
+|===
+
+=== `products` sequence
+
+List of product mappings which, when specified, replaces *the entire
+list* of default products.
+
+|===
+| Property | Description | Conditions | Default
+
+| `name`
+| Name of the product.
+| mandatory
+|
+
+| `description`
+| Description of the product.
+| optional
+| `'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'`
+
+| `price`
+| Price of the product.
+| optional
+| A random price of 1-10
+
+| `deluxePrice`
+| Price of the product for _Deluxe Membership_ customers.
+| optional
+| Same as the regular price
+
+| `quantity`
+| Available quantity of product in stock.
+| optional
+| Random quantity of 30-100 items
+
+| `limitPerUser`
+| Maximum purchase limit for regular customers. Does not apply to _Deluxe Membership_ holders.
+| optional
+| `null`
+
+| `image`
+| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of an image to download to that folder and then use as a product image.
+| optional
+| `undefined.png`
+
+| `deletedDate`
+| Deletion date of the product in `YYYY-MM-DD` format.
+| optional
+| `null`
+
+| `urlForProductTamperingChallenge`
+| Sets the original link of the product which is the target for the link:../part2/broken-access-control.adoc#change-the-href-of-the-link-within-the-o-saft-product-description[Product Tampering] challenge. Overrides `deletedDate` with `null`.
+| must be defined on exactly one product
+|
+
+| `useForChristmasSpecialChallenge`
+| Marks a product as the target for link:../part2/injection.adoc#order-the-christmas-special-offer-of-2014[the "christmas special" challenge]. Overrides `deletedDate` with `2014-12-27`.
+| must be `true` on exactly one product
+|
+
+| `fileForRetrieveBlueprintChallenge`
+| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a file download to that folder and then use as the target for the link:../part2/sensitive-data-exposure.adoc#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ _To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image's `Exif` metadata._
+| must be defined on exactly one product
+| `JuiceShop.stl` on _OWASP Juice Shop Logo (3D-printed)_
+
+| `exifForBlueprintChallenge`
+| List of keywords that are supposed to appear as EXIF properties on the image of the link:../part2/sensitive-data-exposure.adoc#deprive-the-shop-of-earnings-by-downloading-the-blueprint-for-one-of-its-products[Retrieve Blueprint] challenge product. ℹ️ _Will be used in automatic testing for presence of the EXIF metadata but does not have any effect at runtime._
+| must be defined on the product with `fileForRetrieveBlueprintChallenge`
+| `- OpenSCAD` on _OWASP Juice Shop Logo (3D-printed)_
+
+| `keywordsForPastebinDataLeakChallenge`
+| List of keywords which are all mandatory to mention in a feedback or complaint to solve the link:../part2/sensitive-data-exposure.adoc#identify-an-unsafe-product-that-was-removed-from-the-shop-and-inform-the-shop-which-ingredients-are-dangerous[Leaked Unsafe Product] challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative._
+| must be defined on exactly one product
+|
+
+| <<reviews-sub-sequence,`reviews` sub-sequence>>
+| Sub-list which adds reviews to a product.
+| optional
+| `~`
+|===
+
+==== `reviews` sub-sequence
+
+Sub-list which adds reviews to a product.
+
+|===
+| Property | Description | Conditions
+
+| `text`
+| Text of the review.
+| mandatory
+
+| `author`
+| Reference by `key` from `data/static/users.yml` to the author of the review
+| mandatory
+|===
+
+=== `memories` sequence
+
+List which, when specified, replaces all default _Photo Wall_ entries
+except a hard-coded one needed to solve the
+link:../part2/improper-input-validation.adoc#retrieve-the-photo-of-bjoerns-cat-in-melee-combat-mode[Retrieve the photo of Bjoern's cat in "melee combat-mode"]
+challenge.
+
+|===
+| Property | Description | Conditions
+
+| `image`
+| Filename in `frontend/dist/frontend/assets/public/images/uploads/` _or_ URL of an image to download to that folder and then use as a _Photo Wall_ image.
+| mandatory
+
+| `caption`
+| Text to show when hovering over the image or sending a Tweet about it.
+| mandatory
+
+| `user`
+| Reference by `key` from `data/static/users.yml` to the owner of the photo upload.
+| mandatory _(exceptions see below)_
+
+| `geoStalkingMetaSecurityQuestion`
+| ID of the security question associated with the link:../part2/sensitive-data-exposure.adoc#determine-the-answer-to-johns-security-question[Meta Geo Stalking] challenge.
+| must be defined on exactly one memory together with `geoStalkingMetaSecurityAnswer`
+
+| `geoStalkingMetaSecurityAnswer`
+| Answer to the security question associated with the link:../part2/sensitive-data-exposure.adoc#determine-the-answer-to-johns-security-question[Meta Geo Stalking] challenge. Should be retrievable via the meta data of the assosicated image.
+| must be defined on exactly one memory together with `geoStalkingMetaSecurityQuestion`
+
+| `geoStalkingVisualSecurityQuestion`
+| ID of the security question associated with the link:../part2/sensitive-data-exposure.adoc#determine-the-answer-to-emmas-security-question[Visual Geo Stalking] challenge.
+| must be defined on exactly one memory together with `geoStalkingVisualSecurityAnswer`
+
+| `geoStalkingVisualSecurityAnswer`
+| Answer to the security question associated with the link:../part2/sensitive-data-exposure.adoc#determine-the-answer-to-emmas-security-question[Visual Geo Stalking] challenge. Should be retrievable via some (not too obvious) visual clue in the assosicated image.
+| must be defined on exactly one memory together with `geoStalkingVisualSecurityQuestion`
+|===
+
+=== `ctf` section
+
+Section to enable and configure the Capture-the-Flag mode built into
+OWASP Juice Shop.
+
+|===
+| Property | Description | Default
+
+| `showFlagsInNotifications`
+| Shows or hides the CTF flag codes in the _"challenge solved"_-notifications. Is ignored when `application.showChallengeSolvedNotifications` is set to `false`.
+| `false`
+
+| `showCountryDetailsInNotifications`
+| Determines if the country (from `countryMapping`) mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using link:ctf.adoc#running-fbctf[FBCTF].
+| `none`
+
+| <<countrymapping-sub-mapping,`countryMapping` sub-mapping>>
+| List of mappings which associates challenges to countries on the challenge map of link:ctf.adoc#running-fbctf[FBCTF]. Only needed for CTFs using link:ctf.adoc#running-fbctf[FBCTF].
+| `~`
+|===
+
+==== `countryMapping` sub-mapping
+
+List of mappings which associates challenges to countries on the
+challenge map of link:ctf.adoc#running-fbctf[FBCTF]. Only needed for CTFs
+using link:ctf.adoc#running-fbctf[FBCTF]:
+
+* Challenge `key` from `data/static/challenges.yml`
+ ** `name` the name of the country
+ ** `code` the two-letter ISO code of the country
+
+ℹ️ _When specifying `countryMapping`, it is mandatory to map *all
+challenges* in order to produce a valid configuration file. It is
+recommended to use `config/fbctf.yml` as a template for that purpose._
+
+== Configuration example
+
+[,yaml]
+----
+server:
+  port: 3000
+application:
+  domain: juice-sh.op
+  name: 'OWASP Juice Shop'
+  logo: JuiceShop_Logo.png
+  favicon: favicon_js.ico
+  theme: bluegrey-lightgreen
+  showVersionNumber: true
+  showGitHubLinks: true
+  localBackupEnabled: true
+  numberOfRandomFakeUsers: 0
+  altcoinName: Juicycoin
+  privacyContactEmail: donotreply@owasp-juice.shop
+  customMetricsPrefix: juiceshop
+  chatBot:
+    name: 'Juicy'
+    greeting: "Nice to meet you <customer-name>, I'm <bot-name>"
+    trainingData: 'botDefaultTrainingData.json'
+    defaultResponse: "Sorry I couldn't understand what you were trying to say"
+    avatar: 'JuicyChatBot.png'
+  social:
+    twitterUrl: 'https://twitter.com/owasp_juiceshop'
+    facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
+    slackUrl: 'https://owasp.org/slack/invite'
+    redditUrl: 'https://www.reddit.com/r/owasp_juiceshop'
+    pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/juice-shop'
+    questionnaireUrl: ~
+  recyclePage:
+    topProductImage: fruit_press.jpg
+    bottomProductImage: apple_pressings.jpg
+  welcomeBanner:
+    showOnFirstStart: true
+    title: 'Welcome to OWASP Juice Shop!'
+    message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Juice Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Juice Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-juice.shop' target='_blank'>https://owasp-juice.shop</a></h1>"
+  cookieConsent:
+    backgroundColor: '#546e7a'
+    textColor: '#ffffff'
+    buttonColor: '#558b2f'
+    buttonTextColor: '#ffffff'
+    message: 'This website uses fruit cookies to ensure you get the juiciest tracking experience.'
+    dismissText: 'Me want it!'
+    linkText: 'But me wait!'
+    linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
+  securityTxt:
+    contact: 'mailto:donotreply@owasp-juice.shop'
+    encryption: 'https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda'
+    acknowledgements: '/#/score-board'
+  promotion:
+    video: JuiceShopJingle.mp4
+    subtitles: JuiceShopJingle.vtt
+  easterEggPlanet:
+    name: Orangeuze
+    overlayMap: orangemap2k.jpg
+  googleOauth:
+    clientId: '1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'
+    authorizedRedirects:
+      - { uri: 'https://demo.owasp-juice.shop' }
+      - { uri: 'https://juice-shop.herokuapp.com' }
+      - { uri: 'https://preview.owasp-juice.shop' }
+      - { uri: 'https://juice-shop-staging.herokuapp.com' }
+      - { uri: 'https://juice-shop.wtf' }
+      - { uri: 'http://localhost:3000', proxy: 'https://local3000.owasp-juice.shop' }
+      - { uri: 'http://127.0.0.1:3000', proxy: 'https://local3000.owasp-juice.shop' }
+      - { uri: 'http://localhost:4200', proxy: 'https://local4200.owasp-juice.shop' }
+      - { uri: 'http://127.0.0.1:4200', proxy: 'https://local4200.owasp-juice.shop' }
+      - { uri: 'http://192.168.99.100:3000', proxy: 'https://localmac.owasp-juice.shop' }
+      - { uri: 'http://192.168.99.100:4200', proxy: 'https://localmac.owasp-juice.shop' }
+      - { uri: 'http://penguin.termina.linux.test:3000', proxy: 'https://localchromeos.owasp-juice.shop' }
+      - { uri: 'http://penguin.termina.linux.test:4200', proxy: 'https://localchromeos.owasp-juice.shop' }
+challenges:
+  showSolvedNotifications: true
+  showHints: true
+  showMitigations: true
+  codingChallengesEnabled: solved # Options: never  solved  always
+  restrictToTutorialsFirst: false
+  safetyOverride: false
+  overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
+  xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
+hackingInstructor:
+  isEnabled: true
+  avatarImage: juicyBot.png
+products:
+  -
+    name: 'Apple Juice (1000ml)'
+    price: 1.99
+    description: 'The all-time classic.'
+    image: apple_juice.jpg
+    reviews:
+      - { text: 'One of my favorites!', author: admin }
+# ~~~~~ ... ~~~~~~
+  -
+    name: 'OWASP SSL Advanced Forensic Tool (O-Saft)'
+    description: 'O-Saft is an easy to use tool to show information about SSL certificate and tests the SSL connection according given list of ciphers and various SSL configurations.'
+    price: 0.01
+    image: orange_juice.jpg
+    urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/O-Saft'
+  -
+    name: 'Christmas Super-Surprise-Box (2014 Edition)'
+    description: 'Contains a random selection of 10 bottles (each 500ml) of our tastiest juices and an extra fan shirt for an unbeatable price!'
+    price: 29.99
+    image: undefined.jpg
+    useForChristmasSpecialChallenge: true
+  -
+    name: 'OWASP Juice Shop Sticker (2015/2016 design)'
+    description: 'Die-cut sticker with the official 2015/2016 logo. By now this is a rare collectors item. <em>Out of stock!</em>'
+    price: 999.99
+    image: sticker.png
+    deletedDate: '2017-04-28'
+# ~~~~~ ... ~~~~~~
+  -
+    name: 'OWASP Juice Shop Logo (3D-printed)'
+    description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
+    price: 99.99
+    image: 3d_keychain.jpg
+    fileForRetrieveBlueprintChallenge: JuiceShop.stl
+    exifForBlueprintChallenge:
+      - OpenSCAD
+# ~~~~~ ... ~~~~~~
+memories:
+  -
+    image: 'magn(et)ificent!-1571814229653.jpg'
+    caption: 'Magn(et)ificent!'
+    user: bjoernGoogle
+  -
+    image: 'my-rare-collectors-item!-[̲̅$̲̅(̲̅-͡°-͜ʖ-͡°̲̅)̲̅$̲̅]-1572603645543.jpg'
+    caption: 'My rare collectors item! [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]'
+    user: bjoernGoogle
+ctf:
+  showFlagsInNotifications: false
+  showCountryDetailsInNotifications: none
+  countryMapping: ~
+----
+
+=== Overriding default settings
+
+When creating your own YAML configuration file, you can rely on the
+existing default values and only overwrite what you want to change. The
+provided `config/ctf.yml` file for capture-the-flag events for example
+is as short as this:
+
+[,yaml]
+----
+application:
+  logo: JuiceShopCTF_Logo.png
+  favicon: favicon_ctf.ico
+  showVersionNumber: false
+  showGitHubLinks: false
+  welcomeBanner:
+    showOnFirstStart: false
+challenges:
+  showHints: false
+  safetyOverride: true
+hackingInstructor:
+  isEnabled: false
+ctf:
+  showFlagsInNotifications: true
+----
+
+=== Testing customizations
+
+You can validate your custom configuration file against the schema by
+running `+npm run lint:config -- -f /path/to/myConfig.yml+`. This
+validation automatically happens on server startup as well.
+
+To verify if your custom configuration will not break any of the
+challenges, you should run the end-to-end tests via `npm start & npm run cypress:open &`. If they pass, all challenges will be working fine!
+
+== Material Color Themes
+
+The `application.theme` property allows certain pre-defined color
+schemes. The table below shows sample screenshots for each of these.
+
+|===
+| Theme | Sample screenshot
+
+| `bluegrey-lightgreen`
+| image:part1/material-theme_bluegrey-lightgreen.png[]
+
+| `blue-lightblue`
+| image:part1/material-theme_blue-lightblue.png[]
+
+| `deeppurple-amber`
+| image:part1/material-theme_deeppurple-amber.png[]
+
+| `indigo-pink`
+| image:part1/material-theme_indigo-pink.png[]
+
+| `pink-bluegrey`
+| image:part1/material-theme_pink-bluegrey.png[]
+
+| `purple-green`
+| image:part1/material-theme_purple-green.png[]
+
+| `deeporange-indigo`
+| image:part1/material-theme_deeporange-indigo.png[]
+|===
+
+== Provided customizations
+
+The following fully re-themed customizations are provided out of the box
+by OWASP Juice Shop for demonstration purposes:
+
+* https://github.com/juice-shop/juice-shop/blob/master/config/7ms.yml[7 Minute Security]:
+Full conversion https://7ms.us-theme for the first podcast that
+picked up the Juice Shop way before it was famous! 😎
+* https://github.com/juice-shop/juice-shop/blob/master/config/mozilla.yml[Mozilla-CTF]:
+Another full conversion theme harvested and refined from the
+https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop[Mozilla Austin CTF-event]!
+🦊
+* https://github.com/juice-shop/juice-shop/blob/master/config/addo.yml[AllDayDeflOps]:
+This full conversion had its live debut at the
+https://www.alldaydevops.com/[All Day DevOps 2019] conference and
+was released the same day! 🎀
+* https://github.com/juice-shop/juice-shop/blob/master/config/bodgeit.yml[The BodgeIt Store]:
+An homage to
+https://github.com/psiinon/bodgeit[our server-side rendered ancestor].
+May it rest in JSPs! 💀
+* https://github.com/juice-shop/juice-shop/blob/master/config/juicebox.yml[OWASP Juice Box]:
+If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
+this customization is for you. 🧃
+
+Furthermore these convenience customizations are provided out-of-the-box
+to simplify usage of OWASP Juice Shop in specific use cases and
+situations:
+
+* https://github.com/juice-shop/juice-shop/blob/master/config/ctf.yml[CTF-mode]:
+Keeps the Juice Shop in its default layout but disabled hints while
+enabling CTF flag codes in the _"challenge solved"_-notifications.
+Refer to xref:part1/ctf.adoc[Hosting a CTF event] to learn more about running a
+CTF-event with OWASP Juice Shop. 🚩
+* https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml[Quiet mode]:
+Keeps the Juice Shop in its default layout but hides all _"challenge
+solved"_-notifications, GitHub ribbon and challenge hints. 🔇
+* https://github.com/juice-shop/juice-shop/blob/master/config/tutorial.yml[Tutorial mode]:
+Restricts the user to first solve all challenges with
+link:challenges.adoc#hacking-instructor[Hacking Instructor] tutorials
+before the entire _Score Board_ gets unlocked and filterable. 🏫
+Hidden challenges can still be solved and users will receive
+corresponding success notifications!
+* https://github.com/juice-shop/juice-shop/blob/master/config/unsafe.yml[Unsafe mode]:
+Keeps everything at default settings except _enabling_ all
+link:challenges.adoc#potentially-dangerous-challenges[potentially dangerous challenges]
+even in containerized environments. ☠️ *Use at your own risk!*
+
+image::part1/theme_mozilla.png[Mozilla-CTF theme]
+
+image::part1/theme_bodgeit.png[BodgeIt Store theme]
+
+== Proprietary customization
+
+Below you find screenshots of a custom theme the author of this book created for awareness and demo sessions at work. It was presented to various groups and individuals, from Project Manager rounds over workers council members up to the company CEO at that time.
+
+image::part1/theme_kn1.png[Product list in Kuehne+Nagel theme]
+
+image::part1/theme_kn2.png[Shopping basket in Kuehne+Nagel theme]
+
+image:part1/theme_kn3.png[2FA setup in Kuehne+Nagel theme]
+image:part1/theme_kn4.png[Customer feedback in Kuehne+Nagel theme]
+
+== Limitations
+
+* When running a customization (except `default.yml`) that overwrites
+the property `application.domain`, the description of the challenges
+_Ephemeral Accountant_, _Forged Signed JWT_ and _Unsigned JWT_ will
+always be shown in English.
+* Configurations (except `default.yml`) do not support translation of
+custom product names and descriptions as of {juiceShopVersion}.
+* Several
+link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor]
+scripts depend on product inventory and product reviews that might not
+exist in the required form when you overwrote the default `products`
+list. Consider turning off the tutorials by setting
+`hackingInstructor.isEnabled` to `false` in that case.
+
+== Additional Browser tweaks
+
+Consider you are doing a live demo with a highly customized corporate
+theme. Your narrative is, that this _really_ is an upcoming eCommerce
+application _of that company_. xref:part1/happy-path.adoc[Walking the "happy path"]
+might now lure you into two situations which could spoil the immersion
+for the audience.
+
+[discrete]
+==== Coupon codes on social media
+
+If you configured the `twitterUrl`/`facebookUrl` as the company's own
+account/page, you will most likely not find any coupon codes posted
+there. You will probably fail to convince the social media team to tweet
+or retweet some coupon code for an application that does not even exist!
+
+image::part1/coupon_immersion-spoiler.png[Coupon Immersion Spoiler]
+
+[discrete]
+==== OAuth Login
+
+Another immersion spoiler occurs when demonstrating the _Log in with
+Google_ functionality, which will show you the application name
+registered on Google Cloud Platform: _OWASP Juice Shop_! There is no way
+to convince Google to show anything else for obvious trust and integrity
+reasons.
+
+image::part1/oauth_immersion-spoiler.png[OAuth Immersion Spoiler]
+
+ℹ️ _Since v10.0.0 you can overwrite the
+<<googleoauth-subsection,`googleOauth` subsection>> to use your own
+application on Google Cloud Platform for handling OAuth. This is a
+relatively high effort, so maybe you want to kill two birds with one
+stone instead as described in the next section._
+
+=== On-the-fly text replacement
+
+You can solve both of the above problems _in your own Browser_ by
+replacing text on the fly when the Twitter, Facebook or Google-Login
+page is loaded. For Chrome
+https://chrome.google.com/webstore/detail/word-replacer-ii/djakfbefalbkkdgnhkkdiihelkjdpbfh?hl=en[Word Replacer II]
+is a plugin that does this work for you with very little setup effort.
+For Firefox
+https://addons.mozilla.org/en-US/firefox/addon/foxreplace/[FoxReplace]
+does a similar job. After installing either plugin you have to create
+two text replacements:
+
+. Create a replacement for `OWASP Juice Shop` (as it appears on
+Google-Login) with your own application name. Best use
+`application.name` from your configuration.
+. Create another replacement for a complete or partial Tweet or
+Facebook post with some marketing text and an actual coupon code. You
+can get valid coupon codes from the OWASP Juice Shop Twitter feed:
+https://twitter.com/owasp_juiceshop.
++
+image::part1/word_replacer_ii.png[Word Replacer II]
+
+. Enable the plugin and verify your replacements work:
+
+image::part1/coupon_immersion-replacement.png[Coupon Immersion Replacement]
+
+image::part1/oauth_immersion-replacement.png[OAuth Immersion Replacement]

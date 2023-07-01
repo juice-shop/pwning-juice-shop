@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cheat detection :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Appendix</li>
+    <li><a href="cheat-detection.html">Cheat detection</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/appendix/cheat-detection.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Cheat detection</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Whenever a challenge is solved, a <code>cheatScore</code> between 0 and 1 is
+internally assigned to the solution. This indicates how likely the
+challenge solution has been achieved with cheating.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/appendix/cheat-detection_logs.png" alt="Cheat detection log entries">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cheat_score_calculation"><a class="anchor" href="#_cheat_score_calculation"></a>Cheat score calculation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The calculation curently relies only on the time difference between
+current and previous solve in relation to the difficulty of the current
+challenge. The cheat score also factors in if hints and/or tutorials are
+enabled or disabled on the Score Board.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Challenge Difficulty</th>
+<th class="tableblock halign-left valign-top">Minimum solve time</th>
+<th class="tableblock halign-left valign-top">w/o hints</th>
+<th class="tableblock halign-left valign-top">w/ tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+1 min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">÷2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+2 min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">÷2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+3 min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">÷2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+4 min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+5 min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐⭐⭐⭐⭐</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+6 min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The underlying formula assumes that a non-cheating user requires a
+certain <em>absolute minimum amount of time</em> to solve hacking challenges.
+It is important to note, that this does not imply that you are <em>expected
+to only need</em> this minimum minutes for a challenge of certain
+difficulty.</p>
+</div>
+<div class="sect2">
+<h3 id="_coupled_challenges"><a class="anchor" href="#_coupled_challenges"></a>Coupled challenges</h3>
+<div class="paragraph">
+<p>The cheat scoring takes into account that some challenges will be solved
+in the same HTTP request, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>logging in the admin user <em>with his weak password</em> solves logging in
+the admin <em>by any means</em> (e.g. SQL Injection), too</p>
+</li>
+<li>
+<p>both XXE challenge automatically solve using a deprecated B2B
+interface</p>
+</li>
+<li>
+<p>the generic null byte challenge is typically solved along with the
+first actual exploit to access some sensitive file from <code>/ftp</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To avoid false positive cheat scoring, the second of two coupled
+challenge solves will never count as cheating when they happen in
+sequence.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_trivial_challenges"><a class="anchor" href="#_trivial_challenges"></a>Trivial challenges</h3>
+<div class="paragraph">
+<p>Some challenges are so frequently solved by accident or coincident, that
+it would be unfair to take them into account for cheat scoring at all.
+This includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>triggering any kind of error that is improperly handled by the
+application, which if often solved as a by-product of solving other
+challenges</p>
+</li>
+<li>
+<p>reading the privacy policy of the shop, which is merely a challenge
+making fun of the fact that almost nobody reads those in real life</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coding_challenges"><a class="anchor" href="#_coding_challenges"></a>Coding challenges</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For coding challenges the cheat score is also calculated based on expected solving time
+since the previous solved hacking or coding challenge. As the difficulty of a hacking
+challenge does not necessarily correlate with its associated coding challenge, the
+cheat score formulas are based on different criteria.</p>
+</div>
+<div class="sect2">
+<h3 id="_find_it_cheat_score_calculation"><a class="anchor" href="#_find_it_cheat_score_calculation"></a>"Find It" cheat score calculation</h3>
+<div class="paragraph">
+<p>The cheat score to find the vulnerable line(s) of code in the given code snippet
+is based on the length of that code snippet and the number of lines that need to
+be selected as the correct answer.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Snippet length</th>
+<th class="tableblock halign-left valign-top">Minimum solve time</th>
+<th class="tableblock halign-left valign-top"># vulnerable lines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 1000 characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">×#</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 2000 characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">×#</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 3000 characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">×#</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 4000 characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">×#</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">etc.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For the <em>Score Board</em> coding challenge the expected solve time is reduced by 50% if
+the <a href="../part1/challenges.adoc#hacking-instructor">Hacking Instructor</a> is enabled, as there is a <em>Coding Challenges</em> tutorial attached
+to it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fix_it_cheat_score_calculation"><a class="anchor" href="#_fix_it_cheat_score_calculation"></a>"Fix It" cheat score calculation</h3>
+<div class="paragraph">
+<p>The cheat score to detect the right fix for an identified vulnerability depends
+only on the number of provided fix choices.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provided choices</th>
+<th class="tableblock halign-left valign-top">Minimum solve time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 minute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 minutes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Please note that Juice Shop does not allow coding challenges with less than 3 fix options
+to choose from.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_total_cheat_score"><a class="anchor" href="#_total_cheat_score"></a>Total cheat score</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The server also keeps track of the average <code>cheatScore</code> across all
+solved challenges in the <code>totalCheatScore</code> which is available via the
+<a href="monitoring.adoc#prometheus-metrics"><code>juiceshop_cheat_score</code> metric</a> but
+also sent in each
+<a href="integration.adoc#challenge-solution-webhook">Challenge solution webhook</a>
+call. The <code>totalCheatScore</code> value is not persisted across server
+restarts, but its calculation is also not irritated by
+<a href="../part1/challenges.adoc#automatic-saving-and-restoring-hacking-progress">automatic</a>
+or
+<a href="../part1/challenges.adoc#manual-progress-and-settings-backup">manual restoring of hacking progress</a>.</p>
+</div>
+<div class="paragraph">
+<p>An example of the <code>totalCheatScore</code> metric can be seen below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># HELP juiceshop_cheat_score Overall probability that any hacking or coding challenges were solved by cheating.
+# TYPE juiceshop_cheat_score gauge
+juiceshop_cheat_score{app="juiceshop"} 0.1201909090909091</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following values for <code>totalCheatScore</code> were measured during
+activities that are
+<a href="../part1/rules.adoc#-things-considered-cheating">definitely considered cheating</a> while
+solving the available hacking challenges:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&gt;89% after executing all
+<a href="../part3/contribution.adoc#integration-tests">Integration tests</a> in &lt;1
+minute on the author&#8217;s Windows 10 laptop</p>
+</li>
+<li>
+<p>&gt;90% after executing all
+<a href="../part3/codebase.adoc#end-to-end-tests">End-to-end tests</a> in &lt;20
+minutes during GitHub CI/CD on Ubuntu</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limitations"><a class="anchor" href="#_limitations"></a>Limitations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The cheat scoring assumes that
+<a href="../part1/running.adoc#single-user-restriction">a single user is hacking the Juice Shop</a>
+instance. If the application is used by a team, the values need to be
+considered less reliable, as extra solve speed might come from
+parallelization of challenges across team members. Similarly,
+experienced Juice Shop users will also solve challenges faster than a
+new user, so their speed is likely to trigger cheat detection as well.</p>
+</div>
+<div class="paragraph">
+<p>If the Juice Shop instance is under the control of the user, any cheat
+score it reports via Prometheus or Webhook cannot be trusted at all.</p>
+</div>
+<div class="paragraph">
+<p>All in all, the cheat score should never blindly be used as a tool to
+caution or sanction somebody. Vice versa a low score should also never
+blindly be used to determine monetary rewards etc.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

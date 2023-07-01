@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Walking the "happy path" :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part2/miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part I - Hacking preparations</li>
+    <li><a href="happy-path.html">Walking the "happy path"</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/part1/happy-path.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Walking the "happy path"</h1>
+<div class="paragraph">
+<p>When investigating an application for security vulnerabilities, you
+should <em>never</em> blindly start throwing attack payloads at it. Instead,
+<strong>make sure you understand how it works</strong> before attempting any
+exploits.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Before commencing security testing, understanding the structure of the
+application is paramount. Without a thorough understanding of the
+layout of the application, it is unlikely that it will be tested
+thoroughly. Map the target application and understand the principal
+workflows.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>A good way to gain an understanding for the application, is to <em>actually
+use it</em> in the way it was meant to be used by a normal user. In regular
+software testing this is often called "happy path" testing.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Also known as the "sunny day" scenario, the happy path is the "normal"
+path of execution through a use case or through the software that
+implements it. Nothing goes wrong, nothing out of the normal happens,
+and we swiftly and directly achieve the user&#8217;s or caller&#8217;s goal.<sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>The OWASP Juice Shop is a rather simple e-commerce application that
+covers the typical workflows of a web shop. The following sections
+briefly walk you through these "happy path" use cases.</p>
+</div>
+<h3 id="_browse_products" class="discrete">Browse products</h3>
+<div class="paragraph">
+<p>When visiting the OWASP Juice Shop you will begin on the landing page
+<code><mark>/</code> which initially displays all products offered in the shop. Clicking
+on the logo in the top left corner of the screen will always bring you
+back to this screen (or more precisely, to its alias <code></mark>/search</code>).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/all-products.png" alt="All Products">
+</div>
+</div>
+<div class="paragraph">
+<p>This is of course the "bread &amp; butter" screen for any e-commerce site.
+When you click on the small "eye"-button next to the price of a product,
+an overlay screen will open showing you that product details including a
+list of customer reviews for that product (if available). You can also
+enter a new (or edit an existing) product review in this dialog.
+Authenticated users can upvote reviews they like.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/product-details.png" alt="Product Details">
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the <em>Search&#8230;&#8203;</em> box in the navigation bar at the top of the
+screen to filter the table for specific products by their name and
+description. Using the controls at the bottom of the table, you can
+navigate through the result list that exceeds the <em>Items per page</em>
+limit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/search-results.png" alt="Search Results">
+</div>
+</div>
+<h3 id="_user_login" class="discrete">User login</h3>
+<div class="paragraph">
+<p>You might notice that there seems to be no way to actually purchase any
+of the products. This functionality exists, but is not available to
+anonymous users. You first have to log in to the shop with your user
+credentials on the <code>#/login</code> page. There you can either log in with your
+existing credentials (if you are a returning customer) or with your
+Google account.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/login.png" alt="Login">
+</div>
+</div>
+<h3 id="_user_registration" class="discrete">User registration</h3>
+<div class="paragraph">
+<p>In case you are a new customer, you must first register by following the
+corresponding link on the login screen to <code>#/register</code>. There you must
+enter your email address and a password to create a new user account.
+With these credentials you can then log in&#8230;&#8203; and finally start
+shopping! During registration, you also choose and answer a security
+question that will let you recover the account if you ever forget your
+password.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/user-registration.png" alt="User Registration">
+</div>
+</div>
+<h3 id="_forgot_password" class="discrete">Forgot Password</h3>
+<div class="paragraph">
+<p>By providing your email address, the answer to your security question
+and a new password, you can recover an otherwise inaccessible account.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/forgot-password.png" alt="User Registration">
+</div>
+</div>
+<h3 id="_choosing_products_to_purchase" class="discrete">Choosing products to purchase</h3>
+<div class="paragraph">
+<p>After logging in to the application you will notice a "shopping
+cart"-icon in every row of the products table. Unsurprisingly this will
+let you add one or more products into your shopping basket. The <em>Your
+Basket</em> button in the navigation bar will bring you to the <code>#/basket</code>
+page, where you can do several things before actually confirming your
+purchase:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>increase ("+") or decrease ("-") the quantity of individual products
+in the shopping basket</p>
+</li>
+<li>
+<p>remove products from the shopping basket with the "trashcan"-button</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/your-basket.png" alt="Your Basket">
+</div>
+</div>
+<h3 id="_checkout" class="discrete">Checkout</h3>
+<div class="paragraph">
+<p>During checkout, you will be guided through a series of steps to set
+your delivery address, desired delivery method and credit card.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/part1/select-address.png" alt="Delivery address selection"></span>
+<span class="image"><img src="../_images/part1/delivery-method.png" alt="Delivery method selection"></span>
+<span class="image"><img src="../_images/part1/payment.png" alt="Payment card selection"></span></p>
+</div>
+<div class="paragraph">
+<p>🚨 <strong>Do not enter any real credit card or address data anywhere in the
+Juice Shop! Always remember that it is not a real shop, and it is
+intentionally riddled with security and privacy flaws!</strong></p>
+</div>
+<div class="paragraph">
+<p>In the <em>Add a coupon</em> section you can redeem a code for a discount.
+Unfold the <em>Other payment options</em> section to see links with donation
+and merchandise links of the Juice Shop open source project.</p>
+</div>
+<div class="paragraph">
+<p>Finally, you can click the <em>Checkout</em> button to issue an order. You will
+be forwarded to a confirmation of your order right away. It also
+includes a link to a printable PDF confirmation for your order and as
+well as a tracking link.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../_images/part1/order-completion.png" alt="Order completion screen"></span>
+<span class="image"><img src="../_images/part1/order-confirmation.png" alt="Order confirmation PDF"></span></p>
+</div>
+<h3 id="_user_menu" class="discrete">User Menu</h3>
+<div class="paragraph">
+<p>Clicking the user icon right next to the application logo &amp; title, you
+will give you access to several secondary use cases of the Juice Shop.
+This menu is obviously only available when you are logged in with your
+user account.</p>
+</div>
+<div class="paragraph">
+<p>ℹ️ We will cover only a fraction of the available functionality from
+the user menu in the following sub-sections. It is recommended to
+explore the rest on your own before diving into any hacking exercises.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/user-menu.png" alt="User Menu">
+</div>
+</div>
+<h4 id="_user_profile" class="discrete">User Profile</h4>
+<div class="paragraph">
+<p>Clicking you your email address in the user menu, you will get to the
+<em>User Profile</em> screen on <code>/profile</code>. Visiting it might break your user
+experience a bit, as it looks slightly less sophisticated than the rest
+of the shop&#8217;s UI. It is fully functional nonetheless, as it allows you
+to upload a <code>JPG</code>-format picture of yourself (or link an existing
+Gravatar) and choose a username for your account.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/user-profile.png" alt="User Profile">
+</div>
+</div>
+<h4 id="_my_saved_addresses" class="discrete">My saved addresses</h4>
+<div class="paragraph">
+<p>This page lists your saved addresses and provides you with the ability
+to edit or delete already saved addresses as well as add new ones.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/stored-address.png" alt="Stored Address">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/add-address.png" alt="Add Address">
+</div>
+</div>
+<div class="paragraph">
+<p>🚨 <strong>Do not enter real address data here!</strong></p>
+</div>
+<h4 id="_my_payment_options" class="discrete">My Payment Options</h4>
+<div class="paragraph">
+<p>This page lists your saved cards and provides you with the ability to
+delete already saved cards or to add new ones.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/stored-card.png" alt="Stored Card">
+</div>
+</div>
+<div class="paragraph">
+<p>🚨 <strong>Do not enter real credit card data here!</strong></p>
+</div>
+<h4 id="_juice_shop_wallet" class="discrete">Juice Shop Wallet</h4>
+<div class="paragraph">
+<p>This page allows you to add money to your wallet and to check the
+existing balance. All the bonuses on your purchase are directly credited
+to your wallet.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/wallet.png" alt="Wallet">
+</div>
+</div>
+<h4 id="_order_history" class="discrete">Order History</h4>
+<div class="paragraph">
+<p>This page allows you to view the details of all your current and
+previous orders and the status of their delivery.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/order-history.png" alt="Order History">
+</div>
+</div>
+<h5 id="_privacy_policy" class="discrete">Privacy Policy</h5>
+<div class="paragraph">
+<p>This page informs you about the policies regarding the collection, use
+and disclosure of personal data when you use the OWASP Juice Shop and
+the choices you have when it comes to your data.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/privacy-policy.png" alt="Privacy Policy">
+</div>
+</div>
+<h5 id="_request_data_export" class="discrete">Request Data Export</h5>
+<div class="paragraph">
+<p>This page allows you to obtain a copy of all your data saved in the
+Juice Shop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/request-data-export.png" alt="Request Data Export">
+</div>
+</div>
+<h5 id="_request_data_erasure" class="discrete">Request Data Erasure</h5>
+<div class="paragraph">
+<p>This page allows you to request a complete erasure of your account and
+any associated data from the Juice Shop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/data-erasure-request.png" alt="Data Erasure Request">
+</div>
+</div>
+<h4 id="_change_user_password" class="discrete">Change user password</h4>
+<div class="paragraph">
+<p>If you are currently logged in you will find the obligatory <em>Change
+Password</em> button in the navigation bar. On the
+<code>#/privacy-security/change-password</code> page you can then choose a new
+password. To prevent abuse you have of course to supply your current
+password to legitimate this change.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/change-password.png" alt="Change Password">
+</div>
+</div>
+<h5 id="_2fa_configuration" class="discrete">2FA Configuration</h5>
+<div class="paragraph">
+<p>This page allows you to secure your account with an additional factor by
+providing you with a barcode to scan.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/2fa-configuration.png" alt="2FA Configuration">
+</div>
+</div>
+<h5 id="_last_login_ip" class="discrete">Last Login IP</h5>
+<div class="paragraph">
+<p>This page displays the IP from which your account was last logged in.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/last-login-ip.png" alt="Last Login IP">
+</div>
+</div>
+<h4 id="_request_recycling_box" class="discrete">Request Recycling Box</h4>
+<div class="paragraph">
+<p>When logged in you will furthermore see a <em>Recycle</em> button that brings
+you to the <code>#/recycle</code> page. This is a very innovative feature that
+allows eco-friendly customers to order pre-stamped boxes for returning
+fruit pressing leftovers to the Juice Shop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/request-recycling-box.png" alt="Request Recycling Box">
+</div>
+</div>
+<div class="paragraph">
+<p>For greater amounts of pomace the customer can alternatively order a
+truck to come by and pick it up at a chosen future date.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/recycling-pickup.png" alt="Request Recycling Pickup">
+</div>
+</div>
+<h4 id="_order_tracking" class="discrete">Order Tracking</h4>
+<div class="paragraph">
+<p>Equipped with an order number from your confirmation PDF, you can invoke
+the <code>#/track-order</code> functionality by clicking <em>Track Orders</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/track-orders.png" alt="Track Orders">
+</div>
+</div>
+<div class="paragraph">
+<p>After entering a valid order number, you will be shown the products from
+your order along with a delivery status and expected delivery date.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/track-orders-result.png" alt="Track Orders Result">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Just as there was no "real" payment was happening, you will hopefully
+understand that there is no "real" order delivery happening - no matter
+what the order tracking dialog suggested.</em></p>
+</div>
+<h3 id="_menu" class="discrete">Menu</h3>
+<div class="paragraph">
+<p>The sidebar menu button left of the application logo reveals some more
+options to choose from.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/menu.png" alt="Menu">
+</div>
+</div>
+<h4 id="_customer_feedback" class="discrete">Customer Feedback</h4>
+<div class="paragraph">
+<p>Customers are invited to leave feedback about their shopping experience
+with the Juice Shop. Simply visit the <code>#/contact</code> page by clicking the
+<em>Customer Feedback</em> menu item. You might recognize that it is also
+possible to leave feedback as an anonymous user. The contact form is
+very straightforward with a free text <em>Comment</em> field and a <em>Rating</em> on
+a 1-5 stars scale. To prevent abuse, you have to solve a simple
+mathematical problem before being allowed to submit your feedback.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/contact-us.png" alt="Contact Us">
+</div>
+</div>
+<h4 id="_complain" class="discrete">Complain</h4>
+<div class="paragraph">
+<p>The <em>Complain?</em> menu item is shown only to logged in users. It brings
+you to the <code>#/complain</code> page where you can leave a free text <em>Message</em>
+and attach an <em>Invoice</em> file in case you had some issues with a recent
+order at the Juice Shop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/file-complaint.png" alt="File Complaint">
+</div>
+</div>
+<h4 id="_support_chat" class="discrete">Support Chat</h4>
+<div class="paragraph">
+<p>In the <em>Support Chat</em> you can talk to an (almost) AI-powered chat bot
+and get answers to questions like product prices, deluxe membership
+benefits and more.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/support-chat.png" alt="Support Chat">
+</div>
+</div>
+<h4 id="_about_us" class="discrete">About Us</h4>
+<div class="paragraph">
+<p>Like every proper enterprise, the OWASP Juice Shop has of course an
+<code>#/about</code> page titled <em>About Us</em>. There you find a summary of the
+interesting history of the shop along with a link to its official Terms
+of Use document. Additionally, the page displays a fancy illustrated
+slideshow of all <a href="#customer-feedback">customer feedback</a>. Beneath that
+you can find all important social media contact information of the shop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/about-us.png" alt="About Us">
+</div>
+</div>
+<h4 id="_photo_wall" class="discrete">Photo Wall</h4>
+<div class="paragraph">
+<p>The OWASP Juice Shop also has an <code>#/photo-wall</code> page titled <em>Photo Wall</em>
+which allows its users to share their memories with other customers of
+the Juice Shop.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/photo-wall.png" alt="Photo Wall">
+</div>
+</div>
+<h4 id="_deluxe_membership" class="discrete">Deluxe Membership</h4>
+<div class="paragraph">
+<p>The OWASP Juice Shop offers a deluxe membership to its customers which
+provides them with exclusive offers, free fast delivery and an
+unrestricted purchase of the items they like.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/deluxe-membership.png" alt="Deluxe Membership">
+</div>
+</div>
+<h3 id="_language_selection" class="discrete">Language selection</h3>
+<div class="paragraph">
+<p>From a dropdown menu in the navigation bar you can select a multitude of
+languages you want the user interface to be displayed in. Languages
+marked with a "flask"-icon next to them offer only rudimentary or
+partial translation.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/part1/language-selection.png" alt="Language Selection">
+</div>
+</div>
+<div class="paragraph">
+<p><em>If you want to know more about (or even help with) the localization of
+OWASP Juice Shop, please refer to the
+<a href="../part3/translation.html" class="xref page">Help with translation</a> chapter in part III of
+this book.</em></p>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007" class="bare">https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007</a>)
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="http://xunitpatterns.com/happy%20path.html" class="bare">http://xunitpatterns.com/happy%20path.html</a>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

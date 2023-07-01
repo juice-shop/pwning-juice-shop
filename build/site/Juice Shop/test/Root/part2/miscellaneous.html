@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Miscellaneous :: Juice Shop Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Juice Shop Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Juice Shop" data-version="test">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Juice shop Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Preface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/readme.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/motivation.html">Why OWASP Juice Shop exists</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/architecture.html">Architecture overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part I - Hacking preparations</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/README.html">Hacking preparations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/running.html">Running OWASP Juice Shop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/categories.html">Vulnerability categories</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/challenges.html">Challenge tracking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/rules.html">Hacking exercise rules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/happy-path.html">Walking the "happy path"</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/customization.html">Customization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part1/ctf.html">Hosting a CTF event</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part II - Challenge hunting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">Challenge hunting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="score-board.html">Finding the Score Board</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="injection.html">Injection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-authentication.html">Broken Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sensitive-data-exposure.html">Sensitive Data Exposure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xxe.html">XML External Entities (XXE)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="improper-input-validation.html">Improper Input Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-access-control.html">Broken Access Control</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-misconfiguration.html">Security Misconfiguration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="xss.html">Cross Site Scripting (XSS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="insecure-deserialization.html">Insecure Deserialization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vulnerable-components.html">Vulnerable Components</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security-through-obscurity.html">Security through Obscurity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="unvalidated-redirects.html">Unvalidated Redirects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="broken-anti-automation.html">Broken Anti-Automation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cryptographic-issues.html">Cryptographic Issues</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="miscellaneous.html">Miscellaneous</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Part III - Getting involved</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/README.html">Getting involved</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/feedback.html">Provide feedback</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/contribution.html">Contribute to development</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/codebase.html">Codebase 101</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/translation.html">Help with translation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/tutorials.html">Hacking Instructor tutorial scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../part3/donations.html">Donations</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/solutions.html">Challenge solutions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/trainers.html">Trainer&#8217;s guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/cheat-detection.html">Cheat detection</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/code-snippets.html">Coding challenges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/integration.html">Integration</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/monitoring.html">Monitoring</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/chatbot.html">Chatbot training data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix/lyrics.html">Jingle lyrics</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Postface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../introduction/about.html">About this book</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Juice shop Documentation</span>
+    <span class="version">test</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Juice shop Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">test</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Juice shop Documentation</a></li>
+    <li>Part II - Challenge hunting</li>
+    <li><a href="miscellaneous.html">Miscellaneous</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/parthnanda/Desktop/Gsoc/pwning-juice-shop/modules/Root/pages/part2/miscellaneous.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Miscellaneous</h1>
+<div class="sect1">
+<h2 id="_challenges_covered_in_this_chapter"><a class="anchor" href="#_challenges_covered_in_this_chapter"></a>Challenges covered in this chapter</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bully Chatbot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Receive a coupon code from the support chatbot.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mass Dispel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Close multiple "Challenge solved"-notifications in one go.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Privacy Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Read our privacy policy.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Score Board</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find the carefully hidden 'Score Board' page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Security Policy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Behave like any "white hat" should before getting into the action.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">⭐⭐</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_receive_a_coupon_code_from_the_support_chatbot"><a class="anchor" href="#_receive_a_coupon_code_from_the_support_chatbot"></a>Receive a coupon code from the support chatbot</h3>
+<div class="paragraph">
+<p>This challenge is about nagging the support chatbot to hand out a coupon
+code that can subsequently be used to get a discount during the checkout
+process.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The bot is reluctant to give you a coupon as it&#8217;s coming up with
+various excuses for not giving you one</p>
+</li>
+<li>
+<p>Asking over and over again like a little kid might actually help you
+succeed in this case</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_close_multiple_challenge_solved_notifications_in_one_go"><a class="anchor" href="#_close_multiple_challenge_solved_notifications_in_one_go"></a>Close multiple "Challenge solved"-notifications in one go</h3>
+<div class="paragraph">
+<p>This "challenge" is nothing more than an opportunity to learn about a convenience feature that allows users to close
+multiple "Challenge solved"-notifications at once.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This challenge is most easily solvable immediately <a href="../part1/running.adoc#<em>self-healing</em>-feature">after a server restart</a></p>
+</li>
+<li>
+<p>You can find all the information you need to solve this challenge in the <a href="../part1/challenges.html" class="xref page">Challenge tracking</a> chapter</p>
+</li>
+<li>
+<p>Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_read_our_privacy_policy"><a class="anchor" href="#_read_our_privacy_policy"></a>Read our privacy policy</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A privacy policy is a statement or a legal document (in privacy law)
+that discloses some or all of the ways a party gathers, uses,
+discloses, and manages a customer or client&#8217;s data. It fulfills a
+legal requirement to protect a customer or client&#8217;s privacy. Personal
+information can be anything that can be used to identify an
+individual, not limited to the person&#8217;s name, address, date of birth,
+marital status, contact information, ID issue, and expiry date,
+financial records, credit information, medical history, where one
+travels, and intentions to acquire goods and services. In the case of
+a business it is often a statement that declares a party&#8217;s policy on
+how it collects, stores, and releases personal information it
+collects. It informs the client what specific information is
+collected, and whether it is kept confidential, shared with partners,
+or sold to other firms or enterprises. Privacy policies typically
+represent a broader, more generalized treatment, as opposed to data
+use statements, which tend to be more detailed and specific.</p>
+</div>
+<div class="paragraph">
+<p>The exact contents of a certain privacy policy will depend upon the
+applicable law and may need to address requirements across
+geographical boundaries and legal jurisdictions. Most countries have
+their own legislation and guidelines of who is covered, what
+information can be collected, and what it can be used for. In general,
+data protection laws in Europe cover the private sector as well as the
+public sector. Their privacy laws apply not only to government
+operations but also to private enterprises and commercial
+transactions.<sup class="footnote" id="_footnote_1">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you work with the application you will most likely solve this
+challenge in the process</p>
+</li>
+<li>
+<p>Any automated crawling or spidering tool you use might solve this
+challenge for you</p>
+</li>
+<li>
+<p>There is no real hacking involved here</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_find_the_carefully_hidden_score_board_page"><a class="anchor" href="#_find_the_carefully_hidden_score_board_page"></a>Find the carefully hidden 'Score Board' page</h3>
+<div class="paragraph">
+<p>This challenge was already covered in
+<a href="score-board.html" class="xref page">Finding the Score Board</a> at the beginning of
+<a href="README.html" class="xref page">Part II - Challenge hunting</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_behave_like_any_white_hat_should_before_getting_into_the_action"><a class="anchor" href="#_behave_like_any_white_hat_should_before_getting_into_the_action"></a>Behave like any "white hat" should before getting into the action</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The term "white hat" in Internet slang refers to an ethical computer
+hacker, or a computer security expert, who specializes in penetration
+testing and in other testing methodologies to ensure the security of
+an organization&#8217;s information systems. Ethical hacking is a term meant
+to imply a broader category than just penetration testing. Contrasted
+with black hat, a malicious hacker, the name comes from Western films,
+where heroic and antagonistic cowboys might traditionally wear a white
+and a black hat respectively.<sup class="footnote" id="_footnote_2">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>This challenge asks you to act like an ethical hacker</p>
+</li>
+<li>
+<p>As one of the good guys, would you just start attacking an application
+without consent of the owner?</p>
+</li>
+<li>
+<p>You also might want to read the security policy or any bug bounty
+program that is in place</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://en.wikipedia.org/wiki/Privacy_policy" class="bare">https://en.wikipedia.org/wiki/Privacy_policy</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://en.wikipedia.org/wiki/White_hat_(computer_security" class="bare">https://en.wikipedia.org/wiki/White_hat_(computer_security</a>)
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../../_/js/site.js" data-ui-root-path="../../../../_"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
