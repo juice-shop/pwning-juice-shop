@@ -191,7 +191,7 @@ clue about the admin email address.
 * If you harvested the admin's password hash, you can of course try to
 attack that instead of using SQL Injection.
 * Alternatively you can solve this challenge as a _combo_ with the
-link:broken-authentication.adoc#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection[Log in with the administrator's user credentials without previously changing them or applying SQL Injection]
+xref:part2/broken-authentication.adoc#_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection[Log in with the administrator's user credentials without previously changing them or applying SQL Injection]
 challenge.
 
 === Log in with Bender's user account
@@ -320,7 +320,7 @@ necessary URLs in it.
 this challenge.
 * For this challenge you do not have to reverse engineer the malware in
 any way. That will be required later to solve
-link:broken-access-control.adoc#request-a-hidden-resource-on-server-through-server[Request a hidden resource on server through server].
+xref:part2/broken-access-control.adoc#_request_a_hidden_resource_on_server_through_server[Request a hidden resource on server through server].
 
 ____
 Server-side template injection occurs when user input is unsafely

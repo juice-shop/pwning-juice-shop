@@ -35,49 +35,49 @@ fixed in a straightforward fashion when they fail:
 | Repair the mentioned dependency file. When using an original tag release version or `master` branch you should *never* see this error.
 
 | `+Dependencies in ... are not rightly satisfied+` followed by individual messages on missing dependencies or version mismatches
-| If you installed link:../part1/running.adoc#from-sources[from sources] re-run `npm install` and check for errors during that step. See also <<nodejs--npm,Node.js / NPM>> for some common culprits. In a link:../part1/running.adoc#from-pre-packaged-distribution[pre-packaged distribution] you should *never* see this error.
+| If you installed xref:../part1/running.adoc#_from_sources[from sources] re-run `npm install` and check for errors during that step. See also <<nodejs--npm,Node.js / NPM>> for some common culprits. In a xref:../part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution] you should *never* see this error.
 
 | `+Detected Node version ... is not in the supported version range of ...+`
-| Install one of the officially supported Node.js versions {nodeVersions}. If you use a link:../part1/running.adoc#from-pre-packaged-distribution[pre-packaged distribution], make sure its version matches your installed Node.js version.
+| Install one of the officially supported Node.js versions {nodeVersions}. If you use a xref:../part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution], make sure its version matches your installed Node.js version.
 
 | `+Detected OS ... is not in the list of supported platforms ...+`
-| Make sure you use a supported operating system. If you use a link:../part1/running.adoc#from-pre-packaged-distribution[pre-packaged distribution], make sure you downloaded the one for your OS.
+| Make sure you use a supported operating system. If you use a xref:../part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution], make sure you downloaded the one for your OS.
 
 | `+Detected CPU ... is not in the list of supported architectures ...+`
-| Make sure you use a supported processor architecture. If you use a link:../part1/running.adoc#from-pre-packaged-distribution[pre-packaged distribution], make sure you downloaded the one for your processor.
+| Make sure you use a supported processor architecture. If you use a xref:../part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution], make sure you downloaded the one for your processor.
 
 | `+Required file ... is missing+`
-| If you installed link:../part1/running.adoc#from-sources[from sources] re-run `npm install` and check for errors, especially during its final step `+Generating ES5 bundles for differential loading...+`. In a link:../part1/running.adoc#from-pre-packaged-distribution[pre-packaged distribution] you should *never* see this error.
+| If you installed xref:../part1/running.adoc#_from_sources[from sources] re-run `npm install` and check for errors, especially during its final step `+Generating ES5 bundles for differential loading...+`. In a xref:../part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution] you should *never* see this error.
 
 | `+Port ... is in use+`
 | Make sure the port you intend to run Juice Shop on is actually available or use another port by setting the `PORT` environment variable.
 
 | `+Config schema validation failed with ... errors+` followed by individual messages on wrong property types or unrecognized properties
-| Make sure that your customization complies with the schema of the link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that your customization complies with the schema of the xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Only ... products are configured but at least four are required+`
-| Make sure that at least four items are present in the `products` array of your configuration. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that at least four items are present in the `products` array of your configuration. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+No product is configured as "..." challenge product but one is required+`
-| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on a single product in your custom inventory. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on a single product in your custom inventory. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+... products are configured as "..." challenge product but only one is allowed+`
-| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on exactly one product in your custom inventory. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on exactly one product in your custom inventory. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Product ... is used as "..." challenge product and "..." challenge product but can only be used for one challenge+`
-| Make sure no single product is associated with more than one property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` in your custom inventory. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure no single product is associated with more than one property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` in your custom inventory. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Only ... memories are configured but at least two are required+`
-| Make sure that at least two items are present in the `memories` array of your configuration. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that at least two items are present in the `memories` array of your configuration. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+No memory is configured as "..." challenge memory but one is required+`
-| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on a single memory of your custom photo wall. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on a single memory of your custom photo wall. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+... memories are configured as "..." challenge memory but only one is allowed+`
-| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on exactly one memory of your custom photo wall. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on exactly one memory of your custom photo wall. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Memory ... is used as "..." challenge memory and "..." challenge memory but can only be used for one challenge+`
-| Make sure no single memory is associated with more than one property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` of your custom photo wall. See also link:../part1/customization.adoc#yaml-configuration-file[YAML configuration file].
+| Make sure no single memory is associated with more than one property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` of your custom photo wall. See also xref:../part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `Restricted tutorial mode is enabled while Hacking Instructor is disabled`
 | Make sure `hackingInstructor.isenabled` is `true` when you also have configured `challenges.restrictToTutorialsFirst` set to `true`.
@@ -173,13 +173,13 @@ OAuth related challenge!*
 * If you want to manually make the OAuth integration work to get the
 full user experience, create your own customization file and define
 all properties in the
-link:../part1/customization.adoc#googleoauth-subsection[`googleOauth` subsection]
+xref:../part1/customization.adoc#_googleoauth_subsection[`googleOauth` subsection]
 
 === Challenges
 
 * If you notice that a challenge solution is not working, check on the
 _Score Board_ if that challenge is one of the
-link:../part1/challenges.adoc#potentially-dangerous-challenges[potentially dangerous ones]
+xref:../part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous ones]
 which are by default disabled in Docker environments and shared
 platforms like Heroku.
 * You may find it easier to find vulnerabilities using a pen test tool.

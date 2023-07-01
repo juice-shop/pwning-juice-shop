@@ -686,7 +686,7 @@ Shop, as an e-commerce application without storage for its product,
 customer and associated data would not be very realistic. The Juice Shop
 uses light-weight implementations on the database layer to keep it
 runnable as a single "all-inclusive" server which
-link:../part1/running.adoc#run-options[can be deployed in various ways] with
+xref:../part1/running.adoc#_run_options[can be deployed in various ways] with
 ease.
 
 image::part3/architecture-database.png[DB tier focus]

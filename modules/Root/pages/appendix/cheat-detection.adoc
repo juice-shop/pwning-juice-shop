@@ -119,7 +119,7 @@ be selected as the correct answer.
 |===
 
 For the _Score Board_ coding challenge the expected solve time is reduced by 50% if
-the link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor] is enabled, as there is a _Coding Challenges_ tutorial attached
+the xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor] is enabled, as there is a _Coding Challenges_ tutorial attached
 to it.
 
 === "Fix It" cheat score calculation
@@ -150,14 +150,14 @@ to choose from.
 
 The server also keeps track of the average `cheatScore` across all
 solved challenges in the `totalCheatScore` which is available via the
-link:monitoring.adoc#prometheus-metrics[`juiceshop_cheat_score` metric] but
+xref:appendix/monitoring.adoc#_prometheus_metrics[`juiceshop_cheat_score` metric] but
 also sent in each
-link:integration.adoc#challenge-solution-webhook[Challenge solution webhook]
+xref:appendix/integration.adoc#_challenge_solution_webhook[Challenge solution webhook]
 call. The `totalCheatScore` value is not persisted across server
 restarts, but its calculation is also not irritated by
-link:../part1/challenges.adoc#automatic-saving-and-restoring-hacking-progress[automatic]
+xref:../part1/challenges.adoc#_automatic_saving_and_restoring_hacking_progress[automatic]
 or
-link:../part1/challenges.adoc#manual-progress-and-settings-backup[manual restoring of hacking progress].
+xref:../part1/challenges.adoc#_manual_progress_and_settings_backup[manual restoring of hacking progress].
 
 An example of the `totalCheatScore` metric can be seen below:
 
@@ -170,20 +170,20 @@ juiceshop_cheat_score{app="juiceshop"} 0.1201909090909091
 
 The following values for `totalCheatScore` were measured during
 activities that are
-link:../part1/rules.adoc#-things-considered-cheating[definitely considered cheating] while
+xref:../part1/rules.adoc#_things_considered_cheating[definitely considered cheating] while
 solving the available hacking challenges:
 
 * >89% after executing all
-link:../part3/contribution.adoc#integration-tests[Integration tests] in <1
+xref:../part3/contribution.adoc#_integration_tests[Integration tests] in <1
 minute on the author's Windows 10 laptop
 * >90% after executing all
-link:../part3/codebase.adoc#end-to-end-tests[End-to-end tests] in <20
+xref:../part3/codebase.adoc#_end_to_end_tests[End-to-end tests] in <20
 minutes during GitHub CI/CD on Ubuntu
 
 == Limitations
 
 The cheat scoring assumes that
-link:../part1/running.adoc#single-user-restriction[a single user is hacking the Juice Shop]
+xref:../part1/running.adoc#_single_user_restriction[a single user is hacking the Juice Shop]
 instance. If the application is used by a team, the values need to be
 considered less reliable, as extra solve speed might come from
 parallelization of challenges across team members. Similarly,

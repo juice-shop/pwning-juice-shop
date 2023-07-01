@@ -132,11 +132,11 @@ mechanism prevents access.
 * The _Poison Null Byte_ can trick the security mechanism into thinking
 that the file you want has a valid file type.
 * Depending on the files you try to retrieve you will probably solve
-link:sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[Access a developer's forgotten backup file],
-link:sensitive-data-exposure.adoc#access-a-salesmans-forgotten-backup-file[Access a salesman's forgotten backup file],
-link:sensitive-data-exposure.adoc#access-a-misplaced-siem-signature-file[Access a misplaced SIEM signature file.]
+xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file],
+xref:part2/sensitive-data-exposure.adoc#_access_a_salesmans_forgotten_backup_file[Access a salesman's forgotten backup file],
+xref:part2/sensitive-data-exposure.adoc#_access_a_misplaced_siem_signature_file[Access a misplaced SIEM signature file.]
 or
-link:broken-access-control.adoc#find-the-hidden-easter-egg[Find the hidden easter egg]
+xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
 along the way.
 
 === Follow the DRY principle while registering a user

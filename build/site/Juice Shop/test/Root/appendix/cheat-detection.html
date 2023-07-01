@@ -464,7 +464,7 @@ be selected as the correct answer.</p>
 </table>
 <div class="paragraph">
 <p>For the <em>Score Board</em> coding challenge the expected solve time is reduced by 50% if
-the <a href="../part1/challenges.adoc#hacking-instructor">Hacking Instructor</a> is enabled, as there is a <em>Coding Challenges</em> tutorial attached
+the <a href="../part1/challenges.html#<em>hacking_instructor" class="xref page">Hacking Instructor</a> is enabled, as there is a _Coding Challenges</em> tutorial attached
 to it.</p>
 </div>
 </div>
@@ -517,14 +517,14 @@ to choose from.</p>
 <div class="paragraph">
 <p>The server also keeps track of the average <code>cheatScore</code> across all
 solved challenges in the <code>totalCheatScore</code> which is available via the
-<a href="monitoring.adoc#prometheus-metrics"><code>juiceshop_cheat_score</code> metric</a> but
+<a href="monitoring.html#_prometheus_metrics" class="xref page"><code>juiceshop_cheat_score</code> metric</a> but
 also sent in each
-<a href="integration.adoc#challenge-solution-webhook">Challenge solution webhook</a>
+<a href="integration.html#_challenge_solution_webhook" class="xref page">Challenge solution webhook</a>
 call. The <code>totalCheatScore</code> value is not persisted across server
 restarts, but its calculation is also not irritated by
-<a href="../part1/challenges.adoc#automatic-saving-and-restoring-hacking-progress">automatic</a>
+<a href="../part1/challenges.html#_automatic_saving_and_restoring_hacking_progress" class="xref page">automatic</a>
 or
-<a href="../part1/challenges.adoc#manual-progress-and-settings-backup">manual restoring of hacking progress</a>.</p>
+<a href="../part1/challenges.html#_manual_progress_and_settings_backup" class="xref page">manual restoring of hacking progress</a>.</p>
 </div>
 <div class="paragraph">
 <p>An example of the <code>totalCheatScore</code> metric can be seen below:</p>
@@ -539,19 +539,19 @@ juiceshop_cheat_score{app="juiceshop"} 0.1201909090909091</code></pre>
 <div class="paragraph">
 <p>The following values for <code>totalCheatScore</code> were measured during
 activities that are
-<a href="../part1/rules.adoc#-things-considered-cheating">definitely considered cheating</a> while
+<a href="../part1/rules.html#_things_considered_cheating" class="xref page">definitely considered cheating</a> while
 solving the available hacking challenges:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>&gt;89% after executing all
-<a href="../part3/contribution.adoc#integration-tests">Integration tests</a> in &lt;1
+<a href="../part3/contribution.html#_integration_tests" class="xref page">Integration tests</a> in &lt;1
 minute on the author&#8217;s Windows 10 laptop</p>
 </li>
 <li>
 <p>&gt;90% after executing all
-<a href="../part3/codebase.adoc#end-to-end-tests">End-to-end tests</a> in &lt;20
+<a href="../part3/codebase.html#_end_to_end_tests" class="xref page">End-to-end tests</a> in &lt;20
 minutes during GitHub CI/CD on Ubuntu</p>
 </li>
 </ul>
@@ -563,7 +563,7 @@ minutes during GitHub CI/CD on Ubuntu</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The cheat scoring assumes that
-<a href="../part1/running.adoc#single-user-restriction">a single user is hacking the Juice Shop</a>
+<a href="../part1/running.html#_single_user_restriction" class="xref page">a single user is hacking the Juice Shop</a>
 instance. If the application is used by a team, the values need to be
 considered less reliable, as extra solve speed might come from
 parallelization of challenges across team members. Similarly,

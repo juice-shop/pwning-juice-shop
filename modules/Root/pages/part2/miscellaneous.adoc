@@ -42,7 +42,7 @@ succeed in this case
 This "challenge" is nothing more than an opportunity to learn about a convenience feature that allows users to close
 multiple "Challenge solved"-notifications at once.
 
-* This challenge is most easily solvable immediately link:../part1/running.adoc#_self-healing_-feature[after a server restart]
+* This challenge is most easily solvable immediately xref:../part1/running.adoc#_self_healing_feature[after a server restart]
 * You can find all the information you need to solve this challenge in the xref:../part1/challenges.adoc[Challenge tracking] chapter
 * Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature
 

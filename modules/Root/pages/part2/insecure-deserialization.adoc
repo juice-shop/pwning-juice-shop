@@ -75,7 +75,7 @@ format that is most probably used for serialization.
 * The challenge will be solved if you manage to trigger the protection
 of the application against a very specific DoS attack vector.
 * Similar to the
-link:injection.adoc#let-the-server-sleep-for-some-time[Let the server sleep for some time]
+xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]
 challenge (which accepted nothing but NoSQL Injection as a solution)
 this challenge will only accept proper RCE as a solution. It cannot be
 solved by simply hammering the server with requests. _That_ would

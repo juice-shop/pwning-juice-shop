@@ -330,23 +330,23 @@ fixed in a straightforward fashion when they fail:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Dependencies in ... are not rightly satisfied</code> followed by individual messages on missing dependencies or version mismatches</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you installed <a href="../part1/running.adoc#from-sources">from sources</a> re-run <code>npm install</code> and check for errors during that step. See also <a href="#nodejs&.adoc#8212;&#8203;npm" class="xref unresolved">Node.js / NPM</a> for some common culprits. In a <a href="../part1/running.adoc#from-pre-packaged-distribution">pre-packaged distribution</a> you should <strong>never</strong> see this error.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you installed <a href="../part1/running.html#_from_sources" class="xref page">from sources</a> re-run <code>npm install</code> and check for errors during that step. See also <a href="#nodejs&.adoc#8212;&#8203;npm" class="xref unresolved">Node.js / NPM</a> for some common culprits. In a <a href="../part1/running.html#_from_pre_packaged_distribution" class="xref page">pre-packaged distribution</a> you should <strong>never</strong> see this error.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Detected Node version ... is not in the supported version range of ...</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Install one of the officially supported Node.js versions 14.x, 16.x and 18.x. If you use a <a href="../part1/running.adoc#from-pre-packaged-distribution">pre-packaged distribution</a>, make sure its version matches your installed Node.js version.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Install one of the officially supported Node.js versions 14.x, 16.x and 18.x. If you use a <a href="../part1/running.html#_from_pre_packaged_distribution" class="xref page">pre-packaged distribution</a>, make sure its version matches your installed Node.js version.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Detected OS ... is not in the list of supported platforms ...</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure you use a supported operating system. If you use a <a href="../part1/running.adoc#from-pre-packaged-distribution">pre-packaged distribution</a>, make sure you downloaded the one for your OS.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure you use a supported operating system. If you use a <a href="../part1/running.html#_from_pre_packaged_distribution" class="xref page">pre-packaged distribution</a>, make sure you downloaded the one for your OS.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Detected CPU ... is not in the list of supported architectures ...</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure you use a supported processor architecture. If you use a <a href="../part1/running.adoc#from-pre-packaged-distribution">pre-packaged distribution</a>, make sure you downloaded the one for your processor.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure you use a supported processor architecture. If you use a <a href="../part1/running.html#_from_pre_packaged_distribution" class="xref page">pre-packaged distribution</a>, make sure you downloaded the one for your processor.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Required file ... is missing</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you installed <a href="../part1/running.adoc#from-sources">from sources</a> re-run <code>npm install</code> and check for errors, especially during its final step <code>Generating ES5 bundles for differential loading...</code>. In a <a href="../part1/running.adoc#from-pre-packaged-distribution">pre-packaged distribution</a> you should <strong>never</strong> see this error.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you installed <a href="../part1/running.html#_from_sources" class="xref page">from sources</a> re-run <code>npm install</code> and check for errors, especially during its final step <code>Generating ES5 bundles for differential loading...</code>. In a <a href="../part1/running.html#_from_pre_packaged_distribution" class="xref page">pre-packaged distribution</a> you should <strong>never</strong> see this error.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Port ... is in use</code></p></td>
@@ -354,39 +354,39 @@ fixed in a straightforward fashion when they fail:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Config schema validation failed with ... errors</code> followed by individual messages on wrong property types or unrecognized properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that your customization complies with the schema of the <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that your customization complies with the schema of the <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Only ... products are configured but at least four are required</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that at least four items are present in the <code>products</code> array of your configuration. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that at least four items are present in the <code>products</code> array of your configuration. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>No product is configured as "..." challenge product but one is required</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property <code>useForChristmasSpecialChallenge</code>, <code>urlForProductTamperingChallenge</code>, <code>fileForRetrieveBlueprintChallenge</code> and <code>keywordsForPastebinDataLeakChallenge</code> (required for some of the challenges) is present on a single product in your custom inventory. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property <code>useForChristmasSpecialChallenge</code>, <code>urlForProductTamperingChallenge</code>, <code>fileForRetrieveBlueprintChallenge</code> and <code>keywordsForPastebinDataLeakChallenge</code> (required for some of the challenges) is present on a single product in your custom inventory. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>... products are configured as "..." challenge product but only one is allowed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property <code>useForChristmasSpecialChallenge</code>, <code>urlForProductTamperingChallenge</code>, <code>fileForRetrieveBlueprintChallenge</code> and <code>keywordsForPastebinDataLeakChallenge</code> (required for some of the challenges) is present on exactly one product in your custom inventory. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property <code>useForChristmasSpecialChallenge</code>, <code>urlForProductTamperingChallenge</code>, <code>fileForRetrieveBlueprintChallenge</code> and <code>keywordsForPastebinDataLeakChallenge</code> (required for some of the challenges) is present on exactly one product in your custom inventory. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Product ... is used as "..." challenge product and "..." challenge product but can only be used for one challenge</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure no single product is associated with more than one property <code>useForChristmasSpecialChallenge</code>, <code>urlForProductTamperingChallenge</code>, <code>fileForRetrieveBlueprintChallenge</code> and <code>keywordsForPastebinDataLeakChallenge</code> in your custom inventory. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure no single product is associated with more than one property <code>useForChristmasSpecialChallenge</code>, <code>urlForProductTamperingChallenge</code>, <code>fileForRetrieveBlueprintChallenge</code> and <code>keywordsForPastebinDataLeakChallenge</code> in your custom inventory. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Only ... memories are configured but at least two are required</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that at least two items are present in the <code>memories</code> array of your configuration. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that at least two items are present in the <code>memories</code> array of your configuration. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>No memory is configured as "..." challenge memory but one is required</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property duo <code>geoStalkingMetaSecurityQuestion</code>/<code>geoStalkingMetaSecurityAnswer</code> and <code>geoStalkingVisualSecurityQuestion</code>/<code>geoStalkingVisualSecurityAnswer</code> (required for some of the challenges) is present on a single memory of your custom photo wall. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property duo <code>geoStalkingMetaSecurityQuestion</code>/<code>geoStalkingMetaSecurityAnswer</code> and <code>geoStalkingVisualSecurityQuestion</code>/<code>geoStalkingVisualSecurityAnswer</code> (required for some of the challenges) is present on a single memory of your custom photo wall. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>... memories are configured as "..." challenge memory but only one is allowed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property duo <code>geoStalkingMetaSecurityQuestion</code>/<code>geoStalkingMetaSecurityAnswer</code> and <code>geoStalkingVisualSecurityQuestion</code>/<code>geoStalkingVisualSecurityAnswer</code> (required for some of the challenges) is present on exactly one memory of your custom photo wall. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure that each property duo <code>geoStalkingMetaSecurityQuestion</code>/<code>geoStalkingMetaSecurityAnswer</code> and <code>geoStalkingVisualSecurityQuestion</code>/<code>geoStalkingVisualSecurityAnswer</code> (required for some of the challenges) is present on exactly one memory of your custom photo wall. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Memory ... is used as "..." challenge memory and "..." challenge memory but can only be used for one challenge</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure no single memory is associated with more than one property duo <code>geoStalkingMetaSecurityQuestion</code>/<code>geoStalkingMetaSecurityAnswer</code> and <code>geoStalkingVisualSecurityQuestion</code>/<code>geoStalkingVisualSecurityAnswer</code> of your custom photo wall. See also <a href="../part1/customization.adoc#yaml-configuration-file">YAML configuration file</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Make sure no single memory is associated with more than one property duo <code>geoStalkingMetaSecurityQuestion</code>/<code>geoStalkingMetaSecurityAnswer</code> and <code>geoStalkingVisualSecurityQuestion</code>/<code>geoStalkingVisualSecurityAnswer</code> of your custom photo wall. See also <a href="../part1/customization.html#_yaml_configuration_file" class="xref page">YAML configuration file</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Restricted tutorial mode is enabled while Hacking Instructor is disabled</code></p></td>
@@ -544,7 +544,7 @@ OAuth related challenge!</strong></p>
 <p>If you want to manually make the OAuth integration work to get the
 full user experience, create your own customization file and define
 all properties in the
-<a href="../part1/customization.adoc#googleoauth-subsection"><code>googleOauth</code> subsection</a></p>
+<a href="../part1/customization.html#_googleoauth_subsection" class="xref page"><code>googleOauth</code> subsection</a></p>
 </li>
 </ul>
 </div>
@@ -556,7 +556,7 @@ all properties in the
 <li>
 <p>If you notice that a challenge solution is not working, check on the
 <em>Score Board</em> if that challenge is one of the
-<a href="../part1/challenges.adoc#potentially-dangerous-challenges">potentially dangerous ones</a>
+<a href="../part1/challenges.html#_potentially_dangerous_challenges" class="xref page">potentially dangerous ones</a>
 which are by default disabled in Docker environments and shared
 platforms like Heroku.</p>
 </li>

@@ -70,7 +70,7 @@ vulnerabilities but promoting good (security) practices
 which are disabled on Docker/Heroku by default due to RCE or other
 risks
 * *Good for Demos* highlights
-link:../appendix/trainers.adoc#challenges-for-demos[challenges which are suitable for live demos]
+xref:../appendix/trainers.adoc#_challenges_for_demos[challenges which are suitable for live demos]
 or awareness trainings
 * *Prerequisite* marks challenges which need to be solved before one
 or more other challenges can be (realistically) solved
@@ -122,7 +122,7 @@ image::part1/confetti1.png[Confetti on solved hacking challenge]
 
 == Automatic saving and restoring hacking progress
 
-The link:running.adoc#self-healing-feature[_self-healing_ feature] - by
+The xref:part1/running.adoc#_self_healing_feature[_self-healing_ feature] - by
 wiping the entire database on server start - of Juice Shop was
 advertised as a benefit just a few pages before. This feature comes at a
 cost, though: As the challenges are also part of the database schema,
@@ -205,7 +205,7 @@ image::part1/JuicyBot_MedicalMask.png[Juicy Bot the mascot of the Hacking Instru
 The built-in _Hacking Instructor_ offers tutorials for some Juice Shop
 challenges. By default, the welcome banner shown upon first launch of
 the application has a 🎓-button which will help you
-link:../part2/score-board.adoc#find-the-carefully-hidden-score-board-page[Find the carefully hidden 'Score Board' page].
+xref:../part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[Find the carefully hidden 'Score Board' page].
 
 image::part1/welcome-banner.png[Welcome Banner]
 
@@ -331,6 +331,6 @@ in the screenshot above.
 
 To re-enable all challenges you can set the environment variable
 `NODE_ENV=unsafe`, or you can set `safetyOverride: true` in your own
-link:customization.adoc#yaml-configuration-file[YAML configuration file].
+xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
 Please use the unsafe mode at your own risk, especially on publicly
 hosted instances.

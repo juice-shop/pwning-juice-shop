@@ -118,13 +118,13 @@ value
 
 Apart from the score-tracking server, each participant must have their
 own instance of OWASP Juice Shop. As explained in the
-link:running.adoc#single-user-restriction[Single-user restriction] section,
+xref:part1/running.adoc#_single_user_restriction[Single-user restriction] section,
 having a shared instance for each team is strongly discouraged, because
 Juice Shop is programmed as a single-user application.
 
 If you want to centrally host Juice Shop instances for any number of CTF
 participants you find more information in section
-link:../appendix/trainers.adoc#hosting-individual-instances-for-multiple-users[Hosting individual instances for multiple users]
+xref:../appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
 of the trainer's guide.
 
 It is absolutely important that all Juice Shop instances participating

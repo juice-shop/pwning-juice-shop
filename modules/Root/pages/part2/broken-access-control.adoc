@@ -73,7 +73,7 @@ ____
 Just like the score board, the admin section was not part of your "happy
 path" tour because there seems to be no link to that section either. In
 case you were already
-link:injection.adoc#log-in-with-the-administrators-user-account[logged in with the administrator account]
+xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[logged in with the administrator account]
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
@@ -142,7 +142,7 @@ already know where the easter egg is located
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found *the real* easter
 egg! Of course finding *that* is
-link:cryptographic-issues.adoc#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg[a follow-up challenge]
+xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[a follow-up challenge]
 to this one._
 
 === Get rid of all 5-star customer feedback
@@ -225,7 +225,7 @@ statement on product data
 
 This Server-side Request Forgery challenge will come back to the malware
 you used in
-link:injection.adoc#infect-the-server-with-juicy-malware-by-abusing-arbitrary-command-execution[Infect the server with juicy malware by abusing arbitrary command execution].
+xref:part2/injection.adoc#_infect_the_server_with_juicy_malware_by_abusing_arbitrary_command_execution[Infect the server with juicy malware by abusing arbitrary command execution].
 
 * Using whatever you find inside the malware _directly_ will not do you
 any good.

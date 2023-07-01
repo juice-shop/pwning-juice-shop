@@ -171,7 +171,7 @@ it is not in use any more in {juiceShopVersion}.
 <<inform-the-shop-about-a-typosquatting-imposter-that-dug-itself-deep-into-the-frontend,its frontend companion>>
 this challenge also has nothing to do with URLs or domains.
 * Investigating the
-link:sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[forgotten developer's backup file]
+xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[forgotten developer's backup file]
 might bring some insight.
 * https://iamakulov.com/notes/npm-malicious-packages/[Malicious packages in npm]
 is a worthwhile read on https://iamakulov.com[Ivan Akulov's blog].
@@ -213,7 +213,7 @@ shop are!
 * This is a research-heavy challenge which does not involve any actual
 hacking.
 * Solving
-link:sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[Access a developer's forgotten backup file]
+xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file]
 before attempting this challenge will save you from a lot of
 frustration.
 
@@ -244,7 +244,7 @@ payload while downgrading to _no_ encryption at all.
 === Inform the shop about a vulnerable library it is using
 
 This challenge is quite similar to
-link:cryptographic-issues.adoc#inform-the-shop-about-an-algorithm-or-library-it-should-definitely-not-use-the-way-it-does[Inform the shop about an algorithm or library it should definitely not use the way it does]
+xref:part2/cryptographic-issues.adoc#_inform_the_shop_about_an_algorithm_or_library_it_should_definitely_not_use_the_way_it_does[Inform the shop about an algorithm or library it should definitely not use the way it does]
 with the difference, that here not the _general use_ of the library is
 the issue. The application is just using _a version_ of a library that
 contains known vulnerabilities.
@@ -253,7 +253,7 @@ contains known vulnerabilities.
 vulnerable library including its exact version.
 * Look for possible dependencies related to security in the
 `package.json.bak` you probably harvested earlier during the
-link:sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[Access a developer's forgotten backup file]
+xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file]
 challenge.
 * Do some research on the internet for known security issues in the most
 suspicious application dependencies.

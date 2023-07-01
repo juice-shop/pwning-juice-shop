@@ -1,6 +1,6 @@
 = Hacking Instructor tutorial scripts
 
-With the link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor]
+With the xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
 the OWASP Juice Shop offers very beginner-friendly tutorial scripts that
 guide the user through some of the challenges.
 
@@ -10,7 +10,7 @@ section will provide an overview of how a Hacking Instructor script is
 written.
 
 The Hacking Instructor is part of the
-link:codebase.adoc#client-tier[Client Tier] but independent of Angular.
+xref:part3/codebase.adoc#_client_tier[Client Tier] but independent of Angular.
 Therefore its code lives in a separate folder
 `frontend/src/hacking-instructor`:
 
@@ -193,7 +193,7 @@ the tutorial will be automatically wired into the _Score Board_.
 == Reference example
 
 The following code snippet shows the entire tutorial script for the
-link:../part2/injection.adoc#log-in-with-the-administrators-user-account[Login Admin]
+xref:../part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin]
 challenge. As it uses most available helpers, two custom
 `resolved`-functions as well as Markdown to style some hint texts, it is
 the perfect reference for your own scripts:

@@ -357,7 +357,7 @@ image::part3/ci-workflow.png[CI/CD Pipeline workflow on GitHub]
 
 For tag-builds (i.e. versions to be released) another workflow is
 triggered which packages the
-link:../part1/running.adoc#from-pre-packaged-distribution[release-artifacts for Linux, MacOS and Windows for each supported Node.js version]
+xref:../part1/running.adoc#_from_pre_packaged_distribution[release_artifacts for Linux, MacOS and Windows for each supported Node.js version]
 and attach these to the release page on GitHub and also published Docker
 images for the released version.
 
