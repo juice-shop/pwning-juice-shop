@@ -1,5 +1,6 @@
 site:
   title: Juice Shop Docs
+  start_page: introduction::readme.adoc
 content:
   sources: 
   - url: ./
