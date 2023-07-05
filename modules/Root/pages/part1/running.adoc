@@ -21,7 +21,7 @@ Please note that any additional resources needed by your environment (e.g. Docke
  ** `400 millicpu` CPU
  ** `800 MB` free disk space
 
-🗄️ _If installing <<from-sources,from sources>> without the `--depth 1` option, an additional `700
+🗄️ _If installing <<_from_sources,from sources>> without the `--depth 1` option, an additional `700
 MB` free disk space are required for the Git history in both minimum and
 recommended spec._
 
@@ -236,12 +236,12 @@ corresponding tag from GitHub or Docker. For release v7.5.1 - which was
 the last version with the original AngularJS/Bootstrap frontend - for
 example:
 
-* <<from-sources,From sources>> - Run `git fetch --tags` and then `git
+* <<_from_sources,From sources>> - Run `git fetch --tags` and then `git
 checkout v7.5.1` before running `npm install`
-* <<docker-image,Docker image>> - Run `docker pull
+* <<_docker_image,Docker image>> - Run `docker pull
 bkimminich/juice-shop:v7.5.1` instead of the usual `docker pull
 bkimminich/juice-shop`
-* <<from-pre-packaged-distribution,From pre-packaged distribution>> -
+* <<_from_pre_packaged_distribution,From pre-packaged distribution>> -
 Just download the older release from
 https://github.com/juice-shop/juice-shop/releases or
 https://sourceforge.net/projects/juice-shop/files/
@@ -251,9 +251,9 @@ do as follows:
 
 * Simply visit https://juice-shop-staging.herokuapp.com and take a
 look
-* <<from-sources,From sources>> - Run `git fetch` and then `git checkout
+* <<_from_sources,From sources>> - Run `git fetch` and then `git checkout
 develop` before running `npm install`
-* <<docker-image,Docker image>> - Run `docker pull
+* <<_docker_image,Docker image>> - Run `docker pull
 bkimminich/juice-shop:snapshot` instead of the usual `docker pull
 bkimminich/juice-shop`
 
