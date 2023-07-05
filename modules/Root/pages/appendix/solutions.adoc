@@ -287,7 +287,7 @@ you already know the email address of the administrator
 if you looked up the administrator's password hash
 `0192023a7bbd73250516f069df18b500` in a rainbow table after harvesting
 the user data by
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,retrieving a list of all user credentials via SQL Injection>>.
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,retrieving a list of all user credentials via SQL Injection>>.
 
 === Log in with MC SafeSearch's original user credentials
 
@@ -615,7 +615,7 @@ holds the text of the original `CREATE TABLE` or `CREATE INDEX`
 statement that created the table or index. Getting your hands on this
 would allow you to replicate the entire DB schema.
 . During the
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 challenge you learned that the `/rest/products/search` endpoint is
 susceptible to SQL Injection into the `q` parameter.
 . The attack payload you need to craft is a `UNION SELECT` merging the
@@ -720,7 +720,7 @@ you already know the email address of Chris.
 _Password_ you like for a "lucky hit" as Chris seems to be the only or
 at least first ever deleted user. The presence of `deletedAt` you
 might have derived from
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>>
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>
 and enforcing it to be `NOT NULL` will give you back only users who
 were soft-deleted at some point of time.
 
@@ -755,7 +755,7 @@ already know the email address of Jim.
 * or log in with _Email_ `jim@juice-sh.op` and _Password_ `ncc-1701` if
 you looked up Jim's password hash in a rainbow table after harvesting
 the user data as described in
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>>.
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>.
 
 === Place an order that makes you rich
 
@@ -1169,7 +1169,7 @@ _Checkout_ for instant success!
 === Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
 . Solve
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 but enumerate all deleted products until you come across "Rippertuer
 Special Juice"
 . Notice the warning _"This item has been made unavailable because of
@@ -1526,7 +1526,7 @@ image::appendix/npm_epilogue.png[epilogue on NPM]
 === Retrieve a list of all user credentials via SQL Injection
 
 . During the
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 challenge you learned that the `/rest/products/search` endpoint is
 susceptible to SQL Injection into the `q` parameter.
 . The attack payload you need to craft is a `UNION SELECT` merging the
@@ -1933,7 +1933,7 @@ with the password for all known user emails, e.g. from
 <<access-the-administration-section-of-the-store,Access the administration section of the store>>
  ** hash the known password with `MD5` and compare it to the password
 hashes harvested from
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>>
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>
 . Either way you will conclude that the password belongs to
 `J12934@juice-sh.op` so using this as _Email_ and
 `0Y8rMnww$*9VFYE§59-!Fg1L6t&6lB` as _Password_ on
@@ -2030,7 +2030,7 @@ unsurprisingly `wurstbrot@juice-sh.op`.
 . You will also notice that there is no information about any user's
 2FA configuration in the responses from `/api/Users`.
 . Solve
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>>
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>
 and keep its final attack payload ready.
 . Change the one of the ``null``s in payload to hopefully find a column
 that contains the secret key for the 2FA setup:
@@ -2759,7 +2759,7 @@ installed on your computer. If you are using a non-Windows OS you can
 try using some unofficial port but there is no guarantee the file can be
 opened on those._
 
-. Find out that the support team's email address is `support@juice-sh.op` eiher via deduction of the pattern from other users or by completing the <<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>> challenge.
+. Find out that the support team's email address is `support@juice-sh.op` eiher via deduction of the pattern from other users or by completing the <<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>> challenge.
 . Brute forcing the password on of this user <httpc://localhost:3000/#/login> is an entirely hopeless approach.
 . You might notice that the support team has a KeePass database file located in
 http://localhost:3000/ftp/incident-support.kdbx and that it

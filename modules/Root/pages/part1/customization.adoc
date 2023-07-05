@@ -109,7 +109,7 @@ within the application.
 | `favicon_v2.ico`
 
 | `theme`
-| Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`. See <<material-color-themes,Material Color Themes>> for a sample screenshot of each theme.
+| Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`. See <<_material_color_themes,Material Color Themes>> for a sample screenshot of each theme.
 | `bluegrey-lightgreen`
 
 | `showVersionNumber`
@@ -140,39 +140,39 @@ within the application.
 | Prefix for all custom Prometheus metrics. Must be a lowercase letter single world by Prometheus conventions.
 | `juiceshop`
 
-| <<chatbot-subsection,`chatBot` subsection>>
+| <<_chatbot_subsection,`chatBot` subsection>>
 | Specifies all characteristics of the bot answering user questions in the _Support Chat_.
 |
 
-| <<social-subsection,`social` subsection>>
+| <<_social_subsection,`social` subsection>>
 | Specifies all social links embedded on various screens such as _About Us_ or the _Photo Wall_.
 |
 
-| <<recyclepage-subsection,`recyclePage` subsection>>
+| <<_recyclepage_subsection,`recyclePage` subsection>>
 | Defines custom elements on the _Request Recycling Box_ page.
 |
 
-| <<welcomebanner-subsection,`welcomeBanner` subsection>>
+| <<_welcomebanner_subsection,`welcomeBanner` subsection>>
 | Defines a dismissable welcome banner that can be shown when first visiting the application.
 |
 
-| <<cookieconsent-subsection,`cookieConsent` subsection>>
+| <<_cookieconsent_subsection,`cookieConsent` subsection>>
 | Defines the cookie consent dialog shown in the bottom right corner.
 |
 
-| <<securitytxt-subsection,`securityTxt` subsection>>
+| <<_securitytxt_subsection,`securityTxt` subsection>>
 | Defines the attributes for the `security.txt` file based on the https://securitytxt.org/ Internet draft.
 |
 
-| <<promotion-subsection,`promotion` subsection>>
+| <<_promotion_subsection,`promotion` subsection>>
 | Defines the attributes required for the `/promotion` screen where a marketing video with subtitles is rendered that hosts the xref:../part2/xss.adoc#_embed_an_xss_payload_into_our_promo_video[XSS Tier 6] challenge.
 |
 
-| <<eastereggplanet-subsection,`easterEggPlanet` subsection>>
+| <<_eastereggplanet_subsection,`easterEggPlanet` subsection>>
 | Defines the customizations for the 3D-rendered planet easter egg.
 |
 
-| <<googleoauth-subsection,`googleOauth` subsection>>
+| <<_googleoauth_subsection,`googleOauth` subsection>>
 | Defines the client identifier and allowed redirect URIs for Google OAuthintegration.
 |
 |===
@@ -380,7 +380,7 @@ integration.
 | Client identifier of the Google Cloud Platform application to handle OAuth 2.0 requests from OWASP Juice Shop.
 | `'1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'`
 
-| <<authorizedredirects-sub-sequence,`authorizedRedirects` sub-sequence>>
+| <<_authorizedredirects_sub_sequence,`authorizedRedirects` sub-sequence>>
 | Sub-list for the redirect URIs authorized for Google OAuth.
 | `+- { uri: 'https://demo.owasp-juice.shop' }- { uri: 'https://juice-shop.herokuapp.com' }- { uri: 'https://preview.owasp-juice.shop' }- { uri: 'https://juice-shop-staging.herokuapp.com' }- { uri: 'https://juice-shop.wtf' }- { uri: 'http://localhost:3000', proxy: 'https://local3000.owasp-juice.shop' }- { uri: 'http://127.0.0.1:3000', proxy: 'https://local3000.owasp-juice.shop' }- { uri: 'http://localhost:4200', proxy: 'https://local4200.owasp-juice.shop' }- { uri: 'http://127.0.0.1:4200', proxy: 'https://local4200.owasp-juice.shop' }- { uri: 'http://192.168.99.100:3000', proxy: 'https://localmac.owasp-juice.shop' }- { uri: 'http://192.168.99.100:4200', proxy: 'https://localmac.owasp-juice.shop' }- { uri: 'http://penguin.termina.linux.test:3000', proxy: 'https://localchromeos.owasp-juice.shop' }- { uri: 'http://penguin.termina.linux.test:4200', proxy: 'https://localchromeos.owasp-juice.shop' }+`
 |===
@@ -540,7 +540,7 @@ list* of default products.
 | must be defined on exactly one product
 |
 
-| <<reviews-sub-sequence,`reviews` sub-sequence>>
+| <<_reviews_sub_sequence,`reviews` sub-sequence>>
 | Sub-list which adds reviews to a product.
 | optional
 | `~`
@@ -617,7 +617,7 @@ OWASP Juice Shop.
 | Determines if the country (from `countryMapping`) mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using xref:part1/ctf.adoc#_running_fbctf[FBCTF].
 | `none`
 
-| <<countrymapping-sub-mapping,`countryMapping` sub-mapping>>
+| <<_countrymapping_sub_mapping,`countryMapping` sub-mapping>>
 | List of mappings which associates challenges to countries on the challenge map of xref:part1/ctf.adoc#_running_fbctf[FBCTF]. Only needed for CTFs using xref:part1/ctf.adoc#_running_fbctf[FBCTF].
 | `~`
 |===
@@ -945,7 +945,7 @@ reasons.
 image::part1/oauth_immersion-spoiler.png[OAuth Immersion Spoiler]
 
 ℹ️ _Since v10.0.0 you can overwrite the
-<<googleoauth-subsection,`googleOauth` subsection>> to use your own
+<<_googleoauth_subsection,`googleOauth` subsection>> to use your own
 application on Google Cloud Platform for handling OAuth. This is a
 relatively high effort, so maybe you want to kill two birds with one
 stone instead as described in the next section._

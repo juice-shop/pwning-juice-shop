@@ -144,7 +144,7 @@ and it might even require (half-)Blind SQL Injection.
 An attacker would try to exploit SQL Injection to find out as much as
 possible about your database schema. This subsequently allows much more
 targeted, stealthy and devastating SQL Injections, like
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>>.
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>.
 
 * Find out which database system is in use and where it would usually
 store its schema definitions.
@@ -153,7 +153,7 @@ any such identified system table into the original result.
 * You might have to tackle some query syntax issues step-by-step,
 basically hopping from one error to the next
 * As with
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 this cannot be achieved through the application frontend.
 
 === Log in with the (non-existing) accountant without ever registering that user
@@ -364,7 +364,7 @@ into the original result.
 * You might have to tackle some query syntax issues step-by-step,
 basically hopping from one error to the next
 * As with
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 and
 <<exfiltrate-the-entire-db-schema-definition-via-sql-injection,Exfiltrate the entire DB schema definition via SQL Injection>>
 this cannot be achieved through the application frontend.

@@ -288,9 +288,9 @@ lectures:
 *A server instance of OWASP Juice Shop is supposed to be used by only a
 single-user!*
 
-This restriction applies to all the <<run-options,Run Options>>
+This restriction applies to all the <<_run_options,Run Options>>
 explained above. It is technically necessary to make the
-<<self-healing-feature,_Self-healing_-feature>> work properly and
+<<_self_healing_feature,_Self-healing_-feature>> work properly and
 consistently. Furthermore, when multiple users would attack the same
 instance of the Juice Shop all their progress tracking would be mixed
 leading to inevitable confusion for the individual hacker. The upcoming

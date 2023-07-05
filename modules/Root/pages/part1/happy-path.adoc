@@ -324,7 +324,7 @@ Like every proper enterprise, the OWASP Juice Shop has of course an
 `#/about` page titled _About Us_. There you find a summary of the
 interesting history of the shop along with a link to its official Terms
 of Use document. Additionally, the page displays a fancy illustrated
-slideshow of all <<customer-feedback,customer feedback>>. Beneath that
+slideshow of all <<_customer_feedback,customer feedback>>. Beneath that
 you can find all important social media contact information of the shop.
 
 image::part1/about-us.png[About Us]
