@@ -4,6 +4,9 @@ _book/
 *.mobi
 *.epub
 
+# Antora
+build/
+
 # IntelliJ
 .idea/
 *.iml
