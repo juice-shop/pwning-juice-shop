@@ -88,10 +88,10 @@ does not even need
 === Use the bonus payload in the DOM XSS challenge
 
 The underlying vulnerability of this challenge is the same as for the
-<<perform-a-dom-xss-attack,Perform a DOM XSS attack>> challenge. The
+<<_perform_a_dom_xss_attack,Perform a DOM XSS attack>> challenge. The
 effect of the payload is much more entertaining, though.
 
-* First, solve the <<perform-a-dom-xss-attack,Perform a DOM XSS attack>>
+* First, solve the <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>>
 challenge
 * Now it is just a question of copying and pasting the payload into the
 same vulnerable field
@@ -171,7 +171,7 @@ element that can be controlled by an attacker.footnote:3[https://wiki.owasp.org/
 ____
 
 * This challenge is almost indistinguishable from
-<<perform-a-reflected-xss-attack,Perform a reflected XSS attack>> if
+<<_perform_a_reflected_xss_attack,Perform a reflected XSS attack>> if
 you do not look "under the hood" to find out what the application
 actually does with the user input
 

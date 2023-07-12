@@ -148,7 +148,7 @@ to this one._
 === Get rid of all 5-star customer feedback
 
 If you successfully solved above
-<<access-the-administration-section-of-the-store,admin section challenge>>
+<<_access_the_administration_section_of_the_store,admin section challenge>>
 deleting the 5-star feedback is very easy.
 
 * Nothing happens when you try to delete feedback entries? Check the
@@ -181,12 +181,12 @@ or with tools like postman.
 * Analyze the form used for review submission and try to find a leverage
 point.
 * This challenge is pretty similar to
-<<post-some-feedback-in-another-users-name,Post some feedback in another user's name>>
+<<_post_some_feedback_in_another_users_name,Post some feedback in another user's name>>
 challenge.
 
 === Put an additional product into another user's shopping basket
 
-<<view-another-users-shopping-basket,View another user's shopping basket>>
+<<_view_another_users_shopping_basket,View another user's shopping basket>>
 was only about spying out other customers. For this challenge you need
 to get your hands dirty by putting a product into someone else's basket
 that cannot be already in there!

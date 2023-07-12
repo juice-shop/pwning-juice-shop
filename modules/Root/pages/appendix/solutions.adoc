@@ -28,7 +28,7 @@ immediately.
 
 === Use the bonus payload in the DOM XSS challenge
 
-. Solve the <<perform-a-dom-xss-attack,Perform a DOM XSS attack>>
+. Solve the <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>>
 challenge
 . Turn on your computer's speakers!
 . Paste the payload `+<iframe width="100%" height="166" scrolling="no"
@@ -216,9 +216,9 @@ image::appendix/minified_js-admin.png[Administration page route in main.js]
 . Navigating to http://localhost:3000/#/administration will give a `403
 Forbidden` error.
 . Log in to an administrator's account by solving the challenge
- ** <<log-in-with-the-administrators-user-account,Log in with the administrator's user account>>
+ ** <<_log_in_with_the_administrators_user_account,Log in with the administrator's user account>>
 or
- ** <<log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection,Log in with the administrator's user credentials without previously changing them or applying SQL Injection>>
+ ** <<_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection,Log in with the administrator's user credentials without previously changing them or applying SQL Injection>>
 first and then navigate to http://localhost:3000/#/administration
 will solve the challenge.
 
@@ -269,7 +269,7 @@ deprecated for security reasons!`
 
 . Log in to the application with any user.
 . Solve
-<<access-the-administration-section-of-the-store,Access the administration section of the store>>
+<<_access_the_administration_section_of_the_store,Access the administration section of the store>>
 +
 image::appendix/customer_feedback-table.png[Feedback table on Administration page]
 
@@ -325,10 +325,10 @@ different places. While working on the following topics (and having the
 `package.json.bak` at hand) you will learn those inappropriate choices
 in order to exploit and solve them:
 
-* <<forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80,Forge a coupon code that gives you a discount of at least 80%>>
+* <<_forge_a_coupon_code_that_gives_you_a_discount_of_at_least_80,Forge a coupon code that gives you a discount of at least 80%>>
 exploits `z85` (Zero-MQ Base85 implementation) as the library for
 coupon codes.
-* <<solve-challenge-999,Solve challenge #999>> requires you to create a
+* <<_solve_challenge_999,Solve challenge #999>> requires you to create a
 valid hash with the `hashid` library.
 * Passwords in the `Users` table are hashed with unsalted MD5
 * Users registering via Google account will receive a very silly default
@@ -745,7 +745,7 @@ the challenge
 already know the email address of Bender.
 * A rainbow table attack on Bender's password will probably fail as it
 is rather strong. You can alternatively solve
-<<change-benders-password-into-slurmcl4ssic-without-using-sql-injection-or-forgot-password,Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password>>
+<<_change_benders_password_into_slurmcl4ssic_without_using_sql_injection_or_forgot_password,Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password>>
 first and then simply log in with the new password.
 
 === Log in with Jim's user account
@@ -934,7 +934,7 @@ image::appendix/invalid-type_upload.png[Non-PDF upload]
 challenge will be successfully solved.
 
 Uploading a non-PDF file larger than 100 kB will solve
-<<upload-a-file-larger-than-100-kb,Upload a file larger than 100 kB>>
+<<_upload_a_file_larger_than_100_kb,Upload a file larger than 100 kB>>
 simultaneously.
 
 === Perform a persisted XSS attack bypassing a client-side security mechanism
@@ -990,7 +990,7 @@ image::appendix/xss3_product-modal_alert.png[After closing the XSS alert box in 
 === Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
 . Solve the
-<<use-a-deprecated-b2b-interface-that-was-not-properly-shut-down,Use a deprecated B2B interface that was not properly shut down>>
+<<_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down,Use a deprecated B2B interface that was not properly shut down>>
 challenge.
 . Prepare an XML file which defines and uses an external entity
 `<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>` (or `<!ENTITY xxe
@@ -1031,7 +1031,7 @@ local system file!
 === Gain access to any access log file of the server
 
 . Solve the
-<<access-a-confidential-document,Access a confidential document>> or
+<<_access_a_confidential_document,Access a confidential document>> or
 any related challenges which will bring the exposed `/ftp` folder to
 your attention.
 . Visit http://localhost:3000/ftp and notice the file
@@ -1209,13 +1209,13 @@ via http://localhost:3000/#/contact to solve this challenge
 === Find the hidden easter egg
 
 . Use the _Poison Null Byte_ attack described in
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>...
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>...
 . ...to download http://localhost:3000/ftp/eastere.gg%2500.adoc
 
 === Apply some advanced cryptanalysis to find the real easter egg
 
 . Get the encrypted string from the `eastere.gg` from the
-<<find-the-hidden-easter-egg,Find the hidden easter egg>> challenge:
+<<_find_the_hidden_easter_egg,Find the hidden easter egg>> challenge:
 `L2d1ci9xcmlmL25lci9mYi9zaGFhbC9ndXJsL3V2cS9uYS9ybmZncmUvcnR0L2p2Z3V2YS9ndXIvcm5mZ3JlL3J0dA==`
 . Base64-decode this into
 `/gur/qrif/ner/fb/shaal/gurl/uvq/na/rnfgre/rtt/jvguva/gur/rnfgre/rtt`
@@ -1273,7 +1273,7 @@ challenge solved.
 === Access a developer's forgotten backup file
 
 . Browse to http://localhost:3000/ftp (like in
-<<access-a-confidential-document,Access a confidential document>>.
+<<_access_a_confidential_document,Access a confidential document>>.
 . Opening http://localhost:3000/ftp/package.json.bak directly will
 fail complaining about an illegal file type.
 . Using a _Poison Null Byte_ (`%00`) the filter can be tricked, but
@@ -1289,7 +1289,7 @@ solve the challenge.
 === Access a salesman's forgotten backup file
 
 . Use the _Poison Null Byte_ attack described in
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>...
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>...
 . ...to download
 http://localhost:3000/ftp/coupons_2013.adoc.bak%2500.adoc
 
@@ -1348,7 +1348,7 @@ emails!
 === Access a misplaced SIEM signature file
 
 . Use the _Poison Null Byte_ attack described in
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>...
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>...
 . ...to download
 http://localhost:3000/ftp/suspicious_errors.yml%2500.adoc
 
@@ -1405,10 +1405,10 @@ http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/j
 === Bypass a security control with a Poison Null Byte
 
 . Solve
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>,
-<<access-a-salesmans-forgotten-backup-file,Access a salesman's forgotten backup file>>,
-<<access-a-misplaced-siem-signature-file,Access a misplaced SIEM signature file>>
-or <<find-the-hidden-easter-egg,Find the hidden easter egg>> to solve
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>,
+<<_access_a_salesmans_forgotten_backup_file,Access a salesman's forgotten backup file>>,
+<<_access_a_misplaced_siem_signature_file,Access a misplaced SIEM signature file>>
+or <<_find_the_hidden_easter_egg,Find the hidden easter egg>> to solve
 this challenge as a by-product.
 
 === Reset Bender's password via the Forgot Password mechanism
@@ -1502,7 +1502,7 @@ matter) to solve this challenge.
 === Inform the shop about a typosquatting trick it has been a victim of
 
 . Solve the
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>
 challenge and open the `package.json.bak` file
 . Scrutinizing each entry in the `dependencies` list you will at some
 point get to `epilogue-js`, the overview page of which gives away
@@ -1697,9 +1697,9 @@ routes do not exist.
 . After some more chasing through the minified code, you should realize
 that `Vu` is referenced in the route mappings that already helped
 with
-<<find-the-carefully-hidden-score-board-page,Find the carefully hidden 'Score Board' page>>
+<<_find_the_carefully_hidden_score_board_page,Find the carefully hidden 'Score Board' page>>
 and
-<<access-the-administration-section-of-the-store,Access the administration section of the store>>
+<<_access_the_administration_section_of_the_store,Access the administration section of the store>>
 but not to a static title. It is mapped to another variable `Ca`
 (which might be named differently for you)
 +
@@ -1771,7 +1771,7 @@ says `Current password is not correct.`
  ** http://localhost:3000/rest/user/change-password?new=B&repeat=B
 yields a `200` success returning the updated user as JSON!
 . Now
-<<log-in-with-benders-user-account,Log in with Bender's user account>>
+<<_log_in_with_benders_user_account,Log in with Bender's user account>>
 using SQL Injection.
 . Craft a GET request with Bender's `Authorization Bearer` header to
 http://localhost:3000/rest/user/change-password?new=slurmCl4ssic&repeat=slurmCl4ssic
@@ -1883,7 +1883,7 @@ to _redirect_ you to any external location and grab those images...
 . ...which _it does_ in the form of the
 http://localhost:3000/redirect endpoint! If you haven't done so
 yet, you should stop here and
-<<enforce-a-redirect-to-a-page-you-are-not-supposed-to-redirect-to,Enforce a redirect to a page you are not supposed to redirect to>>
+<<_enforce_a_redirect_to_a_page_you_are_not_supposed_to_redirect_to,Enforce a redirect to a page you are not supposed to redirect to>>
 first!
 . Combining that redirect exploit with the forgotten `testDecal` and
 its susceptibility to path traversal will allow you to craft a URL
@@ -1930,7 +1930,7 @@ part of a URL, so it needs to be URL-decoded into
 . Not knowing which user it belongs to, you can now
  ** either perform a _Password Spraying_ attack by trying to log in
 with the password for all known user emails, e.g. from
-<<access-the-administration-section-of-the-store,Access the administration section of the store>>
+<<_access_the_administration_section_of_the_store,Access the administration section of the store>>
  ** hash the known password with `MD5` and compare it to the password
 hashes harvested from
 <<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>
@@ -1964,7 +1964,7 @@ tab.
 thrown: `"sql": "SELECT * FROM Users WHERE email = ''' AND password =
 '339df5aeae5bc6ae557491e02619c5dd' AND deletedAt IS NULL"`
 . Solve
-<<exfiltrate-the-entire-db-schema-definition-via-sql-injection,Exfiltrate the entire DB schema definition via SQL Injection>>
+<<_exfiltrate_the_entire_db_schema_definition_via_sql_injection,Exfiltrate the entire DB schema definition via SQL Injection>>
 to learn the exact column names of the `Users` table.
 . Prepare a `UNION SELECT` payload what will a) ensure there is no
 result from the original query and b) will add the needed user
@@ -2023,7 +2023,7 @@ ____
 
 === Solve the 2FA challenge for user "wurstbrot"
 
-. <<access-the-administration-section-of-the-store,Access the administration section of the store>>
+. <<_access_the_administration_section_of_the_store,Access the administration section of the store>>
 while inspecting network traffic.
 . You will learn the email address of the user in question is
 unsurprisingly `wurstbrot@juice-sh.op`.
@@ -2283,7 +2283,7 @@ https://github.com/OWASP/owasp-swag/blob/master/projects/juice-shop/3d/JuiceShop
 === Inform the development team about a danger to some of their credentials
 
 . Solve
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>
 . The `package.json.bak` contains not only runtime dependencies but
 also development dependencies under the `devDependencies` section.
 . Go through the list of `devDependencies` and perform research on
@@ -2325,7 +2325,7 @@ image::appendix/npm_angular2-qrcode.png[angular2-qrcode on NPM]
 === Give the server something to chew on for quite a while
 
 . Solve the
-<<use-a-deprecated-b2b-interface-that-was-not-properly-shut-down,Use a deprecated B2B interface that was not properly shut down>>
+<<_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down,Use a deprecated B2B interface that was not properly shut down>>
 challenge.
 . On Linux, prepare an XML file which defines and uses an external
 entity which will require a long time to resolve: `<!ENTITY xxe
@@ -2482,7 +2482,7 @@ totally different attack styles.
 ==== _Pattern analysis_ solution path
 
 . Solve challenge
-<<access-a-salesmans-forgotten-backup-file,Access a salesman's forgotten backup file>>
+<<_access_a_salesmans_forgotten_backup_file,Access a salesman's forgotten backup file>>
 to get the `coupons_2013.adoc.bak` file with old coupon codes which you
 find listed below.
 . There is an obvious pattern in the last characters, as the first
@@ -2589,7 +2589,7 @@ expiration date as JSON, e.g.
 `{"discountCodes":{"10%":"mNYS#iv#%t","20%":"mNYS#iw00u","30%":"mNYS#iw03v","40%":"mNYS#iw06w"},"expiryDate":"2019-02-28"}`
 . You could collect this data for several months and basically fall
 back to the
-<<pattern-analysis-solution-path,Pattern analysis solution path>>
+<<_pattern_analysis_solution_path,Pattern analysis solution path>>
 only with more recent coupons.
 . For an easier and more satisfying victory over this challenge, take a
 look at the commit history of the GitHub repository
@@ -2607,7 +2607,7 @@ image::appendix/git-diff_coupon_lambda.png[Diff of local and cloud-based coupon 
 You can now either manipulate your local clone of the "pre-`fde2003`
 version" of the `juicy-coupon-bot` or fall back to the last part of
 the
-<<reverse-engineering-solution-path,Reverse engineering solution path>>
+<<_reverse_engineering_solution_path,Reverse engineering solution path>>
 where you find and install `z85-cli` to conveniently create your own
 80%+ coupon locally.
 
@@ -2838,7 +2838,7 @@ to solve this challenge and marvel at the premium VR wallpaper!
 === Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
 . Follow steps 1-7 of the challenge
-<<perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever,Perform a Remote Code Execution that would keep a less hardened application busy forever>>.
+<<_perform_a_remote_code_execution_that_would_keep_a_less_hardened_application_busy_forever,Perform a Remote Code Execution that would keep a less hardened application busy forever>>.
 . As _Request Body_ put in `{"orderLinesData":
 "/((a+)+)b/.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaa')"}` - which will
 trigger a very costly Regular Expression test once executed.
@@ -2851,7 +2851,7 @@ you do not really DoS your Juice Shop server.
 === Request a hidden resource on server through server
 
 . Solve
-<<infect-the-server-with-juicy-malware-by-abusing-arbitrary-command-execution,Infect the server with "juicy malware" by abusing arbitrary command execution>>
+<<_infect_the_server_with_juicy_malware_by_abusing_arbitrary_command_execution,Infect the server with "juicy malware" by abusing arbitrary command execution>>
 at least to the point where you have access to the "juicy malware"
 executables.
 . Similar to that SSTi challenge, the vulnerable place for this one is
@@ -2891,10 +2891,10 @@ https://github.com/J12934/juicy-malware
 . Alternatively you also find three `.url` files with direct links in
 http://localhost:3000/ftp/quarantine but you'll probably need to
 understand how to solve any of
-<<access-a-developers-forgotten-backup-file,Access a developer's forgotten backup file>>,
-<<access-a-salesmans-forgotten-backup-file,Access a salesman's forgotten backup file>>
+<<_access_a_developers_forgotten_backup_file,Access a developer's forgotten backup file>>,
+<<_access_a_salesmans_forgotten_backup_file,Access a salesman's forgotten backup file>>
 or
-<<access-a-misplaced-siem-signature-file,Access a misplaced SIEM signature file>>
+<<_access_a_misplaced_siem_signature_file,Access a misplaced SIEM signature file>>
 first.
 . Your goal is to use RCE to make the server download and execute the
 malware version for the server OS, so on Linux you might want to run

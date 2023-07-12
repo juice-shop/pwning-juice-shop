@@ -117,12 +117,12 @@ for the next version to be released (`develop` branch)
 | Link to official hints for a specific challenge
 | `<hintUrl>`
 |
-| https://pwning.owasp-juice.shop/part2/score-board.html#find-the-carefully-hidden-score-board-page or https://pwning.owasp-juice.shop/part2/xss.html#perform-a-dom-xss-attack
+| https://pwning.owasp-juice.shop/part2/score-board.html#_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/part2/xss.html#_perform_a_dom_xss_attack
 
 | Link to official step-by-step solution for a specific challenge
 | `+https://pwning.owasp-juice.shop/appendix/solutions.html#<hash part of hintUrl>+`
 |
-| https://pwning.owasp-juice.shop/appendix/solutions.html#find-the-carefully-hidden-score-board-page or https://pwning.owasp-juice.shop/appendix/solutions.html#perform-a-dom-xss-attack
+| https://pwning.owasp-juice.shop/appendix/solutions.html#_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/appendix/solutions.html#_perform_a_dom_xss_attack
 
 | Direct link to a xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
 | `/#/hacking-instructor?challenge=<name>`

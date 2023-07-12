@@ -129,7 +129,7 @@ of the trainer's guide.
 
 It is absolutely important that all Juice Shop instances participating
 in a CTF use the same
-<<_overriding_the_ctfkey,secret key to generate their CTF flag codes>>.
+<<_overriding_the_ctf_key,secret key to generate their CTF flag codes>>.
 The score server must be set up accordingly to accept exactly those flag
 codes for solving the hacking challenges and allocating their score to
 the first team/user that solved it.
@@ -198,7 +198,7 @@ Shop server where the tool will retrieve the existing challenges from
 via the `/api/Challenges` API. Defaults to
 `+https://juice-shop.herokuapp.com+` which always hosts the latest
 official released version of OWASP Juice Shop.
-. **Secret key +++<or>+++URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See [Overriding the `ctf.key`](#_overriding_the_ctfkey) for more information.+++</or>+++
+. **Secret key +++<or>+++URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See [Overriding the `ctf.key`](#_overriding_the_ctf_key) for more information.+++</or>+++
 . *URL to country-mapping.yml file?* URL of a mapping configuration
 of challenges to countries, which is only asked when `FBCTF` was
 selected. Defaults to
@@ -453,7 +453,7 @@ HMAC_SHA1(ctfKey, challenge.name)
 
 with `challenge.name` being the `name` column of the `Challenges` table
 in the Juice Shop's underlying database. The `ctfKey` has been described
-in the <<_overriding_the_ctfkey,Overriding the `ctf.key`>> section above.
+in the <<_overriding_the_ctf_key,Overriding the `ctf.key`>> section above.
 
 Feel free to use
 https://github.com/juice-shop/juice-shop-ctf/blob/master/lib/generateSql.js#L25[the implementation within `juice-shop-ctf-cli`]

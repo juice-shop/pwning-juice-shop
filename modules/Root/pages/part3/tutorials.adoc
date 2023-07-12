@@ -118,7 +118,7 @@ Lastly, the `resolved` property must declare a function that returns a
 `Promise` which - upon resolution - will let the script continue to the
 next hint (or finish the script if there are no more hints left).
 Instead of worrying about writing your own functions, have a look at the
-available <<helper-functions,Helper functions>> first. They will make
+available <<_helper_functions,Helper functions>> first. They will make
 scripting tutorials a lot easier for you.
 
 == Helper functions
@@ -165,7 +165,7 @@ conveniently as your `resolved` function in any challenge hint:
 |===
 
 ℹ️ The helper functions are supposed to be self-explanatory enough on
-their own. Please check out the <<reference-example,Reference example>>
+their own. Please check out the <<_reference_example,Reference example>>
 for more information on when and how to use each one.
 
 == Registering a new script

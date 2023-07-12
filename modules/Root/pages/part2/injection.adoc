@@ -366,5 +366,5 @@ basically hopping from one error to the next
 * As with
 <<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 and
-<<exfiltrate-the-entire-db-schema-definition-via-sql-injection,Exfiltrate the entire DB schema definition via SQL Injection>>
+<<_exfiltrate_the_entire_db_schema_definition_via_sql_injection,Exfiltrate the entire DB schema definition via SQL Injection>>
 this cannot be achieved through the application frontend.

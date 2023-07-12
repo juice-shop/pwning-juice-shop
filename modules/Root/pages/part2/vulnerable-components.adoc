@@ -84,13 +84,13 @@ timeline
 === Forge an almost properly RSA-signed JWT token
 
 Like
-<<forge-an-essentially-unsigned-jwt-token,Forge an essentially unsigned JWT token>>
+<<_forge_an_essentially_unsigned_jwt_token,Forge an essentially unsigned JWT token>>
 this challenge requires you to make a valid JWT for a user that does not
 exist. What makes this challenge even harder is the requirement to have
 the JWT look like it was properly signed.
 
 * The three generic hints from
-<<forge-an-essentially-unsigned-jwt-token,Forge an essentially unsigned JWT token>>
+<<_forge_an_essentially_unsigned_jwt_token,Forge an essentially unsigned JWT token>>
 also help with this challenge.
 * Instead of enforcing no encryption to be applied, try to apply a more
 sophisticated exploit against the JWT libraries used in the Juice
@@ -137,7 +137,7 @@ the Juice Shop. It is supposedly hard to locate.
 
 * This challenge has nothing to do with URLs or domains.
 * Other than for
-<<inform-the-shop-about-a-typosquatting-trick-it-has-been-a-victim-of,its legacy companion>>,
+<<_inform_the_shop_about_a_typosquatting_trick_it_has_been_a_victim_of,its legacy companion>>,
 combing through the `package.json.bak` does not help for this
 challenge.
 
@@ -168,7 +168,7 @@ successfully sneaked into an older version of the Juice Shop. Luckily,
 it is not in use any more in {juiceShopVersion}.
 
 * Just like
-<<inform-the-shop-about-a-typosquatting-imposter-that-dug-itself-deep-into-the-frontend,its frontend companion>>
+<<_inform_the_shop_about_a_typosquatting_imposter_that_dug_itself_deep_into_the_frontend,its frontend companion>>
 this challenge also has nothing to do with URLs or domains.
 * Investigating the
 xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[forgotten developer's backup file]

@@ -217,7 +217,7 @@ This challenge is about finding the answer to the security question of
 Bjoern's internal user account `bjoern@juice-sh.op`.
 
 * Other than with
-<<reset-the-password-of-bjoerns-owasp-account-via-the-forgot-password-mechanism,his OWASP account>>,
+<<_reset_the_password_of_bjoerns_owasp_account_via_the_forgot_password_mechanism,his OWASP account>>,
 Bjoern was a bit less careless with his choice of security and answer
 to his internal account.
 * Bjoern chose to answer his chosen question truthfully but tried to

@@ -161,6 +161,6 @@ algorithm or library.
 * There are five possible answers and you only need to identify one to
 solve the challenge.
 * Cryptographic functions only used in the
-<<apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg,Apply some advanced cryptanalysis to find the real easter egg>>
+<<_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg,Apply some advanced cryptanalysis to find the real easter egg>>
 challenge _do not count_ as they are only a developer's prank and not
 a serious security problem.

@@ -34,7 +34,7 @@ https://github.com/juice-shop/juice-shop
 === Forking & cloning
 
 You can clone the original repository with `+git clone https://github.com/juice-shop/juice-shop.git+` but
-in order to contribute to the project via <<pull-requests,Pull Requests>> you probably want to https://github.com/juice-shop/juice-shop/fork[fork the repository
+in order to contribute to the project via <<_pull_requests,Pull Requests>> you probably want to https://github.com/juice-shop/juice-shop/fork[fork the repository
 instead] and then clone that fork to work on with
 
 ----
@@ -278,8 +278,8 @@ if you see errors on `npm start` or ESLint complains about missing
 plugins.
 . That's it! You're ready for developing on OWASP Juice Shop!
 
-🚨 Please note that the client-side <<unit-tests,Unit tests>> and
-<<end-to-end-tests,End-to-end tests>> will not work on GitHub Codespaces
+🚨 Please note that the client-side <<_unit_tests,Unit tests>> and
+<<_end_to_end_tests,End-to-end tests>> will not work on GitHub Codespaces
 due to the lack of a Chrome installation in the underlying container.
 
 === Developer Certificate of Origin

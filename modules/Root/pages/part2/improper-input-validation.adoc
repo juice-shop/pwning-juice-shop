@@ -178,7 +178,7 @@ In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
 
 * If you solved the
-<<upload-a-file-larger-than-100-kb,Upload a file larger than 100 kB>>
+<<_upload_a_file_larger_than_100_kb,Upload a file larger than 100 kB>>
 challenge, you should try to apply the same solution here
 
 === Give a devastating zero-star feedback to the store
