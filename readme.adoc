@@ -1,3 +1,4 @@
+[%hardbreaks]
 Setup for antora: https://docs.antora.org/antora/latest/install-and-run-quickstart/
 Setup for pdf: https://docs.asciidoctor.org/pdf-converter/latest/install/
 Setup for epub: https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites
