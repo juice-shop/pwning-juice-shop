@@ -1,4 +1,5 @@
 = Integration
+include::../attributes.adoc[]
 
 OWASP Juice Shop follows strict conventions for describing challenges.
 These allow you to easily integrate Juice Shop tutorials, hints and

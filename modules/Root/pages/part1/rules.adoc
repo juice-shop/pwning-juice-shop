@@ -1,4 +1,5 @@
 = Hacking exercise rules
+include::../attributes.adoc[]
 
 == ✔️ Recommended hacking tools
 

@@ -1,5 +1,5 @@
 = Injection
-
+include::../attributes.adoc[]
 ____
 Injection flaws allow attackers to relay malicious code through an
 application to another system. These attacks include calls to the

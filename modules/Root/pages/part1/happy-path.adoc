@@ -1,4 +1,5 @@
 = Walking the "happy path"
+include::../attributes.adoc[]
 
 When investigating an application for security vulnerabilities, you
 should _never_ blindly start throwing attack payloads at it. Instead,

@@ -1,5 +1,5 @@
 = Hosting a CTF event
-
+include::../attributes.adoc[]
 ____
 In computer security, Capture the Flag (CTF) is a computer security
 competition. CTF contests are usually designed to serve as an

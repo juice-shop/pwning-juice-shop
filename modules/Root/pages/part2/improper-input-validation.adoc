@@ -1,5 +1,5 @@
 = Improper Input Validation
-
+include::../attributes.adoc[]
 ____
 When software does not validate input properly, an attacker is able to
 craft the input in a form that is not expected by the rest of the

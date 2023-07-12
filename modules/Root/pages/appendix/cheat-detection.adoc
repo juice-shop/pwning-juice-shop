@@ -1,4 +1,5 @@
 = Cheat detection
+include::../attributes.adoc[]
 
 Whenever a challenge is solved, a `cheatScore` between 0 and 1 is
 internally assigned to the solution. This indicates how likely the

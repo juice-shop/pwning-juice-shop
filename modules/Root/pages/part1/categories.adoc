@@ -1,4 +1,5 @@
 = Vulnerability Categories
+include::../attributes.adoc[]
 
 The vulnerabilities found in the OWASP Juice Shop are categorized into
 several different classes. Most of them cover different risk or

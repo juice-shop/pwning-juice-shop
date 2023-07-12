@@ -1,4 +1,5 @@
 = Why the Juice Shop exists
+include::../attributes.adoc[]
 
 To the unsuspecting user the Juice Shop just looks like a small online
 shop which sells - _surprise!_ - fruit & vegetable juice and associated

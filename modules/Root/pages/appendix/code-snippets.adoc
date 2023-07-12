@@ -1,4 +1,5 @@
 = Coding challenges
+include::../attributes.adoc[]
 
 Starting with `v12.9.0`, OWASP Juice Shop offers a new developer-focused challenge for
 some of its existing hacking challenges: Coding challenges. These were xref:../part1/challenges.adoc#_coding_challenges[briefly illustrated in Part 1 of this book]

@@ -1,4 +1,5 @@
 = Helping with translations
+include::../attributes.adoc[]
 
 The user interface of OWASP Juice Shop is fully translated into several
 languages. For many more languages there is a partial translation

@@ -12,18 +12,6 @@ ui:
 output:
   dir: ./docs
 
-asciidoc:
-  attributes:
-    ctfdVersion: 3.4 or higher
-    is_ctf: 0
-    rtbVersion: 3.3 or higher
-    juiceShopVersion: v14.5.0
-    juiceShopCtfVersion: v9.1.2
-    juiceShopNumberOfChallenges: 101
-    nodeVersions: 14.x, 16.x and 18.x
-    recommendedNodeVersion: 18.x
-    backupSchemaVersion: 1
-
 antora:
   extensions:
   - '@antora/lunr-extension'

@@ -1,4 +1,5 @@
 = Vulnerable Components
+include::../attributes.adoc[]
 
 The challenges in this chapter are all about security issues of
 libraries or other 3rd party components the application uses internally.

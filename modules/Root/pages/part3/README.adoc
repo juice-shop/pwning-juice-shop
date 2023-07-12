@@ -1,4 +1,5 @@
 = Part III - Getting involved
+include::../attributes.adoc[]
 
 If you enjoyed hacking the OWASP Juice shop and you would like to be
 informed about upcoming releases, new challenges or bugfixes, there are

@@ -1,4 +1,5 @@
 = Insecure Deserialization
+include::../attributes.adoc[]
 
 ____
 Serialization is the process of turning some object into a data format

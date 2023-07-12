@@ -1,4 +1,5 @@
 = Monitoring
+include::../attributes.adoc[]
 
 You can monitor your local or cloud-hosted OWASP Juice Shop instance
 using internally gathered metrics and visualize those on dashboards.

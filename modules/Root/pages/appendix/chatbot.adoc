@@ -1,4 +1,5 @@
 = Chatbot training data
+include::../attributes.adoc[]
 
 Under the hood of the _Support Chat_ an NLP-powered chatbot is used to
 anwer customer questions. Upon server start it is initialized with a

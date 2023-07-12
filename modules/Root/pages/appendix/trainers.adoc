@@ -1,4 +1,5 @@
 = Trainer's guide
+include::../attributes.adoc[]
 
 Co-authored by https://github.com/wurstbrot[Timo Pagel]
 

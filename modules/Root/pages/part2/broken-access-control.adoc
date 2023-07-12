@@ -1,5 +1,5 @@
 = Broken Access Control
-
+include::../attributes.adoc[]
 ____
 Most computer systems are designed for use with multiple users.
 Privileges mean what a user is permitted to do. Common privileges
