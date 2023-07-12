@@ -1,4 +1,5 @@
 = Trainer's guide
+include::../attributes.adoc[]
 
 Co-authored by https://github.com/wurstbrot[Timo Pagel]
 
@@ -10,7 +11,7 @@ xref:../part2/insecure-deserialization.adoc[RCE] or xref:../part2/xxe.adoc[XXE]
 students might occasionally take down their server and would severely
 impact other participants if they shared an instance.
 
-There are multiple link:../part1/running.adoc#run-options[Run Options] which
+There are multiple xref:../part1/running.adoc#_run_options[Run Options] which
 you can choose from. It is perfectly fine to run multiple docker
 containers on one host. They do not effect each other.
 
@@ -37,7 +38,7 @@ configuration demonstrates the necessary options to achieve this.
 image::appendix/quiet_mode.png[Quiet mode]
 
 For a really sophisticated and immersive demo consider performing some
-link:../part1/customization.adoc#additional-browser-tweaks[Additional Browser tweaks].
+xref:../part1/customization.adoc#_additional_browser_tweaks[Additional Browser tweaks].
 These will let you use OAuth2 login via Google and cast the illusion
 that coupon codes were actually tweeted by your customer's company.
 
@@ -130,84 +131,84 @@ of the project references on on GitHub.
 The following challenges are well suited for live demonstrations in
 trainings or talks. You should *always* begin by showing how to find
 the
-link:../part2/score-board.adoc#find-the-carefully-hidden-score-board-page[Score Board]
+xref:../part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[Score Board]
 ( ⭐ ) so you can then pick any of the challenge below to further
 demonstrate certain categories of vulnerabilities.
 
 |===
 | Challenge | Category | Difficulty | Time for demo | Dependencies
 
-| link:../part2/xss.adoc#perform-a-dom-xss-attack[DOM XSS]
+| xref:../part2/xss.adoc#_perform_a_dom_xss_attack[DOM XSS]
 | XSS
 | ⭐
 | ⏳
 | None
 
-| link:../part2/sensitive-data-exposure.adoc#access-a-confidential-document[Confidential Document]
+| xref:../part2/sensitive-data-exposure.adoc#_access_a_confidential_document[Confidential Document]
 | Sensitive Data Exposure
 | ⭐
 | ⏳
 | None
 
-| link:../part2/injection.adoc#log-in-with-the-administrators-user-account[Login Admin]
+| xref:../part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin]
 | Injection
 | ⭐⭐
 | ⏳
 | None
 
-| link:../part2/miscellaneous.adoc#read-our-privacy-policy[Privacy Policy]
+| xref:../part2/miscellaneous.adoc#_read_our_privacy_policy[Privacy Policy]
 | Miscellaneous
 | ⭐
 | ⏳
 | Log in as any user
 
-| link:../part2/xss.adoc#perform-a-reflected-xss-attack[Reflected XSS]
+| xref:../part2/xss.adoc#_perform_a_reflected_xss_attack[Reflected XSS]
 | XSS
 | ⭐⭐
 | ⏳⏳
 | Log in as any user and complete checkout process (to find the vulnerable tracking link)
 
-| link:../part2/security-through-obscurity.adoc#prove-that-you-actually-read-our-privacy-policy[Privacy Policy Inspection]
+| xref:../part2/security-through-obscurity.adoc#_prove_that_you_actually_read_our_privacy_policy[Privacy Policy Inspection]
 | Security through Obscurity
 | ⭐⭐⭐
 | ⏳⏳
-| link:../part2/miscellaneous.adoc#read-our-privacy-policy[Privacy Policy]
+| xref:../part2/miscellaneous.adoc#_read_our_privacy_policy[Privacy Policy]
 
-| link:../part2/broken-access-control.adoc#access-the-administration-section-of-the-store[Admin Section]
+| xref:../part2/broken-access-control.adoc#_access_the_administration_section_of_the_store[Admin Section]
 | Broken Access Control
 | ⭐⭐
 | ⏳⏳
-| link:../part2/injection.adoc#log-in-with-the-administrators-user-account[Login Admin] or link:../part2/improper-input-validation.adoc#register-as-a-user-with-administrator-privileges[Admin Registration]
+| xref:../part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin] or xref:../part2/improper-input-validation.adoc#_register_as_a_user_with_administrator_privileges[Admin Registration]
 
-| link:../part2/broken-access-control.adoc#view-another-users-shopping-basket[View Basket]
+| xref:../part2/broken-access-control.adoc#_view_another_users_shopping_basket[View Basket]
 | Broken Access Control
 | ⭐⭐
 | ⏳⏳
 | Log in with two different users
 
-| link:../part2/broken-access-control.adoc#find-the-hidden-easter-egg[Easter Egg]
+| xref:../part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Easter Egg]
 | Broken Access Control
 | ⭐⭐⭐⭐
 | ⏳⏳⏳
 | Explain _Poison Null Byte_
 
-| link:../part2/cryptographic-issues.adoc#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg[Nested Easter Egg]
+| xref:../part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[Nested Easter Egg]
 | Cryptographic Issues
 | ⭐⭐⭐⭐
 | ⏳⏳⏳
-| link:../part2/broken-access-control.adoc#find-the-hidden-easter-egg[Easter Egg]
+| xref:../part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Easter Egg]
 
-| link:../part2/sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[Forgotten Developer Backup]
+| xref:../part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Forgotten Developer Backup]
 | Sensitive Data Exposure
 | ⭐⭐⭐⭐
 | ⏳⏳⏳
 | Explain _Poison Null Byte_
 
-| link:../part2/cryptographic-issues.adoc#forge-a-coupon-code-that-gives-you-a-discount-of-at-least-80[Forged Coupon]
+| xref:../part2/cryptographic-issues.adoc#_forge_a_coupon_code_that_gives_you_a_discount_of_at_least_80[Forged Coupon]
 | Cryptographic Issues
 | ⭐⭐⭐⭐⭐⭐
 | ⏳⏳⏳⏳
-| link:../part2/sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[Forgotten Developer Backup] and `z85-cli` installed *or* link:../part2/sensitive-data-exposure.adoc#access-a-salesmans-forgotten-backup-file[Forgotten Sales Backup] *or* tracing coupons from Twitter back to https://github.com/juice-shop/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22
+| xref:../part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Forgotten Developer Backup] and `z85-cli` installed *or* xref:../part2/sensitive-data-exposure.adoc#_access_a_salesmans_forgotten_backup_file[Forgotten Sales Backup] *or* tracing coupons from Twitter back to https://github.com/juice-shop/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22
 |===
 
 === XSS demo

@@ -1,5 +1,5 @@
 = Injection
-
+include::../attributes.adoc[]
 ____
 Injection flaws allow attackers to relay malicious code through an
 application to another system. These attacks include calls to the
@@ -144,7 +144,7 @@ and it might even require (half-)Blind SQL Injection.
 An attacker would try to exploit SQL Injection to find out as much as
 possible about your database schema. This subsequently allows much more
 targeted, stealthy and devastating SQL Injections, like
-<<retrieve-a-list-of-all-user-credentials-via-sql-injection,Retrieve a list of all user credentials via SQL Injection>>.
+<<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>.
 
 * Find out which database system is in use and where it would usually
 store its schema definitions.
@@ -153,7 +153,7 @@ any such identified system table into the original result.
 * You might have to tackle some query syntax issues step-by-step,
 basically hopping from one error to the next
 * As with
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 this cannot be achieved through the application frontend.
 
 === Log in with the (non-existing) accountant without ever registering that user
@@ -191,7 +191,7 @@ clue about the admin email address.
 * If you harvested the admin's password hash, you can of course try to
 attack that instead of using SQL Injection.
 * Alternatively you can solve this challenge as a _combo_ with the
-link:broken-authentication.adoc#log-in-with-the-administrators-user-credentials-without-previously-changing-them-or-applying-sql-injection[Log in with the administrator's user credentials without previously changing them or applying SQL Injection]
+xref:part2/broken-authentication.adoc#_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection[Log in with the administrator's user credentials without previously changing them or applying SQL Injection]
 challenge.
 
 === Log in with Bender's user account
@@ -320,7 +320,7 @@ necessary URLs in it.
 this challenge.
 * For this challenge you do not have to reverse engineer the malware in
 any way. That will be required later to solve
-link:broken-access-control.adoc#request-a-hidden-resource-on-server-through-server[Request a hidden resource on server through server].
+xref:part2/broken-access-control.adoc#_request_a_hidden_resource_on_server_through_server[Request a hidden resource on server through server].
 
 ____
 Server-side template injection occurs when user input is unsafely
@@ -364,7 +364,7 @@ into the original result.
 * You might have to tackle some query syntax issues step-by-step,
 basically hopping from one error to the next
 * As with
-<<order-the-christmas-special-offer-of-2014,Order the Christmas special offer of 2014>>
+<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 and
-<<exfiltrate-the-entire-db-schema-definition-via-sql-injection,Exfiltrate the entire DB schema definition via SQL Injection>>
+<<_exfiltrate_the_entire_db_schema_definition_via_sql_injection,Exfiltrate the entire DB schema definition via SQL Injection>>
 this cannot be achieved through the application frontend.

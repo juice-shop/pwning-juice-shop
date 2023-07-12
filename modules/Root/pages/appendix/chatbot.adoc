@@ -1,4 +1,5 @@
 = Chatbot training data
+include::../attributes.adoc[]
 
 Under the hood of the _Support Chat_ an NLP-powered chatbot is used to
 anwer customer questions. Upon server start it is initialized with a
@@ -114,7 +115,7 @@ singular entry in `utterances` and is only used for testing purposes.
 If you write your own training data file from scratch, you need exactly
 one `intent` for each of these three ``handler``s. If you do not have
 these defined, Juice Shop will tell you during the
-link:troubleshooting.adoc#start-up-validations[Start-up validations]. To
+xref:appendix/troubleshooting.adoc#_start_up_validations[Start-up validations]. To
 avoid any such issues, it is recommended to just start with a copy of
 the `botDefaultTrainingData.json` file when definiing your own chatbot
 conversations.

@@ -1,4 +1,5 @@
 = Monitoring
+include::../attributes.adoc[]
 
 You can monitor your local or cloud-hosted OWASP Juice Shop instance
 using internally gathered metrics and visualize those on dashboards.
@@ -14,7 +15,7 @@ image::appendix/grafana_02.png[Technical metrics in Grafana]
 Juice Shop collects functional and technical metrics using a
 https://prometheus.io[Prometheus] client module. Its endpoint is
 publicly accessible and there is even a challenge asking you to
-"link:../part2/sensitive-data-exposure.adoc#find-the-endpoint-that-serves-usage-data-to-be-scraped-by-a-popular-monitoring-system[Find the endpoint that serves usage data to be scraped by a popular monitoring system]".
+"xref:../part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[Find the endpoint that serves usage data to be scraped by a popular monitoring system]".
 
 To consume these metrics you need to set up a Prometheus server which is
 very straightforward:
@@ -69,7 +70,7 @@ its name to view it! Voilá!
 
 ℹ️ _The "Juice Shop Instance Dashboard" template was forked from the
 multi-instance dashboard of
-link:trainers.adoc#hosting-individual-instances-for-multiple-users[MultiJuicer],
+xref:appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[MultiJuicer],
 so if you need to run and subsequently monitor multiple Juice Shop
 instances, best take a look at
 https://github.com/iteratec/multi-juicer[MultiJuicer] and our

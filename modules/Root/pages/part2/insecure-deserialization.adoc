@@ -1,4 +1,5 @@
 = Insecure Deserialization
+include::../attributes.adoc[]
 
 ____
 Serialization is the process of turning some object into a data format
@@ -75,7 +76,7 @@ format that is most probably used for serialization.
 * The challenge will be solved if you manage to trigger the protection
 of the application against a very specific DoS attack vector.
 * Similar to the
-link:injection.adoc#let-the-server-sleep-for-some-time[Let the server sleep for some time]
+xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]
 challenge (which accepted nothing but NoSQL Injection as a solution)
 this challenge will only accept proper RCE as a solution. It cannot be
 solved by simply hammering the server with requests. _That_ would
@@ -91,7 +92,7 @@ that causes the loop to start over.footnote:4[https://en.wikipedia.org/wiki/Infi
 ____
 
 * This challenge uses the same leverage point as
-<<perform-a-remote-code-execution-that-would-keep-a-less-hardened-application-busy-forever,Perform a Remote Code Execution that would keep a less hardened application busy forever>>.
+<<_perform_a_remote_code_execution_that_would_keep_a_less_hardened_application_busy_forever,Perform a Remote Code Execution that would keep a less hardened application busy forever>>.
 * The application has a protection against too many iterations (i.e.
 _infinite loops_) which your attack must not trigger in order to solve
 this challenge.

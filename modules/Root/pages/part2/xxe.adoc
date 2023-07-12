@@ -1,5 +1,5 @@
 = XML External Entities (XXE)
-
+include::../attributes.adoc[]
 ____
 An XML External Entity attack is a type of attack against an
 application that parses XML input. This attack occurs when XML input
@@ -75,7 +75,7 @@ In this challenge you are tasked to disclose a local file from the
 server the Juice Shop backend is hosted on.
 
 * You already found the leverage point for this challenge if you solved
-link:security-misconfiguration.adoc#use-a-deprecated-b2b-interface-that-was-not-properly-shut-down[Use a deprecated B2B interface that was not properly shut down].
+xref:part2/security-misconfiguration.adoc#_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down[Use a deprecated B2B interface that was not properly shut down].
 * This challenge sounds a lot harder than it actually is, which
 amplifies how bad the underlying vulnerability is.
 * Doing some research on typical XEE attack patterns basically gives
@@ -84,13 +84,13 @@ away the solution for free.
 === Give the server something to chew on for quite a while
 
 Similar to
-link:injection.adoc#let-the-server-sleep-for-some-time[Let the server sleep for some time]
+xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]
 this challenge is about performing a stripped-down _denial-of-service_
 attack. But this one is going against an entirely different leverage
 point.
 
 * The leverage point for this is obviously the same as for the
-<<retrieve-the-content-of-cwindowssystemini-or-etcpasswd-from-the-server,XXE Tier 1>>
+<<_retrieve_the_content_of_cwindowssystemini_or_etcpasswd_from_the_server,XXE Tier 1>>
 challenge above.
 * You can only solve this challenge by keeping the server busy for >2sec
 with your attack.

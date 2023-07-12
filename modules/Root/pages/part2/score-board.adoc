@@ -1,4 +1,5 @@
 = Finding the Score Board
+include::../attributes.adoc[]
 
 In part 1 you were introduced to the Score Board and learned how it
 tracks your challenge hacking progress. You also had a "happy path" tour

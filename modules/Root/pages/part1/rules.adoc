@@ -1,4 +1,5 @@
 = Hacking exercise rules
+include::../attributes.adoc[]
 
 == ✔️ Recommended hacking tools
 
@@ -342,7 +343,7 @@ feature to work properly.
 === Tutorial JavaScript file
 
 If enabled, the
-link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor] script
+xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor] script
 `tutorial.js` including
 all on-screen tutorials is loaded lazily by the _Score Board_ and the
 _Welcome Banner_. You should exclude this file from all your manual or

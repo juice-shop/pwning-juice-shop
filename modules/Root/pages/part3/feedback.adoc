@@ -1,4 +1,5 @@
 = Provide feedback
+include::../attributes.adoc[]
 
 * Did you experience a functional bug when hacking the application?
 * Did the app server crash after you sent some malformed HTTP request?
@@ -47,8 +48,8 @@ or negative!
 
 == Challenge feedback
 
-You can provide feedback on all solved xref:../part1/challenges.adoc[hacking] and link:../part1/challenges.adoc#coding-challenges[coding challenges] directly from the
-link:../part1/challenges.adoc#the-score-board[Score Board] and Coding Challenge modal dialog. Clicking the respective like/dislike button
+You can provide feedback on all solved xref:../part1/challenges.adoc[hacking] and xref:../part1/challenges.adoc#_coding_challenges[coding challenges] directly from the
+xref:../part1/challenges.adoc#_the_score_board[Score Board] and Coding Challenge modal dialog. Clicking the respective like/dislike button
 will send you to a Google Form pre-filled with the challenge information and your positive or negative
 verdict.
 

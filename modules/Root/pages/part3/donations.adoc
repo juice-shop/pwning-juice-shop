@@ -1,5 +1,5 @@
 = Donations
-
+include::../attributes.adoc[]
 ____
 Please continue reading to learn more about supporting the OWASP Juice
 Shop financially! As a shortcut you can also

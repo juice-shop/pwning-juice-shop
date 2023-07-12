@@ -1,5 +1,5 @@
 = Improper Input Validation
-
+include::../attributes.adoc[]
 ____
 When software does not validate input properly, an attacker is able to
 craft the input in a form that is not expected by the rest of the
@@ -132,11 +132,11 @@ mechanism prevents access.
 * The _Poison Null Byte_ can trick the security mechanism into thinking
 that the file you want has a valid file type.
 * Depending on the files you try to retrieve you will probably solve
-link:sensitive-data-exposure.adoc#access-a-developers-forgotten-backup-file[Access a developer's forgotten backup file],
-link:sensitive-data-exposure.adoc#access-a-salesmans-forgotten-backup-file[Access a salesman's forgotten backup file],
-link:sensitive-data-exposure.adoc#access-a-misplaced-siem-signature-file[Access a misplaced SIEM signature file.]
+xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file],
+xref:part2/sensitive-data-exposure.adoc#_access_a_salesmans_forgotten_backup_file[Access a salesman's forgotten backup file],
+xref:part2/sensitive-data-exposure.adoc#_access_a_misplaced_siem_signature_file[Access a misplaced SIEM signature file.]
 or
-link:broken-access-control.adoc#find-the-hidden-easter-egg[Find the hidden easter egg]
+xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
 along the way.
 
 === Follow the DRY principle while registering a user
@@ -178,7 +178,7 @@ In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
 
 * If you solved the
-<<upload-a-file-larger-than-100-kb,Upload a file larger than 100 kB>>
+<<_upload_a_file_larger_than_100_kb,Upload a file larger than 100 kB>>
 challenge, you should try to apply the same solution here
 
 === Give a devastating zero-star feedback to the store

@@ -1,5 +1,5 @@
 = Broken Anti-Automation
-
+include::../attributes.adoc[]
 ____
 Web applications are subjected to unwanted automated usage -- day in,
 day out. Often these events relate to misuse of inherent valid

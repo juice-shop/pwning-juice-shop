@@ -1,6 +1,7 @@
 = Hacking Instructor tutorial scripts
+include::../attributes.adoc[]
 
-With the link:../part1/challenges.adoc#hacking-instructor[Hacking Instructor]
+With the xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
 the OWASP Juice Shop offers very beginner-friendly tutorial scripts that
 guide the user through some of the challenges.
 
@@ -10,7 +11,7 @@ section will provide an overview of how a Hacking Instructor script is
 written.
 
 The Hacking Instructor is part of the
-link:codebase.adoc#client-tier[Client Tier] but independent of Angular.
+xref:part3/codebase.adoc#_client_tier[Client Tier] but independent of Angular.
 Therefore its code lives in a separate folder
 `frontend/src/hacking-instructor`:
 
@@ -118,7 +119,7 @@ Lastly, the `resolved` property must declare a function that returns a
 `Promise` which - upon resolution - will let the script continue to the
 next hint (or finish the script if there are no more hints left).
 Instead of worrying about writing your own functions, have a look at the
-available <<helper-functions,Helper functions>> first. They will make
+available <<_helper_functions,Helper functions>> first. They will make
 scripting tutorials a lot easier for you.
 
 == Helper functions
@@ -165,7 +166,7 @@ conveniently as your `resolved` function in any challenge hint:
 |===
 
 ℹ️ The helper functions are supposed to be self-explanatory enough on
-their own. Please check out the <<reference-example,Reference example>>
+their own. Please check out the <<_reference_example,Reference example>>
 for more information on when and how to use each one.
 
 == Registering a new script
@@ -193,7 +194,7 @@ the tutorial will be automatically wired into the _Score Board_.
 == Reference example
 
 The following code snippet shows the entire tutorial script for the
-link:../part2/injection.adoc#log-in-with-the-administrators-user-account[Login Admin]
+xref:../part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin]
 challenge. As it uses most available helpers, two custom
 `resolved`-functions as well as Markdown to style some hint texts, it is
 the perfect reference for your own scripts:

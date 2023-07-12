@@ -1,4 +1,5 @@
 = Part I - Hacking preparations
+include::../attributes.adoc[]
 
 OWASP Juice Shop offers multiple ways to be deployed and used. The
 author himself has seen it run on

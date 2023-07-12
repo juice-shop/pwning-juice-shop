@@ -1,4 +1,5 @@
 = Jingle lyrics
+include::../attributes.adoc[]
 
 Official
 https://soundcloud.com/braimee/owasp-juice-shop-jingle[OWASP Juice Shop Jingle]

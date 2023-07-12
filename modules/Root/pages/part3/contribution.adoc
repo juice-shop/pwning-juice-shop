@@ -1,4 +1,5 @@
 = Contribute to development
+include::../attributes.adoc[]
 
 If you would like to contribute to OWASP Juice Shop but need some idea
 what task to address, the best place to look is in the GitHub issue
@@ -34,7 +35,7 @@ https://github.com/juice-shop/juice-shop
 === Forking & cloning
 
 You can clone the original repository with `+git clone https://github.com/juice-shop/juice-shop.git+` but
-in order to contribute to the project via <<pull-requests,Pull Requests>> you probably want to https://github.com/juice-shop/juice-shop/fork[fork the repository
+in order to contribute to the project via <<_pull_requests,Pull Requests>> you probably want to https://github.com/juice-shop/juice-shop/fork[fork the repository
 instead] and then clone that fork to work on with
 
 ----
@@ -278,8 +279,8 @@ if you see errors on `npm start` or ESLint complains about missing
 plugins.
 . That's it! You're ready for developing on OWASP Juice Shop!
 
-🚨 Please note that the client-side <<unit-tests,Unit tests>> and
-<<end-to-end-tests,End-to-end tests>> will not work on GitHub Codespaces
+🚨 Please note that the client-side <<_unit_tests,Unit tests>> and
+<<_end_to_end_tests,End-to-end tests>> will not work on GitHub Codespaces
 due to the lack of a Chrome installation in the underlying container.
 
 === Developer Certificate of Origin
@@ -357,7 +358,7 @@ image::part3/ci-workflow.png[CI/CD Pipeline workflow on GitHub]
 
 For tag-builds (i.e. versions to be released) another workflow is
 triggered which packages the
-link:../part1/running.adoc#from-pre-packaged-distribution[release-artifacts for Linux, MacOS and Windows for each supported Node.js version]
+xref:../part1/running.adoc#_from_pre_packaged_distribution[release_artifacts for Linux, MacOS and Windows for each supported Node.js version]
 and attach these to the release page on GitHub and also published Docker
 images for the released version.
 

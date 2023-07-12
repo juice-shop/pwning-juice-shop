@@ -1,5 +1,5 @@
 = Cross Site Scripting (XSS)
-
+include::../attributes.adoc[]
 ____
 Cross-Site Scripting (XSS) attacks are a type of injection, in which
 malicious scripts are injected into otherwise benign and trusted web
@@ -77,7 +77,7 @@ image::part2/xhr-api_requests.png[XHR requests to the backend API]
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`
 or a
-link:/part1/rules.adoc#tools-for-http-request-tampering[tool for HTTP request tampering]
+xref:../part1/rules.adoc#_tools_for_http_request_tampering[tool for HTTP request tampering]
 to master this challenge.
 
 * A matrix of known data entities and their supported HTTP verbs through
@@ -88,10 +88,10 @@ does not even need
 === Use the bonus payload in the DOM XSS challenge
 
 The underlying vulnerability of this challenge is the same as for the
-<<perform-a-dom-xss-attack,Perform a DOM XSS attack>> challenge. The
+<<_perform_a_dom_xss_attack,Perform a DOM XSS attack>> challenge. The
 effect of the payload is much more entertaining, though.
 
-* First, solve the <<perform-a-dom-xss-attack,Perform a DOM XSS attack>>
+* First, solve the <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>>
 challenge
 * Now it is just a question of copying and pasting the payload into the
 same vulnerable field
@@ -171,7 +171,7 @@ element that can be controlled by an attacker.footnote:3[https://wiki.owasp.org/
 ____
 
 * This challenge is almost indistinguishable from
-<<perform-a-reflected-xss-attack,Perform a reflected XSS attack>> if
+<<_perform_a_reflected_xss_attack,Perform a reflected XSS attack>> if
 you do not look "under the hood" to find out what the application
 actually does with the user input
 

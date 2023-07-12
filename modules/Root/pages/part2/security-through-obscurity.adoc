@@ -1,4 +1,5 @@
 = Security through Obscurity
+include::../attributes.adoc[]
 
 Many applications contain content which is not supposed to be publicly
 accessible. A properly implemented authorization model would ensure that
@@ -84,13 +85,13 @@ blindly accepted. This challenge kind of forces you to reconsider that
 approach.
 
 * First you should obviously solve
-link:miscellaneous.adoc#read-our-privacy-policy[Read our privacy policy].
+xref:part2/miscellaneous.adoc#_read_our_privacy_policy[Read our privacy policy].
 * It is fine to use the mouse cursor to not lose sight of the paragraph
 you are currently reading.
 * If you find some particularly hot sections in the policy you might
 want to melt them together similar to what you might have already
 uncovered in
-link:cryptographic-issues.adoc#apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg[Apply some advanced cryptanalysis to find the real easter egg].
+xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[Apply some advanced cryptanalysis to find the real easter egg].
 
 === Rat out a notorious character hiding in plain sight in the shop
 

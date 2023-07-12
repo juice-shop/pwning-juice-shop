@@ -1,4 +1,5 @@
 = Broken Authentication
+include::../attributes.adoc[]
 
 == Challenges covered in this chapter
 
@@ -140,7 +141,7 @@ Art. 17 GDPR.
 * Trying out the _Request Data Erasure_ functionality might be
 interesting, but cannot help you solve this challenge in real time.
 * If you have solved the challenge
-link:injection.adoc#retrieve-a-list-of-all-user-credentials-via-sql-injection[Retrieve a list of all user credentials via SQL Injection]
+xref:part2/injection.adoc#_retrieve_a_list_of_all_user_credentials_via_sql_injection[Retrieve a list of all user credentials via SQL Injection]
 you might have already retrieved some information about how the Juice
 Shop "deletes" users upon their request.
 * What the Juice Shop does here is totally incompliant with GDPR.
@@ -183,7 +184,7 @@ criminal act.
 === Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 You might have already solved this challenge along with
-link:injection.adoc#log-in-with-the-administrators-user-account[Log in with the administrator's user account]
+xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[Log in with the administrator's user account]
 if you chose not to use SQL Injection. This challenge can only be solved
 if you use the original password of the administrator. If you changed
 the password previously, do not despair: The original password will
@@ -217,7 +218,7 @@ This challenge is about finding the answer to the security question of
 Bjoern's internal user account `bjoern@juice-sh.op`.
 
 * Other than with
-<<reset-the-password-of-bjoerns-owasp-account-via-the-forgot-password-mechanism,his OWASP account>>,
+<<_reset_the_password_of_bjoerns_owasp_account_via_the_forgot_password_mechanism,his OWASP account>>,
 Bjoern was a bit less careless with his choice of security and answer
 to his internal account.
 * Bjoern chose to answer his chosen question truthfully but tried to
@@ -275,6 +276,6 @@ behaves under normal conditions.
 * Make sure you understand how 2FA with TOTP (time-based one-time
 password) works and which part of it is the critically sensitive one.
 * Solving the challenge
-link:injection.adoc#retrieve-a-list-of-all-user-credentials-via-sql-injection[Retrieve a list of all user credentials via SQL Injection]
+xref:part2/injection.adoc#_retrieve_a_list_of_all_user_credentials_via_sql_injection[Retrieve a list of all user credentials via SQL Injection]
 before tackling this one will definitely help. But it will not carry
 you all the way.

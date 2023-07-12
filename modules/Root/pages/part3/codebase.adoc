@@ -1,4 +1,5 @@
 = Codebase 101
+include::../attributes.adoc[]
 
 Jumping head first into any foreign codebase can cause a little
 headache. This section is there to help you find your way through the
@@ -111,12 +112,12 @@ ____
 The Angular components reside inside `frontend/src/app` as a subfolder
 for each individual component. Each component is responsible for one
 screen portion of the application. It consists of the component itself
-(`*.component.ts`) and the HTML <<templates,Template>>
+(`*.component.ts`) and the HTML <<_templates,Template>>
 (`*.component.html`) along with its styles (`*.component.scss`).
 
 image::part3/componentFolders.png[Angular Component folders]
 
-Components must *always* go through one or more <<services,Services>>
+Components must *always* go through one or more <<_services,Services>>
 when communicating with the application backend.
 
 The code snippet below shows the `ContactComponent` which handles the
@@ -250,7 +251,7 @@ controller/viewmodel, and the template represents the view.footnote:3[https://an
 ____
 
 Each screen within the application is defined in a HTML view template
-along with its <<components,Component>> in the subfolders beneath
+along with its <<_components,Component>> in the subfolders beneath
 `frontend/src/app/`. The views are written as HTML using
 https://material.angular.io/[Angular Material] for styling and
 https://github.com/angular/flex-layout[Angular Flex-Layout] for
@@ -335,12 +336,12 @@ All static texts in the user interface are fully internationalized using
 the `ngx-translate` module. Texts coming from the server (e.g. product
 descriptions or server error messages) are always in English.
 
-No hard-coded texts are allowed in any of the <<templates,Templates>> or
-<<components,Components>>. Instead, property keys have to be defined and
+No hard-coded texts are allowed in any of the <<_templates,Templates>> or
+<<_components,Components>>. Instead, property keys have to be defined and
 are usually applied with a `translate` attribute that can be placed in
 most HTML tags. You might have noticed several of these `translate`
 attributes in the `contact.component.html` code snippet from the
-<<templates,Templates>> section.
+<<_templates,Templates>> section.
 
 The different translations are maintained in JSON files in the
 `/frontend/src/assets/i18n` folder. The only file that is allowed to be
@@ -394,10 +395,10 @@ ____
 Routes are defined via the the http://expressjs.com[Express] framework
 and can be handled by any of the following middleware:
 
-* An <<generated-api-endpoints,automatically generated API endpoint>>
+* An <<_generated_api_endpoints,automatically generated API endpoint>>
 for one of the exposed tables from the application's
-<<data-model,Data model>>
-* A <<hand-written-middleware,hand-written middleware>> which
+<<_data_model,Data model>>
+* A <<_hand_written_middleware,hand-written middleware>> which
 encapsulates some business or technical responsibility
 * Some third-party middleware that fulfills a non-functional requirement
 such as
@@ -435,7 +436,7 @@ Apart from the `User` model also the `Product`, `Feedback`,
 Not all HTTP verbs are accepted by every endpoint. Furthermore, some
 endpoints are protected against anonymous access and can only be used by
 an authenticated user. This is described later in section
-<<access-control-on-routes,Access control on routes>>.
+<<_access_control_on_routes,Access control on routes>>.
 
 [,typescript]
 ----
@@ -542,7 +543,7 @@ module.exports = function retrieveBasket () {
 One particular middleware deviating from above approach is `verify.ts`.
 It contains no business functionality. Instead of one function it
 exposes several named functions on challenge verification for
-<<generated-api-endpoints,Generated API endpoints>>, for example:
+<<_generated_api_endpoints,Generated API endpoints>>, for example:
 
 [,typescript]
 ----
@@ -561,9 +562,9 @@ app.use(verify.errorHandlingChallenge())
 app.use(errorhandler())
 ----
 
-Similar to the <<generated-api-endpoints,Generated API endpoints>>, not
+Similar to the <<_generated_api_endpoints,Generated API endpoints>>, not
 all hand-written endpoints can be used anonymously. The upcoming section
-<<access-control-on-routes,Access control on routes>> explains the
+<<_access_control_on_routes,Access control on routes>> explains the
 available authorization checks.
 
 🚨 Unit tests for hand-written routes can be found in the `test/server`
@@ -663,9 +664,9 @@ application, but of course mostly in some broken or flawed way:
 
 * Hashing functions both weak (`hash()`) and relatively strong
 (`hmac()`)
-* <<routes,Route>> authorization via JWT with `denyAll()` and
+* <<_routes,Route>> authorization via JWT with `denyAll()` and
 `isAuthorized()` (see
-<<access-control-on-routes,Access control on routes>>) and
+<<_access_control_on_routes,Access control on routes>>) and
 corresponding grant of permission for a users with `authorize()`
 * HTML sanitization by exposing a (vulnerable) external library as
 function `sanitizeHtml()`
@@ -686,7 +687,7 @@ Shop, as an e-commerce application without storage for its product,
 customer and associated data would not be very realistic. The Juice Shop
 uses light-weight implementations on the database layer to keep it
 runnable as a single "all-inclusive" server which
-link:../part1/running.adoc#run-options[can be deployed in various ways] with
+xref:../part1/running.adoc#_run_options[can be deployed in various ways] with
 ease.
 
 image::part3/architecture-database.png[DB tier focus]

@@ -1,5 +1,5 @@
 = Hosting a CTF event
-
+include::../attributes.adoc[]
 ____
 In computer security, Capture the Flag (CTF) is a computer security
 competition. CTF contests are usually designed to serve as an
@@ -118,18 +118,18 @@ value
 
 Apart from the score-tracking server, each participant must have their
 own instance of OWASP Juice Shop. As explained in the
-link:running.adoc#single-user-restriction[Single-user restriction] section,
+xref:part1/running.adoc#_single_user_restriction[Single-user restriction] section,
 having a shared instance for each team is strongly discouraged, because
 Juice Shop is programmed as a single-user application.
 
 If you want to centrally host Juice Shop instances for any number of CTF
 participants you find more information in section
-link:../appendix/trainers.adoc#hosting-individual-instances-for-multiple-users[Hosting individual instances for multiple users]
+xref:../appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
 of the trainer's guide.
 
 It is absolutely important that all Juice Shop instances participating
 in a CTF use the same
-<<overriding-the-ctfkey,secret key to generate their CTF flag codes>>.
+<<_overriding_the_ctf_key,secret key to generate their CTF flag codes>>.
 The score server must be set up accordingly to accept exactly those flag
 codes for solving the hacking challenges and allocating their score to
 the first team/user that solved it.
@@ -198,7 +198,7 @@ Shop server where the tool will retrieve the existing challenges from
 via the `/api/Challenges` API. Defaults to
 `+https://juice-shop.herokuapp.com+` which always hosts the latest
 official released version of OWASP Juice Shop.
-. **Secret key +++<or>+++URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See [Overriding the `ctf.key`](#overriding-the-ctfkey) for more information.+++</or>+++
+. **Secret key +++<or>+++URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See [Overriding the `ctf.key`](#_overriding_the_ctf_key) for more information.+++</or>+++
 . *URL to country-mapping.yml file?* URL of a mapping configuration
 of challenges to countries, which is only asked when `FBCTF` was
 selected. Defaults to
@@ -350,7 +350,7 @@ to install Docker, download the source code, create containers (for
 able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
 default) and create an admin user and CTF name.
 . Follow the steps 5-8 from the
-<<local-server-setup,Local server setup>> described above.
+<<_local_server_setup,Local server setup>> described above.
 
 ===== Non-production Docker image
 
@@ -360,7 +360,7 @@ default) and create an admin user and CTF name.
 . Execute `docker run --rm -p 8000:8000 ctfd/ctfd:<version>` to run
 {ctfdVersion}
 . Follow the steps 5-8 from the
-<<local-server-setup,Local server setup>> described above
+<<_local_server_setup,Local server setup>> described above
 
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
@@ -453,7 +453,7 @@ HMAC_SHA1(ctfKey, challenge.name)
 
 with `challenge.name` being the `name` column of the `Challenges` table
 in the Juice Shop's underlying database. The `ctfKey` has been described
-in the <<overriding-the-ctfkey,Overriding the `ctf.key`>> section above.
+in the <<_overriding_the_ctf_key,Overriding the `ctf.key`>> section above.
 
 Feel free to use
 https://github.com/juice-shop/juice-shop-ctf/blob/master/lib/generateSql.js#L25[the implementation within `juice-shop-ctf-cli`]

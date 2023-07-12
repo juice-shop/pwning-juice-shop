@@ -1,4 +1,5 @@
 = Cryptographic Issues
+include::../attributes.adoc[]
 
 == Challenges covered in this chapter
 
@@ -49,7 +50,7 @@ coupon code field before checkout.
 The OWASP Juice Shop is _so broken_ that even its convenience features
 (which have nothing to do with the e-commerce use cases) are designed to
 be vulnerable. One of these features is
-link:/part1/challenges.adoc#automatic-saving-and-restoring-hacking-progress[Automatic saving and restoring hacking progress]
+xref:part1/challenges.adoc#_automatic_saving_and_restoring_hacking_progress[Automatic saving and restoring hacking progress]
 after a server crash or a few days pause.
 
 In order to not mess with the _real challenges_ accidentally, the
@@ -67,7 +68,7 @@ choosing such a secret?
 === Apply some advanced cryptanalysis to find the real easter egg
 
 Solving the
-link:broken-access-control.adoc#find-the-hidden-easter-egg[Find the hidden easter egg]
+xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
 challenge was probably no as satisfying as you had hoped. Now it is time
 to tackle the taunt of the developers and hunt down _the real_ easter
 egg. This follow-up challenge is basically about finding a secret URL
@@ -75,7 +76,7 @@ that - when accessed - will reward you with an easter egg that deserves
 the name.
 
 * Make sure you solve
-link:broken-access-control.adoc#find-the-hidden-easter-egg[Find the hidden easter egg]
+xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
 first.
 * You might have to peel through several layers of tough-as-nails
 encryption for this challenge.
@@ -161,6 +162,6 @@ algorithm or library.
 * There are five possible answers and you only need to identify one to
 solve the challenge.
 * Cryptographic functions only used in the
-<<apply-some-advanced-cryptanalysis-to-find-the-real-easter-egg,Apply some advanced cryptanalysis to find the real easter egg>>
+<<_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg,Apply some advanced cryptanalysis to find the real easter egg>>
 challenge _do not count_ as they are only a developer's prank and not
 a serious security problem.

@@ -1,4 +1,5 @@
 = Unvalidated Redirects
+include::../attributes.adoc[]
 
 == Challenges covered in this chapter
 
