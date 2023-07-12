@@ -1,0 +1,1 @@
+Command to build pdf: asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts book.adoc

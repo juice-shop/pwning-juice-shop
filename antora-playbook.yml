@@ -23,3 +23,7 @@ asciidoc:
     nodeVersions: 14.x, 16.x and 18.x
     recommendedNodeVersion: 18.x
     backupSchemaVersion: 1
+
+antora:
+  extensions:
+  - '@antora/lunr-extension'
