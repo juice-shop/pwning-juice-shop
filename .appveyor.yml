@@ -17,6 +17,7 @@ install:
   - 'npx antora -v'
 build_script:
   - 'if exist build rd /Q /S build'
+  - 'npm i @antora/lunr-extension'
   - 'npx antora antora-playbook.yml'
 test: off
 artifacts:
