@@ -414,7 +414,7 @@ ifeval::[{is_ctf} == 0]
 
 | XXE Data Access
 | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server.
-| xref:part2/xxe.adoc#_retrieve_the_content_of_cwindowssystemini_or_etcpasswd_from_the_server[💡]
+| xref:part2/xxe.adoc#_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server[💡]
 
 | XXE DoS
 | Give the server something to chew on for quite a while.
