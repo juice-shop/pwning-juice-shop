@@ -424,9 +424,9 @@ ifeval::[{is_ctf} == 0]
 | Give a devastating zero-star feedback to the store.
 | xref:part2/improper-input-validation.adoc#_give_a_devastating_zero_star_feedback_to_the_store[💡]
 |===
+endif::[]
 
-{% else %}
-
+ifeval::[{is_ctf} == 1]
 |===
 | Name | Description | Hints | Solution
 
