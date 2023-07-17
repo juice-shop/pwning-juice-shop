@@ -46,7 +46,7 @@ libraries or other 3rd party components the application uses internally.
 | ⭐⭐⭐⭐
 |===
 
-=== Overwrite the Legal Information file [[overwrite-the-legal-information-file]]
+=== Overwrite the Legal Information file
 
 ____
 Uploaded files represent a significant risk to applications. The first
