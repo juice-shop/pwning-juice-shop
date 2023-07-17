@@ -91,7 +91,7 @@ regular ``response``s, so that the user will not immediately get the
 coupon when asking for it. This makes the challenge
 xref:../part2/miscellaneous.adoc#_receive_a_coupon_code_from_the_support_chatbot[Receive a coupon code from the support chatbot]
 more interesting. See the
-<<training-data-example,Training data example>> on how to set this up
+<<_training_data_example,Training data example>> on how to set this up
 optimally.
 . `testFunction` - This should be the singular entry in `answers` to a
 singular entry in `utterances` and is only used for testing purposes.
@@ -120,7 +120,7 @@ avoid any such issues, it is recommended to just start with a copy of
 the `botDefaultTrainingData.json` file when definiing your own chatbot
 conversations.
 
-== Training data example [[training-data-example]]
+== Training data example
 
 [,json]
 ----

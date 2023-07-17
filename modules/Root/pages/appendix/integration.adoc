@@ -6,7 +6,7 @@ These allow you to easily integrate Juice Shop tutorials, hints and
 solutions into your own security guides, knowledge bases, testing labs
 etc.
 
-== Challenges API [[challenges-api]]
+== Challenges API
 
 The endpoint `/api/Challenges` on your local Juice Shop instance (i.e.
 http://localhost:3000/api/Challenges) returns information on the
@@ -77,7 +77,7 @@ xref:../part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cl
 The single source of truth for challenges in OWASP Juice Shop is its
 `data/static/challenges.yml` file. It is used during start-up of the
 application to populate the `Challenges` table which is then exposed via
-the <<challenges-api,Challenges API>> endpoint.
+the <<_challenges_api,Challenges API>> endpoint.
 
 Parsing this file directly for integration makes sense when you do not
 rely on changed settings (e.g. hints being turned off) from an

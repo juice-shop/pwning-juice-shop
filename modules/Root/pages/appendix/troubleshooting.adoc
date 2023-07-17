@@ -4,7 +4,7 @@ include::../attributes.adoc[]
 :pp: {plus}{plus}
 
 If (and only if) none of the
-<<common-support-issues,Common support issues>> described below could
+<<_common_support_issues,Common support issues>> described below could
 help resolve your issue, please ask for individual support on our
 https://gitter.im/bkimminich/juice-shop[official Gitter Chat]. If you
 are sure to have found a bug in the Juice Shop itself please
@@ -99,10 +99,10 @@ fixed in a straightforward fashion when they fail:
 If your installation did not even get to the point of running these
 checks _or_ all checks successfully pass with `(OK)` but the application
 still fails to start, please check the
-<<common-support-issues,Common support issues>> for possible hints to
+<<_common_support_issues,Common support issues>> for possible hints to
 solve your issue.
 
-== Common support issues [[common-support-issues]]
+== Common support issues
 
 The following issues have been seen (and solved/mitigated) more than
 once and can hopefully help you to narrow down a solution for your

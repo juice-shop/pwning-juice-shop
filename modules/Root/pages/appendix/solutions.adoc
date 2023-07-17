@@ -2434,7 +2434,7 @@ This vulnerability arises when ExpressJS is using Handlebars as a template engin
 
 == ⭐⭐⭐⭐⭐⭐ Challenges
 
-=== Overwrite the Legal Information file [[overwrite-the-legal-information-file]]
+=== Overwrite the Legal Information file
 
 . Combing through the updates of the
 https://twitter.com/owasp_juiceshop[@owasp_juiceshop] Twitter
@@ -2977,13 +2977,13 @@ tag, which the payload will try to close prematurely with its
 starting `</script>`.
 . To successfully overwrite the file, the Zip Slip vulnerability
 behind the
-<<overwrite-the-legal-information-file,Overwrite the Legal Information file>>
+<<_overwrite_the_legal_information_file,Overwrite the Legal Information file>>
 challenge can be used.
 . The blind part of this challenge is the actual file location in the
 server file system. Trying to create a Zip file with any path trying
 to traverse into `../../assets/public/videos/` will fail. Notice
 that `../../` was sufficient to get to the root folder in
-<<overwrite-the-legal-information-file,Overwrite the Legal Information file>>.
+<<_overwrite_the_legal_information_file,Overwrite the Legal Information file>>.
 . This likely means that there is a deeper directory structure in
 which `assets/` resides.
 . This actual directory structure on the server is created by the

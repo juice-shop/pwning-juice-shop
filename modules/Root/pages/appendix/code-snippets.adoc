@@ -32,7 +32,7 @@ or folders:
 These are equally available when cloning the source code repo, running
 the official Docker image or unpacking an official pre-packaged archive.
 
-== `vuln-code-snippet` marker comments [[vuln-code-snippet-marker-comments]]
+== `vuln-code-snippet` marker comments
 
 All marker comments relevant for the code snippet processing start with
 the `vuln-code-snippet` prefix followed by the type of marker, often
@@ -257,7 +257,7 @@ The structural requirements here are very straightforward, it is rather the cont
 depending on the complexity of the underlying vulnerability.
 
 All fix option files have to be put into the folder `data/static/codefixes` and should have the same
-file type as the original source file with the <<vuln-code-snippet-marker-comments,vulnerability marker>>.
+file type as the original source file with the <<_vuln_code_snippet_marker_comments,vulnerability marker>>.
 
 For each coding challenge exactly one "correct" and two or more "wrong" option files must be provided.
 
@@ -283,7 +283,7 @@ The following additional rules must be adhered to when creating fix option files
 
 * No indentation on the first line of the file
 * No blank line at the end of the file
-* Remove all `vuln-code-snippet` comments in <<vuln-code-snippet-marker-comments,the exact same way>> the code snipper parser will
+* Remove all `vuln-code-snippet` comments in <<_vuln_code_snippet_marker_comments,the exact same way>> the code snipper parser will
 
 The recommended way to get properly formatted code fixing options, is to create one and copy it as many times
 as total fix options should be provided, then performing the necessary changes to create a correct and several wrong
