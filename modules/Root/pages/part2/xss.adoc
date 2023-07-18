@@ -78,7 +78,7 @@ image::part2/xhr-api_requests.png[XHR requests to the backend API]
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`
 or a
-xref:../part1/rules.adoc#_tools_for_http_request_tampering[tool for HTTP request tampering]
+xref:part1/rules.adoc#_tools_for_http_request_tampering[tool for HTTP request tampering]
 to master this challenge.
 
 * A matrix of known data entities and their supported HTTP verbs through
@@ -100,7 +100,7 @@ same vulnerable field
 
 === Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
-In the xref:../introduction/architecture.adoc[Architecture overview] you were
+In the xref:introduction/architecture.adoc[Architecture overview] you were
 told that the Juice Shop uses a modern _Single Page Application_
 frontend. That was not entirely true.
 

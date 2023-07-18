@@ -2,7 +2,7 @@
 include::../attributes.adoc[]
 
 Starting with `v12.9.0`, OWASP Juice Shop offers a new developer-focused challenge for
-some of its existing hacking challenges: Coding challenges. These were xref:../part1/challenges.adoc#_coding_challenges[briefly illustrated in Part 1 of this book]
+some of its existing hacking challenges: Coding challenges. These were xref:part1/challenges.adoc#_coding_challenges[briefly illustrated in Part 1 of this book]
 from a user's perspective. This appendix explains how a coding challenge can be added
 to newly created hacking challenges.
 
@@ -311,7 +311,7 @@ accordingly to prevent confusing differences.
 
 Starting with v13.2.0, the maintenance burden is eased by a utility that detects many (but not all) accidental or
 forgotten code changes in fix option files or the original code snippet that made them deviate from each other. It runs
-automatically as a job of the xref:../part3/contribution.adoc#_cicd_pipeline[CI/CD pipeline] but can also be launched locally
+automatically as a job of the xref:part3/contribution.adoc#_cicd_pipeline[CI/CD pipeline] but can also be launched locally
 with `npm run rsn`.
 
 If no unexpected changes occured to any lines of code in either the original snippet or any corresponding fix option files
@@ -325,7 +325,7 @@ as a list of the affected files and terminate with an error.
 image::appendix/rsn_new-diffs.png[Console output from failed RSN run]
 
 The author of the code change that broke the RSN check can now investigate the reason for the new differences either in the
-xref:../part1/challenges.adoc#_coding_challenges[Coding Challenge dialog of the running application] or by comparing the source code files.
+xref:part1/challenges.adoc#_coding_challenges[Coding Challenge dialog of the running application] or by comparing the source code files.
 After either reverting any accidental changes in e.g. indentation or simply re-applying refactorings (e.g. parameters or functions being
 renamed) to the missed piece of code, running `npm run rsn:update` will lock the new state of
 differences in place.

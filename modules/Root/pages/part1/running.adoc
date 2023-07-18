@@ -9,7 +9,7 @@ application process itself, and they are based on
 
 * a 30-day average
 process CPU and RAM usage of the official public demo instance running `v14.0.1` of Juice Shop
-* a training with ~30 participants on a xref:../appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[MultiJuicer] cluster hosted on OpenShift with Juice Shop `v14.0.1`
+* a training with ~30 participants on a xref:appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[MultiJuicer] cluster hosted on OpenShift with Juice Shop `v14.0.1`
 
 Please note that any additional resources needed by your environment (e.g. Docker or Vagrant) come on top.
 
@@ -303,5 +303,5 @@ _pair-hacking_-style.
 
 If you want to centrally host Juice Shop instances for multiple users
 you find more information in section
-xref:../appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
+xref:appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
 of the trainer's guide.

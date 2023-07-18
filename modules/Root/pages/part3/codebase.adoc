@@ -655,7 +655,7 @@ exports.sendNotification = function (challenge, isRestore) {
 
 It also offers some basic `String` and `Date` utilities along with data
 (un-)wrapper functions and a method for the synchronous file download
-used during xref:../part1/customization.adoc[Customization].
+used during xref:part1/customization.adoc[Customization].
 
 ==== security features
 
@@ -687,7 +687,7 @@ Shop, as an e-commerce application without storage for its product,
 customer and associated data would not be very realistic. The Juice Shop
 uses light-weight implementations on the database layer to keep it
 runnable as a single "all-inclusive" server which
-xref:../part1/running.adoc#_run_options[can be deployed in various ways] with
+xref:part1/running.adoc#_run_options[can be deployed in various ways] with
 ease.
 
 image::part3/architecture-database.png[DB tier focus]
@@ -701,7 +701,7 @@ the file system of the Node.js server. For ease of use and more
 flexibility the relational mapping framework
 http://docs.sequelizejs.com[Sequelize] is used to actually access the
 data through a querying API. Sometime plain SQL is used as well, and of
-course in an unsafe way that allows xref:../part2/injection.adoc[Injection].
+course in an unsafe way that allows xref:part2/injection.adoc[Injection].
 
 ==== Data model
 
@@ -792,7 +792,7 @@ For the default `Users` along with their `SecurityAnswers`, `Feedbacks`, `Addres
 
 As the contents of
 the `Products` and `Memories` table as well as the non-relational `reviews` collection
-xref:../part1/customization.adoc[can be customized], they are populated based on
+xref:part1/customization.adoc[can be customized], they are populated based on
 the active configuration file. By default, this is `config/default.yml`.
 
 The data in the `Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically

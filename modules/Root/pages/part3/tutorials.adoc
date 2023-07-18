@@ -1,7 +1,7 @@
 = Hacking Instructor tutorial scripts
 include::../attributes.adoc[]
 
-With the xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
+With the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
 the OWASP Juice Shop offers very beginner-friendly tutorial scripts that
 guide the user through some of the challenges.
 
@@ -194,7 +194,7 @@ the tutorial will be automatically wired into the _Score Board_.
 == Reference example
 
 The following code snippet shows the entire tutorial script for the
-xref:../part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin]
+xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin]
 challenge. As it uses most available helpers, two custom
 `resolved`-functions as well as Markdown to style some hint texts, it is
 the perfect reference for your own scripts:
