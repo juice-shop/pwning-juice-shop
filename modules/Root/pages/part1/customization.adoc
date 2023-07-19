@@ -166,7 +166,7 @@ within the application.
 |
 
 | <<_promotion_subsection,`promotion` subsection>>
-| Defines the attributes required for the `/promotion` screen where a marketing video with subtitles is rendered that hosts the xref:../part2/xss.adoc#_embed_an_xss_payload_into_our_promo_video[XSS Tier 6] challenge.
+| Defines the attributes required for the `/promotion` screen where a marketing video with subtitles is rendered that hosts the xref:part2/xss.adoc#_embed_an_xss_payload_into_our_promo_video[XSS Tier 6] challenge.
 |
 
 | <<_eastereggplanet_subsection,`easterEggPlanet` subsection>>
@@ -195,7 +195,7 @@ _Support Chat_.
 | `"Nice to meet you <customer-name>, I'm <bot-name>"`
 
 | `trainingData`
-| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:../appendix/chatbot.adoc[training data] for the chat bot.
+| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:appendix/chatbot.adoc[training data] for the chat bot.
 | `'botDefaultTrainingData.json'`
 
 | `defaultResponse`
@@ -338,7 +338,7 @@ https://securitytxt.org/ Internet draft.
 
 Defines the attributes required for the `/promotion` screen where a
 marketing video with subtitles is rendered that hosts the
-xref:../part2/xss.adoc#_embed_an_xss_payload_into_our_promo_video[XSS Tier 6]
+xref:part2/xss.adoc#_embed_an_xss_payload_into_our_promo_video[XSS Tier 6]
 challenge.
 
 |===
@@ -426,7 +426,7 @@ Juice Shop.
 | `true`
 
 | `codingChallengesEnabled`
-| Shows or hides the associated xref:../part1/challenges.adoc#_coding_challenges[Coding challenge] button for each challenge (if available) on the score board. Can be `never`, `solved` (to show but disable the corresponding button until the hacking challenge is solved) or `always`.
+| Shows or hides the associated xref:part1/challenges.adoc#_coding_challenges[Coding challenge] button for each challenge (if available) on the score board. Can be `never`, `solved` (to show but disable the corresponding button until the hacking challenge is solved) or `always`.
 | `solved`
 
 | `restrictToTutorialsFirst`
@@ -434,11 +434,11 @@ Juice Shop.
 | `false`
 
 | `overwriteUrlForProductTamperingChallenge`
-| URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the xref:../part2/broken-access-control.adoc#_change_the_href_of_the_link_within_the_o_saft_product_description[Product Tampering] challenge.
+| URL that should replace the original URL defined in `urlForProductTamperingChallenge` for the xref:part2/broken-access-control.adoc#_change_the_href_of_the_link_within_the_o_saft_product_description[Product Tampering] challenge.
 | `+https://owasp.slack.com+`
 
 | `xssBonusPayload`
-| This XSS payload is expected during the xref:../part2/xss.adoc#_use_the_bonus_payload_in_the_dom_xss_challenge[Bonus Payload] challenge.
+| This XSS payload is expected during the xref:part2/xss.adoc#_use_the_bonus_payload_in_the_dom_xss_challenge[Bonus Payload] challenge.
 | `+'<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'+`
 
 | `safetyOverride`
@@ -453,14 +453,14 @@ Juice Shop.
 === `hackingInstructor` section
 
 Allows enabling and customizing the
-xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial
+xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial
 mode.
 
 |===
 | Property | Description | Default
 
 | `isEnabled`
-| Shows or hides the xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor] links from the _Score Board_ and _Welcome Banner_.
+| Shows or hides the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] links from the _Score Board_ and _Welcome Banner_.
 | `true`
 
 | `avatarImage`
@@ -517,27 +517,27 @@ list* of default products.
 | `null`
 
 | `urlForProductTamperingChallenge`
-| Sets the original link of the product which is the target for the xref:../part2/broken-access-control.adoc#_change_the_href_of_the_link_within_the_o_saft_product_description[Product Tampering] challenge. Overrides `deletedDate` with `null`.
+| Sets the original link of the product which is the target for the xref:part2/broken-access-control.adoc#_change_the_href_of_the_link_within_the_o_saft_product_description[Product Tampering] challenge. Overrides `deletedDate` with `null`.
 | must be defined on exactly one product
 |
 
 | `useForChristmasSpecialChallenge`
-| Marks a product as the target for xref:../part2/injection.adoc#_order_the_christmas_special_offer_of_2014[the "christmas special" challenge]. Overrides `deletedDate` with `2014-12-27`.
+| Marks a product as the target for xref:part2/injection.adoc#_order_the_christmas_special_offer_of_2014[the "christmas special" challenge]. Overrides `deletedDate` with `2014-12-27`.
 | must be `true` on exactly one product
 |
 
 | `fileForRetrieveBlueprintChallenge`
-| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a file download to that folder and then use as the target for the xref:../part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ _To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image's `Exif` metadata._
+| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a file download to that folder and then use as the target for the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ _To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image's `Exif` metadata._
 | must be defined on exactly one product
 | `JuiceShop.stl` on _OWASP Juice Shop Logo (3D-printed)_
 
 | `exifForBlueprintChallenge`
-| List of keywords that are supposed to appear as EXIF properties on the image of the xref:../part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge product. ℹ️ _Will be used in automatic testing for presence of the EXIF metadata but does not have any effect at runtime._
+| List of keywords that are supposed to appear as EXIF properties on the image of the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge product. ℹ️ _Will be used in automatic testing for presence of the EXIF metadata but does not have any effect at runtime._
 | must be defined on the product with `fileForRetrieveBlueprintChallenge`
 | `- OpenSCAD` on _OWASP Juice Shop Logo (3D-printed)_
 
 | `keywordsForPastebinDataLeakChallenge`
-| List of keywords which are all mandatory to mention in a feedback or complaint to solve the xref:../part2/sensitive-data-exposure.adoc#_identify_an_unsafe_product_that_was_removed_from_the_shop_and_inform_the_shop_which_ingredients_are_dangerous[Leaked Unsafe Product] challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative._
+| List of keywords which are all mandatory to mention in a feedback or complaint to solve the xref:part2/sensitive-data-exposure.adoc#_identify_an_unsafe_product_that_was_removed_from_the_shop_and_inform_the_shop_which_ingredients_are_dangerous[Leaked Unsafe Product] challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative._
 | must be defined on exactly one product
 |
 
@@ -567,7 +567,7 @@ Sub-list which adds reviews to a product.
 
 List which, when specified, replaces all default _Photo Wall_ entries
 except a hard-coded one needed to solve the
-xref:../part2/improper-input-validation.adoc#_retrieve_the_photo_of_bjoerns_cat_in_melee_combat_mode[Retrieve the photo of Bjoern's cat in "melee combat-mode"]
+xref:part2/improper-input-validation.adoc#_retrieve_the_photo_of_bjoerns_cat_in_melee_combat_mode[Retrieve the photo of Bjoern's cat in "melee combat-mode"]
 challenge.
 
 |===
@@ -586,19 +586,19 @@ challenge.
 | mandatory _(exceptions see below)_
 
 | `geoStalkingMetaSecurityQuestion`
-| ID of the security question associated with the xref:../part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[Meta Geo Stalking] challenge.
+| ID of the security question associated with the xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[Meta Geo Stalking] challenge.
 | must be defined on exactly one memory together with `geoStalkingMetaSecurityAnswer`
 
 | `geoStalkingMetaSecurityAnswer`
-| Answer to the security question associated with the xref:../part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[Meta Geo Stalking] challenge. Should be retrievable via the meta data of the assosicated image.
+| Answer to the security question associated with the xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[Meta Geo Stalking] challenge. Should be retrievable via the meta data of the assosicated image.
 | must be defined on exactly one memory together with `geoStalkingMetaSecurityQuestion`
 
 | `geoStalkingVisualSecurityQuestion`
-| ID of the security question associated with the xref:../part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[Visual Geo Stalking] challenge.
+| ID of the security question associated with the xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[Visual Geo Stalking] challenge.
 | must be defined on exactly one memory together with `geoStalkingVisualSecurityAnswer`
 
 | `geoStalkingVisualSecurityAnswer`
-| Answer to the security question associated with the xref:../part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[Visual Geo Stalking] challenge. Should be retrievable via some (not too obvious) visual clue in the assosicated image.
+| Answer to the security question associated with the xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[Visual Geo Stalking] challenge. Should be retrievable via some (not too obvious) visual clue in the assosicated image.
 | must be defined on exactly one memory together with `geoStalkingVisualSecurityQuestion`
 |===
 
@@ -910,7 +910,7 @@ always be shown in English.
 * Configurations (except `default.yml`) do not support translation of
 custom product names and descriptions as of {juiceShopVersion}.
 * Several
-xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
+xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
 scripts depend on product inventory and product reviews that might not
 exist in the required form when you overwrote the default `products`
 list. Consider turning off the tutorials by setting

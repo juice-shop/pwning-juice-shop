@@ -40,7 +40,7 @@ If not deliberately turned off (see xref:part1/customization.adoc[Customization]
 you can hover over each _unsolved_ label to see a hint for that
 challenge. If a "book" icon is also displayed within the label, you can
 click on it to be redirected to the corresponding hints section in
-xref:../part2/README.adoc[Part 2] of this book.
+xref:part2/README.adoc[Part 2] of this book.
 
 === Challenge Filters
 
@@ -71,7 +71,7 @@ vulnerabilities but promoting good (security) practices
 which are disabled on Docker/Heroku by default due to RCE or other
 risks
 * *Good for Demos* highlights
-xref:../appendix/trainers.adoc#_challenges_for_demos[challenges which are suitable for live demos]
+xref:appendix/trainers.adoc#_challenges_for_demos[challenges which are suitable for live demos]
 or awareness trainings
 * *Prerequisite* marks challenges which need to be solved before one
 or more other challenges can be (realistically) solved
@@ -206,7 +206,7 @@ image::part1/JuicyBot_MedicalMask.png[Juicy Bot the mascot of the Hacking Instru
 The built-in _Hacking Instructor_ offers tutorials for some Juice Shop
 challenges. By default, the welcome banner shown upon first launch of
 the application has a 🎓-button which will help you
-xref:../part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[Find the carefully hidden 'Score Board' page].
+xref:part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[Find the carefully hidden 'Score Board' page].
 
 image::part1/welcome-banner.png[Welcome Banner]
 
@@ -234,7 +234,7 @@ image::part1/hacking-instructor_3.png[Hacking Instructor reports successful solu
 It cannot offer a tutorial for _every challenge_ as some are too complex
 or require too many steps outside the application. In Part III you can
 learn more about how to write
-xref:../part3/tutorials.adoc[Hacking Instructor tutorial scripts].
+xref:part3/tutorials.adoc[Hacking Instructor tutorial scripts].
 
 === Tutorial mode
 

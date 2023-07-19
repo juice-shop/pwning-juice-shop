@@ -22,4 +22,4 @@ https://gitter.im/bkimminich/juice-shop[ask for help in the community chat]
 or by
 https://github.com/juice-shop/juice-shop/issues[opening a GitHub issue]!
 Please just make sure that you flipped through
-xref:../appendix/troubleshooting.adoc[the appendix on troubleshooting] first.
+xref:appendix/troubleshooting.adoc[the appendix on troubleshooting] first.

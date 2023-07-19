@@ -6,7 +6,7 @@ These allow you to easily integrate Juice Shop tutorials, hints and
 solutions into your own security guides, knowledge bases, testing labs
 etc.
 
-== Challenges API [[challenges-api]]
+== Challenges API
 
 The endpoint `/api/Challenges` on your local Juice Shop instance (i.e.
 http://localhost:3000/api/Challenges) returns information on the
@@ -70,18 +70,18 @@ of requests._
 * The
 https://www.npmjs.com/package/juice-shop-ctf-cli[Juice Shop CTF Extension]
 calls the API of a specified Juice Shop instance
-xref:../part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the challenges to later import into a CTF score server].
+xref:part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the challenges to later import into a CTF score server].
 
 == Challenge declaration file
 
 The single source of truth for challenges in OWASP Juice Shop is its
 `data/static/challenges.yml` file. It is used during start-up of the
 application to populate the `Challenges` table which is then exposed via
-the <<challenges-api,Challenges API>> endpoint.
+the <<_challenges_api,Challenges API>> endpoint.
 
 Parsing this file directly for integration makes sense when you do not
 rely on changed settings (e.g. hints being turned off) from an
-individual xref:../part1/customization.adoc#customization[Customization]
+individual xref:part1/customization.adoc#customization[Customization]
 and/or you do not have a running Juice Shop instance available in the
 first place.
 
@@ -125,7 +125,7 @@ for the next version to be released (`develop` branch)
 |
 | https://pwning.owasp-juice.shop/appendix/solutions.html#_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/appendix/solutions.html#_perform_a_dom_xss_attack
 
-| Direct link to a xref:../part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
+| Direct link to a xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
 | `/#/hacking-instructor?challenge=<name>`
 | Only for challenges where `tutorial` is defined.
 | http://localhost:3000/#/hacking-instructor?challenge=Score%20Board or http://preview.owasp-juice.shop/#/hacking-instructor?challenge=DOM%20XSS
@@ -213,7 +213,7 @@ endpoints `/snippets` and `/snippets/<challengeKey>` which can be used
 to retrieve the actual vulnerable code snippets for many of the
 challenges. These are described in the
 xref:appendix/code-snippets.adoc#_rest_endpoints[REST endpoints] section of the
-xref:appendix/code-snippets.adoc[Vulnerable code snippets] appendix.
+xref:appendix/code-snippets.adoc#_coding_challenges[Vulnerable code snippets] appendix.
 
 === API integration example
 
@@ -223,4 +223,4 @@ retrieve a code snippet when such a button in clicked.
 * The
 https://www.npmjs.com/package/juice-shop-ctf-cli[Juice Shop CTF Extension]
 calls the API of a specified Juice Shop instance
-xref:../part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the snippets to later offer them as a hint on a CTF score server].
+xref:part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the snippets to later offer them as a hint on a CTF score server].

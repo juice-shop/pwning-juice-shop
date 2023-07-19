@@ -1,5 +1,6 @@
 = Hosting a CTF event
 include::../attributes.adoc[]
+
 ____
 In computer security, Capture the Flag (CTF) is a computer security
 competition. CTF contests are usually designed to serve as an
@@ -124,7 +125,7 @@ Juice Shop is programmed as a single-user application.
 
 If you want to centrally host Juice Shop instances for any number of CTF
 participants you find more information in section
-xref:../appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
+xref:appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
 of the trainer's guide.
 
 It is absolutely important that all Juice Shop instances participating

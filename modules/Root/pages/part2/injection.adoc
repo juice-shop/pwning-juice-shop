@@ -1,5 +1,6 @@
 = Injection
 include::../attributes.adoc[]
+
 ____
 Injection flaws allow attackers to relay malicious code through an
 application to another system. These attacks include calls to the
@@ -270,7 +271,7 @@ or other services that rely on the affected computer.footnote:3[https://www.us-c
 ____
 
 * As stated in the
-xref:../introduction/architecture.adoc[Architecture overview], OWASP Juice
+xref:introduction/architecture.adoc[Architecture overview], OWASP Juice
 Shop uses a MongoDB derivate as its NoSQL database.
 * The categorization into the _NoSQL Injection_ category totally gives
 away the expected attack vector for this challenge. Trying any others

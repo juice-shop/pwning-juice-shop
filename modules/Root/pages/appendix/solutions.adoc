@@ -83,7 +83,7 @@ metrics of the Juice Shop and solve this challenge
 
 === Close multiple "Challenge solved"-notifications in one go
 
-. Read the xref:../part1/challenges.adoc#_success_notifications[Success Notifications] section
+. Read the xref:part1/challenges.adoc#_success_notifications[Success Notifications] section
 . It will explain that `Shift`-clicking the _X_-button on any "Challenge solved"-notification will close all open notifications of this kind
 . Solve any other challenge (or multiple) and then `Shift`-click the _X_-button on it to solve this challenge
 
@@ -868,7 +868,7 @@ pet cat.
 image::appendix/zaya_window.jpg[Zaya at window]
 
 Retrieving another photo of his cat is the subject of the
-xref:../part2/improper-input-validation.adoc#_retrieve_the_photo_of_bjoerns_cat_in_melee_combat_mode[Retrieve the photo of Bjoern's cat in "melee combat-mode"]
+xref:part2/improper-input-validation.adoc#_retrieve_the_photo_of_bjoerns_cat_in_melee_combat_mode[Retrieve the photo of Bjoern's cat in "melee combat-mode"]
 challenge. The corresponding image caption "😼 #zatschi
 #whoneedsfourlegs" also leaks the nickname "Zatschi" of the pet - which
 is cute, but (intentionally) not very helpful to find out her real name,
@@ -1037,14 +1037,14 @@ any related challenges which will bring the exposed `/ftp` folder to
 your attention.
 . Visit http://localhost:3000/ftp and notice the file
 `incident-support.kdbx` which is needed for
-xref:../part2/security-misconfiguration.adoc#_log_in_with_the_support_teams_original_user_credentials[Log in with the support team's original user credentials]
+xref:part2/security-misconfiguration.adoc#_log_in_with_the_support_teams_original_user_credentials[Log in with the support team's original user credentials]
 and indicates that some support team is performing its duties from
 the public Internet and possibly with VPN access.
 . Guess luckily or run a brute force attack with e.g.
 https://github.com/zaproxy/zap-extensions/tree/beta/src/org/zaproxy/zap/extension/bruteforce[OWASP ZAPs DirBuster plugin]
 for a possibly exposed directory containing the log files.
 . Following
-xref:../part2/sensitive-data-exposure.adoc#_gain_access_to_any_access_log_file_of_the_server[the hint to drill down deeper than one level],
+xref:part2/sensitive-data-exposure.adoc#_gain_access_to_any_access_log_file_of_the_server[the hint to drill down deeper than one level],
 you will at some point end up with
 http://localhost:3000/support/logs.
 . Inside you will find at least one `access.log` of the current day.
@@ -1592,7 +1592,7 @@ like https://retirejs.github.io/[Retire.js] or a CLI tool like
 https://docs.npmjs.com/cli/audit/[npm-audit] that comes with Node.js, makes it rather easy to identify it.
 
 . Solve
-xref:../part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file]
+xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file]
 . Checking the dependencies in `package.json.bak` for known
 vulnerabilities online will give you a match (at least) for
  ** `sanitize-html`: Sanitization of HTML strings is not applied
@@ -2003,7 +2003,7 @@ challenge. majQa'!
 Instead of expanding your brute force pattern (which is not a very
 obvious decision to make) you can more easily find the solution to this
 challenge by investigating which languages are supported in the Juice
-Shop and how xref:../part3/translation.adoc[the translations] are managed.
+Shop and how xref:part3/translation.adoc[the translations] are managed.
 This will quickly bring you over to
 https://crowdin.com/project/owasp-juice-shop which immediately
 spoilers _Klingon_ as a supported language. Hovering over the
@@ -2434,7 +2434,7 @@ This vulnerability arises when ExpressJS is using Handlebars as a template engin
 
 == ⭐⭐⭐⭐⭐⭐ Challenges
 
-=== Overwrite the Legal Information file [[overwrite-the-legal-information-file]]
+=== Overwrite the Legal Information file
 
 . Combing through the updates of the
 https://twitter.com/owasp_juiceshop[@owasp_juiceshop] Twitter
@@ -2977,13 +2977,13 @@ tag, which the payload will try to close prematurely with its
 starting `</script>`.
 . To successfully overwrite the file, the Zip Slip vulnerability
 behind the
-<<overwrite-the-legal-information-file,Overwrite the Legal Information file>>
+<<_overwrite_the_legal_information_file,Overwrite the Legal Information file>>
 challenge can be used.
 . The blind part of this challenge is the actual file location in the
 server file system. Trying to create a Zip file with any path trying
 to traverse into `../../assets/public/videos/` will fail. Notice
 that `../../` was sufficient to get to the root folder in
-<<overwrite-the-legal-information-file,Overwrite the Legal Information file>>.
+<<_overwrite_the_legal_information_file,Overwrite the Legal Information file>>.
 . This likely means that there is a deeper directory structure in
 which `assets/` resides.
 . This actual directory structure on the server is created by the
