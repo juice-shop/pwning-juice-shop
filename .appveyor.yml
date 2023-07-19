@@ -16,12 +16,12 @@ install:
   - 'node --version && npm --version'
   - 'npx antora -v'
 build_script:
-  - 'if exist build rd /Q /S build'
+  - 'if exist docs rd /Q /S docs'
   - 'npm i @antora/lunr-extension'
   - 'npx antora antora-playbook.yml'
 test: off
 artifacts:
-  - path: 'build'
+  - path: 'docs'
 deploy:
   provider: FTP
   protocol: sftp
@@ -30,7 +30,7 @@ deploy:
   password:
     secure: Vu/o5fi8cCRsc9VmD4B/Xg==
   folder: pwning-juice-shop/antora
-  application: build.zip
+  application: docs.zip
   on:
     branch: antora-migration
 notifications:
