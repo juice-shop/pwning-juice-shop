@@ -1,4 +1,4 @@
-= Customization
+= Customization[[_customization]]
 include::../attributes.adoc[]
 
 One of the core usage scenarios for OWASP Juice Shop is in employee
@@ -442,7 +442,7 @@ Juice Shop.
 | `+'<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'+`
 
 | `safetyOverride`
-| Enables all xref:challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. ☠️ *Use at your own risk!*
+| Enables all xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. ☠️ *Use at your own risk!*
 | `false`
 
 | `showFeedbackButtons`
@@ -870,7 +870,7 @@ situations:
 * https://github.com/juice-shop/juice-shop/blob/master/config/ctf.yml[CTF-mode]:
 Keeps the Juice Shop in its default layout but disabled hints while
 enabling CTF flag codes in the _"challenge solved"_-notifications.
-Refer to xref:part1/ctf.adoc[Hosting a CTF event] to learn more about running a
+Refer to xref:part1/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] to learn more about running a
 CTF-event with OWASP Juice Shop. 🚩
 * https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml[Quiet mode]:
 Keeps the Juice Shop in its default layout but hides all _"challenge

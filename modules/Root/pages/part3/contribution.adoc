@@ -21,7 +21,7 @@ processes when contributing to the OWASP Juice Shop project.
 
 If you are new to application development - particularly with Angular
 and Express.js - it is recommended to read the
-xref:part3/codebase.adoc[Codebase 101] to get an overview what belongs where. It
+xref:part3/codebase.adoc#_codebase_101[Codebase 101] to get an overview what belongs where. It
 will lower the entry barrier for you significantly.
 
 == Version control

@@ -44,7 +44,7 @@ This "challenge" is nothing more than an opportunity to learn about a convenienc
 multiple "Challenge solved"-notifications at once.
 
 * This challenge is most easily solvable immediately xref:part1/running.adoc#_self_healing_feature[after a server restart]
-* You can find all the information you need to solve this challenge in the xref:part1/challenges.adoc[Challenge tracking] chapter
+* You can find all the information you need to solve this challenge in the xref:part1/challenges.adoc#_challenge_tracking[Challenge tracking] chapter
 * Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature
 
 === Read our privacy policy
@@ -87,8 +87,8 @@ challenge for you
 === Find the carefully hidden 'Score Board' page
 
 This challenge was already covered in
-xref:part2/score-board.adoc[Finding the Score Board] at the beginning of
-xref:part2/README.adoc[Part II - Challenge hunting].
+xref:part2/score-board.adoc#_finding_the_score_board[Finding the Score Board] at the beginning of
+xref:part2/README.adoc#_challenge_hunting[Part II - Challenge hunting].
 
 === Behave like any "white hat" should before getting into the action
 

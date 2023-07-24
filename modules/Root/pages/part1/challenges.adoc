@@ -1,4 +1,4 @@
-= Challenge tracking
+= Challenge tracking[[_challenge_tracking]]
 include::../attributes.adoc[]
 
 == The Score Board
@@ -110,7 +110,7 @@ Depending on your application configuration, each challenge notification
 might also show a 🏁 symbol with a character sequence next to it. If you
 are doing a hacking session just on your own, you can completely ignore
 this flag. The code is only relevant if you are participating in a CTF
-event. Please refer to chapter xref:part1/ctf.adoc[Hosting a CTF event] for more
+event. Please refer to chapter xref:part1/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] for more
 information this topic.
 
 image::part1/notification_with_flag.png["Challenge solved!" notification with flag code]
