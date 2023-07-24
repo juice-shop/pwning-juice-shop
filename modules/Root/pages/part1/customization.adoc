@@ -460,7 +460,7 @@ mode.
 | Property | Description | Default
 
 | `isEnabled`
-| Shows or hides the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] links from the _Score Board_ and _Welcome Banner_.
+| Shows or hides the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] links from the __Score Board__ and __Welcome Banner__.
 | `true`
 
 | `avatarImage`
@@ -527,17 +527,17 @@ list* of default products.
 |
 
 | `fileForRetrieveBlueprintChallenge`
-| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of a file download to that folder and then use as the target for the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ _To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image's `Exif` metadata._
+| Filename in `frontend/dist/frontend/assets/public/images/products` __or__ URL of a file download to that folder and then use as the target for the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server.  ℹ️ __To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image's `Exif` metadata.__
 | must be defined on exactly one product
 | `JuiceShop.stl` on _OWASP Juice Shop Logo (3D-printed)_
 
 | `exifForBlueprintChallenge`
-| List of keywords that are supposed to appear as EXIF properties on the image of the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge product. ℹ️ _Will be used in automatic testing for presence of the EXIF metadata but does not have any effect at runtime._
+| List of keywords that are supposed to appear as EXIF properties on the image of the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge product. ℹ️ __Will be used in automatic testing for presence of the EXIF metadata but does not have any effect at runtime.__
 | must be defined on the product with `fileForRetrieveBlueprintChallenge`
 | `- OpenSCAD` on _OWASP Juice Shop Logo (3D-printed)_
 
 | `keywordsForPastebinDataLeakChallenge`
-| List of keywords which are all mandatory to mention in a feedback or complaint to solve the xref:part2/sensitive-data-exposure.adoc#_identify_an_unsafe_product_that_was_removed_from_the_shop_and_inform_the_shop_which_ingredients_are_dangerous[Leaked Unsafe Product] challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ _To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative._
+| List of keywords which are all mandatory to mention in a feedback or complaint to solve the xref:part2/sensitive-data-exposure.adoc#_identify_an_unsafe_product_that_was_removed_from_the_shop_and_inform_the_shop_which_ingredients_are_dangerous[Leaked Unsafe Product] challenge. Overrides `deletedDate` with `2019-02-1`. ℹ️ __To make this challenge realistically solvable, provide the keywords on e.g. PasteBin in an obscured way that works well with the "dangerous ingredients of an unsafe product" narrative.__
 | must be defined on exactly one product
 |
 
@@ -878,7 +878,7 @@ solved"_-notifications, GitHub ribbon and challenge hints. 🔇
 * https://github.com/juice-shop/juice-shop/blob/master/config/tutorial.yml[Tutorial mode]:
 Restricts the user to first solve all challenges with
 xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorials
-before the entire _Score Board_ gets unlocked and filterable. 🏫
+before the entire __Score Board__ gets unlocked and filterable. 🏫
 Hidden challenges can still be solved and users will receive
 corresponding success notifications!
 * https://github.com/juice-shop/juice-shop/blob/master/config/unsafe.yml[Unsafe mode]:
@@ -910,7 +910,7 @@ always be shown in English.
 * Configurations (except `default.yml`) do not support translation of
 custom product names and descriptions as of {juiceShopVersion}.
 * Several
-xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
+xref:part1/challenges.adoc#hacking-instructor[Hacking Instructor]
 scripts depend on product inventory and product reviews that might not
 exist in the required form when you overwrote the default `products`
 list. Consider turning off the tutorials by setting

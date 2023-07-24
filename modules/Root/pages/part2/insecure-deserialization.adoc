@@ -79,8 +79,8 @@ of the application against a very specific DoS attack vector.
 xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]
 challenge (which accepted nothing but NoSQL Injection as a solution)
 this challenge will only accept proper RCE as a solution. It cannot be
-solved by simply hammering the server with requests. _That_ would
-probably just _kill_ your server instance.
+solved by simply hammering the server with requests. __That__ would
+probably just __kill__ your server instance.
 
 === Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 

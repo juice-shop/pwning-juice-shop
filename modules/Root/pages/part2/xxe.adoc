@@ -86,7 +86,7 @@ away the solution for free.
 
 Similar to
 xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]
-this challenge is about performing a stripped-down _denial-of-service_
+this challenge is about performing a stripped-down __denial-of-service__
 attack. But this one is going against an entirely different leverage
 point.
 

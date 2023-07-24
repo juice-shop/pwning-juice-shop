@@ -188,7 +188,7 @@ xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[Log in wi
 if you chose not to use SQL Injection. This challenge can only be solved
 if you use the original password of the administrator. If you changed
 the password previously, do not despair: The original password will
-_always_ be accepted to make sure you can solve this challenge.
+__always__ be accepted to make sure you can solve this challenge.
 
 * Guessing might work just fine.
 * If you harvested the admin's password hash, you can try to attack
