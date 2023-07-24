@@ -102,7 +102,7 @@ runner.
 ____
 A _component_ controls a patch of screen called a _view_.
 
-[...]
+pass:[[...]]
 
 You define a component's application logic--what it does to support the
 view--inside a class. The class interacts with the view through an API
