@@ -75,7 +75,7 @@ MultiJuicer comes with a custom-built load balancer. It allows every
 participant (or a CTF team) to use the same URL, but their traffic will
 always be sent to their own personal instance.
 
-image::appendix/multi-juicer_high-level-architecture.svg[MultiJuicer high level architecture]
+image::appendix/multi-juicer_high-level-architecture.png[MultiJuicer high level architecture]
 
 Registration at MultiJuicer is very straightforward for the users/teams.
 Messing with other instances is prevented by assigning a passcode to

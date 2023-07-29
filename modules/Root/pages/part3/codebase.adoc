@@ -1,4 +1,4 @@
-= Codebase 101
+= Codebase 101[[_codebase_101]]
 include::../attributes.adoc[]
 
 Jumping head first into any foreign codebase can cause a little
@@ -102,7 +102,7 @@ runner.
 ____
 A _component_ controls a patch of screen called a _view_.
 
-[...]
+pass:[[...]]
 
 You define a component's application logic--what it does to support the
 view--inside a class. The class interacts with the view through an API
@@ -353,7 +353,7 @@ this happens behind the scenes in a distinct branch `l10n_develop` which
 will be manually merged back into `develop` on a regular basis.
 
 To learn about the actual translation process please refer to the
-chapter xref:part3/translation.adoc[Helping with translations].
+chapter xref:part3/translation.adoc#_healping_with_translations[Helping with translations].
 
 === Client-side code compilation
 
@@ -655,7 +655,7 @@ exports.sendNotification = function (challenge, isRestore) {
 
 It also offers some basic `String` and `Date` utilities along with data
 (un-)wrapper functions and a method for the synchronous file download
-used during xref:part1/customization.adoc[Customization].
+used during xref:part1/customization.adoc#_customization[Customization].
 
 ==== security features
 
@@ -701,7 +701,7 @@ the file system of the Node.js server. For ease of use and more
 flexibility the relational mapping framework
 http://docs.sequelizejs.com[Sequelize] is used to actually access the
 data through a querying API. Sometime plain SQL is used as well, and of
-course in an unsafe way that allows xref:part2/injection.adoc[Injection].
+course in an unsafe way that allows xref:part2/injection.adoc#_injection[Injection].
 
 ==== Data model
 
@@ -792,7 +792,7 @@ For the default `Users` along with their `SecurityAnswers`, `Feedbacks`, `Addres
 
 As the contents of
 the `Products` and `Memories` table as well as the non-relational `reviews` collection
-xref:part1/customization.adoc[can be customized], they are populated based on
+xref:part1/customization.adoc#_customization[can be customized], they are populated based on
 the active configuration file. By default, this is `config/default.yml`.
 
 The data in the `Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically

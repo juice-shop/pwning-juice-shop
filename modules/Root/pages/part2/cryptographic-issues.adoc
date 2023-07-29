@@ -70,7 +70,7 @@ choosing such a secret?
 Solving the
 xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
 challenge was probably no as satisfying as you had hoped. Now it is time
-to tackle the taunt of the developers and hunt down _the real_ easter
+to tackle the taunt of the developers and hunt down __the real__ easter
 egg. This follow-up challenge is basically about finding a secret URL
 that - when accessed - will reward you with an easter egg that deserves
 the name.

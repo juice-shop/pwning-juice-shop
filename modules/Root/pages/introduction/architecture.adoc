@@ -1,4 +1,4 @@
-= Architecture overview
+= Architecture overview[[_architecture_overview]]
 include::../attributes.adoc[]
 
 The OWASP Juice Shop is a pure web application implemented in JavaScript

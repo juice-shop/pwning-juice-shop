@@ -4,11 +4,11 @@ include::../attributes.adoc[]
 :doctype: book
 
 ifeval::[{is_ctf} == 1]
-= Pwning OWASP Juice Shop (CTF Edition)
+== Pwning OWASP Juice Shop (CTF Edition)
 endif::[]
 
 ifeval::[{is_ctf} == 0]
-= Pwning OWASP Juice Shop
+== Pwning OWASP Juice Shop
 endif::[]
 
 Written by https://twitter.com/bkimminich[Björn Kimminich]

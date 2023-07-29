@@ -1,7 +1,7 @@
 = Hacking Instructor tutorial scripts
 include::../attributes.adoc[]
 
-With the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
+With the xref:part1/challenges.adoc#hacking-instructor[Hacking Instructor]
 the OWASP Juice Shop offers very beginner-friendly tutorial scripts that
 guide the user through some of the challenges.
 

@@ -246,8 +246,8 @@ payload while downgrading to _no_ encryption at all.
 
 This challenge is quite similar to
 xref:part2/cryptographic-issues.adoc#_inform_the_shop_about_an_algorithm_or_library_it_should_definitely_not_use_the_way_it_does[Inform the shop about an algorithm or library it should definitely not use the way it does]
-with the difference, that here not the _general use_ of the library is
-the issue. The application is just using _a version_ of a library that
+with the difference, that here not the __general use__ of the library is
+the issue. The application is just using __a version__ of a library that
 contains known vulnerabilities.
 
 * Use the _Contact Us_ form to submit a feedback mentioning the

@@ -1,4 +1,4 @@
-= Part II - Challenge hunting
+= Part II - Challenge hunting[[_challenge_hunting]]
 include::../attributes.adoc[]
 
 This part of the book can be read from end to end as a _hacking guide_.

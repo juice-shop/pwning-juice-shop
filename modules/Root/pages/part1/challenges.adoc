@@ -1,4 +1,4 @@
-= Challenge tracking
+= Challenge tracking[[_challenge_tracking]]
 include::../attributes.adoc[]
 
 == The Score Board
@@ -110,7 +110,7 @@ Depending on your application configuration, each challenge notification
 might also show a 🏁 symbol with a character sequence next to it. If you
 are doing a hacking session just on your own, you can completely ignore
 this flag. The code is only relevant if you are participating in a CTF
-event. Please refer to chapter xref:part1/ctf.adoc[Hosting a CTF event] for more
+event. Please refer to chapter xref:part1/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] for more
 information this topic.
 
 image::part1/notification_with_flag.png["Challenge solved!" notification with flag code]
@@ -123,13 +123,13 @@ image::part1/confetti1.png[Confetti on solved hacking challenge]
 
 == Automatic saving and restoring hacking progress
 
-The xref:part1/running.adoc#_self_healing_feature[_self-healing_ feature] - by
+The xref:part1/running.adoc#_self_healing_feature[__self-healing__ feature] - by
 wiping the entire database on server start - of Juice Shop was
 advertised as a benefit just a few pages before. This feature comes at a
 cost, though: As the challenges are also part of the database schema,
 they will be wiped along with all the other data. This means, that after
 every restart you start with a clean 0% score board and all challenges
-in _unsolved_ state.
+in __unsolved__ state.
 
 To keep the resilience against data corruption but allow users to _pick
 up where they left off_ after a server restart, your hacking progress is
