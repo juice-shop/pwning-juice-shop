@@ -936,7 +936,7 @@ ifeval::[{is_ctf} == 1]
 | xref:appendix/solutions.adoc#_give_a_devastating_zero_star_feedback_to_the_store[📕]
 |===
 
-== Challenge 
+== Challenge Solutions
 
 In case you are getting frustrated with a particular challenge, you can
 refer to the xref:/appendix/solutions.adoc[Challenge solutions] appendix
