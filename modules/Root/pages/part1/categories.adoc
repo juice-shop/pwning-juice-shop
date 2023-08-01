@@ -79,7 +79,7 @@ image::part1/categories.png[Category breakdown]
 | -
 
 | Sensitive Data Exposure
-| https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure[A3:2017], https://owasp.org/www-project-api-security[API3:2019], https://wiki.owasp.org/index.php/Review_Old,_Backup_and_Unreferenced_Files_for_Sensitive_Information_%28OTG-CONFIG-004%29[OTG-CONFIG-004], https://owasp.org/www-project-top-10-privacy-risks[P2:2021]
+| https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure[A3:2017], https://owasp.org/www-project-api-security[API3:2019], https://wiki.owasp.org/index.php/Review_Old%2C_Backup_and_Unreferenced_Files_for_Sensitive_Information_%28OTG-CONFIG-004%29[OTG-CONFIG-004], https://owasp.org/www-project-top-10-privacy-risks[P2:2021]
 | https://cwe.mitre.org/data/definitions/200.html[CWE-200], https://cwe.mitre.org/data/definitions/530.html[CWE-530], https://cwe.mitre.org/data/definitions/548.html[CWE-548]
 | http://projects.webappsec.org/w/page/13246936/Information%20Leakage[WASC-13]
 
