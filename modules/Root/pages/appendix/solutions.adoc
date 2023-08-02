@@ -1189,16 +1189,16 @@ results, one of them being a blog post "Top 20 Fruits You Probably
 Don't Know" from 2011. Visit this post at
 https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know
 . Scrolling through the list of replies you will notice
-https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know/#comment-4541753139[a particular comment from user _Localhorst_]
+https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know/#comment-4541753139[a particular comment from user __Localhorst__]
 saying _"Awesome, some of these fruits also made it into our
-"Rippertuer Special Juice"! https://pastebin.com/90dUgd7s"_
+"Rippertuer Special Juice"! https://pastebin.com/90dUgd7s "_
 . Visit https://pastebin.com/90dUgd7s to find a PasteBin paste titled
 "Rippertuer Special Juice Ingredients" containing a JSON document
 with many exotic fruits in it, each with its name as `type` and a
 detailed `description`
 . When carefully reading all fruit descriptions you will notice a
-warning on the `Hueteroneel` fruit that _"this coupled with Eurogium
-Edule was sometimes found fatal"_
+warning on the `Hueteroneel` fruit that "this coupled with Eurogium
+Edule was sometimes found fatal"
 +
 image::appendix/rippertuer-ingredients.png[Ingredients list of "Rippertuer Special Juice"]
 
@@ -2057,9 +2057,9 @@ have `"image":""` set.
 https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2[Google Authenticator])
 create a new entry, but instead of scanning any QR code type in the
 key `IFTXE3SPOEYVURT2MRYGI52TKJ4HC3KH` manually.
-. Go to link:http:localhost:3000/#/login[http:localhost:3000/#/login] and use SQL Injection to log in
-with `wurstbrot@juice-sh.op'--` as _Username_ and anything as
-_Password_.
+. Go to link:http:localhost:3000/#/login[pass:[http:localhost:3000/#/login]] and use SQL Injection to log in
+with `wurstbrot@juice-sh.op'--` as __Username__ and anything as
+__Password__.
 . You will be presented with the _Two Factor Authentication_ input
 screen where you now have to type in the 6-digit code currently
 displayed on your 2FA app.

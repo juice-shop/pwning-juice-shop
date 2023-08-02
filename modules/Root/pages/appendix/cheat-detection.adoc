@@ -119,8 +119,8 @@ be selected as the correct answer.
 |
 |===
 
-For the _Score Board_ coding challenge the expected solve time is reduced by 50% if
-the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] is enabled, as there is a _Coding Challenges_ tutorial attached
+For the __Score Board__ coding challenge the expected solve time is reduced by 50% if
+the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] is enabled, as there is a __Coding Challenges__ tutorial attached
 to it.
 
 === "Fix It" cheat score calculation
