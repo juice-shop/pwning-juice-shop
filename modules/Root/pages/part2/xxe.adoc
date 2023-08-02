@@ -91,7 +91,7 @@ attack. But this one is going against an entirely different leverage
 point.
 
 * The leverage point for this is obviously the same as for the
-<<_retrieve_the_content_of_cwindowssystemini_or_etcpasswd_from_the_server,XXE Tier 1>>
+<<_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server,XXE Tier 1>>
 challenge above.
 * You can only solve this challenge by keeping the server busy for >2sec
 with your attack.

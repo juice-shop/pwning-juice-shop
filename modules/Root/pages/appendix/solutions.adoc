@@ -2174,7 +2174,7 @@ ZIP/postal code when you were a teenager?_
 by hitting _Change_ to *not solve* this challenge.
 . Bjoern added some obscurity to his security answer by using an
 uncommon variant of the pre-unification format of
-<<postal-codes-in-germany,postal codes in Germany>>.
+<<_postal_codes_in_germany,postal codes in Germany>>.
 . Visit http://www.alte-postleitzahlen.de/uetersen to learn that
 Uetersen's old ZIP code was `W-2082`. This would not work as an
 answer either. Bjoern used the written out variation: `West-2082`.

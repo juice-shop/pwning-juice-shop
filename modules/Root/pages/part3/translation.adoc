@@ -1,4 +1,4 @@
-= Helping with translations_healping_with_translations
+= Helping with translations[[_helping_with_translations]]
 include::../attributes.adoc[]
 
 The user interface of OWASP Juice Shop is fully translated into several

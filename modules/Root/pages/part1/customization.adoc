@@ -1,4 +1,4 @@
-= Customization[[_customization]]
+= Customization[[customization]]
 include::../attributes.adoc[]
 
 One of the core usage scenarios for OWASP Juice Shop is in employee
@@ -910,7 +910,7 @@ always be shown in English.
 * Configurations (except `default.yml`) do not support translation of
 custom product names and descriptions as of {juiceShopVersion}.
 * Several
-xref:part1/challenges.adoc#hacking-instructor[Hacking Instructor]
+xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
 scripts depend on product inventory and product reviews that might not
 exist in the required form when you overwrote the default `products`
 list. Consider turning off the tutorials by setting

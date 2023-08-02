@@ -21,7 +21,7 @@ Especially in awareness trainings for management you might want to
 create a higher immersion by making the Juice Shop look like an
 application in the corporate design of the participants' own company.
 Juice Shop offers
-xref:part1/customization.adoc[various customization options] to achieve
+xref:part1/customization.adoc#customization[various customization options] to achieve
 this.
 
 Several custom configurations already come packaged with the Juice Shop

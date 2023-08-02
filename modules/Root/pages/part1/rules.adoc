@@ -330,14 +330,14 @@ ever asks you to _demonstrate how_ you actually solved all the 4- and
 === Configuration REST API Endpoint
 
 The Juice Shop offers a URL to retrieve configuration information which
-is required by the xref:part1/customization.adoc[Customization] feature that allows
+is required by the xref:part1/customization.adoc#customization[Customization] feature that allows
 redressing the UI and overwriting the product catalog:
 http://localhost:3000/rest/admin/application-configuration
 
 The returned JSON contains spoilers for all challenges that depend on a
 product from the inventory which might be customized. As not all
 customization can be prepared on the server side, exposing this REST
-endpoint is unavoidable for the xref:part1/customization.adoc[Customization]
+endpoint is unavoidable for the xref:part1/customization.adoc#customization[Customization]
 feature to work properly.
 
 === Tutorial JavaScript file
