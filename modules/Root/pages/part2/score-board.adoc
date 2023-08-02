@@ -1,4 +1,4 @@
-= Finding the Score Board[[_finding_the_score_board]]
+=Finding the Score Board[[_finding_the_score_board]]
 
 include::../attributes.adoc[]
 

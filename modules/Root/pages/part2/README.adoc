@@ -1,4 +1,4 @@
-= Part II - Challenge hunting[[_challenge_hunting]]
+=Part II - Challenge hunting[[_challenge_hunting]]
 
 include::../attributes.adoc[]
 

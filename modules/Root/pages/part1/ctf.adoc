@@ -349,7 +349,7 @@ https://github.com/CTFd/CTFd/wiki/Basic-Deployment[the CTFd Docker setup]
 to install Docker, download the source code, create containers (for
 {ctfdVersion}) and start them.
 . After running `docker-compose up` from previous step, you should be
-able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
+able to browse to your CTFd instance UI (`<docker host IP>:8000` by
 default) and create an admin user and CTF name.
 . Follow the steps 5-8 from the
 <<_local_server_setup,Local server setup>> described above.

@@ -765,13 +765,13 @@ the user data as described in
 . Note that reducing the quantity of a basket item below 1 is not
 possible via the UI
 . When changing the quantity via the UI, you will notice `PUT` requests
-to http://localhost:3000/api/BasketItems/{id}[http://localhost:3000/api/BasketItems/\{id}] in the Network tab of
+to http://localhost:3000/api/BasketItems/pass:[{id}] in the Network tab of
 your DevTools
 . Memorize the `+{id}+` of any item in your basket
 . Copy your `Authorization` header from any HTTP request submitted via
 browser.
 . Submit a `PUT` request to
-http://localhost:3000/api/BasketItems/{id}[http://localhost:3000/api/BasketItems/\{id}] replacing `+{id}+` with
+http://localhost:3000/api/BasketItems/pass:[{id}] replacing `+{id}+` with
 the memorized number from 5. and with:
  ** `{"quantity": -100}` as body,
  ** `application/json` as `Content-Type`
