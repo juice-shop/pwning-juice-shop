@@ -237,7 +237,7 @@ above. Viewing this hint costs the team 30% of that challenge's
 score value.
 
 The category of each challenge is identical to its
-xref:part1/categories.adoc[category in the Juice Shop] database. The score value
+xref:part1/categories.adoc#_vulnerability_categories[category in the Juice Shop] database. The score value
 and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 

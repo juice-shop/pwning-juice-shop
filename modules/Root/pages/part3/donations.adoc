@@ -1,4 +1,4 @@
-= Donations
+= Donations[[_donations]]
 include::../attributes.adoc[]
 
 ____

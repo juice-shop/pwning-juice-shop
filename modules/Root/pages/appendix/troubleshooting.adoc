@@ -1,4 +1,4 @@
-= Troubleshooting
+= Troubleshooting[[_troubleshooting]]
 include::../attributes.adoc[]
 
 :pp: {plus}{plus}
@@ -90,10 +90,10 @@ fixed in a straightforward fashion when they fail:
 | Make sure `ctf.showFlagsInNotifications` is `true` when you also have configured `ctf.showCountryDetailsInNotifications` set to `name`, `flag` or `both`.
 
 | `+Intent ... is missing in chatbot training data+`
-| Make sure that your chatbot training data defines all mandatory `intent` objects defined in the xref:appendix/chatbot.adoc[Chatbot training data] specification.
+| Make sure that your chatbot training data defines all mandatory `intent` objects defined in the xref:appendix/chatbot.adoc#_chatbot_training_data[Chatbot training data] specification.
 
 | `+Answer with ... action and handler ... is missing for intent ...+`
-| Make sure that your chatbot training data defines the expected `+{ "action": "...", "handler": "..." }+` on the mentioned mandatory `intent` object as defined in the xref:appendix/chatbot.adoc[Chatbot training data] specification.
+| Make sure that your chatbot training data defines the expected `+{ "action": "...", "handler": "..." }+` on the mentioned mandatory `intent` object as defined in the xref:appendix/chatbot.adoc#_chatbot_training_data[Chatbot training data] specification.
 |===
 
 If your installation did not even get to the point of running these

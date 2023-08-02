@@ -295,7 +295,7 @@ explained above. It is technically necessary to make the
 consistently. Furthermore, when multiple users would attack the same
 instance of the Juice Shop all their progress tracking would be mixed
 leading to inevitable confusion for the individual hacker. The upcoming
-xref:part1/challenges.adoc[Challenge tracking] chapter will illustrate this topic.
+xref:part1/challenges.adoc#_challenge_tracking[Challenge tracking] chapter will illustrate this topic.
 
 It should not go unmentioned that it is of course okay to have multiple
 users hack the same instance from a shared machine in a kind of

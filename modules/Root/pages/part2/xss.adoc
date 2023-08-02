@@ -1,4 +1,4 @@
-= Cross Site Scripting (XSS)
+= Cross Site Scripting (XSS)[[_xss]]
 include::../attributes.adoc[]
 
 ____

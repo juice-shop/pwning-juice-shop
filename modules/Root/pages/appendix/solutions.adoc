@@ -1,4 +1,4 @@
-= Challenge solutions
+= Challenge solutions[[_challenge_solutions]]
 include::../attributes.adoc[]
 
 All URLs in the challenge solutions assume you are running the
@@ -2003,10 +2003,10 @@ challenge. majQa'!
 Instead of expanding your brute force pattern (which is not a very
 obvious decision to make) you can more easily find the solution to this
 challenge by investigating which languages are supported in the Juice
-Shop and how xref:part3/translation.adoc[the translations] are managed.
+Shop and how xref:part3/translation.adoc#_helping_with_translations[the translations] are managed.
 This will quickly bring you over to
 https://crowdin.com/project/owasp-juice-shop which immediately
-spoilers _Klingon_ as a supported language. Hovering over the
+spoilers __Klingon__ as a supported language. Hovering over the
 corresponding flag will eventually spoiler the language code `tlh_AA`.
 
 image::appendix/crowdin_klingon-spoiler.png[Crowdin Klingon Spoiler]

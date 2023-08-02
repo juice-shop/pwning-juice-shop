@@ -40,12 +40,12 @@ If not deliberately turned off (see xref:part1/customization.adoc#customization[
 you can hover over each _unsolved_ label to see a hint for that
 challenge. If a "book" icon is also displayed within the label, you can
 click on it to be redirected to the corresponding hints section in
-xref:part2/README.adoc[Part 2] of this book.
+xref:part2/README.adoc#_challenge_hunting[Part 2] of this book.
 
 === Challenge Filters
 
 Additional to the filtering by difficulty, you can filter the Score
-Board by xref:part1/categories.adoc[challenge categories], e.g. to focus your
+Board by xref:part1/categories.adoc#_vulnerability_categories[challenge categories], e.g. to focus your
 hacking efforts on specific vulnerabilities. You can also hide all
 solved challenges to reduce the level of distraction on the Score Board.
 
@@ -234,7 +234,7 @@ image::part1/hacking-instructor_3.png[Hacking Instructor reports successful solu
 It cannot offer a tutorial for _every challenge_ as some are too complex
 or require too many steps outside the application. In Part III you can
 learn more about how to write
-xref:part3/tutorials.adoc[Hacking Instructor tutorial scripts].
+xref:part3/tutorials.adoc#_hacking_instructor_tutorial_scripts[Hacking Instructor tutorial scripts].
 
 === Tutorial mode
 

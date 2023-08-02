@@ -54,7 +54,7 @@
 ** xref:appendix/code-snippets.adoc[Coding challenges]
 ** xref:appendix/integration.adoc[Integration]
 ** xref:appendix/monitoring.adoc[Monitoring]
-    ** xref:appendix/chatbot.adoc[Chatbot training data]
+** xref:appendix/chatbot.adoc[Chatbot training data]
 ** xref:appendix/lyrics.adoc[Jingle lyrics]
 
 * Postface
