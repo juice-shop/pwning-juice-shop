@@ -1,4 +1,5 @@
 = Hacking Instructor tutorial scripts[[_hacking_instructor_tutorial_scripts]]
+
 include::../attributes.adoc[]
 
 With the xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]

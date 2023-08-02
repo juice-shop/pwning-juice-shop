@@ -1,4 +1,5 @@
 = Provide feedback
+
 include::../attributes.adoc[]
 
 * Did you experience a functional bug when hacking the application?

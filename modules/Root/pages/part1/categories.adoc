@@ -1,4 +1,5 @@
 = Vulnerability Categories[[_vulnerability_categories]]
+
 include::../attributes.adoc[]
 
 The vulnerabilities found in the OWASP Juice Shop are categorized into

@@ -1,4 +1,5 @@
 = Customization[[customization]]
+
 include::../attributes.adoc[]
 
 One of the core usage scenarios for OWASP Juice Shop is in employee

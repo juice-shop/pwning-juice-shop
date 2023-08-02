@@ -1,4 +1,5 @@
 = Broken Authentication[[_broken_authentication]]
+
 include::../attributes.adoc[]
 
 == Challenges covered in this chapter

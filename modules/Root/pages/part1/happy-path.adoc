@@ -1,4 +1,5 @@
 = Walking the "happy path"[[_happy_path]]
+
 include::../attributes.adoc[]
 
 When investigating an application for security vulnerabilities, you

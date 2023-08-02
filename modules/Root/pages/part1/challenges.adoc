@@ -1,4 +1,5 @@
 = Challenge tracking[[_challenge_tracking]]
+
 include::../attributes.adoc[]
 
 == The Score Board

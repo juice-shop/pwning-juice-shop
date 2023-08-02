@@ -1,4 +1,5 @@
 = Security Misconfiguration
+
 include::../attributes.adoc[]
 
 == Challenges covered in this chapter
