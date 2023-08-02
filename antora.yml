@@ -1,5 +1,5 @@
-name: Juice Shop
-title: "Juice shop Documentation"
+name: Pwning OWASP Juice Shop
+title: "Pwning OWASP Juice Shop"
 version: test
 asciidoc:
   attributes:

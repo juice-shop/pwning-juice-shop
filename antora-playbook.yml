@@ -1,11 +1,11 @@
 site:
-  title: Juice Shop Docs
+  title: Pwning OWASP Juice Shop
   start_page: introduction::readme.adoc
 content:
-  sources: 
+  sources:
   - url: ./
-    start_path: 
-ui: 
+    start_path:
+ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
