@@ -4,22 +4,14 @@ include::../attributes.adoc[]
 :doctype: book
 
 ifeval::[{is_ctf} == 1]
-== Pwning OWASP Juice Shop (CTF Edition)
-endif::[]
-
-ifeval::[{is_ctf} == 0]
-== Pwning OWASP Juice Shop
-endif::[]
-
-Written by https://twitter.com/bkimminich[Björn Kimminich]
-
-ifeval::[{is_ctf} == 1]
 image::cover-ctf.jpg[Front Cover]
 endif::[]
 
 ifeval::[{is_ctf} == 0]
 image::cover.jpg[Front Cover]
 endif::[]
+
+*Written by https://twitter.com/bkimminich[Björn Kimminich]*
 
 This is the official companion guide to the *OWASP Juice Shop*
 application. Being a web application with a vast number of intended
