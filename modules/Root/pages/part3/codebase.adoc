@@ -54,7 +54,7 @@ Shop client are structured using the example of `FeedbackService`. It
 wraps the `/api/Feedback` API which offers a `GET`, `POST` and `DELETE`
 endpoint to find, create and delete `Feedback` of users:
 
-[,typescript]
+[,javascript]
 ----
 import { environment } from '../../environments/environment'
 import { Injectable } from '@angular/core'
@@ -137,7 +137,7 @@ very simple `getNewCaptcha()` and `resetForm()` functions in the code
 snippet below. Helper functions should always be located as close to the
 calling code as possible.
 
-[,typescript]
+[,javascript]
 ----
 import { FeedbackService } from '../Services/feedback.service'
 import { CaptchaService } from '../Services/captcha.service'
@@ -438,7 +438,7 @@ endpoints are protected against anonymous access and can only be used by
 an authenticated user. This is described later in section
 <<_access_control_on_routes,Access control on routes>>.
 
-[,typescript]
+[,javascript]
 ----
 finale.initialize({ app, sequelize })
 
@@ -483,7 +483,7 @@ Each middleware exposes a single function which encapsulates their
 responsibility. For example, the `angular.ts` middleware delivers the
 `index.html` page to the client:
 
-[,typescript]
+[,javascript]
 ----
 import path = require('path')
 import { Request, Response, NextFunction } from 'express'
@@ -506,7 +506,7 @@ assess on its own if the challenge has been solved. For example, in the
 `basket.ts` middleware where successfully accessing another user's
 shopping basket is verified in the `utils.solveIf()` function call:
 
-[,typescript]
+[,javascript]
 ----
 import { Request, Response, NextFunction } from 'express'
 import { ProductModel } from '../models/product'
@@ -545,7 +545,7 @@ It contains no business functionality. Instead of one function it
 exposes several named functions on challenge verification for
 <<_generated_api_endpoints,Generated API endpoints>>, for example:
 
-[,typescript]
+[,javascript]
 ----
 app.post('/api/Feedbacks', verify.forgedFeedbackChallenge())
 app.post('/api/Feedbacks', verify.captchaBypassChallenge())
@@ -556,7 +556,7 @@ app.post('/api/Users', verify.passwordRepeatChallenge())
 The same applies for any challenges on top of third-party middleware,
 for example:
 
-[,typescript]
+[,javascript]
 ----
 app.use(verify.errorHandlingChallenge())
 app.use(errorhandler())
@@ -580,7 +580,7 @@ or `security.isAuthorized()` as an extra middleware. Examples for
 denying all access to certain HTTP verbs for the `SecurityQuestion` and
 `SecurityAnswer` models:
 
-[,typescript]
+[,javascript]
 ----
 /* SecurityQuestions: Only GET list of questions allowed. */
 app.post('/api/SecurityQuestions', security.denyAll())
@@ -596,7 +596,7 @@ model which allows only `POST` to anonymous users (for registration) and
 requires to be logged-in for retrieving the list of users or individual
 user records. Deleting users is completely forbidden:
 
-[,typescript]
+[,javascript]
 ----
 app.get('/api/Users', security.isAuthorized())
 app.route('/api/Users/:id')
@@ -620,7 +620,7 @@ CTF flag code. It can also retrieve any challenge by its name and check
 if a passed challenge is not yet solved, to avoid unnecessary (and
 sometimes expensive) repetitive solving of the same challenge.
 
-[,typescript]
+[,javascript]
 ----
 exports.solve = function (challenge, isRestore) {
   const self = this
@@ -761,7 +761,7 @@ automatically executed on every server start after the SQLite file and
 in-memory MarsDB have been cleared. It populates all tables with some
 initial data which makes the application usable out-of-the-box:
 
-[,typescript]
+[,javascript]
 ----
 module.exports = async () => {
   const creators = [

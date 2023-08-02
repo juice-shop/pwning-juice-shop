@@ -22,7 +22,7 @@ image::part3/hackingInstructorFolder.png[Hacking Instructor folder]
 Any challenge instruction script must provide an implementation of the
 `ChallengeInstruction` interface which is defined as
 
-[,typescript]
+[,javascript]
 ----
 export interface ChallengeInstruction {
   name: string
@@ -35,7 +35,7 @@ corresponding challenge in `data/static/challenges.yml`. The actual
 tutorial is comprised of a list of hints specified by the
 `ChallengeHint` interface:
 
-[,typescript]
+[,javascript]
 ----
 export interface ChallengeHint {
   /**
@@ -175,7 +175,7 @@ To register a new script, it only needs to be imported and included in
 the `challengeInstructions: ChallengeInstruction[]` within
 `frontend/src/hacking-instructor/index.ts`:
 
-[,typescript]
+[,javascript]
 ----
 import { LoginAdminInstruction } from './challenges/loginAdmin'
 import { DomXssInstruction } from './challenges/localXss'
@@ -199,7 +199,7 @@ challenge. As it uses most available helpers, two custom
 `resolved`-functions as well as Markdown to style some hint texts, it is
 the perfect reference for your own scripts:
 
-[,typescript]
+[,javascript]
 ----
 import {
   waitForInputToHaveValue,

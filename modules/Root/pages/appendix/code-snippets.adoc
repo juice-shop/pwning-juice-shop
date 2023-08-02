@@ -91,7 +91,7 @@ are only found in files residing in one of the above-mentioned folders.
 The following code shows markers for two challenges with the same
 vulnerable line, and a hidden code block:
 
-[,typescript]
+[,javascript]
 ----
 // vuln-code-snippet start localXssChallenge xssBonusChallenge
 filterTable () {
@@ -122,7 +122,7 @@ if (queryParam) {
 The next example explains how to mark one challenge with two vulnerable
 lines, and some individually hidden lines:
 
-[,typescript]
+[,javascript]
 ----
 // vuln-code-snippet start fileWriteChallenge
 function handleZipFileUpload ({ file }, res, next) {
