@@ -200,7 +200,7 @@ Shop server where the tool will retrieve the existing challenges from
 via the `/api/Challenges` API. Defaults to
 `+https://juice-shop.herokuapp.com+` which always hosts the latest
 official released version of OWASP Juice Shop.
-. **Secret key URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See <<_overriding_the_ctf_key,Overriding the `ctf.key`>> for more information.
+. **Secret key or URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See <<_overriding_the_ctf_key,Overriding the `ctf.key`>> for more information.
 . *URL to country-mapping.yml file?* URL of a mapping configuration
 of challenges to countries, which is only asked when `FBCTF` was
 selected. Defaults to
