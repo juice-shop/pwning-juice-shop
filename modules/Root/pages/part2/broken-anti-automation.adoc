@@ -1,4 +1,5 @@
 = Broken Anti-Automation
+
 include::../attributes.adoc[]
 
 ____
@@ -149,7 +150,7 @@ ____
 === Reset Morty's password via the Forgot Password mechanism
 
 This password reset challenge is different from those from the
-xref:part2/broken-authentication.adoc[Broken Authentication] category as it is next
+xref:part2/broken-authentication.adoc#_broken_authentication[Broken Authentication] category as it is next
 to impossible to solve without using a brute force approach.
 
 * Finding out who Morty actually is, will help to reduce the solution

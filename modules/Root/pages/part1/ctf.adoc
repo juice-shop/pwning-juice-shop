@@ -1,4 +1,5 @@
 = Hosting a CTF event[[_hosting_a_ctf_event]]
+
 include::../attributes.adoc[]
 
 ____
@@ -199,7 +200,7 @@ Shop server where the tool will retrieve the existing challenges from
 via the `/api/Challenges` API. Defaults to
 `+https://juice-shop.herokuapp.com+` which always hosts the latest
 official released version of OWASP Juice Shop.
-. **Secret key +++<or>+++URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See [Overriding the `ctf.key`](#_overriding_the_ctf_key) for more information.+++</or>+++
+. **Secret key or URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See <<_overriding_the_ctf_key,Overriding the `ctf.key`>> for more information.
 . *URL to country-mapping.yml file?* URL of a mapping configuration
 of challenges to countries, which is only asked when `FBCTF` was
 selected. Defaults to
@@ -237,7 +238,7 @@ above. Viewing this hint costs the team 30% of that challenge's
 score value.
 
 The category of each challenge is identical to its
-xref:part1/categories.adoc[category in the Juice Shop] database. The score value
+xref:part1/categories.adoc#_vulnerability_categories[category in the Juice Shop] database. The score value
 and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 
@@ -348,7 +349,7 @@ https://github.com/CTFd/CTFd/wiki/Basic-Deployment[the CTFd Docker setup]
 to install Docker, download the source code, create containers (for
 {ctfdVersion}) and start them.
 . After running `docker-compose up` from previous step, you should be
-able to browse to your CTFd instance UI (`<<docker host IP>>:8000` by
+able to browse to your CTFd instance UI (`<docker host IP>:8000` by
 default) and create an admin user and CTF name.
 . Follow the steps 5-8 from the
 <<_local_server_setup,Local server setup>> described above.

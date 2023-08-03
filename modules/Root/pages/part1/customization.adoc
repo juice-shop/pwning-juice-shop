@@ -1,4 +1,5 @@
-= Customization[[_customization]]
+= Customization[[customization]]
+
 include::../attributes.adoc[]
 
 One of the core usage scenarios for OWASP Juice Shop is in employee
@@ -195,7 +196,7 @@ _Support Chat_.
 | `"Nice to meet you <customer-name>, I'm <bot-name>"`
 
 | `trainingData`
-| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:appendix/chatbot.adoc[training data] for the chat bot.
+| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:appendix/chatbot.adoc#_chatbot_training_data[training data] for the chat bot.
 | `'botDefaultTrainingData.json'`
 
 | `defaultResponse`
@@ -910,7 +911,7 @@ always be shown in English.
 * Configurations (except `default.yml`) do not support translation of
 custom product names and descriptions as of {juiceShopVersion}.
 * Several
-xref:part1/challenges.adoc#hacking-instructor[Hacking Instructor]
+xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor]
 scripts depend on product inventory and product reviews that might not
 exist in the required form when you overwrote the default `products`
 list. Consider turning off the tutorials by setting
@@ -920,7 +921,7 @@ list. Consider turning off the tutorials by setting
 
 Consider you are doing a live demo with a highly customized corporate
 theme. Your narrative is, that this _really_ is an upcoming eCommerce
-application _of that company_. xref:part1/happy-path.adoc[Walking the "happy path"]
+application _of that company_. xref:part1/happy-path.adoc#_happy_path[Walking the "happy path"]
 might now lure you into two situations which could spoil the immersion
 for the audience.
 

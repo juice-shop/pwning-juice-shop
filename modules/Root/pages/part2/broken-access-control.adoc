@@ -1,4 +1,5 @@
 = Broken Access Control
+
 include::../attributes.adoc[]
 
 ____
@@ -168,7 +169,7 @@ the communication with the RESTful backend.
 * To find the client-side leverage point, closely analyze the HTML form
 used for feedback submission.
 * The backend-side leverage point is similar to some of the
-xref:part2/xss.adoc[XSS challenges] found in OWASP Juice Shop.
+xref:part2/xss.adoc#_xss[XSS challenges] found in OWASP Juice Shop.
 
 === Post a product review as another user or edit any user's existing review
 

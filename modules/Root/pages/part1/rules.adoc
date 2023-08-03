@@ -1,4 +1,5 @@
 = Hacking exercise rules
+
 include::../attributes.adoc[]
 
 == ✔️ Recommended hacking tools
@@ -253,7 +254,7 @@ relevant piece of intel to beat a challenge.
 
 Frankly speaking, you are reading the _premium source of hints_ right
 now! Congratulations! In case you want to hack more on your own than
-xref:part2/README.adoc[follow the breadcrumbs through the wood of challenges in part II],
+xref:part2/README.adoc#_challenge_hunting[follow the breadcrumbs through the wood of challenges in part II],
 the most direct way to ask for specific hints for a particular challenge
 is the community chat on Gitter.im at
 https://gitter.im/bkimminich/juice-shop. You can simply log in to
@@ -272,7 +273,7 @@ https://groups.google.com/a/owasp.org/forum/#!forum/juice-shop-project.
 ifeval::[{is_ctf} == 0]
 === Reading a solution ( 📕 ) before trying
 
-The xref:appendix/solutions.adoc[Challenge solutions] appendix is there to
+The xref:appendix/solutions.adoc#_challenge_solutions[Challenge solutions] appendix is there to
 help you in case you are stuck or have absolutely no idea how a specific
 challenge is solved. Simply going through the entire appendix back to
 back and follow the step-by-step instructions given there for each
@@ -330,14 +331,14 @@ ever asks you to _demonstrate how_ you actually solved all the 4- and
 === Configuration REST API Endpoint
 
 The Juice Shop offers a URL to retrieve configuration information which
-is required by the xref:part1/customization.adoc[Customization] feature that allows
+is required by the xref:part1/customization.adoc#customization[Customization] feature that allows
 redressing the UI and overwriting the product catalog:
 http://localhost:3000/rest/admin/application-configuration
 
 The returned JSON contains spoilers for all challenges that depend on a
 product from the inventory which might be customized. As not all
 customization can be prepared on the server side, exposing this REST
-endpoint is unavoidable for the xref:part1/customization.adoc[Customization]
+endpoint is unavoidable for the xref:part1/customization.adoc#customization[Customization]
 feature to work properly.
 
 === Tutorial JavaScript file
@@ -354,11 +355,11 @@ checks that trigger progressing through each tutorial.
 === Score Board HTML/CSS
 
 The Score Board and its features were covered in the
-xref:part1/challenges.adoc[Challenge tracking] chapter. In the current context of
+xref:part1/challenges.adoc#_challenge_tracking[Challenge tracking] chapter. In the current context of
 "things you should not use" suffice it to say, that you could manipulate
-the score board in the web browser to make challenges _appear as
-solved_. Please be aware that this "cheat" is even easier (and more
+the score board in the web browser to make challenges __appear as
+solved__. Please be aware that this "cheat" is even easier (and more
 embarrassing) to uncover in a classroom training than the previously
 mentioned database manipulation: A simple reload of the score board URL
 will let all your local CSS changes vanish in a blink and reveal your
-_real_ hacking progress.
+__real__ hacking progress.

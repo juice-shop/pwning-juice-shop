@@ -1,4 +1,5 @@
 = Miscellaneous
+
 include::../attributes.adoc[]
 
 == Challenges covered in this chapter

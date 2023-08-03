@@ -1,4 +1,5 @@
-= Cross Site Scripting (XSS)
+= Cross Site Scripting (XSS)[[_xss]]
+
 include::../attributes.adoc[]
 
 ____
@@ -101,7 +102,7 @@ same vulnerable field
 === Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
 In the xref:introduction/architecture.adoc#_architecture_overview[Architecture overview] you were
-told that the Juice Shop uses a modern _Single Page Application_
+told that the Juice Shop uses a modern __Single Page Application__
 frontend. That was not entirely true.
 
 * Find a screen in the application that looks subtly odd and dated

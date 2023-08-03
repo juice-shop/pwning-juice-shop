@@ -1,4 +1,5 @@
 = Security through Obscurity
+
 include::../attributes.adoc[]
 
 Many applications contain content which is not supposed to be publicly

@@ -1,4 +1,4 @@
-= Chatbot training data
+= Chatbot training data[[_chatbot_training_data]]
 include::../attributes.adoc[]
 
 Under the hood of the _Support Chat_ an NLP-powered chatbot is used to

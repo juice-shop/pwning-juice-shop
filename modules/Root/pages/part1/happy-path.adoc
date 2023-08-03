@@ -1,4 +1,5 @@
-= Walking the "happy path"
+= Walking the "happy path"[[_happy_path]]
+
 include::../attributes.adoc[]
 
 When investigating an application for security vulnerabilities, you
@@ -360,5 +361,5 @@ image::part1/language-selection.png[Language Selection]
 
 _If you want to know more about (or even help with) the localization of
 OWASP Juice Shop, please refer to the
-xref:/part3/translation.adoc[Help with translation] chapter in part III of
+xref:/part3/translation.adoc#_helping_with_translations[Help with translation] chapter in part III of
 this book._

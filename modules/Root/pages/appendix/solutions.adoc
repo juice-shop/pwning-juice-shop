@@ -1,4 +1,4 @@
-= Challenge solutions
+= Challenge solutions[[_challenge_solutions]]
 include::../attributes.adoc[]
 
 All URLs in the challenge solutions assume you are running the
@@ -765,13 +765,13 @@ the user data as described in
 . Note that reducing the quantity of a basket item below 1 is not
 possible via the UI
 . When changing the quantity via the UI, you will notice `PUT` requests
-to http://localhost:3000/api/BasketItems/{id}[http://localhost:3000/api/BasketItems/\{id}] in the Network tab of
+to http://localhost:3000/api/BasketItems/pass:[{id}] in the Network tab of
 your DevTools
 . Memorize the `+{id}+` of any item in your basket
 . Copy your `Authorization` header from any HTTP request submitted via
 browser.
 . Submit a `PUT` request to
-http://localhost:3000/api/BasketItems/{id}[http://localhost:3000/api/BasketItems/\{id}] replacing `+{id}+` with
+http://localhost:3000/api/BasketItems/pass:[{id}] replacing `+{id}+` with
 the memorized number from 5. and with:
  ** `{"quantity": -100}` as body,
  ** `application/json` as `Content-Type`
@@ -1189,16 +1189,16 @@ results, one of them being a blog post "Top 20 Fruits You Probably
 Don't Know" from 2011. Visit this post at
 https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know
 . Scrolling through the list of replies you will notice
-https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know/#comment-4541753139[a particular comment from user _Localhorst_]
+https://listverse.com/2011/07/08/top-20-fruits-you-probably-dont-know/#comment-4541753139[a particular comment from user __Localhorst__]
 saying _"Awesome, some of these fruits also made it into our
-"Rippertuer Special Juice"! https://pastebin.com/90dUgd7s"_
+"Rippertuer Special Juice"! https://pastebin.com/90dUgd7s "_
 . Visit https://pastebin.com/90dUgd7s to find a PasteBin paste titled
 "Rippertuer Special Juice Ingredients" containing a JSON document
 with many exotic fruits in it, each with its name as `type` and a
 detailed `description`
 . When carefully reading all fruit descriptions you will notice a
-warning on the `Hueteroneel` fruit that _"this coupled with Eurogium
-Edule was sometimes found fatal"_
+warning on the `Hueteroneel` fruit that "this coupled with Eurogium
+Edule was sometimes found fatal"
 +
 image::appendix/rippertuer-ingredients.png[Ingredients list of "Rippertuer Special Juice"]
 
@@ -2003,10 +2003,10 @@ challenge. majQa'!
 Instead of expanding your brute force pattern (which is not a very
 obvious decision to make) you can more easily find the solution to this
 challenge by investigating which languages are supported in the Juice
-Shop and how xref:part3/translation.adoc[the translations] are managed.
+Shop and how xref:part3/translation.adoc#_helping_with_translations[the translations] are managed.
 This will quickly bring you over to
 https://crowdin.com/project/owasp-juice-shop which immediately
-spoilers _Klingon_ as a supported language. Hovering over the
+spoilers __Klingon__ as a supported language. Hovering over the
 corresponding flag will eventually spoiler the language code `tlh_AA`.
 
 image::appendix/crowdin_klingon-spoiler.png[Crowdin Klingon Spoiler]
@@ -2057,9 +2057,9 @@ have `"image":""` set.
 https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2[Google Authenticator])
 create a new entry, but instead of scanning any QR code type in the
 key `IFTXE3SPOEYVURT2MRYGI52TKJ4HC3KH` manually.
-. Go to link:http:localhost:3000/#/login[http:localhost:3000/#/login] and use SQL Injection to log in
-with `wurstbrot@juice-sh.op'--` as _Username_ and anything as
-_Password_.
+. Go to link:http:localhost:3000/#/login[pass:[http:localhost:3000/#/login]] and use SQL Injection to log in
+with `wurstbrot@juice-sh.op'--` as __Username__ and anything as
+__Password__.
 . You will be presented with the _Two Factor Authentication_ input
 screen where you now have to type in the 6-digit code currently
 displayed on your 2FA app.
@@ -2174,7 +2174,7 @@ ZIP/postal code when you were a teenager?_
 by hitting _Change_ to *not solve* this challenge.
 . Bjoern added some obscurity to his security answer by using an
 uncommon variant of the pre-unification format of
-<<postal-codes-in-germany,postal codes in Germany>>.
+<<_postal_codes_in_germany,postal codes in Germany>>.
 . Visit http://www.alte-postleitzahlen.de/uetersen to learn that
 Uetersen's old ZIP code was `W-2082`. This would not work as an
 answer either. Bjoern used the written out variation: `West-2082`.

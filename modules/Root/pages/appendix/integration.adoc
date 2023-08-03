@@ -128,7 +128,7 @@ for the next version to be released (`develop` branch)
 | Direct link to a xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
 | `/#/hacking-instructor?challenge=<name>`
 | Only for challenges where `tutorial` is defined.
-| http://localhost:3000/#/hacking-instructor?challenge=Score%20Board or http://preview.owasp-juice.shop/#/hacking-instructor?challenge=DOM%20XSS
+| http://localhost:3000/pass:[#]/hacking-instructor?challenge=Score%20Board or http://preview.owasp-juice.shop/pass:[#]/hacking-instructor?challenge=DOM%20XSS
 |===
 
 🖼️ _As the utilized GitBook version does not set the

@@ -1,4 +1,4 @@
-= Trainer's guide
+= Trainer's guide[[_trainers_guide]]
 include::../attributes.adoc[]
 
 Co-authored by https://github.com/wurstbrot[Timo Pagel]
@@ -7,7 +7,7 @@ Co-authored by https://github.com/wurstbrot[Timo Pagel]
 
 Make sure all participants have their own running Juice Shop instance to
 work with. While attempting challenges like
-xref:part2/insecure-deserialization.adoc[RCE] or xref:part2/xxe.adoc[XXE]
+xref:part2/insecure-deserialization.adoc#_rce[RCE] or xref:part2/xxe.adoc#_xxe[XXE]
 students might occasionally take down their server and would severely
 impact other participants if they shared an instance.
 
@@ -21,7 +21,7 @@ Especially in awareness trainings for management you might want to
 create a higher immersion by making the Juice Shop look like an
 application in the corporate design of the participants' own company.
 Juice Shop offers
-xref:part1/customization.adoc[various customization options] to achieve
+xref:part1/customization.adoc#customization[various customization options] to achieve
 this.
 
 Several custom configurations already come packaged with the Juice Shop
@@ -55,7 +55,7 @@ for i in {10..19}; do docker run -d -p 40$i:3000 bkimminich/juice-shop; done
 ----
 
 If you want to track progress centrally during the training, you might
-want to xref:part1/ctf.adoc[host a central CTF server] where participants
+want to xref:part1/ctf.adoc#_hosting_a_ctf_event[host a central CTF server] where participants
 can post the challenges they already solved. You might consider turning
 off public visibility of the leader board on the CTF server unless you
 want to encourage the students to hack very competitively.

@@ -1,4 +1,5 @@
-= Part II - Challenge hunting[[_challenge_hunting]]
+=Part II - Challenge hunting[[_challenge_hunting]]
+
 include::../attributes.adoc[]
 
 This part of the book can be read from end to end as a _hacking guide_.
@@ -922,8 +923,8 @@ ifeval::[{is_ctf} == 1]
 
 | XXE Data Access
 | Retrieve the content of `C:\Windows\system.ini` or `/etc/passwd` from the server.
-| xref:part2/xxe.adoc#_retrieve_the_content_of_cwindowssystemini_or_etcpasswd_from_the_server[💡]
-| xref:appendix/solutions.adoc#_retrieve_the_content_of_cwindowssystemini_or_etcpasswd_from_the_server[📕]
+| xref:part2/xxe.adoc#_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server[💡]
+| xref:appendix/solutions.adoc#_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server[📕]
 
 | XXE DoS
 | Give the server something to chew on for quite a while.
@@ -939,7 +940,7 @@ ifeval::[{is_ctf} == 1]
 == Challenge Solutions
 
 In case you are getting frustrated with a particular challenge, you can
-refer to the xref:/appendix/solutions.adoc[Challenge solutions] appendix
+refer to the xref:/appendix/solutions.adoc#_challenge_solutions[Challenge solutions] appendix
 where you find explicit instructions how to successfully exploit each
 vulnerability. It is highly recommended to use this option only as a
 last resort. You will learn *a lot more* from hacking entirely on your

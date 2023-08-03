@@ -1,4 +1,5 @@
-= Finding the Score Board[[_finding_the_score_board]]
+=Finding the Score Board[[_finding_the_score_board]]
+
 include::../attributes.adoc[]
 
 In part 1 you were introduced to the Score Board and learned how it

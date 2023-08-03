@@ -1,4 +1,5 @@
-= Insecure Deserialization
+= Insecure Deserialization[[_rce]]
+
 include::../attributes.adoc[]
 
 ____

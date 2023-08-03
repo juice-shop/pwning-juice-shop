@@ -1,4 +1,4 @@
-= Troubleshooting
+= Troubleshooting[[_troubleshooting]]
 include::../attributes.adoc[]
 
 :pp: {plus}{plus}
@@ -36,7 +36,7 @@ fixed in a straightforward fashion when they fail:
 | Repair the mentioned dependency file. When using an original tag release version or `master` branch you should *never* see this error.
 
 | `+Dependencies in ... are not rightly satisfied+` followed by individual messages on missing dependencies or version mismatches
-| If you installed xref:part1/running.adoc#_from_sources[from sources] re-run `npm install` and check for errors during that step. See also <<nodejs--npm,Node.js / NPM>> for some common culprits. In a xref:part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution] you should *never* see this error.
+| If you installed xref:part1/running.adoc#_from_sources[from sources] re-run `npm install` and check for errors during that step. See also <<_node_js_npm,Node.js / NPM>> for some common culprits. In a xref:part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution] you should *never* see this error.
 
 | `+Detected Node version ... is not in the supported version range of ...+`
 | Install one of the officially supported Node.js versions {nodeVersions}. If you use a xref:part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution], make sure its version matches your installed Node.js version.
@@ -90,10 +90,10 @@ fixed in a straightforward fashion when they fail:
 | Make sure `ctf.showFlagsInNotifications` is `true` when you also have configured `ctf.showCountryDetailsInNotifications` set to `name`, `flag` or `both`.
 
 | `+Intent ... is missing in chatbot training data+`
-| Make sure that your chatbot training data defines all mandatory `intent` objects defined in the xref:appendix/chatbot.adoc[Chatbot training data] specification.
+| Make sure that your chatbot training data defines all mandatory `intent` objects defined in the xref:appendix/chatbot.adoc#_chatbot_training_data[Chatbot training data] specification.
 
 | `+Answer with ... action and handler ... is missing for intent ...+`
-| Make sure that your chatbot training data defines the expected `+{ "action": "...", "handler": "..." }+` on the mentioned mandatory `intent` object as defined in the xref:appendix/chatbot.adoc[Chatbot training data] specification.
+| Make sure that your chatbot training data defines the expected `+{ "action": "...", "handler": "..." }+` on the mentioned mandatory `intent` object as defined in the xref:appendix/chatbot.adoc#_chatbot_training_data[Chatbot training data] specification.
 |===
 
 If your installation did not even get to the point of running these

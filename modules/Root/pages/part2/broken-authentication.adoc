@@ -1,4 +1,5 @@
-= Broken Authentication
+= Broken Authentication[[_broken_authentication]]
+
 include::../attributes.adoc[]
 
 == Challenges covered in this chapter
@@ -116,7 +117,7 @@ does not suffice to solve this challenge!
 accused of being based on
 https://owasp.org/www-community/attacks/csrf[Cross-Site Request Forgery].
 * It might also have been put into the
-xref:part2/improper-input-validation.adoc[Improper Input Validation] category.
+xref:part2/improper-input-validation.adoc#_improper_input_validation[Improper Input Validation] category.
 * Bender's current password is so strong that brute force, rainbow table
 or guessing attacks will probably not work.
 
