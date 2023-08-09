@@ -513,7 +513,7 @@ ifeval::[{is_ctf} == 1]
 
 | Confidential Document
 | Access a confidential document.
-| xref:part2/sensitive_data-exposure.adoc#_access_a_confidential_document[💡]
+| xref:part2/sensitive-data-exposure.adoc#_access_a_confidential_document[💡]
 | xref:appendix/solutions.adoc#_access_a_confidential_document[📕]
 
 | Cross-Site Imaging
@@ -573,7 +573,7 @@ ifeval::[{is_ctf} == 1]
 
 | Exposed Metrics
 | Find the endpoint that serves usage data to be scraped by a popular monitoring system.
-| xref:part2/sensitive_data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[💡]
+| xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[💡]
 | xref:appendix/solutions.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[📕]
 
 | Extra Language
