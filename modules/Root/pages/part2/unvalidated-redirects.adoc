@@ -30,7 +30,7 @@ information about how it works under to hood
 
 ____
 White list validation involves defining exactly what _is_ authorized,
-and by definition, everything else is not authorized.footnote:1[https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html#whitelisting-vs-blacklisting]
+and by definition, everything else is not authorized.footnote:3_11_1[https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html#whitelisting-vs-blacklisting]
 ____
 
 === Let us redirect you to one of our crypto currency addresses

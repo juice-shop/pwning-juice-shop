@@ -18,7 +18,7 @@ not be trusted, and will execute the script. Because it thinks the
 script came from a trusted source, the malicious script can access any
 cookies, session tokens, or other sensitive information retained by
 the browser and used with that site. These scripts can even rewrite
-the content of the HTML page.footnote:1[https://owasp.org/www-community/attacks/xss/]
+the content of the HTML page.footnote:3_13_1[https://owasp.org/www-community/attacks/xss/]
 ____
 
 == Challenges covered in this chapter
@@ -127,7 +127,7 @@ for web content. If the site doesn't offer the CSP header, browsers
 likewise use the standard same-origin policy.
 
 To enable CSP, you need to configure your web server to return the
-Content-Security-Policy HTTP header ([...]).footnote:5[https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP]
+Content-Security-Policy HTTP header ([...]).footnote:3_13_5[https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP]
 ____
 
 === Perform a persisted XSS attack bypassing a client-side security mechanism
@@ -140,7 +140,7 @@ ____
 Be aware that any JavaScript input validation performed on the client
 can be bypassed by an attacker that disables JavaScript or uses a Web
 Proxy. Ensure that any input validation performed on the client is
-also performed on the server.footnote:4[https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet]
+also performed on the server.footnote:3_13_4[https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet]
 ____
 
 * There are only some input fields in the Juice Shop forms that validate
@@ -169,7 +169,7 @@ security - for example to limit scripts on different domains from
 obtaining session cookies for other domains. A DOM-based XSS
 vulnerability may occur when active content, such as a JavaScript
 function, is modified by a specially crafted request such that a DOM
-element that can be controlled by an attacker.footnote:3[https://wiki.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)]
+element that can be controlled by an attacker.footnote:3_13_3[https://wiki.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)]
 ____
 
 * This challenge is almost indistinguishable from
@@ -199,7 +199,7 @@ attack is not stored within the application itself; it is
 non-persistent and only impacts users who open a maliciously crafted
 link or third-party web page. The attack string is included as part of
 the crafted URI or HTTP parameters, improperly processed by the
-application, and returned to the victim.footnote:2[https://wiki.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)]
+application, and returned to the victim.footnote:3_13_2[https://wiki.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)]
 ____
 
 * Look for a URL parameter where its value appears on the page it is

@@ -38,7 +38,7 @@ successful injection attack can also run the entire range of severity,
 from trivial to complete system compromise or destruction. In any
 case, the use of external calls is quite widespread, so the likelihood
 of an application having an injection flaw should be considered
-high.footnote:1[https://owasp.org/www-community/Injection_Flaws]
+high.footnote:3_5_1[https://owasp.org/www-community/Injection_Flaws]
 ____
 
 == Challenges covered in this chapter
@@ -126,7 +126,7 @@ retrieved from the database. When the database does not output data to
 the web page, an attacker is forced to steal data by asking the
 database a series of true or false questions. This makes exploiting
 the SQL Injection vulnerability more difficult, but not
-impossible.footnote:4[https://owasp.org/www-community/attacks/Blind_SQL_Injection]
+impossible.footnote:3_5_4[https://owasp.org/www-community/attacks/Blind_SQL_Injection]
 ____
 
 To solve this challenge you need _to order_ a product that is not
@@ -255,7 +255,7 @@ execute within the database engine, NoSQL variants may execute during
 within the application layer or the database layer, depending on the
 NoSQL API used and data model. Typically NoSQL injection attacks will
 execute where the attack string is parsed, evaluated, or concatenated
-into a NoSQL API call.footnote:2[https://wiki.owasp.org/index.php/Testing_for_NoSQL_injection]
+into a NoSQL API call.footnote:3_5_2[https://wiki.owasp.org/index.php/Testing_for_NoSQL_injection]
 ____
 
 This challenge is about giving the server the chance to catch a breath
@@ -268,7 +268,7 @@ legitimate users from accessing information or services. By targeting
 your computer and its network connection, or the computers and network
 of the sites you are trying to use, an attacker may be able to prevent
 you from accessing email, websites, online accounts (banking, etc.),
-or other services that rely on the affected computer.footnote:3[https://www.us-cert.gov/ncas/tips/ST04-015]
+or other services that rely on the affected computer.footnote:3_5_3[https://www.us-cert.gov/ncas/tips/ST04-015]
 ____
 
 * As stated in the
@@ -347,7 +347,7 @@ complete compromise of the application's data and functionality, and
 often of the server that is hosting the application. It may also be
 possible to use the server as a platform for further attacks against
 other systems. On the other hand, some template injection
-vulnerabilities may pose no significant security risk. footnote:5[https://portswigger.net/kb/issues/00101080_server-side-template-injection]
+vulnerabilities may pose no significant security risk. footnote:3_5_5[https://portswigger.net/kb/issues/00101080_server-side-template-injection]
 ____
 
 === Retrieve a list of all user credentials via SQL Injection

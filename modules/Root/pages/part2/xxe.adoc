@@ -45,7 +45,7 @@ released.
 Note that the application does not need to explicitly return the
 response to the attacker for it to be vulnerable to information
 disclosures. An attacker can leverage DNS information to exfiltrate
-data through subdomain names to a DNS server that he/she controls.footnote:1[https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing]
+data through subdomain names to a DNS server that he/she controls.footnote:3_14_1[https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing]
 ____
 
 == Challenges covered in this chapter

@@ -76,7 +76,7 @@ responses to differing inputs, such as displaying the same error text
 with different error numbers. Web applications will often leak
 information about their internal state through detailed or debug error
 messages. Often, this information can be leveraged to launch or even
-automate more powerful attacks.footnote:1[https://wiki.owasp.org/index.php/Top_10_2007-Information_Leakage]
+automate more powerful attacks.footnote:3_8_1[https://wiki.owasp.org/index.php/Top_10_2007-Information_Leakage]
 ____
 
 * This challenge actually triggers from various possible error

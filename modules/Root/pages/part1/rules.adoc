@@ -161,7 +161,7 @@ In computer programming, boilerplate code or boilerplate refers to
 sections of code that have to be included in many places with little
 or no alteration. It is often used when referring to languages that
 are considered verbose, i.e. the programmer must write a lot of code
-to do minimal jobs.footnote:1[https://en.wikipedia.org/wiki/Boilerplate_code]
+to do minimal jobs.footnote:2_3_1[https://en.wikipedia.org/wiki/Boilerplate_code]
 ____
 
 === Penetration testing tools
@@ -203,7 +203,7 @@ vulnerabilities in web applications. It is designed to be used by
 people with a wide range of security experience and as such is ideal
 for developers and functional testers who are new to penetration
 testing. ZAP provides automated scanners as well as a set of tools
-that allow you to find security vulnerabilities manually.footnote:2[https://github.com/zaproxy/zap-core-help/wiki]
+that allow you to find security vulnerabilities manually.footnote:2_3_2[https://github.com/zaproxy/zap-core-help/wiki]
 ____
 
 image::part1/zap.png[ZAP Logo]
@@ -219,7 +219,7 @@ ____
 Kali Linux is a Debian-based Linux distribution aimed at advanced
 Penetration Testing and Security Auditing. Kali contains several
 hundred tools aimed at various information security tasks, such as
-Penetration Testing, Forensics and Reverse Engineering.footnote:3[http://docs.kali.org/introduction/what-is-kali-linux]
+Penetration Testing, Forensics and Reverse Engineering.footnote:2_3_3[http://docs.kali.org/introduction/what-is-kali-linux]
 ____
 
 The keyword in the previous quote is _advanced_! More precisely, Kali
@@ -233,7 +233,7 @@ however, that Kali is a Linux distribution specifically geared towards
 professional penetration testers and security specialists, and given
 its unique nature, it is *NOT* a recommended distribution if you're
 unfamiliar with Linux [...]. Even for experienced Linux users, Kali
-can pose some challenges.footnote:4[http://docs.kali.org/introduction/should-i-use-kali-linux]
+can pose some challenges.footnote:2_3_4[http://docs.kali.org/introduction/should-i-use-kali-linux]
 ____
 
 Although there exist some more light-weight pentesting distributions,

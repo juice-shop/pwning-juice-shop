@@ -60,7 +60,7 @@ maintain applications that can be trusted. All of our projects, tools,
 documents, forums, and chapters are free and open to anyone interested
 in improving application security. The OWASP Foundation launched on
 December 1st, 2001, becoming incorporated as a United States
-non-profit charity on April 21, 2004. footnote:1[https://owasp.org/about/]
+non-profit charity on April 21, 2004. footnote:1_1_1[https://owasp.org/about/]
 ____
 
 Two years after its inception the Juice Shop was submitted and accepted

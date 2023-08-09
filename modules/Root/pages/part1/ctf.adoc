@@ -30,7 +30,7 @@ point values and difficulties. Teams attempt to earn the most points
 in the competition's time frame (for example 24 hours), but do not
 directly attack each other. Rather than a race, this style of game
 play encourages taking time to approach challenges and prioritizes
-quantity of correct submissions over the timing.footnote:1[https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security]
+quantity of correct submissions over the timing.footnote:2_1_1[https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security]
 ____
 
 image::introduction/JuiceShopCTF_Logo.png[OWASP Juice Shop CTF logo]
@@ -495,7 +495,7 @@ truncated if desired.
 HMAC does not encrypt the message. Instead, the message (encrypted or
 not) must be sent alongside the HMAC hash. Parties with the secret key
 will hash the message again themselves, and if it is authentic, the
-received and computed hashes will match.footnote:2[https://en.wikipedia.org/wiki/Hash-based_message_authentication_code]
+received and computed hashes will match.footnote:2_1_2[https://en.wikipedia.org/wiki/Hash-based_message_authentication_code]
 ____
 
 == Commercial use disclaimer

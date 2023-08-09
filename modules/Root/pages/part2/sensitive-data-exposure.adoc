@@ -90,7 +90,7 @@ the online services) How many requests for each page at the site,
 which can be presented with the pages with most requests listed first
 Usage patterns in terms of time of day, day of week, and seasonally
 Access log keepers and analyzers can be found as shareware on the Web
-or may come with a Web server.footnote:1[https://searchsecurity.techtarget.com/definition/access-log]
+or may come with a Web server.footnote:3_10_1[https://searchsecurity.techtarget.com/definition/access-log]
 ____
 
 The Juice Shop application server is writing access logs, which can
@@ -145,7 +145,7 @@ has a very active developer and user community. It is now a standalone
 open source project and maintained independently of any company. To
 emphasize this, and to clarify the project's governance structure,
 Prometheus joined the Cloud Native Computing Foundation in 2016 as the
-second hosted project, after Kubernetes. footnote:6[https://prometheus.io/docs/introduction/overview/]
+second hosted project, after Kubernetes. footnote:3_10_6[https://prometheus.io/docs/introduction/overview/]
 ____
 
 * The Juice Shop serves its metrics on the default path expected by
@@ -155,7 +155,7 @@ via https://prometheus.io/docs/introduction/first_steps
 
 ____
 RTFM is an initialism for the expression "read the fucking manual".
-footnote:7[https://en.wikipedia.org/wiki/RTFM]
+footnote:3_10_7[https://en.wikipedia.org/wiki/RTFM]
 ____
 
 === Access a developer's forgotten backup file
@@ -225,7 +225,7 @@ terms associated with data leakage prevention are information leak
 detection and prevention (ILDP), information leak prevention (ILP),
 content monitoring and filtering (CMF), information protection and
 control (IPC) and extrusion prevention system (EPS), as opposed to
-intrusion prevention system. footnote:2[https://en.wikipedia.org/wiki/Data_loss_prevention_software]
+intrusion prevention system. footnote:3_10_2[https://en.wikipedia.org/wiki/Data_loss_prevention_software]
 ____
 
 * As the challenge name implies, your task is to find some leaked access
@@ -245,7 +245,7 @@ multiple iterations using a number of different passwords, but the
 number of passwords attempted is usually low when compared to the
 number of users attempted. This method avoids password lockouts, and
 it is often more effective at uncovering weak passwords than targeting
-specific users.footnote:5[https://resources.infosecinstitute.com/password-spraying/]
+specific users.footnote:3_10_5[https://resources.infosecinstitute.com/password-spraying/]
 ____
 
 === Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
@@ -320,7 +320,7 @@ variety of event and contextual data sources. It also supports
 compliance reporting and incident investigation through analysis of
 historical data from these sources. The core capabilities of SIEM
 technology are a broad scope of event collection and the ability to
-correlate and analyze events across disparate sources.footnote:3[https://www.gartner.com/it-glossary/security-information-and-event-management-siem/]
+correlate and analyze events across disparate sources.footnote:3_10_3[https://www.gartner.com/it-glossary/security-information-and-event-management-siem/]
 ____
 
 The misplaced signature file is actually a rule file for
@@ -336,7 +336,7 @@ form in which researchers or analysts can describe their once
 developed detection methods and make them shareable with others.
 
 Sigma is for log files what Snort is for network traffic and YARA is
-for files.footnote:4[https://github.com/Neo23x0/sigma#what-is-sigma]
+for files.footnote:3_10_4[https://github.com/Neo23x0/sigma#what-is-sigma]
 ____
 
 * If you solved one of the other four file access challenges, you

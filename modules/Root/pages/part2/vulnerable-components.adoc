@@ -73,7 +73,7 @@ of problems here depends entirely on what the file is used for. See
 the examples below for some ideas about how files might be misused. To
 protect against this type of attack, you should analyse everything
 your application does with files and think carefully about what
-processing and interpreters are involved.footnote:3[https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload]
+processing and interpreters are involved.footnote:3_12_3[https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload]
 ____
 
 * Find all places in the application where file uploads are possible.
@@ -130,7 +130,7 @@ Once in the typosquatter's site, the user may also be tricked into
 thinking that they are in fact in the real site, through the use of
 copied or similar logos, website layouts or content. Spam emails
 sometimes make use of typosquatting URLs to trick users into visiting
-malicious sites that look like a given bank's site, for instance.footnote:1[https://en.wikipedia.org/wiki/Typosquatting]
+malicious sites that look like a given bank's site, for instance.footnote:3_12_1[https://en.wikipedia.org/wiki/Typosquatting]
 ____
 
 This challenge is about identifying and reporting (via the
@@ -185,7 +185,7 @@ A *file inclusion vulnerability* is a type of web vulnerability that is most com
 
 *Remote file inclusion (RFI)* occurs when the web application downloads and executes a remote file. These remote files are usually obtained in the form of an HTTP or FTP URI as a user-supplied parameter to the web application.
 
-*Local file inclusion (LFI)* is similar to a remote file inclusion vulnerability except instead of including remote files, only local files i.e. files on the current server can be included for execution. This issue can still lead to remote code execution by including a file that contains attacker-controlled data such as the web server's access logs.footnote:5[https://en.wikipedia.org/wiki/File_inclusion_vulnerability]
+*Local file inclusion (LFI)* is similar to a remote file inclusion vulnerability except instead of including remote files, only local files i.e. files on the current server can be included for execution. This issue can still lead to remote code execution by including a file that contains attacker-controlled data such as the web server's access logs.footnote:3_12_5[https://en.wikipedia.org/wiki/File_inclusion_vulnerability]
 ____
 
 * You should read up on Local File Read (LFR) vulnerabilities in popular NodeJS template engines
@@ -202,7 +202,7 @@ update repository. This is done with the intention of installing a
 backdoor, or other malicious code, into the legitimate software update
 provided by the vendor. As users update their software, unwittingly
 falling victim to the Trojanized update, they also install the
-embedded malicious code.footnote:4[https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm]
+embedded malicious code.footnote:3_12_4[https://www.rsa.com/en-us/blog/2017-02/are-software-supply-chain-attacks-the-new-norm]
 ____
 
 ℹ️ Please note that having the OWASP Juice Shop installed on your
@@ -228,7 +228,7 @@ encoded as a JSON object that is used as the payload of a JSON Web
 Signature (JWS) structure or as the plaintext of a JSON Web Encryption
 (JWE) structure, enabling the claims to be digitally signed or
 integrity protected with a Message Authentication Code (MAC) and/or
-encrypted.footnote:2[https://tools.ietf.org/html/rfc7519]
+encrypted.footnote:3_12_2[https://tools.ietf.org/html/rfc7519]
 ____
 
 This challenge involves forging a valid JWT for a user that does not

@@ -76,7 +76,7 @@ information can be collected, and what it can be used for. In general,
 data protection laws in Europe cover the private sector as well as the
 public sector. Their privacy laws apply not only to government
 operations but also to private enterprises and commercial
-transactions.footnote:1[https://en.wikipedia.org/wiki/Privacy_policy]
+transactions.footnote:3_7_1[https://en.wikipedia.org/wiki/Privacy_policy]
 ____
 
 * When you work with the application you will most likely solve this
@@ -101,7 +101,7 @@ an organization's information systems. Ethical hacking is a term meant
 to imply a broader category than just penetration testing. Contrasted
 with black hat, a malicious hacker, the name comes from Western films,
 where heroic and antagonistic cowboys might traditionally wear a white
-and a black hat respectively.footnote:2[https://en.wikipedia.org/wiki/White_hat_(computer_security)]
+and a black hat respectively.footnote:3_7_2[https://en.wikipedia.org/wiki/White_hat_(computer_security)]
 ____
 
 * This challenge asks you to act like an ethical hacker

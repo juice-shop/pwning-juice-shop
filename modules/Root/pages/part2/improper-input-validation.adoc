@@ -7,7 +7,7 @@ When software does not validate input properly, an attacker is able to
 craft the input in a form that is not expected by the rest of the
 application. This will lead to parts of the system receiving
 unintended input, which may result in altered control flow, arbitrary
-control of a resource, or arbitrary code execution.footnote:1[https://cwe.mitre.org/data/definitions/20.html]
+control of a resource, or arbitrary code execution.footnote:3_4_1[https://cwe.mitre.org/data/definitions/20.html]
 ____
 
 == Challenges covered in this chapter
@@ -124,7 +124,7 @@ Byte exploit takes advantage strings with a known length that can
 contain null bytes, and whether or not the API being attacked uses
 null terminated strings. By placing a NULL byte in the string at a
 certain byte, the string will terminate at that point, nulling the
-rest of the string, such as a file extension.footnote:2[http://hakipedia.com/index.php/Poison_Null_Byte]
+rest of the string, such as a file extension.footnote:3_4_2[http://hakipedia.com/index.php/Poison_Null_Byte]
 ____
 
 * Analyze and tamper with links in the application until you get to an
