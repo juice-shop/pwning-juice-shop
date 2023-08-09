@@ -7,7 +7,7 @@ content:
     start_path:
 ui:
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: /Users/parthnanda/Desktop/Gsoc/JuiceShop-UI-antora/build/ui-bundle.zip
     snapshot: true
 output:
   dir: ./docs
