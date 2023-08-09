@@ -433,7 +433,7 @@ ifeval::[{is_ctf} == 1]
 
 | API-only XSS
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` without using the frontend application at all.
-| xref:part2/xss.adoc#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all[💡]
+| xref:part2/xss.adoc#_perform_a_persisted_xss_attack_without_using_the_frontend_application_at_all[💡]
 | xref:appendix/solutions.adoc#_perform_a_persisted_xss_attack_without_using_the_frontend_application_at_all[📕]
 
 | Access Log
