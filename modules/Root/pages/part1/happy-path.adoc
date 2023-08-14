@@ -12,7 +12,7 @@ Before commencing security testing, understanding the structure of the
 application is paramount. Without a thorough understanding of the
 layout of the application, it is unlikely that it will be tested
 thoroughly. Map the target application and understand the principal
-workflows.footnote:1[https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)]
+workflows.footnote:2_2_1[https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)]
 ____
 
 A good way to gain an understanding for the application, is to _actually
@@ -23,7 +23,7 @@ ____
 Also known as the "sunny day" scenario, the happy path is the "normal"
 path of execution through a use case or through the software that
 implements it. Nothing goes wrong, nothing out of the normal happens,
-and we swiftly and directly achieve the user's or caller's goal.footnote:2[http://xunitpatterns.com/happy%20path.html]
+and we swiftly and directly achieve the user's or caller's goal.footnote:2_2_2[http://xunitpatterns.com/happy%20path.html]
 ____
 
 The OWASP Juice Shop is a rather simple e-commerce application that

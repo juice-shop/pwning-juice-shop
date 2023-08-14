@@ -452,7 +452,7 @@ in security, unexpected behaviors are a usual source of weaknesses
 that could lead to HTTP Parameter Pollution attacks in this case. To
 better introduce this class of vulnerabilities and the outcome of HPP
 attacks, it is interesting to analyze some real-life examples that
-have been discovered in the past. footnote:7[https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)]
+have been discovered in the past. footnote:5_1_7[https://wiki.owasp.org/index.php/Testing_for_HTTP_Parameter_pollution_(OTG-INPVAL-004)]
 ____
 
 === Submit 10 or more customer feedbacks within 10 seconds
@@ -1242,7 +1242,7 @@ Because there are 26 letters (2×13) in the basic Latin alphabet, ROT13
 is its own inverse; that is, to undo ROT13, the same algorithm is
 applied, so the same action can be used for encoding and decoding. The
 algorithm provides virtually no cryptographic security, and is often
-cited as a canonical example of weak encryption.footnote:1[https://en.wikipedia.org/wiki/ROT13]
+cited as a canonical example of weak encryption.footnote:5_1_1[https://en.wikipedia.org/wiki/ROT13]
 ____
 
 === Successfully redeem an expired campaign coupon code
@@ -2019,7 +2019,7 @@ never existed, the Klingon language is real. It has developed from
 gibberish to a usable means of communication, complete with its own
 vocabulary, grammar, figures of speech, and even slang and regional
 dialects. Today it is spoken by humans all over the world, in many
-contexts.footnote:3[http://www.kli.org/about-klingon/klingon-history]
+contexts.footnote:5_1_3[http://www.kli.org/about-klingon/klingon-history]
 ____
 
 === Solve the 2FA challenge for user "wurstbrot"
@@ -2196,7 +2196,7 @@ transitional arrangement following reunification, between 1989 and
 1993 postal codes in the west were prefixed with 'W', e.g.: W-1000
 [Berlin] 30 (postal districts in western cities were separate from
 the postal code) and those in the east with 'O' (for Ost), e.g.:
-O-1xxx Berlin.footnote:4[https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany]
+O-1xxx Berlin.footnote:5_1_4[https://en.wikipedia.org/wiki/List_of_postal_codes_in_Germany]
 ____
 
 === Reset Morty's password via the Forgot Password mechanism
@@ -2250,7 +2250,7 @@ involves a specialized form of symbolic writing. For example, leet
 spellings of the word leet include 1337 and l33t; eleet may be spelled
 31337 or 3l33t. Leet may also be considered a substitution cipher,
 although many dialects or linguistic varieties exist in different
-online communities.footnote:5[https://en.wikipedia.org/wiki/Leet]
+online communities.footnote:5_1_5[https://en.wikipedia.org/wiki/Leet]
 ____
 
 === Deprive the shop of earnings by downloading the blueprint for one of its products
@@ -2374,7 +2374,7 @@ widely addressed in 2008.
 Defenses against this kind of attack include capping the memory
 allocated in an individual parser if loss of the document is
 acceptable, or treating entities symbolically and expanding them
-lazily only when (and to the extent) their content is to be used.footnote:6[https://en.wikipedia.org/wiki/Billion_laughs_attack]
+lazily only when (and to the extent) their content is to be used.footnote:5_1_6[https://en.wikipedia.org/wiki/Billion_laughs_attack]
 
 [,xml]
 ----
@@ -2471,7 +2471,7 @@ invoke them remotely or wait for the system or user to call them, thus
 achieving *remote command execution* on the victim's machine. The
 vulnerability can also cause damage by overwriting configuration files
 or other sensitive resources, and can be exploited on both client
-(user) machines and servers. footnote:8[https://res.cloudinary.com/snyk/image/upload/v1528192501/zip-slip-vulnerability/technical-whitepaper.pdf]
+(user) machines and servers. footnote:5_1_8[https://res.cloudinary.com/snyk/image/upload/v1528192501/zip-slip-vulnerability/technical-whitepaper.pdf]
 ____
 
 === Forge a coupon code that gives you a discount of at least 80%

@@ -15,7 +15,7 @@ Top Ten or other top issue list. Furthermore, they are not enumerated
 or defined adequately in existing dictionaries. These factors have
 contributed to inadequate visibility, and an inconsistency in naming
 such threats, with a consequent lack of clarity in attempts to address
-the issues. footnote:1[https://owasp.org/www-project-automated-threats-to-web-applications/]
+the issues. footnote:3_2_1[https://owasp.org/www-project-automated-threats-to-web-applications/]
 ____
 
 == Challenges covered in this chapter
@@ -58,7 +58,7 @@ some certainty whether there is a human on the other end.
 
 For a CAPTCHA to be effective, humans must be able to answer the test
 correctly as close to 100 percent of the time as possible. Computers
-must fail as close to 100 percent of the time as possible.footnote:2[https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks]
+must fail as close to 100 percent of the time as possible.footnote:3_2_2[https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks]
 ____
 
 * You could prepare 10 browser tabs, solving every CAPTCHA and filling
@@ -79,7 +79,7 @@ ____
 A project is internationalized when all of the project's materials and
 deliverables are consumable by an international audience. This can
 involve translation of materials into different languages, and the
-distribution of project deliverables into different countries.footnote:3[https://wiki.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements]
+distribution of project deliverables into different countries.footnote:3_2_3[https://wiki.owasp.org/index.php/OWASP_2014_Project_Handbook#tab=Project_Requirements]
 ____
 
 Following this requirement OWASP sets for all its projects, the Juice
@@ -108,7 +108,7 @@ attack (with or without mutations) or a traditional brute-force attack
 efficiency of the system which conducts the attack, and estimated
 efficiency of the system which is attacked the attacker is able to
 calculate approximately how long it will take to submit all chosen
-predetermined values.footnote:4[https://owasp.org/www-community/attacks/Brute_force_attack]
+predetermined values.footnote:3_2_4[https://owasp.org/www-community/attacks/Brute_force_attack]
 ____
 
 === Like any review at least three times as the same user
@@ -129,7 +129,7 @@ ____
 A race condition or race hazard is the behavior of an electronics,
 software, or other system where the output is dependent on the
 sequence or timing of other uncontrollable events. It becomes a bug
-when events do not happen in the order the programmer intended.footnote:5[https://en.wikipedia.org/wiki/Race_condition]
+when events do not happen in the order the programmer intended.footnote:3_2_5[https://en.wikipedia.org/wiki/Race_condition]
 ____
 
 ____
@@ -144,7 +144,7 @@ A specific kind of race condition involves checking for a predicate
 state can change between the time of check and the time of use. When
 this kind of bug exists in security-sensitive code, a security
 vulnerability called a time-of-check-to-time-of-use (TOCTTOU) bug is
-created.footnote:6[https://en.wikipedia.org/wiki/Race_condition#Computer_security]
+created.footnote:3_2_6[https://en.wikipedia.org/wiki/Race_condition#Computer_security]
 ____
 
 === Reset Morty's password via the Forgot Password mechanism

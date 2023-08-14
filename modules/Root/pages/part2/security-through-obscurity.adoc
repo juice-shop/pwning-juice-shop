@@ -18,7 +18,7 @@ may have theoretical or actual security vulnerabilities, but its
 owners or designers believe that if the flaws are not known, that will
 be sufficient to prevent a successful attack. Security experts have
 rejected this view as far back as 1851, and advise that obscurity
-should never be the only security mechanism.footnote:1[https://en.wikipedia.org/wiki/Security_through_obscurity]
+should never be the only security mechanism.footnote:3_9_1[https://en.wikipedia.org/wiki/Security_through_obscurity]
 ____
 
 == Challenges covered in this chapter
@@ -69,7 +69,7 @@ which refers to a method of selling participation in an economy,
 giving investors access to the features of a particular project
 starting at a later date. ICOs may sell a right of ownership or
 royalties to a project, in contrast to an initial public offering
-which sells a share in the ownership of the company itself.footnote:2[https://en.wikipedia.org/wiki/Initial_coin_offering]
+which sells a share in the ownership of the company itself.footnote:3_9_2[https://en.wikipedia.org/wiki/Initial_coin_offering]
 ____
 
 * Guessing or brute forcing the URL of the token sale page is very
@@ -132,7 +132,7 @@ steganographic transmission because of their large size. For example,
 a sender might start with an innocuous image file and adjust the color
 of every hundredth pixel to correspond to a letter in the alphabet.
 The change is so subtle that someone who is not specifically looking
-for it is unlikely to notice the change.footnote:3[https://en.wikipedia.org/wiki/Steganography]
+for it is unlikely to notice the change.footnote:3_9_3[https://en.wikipedia.org/wiki/Steganography]
 ____
 
 * There is not the slightest chance that you can spot the hidden

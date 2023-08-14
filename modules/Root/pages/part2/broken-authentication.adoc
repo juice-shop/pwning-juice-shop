@@ -77,7 +77,7 @@ so much personal information on social media, blogs, and websites,
 that it is hard to find questions that meet the criteria above. In
 addition, many questions are not applicable to some people; for
 example, what is your oldest child's nickname -- but you don't have a
-child.footnote:1[http://goodsecurityquestions.com]
+child.footnote:3_3_1[http://goodsecurityquestions.com]
 ____
 
 * Hints to the answer to Bjoern's question can be found by looking him
@@ -102,7 +102,7 @@ Internet vigilantism and hacktivism.
 Doxing may be carried out for various reasons, including to aid law
 enforcement, business analysis, risk analytics, extortion, coercion,
 inflicting harm, harassment, online shaming, and vigilante
-justice.footnote:2[https://en.wikipedia.org/wiki/Doxing]
+justice.footnote:3_3_2[https://en.wikipedia.org/wiki/Doxing]
 ____
 
 === Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
@@ -130,7 +130,7 @@ of a space/time trade-off, using less computer processing time and
 more storage than a brute-force attack which calculates a hash on
 every attempt, but more processing time and less storage than a simple
 lookup table with one entry per hash. Use of a key derivation function
-that employs a salt makes this attack infeasible.footnote:3[https://en.wikipedia.org/wiki/Rainbow_table]
+that employs a salt makes this attack infeasible.footnote:3_3_3[https://en.wikipedia.org/wiki/Rainbow_table]
 ____
 
 === Log in with Chris' erased user account
@@ -266,11 +266,11 @@ allows the transaction to be carried out.
 Two other examples are to supplement a user-controlled password with a
 one-time password (OTP) or code generated or received by an
 authenticator (e.g. a security token or smartphone) that only the user
-possesses.footnote:4[https://en.wikipedia.org/wiki/Multi-factor_authentication]
+possesses.footnote:3_3_4[https://en.wikipedia.org/wiki/Multi-factor_authentication]
 ____
 
 In the Juice Shop one customer was very security-aware and set up 2FA
-for his account. He goes by the hilarious username _wurstbrot_.footnote:5[https://www.dict.cc/?s=wurstbrot]
+for his account. He goes by the hilarious username _wurstbrot_.footnote:3_3_5[https://www.dict.cc/?s=wurstbrot]
 
 * As always, first learn how the feature under attack is used and
 behaves under normal conditions.

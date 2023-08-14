@@ -21,7 +21,7 @@ Internet Banking users can access site administrative functions or
 the password for a smartphone can be bypassed.)
 * Horizontal privilege escalation, where a normal user accesses
 functions or content reserved for other normal users (e.g. Internet
-Banking User A accesses the Internet bank account of User B)footnote:1[https://en.wikipedia.org/wiki/Privilege_escalation]
+Banking User A accesses the Internet bank account of User B)footnote:3_1_1[https://en.wikipedia.org/wiki/Privilege_escalation]
 ____
 
 == Challenges covered in this chapter
@@ -134,7 +134,7 @@ ____
 An Easter egg is an intentional inside joke, hidden message, or
 feature in an interactive work such as a computer program, video game
 or DVD menu screen. The name is used to evoke the idea of a
-traditional Easter egg hunt.footnote:2[https://en.wikipedia.org/wiki/Easter_egg_(media)]
+traditional Easter egg hunt.footnote:3_1_2[https://en.wikipedia.org/wiki/Easter_egg_(media)]
 ____
 
 * If you solved one of the other four file access challenges, you
@@ -244,7 +244,7 @@ server will read or submit data to, and by carefully selecting the
 URLs, the attacker may be able to read server configuration such as
 AWS metadata, connect to internal services like http enabled databases
 or perform post requests towards internal services which are not
-intended to be exposed. footnote:3[https://owasp.org/www-community/attacks/Server_Side_Request_Forgery]
+intended to be exposed. footnote:3_1_3[https://owasp.org/www-community/attacks/Server_Side_Request_Forgery]
 ____
 
 === View another user's shopping basket

@@ -1,4 +1,4 @@
-=Part II - Challenge hunting[[_challenge_hunting]]
+= Challenge hunting[[_challenge_hunting]]
 
 include::../attributes.adoc[]
 
@@ -433,7 +433,7 @@ ifeval::[{is_ctf} == 1]
 
 | API-only XSS
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` without using the frontend application at all.
-| xref:part2/xss.adoc#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all[💡]
+| xref:part2/xss.adoc#_perform_a_persisted_xss_attack_without_using_the_frontend_application_at_all[💡]
 | xref:appendix/solutions.adoc#_perform_a_persisted_xss_attack_without_using_the_frontend_application_at_all[📕]
 
 | Access Log
@@ -513,7 +513,7 @@ ifeval::[{is_ctf} == 1]
 
 | Confidential Document
 | Access a confidential document.
-| xref:part2/sensitive_data-exposure.adoc#_access_a_confidential_document[💡]
+| xref:part2/sensitive-data-exposure.adoc#_access_a_confidential_document[💡]
 | xref:appendix/solutions.adoc#_access_a_confidential_document[📕]
 
 | Cross-Site Imaging
@@ -573,7 +573,7 @@ ifeval::[{is_ctf} == 1]
 
 | Exposed Metrics
 | Find the endpoint that serves usage data to be scraped by a popular monitoring system.
-| xref:part2/sensitive_data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[💡]
+| xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[💡]
 | xref:appendix/solutions.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[📕]
 
 | Extra Language

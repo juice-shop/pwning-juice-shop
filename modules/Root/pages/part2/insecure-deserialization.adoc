@@ -18,7 +18,7 @@ process. Unfortunately, the features of these native deserialization
 mechanisms can be repurposed for malicious effect when operating on
 untrusted data. Attacks against deserializers have been found to allow
 denial-of-service, access control, and remote code execution
-attacks.footnote:1[https://owasp.org/www-project-cheat-sheets/cheatsheets/Deserialization_Cheat_Sheet.html]
+attacks.footnote:3_6_1[https://owasp.org/www-project-cheat-sheets/cheatsheets/Deserialization_Cheat_Sheet.html]
 ____
 
 == Challenges covered in this chapter
@@ -62,11 +62,11 @@ only limited by the functionality of the injected language itself. If
 an attacker is able to inject PHP code into an application and have it
 executed, he is only limited by what PHP is capable of. Command
 injection consists of leveraging existing code to execute commands,
-usually within the context of a shell.footnote:2[https://owasp.org/www-community/attacks/Code_Injection]
+usually within the context of a shell.footnote:3_6_2[https://owasp.org/www-community/attacks/Code_Injection]
 
 The ability to trigger arbitrary code execution from one machine on
 another (especially via a wide-area network such as the Internet) is
-often referred to as remote code execution.footnote:3[https://en.wikipedia.org/wiki/Arbitrary_code_execution]
+often referred to as remote code execution.footnote:3_6_3[https://en.wikipedia.org/wiki/Arbitrary_code_execution]
 ____
 
 * The feature you need to exploit for this challenge is not directly
@@ -89,7 +89,7 @@ ____
 An infinite loop (or endless loop) is a sequence of instructions in a
 computer program which loops endlessly, either due to the loop having
 no terminating condition, having one that can never be met, or one
-that causes the loop to start over.footnote:4[https://en.wikipedia.org/wiki/Infinite_loop]
+that causes the loop to start over.footnote:3_6_4[https://en.wikipedia.org/wiki/Infinite_loop]
 ____
 
 * This challenge uses the same leverage point as

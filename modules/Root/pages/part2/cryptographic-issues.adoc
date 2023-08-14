@@ -155,7 +155,7 @@ crypto makes it easy to fall for fantastic claims from vendors about
 their product. Typically, these are "`a breakthrough in cryptography`"
 or "`unbreakable`" or provide "military grade" security. If a vendor
 says "trust us, we have had experts look at this,`" chances are they
-weren't experts!footnote:1[https://wiki.owasp.org/index.php/Guide_to_Cryptography]
+weren't experts!footnote:3_4_1[https://wiki.owasp.org/index.php/Guide_to_Cryptography]
 ____
 
 * Use the _Contact Us_ form to submit a feedback mentioning the abused

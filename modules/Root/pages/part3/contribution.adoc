@@ -68,7 +68,7 @@ Given a version number `MAJOR.MINOR.PATCH`, increment the:
 . `MAJOR` version when you make incompatible API changes,
 . `MINOR` version when you add functionality in a
 backwards-compatible manner, and
-. `PATCH` version when you make backwards-compatible bug fixes.footnote:1[http://semver.org]
+. `PATCH` version when you make backwards-compatible bug fixes.footnote:4_2_1[http://semver.org]
 ____
 
 The current version of the project (omitting the leading `v`) must be
@@ -331,7 +331,7 @@ to your commit message:
 
  $ git commit -s -m 'This is my commit message'
 
-footnote:2[https://probot.github.io/apps/dco/]
+footnote:4_2_2[https://probot.github.io/apps/dco/]
 ____
 
 == Continuous integration & deployment

@@ -26,7 +26,7 @@ https://crowdin.com/project/owasp-juice-shop
 
 Crowdin is a _Localization Management Platform_ that allows to
 crowdsource translations of mobile apps, web, desktop software and
-related assets. It is free for open source projects.footnote:1[https://crowdin.com/]
+related assets. It is free for open source projects.footnote:4_3_1[https://crowdin.com/]
 
 === How to participate?
 

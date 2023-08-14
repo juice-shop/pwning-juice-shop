@@ -37,7 +37,7 @@ it well.
 Angular distinguishes components from services to increase modularity
 and reusability. By separating a component's view-related
 functionality from other kinds of processing, you can make your
-component classes lean and efficient.footnote:1[https://angular.io/guide/architecture-services]
+component classes lean and efficient.footnote:4_1_1[https://angular.io/guide/architecture-services]
 ____
 
 The client-side Angular services reside in the
@@ -107,7 +107,7 @@ pass:[[...]]
 
 You define a component's application logic--what it does to support the
 view--inside a class. The class interacts with the view through an API
-of properties and methods.footnote:2[https://angular.io/guide/architecture-components]
+of properties and methods.footnote:4_1_2[https://angular.io/guide/architecture-components]
 ____
 
 The Angular components reside inside `frontend/src/app` as a subfolder
@@ -248,7 +248,7 @@ achieving this through the interaction of a component class instance
 You may be familiar with the component/template duality from your
 experience with model-view-controller (MVC) or model-view-viewmodel
 (MVVM). In Angular, the component plays the part of the
-controller/viewmodel, and the template represents the view.footnote:3[https://angular.io/guide/template-syntax]
+controller/viewmodel, and the template represents the view.footnote:4_1_3[https://angular.io/guide/template-syntax]
 ____
 
 Each screen within the application is defined in a HTML view template
@@ -390,7 +390,7 @@ request to a particular endpoint, which is a URI (or path) and a
 specific HTTP request method (GET, POST, and so on).
 
 Each route can have one or more handler functions, which are executed
-when the route is matched.footnote:4[http://expressjs.com/en/starter/basic-routing.html]
+when the route is matched.footnote:4_1_4[http://expressjs.com/en/starter/basic-routing.html]
 ____
 
 Routes are defined via the the http://expressjs.com[Express] framework
@@ -826,7 +826,7 @@ rely on manual testing to verify the correctness of new features,
 catch bugs and notice regressions. Unit tests are the first line of
 defense for catching bugs, but sometimes issues come up with
 integration between components which can't be captured in a unit test.
-End-to-end tests are made to find these problems.footnote:5[https://docs.angularjs.org/guide/e2e-testing]
+End-to-end tests are made to find these problems.footnote:4_1_5[https://docs.angularjs.org/guide/e2e-testing]
 ____
 
 The folder `cypress/integration/e2e` contains an extensive suite of end-to-end tests
