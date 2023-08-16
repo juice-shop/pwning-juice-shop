@@ -4,13 +4,14 @@ site:
 content:
   sources:
   - url: https://github.com/parthn2/pwning-juice-shop.git
+    start_path: ./docs
     branches: [antora-migration, antora-develop]
 ui:
   bundle:
     url: /Users/parthnanda/Desktop/Gsoc/JuiceShop-UI-antora/build/ui-bundle.zip
     snapshot: true
 output:
-  dir: ./docs
+  dir: ./build
 
 antora:
   extensions:

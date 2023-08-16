@@ -7,3 +7,9 @@ Setup for epub: https://docs.asciidoctor.org/epub3-converter/latest/#prerequisit
 Command to build antora website: npx antora antora-playbook.yml
 Command to build pdf: asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts modules/ROOT/pages/book.adoc
 Command to build epub: asciidoctor-epub3 -D output modules/ROOT/pages/book.adoc
+
+[%hardbreaks]
+Antora:
+npx antora antora-playbook-local.yml command should be used for local testing
+npx antora antora-playbook.yml command should be used for production version.
+The difference between the above 2 commands is in the source files which are taken from the github in the latter version
