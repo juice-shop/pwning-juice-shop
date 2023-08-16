@@ -1,5 +1,6 @@
 site:
   title: Pwning OWASP Juice Shop
+  url: https://juice-shop.herokuapp.com
 content:
   sources:
   - url: https://github.com/parthn2/pwning-juice-shop.git
