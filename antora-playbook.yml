@@ -3,7 +3,6 @@ site:
 content:
   sources:
   - url: https://github.com/parthn2/pwning-juice-shop.git
-    start_path: ./
     branches: [antora-migration, antora-develop]
 ui:
   bundle:
