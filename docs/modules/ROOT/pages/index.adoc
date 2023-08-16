@@ -1,8 +1,6 @@
-= Pwning juice shop
+= Pwning OWASP Juice Shop
 
-include:: attributes.adoc[]
-
-:doctype: book
+include::attributes.adoc[]
 
 ifeval::[{is_ctf} == 1]
 image::cover-ctf.jpg[Front Cover]
