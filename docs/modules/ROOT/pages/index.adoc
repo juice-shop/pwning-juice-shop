@@ -1,0 +1,13 @@
+= Pwning juice shop
+
+include:: attributes.adoc[]
+
+:doctype: book
+
+ifeval::[{is_ctf} == 1]
+image::cover-ctf.jpg[Front Cover]
+endif::[]
+
+ifeval::[{is_ctf} == 0]
+image::cover.jpg[Front Cover]
+endif::[]
