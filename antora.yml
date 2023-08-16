@@ -5,7 +5,7 @@ asciidoc:
   attributes:
     page-lang: en@
 nav:
-- modules/Root/nav.adoc
+- modules/ROOT/nav.adoc
 font:
   catalog:
     Noto Serif:

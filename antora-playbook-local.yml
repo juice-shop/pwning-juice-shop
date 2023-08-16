@@ -1,6 +1,6 @@
 site:
   title: Pwning OWASP Juice Shop
-  start_page: introduction::readme.adoc
+
 content:
   sources:
   - url: ./
