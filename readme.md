@@ -25,18 +25,23 @@ There are 3 kinds of file which could be generated using this repository:
 
 ## 1. Antora Website
 
-
+Run the following command to generate the website
 > npx antora antora-playbook.yml
+
 > npx antora antora-playbook-local.yml command should be used for local testing
 > npx antora antora-playbook.yml command should be used for production version.
 The difference between the above 2 commands is in the source files which are taken from the github in the latter version
 - If you face any problem look over here: https://docs.antora.org/antora/latest/install-and-run-quickstart/
 
 ## 2. PDF
+
+Run the following command to generate the pdf
 > asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts modules/ROOT/pages/book.adoc
 
 - If you face any problem look over here: https://docs.asciidoctor.org/pdf-converter/latest/install/
 ## 3. EPUB
+
+Run the following command to generate the epub file
 > asciidoctor-epub3 -D output modules/ROOT/pages/book.adoc
 - If you face any problem look over here: https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites
 
