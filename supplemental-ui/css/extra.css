@@ -1,0 +1,5 @@
+/* Logo in navigation bar */
+.navbar-item img.navbar-logo {
+    margin-right: 1ex;
+    width: 9%;
+}
