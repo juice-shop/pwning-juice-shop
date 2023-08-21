@@ -3,3 +3,7 @@
     margin-right: 1ex;
     width: 9%;
 }
+
+table {
+    word-wrap: anywhere;
+  }
