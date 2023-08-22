@@ -24,26 +24,35 @@ https://owasp-juice.shop
 There are 3 kinds of file which could be generated using this repository:
 
 ## 1. Antora Website
+Follow the antora installation guide over here[https://docs.antora.org/antora/latest/install-and-run-quickstart/]
+After you have followed and implimented the installation guide in your system, verify antora command:
+> antora -v
+If it runs succesfully then download the dependency using the following command
+> $ npm i @antora/lunr-extension
 
 Run the following command to generate the website
 > npx antora antora-playbook.yml
 
-> npx antora antora-playbook-local.yml command should be used for local testing
-> npx antora antora-playbook.yml command should be used for production version.
-The difference between the above 2 commands is in the source files which are taken from the github in the latter version
-- If you face any problem look over here: https://docs.antora.org/antora/latest/install-and-run-quickstart/
+Check out the build folder for newly generated antora
 
 ## 2. PDF
+Follow the installation guide for asciidoctor-pdf over here[https://docs.asciidoctor.org/pdf-converter/latest/install/]
 
-Run the following command to generate the pdf
-> asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts modules/ROOT/pages/book.adoc
+After you have followed and implimented the installation guide in your system, verify using the following command:
+> asciidoctor-pdf -v
 
-- If you face any problem look over here: https://docs.asciidoctor.org/pdf-converter/latest/install/
+If it runs succesfully then, Run the following command to generate the pdf
+> asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc
+
+After this command runs successfully, the pdf would we availible at docs/modules/ROOT/pages/book.pdf
+
 ## 3. EPUB
+Follow the installation guide for asciidoctor-pdf over here[https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites]
 
-Run the following command to generate the epub file
-> asciidoctor-epub3 -D output modules/ROOT/pages/book.adoc
-- If you face any problem look over here: https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites
+After you have followed and implimented the installation guide in your system, verify using the following command:
+> asciidoctor-epub3 -v
 
+If it runs succesfully then, Run the following command to generate the epub file
+> asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc
 
-
+After this command runs successfully, the epub file would we availible at output/book.epub
