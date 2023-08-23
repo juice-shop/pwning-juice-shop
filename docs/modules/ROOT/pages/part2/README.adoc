@@ -947,3 +947,5 @@ last resort. You will learn *a lot more* from hacking entirely on your
 own or relying only on the hints in this part of the book.
 
 endif::[]
+
+Hoping you have a great time solving these challenges.
