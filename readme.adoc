@@ -1,9 +1,0 @@
-[%hardbreaks]
-Setup for antora: https://docs.antora.org/antora/latest/install-and-run-quickstart/
-Setup for pdf: https://docs.asciidoctor.org/pdf-converter/latest/install/
-Setup for epub: https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites
-
-[%hardbreaks]
-Command to build antora website: npx antora antora-playbook.yml
-Command to build pdf: asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts modules/Root/pages/book.adoc
-Command to build epub: asciidoctor-epub3 -D output modules/Root/pages/book.adoc

@@ -940,10 +940,12 @@ ifeval::[{is_ctf} == 1]
 == Challenge Solutions
 
 In case you are getting frustrated with a particular challenge, you can
-refer to the xref:/appendix/solutions.adoc#_challenge_solutions[Challenge solutions] appendix
+refer to the xref:appendix/solutions.adoc#_challenge_solutions[Challenge solutions] appendix
 where you find explicit instructions how to successfully exploit each
 vulnerability. It is highly recommended to use this option only as a
 last resort. You will learn *a lot more* from hacking entirely on your
 own or relying only on the hints in this part of the book.
 
 endif::[]
+
+Hoping you have a great time solving these challenges.

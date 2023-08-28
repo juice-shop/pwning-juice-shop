@@ -1,16 +1,19 @@
 site:
   title: Pwning OWASP Juice Shop
-  start_page: introduction::readme.adoc
+  url: https://juice-shop.herokuapp.com
+  start_page: index.adoc
 content:
   sources:
-  - url: ./
-    start_path:
+  - url: .
+    start_path: docs
+    branches: [antora-migration, antora-develop]
 ui:
   bundle:
-    url: /Users/parthnanda/Desktop/Gsoc/JuiceShop-UI-antora/build/ui-bundle.zip
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+  supplemental_files: ./supplemental-ui
 output:
-  dir: ./docs
+  dir: ./build
 
 antora:
   extensions:

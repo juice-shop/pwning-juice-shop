@@ -1,11 +1,11 @@
 name: Juice Shop
 title: "Pwning OWASP Juice Shop"
-version: test
+version: 'Stable'
 asciidoc:
   attributes:
     page-lang: en@
 nav:
-- modules/Root/nav.adoc
+- modules/ROOT/nav.adoc
 font:
   catalog:
     Noto Serif:

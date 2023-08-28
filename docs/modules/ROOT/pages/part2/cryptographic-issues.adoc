@@ -31,7 +31,7 @@ include::../attributes.adoc[]
 === Forge a coupon code that gives you a discount of at least 80%
 
 This is probably one of the hardest challenges in the OWASP Juice Shop.
-As you learned during xref:/part1/happy-path.adoc#_happy_path[the "happy path" tour], the
+As you learned during xref:part1/happy-path.adoc#_happy_path[the "happy path" tour], the
 web shop offers a __Coupon__ field to get a discount on your entire order
 during checkout. The challenge is to get a discount of at least 80% on
 an order. As no coupons with this high a discount are published, it is
