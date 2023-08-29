@@ -9,14 +9,14 @@ skip_commits:
     - LICENSE
 environment:
   nodejs_version: 18
-  ruby_version: 22
+  ruby_version: 25
 platform:
   - x64
 install:
   - ps: 'Install-Product node $env:nodejs_version $env:platform'
   - 'node --version && npm --version'
   - 'npx antora -v'
-  - 'set PATH=C:\Ruby$env:nodejs_version\bin;%PATH%'
+  - ps: 'set PATH=C:\Ruby$env:ruby_version\bin;%PATH%'
   - 'ruby -v'
   - 'gem install asciidoctor-pdf'
   - 'asciidoctor-pdf -v'
