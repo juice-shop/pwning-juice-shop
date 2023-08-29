@@ -9,19 +9,31 @@ skip_commits:
     - LICENSE
 environment:
   nodejs_version: 18
+  ruby_version: 22
 platform:
   - x64
 install:
   - ps: 'Install-Product node $env:nodejs_version $env:platform'
   - 'node --version && npm --version'
   - 'npx antora -v'
+  - 'set PATH=C:\Ruby$env:nodejs_version\bin;%PATH%'
+  - 'bundle install'
+  - 'ruby -v'
+  - 'gem install asciidoctor-pdf'
+  - 'asciidoctor-pdf -v'
+  - 'gem install asciidoctor-epub3'
+  - 'asciidoctor-epub3 -v'
 build_script:
-  - 'if exist docs rd /Q /S docs'
+  - 'if exist build rd /Q /S build'
   - 'npm i @antora/lunr-extension'
   - 'npx antora antora-playbook.yml'
+  - 'asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc'
+  - 'asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc'
 test: off
 artifacts:
-  - path: 'docs'
+  - path: 'build'
+  - path: 'docs/modules/ROOT/pages/book.pdf'
+  - path: 'output/book.epub'
 deploy:
   provider: FTP
   protocol: sftp
@@ -30,7 +42,7 @@ deploy:
   password:
     secure: Vu/o5fi8cCRsc9VmD4B/Xg==
   folder: pwning-juice-shop/antora
-  application: docs.zip
+  application: build.zip
   on:
     branch: antora-migration
 notifications:
