@@ -8,9 +8,15 @@ branches:
 skip_commits:
   files:
     - LICENSE
+environment:
+  nodejs_version: 18
+  ruby_version: 27
 install:
+  - ps: 'Install-Product node $env:nodejs_version'
+  - 'mkdir C:\Users\appveyor\AppData\Roaming\npm'
   - 'node --version && npm --version'
   - 'npx antora -v'
+  - 'set PATH=C:\Ruby%ruby_version%\bin;%PATH%'
   - 'ruby -v && gem -v'
   - 'gem install asciidoctor-pdf'
   - 'asciidoctor-pdf -v'
