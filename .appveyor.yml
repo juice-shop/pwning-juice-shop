@@ -17,7 +17,6 @@ install:
   - 'node --version && npm --version'
   - 'npx antora -v'
   - 'set PATH=C:\Ruby$env:nodejs_version\bin;%PATH%'
-  - 'bundle install'
   - 'ruby -v'
   - 'gem install asciidoctor-pdf'
   - 'asciidoctor-pdf -v'
