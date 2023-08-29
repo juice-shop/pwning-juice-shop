@@ -18,10 +18,10 @@ install:
   - 'npx antora -v'
   - 'set PATH=C:\Ruby%ruby_version%\bin;%PATH%'
   - 'ruby -v && gem -v'
-  - 'gem install asciidoctor-pdf'
-  - 'asciidoctor-pdf -v'
   - 'gem install asciidoctor-epub3'
   - 'asciidoctor-epub3 -v'
+  - 'gem install asciidoctor-pdf'
+  - 'asciidoctor-pdf -v'
 build_script:
   - 'if exist build rd /Q /S build'
   - 'npm i @antora/lunr-extension'
