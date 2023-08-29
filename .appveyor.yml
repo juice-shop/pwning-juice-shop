@@ -10,14 +10,12 @@ skip_commits:
 environment:
   nodejs_version: 18
   ruby_version: 26
-platform:
-  - x64
 install:
-  - ps: 'Install-Product node $env:nodejs_version $env:platform'
+  - ps: 'Install-Product node $env:nodejs_version'
   - 'node --version && npm --version'
   - 'npx antora -v'
-  - ps: 'Install-Product ruby $env:ruby_version $env:platform'
-  - 'ruby -v'
+  - 'set PATH=C:\Ruby%ruby_version%\bin;%PATH%'
+  - 'ruby -v && gem -v'
   - 'gem install asciidoctor-pdf'
   - 'asciidoctor-pdf -v'
   - 'gem install asciidoctor-epub3'
