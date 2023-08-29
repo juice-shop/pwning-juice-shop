@@ -16,7 +16,7 @@ install:
   - ps: 'Install-Product node $env:nodejs_version $env:platform'
   - 'node --version && npm --version'
   - 'npx antora -v'
-  - ps: 'set PATH=C:\Ruby$env:ruby_version\bin;%PATH%'
+  - ps: 'set PATH=C:\Ruby$env:ruby_version\bin;$env:PATH'
   - 'ruby -v'
   - 'gem install asciidoctor-pdf'
   - 'asciidoctor-pdf -v'
