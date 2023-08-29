@@ -1,3 +1,4 @@
+image: Visual Studio 2022
 version: '{build}'
 init:
   - 'git config --global core.autocrlf true'
@@ -9,7 +10,7 @@ skip_commits:
     - LICENSE
 environment:
   nodejs_version: 18
-  ruby_version: 27
+  ruby_version: 32
 install:
   - ps: 'Install-Product node $env:nodejs_version'
   - 'node --version && npm --version'
