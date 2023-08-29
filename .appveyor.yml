@@ -11,7 +11,7 @@ skip_commits:
     - README.md
 environment:
   nodejs_version: 18
-  ruby_version: 27
+  ruby_version: 32
 install:
   - ps: 'Install-Product node $env:nodejs_version'
   - 'mkdir C:\Users\appveyor\AppData\Roaming\npm'
