@@ -44,7 +44,7 @@ After you have followed and implimented the installation guide in your system, v
 If it runs succesfully then, Run the following command to generate the pdf
 > asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc
 
-After this command runs successfully, the pdf would we availible at docs/modules/ROOT/pages/book.pdf
+After this command runs successfully, the pdf would we availible at output/book.pdf
 
 ## 3. EPUB
 Follow the installation guide for asciidoctor-pdf over here[https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites]
