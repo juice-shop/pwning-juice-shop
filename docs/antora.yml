@@ -1,6 +1,6 @@
 name: Juice Shop
 title: "Pwning OWASP Juice Shop"
-version: 'Stable'
+version: '[[BRANCH_VERSION]]'
 asciidoc:
   attributes:
     page-lang: en@

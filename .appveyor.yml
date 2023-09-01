@@ -4,7 +4,8 @@ init:
   - 'git config --global core.autocrlf true'
 branches:
   only:
-    - antora-migration
+    - master
+    - develop
 skip_commits:
   files:
     - LICENSE
@@ -26,6 +27,7 @@ install:
 build_script:
   - 'if exist build rd /Q /S build'
   - 'npm i @antora/lunr-extension'
+  - 'get-content docs/antora.yml | %{$_ -replace "[[BRANCH_VERSION]]","$env:APPVEYOR_REPO_BRANCH"}'
   - 'npx antora antora-playbook.yml'
   - 'asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc'
   # - 'asciidoctor-pdf -D output -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc'
