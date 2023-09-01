@@ -1,7 +1,7 @@
 
 # Pwning Juice Shop
 
-Pwning Juice Shop is the official companion guide to the OWASP Juice Shop application. Being a web application with a vast number of intended security vulnerabilities, the OWASP Juice Shop is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The OWASP Juice Shop is an open-source project hosted by the non-profit Open Web Application Security Project® (OWASP) and is developed and maintained by volunteers.
+Pwning Juice Shop is the official companion guide to the OWASP Juice Shop application. Being a web application with a vast number of intended security vulnerabilities, the OWASP Juice Shop is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The OWASP Juice Shop is an open-source project hosted by the non-profit Open Worldwide Application Security Project® (OWASP) and is developed and maintained by volunteers.
 
 ---
 

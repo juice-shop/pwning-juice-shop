@@ -48,7 +48,7 @@ products cope with JavaScript-heavy application frontends and REST APIs.
 === Why _OWASP_ Juice Shop?
 
 ____
-The Open Web Application Security Project (OWASP) is a nonprofit
+The Open Worldwide Application Security Project (OWASP) is a nonprofit
 foundation that works to improve the security of software. Our
 programming includes:
 
@@ -65,7 +65,7 @@ ____
 
 Two years after its inception the Juice Shop was submitted and accepted
 as an _OWASP Tool Project_ by the
-https://owasp.org[Open Web Application Security Project] in September
+https://owasp.org[Open Worldwide Application Security Project] in September
 2016. This move increased the overall visibility and outreach of the
 project significantly, as it exposed it to a large community of
 application security practitioners.
