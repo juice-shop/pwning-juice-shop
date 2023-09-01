@@ -1,7 +1,6 @@
 :doctype: book
 
 include::attributes.adoc[]
-:imagesdir: ../assets/images
 
 ifeval::[{is_ctf} == 1]
 image::cover-ctf.jpg[Front Cover]
