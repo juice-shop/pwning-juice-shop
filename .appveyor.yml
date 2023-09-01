@@ -45,7 +45,9 @@ deploy:
   folder: pwning-juice-shop/antora
   application: build.zip
   on:
-    branch: antora-migration
+    branch:
+      - master
+      - develop
 notifications:
   -
     provider: Webhook
