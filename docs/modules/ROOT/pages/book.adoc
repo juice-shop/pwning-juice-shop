@@ -1,7 +1,19 @@
-= Juice-Shop
-Author Name
 :doctype: book
+
+include::attributes.adoc[]
 :imagesdir: ../assets/images
+
+ifeval::[{is_ctf} == 1]
+image::cover-ctf.jpg[Front Cover]
+endif::[]
+
+ifeval::[{is_ctf} == 0]
+image::cover.jpg[Front Cover]
+endif::[]
+
+= Pwning OWASP Juice Shop
+
+*Written by https://twitter.com/bkimminich[Björn Kimminich]*
 
 == Preface
 
