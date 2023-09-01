@@ -1,0 +1,62 @@
+* Preface
+
+** xref:introduction/readme.adoc[Introduction]
+** xref:introduction/motivation.adoc[Why OWASP Juice Shop exists]
+** xref:introduction/architecture.adoc[Architecture overview]
+
+* Part I - Hacking preparations
+
+** xref:part1/README.adoc[Hacking preparations]
+** xref:part1/running.adoc[Running OWASP Juice Shop]
+** xref:part1/categories.adoc[Vulnerability categories]
+** xref:part1/challenges.adoc[Challenge tracking]
+** xref:part1/rules.adoc[Hacking exercise rules]
+** xref:part1/happy-path.adoc[Walking the "happy path"]
+** xref:part1/customization.adoc[Customization]
+** xref:part1/ctf.adoc[Hosting a CTF event]
+
+* Part II - Challenge hunting
+
+** xref:part2/README.adoc[Challenge hunting]
+** xref:part2/score-board.adoc[Finding the Score Board]
+** xref:part2/injection.adoc[Injection]
+** xref:part2/broken-authentication.adoc[Broken Authentication]
+** xref:part2/sensitive-data-exposure.adoc[Sensitive Data Exposure]
+** xref:part2/xxe.adoc[XML External Entities (XXE)]
+** xref:part2/improper-input-validation.adoc[Improper Input Validation]
+** xref:part2/broken-access-control.adoc[Broken Access Control]
+** xref:part2/security-misconfiguration.adoc[Security Misconfiguration]
+** xref:part2/xss.adoc[Cross Site Scripting (XSS)]
+** xref:part2/insecure-deserialization.adoc[Insecure Deserialization]
+** xref:part2/vulnerable-components.adoc[Vulnerable Components]
+** xref:part2/security-through-obscurity.adoc[Security through Obscurity]
+** xref:part2/unvalidated-redirects.adoc[Unvalidated Redirects]
+** xref:part2/broken-anti-automation.adoc[Broken Anti-Automation]
+** xref:part2/cryptographic-issues.adoc[Cryptographic Issues]
+** xref:part2/miscellaneous.adoc[Miscellaneous]
+
+* Part III - Getting involved
+
+** xref:part3/README.adoc[Getting involved]
+** xref:part3/feedback.adoc[Provide feedback]
+** xref:part3/contribution.adoc[Contribute to development]
+** xref:part3/codebase.adoc[Codebase 101]
+** xref:part3/translation.adoc[Help with translation]
+** xref:part3/tutorials.adoc[Hacking Instructor tutorial scripts]
+** xref:part3/donations.adoc[Donations]
+
+* Appendix
+
+** xref:appendix/solutions.adoc[Challenge solutions]
+** xref:appendix/trainers.adoc[Trainer's guide]
+** xref:appendix/troubleshooting.adoc[Troubleshooting]
+** xref:appendix/cheat-detection.adoc[Cheat detection]
+** xref:appendix/code-snippets.adoc[Coding challenges]
+** xref:appendix/integration.adoc[Integration]
+** xref:appendix/monitoring.adoc[Monitoring]
+** xref:appendix/chatbot.adoc[Chatbot training data]
+** xref:appendix/lyrics.adoc[Jingle lyrics]
+
+* Postface
+
+** xref:introduction/about.adoc[About this book]

@@ -1,0 +1,77 @@
+= Monitoring
+include::../attributes.adoc[]
+
+You can monitor your local or cloud-hosted OWASP Juice Shop instance
+using internally gathered metrics and visualize those on dashboards.
+
+image::appendix/grafana_01.png[Challenge metrics in Grafana]
+
+image::appendix/grafana_03.png[Business metrics in Grafana]
+
+image::appendix/grafana_02.png[Technical metrics in Grafana]
+
+== Prometheus Metrics
+
+Juice Shop collects functional and technical metrics using a
+https://prometheus.io[Prometheus] client module. Its endpoint is
+publicly accessible and there is even a challenge asking you to
+"xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[Find the endpoint that serves usage data to be scraped by a popular monitoring system]".
+
+To consume these metrics you need to set up a Prometheus server which is
+very straightforward:
+
+. https://prometheus.io/download/[Install Prometheus] on the machine
+that will monitor your Juice Shop instance
+. Configure your Juice Shop instance as a scraping target in the
+`prometheus.yml`. A simple config example you can find below.
+. Start your Prometheus server which by default runs on
+http://localhost:9090
+. Check if your scraping endpoint shows "UP" as its state at
+http://localhost:9090/targets
+
+----
+scrape_configs:
+  - job_name: 'juiceshop_local'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+    static_configs:
+    - targets: ['localhost:3000']
+----
+
+You can create dashboards and alert rules in Prometheus itself, but if
+you want to have a fancy dashboard like the one in the screenshots
+above, you need a bit more visualization firepower.
+
+== Grafana Dashboard
+
+This is where https://grafana.com/[Grafana] comes in. Juice Shop comes
+with a full-fledged `JSON` template that you can import as a new
+dashboard into your own Grafana installation. It consumes and displays
+all metrics gathered via Prometheus as seen in the screenshots above.
+
+. https://grafana.com/get[Install Grafana] (for ease-of-use, best use
+the machine you also have Prometheus running on)
+. Start Grafana and visit it at http://localhost:3000 (ℹ️ _Its
+default port is the same as Juice Shop's, so if you run both on the
+same machine, one needs to be moved to a different port._)
+. Log in with `admin`/`admin`.
+. Go to _Configuration_ > _Data Sources_ at
+http://localhost:3000/datasourcesand click _Add data source_
+. Select _Prometheus_ and in its configuration screen set
+http://localhost:9090 as the _HTTP_ > _URL_. Clicking _Save & Test_
+will confirm if Grafana could find your Prometheus server.
+. Now go to _Dashboards_ > _Manage_ at
+http://localhost:3000/dashboards
+. Click _Import_ and either upload or paste the contents of the
+https://github.com/juice-shop/juice-shop/blob/master/monitoring/grafana-dashboard.json[`monitoring/grafana-dashboard.json`]
+found in the Juice Shop's GitHub repository.
+. Now visit the imported _Juice Shop Instance Dashboard_ by clicking on
+its name to view it! Voilá!
+
+ℹ️ _The "Juice Shop Instance Dashboard" template was forked from the
+multi-instance dashboard of
+xref:appendix/trainers.adoc#_hosting_individual_instances_for_multiple_users[MultiJuicer],
+so if you need to run and subsequently monitor multiple Juice Shop
+instances, best take a look at
+https://github.com/iteratec/multi-juicer[MultiJuicer] and our
+xref:appendix/trainers.adoc#_trainers_guide[Trainer's guide]._

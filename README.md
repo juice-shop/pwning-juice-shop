@@ -1,93 +1,58 @@
-{% if book.ctf %}
 
-# Pwning OWASP Juice Shop (CTF Edition)
+# Pwning Juice Shop
 
-{% else %}
+Pwning Juice Shop is the official companion guide to the OWASP Juice Shop application. Being a web application with a vast number of intended security vulnerabilities, the OWASP Juice Shop is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The OWASP Juice Shop is an open-source project hosted by the non-profit Open Worldwide Application Security Project® (OWASP) and is developed and maintained by volunteers.
 
-# Pwning OWASP Juice Shop
+---
 
-{% endif %}
+Download a .pdf, .epub, or .mobi file from:
 
-Written by [Björn Kimminich](https://twitter.com/bkimminich)
+https://leanpub.com/juice-shop (official release)
+Read the book online at:
 
-{% if book.ctf %}
+https://pwning.owasp-juice.shop
+Contribute content, suggestions, and fixes on GitHub:
 
-![Front Cover](cover-ctf.jpg)
+https://github.com/juice-shop/pwning-juice-shop
+Official OWASP Juice Shop project homepage:
 
-{% else %}
+https://owasp-juice.shop
 
-![Front Cover](cover.jpg)
+---
+# Development guide
 
-{% endif %}
+There are 3 kinds of file which could be generated using this repository:
 
-This is the official companion guide to the __OWASP Juice Shop__
-application. Being a web application with a vast number of intended
-security vulnerabilities, the OWASP Juice Shop is supposed to be the
-opposite of a _best practice_ or _template application_ for web
-developers: It is an awareness, training, demonstration and exercise
-tool for security risks in modern web applications. The OWASP Juice Shop
-is an open-source project hosted by the non-profit
-[Open Web Application Security Project® (OWASP)](https://owasp.org) and
-is developed and maintained by volunteers. The content of this book was
-written for {{book.juiceShopVersion}} of OWASP Juice Shop.
+## 1. Antora Website
+Follow the antora installation guide over here[https://docs.antora.org/antora/latest/install-and-run-quickstart/]
+After you have followed and implimented the installation guide in your system, verify antora command:
+> antora -v
+If it runs succesfully then download the dependency using the following command
+> $ npm i @antora/lunr-extension
 
-The book is divided into three parts:
+Run the following command to generate the website
+> npx antora antora-playbook.yml
 
-### Part I - Hacking preparations
+Check out the build folder for newly generated antora
 
-Part one helps you to get the application running and to set up optional
-hacking tools.
+## 2. PDF
+Follow the installation guide for asciidoctor-pdf over here[https://docs.asciidoctor.org/pdf-converter/latest/install/]
 
-### Part II - Challenge hunting
+After you have followed and implimented the installation guide in your system, verify using the following command:
+> asciidoctor-pdf -v
 
-Part two gives an overview of the vulnerabilities found in the OWASP
-Juice Shop including hints how to find and exploit them in the
-application.
+If it runs succesfully then, Run the following command to generate the pdf
+> asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc
 
-### Part III - Getting involved
+After this command runs successfully, the pdf would we availible at output/book.pdf
 
-{% if book.ctf %}
+## 3. EPUB
+Follow the installation guide for asciidoctor-pdf over here[https://docs.asciidoctor.org/epub3-converter/latest/#prerequisites]
 
-Part three points you to the social media channels and tells you about
-donation options of the OWASP Juice Shop open source project.
+After you have followed and implimented the installation guide in your system, verify using the following command:
+> asciidoctor-epub3 -v
 
-{% else %}
+If it runs succesfully then, Run the following command to generate the epub file
+> asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc
 
-Part three shows up various ways to contribute to the OWASP Juice Shop
-open source project.
-
-----
-
-_Please be aware that this book is not supposed to be a comprehensive
-introduction to Web Application Security in general. For every category
-of vulnerabilities present in the OWASP Juice Shop you will find a brief
-explanation - typically by quoting and referencing to existing content
-on the given topic._
-
-----
-
-__Download a .pdf, .epub, or .mobi file from:__
-
-* https://leanpub.com/juice-shop (official release)
-
-__Read the book online at:__
-
-* https://pwning.owasp-juice.shop
-
-__Contribute content, suggestions, and fixes on GitHub:__
-
-* https://github.com/juice-shop/pwning-juice-shop
-
-__Official OWASP Juice Shop project homepage:__
-
-* https://owasp-juice.shop
-
-{% endif %}
-
-----
-
-[![CC BY-NC-ND 4.0](introduction/img/cc_by-nc-nd_4.0.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-
-Open Worldwide Application Security Project and OWASP are registered
-trademarks of the OWASP Foundation, Inc. This work is licensed under a
-[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+After this command runs successfully, the epub file would we availible at output/book.epub

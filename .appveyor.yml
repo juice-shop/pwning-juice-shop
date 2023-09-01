@@ -1,3 +1,4 @@
+image: Visual Studio 2022
 version: '{build}'
 init:
   - 'git config --global core.autocrlf true'
@@ -8,37 +9,33 @@ branches:
 skip_commits:
   files:
     - LICENSE
+    - README.md
 environment:
-  nodejs_version: 10
-platform:
-  - x64
+  nodejs_version: 18
+  ruby_version: 32
 install:
-  - ps: 'Install-Product node $env:nodejs_version $env:platform'
+  - ps: 'Install-Product node $env:nodejs_version'
+  - 'mkdir C:\Users\appveyor\AppData\Roaming\npm'
   - 'node --version && npm --version'
-  - 'npm install graceful-fs@latest --save'
-  - 'npm i -g gitbook-cli'
-  - 'choco install calibre --version 5.44.0'
-  - 'refreshenv'
-  - 'npm i -g svgexport@0.4.2'
+  - 'npx antora -v'
+  - 'set PATH=C:\Ruby%ruby_version%\bin;%PATH%'
+  - 'ruby -v && gem -v'
+  - 'gem install asciidoctor-epub3'
+  - 'asciidoctor-epub3 -v'
+  - 'gem install asciidoctor-pdf'
+  - 'asciidoctor-pdf -v'
 build_script:
-  - 'if exist _book rd /Q /S _book'
-  - 'gitbook install'
-  - 'gitbook build'
-  - 'gitbook pdf ./ ./juice-shop.pdf'
-  - 'gitbook mobi ./ ./juice-shop.mobi'
-  - 'gitbook epub ./ ./juice-shop.epub'
-  - 'cp ./book-ctf.json ./book.json'
-  - 'cp ./cover-ctf.jpg ./cover.jpg'
-  - 'cp ./cover-ctf_small.jpg ./cover_small.jpg'
-  - 'gitbook pdf ./ ./juice-shop-ctf.pdf'
-  - 'gitbook mobi ./ ./juice-shop-ctf.mobi'
-  - 'gitbook epub ./ ./juice-shop-ctf.epub'
+  - 'if exist build rd /Q /S build'
+  - 'npm i @antora/lunr-extension'
+  - 'get-content docs/antora.yml | %{$_ -replace "[[BRANCH_VERSION]]","$env:APPVEYOR_REPO_BRANCH"}'
+  - 'npx antora antora-playbook.yml'
+  - 'asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc'
+  # - 'asciidoctor-pdf -D output -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc'
 test: off
 artifacts:
-  - path: '*.pdf'
-  - path: '*.mobi'
-  - path: '*.epub'
-  - path: '_book'
+  - path: 'build'
+  # - path: 'output/book.pdf'
+  - path: 'output/book.epub'
 deploy:
   provider: FTP
   protocol: sftp
@@ -46,10 +43,10 @@ deploy:
   username: kimminich.de
   password:
     secure: Vu/o5fi8cCRsc9VmD4B/Xg==
-  folder: pwning-juice-shop
-  application: _book.zip
+  folder: pwning-juice-shop/antora
+  application: build.zip
   on:
-    branch: master
+    branch: antora-migration
 notifications:
   -
     provider: Webhook
