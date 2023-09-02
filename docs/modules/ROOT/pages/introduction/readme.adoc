@@ -37,8 +37,22 @@ donation options of the OWASP Juice Shop open source project.
 endif::[]
 
 ifeval::[{is_ctf} == 0]
-Part three shows up various ways to contribute to the OWASP Juice Shop
+Part three points out various ways to contribute to the OWASP Juice Shop
 open source project.
+endif::[]
+
+[discrete]
+=== Part IV - Advanced user guides
+
+ifeval::[{is_ctf} == 1]
+Part four contains a troubleshooting section to help users with technical issues they might face.
+endif::[]
+
+ifeval::[{is_ctf} == 0]
+Part four contains a troubleshooting section as well as technical integration, monitoring and trainer's guidance.
+
+[discrete]
+=== Part V - Advanced developer guides
 
 '''
 

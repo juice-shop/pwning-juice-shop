@@ -17,7 +17,7 @@ Board.
 _The challenge hints found in this release of the companion guide are
 compatible with {juiceShopVersion} of OWASP Juice Shop._
 
-ifeval::[{is_ctf} == 0]
+ifeval::[{is_ctf} == 1]
 |===
 | Name | Description | Hints
 
@@ -427,7 +427,7 @@ ifeval::[{is_ctf} == 0]
 |===
 endif::[]
 
-ifeval::[{is_ctf} == 1]
+ifeval::[{is_ctf} == 0]
 |===
 | Name | Description | Hints | Solution
 
