@@ -39,22 +39,28 @@
 
 ** xref:part3/README.adoc[Getting involved]
 ** xref:part3/feedback.adoc[Provide feedback]
+** xref:part3/donations.adoc[Donations]
 ** xref:part3/contribution.adoc[Contribute to development]
 ** xref:part3/codebase.adoc[Codebase 101]
 ** xref:part3/translation.adoc[Help with translation]
 ** xref:part3/tutorials.adoc[Hacking Instructor tutorial scripts]
-** xref:part3/donations.adoc[Donations]
+
+* Part IV - Advanced user guides
+
+** xref:part4/troubleshooting.adoc[Troubleshooting]
+** xref:part4/trainers.adoc[Trainer's guide]
+** xref:part4/integration.adoc[Integration]
+** xref:part4/monitoring.adoc[Monitoring]
+
+* Part V - Advanced developer guides
+
+** xref:part5/cheat-detection.adoc[Cheat detection]
+** xref:part5/code-snippets.adoc[Coding challenges]
+** xref:part5/chatbot.adoc[Chatbot training data]
 
 * Appendix
 
 ** xref:appendix/solutions.adoc[Challenge solutions]
-** xref:part4/trainers.adoc[Trainer's guide]
-** xref:part4/troubleshooting.adoc[Troubleshooting]
-** xref:part5/cheat-detection.adoc[Cheat detection]
-** xref:part5/code-snippets.adoc[Coding challenges]
-** xref:part4/integration.adoc[Integration]
-** xref:part4/monitoring.adoc[Monitoring]
-** xref:part5/chatbot.adoc[Chatbot training data]
 ** xref:appendix/lyrics.adoc[Jingle lyrics]
 
 * Postface
