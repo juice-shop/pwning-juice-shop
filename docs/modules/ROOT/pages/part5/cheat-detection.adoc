@@ -151,9 +151,9 @@ to choose from.
 
 The server also keeps track of the average `cheatScore` across all
 solved challenges in the `totalCheatScore` which is available via the
-xref:appendix/monitoring.adoc#_prometheus_metrics[`juiceshop_cheat_score` metric] but
+xref:part4/monitoring.adoc#_prometheus_metrics[`juiceshop_cheat_score` metric] but
 also sent in each
-xref:appendix/integration.adoc#_challenge_solution_webhook[Challenge solution webhook]
+xref:part4/integration.adoc#_challenge_solution_webhook[Challenge solution webhook]
 call. The `totalCheatScore` value is not persisted across server
 restarts, but its calculation is also not irritated by
 xref:part1/challenges.adoc#_automatic_saving_and_restoring_hacking_progress[automatic]

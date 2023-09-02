@@ -196,7 +196,7 @@ _Support Chat_.
 | `"Nice to meet you <customer-name>, I'm <bot-name>"`
 
 | `trainingData`
-| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:appendix/chatbot.adoc#_chatbot_training_data[training data] for the chat bot.
+| Filename in `data/chatbot` _or_ a URL of a JSON file which will first be download to that folder and then used as xref:part5/chatbot.adoc#_chatbot_training_data[training data] for the chat bot.
 | `'botDefaultTrainingData.json'`
 
 | `defaultResponse`

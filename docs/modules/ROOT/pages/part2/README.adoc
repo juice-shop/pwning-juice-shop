@@ -549,7 +549,7 @@ ifeval::[{is_ctf} == 1]
 | Easter Egg
 | Find the hidden easter egg.
 | xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[💡]
-| xref:part2/../appendix/solutions.adoc#_find_the_hidden_easter_egg[📕]
+| xref:appendix/solutions.adoc#_find_the_hidden_easter_egg[📕]
 
 | Email Leak
 | Perform an unwanted information disclosure by accessing data cross-domain.

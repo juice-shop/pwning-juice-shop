@@ -72,7 +72,7 @@ vulnerabilities but promoting good (security) practices
 which are disabled on Docker/Heroku by default due to RCE or other
 risks
 * *Good for Demos* highlights
-xref:appendix/trainers.adoc#_challenges_for_demos[challenges which are suitable for live demos]
+xref:part4/trainers.adoc#_challenges_for_demos[challenges which are suitable for live demos]
 or awareness trainings
 * *Prerequisite* marks challenges which need to be solved before one
 or more other challenges can be (realistically) solved

@@ -212,8 +212,8 @@ Any running Juice Shop instance since `v12.7.0` provides two REST
 endpoints `/snippets` and `/snippets/<challengeKey>` which can be used
 to retrieve the actual vulnerable code snippets for many of the
 challenges. These are described in the
-xref:appendix/code-snippets.adoc#_rest_endpoints[REST endpoints] section of the
-xref:appendix/code-snippets.adoc#_coding_challenges[Vulnerable code snippets] appendix.
+xref:part5/code-snippets.adoc#_rest_endpoints[REST endpoints] section of the
+xref:part5/code-snippets.adoc#_coding_challenges[Vulnerable code snippets] appendix.
 
 === API integration example
 

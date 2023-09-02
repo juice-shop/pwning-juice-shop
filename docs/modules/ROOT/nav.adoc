@@ -48,13 +48,13 @@
 * Appendix
 
 ** xref:appendix/solutions.adoc[Challenge solutions]
-** xref:appendix/trainers.adoc[Trainer's guide]
-** xref:appendix/troubleshooting.adoc[Troubleshooting]
-** xref:appendix/cheat-detection.adoc[Cheat detection]
-** xref:appendix/code-snippets.adoc[Coding challenges]
-** xref:appendix/integration.adoc[Integration]
-** xref:appendix/monitoring.adoc[Monitoring]
-** xref:appendix/chatbot.adoc[Chatbot training data]
+** xref:part4/trainers.adoc[Trainer's guide]
+** xref:part4/troubleshooting.adoc[Troubleshooting]
+** xref:part5/cheat-detection.adoc[Cheat detection]
+** xref:part5/code-snippets.adoc[Coding challenges]
+** xref:part4/integration.adoc[Integration]
+** xref:part4/monitoring.adoc[Monitoring]
+** xref:part5/chatbot.adoc[Chatbot training data]
 ** xref:appendix/lyrics.adoc[Jingle lyrics]
 
 * Postface
