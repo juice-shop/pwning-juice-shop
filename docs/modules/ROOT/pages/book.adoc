@@ -56,15 +56,19 @@ include::part2/miscellaneous.adoc[Miscellaneous]
 
 include::part3/README.adoc[Getting involved]
 include::part3/feedback.adoc[Provide feedback]
+include::part3/donations.adoc[Donations]
+
+ifeval::[{is_ctf} == 0]
 include::part3/contribution.adoc[Contribute to development]
 include::part3/codebase.adoc[Codebase 101]
 include::part3/translation.adoc[Help with translation]
 include::part3/tutorials.adoc[Hacking Instructor tutorial scripts]
-include::part3/donations.adoc[Donations]
+endif::[]
 
 == Part IV - Advanced user guides
 
 include::part4/troubleshooting.adoc[Troubleshooting]
+ifeval::[{is_ctf} == 0]
 include::part4/trainers.adoc[Trainer's guide]
 include::part4/integration.adoc[Integration]
 include::part4/monitoring.adoc[Monitoring]
@@ -79,6 +83,7 @@ include::part5/chatbot.adoc[Chatbot training data]
 
 include::appendix/solutions.adoc[Challenge solutions]
 include::appendix/lyrics.adoc[Jingle lyrics]
+endif::[]
 
 == Postface
 
