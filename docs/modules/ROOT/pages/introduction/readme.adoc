@@ -93,5 +93,5 @@ endif::[]
 image::introduction/cc_by-nc-nd_4.0.png[CC BY-NC-ND 4.0,link=https://creativecommons.org/licenses/by-nc-nd/4.0/]
 
 Open Worldwide Application Security Project and OWASP are registered
-trademarks of the OWASP Foundation, Inc. This work is licensed under a
+trademarks of the OWASP Foundation, Inc. This work is Copyright © by Bjoern Kimminich and licensed under a
 https://creativecommons.org/licenses/by-nc-nd/4.0/[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License].
