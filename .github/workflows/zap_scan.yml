@@ -7,7 +7,7 @@ on:
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: 'Scan "Pwning OWASP Juice Shop" Gitbook instance'
+    name: 'Scan "Pwning OWASP Juice Shop" Antora instance'
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
