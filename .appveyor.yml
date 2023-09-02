@@ -29,11 +29,11 @@ build_script:
   - 'npm i @antora/lunr-extension'
   - 'npx antora antora-playbook.yml'
   - 'asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc'
-  - 'asciidoctor-pdf -D output -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc'
+  # - 'asciidoctor-pdf -D output -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc'
 test: off
 artifacts:
   - path: 'build'
-  - path: 'output/book.pdf'
+  # - path: 'output/book.pdf'
   - path: 'output/book.epub'
 deploy:
   provider: FTP
