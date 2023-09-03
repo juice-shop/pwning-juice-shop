@@ -17,7 +17,7 @@ Board.
 _The challenge hints found in this release of the companion guide are
 compatible with {juiceShopVersion} of OWASP Juice Shop._
 
-ifeval::[{is_ctf} == 0]
+ifeval::[{is_ctf} == 1]
 |===
 | Name | Description | Hints
 
@@ -249,6 +249,10 @@ ifeval::[{is_ctf} == 0]
 | Determine the answer to John's security question by looking at an upload of him to the Photo Wall and use it to reset his password via the Forgot Password mechanism.
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[💡]
 
+| Mint the Honey Pot
+| Mint the Honey Pot NFT by gathering BEEs from the bee haven.
+| xref:part2/improper-input-validation.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[💡]
+
 | Misplaced Signature File
 | Access a misplaced SIEM signature file.
 | xref:part2/sensitive-data-exposure.adoc#_access_a_misplaced_siem_signature_file[💡]
@@ -264,6 +268,10 @@ ifeval::[{is_ctf} == 0]
 | Nested Easter Egg
 | Apply some advanced cryptanalysis to find _the real_ easter egg.
 | xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[💡]
+
+| NFT Takeover
+| Take over the wallet containing our official Soul Bound Token (NFT).
+| xref:part2/sensitive-data-exposure.adoc#_take_over_the_wallet_containing_our_official_soul_bound_token[💡]
 
 | NoSQL DoS
 | Let the server sleep for some time. (It has done more than enough hard work for you)
@@ -427,7 +435,7 @@ ifeval::[{is_ctf} == 0]
 |===
 endif::[]
 
-ifeval::[{is_ctf} == 1]
+ifeval::[{is_ctf} == 0]
 |===
 | Name | Description | Hints | Solution
 
@@ -549,7 +557,7 @@ ifeval::[{is_ctf} == 1]
 | Easter Egg
 | Find the hidden easter egg.
 | xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[💡]
-| xref:part2/../appendix/solutions.adoc#_find_the_hidden_easter_egg[📕]
+| xref:appendix/solutions.adoc#_find_the_hidden_easter_egg[📕]
 
 | Email Leak
 | Perform an unwanted information disclosure by accessing data cross-domain.
@@ -716,6 +724,11 @@ ifeval::[{is_ctf} == 1]
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[💡]
 | xref:appendix/solutions.adoc#_determine_the_answer_to_johns_security_question[📕]
 
+| Mint the Honey Pot
+| Mint the Honey Pot NFT by gathering BEEs from the bee haven.
+| xref:part2/improper-input-validation.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[💡]
+| xref:appendix/solutions.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[📕]
+
 | Misplaced Signature File
 | Access a misplaced SIEM signature file.
 | xref:part2/sensitive-data-exposure.adoc#_access_a_misplaced_siem_signature_file[💡]
@@ -735,6 +748,11 @@ ifeval::[{is_ctf} == 1]
 | Apply some advanced cryptanalysis to find _the real_ easter egg.
 | xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[💡]
 | xref:appendix/solutions.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[📕]
+
+| NFT Takeover
+| Take over the wallet containing our official Soul Bound Token (NFT).
+| xref:part2/sensitive-data-exposure.adoc#_take_over_the_wallet_containing_our_official_soul_bound_token[💡]
+| xref:appendix/solutions.adoc#_take_over_the_wallet_containing_our_official_soul_bound_token[📕]
 
 | NoSQL DoS
 | Let the server sleep for some time. (It has done more than enough hard work for you)
