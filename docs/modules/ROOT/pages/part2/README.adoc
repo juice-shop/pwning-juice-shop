@@ -736,6 +736,11 @@ ifeval::[{is_ctf} == 0]
 | xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[💡]
 | xref:appendix/solutions.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[📕]
 
+| NFT Takeover
+| Take over the wallet containing our official Soul Bound Token (NFT).
+| xref:part2/sensitive-data-exposure.adoc#_take_over_the_wallet_containing_our_official_soul_bound_token[💡]
+| xref:appendix/solutions.adoc#_take_over_the_wallet_containing_our_official_soul_bound_token[📕]
+
 | NoSQL DoS
 | Let the server sleep for some time. (It has done more than enough hard work for you)
 | xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[💡]

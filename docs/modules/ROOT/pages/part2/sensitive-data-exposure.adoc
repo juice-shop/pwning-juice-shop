@@ -59,6 +59,10 @@ include::../attributes.adoc[]
 | Access a misplaced SIEM signature file.
 | ⭐⭐⭐⭐
 
+| NFT Takeover
+| Take over the wallet containing our official Soul Bound Token (NFT).
+| ⭐⭐
+
 | Reset Uvogin's Password
 | Reset Uvogin's password via the Forgot Password mechanism with _his original answer_ to his security question.
 | ⭐⭐⭐⭐
@@ -342,6 +346,10 @@ ____
 * If you solved one of the other four file access challenges, you
 already know where the SIEM signature file is located
 * Simply reuse the trick that already worked for the files above
+
+=== Take over the wallet containing our official Soul Bound Token
+
+// TODO Add hints for "NFT Takeover" challenge
 
 === Reset Uvogin's password via the Forgot Password mechanism
 
