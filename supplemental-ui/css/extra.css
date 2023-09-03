@@ -1,3 +1,7 @@
+:root {
+    --nav-background: #546e7a;
+}
+
 .navbar-item img.navbar-logo {
     margin-right: 1ex;
     width: 9%;
