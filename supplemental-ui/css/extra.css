@@ -2,8 +2,11 @@
     --nav-background: #546e7a;
 }
 
+a.navbar-title {
+    font-size: 1.22222rem;
+}
+
 .navbar-item img.navbar-logo {
-    margin-right: 1ex;
     width: 9%;
 }
 

@@ -1,23 +1,21 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <div class="navbar-item">
-        <button class="navbar-burger" data-target="topbar-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <img src="{{uiRootPath}}/img/project-logo.jpeg" class="navbar-logo" alt="Project logo">
-        <a href="https://pwning.owasp-juice.shop">Pwning OWASP Juice Shop</a>
+      <img src="{{uiRootPath}}/img/project-logo.svg" class="navbar-logo" alt="Project logo">
+      <a class="navbar-item navbar-title" href="https://pwning.owasp-juice.shop">Pwning OWASP Juice Shop</a>
+      <div class="navbar-item hide-for-print">
+          <div id="search-field" class="field">
+              <input id="search-input" type="text" placeholder="Search the docs" autofocus>
+          </div>
       </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <div class="navbar-item hide-for-print">
-          <div id="search-field" class="field">
-            <input id="search-input" type="text" placeholder="Search the docs" autofocus>
-          </div>
-        </div>
         <a class="navbar-item" href="https://owasp-juice.shop">
           <img src="{{uiRootPath}}/img/owasp.svg" alt="Visit our project website" width="24px">
         </a>
