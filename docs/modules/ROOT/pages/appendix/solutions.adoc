@@ -3017,3 +3017,5 @@ http://localhost:3000/promotion again.
 solution should trigger accordingly.
 
 === Withdraw more ETH from the new wallet than you deposited
+
+// TODO Add solution for "Wallet Depletion" challenge

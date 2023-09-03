@@ -115,3 +115,5 @@ without consent of the owner?
 program that is in place
 
 === Withdraw more ETH from the new wallet than you deposited
+
+// TODO Add hints for "Wallet Depletion" challenge
