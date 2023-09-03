@@ -1031,6 +1031,10 @@ local system file!
 </trades>
 ----
 
+=== Mint the Honey Pot NFT by gathering BEEs from the bee haven
+
+// TODO Add solution for "Mint the Honey Pot" challenge
+
 == ⭐⭐⭐⭐ Challenges
 
 === Gain access to any access log file of the server

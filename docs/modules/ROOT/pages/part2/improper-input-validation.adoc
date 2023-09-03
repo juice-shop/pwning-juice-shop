@@ -27,6 +27,10 @@ ____
 | Successfully redeem an expired campaign coupon code.
 | ⭐⭐⭐⭐
 
+| Mint the Honey Pot
+| Mint the Honey Pot NFT by gathering BEEs from the bee haven.
+| ⭐⭐⭐
+
 | Missing Encoding
 | Retrieve the photo of Bjoern's cat in "melee combat-mode".
 | ⭐
@@ -90,6 +94,10 @@ offered some seasonal special campaign at least once.
 * Look for clues about the past campaign or holiday event somewhere in
 the application
 * Solving this challenge does not require actual time traveling
+
+=== Mint the Honey Pot NFT by gathering BEEs from the bee haven
+
+// TODO Add hints for "Mint the Honey Pot" challenge
 
 === Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
