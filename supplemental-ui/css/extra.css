@@ -1,9 +1,12 @@
-/* Logo in navigation bar */
 .navbar-item img.navbar-logo {
     margin-right: 1ex;
     width: 9%;
 }
 
+.navbar-item {
+    background: var(--nav-background);
+}
+
 table {
     word-wrap: anywhere;
-  }
+}
