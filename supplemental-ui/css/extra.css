@@ -11,6 +11,10 @@
     background: var(--nav-background);
 }
 
+.navbar-brand {
+    background: var(--nav-background);
+}
+
 table {
     word-wrap: anywhere;
 }
