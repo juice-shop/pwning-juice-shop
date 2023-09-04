@@ -272,8 +272,7 @@ and optional costs for hints of each challenge are calculated by the
 
 The generated output of the tool will finally be written into in the
 folder the program was started in. By default the output files are named
-`OWASP_Juice_Shop.YYYY-MM-DD.CTFd2.zip`,
-`OWASP_Juice_Shop.YYYY-MM-DD.CTFd.zip`,
+`OWASP_Juice_Shop.YYYY-MM-DD.CTFd.csv`,
 `OWASP_Juice_Shop.YYYY-MM-DD.FBCTF.json` or
 `OWASP_Juice_Shop.YYYY-MM-DD.RTB.xml` depending on your initial
 framework choice.
@@ -297,9 +296,9 @@ ctfFramework: CTFd | FBCTF | RootTheBox
 juiceShopUrl: https://juice-shop.herokuapp.com
 ctfKey: https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key # can also be actual key instead URL
 countryMapping: https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
-insertHints: none | free | paid
-insertHintUrls: none | free | paid # optional for FBCTF
-insertHintSnippets: none | free | paid # optional for FBCTF
+insertHints: none | free | paid # "paid" handled as "free" for CTFd
+insertHintUrls: none | free | paid # optional for FBCTF; "paid" handled as "free" for CTFd
+insertHintSnippets: none | free | paid # optional for FBCTF; "paid" handled as "free" for CTFd
 ----
 
 You can then pass this YAML file into the CLI the generator with the
@@ -321,7 +320,7 @@ juice-shop-ctf --config myconfig.yml --output challenges.out
 image::part1/ctfd_logo.png[CTFd logo]
 
 This setup guide assumes that you use CTFd {ctfdVersion}. To
-apply the generated `.zip`, follow the steps describing your preferred
+apply the generated `.csv`, follow the steps describing your preferred
 CTFd run-mode below.
 
 ==== Local server setup
@@ -333,12 +332,9 @@ CTFd run-mode below.
 https://github.com/CTFd/CTFd#install[the CTFd installation instructions].
 . Browse to your CTFd instance UI (by default http://127.0.0.1:4000)
 and perform the basic _Setup_ filling out all mandatory information minimalistially (as it will be deleted during the import again) and clicking _Next_ on each tab before the last. On the last tab click _Finish_.
-. Go to the section _Admin Panel_ > _Config_ > _Backup_ and choose _Import_
-. Select the generated `.zip` file and make sure only the _Challenges_
-box is ticket. Press _Import_.
-. Repeat the initial _Setup_ from
-step 4. (providing all actually intended game information and settings this time) to regain access to the CTF game. It is now pre-populated
-with the Juice Shop challenges.
+. Go to the section _Admin Panel_ > _Config_ > _Backup_ and choose _Import CSV_
+. Select _Challenges_ from the _CSV Type_ dropdown
+. Select the generated `.csv` file as _CSV File_ and press _Import_.
 
 ==== Docker container setup
 
@@ -351,7 +347,7 @@ to install Docker, download the source code, create containers (for
 . After running `docker-compose up` from previous step, you should be
 able to browse to your CTFd instance UI (`<docker host IP>:8000` by
 default) and create an admin user and CTF name.
-. Follow the steps 5-8 from the
+. Follow the steps 5-7 from the
 <<_local_server_setup,Local server setup>> described above.
 
 ===== Non-production Docker image
@@ -361,7 +357,7 @@ default) and create an admin user and CTF name.
 {ctfdVersion}
 . Execute `docker run --rm -p 8000:8000 ctfd/ctfd:<version>` to run
 {ctfdVersion}
-. Follow the steps 5-8 from the
+. Follow the steps 5-7 from the
 <<_local_server_setup,Local server setup>> described above
 
 Once you have CTFd up and running, you should see all the created data
