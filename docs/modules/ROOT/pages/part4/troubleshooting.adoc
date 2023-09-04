@@ -54,31 +54,31 @@ fixed in a straightforward fashion when they fail:
 | Make sure the port you intend to run Juice Shop on is actually available or use another port by setting the `PORT` environment variable.
 
 | `+Config schema validation failed with ... errors+` followed by individual messages on wrong property types or unrecognized properties
-| Make sure that your customization complies with the schema of the xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that your customization complies with the schema of the xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Only ... products are configured but at least four are required+`
-| Make sure that at least four items are present in the `products` array of your configuration. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that at least four items are present in the `products` array of your configuration. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+No product is configured as "..." challenge product but one is required+`
-| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on a single product in your custom inventory. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on a single product in your custom inventory. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+... products are configured as "..." challenge product but only one is allowed+`
-| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on exactly one product in your custom inventory. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that each property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` (required for some of the challenges) is present on exactly one product in your custom inventory. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Product ... is used as "..." challenge product and "..." challenge product but can only be used for one challenge+`
-| Make sure no single product is associated with more than one property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` in your custom inventory. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure no single product is associated with more than one property `useForChristmasSpecialChallenge`, `urlForProductTamperingChallenge`, `fileForRetrieveBlueprintChallenge` and `keywordsForPastebinDataLeakChallenge` in your custom inventory. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Only ... memories are configured but at least two are required+`
-| Make sure that at least two items are present in the `memories` array of your configuration. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that at least two items are present in the `memories` array of your configuration. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+No memory is configured as "..." challenge memory but one is required+`
-| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on a single memory of your custom photo wall. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on a single memory of your custom photo wall. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+... memories are configured as "..." challenge memory but only one is allowed+`
-| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on exactly one memory of your custom photo wall. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure that each property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` (required for some of the challenges) is present on exactly one memory of your custom photo wall. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `+Memory ... is used as "..." challenge memory and "..." challenge memory but can only be used for one challenge+`
-| Make sure no single memory is associated with more than one property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` of your custom photo wall. See also xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+| Make sure no single memory is associated with more than one property duo `geoStalkingMetaSecurityQuestion`/`geoStalkingMetaSecurityAnswer` and `geoStalkingVisualSecurityQuestion`/`geoStalkingVisualSecurityAnswer` of your custom photo wall. See also xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 
 | `Restricted tutorial mode is enabled while Hacking Instructor is disabled`
 | Make sure `hackingInstructor.isenabled` is `true` when you also have configured `challenges.restrictToTutorialsFirst` set to `true`.
@@ -174,7 +174,7 @@ OAuth related challenge!*
 * If you want to manually make the OAuth integration work to get the
 full user experience, create your own customization file and define
 all properties in the
-xref:part1/customization.adoc#_googleoauth_subsection[`googleOauth` subsection]
+xref:part4/customization.adoc#_googleoauth_subsection[`googleOauth` subsection]
 
 === Challenges
 

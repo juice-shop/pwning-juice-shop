@@ -29,8 +29,6 @@ include::part1/categories.adoc[Vulnerability categories]
 include::part1/challenges.adoc[Challenge tracking]
 include::part1/rules.adoc[Hacking exercise rules]
 include::part1/happy-path.adoc[Walking the "happy path"]
-include::part1/customization.adoc[Customization]
-include::part1/ctf.adoc[Hosting a CTF event]
 
 == Part II - Challenge hunting
 
@@ -69,6 +67,8 @@ endif::[]
 
 include::part4/troubleshooting.adoc[Troubleshooting]
 ifeval::[{is_ctf} == 0]
+include::part4/customization.adoc[Customization]
+include::part4/ctf.adoc[Hosting a CTF event]
 include::part4/trainers.adoc[Trainer's guide]
 include::part4/integration.adoc[Integration]
 include::part4/monitoring.adoc[Monitoring]

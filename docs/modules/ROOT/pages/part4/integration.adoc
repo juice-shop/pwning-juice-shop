@@ -70,7 +70,7 @@ of requests._
 * The
 https://www.npmjs.com/package/juice-shop-ctf-cli[Juice Shop CTF Extension]
 calls the API of a specified Juice Shop instance
-xref:part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the challenges to later import into a CTF score server].
+xref:part4/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the challenges to later import into a CTF score server].
 
 == Challenge declaration file
 
@@ -81,7 +81,7 @@ the <<_challenges_api,Challenges API>> endpoint.
 
 Parsing this file directly for integration makes sense when you do not
 rely on changed settings (e.g. hints being turned off) from an
-individual xref:part1/customization.adoc#customization[Customization]
+individual xref:part4/customization.adoc#customization[Customization]
 and/or you do not have a running Juice Shop instance available in the
 first place.
 
@@ -219,4 +219,4 @@ retrieve a code snippet when such a button in clicked.
 * The
 https://www.npmjs.com/package/juice-shop-ctf-cli[Juice Shop CTF Extension]
 calls the API of a specified Juice Shop instance
-xref:part1/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the snippets to later offer them as a hint on a CTF score server].
+xref:part4/ctf.adoc#_generating_challenge_import_files_with_juice_shop_ctf_cli[to retrieve the snippets to later offer them as a hint on a CTF score server].

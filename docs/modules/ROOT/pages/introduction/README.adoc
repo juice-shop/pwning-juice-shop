@@ -55,7 +55,7 @@ Part four contains a troubleshooting section to help users with technical issues
 endif::[]
 
 ifeval::[{is_ctf} == 0]
-Part four contains a troubleshooting section as well as technical integration, monitoring and trainer's guidance.
+Part four contains a troubleshooting section alongside guides on custom theming, Capture-the-Flags as well as technical integration, monitoring and a trainer's guidance.
 
 [discrete]
 === Part V - Advanced developer guides
