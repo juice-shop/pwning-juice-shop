@@ -656,7 +656,7 @@ exports.sendNotification = function (challenge, isRestore) {
 
 It also offers some basic `String` and `Date` utilities along with data
 (un-)wrapper functions and a method for the synchronous file download
-used during xref:part1/customization.adoc#customization[Customization].
+used during xref:part4/customization.adoc#customization[Customization].
 
 ==== security features
 
@@ -793,7 +793,7 @@ For the default `Users` along with their `SecurityAnswers`, `Feedbacks`, `Addres
 
 As the contents of
 the `Products` and `Memories` table as well as the non-relational `reviews` collection
-xref:part1/customization.adoc#customization[can be customized], they are populated based on
+xref:part4/customization.adoc#customization[can be customized], they are populated based on
 the active configuration file. By default, this is `config/default.yml`.
 
 The data in the `Basket`, `BasketItem`, `Complaints` and `Recycles` tables is statically

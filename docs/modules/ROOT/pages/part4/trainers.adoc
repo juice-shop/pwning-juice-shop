@@ -21,7 +21,7 @@ Especially in awareness trainings for management you might want to
 create a higher immersion by making the Juice Shop look like an
 application in the corporate design of the participants' own company.
 Juice Shop offers
-xref:part1/customization.adoc#customization[various customization options] to achieve
+xref:part4/customization.adoc#customization[various customization options] to achieve
 this.
 
 Several custom configurations already come packaged with the Juice Shop
@@ -38,7 +38,7 @@ configuration demonstrates the necessary options to achieve this.
 image::appendix/quiet_mode.png[Quiet mode]
 
 For a really sophisticated and immersive demo consider performing some
-xref:part1/customization.adoc#_additional_browser_tweaks[Additional Browser tweaks].
+xref:part4/customization.adoc#_additional_browser_tweaks[Additional Browser tweaks].
 These will let you use OAuth2 login via Google and cast the illusion
 that coupon codes were actually tweeted by your customer's company.
 
@@ -55,7 +55,7 @@ for i in {10..19}; do docker run -d -p 40$i:3000 bkimminich/juice-shop; done
 ----
 
 If you want to track progress centrally during the training, you might
-want to xref:part1/ctf.adoc#_hosting_a_ctf_event[host a central CTF server] where participants
+want to xref:part4/ctf.adoc#_hosting_a_ctf_event[host a central CTF server] where participants
 can post the challenges they already solved. You might consider turning
 off public visibility of the leader board on the CTF server unless you
 want to encourage the students to hack very competitively.

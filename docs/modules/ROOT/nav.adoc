@@ -12,8 +12,6 @@
 ** xref:part1/challenges.adoc[Challenge tracking]
 ** xref:part1/rules.adoc[Hacking exercise rules]
 ** xref:part1/happy-path.adoc[Walking the "happy path"]
-** xref:part1/customization.adoc[Customization]
-** xref:part1/ctf.adoc[Hosting a CTF event]
 
 * Part II - Challenge hunting
 
@@ -48,6 +46,8 @@
 * Part IV - Advanced user guides
 
 ** xref:part4/troubleshooting.adoc[Troubleshooting]
+** xref:part4/customization.adoc[Customization]
+** xref:part4/ctf.adoc[Hosting a CTF event]
 ** xref:part4/trainers.adoc[Trainer's guide]
 ** xref:part4/integration.adoc[Integration]
 ** xref:part4/monitoring.adoc[Monitoring]
