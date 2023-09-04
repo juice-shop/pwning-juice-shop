@@ -23,14 +23,13 @@ install:
   - 'gem install asciidoctor-epub3'
   - 'asciidoctor-epub3 -v'
   - 'gem install asciidoctor-pdf'
-  - 'gem install prawn-gmagick'
   - 'asciidoctor-pdf -v'
 build_script:
   - 'if exist build rd /Q /S build'
   - 'npm i @antora/lunr-extension'
   - 'npx antora antora-playbook.yml'
   - 'asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc -t'
-  - 'asciidoctor-pdf -D output -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc -t  '
+  - 'asciidoctor-pdf -D output -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc -t'
 test: off
 artifacts:
   - path: 'build'
