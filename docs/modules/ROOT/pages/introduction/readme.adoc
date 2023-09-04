@@ -13,7 +13,13 @@ https://owasp.org[Open Worldwide Application Security Project® (OWASP)] and
 is developed and maintained by volunteers. The content of this book was
 written for {juiceShopVersion} of OWASP Juice Shop.
 
-The book is divided into three parts:
+ifeval::[{is_ctf} == 1]
+The book is divided into four parts:
+endif::[]
+
+ifeval::[{is_ctf} == 0]
+The book is divided into five parts:
+endif::[]
 
 [discrete]
 === Part I - Hacking preparations
@@ -37,8 +43,23 @@ donation options of the OWASP Juice Shop open source project.
 endif::[]
 
 ifeval::[{is_ctf} == 0]
-Part three shows up various ways to contribute to the OWASP Juice Shop
+Part three points out various ways to contribute to the OWASP Juice Shop
 open source project.
+endif::[]
+
+[discrete]
+=== Part IV - Advanced user guides
+
+ifeval::[{is_ctf} == 1]
+Part four contains a troubleshooting section to help users with technical issues they might face.
+endif::[]
+
+ifeval::[{is_ctf} == 0]
+Part four contains a troubleshooting section as well as technical integration, monitoring and trainer's guidance.
+
+[discrete]
+=== Part V - Advanced developer guides
+Part five gives detailed guidance on special "behind the scenes" topics like cheat detection or coding challenge implementation.
 
 '''
 
@@ -50,13 +71,13 @@ on the given topic._
 
 '''
 
-*Download a .pdf, .epub, or .mobi file from:*
-
-* https://leanpub.com/juice-shop (official release)
-
-*Read the book online at:*
+*Read the companion guide online at:*
 
 * https://pwning.owasp-juice.shop
+
+*Download a .pdf or .epub file from:*
+
+* https://leanpub.com/juice-shop
 
 *Contribute content, suggestions, and fixes on GitHub:*
 
@@ -72,5 +93,5 @@ endif::[]
 image::introduction/cc_by-nc-nd_4.0.png[CC BY-NC-ND 4.0,link=https://creativecommons.org/licenses/by-nc-nd/4.0/]
 
 Open Worldwide Application Security Project and OWASP are registered
-trademarks of the OWASP Foundation, Inc. This work is licensed under a
+trademarks of the OWASP Foundation, Inc. This work is Copyright © by Bjoern Kimminich and licensed under a
 https://creativecommons.org/licenses/by-nc-nd/4.0/[Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License].
