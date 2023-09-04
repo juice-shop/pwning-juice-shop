@@ -17,7 +17,7 @@ endif::[]
 
 == Preface
 
-include::introduction/readme.adoc[Introduction]
+include::introduction/README.adoc[Introduction]
 include::introduction/motivation.adoc[Why OWASP Juice Shop exists]
 include::introduction/architecture.adoc[Architecture overview]
 

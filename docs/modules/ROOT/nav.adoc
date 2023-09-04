@@ -1,6 +1,6 @@
 * Preface
 
-** xref:introduction/readme.adoc[Introduction]
+** xref:introduction/README.adoc[Introduction]
 ** xref:introduction/motivation.adoc[Why OWASP Juice Shop exists]
 ** xref:introduction/architecture.adoc[Architecture overview]
 
