@@ -1,0 +1,4 @@
+{
+    "ignoredFiles": ["cover.jpg","cover-ctf.jpg","back.jpg"],
+    "aggressiveCompression": "true"
+}
