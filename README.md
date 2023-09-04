@@ -5,18 +5,10 @@ Pwning Juice Shop is the official companion guide to the OWASP Juice Shop applic
 
 ---
 
-Download a .pdf, .epub, or .mobi file from:
-
-https://leanpub.com/juice-shop (official release)
-Read the book online at:
-
-https://pwning.owasp-juice.shop
-Contribute content, suggestions, and fixes on GitHub:
-
-https://github.com/juice-shop/pwning-juice-shop
-Official OWASP Juice Shop project homepage:
-
-https://owasp-juice.shop
+* Download a .pdf, .epub, or .mobi file from: https://leanpub.com/juice-shop (official release)
+* Read the book online at: https://pwning.owasp-juice.shop
+* Contribute content, suggestions, and fixes on GitHub: https://github.com/juice-shop/pwning-juice-shop
+* Official OWASP Juice Shop project homepage: https://owasp-juice.shop
 
 ---
 # Development guide
