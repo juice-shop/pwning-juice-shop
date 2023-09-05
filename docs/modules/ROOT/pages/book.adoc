@@ -1,5 +1,8 @@
 :doctype: book
-:toc: 
+:toc: macro
+
+= Pwning OWASP Juice Shop
+Björn Kimminich
 
 include::attributes.adoc[]
 :imagesdir: ../assets/images
@@ -12,11 +15,9 @@ ifeval::[{is_ctf} == 0]
 image::cover.jpg[Front Cover]
 endif::[]
 
+toc::[]
+
 :leveloffset: +1
-
-= Pwning OWASP Juice Shop
-
-*Written by https://twitter.com/bkimminich[Björn Kimminich]*
 
 == Preface
 
