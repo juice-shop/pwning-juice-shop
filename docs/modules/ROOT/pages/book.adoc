@@ -1,5 +1,5 @@
 :doctype: book
-:toc: 
+:toc: macro
 
 include::attributes.adoc[]
 :imagesdir: ../assets/images
@@ -17,6 +17,8 @@ endif::[]
 = Pwning OWASP Juice Shop
 
 *Written by https://twitter.com/bkimminich[Björn Kimminich]*
+
+toc::[]
 
 == Preface
 
