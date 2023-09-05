@@ -105,7 +105,6 @@ include::part3/codebase.adoc[Codebase 101]
 
 include::part3/translation.adoc[Help with translation]
 
-include::part3/tutorials.adoc[Hacking Instructor tutorial scripts]
 endif::[]
 
 :leveloffset: -1
@@ -133,6 +132,8 @@ include::part4/monitoring.adoc[Monitoring]
 = Part V - Advanced developer guides
 
 :leveloffset: +1
+
+include::part5/tutorials.adoc[Hacking Instructor tutorial scripts]
 
 include::part5/cheat-detection.adoc[Cheat detection]
 

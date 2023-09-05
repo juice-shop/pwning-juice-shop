@@ -235,7 +235,7 @@ image::part1/hacking-instructor_3.png[Hacking Instructor reports successful solu
 It cannot offer a tutorial for _every challenge_ as some are too complex
 or require too many steps outside the application. In Part III you can
 learn more about how to write
-xref:part3/tutorials.adoc#_hacking_instructor_tutorial_scripts[Hacking Instructor tutorial scripts].
+xref:part5/tutorials.adoc#_hacking_instructor_tutorial_scripts[Hacking Instructor tutorial scripts].
 
 === Tutorial mode
 

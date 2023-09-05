@@ -41,7 +41,6 @@
 ** xref:part3/contribution.adoc[Contribute to development]
 ** xref:part3/codebase.adoc[Codebase 101]
 ** xref:part3/translation.adoc[Help with translation]
-** xref:part3/tutorials.adoc[Hacking Instructor tutorial scripts]
 
 * Part IV - Advanced user guides
 
@@ -54,6 +53,7 @@
 
 * Part V - Advanced developer guides
 
+** xref:part5/tutorials.adoc[Hacking Instructor tutorial scripts]
 ** xref:part5/cheat-detection.adoc[Cheat detection]
 ** xref:part5/code-snippets.adoc[Coding challenges]
 ** xref:part5/chatbot.adoc[Chatbot training data]
