@@ -1,5 +1,5 @@
 :doctype: book
-:toc: macro
+:toc: 
 
 include::attributes.adoc[]
 :imagesdir: ../assets/images
@@ -12,13 +12,16 @@ ifeval::[{is_ctf} == 0]
 image::cover.jpg[Front Cover]
 endif::[]
 
+toc::[]
+
+
+= Preface
+
 :leveloffset: +1
 
 = Pwning OWASP Juice Shop
 
 *Written by https://twitter.com/bkimminich[Björn Kimminich]*
-
-toc::[]
 
 == Preface
 
@@ -28,7 +31,11 @@ include::introduction/motivation.adoc[Why OWASP Juice Shop exists]
 
 include::introduction/architecture.adoc[Architecture overview]
 
-== Part I - Hacking preparations
+:leveloffset: -1
+
+= Part I - Hacking preparations
+
+:leveloffset: +1
 
 include::part1/README.adoc[Hacking preparations]
 
@@ -42,7 +49,11 @@ include::part1/rules.adoc[Hacking exercise rules]
 
 include::part1/happy-path.adoc[Walking the "happy path"]
 
-== Part II - Challenge hunting
+:leveloffset: -1
+
+= Part II - Challenge hunting
+
+:leveloffset: +1
 
 include::part2/README.adoc[Challenge hunting]
 
@@ -78,7 +89,11 @@ include::part2/cryptographic-issues.adoc[Cryptographic Issues]
 
 include::part2/miscellaneous.adoc[Miscellaneous]
 
-== Part III - Getting involved
+:leveloffset: -1
+
+= Part III - Getting involved
+
+:leveloffset: +1
 
 include::part3/README.adoc[Getting involved]
 
@@ -96,7 +111,11 @@ include::part3/translation.adoc[Help with translation]
 include::part3/tutorials.adoc[Hacking Instructor tutorial scripts]
 endif::[]
 
-== Part IV - Advanced user guides
+:leveloffset: -1
+
+= Part IV - Advanced user guides
+
+:leveloffset: +1
 
 include::part4/troubleshooting.adoc[Troubleshooting]
 
@@ -112,7 +131,11 @@ include::part4/integration.adoc[Integration]
 
 include::part4/monitoring.adoc[Monitoring]
 
-== Part V - Advanced developer guides
+:leveloffset: -1
+
+= Part V - Advanced developer guides
+
+:leveloffset: +1
 
 include::part5/cheat-detection.adoc[Cheat detection]
 
@@ -120,15 +143,19 @@ include::part5/code-snippets.adoc[Coding challenges]
 
 include::part5/chatbot.adoc[Chatbot training data]
 
-== Appendix
+:leveloffset: -1
+
+= Appendix
+
+:leveloffset: +1
 
 include::appendix/solutions.adoc[Challenge solutions]
 
 include::appendix/lyrics.adoc[Jingle lyrics]
 endif::[]
 
-== Postface
+:leveloffset: -1
+
+= Postface
 
 include::introduction/about.adoc[About this book]
-
-:leveloffset: -1

@@ -1,4 +1,4 @@
-= Part III - Getting involved
+= Getting involved
 
 include::../attributes.adoc[]
 
