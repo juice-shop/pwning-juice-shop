@@ -616,19 +616,19 @@ OWASP Juice Shop.
 | `false`
 
 | `showCountryDetailsInNotifications`
-| Determines if the country (from `countryMapping`) mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using xref:part1/ctf.adoc#_running_fbctf[FBCTF].
+| Determines if the country (from `countryMapping`) mapped to the solved challenge is displayed in the notification. Can be `none`, `name`, `flag` or `both`. Only useful for CTFs using xref:part4/ctf.adoc#_running_fbctf[FBCTF].
 | `none`
 
 | <<_countrymapping_sub_mapping,`countryMapping` sub-mapping>>
-| List of mappings which associates challenges to countries on the challenge map of xref:part1/ctf.adoc#_running_fbctf[FBCTF]. Only needed for CTFs using xref:part1/ctf.adoc#_running_fbctf[FBCTF].
+| List of mappings which associates challenges to countries on the challenge map of xref:part4/ctf.adoc#_running_fbctf[FBCTF]. Only needed for CTFs using xref:part4/ctf.adoc#_running_fbctf[FBCTF].
 | `~`
 |===
 
 ==== `countryMapping` sub-mapping
 
 List of mappings which associates challenges to countries on the
-challenge map of xref:part1/ctf.adoc#_running_fbctf[FBCTF]. Only needed for CTFs
-using xref:part1/ctf.adoc#_running_fbctf[FBCTF]:
+challenge map of xref:part4/ctf.adoc#_running_fbctf[FBCTF]. Only needed for CTFs
+using xref:part4/ctf.adoc#_running_fbctf[FBCTF]:
 
 * Challenge `key` from `data/static/challenges.yml`
  ** `name` the name of the country
@@ -871,7 +871,7 @@ situations:
 * https://github.com/juice-shop/juice-shop/blob/master/config/ctf.yml[CTF-mode]:
 Keeps the Juice Shop in its default layout but disabled hints while
 enabling CTF flag codes in the _"challenge solved"_-notifications.
-Refer to xref:part1/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] to learn more about running a
+Refer to xref:part4/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] to learn more about running a
 CTF-event with OWASP Juice Shop. 🚩
 * https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml[Quiet mode]:
 Keeps the Juice Shop in its default layout but hides all _"challenge

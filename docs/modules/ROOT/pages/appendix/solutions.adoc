@@ -3015,3 +3015,7 @@ requires you to actually execute the payload by visiting
 http://localhost:3000/promotion again.
 . You will see the alert box and once you go _Back_ the challenge
 solution should trigger accordingly.
+
+=== Withdraw more ETH from the new wallet than you deposited
+
+// TODO Add solution for "Wallet Depletion" challenge

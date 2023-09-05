@@ -37,7 +37,7 @@ _solved_. The current overall progress is represented in a progress bar
 on top of the score board. Especially in group hacking sessions this
 allows for a bit of competition between the participants.
 
-If not deliberately turned off (see xref:part1/customization.adoc#customization[Customization])
+If not deliberately turned off (see xref:part4/customization.adoc#customization[Customization])
 you can hover over each _unsolved_ label to see a hint for that
 challenge. If a "book" icon is also displayed within the label, you can
 click on it to be redirected to the corresponding hints section in
@@ -111,7 +111,7 @@ Depending on your application configuration, each challenge notification
 might also show a 🏁 symbol with a character sequence next to it. If you
 are doing a hacking session just on your own, you can completely ignore
 this flag. The code is only relevant if you are participating in a CTF
-event. Please refer to chapter xref:part1/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] for more
+event. Please refer to chapter xref:part4/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] for more
 information this topic.
 
 image::part1/notification_with_flag.png["Challenge solved!" notification with flag code]
@@ -333,6 +333,6 @@ in the screenshot above.
 
 To re-enable all challenges you can set the environment variable
 `NODE_ENV=unsafe`, or you can set `safetyOverride: true` in your own
-xref:part1/customization.adoc#_yaml_configuration_file[YAML configuration file].
+xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
 Please use the unsafe mode at your own risk, especially on publicly
 hosted instances.

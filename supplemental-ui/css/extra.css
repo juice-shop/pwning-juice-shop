@@ -1,9 +1,47 @@
-/* Logo in navigation bar */
+:root {
+    --nav-background: #546e7a;
+    --navbar-menu_hover-background: #222;
+    --nav-heading-font-color: #fff;
+}
+
+.navbar-menu a.navbar-item:hover,
+.navbar-menu .navbar-link:hover {
+    background: var(--navbar-menu_hover-background);
+}
+
+a.navbar-title {
+    font-size: 1.22222rem;
+}
+
 .navbar-item img.navbar-logo {
-    margin-right: 1ex;
     width: 9%;
+}
+
+.navbar-item {
+    background: var(--nav-background);
+}
+
+.navbar-brand {
+    background: var(--nav-background);
+}
+
+span.navbar-item-text {
+    color: var(--nav-heading-font-color);
+    font-size: inherit;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+img.navbar-item-logo {
+    vertical-align: middle;
+}
+
+@media screen and (min-width: 1024px) {
+    span.navbar-item-text {
+        display: none;
+    }
 }
 
 table {
     word-wrap: anywhere;
-  }
+}

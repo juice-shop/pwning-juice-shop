@@ -26,6 +26,10 @@ include::../attributes.adoc[]
 | Security Policy
 | Behave like any "white hat" should before getting into the action.
 | ⭐⭐
+
+| Wallet Depletion
+| Withdraw more ETH from the new wallet than you deposited.
+| ⭐⭐⭐⭐⭐⭐
 |===
 
 === Receive a coupon code from the support chatbot
@@ -109,3 +113,7 @@ ____
 without consent of the owner?
 * You also might want to read the security policy or any bug bounty
 program that is in place
+
+=== Withdraw more ETH from the new wallet than you deposited
+
+// TODO Add hints for "Wallet Depletion" challenge

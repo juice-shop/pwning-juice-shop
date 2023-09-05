@@ -1,40 +1,38 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <div class="navbar-item">
-        <button class="navbar-burger" data-target="topbar-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <img src="{{uiRootPath}}/img/project-logo.jpeg" class="navbar-logo" alt="Project logo">
-        <a href="https://owasp-juice.shop">OWASP Juice Shop</a>
-      </div>
+      <img src="{{uiRootPath}}/img/project-logo.svg" class="navbar-logo" alt="Project logo">
+      <a class="navbar-item navbar-title" href="https://owasp-juice.shop">OWASP Juice Shop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <div class="navbar-item hide-for-print">
-          <div id="search-field" class="field">
-            <input id="search-input" type="text" placeholder="Search the docs" autofocus>
+          <div class="navbar-item hide-for-print">
+              <div id="search-field" class="field">
+                  <input id="search-input" type="text" placeholder="Search the docs" autofocus>
+              </div>
           </div>
-        </div>
-        <a class="navbar-item" href="https://owasp-juice.shop">
-          <img src="{{uiRootPath}}/img/owasp.svg" alt="Visit our project website" width="24px">
+        <a class="navbar-item" href="https://leanpub.com/juice-shop">
+            <img src="{{uiRootPath}}/img/leanpub.png" alt="Download this book via Leanpub" width="24px" class="navbar-item-logo"><span class="navbar-item-text">.pdf/.epub</span>
         </a>
         <a class="navbar-item" href="https://github.com/juice-shop">
-          <img src="{{uiRootPath}}/img/github.svg" alt="View source code on GitHub" width="24px">
+            <img src="{{uiRootPath}}/img/github.svg" alt="View source code on GitHub" width="24px" class="navbar-item-logo"><span class="navbar-item-text">@juice-shop</span>
         </a>
         <a class="navbar-item" href="https://hub.docker.com/r/bkimminich/juice-shop">
-          <img src="{{uiRootPath}}/img/docker.png" alt="Pull images from DockerHub" width="24px">
+          <img src="{{uiRootPath}}/img/docker.png" alt="Pull images from DockerHub" width="24px" class="navbar-item-logo"><span class="navbar-item-text">bkimminich/juice-shop</span>
         </a>
         <a class="navbar-item" href="https://twitter.com/owasp_juiceshop">
-          <img src="{{uiRootPath}}/img/twitter.svg" alt="Follow us on Twitter" width="24px">
+          <img src="{{uiRootPath}}/img/twitter.svg" alt="Follow us on Twitter" width="24px" class="navbar-item-logo"><span class="navbar-item-text">@owasp_juiceshop</span>
         </a>
         <a class="navbar-item" href="https://fosstodon.org/@owasp_juiceshop">
-          <img src="{{uiRootPath}}/img/mastodon.png" alt="Follow us on Mastodon" width="24px">
+          <img src="{{uiRootPath}}/img/mastodon.png" alt="Follow us on Mastodon" width="24px" class="navbar-item-logo"><span class="navbar-item-text">@owasp_juiceshop@fosstodon.org</span>
         </a>
         <a class="navbar-item" href="https://www.reddit.com/r/owasp_juiceshop">
-          <img src="{{uiRootPath}}/img/reddit.png" alt="Join our Subreddit" width="24px">
+          <img src="{{uiRootPath}}/img/reddit.png" alt="Join our Subreddit" width="24px" class="navbar-item-logo"><span class="navbar-item-text">/r/owasp_juiceshop</span>
         </a>
       </div>
     </div>
