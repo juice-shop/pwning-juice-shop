@@ -155,4 +155,8 @@ endif::[]
 
 = Postface
 
+:leveloffset: +1
+
 include::introduction/about.adoc[About this book]
+
+:leveloffset: -1

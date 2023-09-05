@@ -8,6 +8,7 @@ through the Juice Shop application from the perspective of a regular
 customer without malicious intentions. But you never saw the Score
 Board, did you?
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -18,7 +19,7 @@ Board, did you?
 | ⭐
 |===
 
-=== Find the carefully hidden 'Score Board' page
+== Find the carefully hidden 'Score Board' page
 
 Why was the Score Board not visited during the "happy path" tour?
 Because there seemed to be no link anywhere in the application that
