@@ -21,6 +21,7 @@ rejected this view as far back as 1851, and advise that obscurity
 should never be the only security mechanism.footnote:3_9_1[https://en.wikipedia.org/wiki/Security_through_obscurity]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -39,7 +40,7 @@ ____
 | ⭐⭐⭐⭐
 |===
 
-=== Learn about the Token Sale before its official announcement
+== Learn about the Token Sale before its official announcement
 
 Juice Shop does not want to miss out on the chance to gain some easy
 extra funding, so it prepared to launch a "Token Sale" (synonymous for
@@ -79,7 +80,7 @@ application are defined.
 * Beating the employed obfuscation mechanism manually will take some
 time. Maybe there is an easier way to undo it?
 
-=== Prove that you actually read our privacy policy
+== Prove that you actually read our privacy policy
 
 User agreements and privacy policies are too often simply dismissed or
 blindly accepted. This challenge kind of forces you to reconsider that
@@ -94,7 +95,7 @@ want to melt them together similar to what you might have already
 uncovered in
 xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[Apply some advanced cryptanalysis to find the real easter egg].
 
-=== Rat out a notorious character hiding in plain sight in the shop
+== Rat out a notorious character hiding in plain sight in the shop
 
 ____
 Steganography is the practice of concealing a file, message, image, or
