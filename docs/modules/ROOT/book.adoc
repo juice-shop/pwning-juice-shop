@@ -116,9 +116,9 @@ endif::[]
 
 include::pages/part4/troubleshooting.adoc[Troubleshooting]
 
-include::pages/part4/customization.adoc[Customization]
-
 ifeval::[{is_ctf} == 0]
+
+include::pages/part4/customization.adoc[Customization]
 
 include::pages/part4/ctf.adoc[Hosting a CTF event]
 
