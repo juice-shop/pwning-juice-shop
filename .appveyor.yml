@@ -29,10 +29,10 @@ before_build:
   - 'if exist build rd /Q /S build'
 build_script:
   - 'npx antora antora-playbook.yml'
-  - 'asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc -t'
-  - 'asciidoctor-epub3 -o output/book-ctf.epub -a is_ctf=1 docs/modules/ROOT/pages/book.adoc -t'
-  - 'asciidoctor-pdf -D output -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc -t'
-  - 'asciidoctor-pdf -o output/book-ctf.pdf -a is_ctf=1 -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/pages/book.adoc -t'
+  - 'asciidoctor-epub3 -D output docs/modules/ROOT/book.adoc -t'
+  - 'asciidoctor-epub3 -o output/book-ctf.epub -a is_ctf=1 docs/modules/ROOT/book.adoc -t'
+  - 'asciidoctor-pdf -D output -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t'
+  - 'asciidoctor-pdf -o output/book-ctf.pdf -a is_ctf=1 -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t'
 test: off
 artifacts:
   - path: 'build'
