@@ -92,8 +92,8 @@ export class FeedbackService {
 }
 ----
 
-🚨 Unit tests for all services can be found next to their `*.service.ts`
-files in the `frontend/src/app/Services` folder as `*.service.spec.ts`
+🚨 Unit tests for all services can be found next to their `+*.service.ts+`
+files in the `frontend/src/app/Services` folder as `+*.service.spec.ts+`
 files. They are https://jasmine.github.io[Jasmine 2] specifications
 which are executed by the https://karma-runner.github.io[Karma] test
 runner.
@@ -113,8 +113,8 @@ ____
 The Angular components reside inside `frontend/src/app` as a subfolder
 for each individual component. Each component is responsible for one
 screen portion of the application. It consists of the component itself
-(`*.component.ts`) and the HTML <<_templates,Template>>
-(`*.component.html`) along with its styles (`*.component.scss`).
+(`+*.component.ts+`) and the HTML <<_templates,Template>>
+(`+*.component.html+`) along with its styles (`+*.component.scss+`).
 
 image::part3/componentFolders.png[Angular Component folders]
 
@@ -234,7 +234,7 @@ export class ContactComponent implements OnInit {
 ----
 
 🚨 Unit tests for all components can be found in their subfolders within
-`frontend/src/app/` as `*.component.spec.ts` files. They are
+`frontend/src/app/` as `+*.component.spec.ts+` files. They are
 https://jasmine.github.io[Jasmine 2] specifications which are executed
 by the https://karma-runner.github.io[Karma] test runner.
 
