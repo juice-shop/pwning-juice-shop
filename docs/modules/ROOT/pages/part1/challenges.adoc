@@ -78,9 +78,15 @@ or awareness trainings
 or more other challenges can be (realistically) solved
 * *Brute Force* marks challenges where automation of some security
 tool or custom script is an option or even prerequisite
+ifeval::[{is_ctf} == 1]
+* *Tutorial* marks challenges for which a Hacking Instructor script exists to assist
+newcomers
+endif::[]
+ifeval::[{is_ctf} == 0]
 * *Tutorial* marks challenges for which a
 <<_hacking_instructor,Hacking Instructor script>> exists to assist
 newcomers
+endif::[]
 * *Code Analysis* marks challenges where it can be helpful to rummage
 through some source code of the application or that of a third party
 
