@@ -291,15 +291,15 @@ options from the source.
 
 ==== Vulnerable code snippet example
 
-image::part5/coding_challenge_snippet.png[Vulnerable code snippet for "DOM XSS" challenge]
+image::part5/coding_challenge_snippet.png[Vulnerable code snippet for DOM XSS challenge]
 
 ==== Wrong fix option example
 
-image::part5/coding_challenge_wrong-fix.png[Wrong fix option for "DOM XSS" coding challenge]
+image::part5/coding_challenge_wrong-fix.png[Wrong fix option for DOM XSS coding challenge]
 
 ==== Correct fix option example
 
-image::part5/coding_challenge_correct-fix.png[Correct fix option for "DOM XSS" coding challenge]
+image::part5/coding_challenge_correct-fix.png[Correct fix option for DOM XSS coding challenge]
 
 === Maintenance burden
 
@@ -369,7 +369,7 @@ When the user submits wrongly selected vulnerable line(s) of code during
 the "Find It" phase of a Coding Challenge, Juice Shop can display a hint to help them out.
 This process starts after the second failed submission.
 
-image::part5/coding_challenge_first-hint.png[First hint displayed for "DOM XSS" challenge]
+image::part5/coding_challenge_first-hint.png[First hint displayed for DOM XSS challenge]
 
 The hints will be picked in order of appearance in the `hints` list of the YAML info file.
 One hint will be displayed at a time per submission attempt. It therefore makes sense to
@@ -377,13 +377,13 @@ have more vague hints at the top and more specific ones at the bottom of the `hi
 Although the number of hints that can be provided per coding challenge is not restricted,
 the author recommends to have no less than 2 and no more than 5 hints on average.
 
-image:part5/coding_challenge_second-hint.png[Second hint displayed for "DOM XSS" challenge]
-image:part5/coding_challenge_third-hint.png[Third hint displayed for "DOM XSS" challenge]
+image:part5/coding_challenge_second-hint.png[Second hint displayed for DOM XSS challenge]
+image:part5/coding_challenge_third-hint.png[Third hint displayed for DOM XSS challenge]
 
 Once all hints have been used up, Juice Shop will outright tell the user the correct answer, so they have a chance to proceed and not remain stuck infinitely.
 This answer does not need to be provided in the `hints` list, as it will be generated on-the-fly by Juice Shop when needed.
 
-image::part5/coding_challenge_final-hint.png[Final hint displayed for "DOM XSS" challenge]
+image::part5/coding_challenge_final-hint.png[Final hint displayed for DOM XSS challenge]
 
 === "Fix It" explanations
 
@@ -393,13 +393,13 @@ The `id` must be identical to the `unique nuber` part of a fix option file name 
 The `explanation` should give a reason as to why a fix option is either correct or incorrect. The
 explanation will be displayed after the user submitted a chosen fix option.
 
-image::part5/coding_challenge_explanation_wrong-option.png[Explanation for wrong fix option to "DOM XSS" challenge]
+image::part5/coding_challenge_explanation_wrong-option.png[Explanation for wrong fix option to DOM XSS challenge]
 
 Other than with the hints for
 finding the vulnerable line of code, the explanation is displayed independently of the verdict. Therefore, it
 is important to also provide an explanation for the correct fix option.
 
-image::part5/coding_challenge_explanation_right-option.png[Explanation for right fix option to "DOM XSS" challenge]
+image::part5/coding_challenge_explanation_right-option.png[Explanation for right fix option to DOM XSS challenge]
 
 === Info YAML file example
 

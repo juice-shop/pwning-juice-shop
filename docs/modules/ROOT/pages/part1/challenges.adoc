@@ -188,7 +188,7 @@ When the backup restore is successful, you must click "Apply changes
 now" in the corresponding message to trigger the hacking progress
 restore as well as the language changes in backend data.
 
-image::part1/manual_backup-restore.png[Success message for backup restore with "Apply changes now" action]
+image::part1/manual_backup-restore.png[Success message for backup restore with Apply changes now action]
 
 If you do not click that button before the message vanishes, you can
 also restart your application server to apply the backup of hacking

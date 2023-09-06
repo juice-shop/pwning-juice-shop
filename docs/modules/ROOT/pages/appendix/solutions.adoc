@@ -846,7 +846,7 @@ favorite pet?_
 . Then type any _New Password_ and matching _Repeat New Password_
 . Click _Change_ to solve this challenge
 
-image::appendix/zaya_rowing.png[Zaya "rowing" with a half-amputated hind leg in a Tweet of Bjoern]
+image::appendix/zaya_rowing.png[Zaya rowing with a half-amputated hind leg in a Tweet of Bjoern]
 
 image::appendix/zaya_flippered.png[Zaya in a box in another Tweet of Bjoern]
 
@@ -1126,7 +1126,7 @@ the search functionality. Test this theory by submitting
 http://localhost:3000/rest/products/search?q=orange which should
 give you a result such as
 +
-image::appendix/search-result_orange.png[JSON search result for "orange" keyword]
+image::appendix/search-result_orange.png[JSON search result for orange keyword]
 
 . Submit `';` as `q` via
 http://localhost:3000/rest/products/search?q=';
@@ -1208,7 +1208,7 @@ detailed `description`
 warning on the `Hueteroneel` fruit that "this coupled with Eurogium
 Edule was sometimes found fatal"
 +
-image::appendix/rippertuer-ingredients.png[Ingredients list of "Rippertuer Special Juice"]
+image::appendix/rippertuer-ingredients.png[Ingredients list of Rippertuer Special Juice]
 
 . As `Eurogium Edule` is also on the very same list of ingredients,
 these two must be the ones you are looking for
@@ -1477,8 +1477,7 @@ image::appendix/steganography.png[Steganography customer support image]
 
 . Running this image through some decoders available online will
 probably just return garbage, e.g.
-http://stylesuxx.github.io/steganography/ gives you `+ÿÁÿm¶Û$ÿ
-?HÕPü^ÛN'c±UY;fäHÜmÉ#r<v¸+` or
+http://stylesuxx.github.io/steganography/ gives you gibberish looking something like `+ÿÁÿm¶Û$ÿHÕPü^ÛN'c±UY;fäHÜmÉ#r<v¸+` or
 https://www.mobilefish.com/services/steganography/steganography.php
 gives up with `No hidden message or file found in the image`. On
 https://incoherency.co.uk/image-steganography/#unhide you will also
@@ -2449,7 +2448,7 @@ https://twitter.com/owasp_juiceshop[@owasp_juiceshop] Twitter
 account you will notice
 https://twitter.com/owasp_juiceshop/status/1107781073575002112.
 +
-image::appendix/tweet_zip-complaints.png[Tweet advertising ZIP uploads in "File Complaint"]
+image::appendix/tweet_zip-complaints.png[Tweet advertising ZIP uploads in File Complaint]
 
 . Researching ZIP-based vulnerabilities should also yield
 https://res.cloudinary.com/snyk/image/upload/v1528192501/zip-slip-vulnerability/technical-whitepaper.pdf[Zip Slip] which
@@ -2827,7 +2826,7 @@ the key file.
  .. The search will uncover http://localhost:3000/encryptionkeys as
 a browsable directory
 +
-image::appendix/encryptionkeys_directory.png[Browsable directoy "encryptionkeys"]
+image::appendix/encryptionkeys_directory.png[Browsable directory encryptionkeys]
 
  .. Open http://localhost:3000/encryptionkeys/premium.key to
 retrieve the AES encryption key `EA99A61D92D2955B1E9285B55BF2AD42`
