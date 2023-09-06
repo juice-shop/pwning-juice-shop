@@ -54,11 +54,6 @@ deploy:
       - develop
 notifications:
   -
-    provider: Webhook
-    url:
-      secure: c4xwvfA2YpTyASkpasFt2oTuz51teT2qAgq9gU45flir+cdJeT1/utEXowV/TsvmjrsUPRawd/ZNch9ZnAMZCg==
-    method: GET
-  -
     provider: Slack
     incoming_webhook:
       secure: KzO8e88B0LKqAI0BQM6lNhCIn9rxAava3AcdVJDyTw420OLIAlK+qzzbLXaR0jSH9zIJz9zu0iGS1iaqu9Co+6owYUrHJlBGrUZ/lZNCsDo=
