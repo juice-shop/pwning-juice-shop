@@ -106,7 +106,6 @@ include::pages/part3/codebase.adoc[Codebase 101]
 
 include::pages/part3/translation.adoc[Help with translation]
 
-include::pages/part3/tutorials.adoc[Hacking Instructor tutorial scripts]
 endif::[]
 
 :leveloffset: -1
@@ -135,6 +134,8 @@ include::pages/part4/monitoring.adoc[Monitoring]
 
 :leveloffset: +1
 
+include::pages/part5/tutorials.adoc[Hacking Instructor tutorial scripts]
+
 include::pages/part5/cheat-detection.adoc[Cheat detection]
 
 include::pages/part5/code-snippets.adoc[Coding challenges]
@@ -156,4 +157,8 @@ endif::[]
 
 = Postface
 
+:leveloffset: +1
+
 include::pages/introduction/about.adoc[About this book]
+
+:leveloffset: -1
