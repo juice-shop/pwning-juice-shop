@@ -2,6 +2,7 @@
 
 include::../attributes.adoc[]
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -44,7 +45,7 @@ include::../attributes.adoc[]
 | ⭐⭐⭐⭐⭐
 |===
 
-=== Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
+== Reset the password of Bjoern's OWASP account via the Forgot Password mechanism
 
 This challenge is not about any technical vulnerability. Instead it is
 about finding out the answer to user Bjoern's chosen security question
@@ -105,7 +106,7 @@ inflicting harm, harassment, online shaming, and vigilante
 justice.footnote:3_3_2[https://en.wikipedia.org/wiki/Doxing]
 ____
 
-=== Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
+== Change Bender's password into slurmCl4ssic without using SQL Injection or Forgot Password
 
 This challenge can only be solved by changing the password of user
 Bender into _slurmCl4ssic_. Using any sort of SQL Injection will _not_
@@ -133,7 +134,7 @@ lookup table with one entry per hash. Use of a key derivation function
 that employs a salt makes this attack infeasible.footnote:3_3_3[https://en.wikipedia.org/wiki/Rainbow_table]
 ____
 
-=== Log in with Chris' erased user account
+== Log in with Chris' erased user account
 
 This challenge is about loggin in with the account of a user who
 previously insisted on his "right to be forgotten" in accordance with
@@ -148,7 +149,7 @@ Shop "deletes" users upon their request.
 * What the Juice Shop does here is totally incompliant with GDPR.
 Luckily a 4% fine on a gross income of 0$ is still 0$.
 
-=== Log in with Bjoern's Gmail account
+== Log in with Bjoern's Gmail account
 
 The author of the OWASP Juice Shop (and of this book) was bold enough to
 link his Google account to the application. His account even ended up in
@@ -182,7 +183,7 @@ the challenge description is _not a joke_. Please do not try to break
 into Bjoern's (or anyone else's) Google account. This would be a
 criminal act.
 
-=== Log in with the administrator's user credentials without previously changing them or applying SQL Injection
+== Log in with the administrator's user credentials without previously changing them or applying SQL Injection
 
 You might have already solved this challenge along with
 xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[Log in with the administrator's user account]
@@ -197,7 +198,7 @@ that.
 * In case you use some hacker tool, you can also go for a _brute force
 attack_ using a generic _password list_
 
-=== Reset Bender's password via the Forgot Password mechanism
+== Reset Bender's password via the Forgot Password mechanism
 
 This challenge is about finding the answer to user Bender's security
 question. It is probably slightly harder to find out than Jim's answer.
@@ -213,7 +214,7 @@ available information on the Internet.
 to try some alternative spelling.
 * Brute forcing the answer should be next to impossible.
 
-=== Reset the password of Bjoern's internal account via the Forgot Password mechanism
+== Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 This challenge is about finding the answer to the security question of
 Bjoern's internal user account `bjoern@juice-sh.op`.
@@ -228,7 +229,7 @@ make it harder for attackers by applying sort of a historical twist.
 looking him up on the Internet.
 * Brute forcing the answer should be next to impossible.
 
-=== Reset Jim's password via the Forgot Password mechanism
+== Reset Jim's password via the Forgot Password mechanism
 
 This challenge is about finding the answer to user Jim's security
 question.
@@ -242,7 +243,7 @@ find in publicly available information on the internet
 * Even brute forcing the answer should be possible with the right kind
 of word list
 
-=== Solve the 2FA challenge for user "wurstbrot"
+== Solve the 2FA challenge for user "wurstbrot"
 
 ____
 *Multi-factor authentication (MFA)* is an authentication method in

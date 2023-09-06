@@ -18,6 +18,7 @@ such threats, with a consequent lack of clarity in attempts to address
 the issues. footnote:3_2_1[https://owasp.org/www-project-automated-threats-to-web-applications/]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -40,7 +41,7 @@ ____
 | ⭐⭐⭐⭐⭐
 |===
 
-=== Submit 10 or more customer feedbacks within 20 seconds
+== Submit 10 or more customer feedbacks within 20 seconds
 
 The _Contact Us_ form for customer feedback contains a CAPTCHA to
 protect it from being abused through scripting. This challenge is about
@@ -73,7 +74,7 @@ either a bypass or some automated way of solving it dynamically.
 * Wrap this into a script (in whatever programming language you prefer)
 that repeats this 10 times.
 
-=== Retrieve the language file that never made it into production
+== Retrieve the language file that never made it into production
 
 ____
 A project is internationalized when all of the project's materials and
@@ -111,7 +112,7 @@ calculate approximately how long it will take to submit all chosen
 predetermined values.footnote:3_2_4[https://owasp.org/www-community/attacks/Brute_force_attack]
 ____
 
-=== Like any review at least three times as the same user
+== Like any review at least three times as the same user
 
 Any online shop with a review or rating functionality for its products
 should be very keen on keeping fake or inappropriate reviews out. The
@@ -147,7 +148,7 @@ vulnerability called a time-of-check-to-time-of-use (TOCTTOU) bug is
 created.footnote:3_2_6[https://en.wikipedia.org/wiki/Race_condition#Computer_security]
 ____
 
-=== Reset Morty's password via the Forgot Password mechanism
+== Reset Morty's password via the Forgot Password mechanism
 
 This password reset challenge is different from those from the
 xref:part2/broken-authentication.adoc#_broken_authentication[Broken Authentication] category as it is next

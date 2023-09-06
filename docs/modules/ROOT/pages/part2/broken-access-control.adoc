@@ -24,6 +24,7 @@ functions or content reserved for other normal users (e.g. Internet
 Banking User A accesses the Internet bank account of User B)footnote:3_1_1[https://en.wikipedia.org/wiki/Privilege_escalation]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -70,7 +71,7 @@ ____
 | ⭐⭐
 |===
 
-=== Access the administration section of the store
+== Access the administration section of the store
 
 Just like the score board, the admin section was not part of your "happy
 path" tour because there seems to be no link to that section either. In
@@ -88,7 +89,7 @@ the score board link
 * There is some access control in place, but there are at least three
 ways to bypass it.
 
-=== Change the name of a user by performing Cross-Site Request Forgery from another origin
+== Change the name of a user by performing Cross-Site Request Forgery from another origin
 
 This challenges requires you to craft the code for the Cross-Site
 Request Forgery (CSRF) attack within http://htmledit.squarefree.com,
@@ -111,7 +112,7 @@ the specified online HTML editor. This means that Juice Shop will not
 recognize the challenge as solved when you are using another origin,
 such as for example JSFiddle or CodePen._
 
-==== ⚠️ Important information about browser compatibility
+== ⚠️ Important information about browser compatibility
 
 There is an ongoing initiative, called "Incrementally Better
 Cookies", which aims to reduce the impact of CSRF attacks by changing
@@ -128,7 +129,7 @@ uses the old default and should be able to solve the challenge.
 * Although Chrome can be temporarily switched back to the old behavior by starting
 it with the option `--disable-features=SameSiteByDefaultCookies`, the CSRF attack will probably not execute anymore in Chrome 80.x or newer.
 
-=== Find the hidden easter egg
+== Find the hidden easter egg
 
 ____
 An Easter egg is an intentional inside joke, hidden message, or
@@ -147,7 +148,7 @@ egg! Of course finding *that* is
 xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[a follow-up challenge]
 to this one._
 
-=== Get rid of all 5-star customer feedback
+== Get rid of all 5-star customer feedback
 
 If you successfully solved above
 <<_access_the_administration_section_of_the_store,admin section challenge>>
@@ -156,7 +157,7 @@ deleting the 5-star feedback is very easy.
 * Nothing happens when you try to delete feedback entries? Check the
 JavaScript console for errors!
 
-=== Post some feedback in another user's name
+== Post some feedback in another user's name
 
 The Juice Shop allows users to provide general feedback including a star
 rating and some free text comment. When logged in, the feedback will be
@@ -171,7 +172,7 @@ used for feedback submission.
 * The backend-side leverage point is similar to some of the
 xref:part2/xss.adoc#_xss[XSS challenges] found in OWASP Juice Shop.
 
-=== Post a product review as another user or edit any user's existing review
+== Post a product review as another user or edit any user's existing review
 
 The Juice Shop allows users to provide reviews of all the products. A
 user has to be logged in before they can post any review for any of the
@@ -186,7 +187,7 @@ point.
 <<_post_some_feedback_in_another_users_name,Post some feedback in another user's name>>
 challenge.
 
-=== Put an additional product into another user's shopping basket
+== Put an additional product into another user's shopping basket
 
 <<_view_another_users_shopping_basket,View another user's shopping basket>>
 was only about spying out other customers. For this challenge you need
@@ -201,7 +202,7 @@ someone else's basket.
 * This challenge requires a bit more sophisticated tampering than others
 of the same ilk.
 
-=== Change the href of the link within the O-Saft product description
+== Change the href of the link within the O-Saft product description
 
 The _OWASP SSL Advanced Forensic Tool (O-Saft)_ product has a link in
 its description that leads to that projects wiki page. In this challenge
@@ -223,7 +224,7 @@ to update a product
 statement on product data
 * _In practice_ two of these three ways should turn out to be dead ends
 
-=== Request a hidden resource on server through server
+== Request a hidden resource on server through server
 
 This Server-side Request Forgery challenge will come back to the malware
 you used in
@@ -247,7 +248,7 @@ or perform post requests towards internal services which are not
 intended to be exposed. footnote:3_1_3[https://owasp.org/www-community/attacks/Server_Side_Request_Forgery]
 ____
 
-=== View another user's shopping basket
+== View another user's shopping basket
 
 This horizontal privilege escalation challenge demands you to access the
 shopping basket of another user. Being able to do so would give an
