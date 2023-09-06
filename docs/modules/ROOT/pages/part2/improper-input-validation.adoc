@@ -10,6 +10,7 @@ unintended input, which may result in altered control flow, arbitrary
 control of a resource, or arbitrary code execution.footnote:3_4_1[https://cwe.mitre.org/data/definitions/20.html]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -60,7 +61,7 @@ ____
 | ⭐
 |===
 
-=== Register as a user with administrator privileges
+== Register as a user with administrator privileges
 
 The Juice Shop does not bother to separate administrative functionality
 into a deployment unit of its own. Instead, the cheapest solution was
@@ -72,7 +73,7 @@ in this use case
 * Think of the simplest possible implementations of a distinction
 between regular users and administrators
 
-=== Obtain a Deluxe Membership without paying for it
+== Obtain a Deluxe Membership without paying for it
 
 The perks that come with a deluxe membership are reserved for paying
 customers only. There sure seem to be a lot of ways for a potential
@@ -86,7 +87,7 @@ using the browser's developer tools
 * Maybe playing around with the parameters in these requests could
 reveal something interesting
 
-=== Successfully redeem an expired campaign coupon code
+== Successfully redeem an expired campaign coupon code
 
 Apart from the monthly coupon codes found on Twitter the Juice Shop also
 offered some seasonal special campaign at least once.
@@ -95,11 +96,11 @@ offered some seasonal special campaign at least once.
 the application
 * Solving this challenge does not require actual time traveling
 
-=== Mint the Honey Pot NFT by gathering BEEs from the bee haven
+== Mint the Honey Pot NFT by gathering BEEs from the bee haven
 
 // TODO Add hints for "Mint the Honey Pot" challenge
 
-=== Retrieve the photo of Bjoern's cat in "melee combat-mode"
+== Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
 Who wouldn't want to see Bjoern's cat fighting fiercely with a furry
 green plush toy?
@@ -113,7 +114,7 @@ observe what happens
 
 image::part2/broken_image-photo_wall.png[Broken image on photo wall]
 
-=== Place an order that makes you rich
+== Place an order that makes you rich
 
 It is probably every web shop's nightmare that customers might figure
 out away to _receive_ money instead of _paying_ for their purchase.
@@ -122,7 +123,7 @@ out away to _receive_ money instead of _paying_ for their purchase.
 * Investigate the shopping basket closely to understand how it prevents
 you from creating orders that would fulfil the challenge
 
-=== Bypass a security control with a Poison Null Byte
+== Bypass a security control with a Poison Null Byte
 
 ____
 By embedding NULL Bytes/characters into applications that do not
@@ -149,7 +150,7 @@ or
 xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
 along the way.
 
-=== Follow the DRY principle while registering a user
+== Follow the DRY principle while registering a user
 
 ____
 The DRY (Don't Repeat Yourself) Principle states:
@@ -167,7 +168,7 @@ Password_
 * You can solve this challenge by cleverly interacting with the UI or
 bypassing it altogether
 
-=== Upload a file larger than 100 kB
+== Upload a file larger than 100 kB
 
 The Juice Shop offers its customers the chance to complain about an
 order that left them unsatisfied. One of the juice bottles might have
@@ -182,7 +183,7 @@ handled on the client and server side
 * With this understanding you need to find a "weak spot" in the right
 place and have to craft an exploit for it
 
-=== Upload a file that has no .pdf or .zip extension
+== Upload a file that has no .pdf or .zip extension
 
 In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
@@ -191,7 +192,7 @@ the uploaded file is actually a PDF. All other file types are rejected.
 <<_upload_a_file_larger_than_100_kb,Upload a file larger than 100 kB>>
 challenge, you should try to apply the same solution here
 
-=== Give a devastating zero-star feedback to the store
+== Give a devastating zero-star feedback to the store
 
 You might have realized that it is not possible to submit customer
 feedback on the _Contact Us_ screen until you entered a comment and

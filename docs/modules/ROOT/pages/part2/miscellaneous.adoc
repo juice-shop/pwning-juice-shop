@@ -2,6 +2,7 @@
 
 include::../attributes.adoc[]
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -32,7 +33,7 @@ include::../attributes.adoc[]
 | ⭐⭐⭐⭐⭐⭐
 |===
 
-=== Receive a coupon code from the support chatbot
+== Receive a coupon code from the support chatbot
 
 This challenge is about nagging the support chatbot to hand out a coupon
 code that can subsequently be used to get a discount during the checkout
@@ -43,7 +44,7 @@ various excuses for not giving you one
 * Asking over and over again like a little kid might actually help you
 succeed in this case
 
-=== Close multiple "Challenge solved"-notifications in one go
+== Close multiple "Challenge solved"-notifications in one go
 
 This "challenge" is nothing more than an opportunity to learn about a convenience feature that allows users to close
 multiple "Challenge solved"-notifications at once.
@@ -52,7 +53,7 @@ multiple "Challenge solved"-notifications at once.
 * You can find all the information you need to solve this challenge in the xref:part1/challenges.adoc#_challenge_tracking[Challenge tracking] chapter
 * Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature
 
-=== Read our privacy policy
+== Read our privacy policy
 
 ____
 A privacy policy is a statement or a legal document (in privacy law)
@@ -89,13 +90,13 @@ challenge in the process
 challenge for you
 * There is no real hacking involved here
 
-=== Find the carefully hidden 'Score Board' page
+== Find the carefully hidden 'Score Board' page
 
 This challenge was already covered in
 xref:part2/score-board.adoc#_finding_the_score_board[Finding the Score Board] at the beginning of
 xref:part2/README.adoc#_challenge_hunting[Part II - Challenge hunting].
 
-=== Behave like any "white hat" should before getting into the action
+== Behave like any "white hat" should before getting into the action
 
 ____
 The term "white hat" in Internet slang refers to an ethical computer
@@ -114,6 +115,6 @@ without consent of the owner?
 * You also might want to read the security policy or any bug bounty
 program that is in place
 
-=== Withdraw more ETH from the new wallet than you deposited
+== Withdraw more ETH from the new wallet than you deposited
 
 // TODO Add hints for "Wallet Depletion" challenge

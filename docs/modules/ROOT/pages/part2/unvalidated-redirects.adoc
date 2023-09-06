@@ -2,6 +2,7 @@
 
 include::../attributes.adoc[]
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -16,7 +17,7 @@ include::../attributes.adoc[]
 | ⭐
 |===
 
-=== Enforce a redirect to a page you are not supposed to redirect to
+== Enforce a redirect to a page you are not supposed to redirect to
 
 This challenge is about _redirecting_ to an entirely disallowed
 different location.
@@ -33,7 +34,7 @@ White list validation involves defining exactly what _is_ authorized,
 and by definition, everything else is not authorized.footnote:3_11_1[https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html#whitelisting-vs-blacklisting]
 ____
 
-=== Let us redirect you to one of our crypto currency addresses
+== Let us redirect you to one of our crypto currency addresses
 
 Some time ago the Juice Shop project accepted donations via Bitcoin,
 Dash and Ether. It never received any, so these were dropped at some
