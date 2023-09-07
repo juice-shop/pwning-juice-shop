@@ -203,6 +203,10 @@ Feedback_ widget on the _About Us_ page.
 +
 image::appendix/zero_star_feedback-carousel.png[Zero star feedback in carousel]
 
+== Find an accidentally deployed code sandbox
+
+// TODO Add solution for "Web3 Sandbox" challenge
+
 == ⭐⭐ Challenges
 
 === Access the administration section of the store

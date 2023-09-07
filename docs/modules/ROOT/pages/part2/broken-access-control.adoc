@@ -69,6 +69,10 @@ ____
 | View Basket
 | View another user's shopping basket.
 | ⭐⭐
+
+| Web3 Sandbox
+| Find an accidentally deployed code sandbox for writing smart contracts on the fly.
+| ⭐
 |===
 
 == Access the administration section of the store
@@ -264,3 +268,7 @@ can try to manipulate.
 * In case you manage to update the database via SQL Injection so that a
 user is linked to another shopping basket, the application will _not_
 notice this challenge as solved.
+
+== Find an accidentally deployed code sandbox
+
+// TODO Add hints for "Web3 Sandbox" challenge
