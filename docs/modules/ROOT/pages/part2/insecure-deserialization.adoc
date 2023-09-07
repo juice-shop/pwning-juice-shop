@@ -21,6 +21,7 @@ denial-of-service, access control, and remote code execution
 attacks.footnote:3_6_1[https://owasp.org/www-project-cheat-sheets/cheatsheets/Deserialization_Cheat_Sheet.html]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -44,7 +45,7 @@ to not have RCE challenges on containerized environments, this
 illustrates how hard it is to protect against deserialization attacks
 except for not using it at all._
 
-=== Perform a Remote Code Execution that would keep a less hardened application busy forever
+== Perform a Remote Code Execution that would keep a less hardened application busy forever
 
 ____
 Code Injection is the general term for attack types which consist of
@@ -83,7 +84,7 @@ this challenge will only accept proper RCE as a solution. It cannot be
 solved by simply hammering the server with requests. __That__ would
 probably just __kill__ your server instance.
 
-=== Perform a Remote Code Execution that occupies the server for a while without using infinite loops
+== Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
 ____
 An infinite loop (or endless loop) is a sequence of instructions in a

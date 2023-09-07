@@ -48,6 +48,7 @@ disclosures. An attacker can leverage DNS information to exfiltrate
 data through subdomain names to a DNS server that he/she controls.footnote:3_14_1[https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -71,7 +72,7 @@ in a sandbox with a timeout. While it is unfortunate to not have XXE
 challenges on containerized environments, this somewhat nicely shows how
 incredibly dangerous ill-configured XML parsers actually are._
 
-=== Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
+== Retrieve the content of C:\Windows\system.ini or /etc/passwd from the server
 
 In this challenge you are tasked to disclose a local file from the
 server the Juice Shop backend is hosted on.
@@ -83,7 +84,7 @@ amplifies how bad the underlying vulnerability is.
 * Doing some research on typical XEE attack patterns basically gives
 away the solution for free.
 
-=== Give the server something to chew on for quite a while
+== Give the server something to chew on for quite a while
 
 Similar to
 xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]

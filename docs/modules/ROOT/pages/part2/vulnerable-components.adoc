@@ -5,6 +5,7 @@ include::../attributes.adoc[]
 The challenges in this chapter are all about security issues of
 libraries or other 3rd party components the application uses internally.
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -47,7 +48,7 @@ libraries or other 3rd party components the application uses internally.
 | ⭐⭐⭐⭐
 |===
 
-=== Overwrite the Legal Information file
+== Overwrite the Legal Information file
 
 ____
 Uploaded files represent a significant risk to applications. The first
@@ -83,7 +84,7 @@ that suffers from an arbitrary file overwrite vulnerability.
 https://twitter.com/owasp_juiceshop[@owasp_juiceshop] Twitter
 timeline
 
-=== Forge an almost properly RSA-signed JWT token
+== Forge an almost properly RSA-signed JWT token
 
 Like
 <<_forge_an_essentially_unsigned_jwt_token,Forge an essentially unsigned JWT token>>
@@ -103,7 +104,7 @@ its JWTs is mandatory for this challenge.
 but that obviously doesn't make this challenge unsolvable.
 * Make sure your JWT is URL safe!
 
-=== Inform the shop about a typosquatting imposter that dug itself deep into the frontend
+== Inform the shop about a typosquatting imposter that dug itself deep into the frontend
 
 ____
 Typosquatting, also called URL hijacking, a sting site, or a fake URL,
@@ -148,7 +149,7 @@ is completely harmless. Just keep in mind that in reality, a case like
 this could come with negative consequences and would sometimes be even
 harder to identify.
 
-=== Permanently disable the support chatbot
+== Permanently disable the support chatbot
 
 Juice shop's handy dandy chatbot is cute and all, but can it defend
 itself against malicious attackers looking to rob the customers of its
@@ -162,7 +163,7 @@ this?
 * Maybe you can try to gather clues from around juice shop and then go
 dumpster dive the internet to get a hold of the bot's source
 
-=== Inform the shop about a typosquatting trick it has been a victim of
+== Inform the shop about a typosquatting trick it has been a victim of
 
 This challenge is about identifying and reporting (via the
 http://localhost:3000/#/contact form) a case of typosquatting that
@@ -178,7 +179,7 @@ might bring some insight.
 * https://iamakulov.com/notes/npm-malicious-packages/[Malicious packages in npm]
 is a worthwhile read on https://iamakulov.com[Ivan Akulov's blog].
 
-=== Gain read access to an arbitrary local file on the web server
+== Gain read access to an arbitrary local file on the web server
 
 ____
 A *file inclusion vulnerability* is a type of web vulnerability that is most commonly found to affect web applications that rely on a scripting run time. This issue is caused when an application builds a path to executable code using an attacker-controlled variable in a way that allows the attacker to control which file is executed at run time. A file include vulnerability is distinct from a generic directory traversal attack, in that directory traversal is a way of gaining unauthorized file system access, and a file inclusion vulnerability subverts how an application loads code for execution. Successful exploitation of a file inclusion vulnerability will result in remote code execution on the web server that runs the affected web application. An attacker can use remote code execution to create a web shell on the web server, which can be used for website defacement.
@@ -193,7 +194,7 @@ ____
 * `500 Internal Server Error` is always an interesting status code
 * Fuzzing can also help with this challenge
 
-=== Inform the development team about a danger to some of their credentials
+== Inform the development team about a danger to some of their credentials
 
 ____
 A software supply chain attack is when an attacker gains access to a
@@ -219,7 +220,7 @@ xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_fi
 before attempting this challenge will save you from a lot of
 frustration.
 
-=== Forge an essentially unsigned JWT token
+== Forge an essentially unsigned JWT token
 
 ____
 JSON Web Token (JWT) is a compact, URL-safe means of representing
@@ -243,7 +244,7 @@ validity, so better do not dawdle.
 payload while downgrading to _no_ encryption at all.
 * Make sure your JWT is URL safe!
 
-=== Inform the shop about a vulnerable library it is using
+== Inform the shop about a vulnerable library it is using
 
 This challenge is quite similar to
 xref:part2/cryptographic-issues.adoc#_inform_the_shop_about_an_algorithm_or_library_it_should_definitely_not_use_the_way_it_does[Inform the shop about an algorithm or library it should definitely not use the way it does]

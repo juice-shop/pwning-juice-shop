@@ -5,7 +5,7 @@ Whenever a challenge is solved, a `cheatScore` between 0 and 1 is
 internally assigned to the solution. This indicates how likely the
 challenge solution has been achieved with cheating.
 
-image::appendix/cheat-detection_logs.png[Cheat detection log entries]
+image::part5/cheat-detection_logs.png[Cheat detection log entries]
 
 == Cheat score calculation
 

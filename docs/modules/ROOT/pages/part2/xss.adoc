@@ -21,6 +21,7 @@ the browser and used with that site. These scripts can even rewrite
 the content of the HTML page.footnote:3_13_1[https://owasp.org/www-community/attacks/xss/]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -63,7 +64,7 @@ ____
 | ⭐⭐⭐⭐⭐⭐
 |===
 
-=== Perform a persisted XSS attack without using the frontend application at all
+== Perform a persisted XSS attack without using the frontend application at all
 
 As presented in the
 xref:introduction/architecture.adoc#_architecture_overview[Architecture Overview], the OWASP Juice
@@ -87,7 +88,7 @@ the API can help you here
 * Careless developers might have exposed API methods that the client
 does not even need
 
-=== Use the bonus payload in the DOM XSS challenge
+== Use the bonus payload in the DOM XSS challenge
 
 The underlying vulnerability of this challenge is the same as for the
 <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>> challenge. The
@@ -99,7 +100,7 @@ challenge
 same vulnerable field
 * Crank up the volume of your computer before submitting the payload! 🔊
 
-=== Bypass the Content Security Policy and perform an XSS attack on a legacy page
+== Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
 In the xref:introduction/architecture.adoc#_architecture_overview[Architecture overview] you were
 told that the Juice Shop uses a modern __Single Page Application__
@@ -130,7 +131,7 @@ To enable CSP, you need to configure your web server to return the
 Content-Security-Policy HTTP header ([...]).footnote:3_13_5[https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP]
 ____
 
-=== Perform a persisted XSS attack bypassing a client-side security mechanism
+== Perform a persisted XSS attack bypassing a client-side security mechanism
 
 This challenge is founded on a very common security flaw of web
 applications, where the developers ignored the following golden rule of
@@ -153,7 +154,7 @@ manipulating the DOM tree)
  ** or by ignoring it completely and interacting with the backend
 instead.
 
-=== Perform a DOM XSS attack
+== Perform a DOM XSS attack
 
 ____
 DOM-based Cross-Site Scripting is the de-facto name for XSS bugs which
@@ -177,7 +178,7 @@ ____
 you do not look "under the hood" to find out what the application
 actually does with the user input
 
-=== Perform a persisted XSS attack through an HTTP header
+== Perform a persisted XSS attack through an HTTP header
 
 This XSS challenge originates from an unsafely processed user input via
 an HTTP header. The difficulty lies in finding the attack path whereas
@@ -190,7 +191,7 @@ headers to find the leverage point
 * Adding insult to injury, the HTTP header you need will never be sent
 by the application on its own
 
-=== Perform a reflected XSS attack
+== Perform a reflected XSS attack
 
 ____
 Reflected Cross-site Scripting (XSS) occur when an attacker injects
@@ -207,7 +208,7 @@ leading to
 * Try probing for XSS vulnerabilities by submitting text wrapped in an
 HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
 
-=== Perform a persisted XSS attack bypassing a server-side security mechanism
+== Perform a persisted XSS attack bypassing a server-side security mechanism
 
 This is one of the hardest XSS challenges, as it cannot be solved by
 just fiddling with the client-side JavaScript or bypassing the client
@@ -235,7 +236,7 @@ on the _Score Board_, you might not have managed to put the _exact_
 attack string `<iframe src="javascript:alert(`xss`)">` into the
 database?
 
-=== Embed an XSS payload into our promo video
+== Embed an XSS payload into our promo video
 
 As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.

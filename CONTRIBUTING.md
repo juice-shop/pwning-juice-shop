@@ -32,7 +32,7 @@ asciidoctor-pdf -v
 
 If it runs successfully then, Run the following command to generate the pdf
 ```
-asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts -D output docs/modules/ROOT/pages/book.adoc
+asciidoctor-pdf -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts -D output docs/modules/ROOT/book.adoc
 ```
 
 After this command runs successfully, the pdf will we availible at `output/book.pdf`.
@@ -48,7 +48,7 @@ asciidoctor-epub3 -v
 
 If it runs successfully then, Run the following command to generate the epub file
 ```
-asciidoctor-epub3 -D output docs/modules/ROOT/pages/book.adoc
+asciidoctor-epub3 -D output docs/modules/ROOT/book.adoc
 ```
 
 After this command runs successfully, the epub file will be availible at output/book.epub.
@@ -59,12 +59,14 @@ After this command runs successfully, the epub file will be availible at output/
 
 - `docs/antora.yml` contains everything related to a particular version.
 
-- `docs/modules/ROOT/nav.adoc` contains the structuring of all the pages for every format.
+- `docs/modules/ROOT/nav.adoc` contains the structuring of all the pages antora website.
+
+- `docs/modules/ROOT/book.adoc` contains the structuring of pdf and epub versoining.
 
 - `antora-playbook.yml` is the backbone of antora. Antora looks for everything written over there and follows the commands. Different versioning is mentioned in content.sources.branch. UI is being rendered as default UI with some overwriting through supplement-ui.
 
-- `supplement-ui/` is where any changes for the antora-ui should be made. It will overwrite the default antora-ui
+- `supplement-ui/` is where any changes for the antora-ui should be made. It will overwrite the default antora-ui.
 
 - `output/` is the output directory for the epub version.
 
-- `resources/` & `fonts/` contains the theme and fonts for asciidoctor-pdf
+- `resources/` & `fonts/` contains the theme and fonts for asciidoctor-pdf.

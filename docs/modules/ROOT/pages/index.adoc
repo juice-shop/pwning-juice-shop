@@ -1,5 +1,3 @@
-= Pwning OWASP Juice Shop
-
 include::attributes.adoc[]
 
 ifeval::[{is_ctf} == 1]
@@ -9,5 +7,3 @@ endif::[]
 ifeval::[{is_ctf} == 0]
 image::cover.jpg[Front Cover]
 endif::[]
-
-*Written by https://twitter.com/bkimminich[Björn Kimminich]*

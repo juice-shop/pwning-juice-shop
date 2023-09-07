@@ -2,6 +2,7 @@
 
 include::../attributes.adoc[]
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -76,7 +77,7 @@ include::../attributes.adoc[]
 | ⭐⭐⭐⭐
 |===
 
-=== Gain access to any access log file of the server
+== Gain access to any access log file of the server
 
 ____
 An access log is a list of all the requests for individual files that
@@ -112,7 +113,7 @@ challenge might give you an idea who is interested in such a public
 exposure.
 * Drilling down one level into the file system might not be sufficient.
 
-=== Access a confidential document
+== Access a confidential document
 
 Somewhere in the application you can find a file that contains sensitive
 information about some - potentially hostile - takeovers the Juice Shop
@@ -123,7 +124,7 @@ directly.
 * The file you are looking for is not protected in any way. Once you
 _found it_ you can also _access it_.
 
-=== Perform an unwanted information disclosure by accessing data cross-domain
+== Perform an unwanted information disclosure by accessing data cross-domain
 
 Somewhere in the application there is an API endpoint which will allow
 data to be accessed cross domain. Usually the same-origin policy would
@@ -136,7 +137,7 @@ information. SQL Injection is not the solution here.
 cross-domain?
 * This challenge uses an old way which is no longer recommended.
 
-=== Find the endpoint that serves usage data to be scraped by a popular monitoring system
+== Find the endpoint that serves usage data to be scraped by a popular monitoring system
 
 The popular monitoring system being referred to in the challenge
 description is https://github.com/prometheus/prometheus[Prometheus]:
@@ -162,7 +163,7 @@ RTFM is an initialism for the expression "read the fucking manual".
 footnote:3_10_7[https://en.wikipedia.org/wiki/RTFM]
 ____
 
-=== Access a developer's forgotten backup file
+== Access a developer's forgotten backup file
 
 During an emergency incident and the hotfix that followed, a developer
 accidentally pasted an application configuration file into the wrong
@@ -178,7 +179,7 @@ prevents access to it.
 has a valid file type.
 * For this challenge there is only _one approach_ to pull this trick.
 
-=== Access a salesman's forgotten backup file
+== Access a salesman's forgotten backup file
 
 A salesperson as accidentally uploaded a list of (by now outdated)
 coupon codes to the application. Downloading this file will not only
@@ -192,7 +193,7 @@ prevents access to it.
 * You need to trick the security mechanism into thinking that the file
 has a valid file type.
 
-=== Steal someone else's personal data without using Injection
+== Steal someone else's personal data without using Injection
 
 In order to comply with GDPR, the Juice Shop offers a _Request Data
 Export_ function for its registered customers. It is possible to exploit
@@ -207,7 +208,7 @@ requests to solve this challenge.
 * Inspecting various server responses which contain user-specific data
 might give you a clue about the mistake the developers made.
 
-=== Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
+== Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
 The company behind the Juice Shop failed miserably at implementing any
 data loss prevention measures for itself. This challenge simulates a
@@ -252,7 +253,7 @@ it is often more effective at uncovering weak passwords than targeting
 specific users.footnote:3_10_5[https://resources.infosecinstitute.com/password-spraying/]
 ____
 
-=== Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
+== Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
 Similar to
 <<_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to,Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to>>
@@ -269,7 +270,7 @@ same platform that was involved in
 <<_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to,Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to>>
 * Google is a particularly good accomplice in this challenge.
 
-=== Log in with Amy's original user credentials
+== Log in with Amy's original user credentials
 
 This challenge is similar to
 xref:part2/broken-authentication.adoc#_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection[Log in with the administrators user credentials without previously changing them or applying SQL Injection]
@@ -287,7 +288,7 @@ some information how Amy decided to strengthen her password.
 * Obviously, Amy - being a little dimwitted - did not put nearly enough
 effort and creativity into the password selection process.
 
-=== Log in with MC SafeSearch's original user credentials
+== Log in with MC SafeSearch's original user credentials
 
 Another user login challenge where only the original password is
 accepted as a solution. Employing SQL Injection or other attacks does
@@ -303,7 +304,7 @@ rating for this challenge.
 +
 image::part2/protect-ya-passwordz.jpg["Protect Ya Passwordz",link=https://www.youtube.com/watch?v=v59CX2DiX0Y]
 
-=== Determine the answer to John's security question
+== Determine the answer to John's security question
 
 Who would have guessed that a simple walk in the park could lead to an
 account compromise. People these days are not careful with what they
@@ -314,7 +315,7 @@ when people exploit that.
 * Use this information to answer the security question of the John, who
 enjoys hiking in the park.
 
-=== Access a misplaced SIEM signature file.
+== Access a misplaced SIEM signature file.
 
 ____
 Security information and event management (SIEM) technology supports
@@ -347,11 +348,11 @@ ____
 already know where the SIEM signature file is located
 * Simply reuse the trick that already worked for the files above
 
-=== Take over the wallet containing our official Soul Bound Token
+== Take over the wallet containing our official Soul Bound Token
 
 // TODO Add hints for "NFT Takeover" challenge
 
-=== Reset Uvogin's password via the Forgot Password mechanism
+== Reset Uvogin's password via the Forgot Password mechanism
 
 With the amount of personal information that people tend to reveal
 online, security questions are hardly reliable anymore.
@@ -362,7 +363,7 @@ on his unique writing habits
 * You might be able to find some existing OSINT tools to help you in
 this investigation
 
-=== Deprive the shop of earnings by downloading the blueprint for one of its products
+== Deprive the shop of earnings by downloading the blueprint for one of its products
 
 Why waste money for a product when you can just as well get your hands
 on its blueprint in order to make it yourself?
@@ -376,7 +377,7 @@ place like so many others forgotten files covered in this chapter
 inventory, the product to inspect will be a different one. The tooltip
 on the Score Board will tell you which one to look into._
 
-=== Determine the answer to Emma's security question
+== Determine the answer to Emma's security question
 
 It is also possible to determine where a picture was taken by looking at
 visual clues within the image. A certain user has uploaded a picture of

@@ -78,9 +78,15 @@ or awareness trainings
 or more other challenges can be (realistically) solved
 * *Brute Force* marks challenges where automation of some security
 tool or custom script is an option or even prerequisite
+ifeval::[{is_ctf} == 1]
+* *Tutorial* marks challenges for which a Hacking Instructor script exists to assist
+newcomers
+endif::[]
+ifeval::[{is_ctf} == 0]
 * *Tutorial* marks challenges for which a
 <<_hacking_instructor,Hacking Instructor script>> exists to assist
 newcomers
+endif::[]
 * *Code Analysis* marks challenges where it can be helpful to rummage
 through some source code of the application or that of a third party
 
@@ -188,7 +194,7 @@ When the backup restore is successful, you must click "Apply changes
 now" in the corresponding message to trigger the hacking progress
 restore as well as the language changes in backend data.
 
-image::part1/manual_backup-restore.png[Success message for backup restore with "Apply changes now" action]
+image::part1/manual_backup-restore.png[Success message for backup restore with Apply changes now action]
 
 If you do not click that button before the message vanishes, you can
 also restart your application server to apply the backup of hacking
@@ -235,7 +241,7 @@ image::part1/hacking-instructor_3.png[Hacking Instructor reports successful solu
 It cannot offer a tutorial for _every challenge_ as some are too complex
 or require too many steps outside the application. In Part III you can
 learn more about how to write
-xref:part3/tutorials.adoc#_hacking_instructor_tutorial_scripts[Hacking Instructor tutorial scripts].
+xref:part5/tutorials.adoc#_hacking_instructor_tutorial_scripts[Hacking Instructor tutorial scripts].
 
 === Tutorial mode
 

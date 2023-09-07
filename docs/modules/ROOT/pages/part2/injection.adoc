@@ -41,6 +41,7 @@ of an application having an injection flaw should be considered
 high.footnote:3_5_1[https://owasp.org/www-community/Injection_Flaws]
 ____
 
+[discrete]
 == Challenges covered in this chapter
 
 |===
@@ -98,7 +99,7 @@ sufficiently skilled attacker to execute arbitrary code including to
 terminate the application process._
 
 [discrete]
-==== Reconnaissance advice
+== Reconnaissance advice
 
 Instead of trying random attacks or go through an attack pattern list,
 it is a good idea to find out if and where a vulnerability exists,
@@ -108,7 +109,7 @@ behaviour differs from regular use. Maybe you can even provoke an error
 where the application leaks details about the query structure and schema
 details like table or column names. Do not miss this opportunity.
 
-=== Order the Christmas special offer of 2014
+== Order the Christmas special offer of 2014
 
 ____
 Blind SQL (Structured Query Language) injection is a type of SQL
@@ -141,7 +142,7 @@ trigger the _Checkout_.
 * Neither of the above can be achieved through the application frontend
 and it might even require (half-)Blind SQL Injection.
 
-=== Exfiltrate the entire DB schema definition via SQL Injection
+== Exfiltrate the entire DB schema definition via SQL Injection
 
 An attacker would try to exploit SQL Injection to find out as much as
 possible about your database schema. This subsequently allows much more
@@ -158,7 +159,7 @@ basically hopping from one error to the next
 <<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
 this cannot be achieved through the application frontend.
 
-=== Log in with the (non-existing) accountant without ever registering that user
+== Log in with the (non-existing) accountant without ever registering that user
 
 In ths challenge you need to log in with a user that has
 accountant-level permissions, but does not really exist.
@@ -178,7 +179,7 @@ already give away the intended approach.
 
 image::part2/nice_try-error.png[Nice try error when registering ephemeral accountant user]
 
-=== Log in with the administrator's user account
+== Log in with the administrator's user account
 
 What would a vulnerable web application be without an administrator user
 account whose (supposedly) privileged access rights a successful hacker
@@ -196,7 +197,7 @@ attack that instead of using SQL Injection.
 xref:part2/broken-authentication.adoc#_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection[Log in with the administrator's user credentials without previously changing them or applying SQL Injection]
 challenge.
 
-=== Log in with Bender's user account
+== Log in with Bender's user account
 
 Bender is a regular customer, but mostly hangs out in the Juice Shop to
 troll it for its lack of alcoholic beverages.
@@ -208,7 +209,7 @@ launch a targeted attack.
 * In case you try some other approach than SQL Injection, you will
 notice that Bender's password hash is not very useful.
 
-=== Log in with Jim's user account
+== Log in with Jim's user account
 
 Jim is a regular customer. He prefers juice from fruits that no man has
 ever tasted before.
@@ -220,7 +221,7 @@ launch a targeted attack.
 * If you harvested Jim's password hash, you can try to attack that
 instead of using SQL Injection.
 
-=== Let the server sleep for some time
+== Let the server sleep for some time
 
 ____
 NoSQL databases provide looser consistency restrictions than
@@ -282,7 +283,7 @@ result.
 solve this challenge. _That_ would probably just _kill_ your server
 instance.
 
-=== All your orders are belong to us
+== All your orders are belong to us
 
 This challenge is about retrieving all user's order data from the NoSQL
 DB in a single data extraction using an Injection attack.
@@ -292,7 +293,7 @@ DB in a single data extraction using an Injection attack.
 the user and work with that.
 * Reading up on how MongoDB queries work is really helpful here.
 
-=== Update multiple product reviews at the same time
+== Update multiple product reviews at the same time
 
 The UI and API only offer ways to update individual product reviews.
 This challenge is about manipulating an update so that it will affect
@@ -305,7 +306,7 @@ MongoDB work.
 https://docs.mongodb.com/manual/reference/operator/query/[Query Operators]
 work in MongoDB.
 
-=== Infect the server with juicy malware by abusing arbitrary command execution
+== Infect the server with juicy malware by abusing arbitrary command execution
 
 ℹ️ _Please note that this challenge is *not available* when running
 the Juice Shop in either a Docker container or on a Heroku dyno! It is
@@ -350,7 +351,7 @@ other systems. On the other hand, some template injection
 vulnerabilities may pose no significant security risk. footnote:3_5_5[https://portswigger.net/kb/issues/00101080_server-side-template-injection]
 ____
 
-=== Retrieve a list of all user credentials via SQL Injection
+== Retrieve a list of all user credentials via SQL Injection
 
 This challenge explains how a considerable number of companies were
 affected by _data breaches_ without anyone breaking into the server room

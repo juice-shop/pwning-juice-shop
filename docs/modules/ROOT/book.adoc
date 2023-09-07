@@ -1,0 +1,164 @@
+:doctype: book
+:toc: macro
+
+= Pwning OWASP Juice Shop
+Björn Kimminich
+
+include::pages/attributes.adoc[]
+:imagesdir: assets/images
+
+ifeval::[{is_ctf} == 1]
+image::cover-ctf.jpg[Front Cover]
+endif::[]
+
+ifeval::[{is_ctf} == 0]
+image::cover.jpg[Front Cover]
+endif::[]
+
+ifdef::backend-pdf[]
+toc::[]
+endif::[]
+
+= Preface
+
+:leveloffset: +1
+
+include::pages/introduction/README.adoc[Introduction]
+
+include::pages/introduction/motivation.adoc[Why OWASP Juice Shop exists]
+
+include::pages/introduction/architecture.adoc[Architecture overview]
+
+:leveloffset: -1
+
+= Part I - Hacking preparations
+
+:leveloffset: +1
+
+include::pages/part1/README.adoc[Hacking preparations]
+
+include::pages/part1/running.adoc[Running OWASP Juice Shop]
+
+include::pages/part1/categories.adoc[Vulnerability categories]
+
+include::pages/part1/challenges.adoc[Challenge tracking]
+
+include::pages/part1/rules.adoc[Hacking exercise rules]
+
+include::pages/part1/happy-path.adoc[Walking the "happy path"]
+
+:leveloffset: -1
+
+= Part II - Challenge hunting
+
+:leveloffset: +1
+
+include::pages/part2/README.adoc[Challenge hunting]
+
+include::pages/part2/score-board.adoc[Finding the Score Board]
+
+include::pages/part2/injection.adoc[Injection]
+
+include::pages/part2/broken-authentication.adoc[Broken Authentication]
+
+include::pages/part2/sensitive-data-exposure.adoc[Sensitive Data Exposure]
+
+include::pages/part2/xxe.adoc[XML External Entities (XXE)]
+
+include::pages/part2/improper-input-validation.adoc[Improper Input Validation]
+
+include::pages/part2/broken-access-control.adoc[Broken Access Control]
+
+include::pages/part2/security-misconfiguration.adoc[Security Misconfiguration]
+
+include::pages/part2/xss.adoc[Cross Site Scripting (XSS)]
+
+include::pages/part2/insecure-deserialization.adoc[Insecure Deserialization]
+
+include::pages/part2/vulnerable-components.adoc[Vulnerable Components]
+
+include::pages/part2/security-through-obscurity.adoc[Security through Obscurity]
+
+include::pages/part2/unvalidated-redirects.adoc[Unvalidated Redirects]
+
+include::pages/part2/broken-anti-automation.adoc[Broken Anti-Automation]
+
+include::pages/part2/cryptographic-issues.adoc[Cryptographic Issues]
+
+include::pages/part2/miscellaneous.adoc[Miscellaneous]
+
+:leveloffset: -1
+
+= Part III - Getting involved
+
+:leveloffset: +1
+
+include::pages/part3/README.adoc[Getting involved]
+
+include::pages/part3/feedback.adoc[Provide feedback]
+
+include::pages/part3/donations.adoc[Donations]
+
+ifeval::[{is_ctf} == 0]
+include::pages/part3/contribution.adoc[Contribute to development]
+
+include::pages/part3/codebase.adoc[Codebase 101]
+
+include::pages/part3/translation.adoc[Help with translation]
+
+endif::[]
+
+:leveloffset: -1
+
+= Part IV - Advanced user guides
+
+:leveloffset: +1
+
+include::pages/part4/troubleshooting.adoc[Troubleshooting]
+
+ifeval::[{is_ctf} == 0]
+
+include::pages/part4/customization.adoc[Customization]
+
+include::pages/part4/ctf.adoc[Hosting a CTF event]
+
+include::pages/part4/trainers.adoc[Trainer's guide]
+
+include::pages/part4/integration.adoc[Integration]
+
+include::pages/part4/monitoring.adoc[Monitoring]
+
+:leveloffset: -1
+
+= Part V - Advanced developer guides
+
+:leveloffset: +1
+
+include::pages/part5/tutorials.adoc[Hacking Instructor tutorial scripts]
+
+include::pages/part5/cheat-detection.adoc[Cheat detection]
+
+include::pages/part5/code-snippets.adoc[Coding challenges]
+
+include::pages/part5/chatbot.adoc[Chatbot training data]
+
+:leveloffset: -1
+
+= Appendix
+
+:leveloffset: +1
+
+include::pages/appendix/solutions.adoc[Challenge solutions]
+
+include::pages/appendix/lyrics.adoc[Jingle lyrics]
+endif::[]
+
+:leveloffset: -1
+
+= Postface
+
+:leveloffset: +1
+
+include::pages/introduction/about.adoc[About this book]
+
+:leveloffset: -1

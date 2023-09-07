@@ -1,4 +1,4 @@
-= Part I - Hacking preparations
+= Hacking preparations
 
 include::../attributes.adoc[]
 
