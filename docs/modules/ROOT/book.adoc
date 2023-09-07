@@ -1,4 +1,5 @@
 :doctype: book
+:notitle:
 :toc: macro
 
 = Pwning OWASP Juice Shop
