@@ -1,3 +1,4 @@
+[%notitle]
 = About this book
 
 image::introduction/back.jpg[Back Cover]
