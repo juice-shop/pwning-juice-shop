@@ -224,6 +224,29 @@ conversations.
       ]
     },
     {
+      "intent": "queries.nft",
+      "utterances": [
+        "Do you know anything about NFTs",
+        "Can you tell me anything about NFTs",
+        "Do you sell NFTs",
+        "where can I buy NFTs"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "I'm not sure if we have any actual NFTs listed right now, but you can check if there's a link on our \"About Us\" page!"
+        },
+        {
+          "action": "response",
+          "body": "Our developers are currently learning Web3, and they published a (literal) NFT honey pot for you to mint on /#/bee-haven."
+        },
+        {
+          "action": "response",
+          "body": "Our developers are currently learning Web3, and they published our official Soul-Bound-Token over on /#/juicy-nft for you to marvel at."
+        }
+      ]
+    },
+    {
       "intent": "queries.productPrice",
       "utterances": [
         "how much is X",
@@ -284,6 +307,41 @@ conversations.
         {
           "action": "function",
           "handler": "couponCode"
+        }
+      ]
+    },
+    {
+      "intent": "queries.singstar",
+      "utterances": [
+        "Can you sing me a song",
+        "Does your shop have a theme song",
+        "Do you have a jingle",
+        "Play me some music"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "I can't sing too well, but you might want to check out our promotion video instead!"
+        },
+        {
+          "action": "response",
+          "body": "The full version of our jingle is available on Soundcloud! Please click \uD83E\uDDE1 if you like it!"
+        },
+        {
+          "action": "response",
+          "body": "Juuuuice shop, Juuu-uuuice Shop, just don't test the site with Bob's sweet or you hm-hm-hm-hmmmmm..."
+        }
+      ]
+    },
+    {
+      "intent": "queries.swallow",
+      "utterances": [
+        "What is the airspeed velocity of an unladen swallow"
+      ],
+      "answers": [
+        {
+          "action": "response",
+          "body": "What do you mean? African or European swallow?"
         }
       ]
     },
