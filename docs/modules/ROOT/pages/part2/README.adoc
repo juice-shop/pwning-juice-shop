@@ -421,6 +421,10 @@ ifeval::[{is_ctf} == 1]
 | Withdraw more ETH from the new wallet than you deposited.
 | xref:part2/miscellaneous.adoc#_withdraw_more_eth_from_the_new_wallet_than_you_deposited[💡]
 
+| Web3 Sandbox
+| Find an accidentally deployed code sandbox for writing smart contracts on the fly.
+| xref:part2/broken-access-control.adoc#_find_an_accidentally_deployed_code_sandbox[💡]
+
 | Weird Crypto
 | Inform the shop about an algorithm or library it should definitely not use the way it does.
 | xref:part2/cryptographic-issues.adoc#_inform_the_shop_about_an_algorithm_or_library_it_should_definitely_not_use_the_way_it_does[💡]
@@ -942,6 +946,11 @@ ifeval::[{is_ctf} == 0]
 | Withdraw more ETH from the new wallet than you deposited.
 | xref:part2/miscellaneous.adoc#_withdraw_more_eth_from_the_new_wallet_than_you_deposited[💡]
 | xref:appendix/solutions.adoc#_withdraw_more_eth_from_the_new_wallet_than_you_deposited[📕]
+
+| Web3 Sandbox
+| Find an accidentally deployed code sandbox for writing smart contracts on the fly.
+| xref:part2/broken-access-control.adoc#_find_an_accidentally_deployed_code_sandbox[💡]
+| xref:appendix/solutions.adoc#_find_an_accidentally_deployed_code_sandbox[📕]
 
 | Weird Crypto
 | Inform the shop about an algorithm or library it should definitely not use the way it does.
