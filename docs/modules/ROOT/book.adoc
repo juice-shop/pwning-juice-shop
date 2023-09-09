@@ -123,6 +123,8 @@ include::pages/part4/customization.adoc[Customization]
 
 include::pages/part4/ctf.adoc[Hosting a CTF event]
 
+include::pages/part4/multi-juicer.adoc[Hosting platform for multiple users]
+
 include::pages/part4/trainers.adoc[Trainer's guide]
 
 include::pages/part4/integration.adoc[Integration]
