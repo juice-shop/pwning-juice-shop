@@ -11,7 +11,7 @@ skip_commits:
     - LICENSE
     - README.md
 environment:
-  nodejs_version: 20
+  nodejs_version: 18
   ruby_version: 32
 install:
   - ps: 'Install-Product node $env:nodejs_version'
