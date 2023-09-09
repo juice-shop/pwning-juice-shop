@@ -12,7 +12,7 @@ period of inactivity.
 
 MultiJuicer {multiJuicerVersion} comes with a custom-built load balancer. It allows every
 participant (or a CTF team) to use the same URL, but their traffic will
-always be sent to their own personal instance.
+always be sent to their own personal (or team-specific) instance.
 
 image::appendix/multi-juicer_high-level-architecture.png[MultiJuicer high level architecture]
 
@@ -28,7 +28,7 @@ the Juice Shop challenges.
 
 image::appendix/multi-juicer_scoreboard.png[MultiJuicer score board]
 
-Another helpful feature for the trainer MultiJuicer is the https://github.com/iteratec/multi-juicer/blob/master/guides/monitoring-setup/monitoring.adoc[optional
+Another helpful feature for trainers and CTf-organizers is the https://github.com/juice-shop/multi-juicer/blob/main/guides/monitoring-setup/monitoring.md[optional
 dashboard which automatically consumes and displays metrics] from each of
 its Juice Shop instances. It shows individual challenge progress along with other
 functional and technical stats and can be very helpful in
@@ -37,6 +37,10 @@ troubleshooting as well.
 image:appendix/multi-juicer_dashboard.png[MultiJuicer dashboard with technical metrics]
 image:appendix/multi-juicer_dashboard1.png[MultiJuicer dashboard with business metrics]
 
-The MultiJuicer repository offers guidance on https://github.com/iteratec/multi-juicer#installation-guides-for-specific-cloud-providers[how to set up the
-system on different cloud provider platforms],
-such as Digital Ocean, OpenShift, AWS or Azure.
+The MultiJuicer repository offers guidance on how to set up the system on different cloud provider platforms:
+
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/aws[AWS]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/azure[Azure]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/digital-ocean[Digital Ocean]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/k8s[Kubernetes]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/openshift[Openshift]
