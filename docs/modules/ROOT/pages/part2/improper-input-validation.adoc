@@ -24,6 +24,10 @@ ____
 | Obtain a Deluxe Membership without paying for it.
 | ⭐⭐⭐
 
+| Empty User Registration
+| Register a user with an empty email and password.
+| ⭐⭐
+
 | Expired Coupon
 | Successfully redeem an expired campaign coupon code.
 | ⭐⭐⭐⭐
@@ -86,6 +90,10 @@ different methods
 using the browser's developer tools
 * Maybe playing around with the parameters in these requests could
 reveal something interesting
+
+== Register a user with an empty email and password
+
+// TODO Add hints for "Empty User Registration" challenge
 
 == Successfully redeem an expired campaign coupon code
 

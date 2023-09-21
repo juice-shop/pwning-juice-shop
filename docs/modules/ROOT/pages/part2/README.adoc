@@ -121,6 +121,10 @@ ifeval::[{is_ctf} == 1]
 | Perform an unwanted information disclosure by accessing data cross-domain.
 | xref:part2/sensitive-data-exposure.adoc#_perform_an_unwanted_information_disclosure_by_accessing_data_cross_domain[💡]
 
+| Empty User Registration
+| Register a user with an empty email and password.
+| xref:part2/improper-input-validation.adoc#_register_a_user_with_an_empty_email_and_password[💡]
+
 | Ephemeral Accountant
 | Log in with the (non-existing) accountant _acc0unt4nt@juice-sh.op_ without ever registering that user.
 | xref:part2/injection.adoc#_log_in_with_the_non_existing_accountant_without_ever_registering_that_user[💡]
@@ -571,6 +575,11 @@ ifeval::[{is_ctf} == 0]
 | Perform an unwanted information disclosure by accessing data cross-domain.
 | xref:part2/sensitive-data-exposure.adoc#_perform_an_unwanted_information_disclosure_by_accessing_data_cross_domain[💡]
 | xref:appendix/solutions.adoc#_perform_an_unwanted_information_disclosure_by_accessing_data_cross_domain[📕]
+
+| Empty User Registration
+| Register a user with an empty email and password.
+| xref:part2/improper-input-validation.adoc#_register_a_user_with_an_empty_email_and_password[💡]
+| xref:appendix/solutions.adoc#_register_a_user_with_an_empty_email_and_password[📕]
 
 | Ephemeral Accountant
 | Log in with the (non-existing) accountant _acc0unt4nt@juice-sh.op_ without ever registering that user.
