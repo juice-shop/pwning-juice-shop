@@ -94,6 +94,12 @@ fixed in a straightforward fashion when they fail:
 
 | `+Answer with ... action and handler ... is missing for intent ...+`
 | Make sure that your chatbot training data defines the expected `+{ "action": "...", "handler": "..." }+` on the mentioned mandatory `intent` object as defined in the xref:part5/chatbot.adoc#_chatbot_training_data[Chatbot training data] specification.
+
+| `+Domain ... is not reachable+`
+| Make sure the Juice Shop server has outgoing Internet connectivity and that the mentioned domain is not blocked by any firewall rules or proxies.
+
+| `+... will not work as intended without access to ...+`
+| The mentioned feature or challenge will be broken unless connectivity to the mentioned domain is allowed from the Juice Shop server. In case of a dependent challenge, the challenge will likely be unsolvable but for technical reasons _without_ xref:part1/challenges.adoc#_potentially_dangerous_challenges[being explicitly disabled on the Score Board].
 |===
 
 If your installation did not even get to the point of running these
