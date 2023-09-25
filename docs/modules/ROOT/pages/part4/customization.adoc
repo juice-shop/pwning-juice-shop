@@ -819,25 +819,25 @@ schemes. The table below shows sample screenshots for each of these.
 | Theme | Sample screenshot
 
 | `bluegrey-lightgreen`
-| image:part1/material-theme_bluegrey-lightgreen.png[]
+| image:part4/material-theme_bluegrey-lightgreen.png[]
 
 | `blue-lightblue`
-| image:part1/material-theme_blue-lightblue.png[]
+| image:part4/material-theme_blue-lightblue.png[]
 
 | `deeppurple-amber`
-| image:part1/material-theme_deeppurple-amber.png[]
+| image:part4/material-theme_deeppurple-amber.png[]
 
 | `indigo-pink`
-| image:part1/material-theme_indigo-pink.png[]
+| image:part4/material-theme_indigo-pink.png[]
 
 | `pink-bluegrey`
-| image:part1/material-theme_pink-bluegrey.png[]
+| image:part4/material-theme_pink-bluegrey.png[]
 
 | `purple-green`
-| image:part1/material-theme_purple-green.png[]
+| image:part4/material-theme_purple-green.png[]
 
 | `deeporange-indigo`
-| image:part1/material-theme_deeporange-indigo.png[]
+| image:part4/material-theme_deeporange-indigo.png[]
 |===
 
 == Provided customizations
@@ -887,20 +887,20 @@ Keeps everything at default settings except _enabling_ all
 xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges]
 even in containerized environments. ☠️ *Use at your own risk!*
 
-image::part1/theme_mozilla.png[Mozilla-CTF theme]
+image::part4/theme_mozilla.png[Mozilla-CTF theme]
 
-image::part1/theme_bodgeit.png[BodgeIt Store theme]
+image::part4/theme_bodgeit.png[BodgeIt Store theme]
 
 == Proprietary customization
 
 Below you find screenshots of a custom theme the author of this book created for awareness and demo sessions at work. It was presented to various groups and individuals, from Project Manager rounds over workers council members up to the company CEO at that time.
 
-image::part1/theme_kn1.png[Product list in Kuehne+Nagel theme]
+image::part4/theme_kn1.png[Product list in Kuehne+Nagel theme]
 
-image::part1/theme_kn2.png[Shopping basket in Kuehne+Nagel theme]
+image::part4/theme_kn2.png[Shopping basket in Kuehne+Nagel theme]
 
-image:part1/theme_kn3.png[2FA setup in Kuehne+Nagel theme]
-image:part1/theme_kn4.png[Customer feedback in Kuehne+Nagel theme]
+image:part4/theme_kn3.png[2FA setup in Kuehne+Nagel theme]
+image:part4/theme_kn4.png[Customer feedback in Kuehne+Nagel theme]
 
 == Limitations
 
@@ -933,7 +933,7 @@ account/page, you will most likely not find any coupon codes posted
 there. You will probably fail to convince the social media team to tweet
 or retweet some coupon code for an application that does not even exist!
 
-image::part1/coupon_immersion-spoiler.png[Coupon Immersion Spoiler]
+image::part4/coupon_immersion-spoiler.png[Coupon Immersion Spoiler]
 
 [discrete]
 ==== OAuth Login
@@ -944,7 +944,7 @@ registered on Google Cloud Platform: _OWASP Juice Shop_! There is no way
 to convince Google to show anything else for obvious trust and integrity
 reasons.
 
-image::part1/oauth_immersion-spoiler.png[OAuth Immersion Spoiler]
+image::part4/oauth_immersion-spoiler.png[OAuth Immersion Spoiler]
 
 ℹ️ _Since v10.0.0 you can overwrite the
 <<_googleoauth_subsection,`googleOauth` subsection>> to use your own
@@ -972,10 +972,10 @@ Facebook post with some marketing text and an actual coupon code. You
 can get valid coupon codes from the OWASP Juice Shop Twitter feed:
 https://twitter.com/owasp_juiceshop.
 +
-image::part1/word_replacer_ii.png[Word Replacer II]
+image::part4/word_replacer_ii.png[Word Replacer II]
 
 . Enable the plugin and verify your replacements work:
 
-image::part1/coupon_immersion-replacement.png[Coupon Immersion Replacement]
+image::part4/coupon_immersion-replacement.png[Coupon Immersion Replacement]
 
-image::part1/oauth_immersion-replacement.png[OAuth Immersion Replacement]
+image::part4/oauth_immersion-replacement.png[OAuth Immersion Replacement]

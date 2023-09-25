@@ -19,12 +19,12 @@ issues tracker._
 During server start the Juice Shop runs a series of self-validations and
 print feedback about their success to the console:
 
-image::appendix/passing_startup-validations.png[Passing start-up validations]
+image::part4/passing_startup-validations.png[Passing start-up validations]
 
 Juice Shop will resist to launch as long as any of these validations
 fail:
 
-image::appendix/failing_startup-validations.png[Failing start-up validations]
+image::part4/failing_startup-validations.png[Failing start-up validations]
 
 The following checks are run during server startup and can typically be
 fixed in a straightforward fashion when they fail:
