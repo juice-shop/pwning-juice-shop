@@ -35,7 +35,7 @@ during awareness trainings to avoid distraction. The
 https://github.com/juice-shop/juice-shop/blob/master/config/quiet.yml[Quiet]
 configuration demonstrates the necessary options to achieve this.
 
-image::appendix/quiet_mode.png[Quiet mode]
+image::part4/quiet_mode.png[Quiet mode]
 
 For a really sophisticated and immersive demo consider performing some
 xref:part4/customization.adoc#_additional_browser_tweaks[Additional Browser tweaks].
@@ -62,7 +62,7 @@ want to encourage the students to hack very competitively.
 
 === Hosting individual instances for multiple users
 
-image::appendix/multi-juicer_cover.svg[MultiJuicer cover]
+image::part4/multi-juicer_cover.svg[MultiJuicer cover]
 
 For a more sophisticated way to host and manage multiple Juice Shop instances we recommend https://github.com/iteratec/multi-juicer/[MultiJuicer]. Learn all about this official platform of Juice Shop xref:part4/multi-juicer.adoc[in this dedicated chapter].
 

@@ -1,7 +1,7 @@
 = Hosting platform for multiple users[[_multi_juicer]]
 include::../attributes.adoc[]
 
-image::appendix/multi-juicer_cover.svg[MultiJuicer cover]
+image::part4/multi-juicer_cover.svg[MultiJuicer cover]
 
 A solution to host and manage individual Juice Shop instances for
 multiple users is
@@ -14,19 +14,19 @@ MultiJuicer {multiJuicerVersion} comes with a custom-built load balancer. It all
 participant (or a CTF team) to use the same URL, but their traffic will
 always be sent to their own personal (or team-specific) instance.
 
-image::appendix/multi-juicer_high-level-architecture.png[MultiJuicer high level architecture]
+image::part4/multi-juicer_high-level-architecture.png[MultiJuicer high level architecture]
 
 Registration at MultiJuicer is very straightforward for the users/teams.
 Messing with other instances is prevented by assigning a passcode to
 each of them which should only be shared among team members - or not at
 all for individuals.
 
-image::appendix/multi-juicer_register.png[MultiJuicer registration]
+image::part4/multi-juicer_register.png[MultiJuicer registration]
 
 MultiJuicer comes with a rudimentary Score Board of its own, which allows teams to compare their progress through
 the Juice Shop challenges.
 
-image::appendix/multi-juicer_scoreboard.png[MultiJuicer score board]
+image::part4/multi-juicer_scoreboard.png[MultiJuicer score board]
 
 Another helpful feature for trainers and CTf-organizers is the https://github.com/juice-shop/multi-juicer/blob/main/guides/monitoring-setup/monitoring.md[optional
 dashboard which automatically consumes and displays metrics] from each of
@@ -34,8 +34,8 @@ its Juice Shop instances. It shows individual challenge progress along with othe
 functional and technical stats and can be very helpful in
 troubleshooting as well.
 
-image:appendix/multi-juicer_dashboard.png[MultiJuicer dashboard with technical metrics]
-image:appendix/multi-juicer_dashboard1.png[MultiJuicer dashboard with business metrics]
+image:part4/multi-juicer_dashboard.png[MultiJuicer dashboard with technical metrics]
+image:part4/multi-juicer_dashboard1.png[MultiJuicer dashboard with business metrics]
 
 The MultiJuicer repository offers guidance on how to set up the system on different cloud provider platforms:
 

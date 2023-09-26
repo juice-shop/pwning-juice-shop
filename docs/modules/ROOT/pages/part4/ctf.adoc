@@ -45,7 +45,7 @@ training or workshop.
 Juice Shop supports _Jeopardy-style CTFs_ by generating a unique _CTF
 flag code_ for each solved challenge.
 
-image::part1/notification_with_flag.png["Challenge solved!" notification with flag code]
+image::part4/notification_with_flag.png["Challenge solved!" notification with flag code]
 
 These codes are not displayed by default, but can be made visible by
 running the application with the `config/ctf.yml` configuration:
@@ -81,7 +81,7 @@ solved!"_-notification being repeated. This can be useful in case you
 forgot to copy a flag code before closing the corresponding
 notification.
 
-image::part1/repeat_notification.png[Repeat notification via Score Board]
+image::part4/repeat_notification.png[Repeat notification via Score Board]
 
 === Overriding the `ctf.key`
 
@@ -144,7 +144,7 @@ dependency to the score server_ either, as participants simply enter the
 flag code they see upon solving a challenge manually somewhere on the
 score server's user interface, typically via their browser:
 
-image::part1/CTF_Infrastructure.png[CTF Infrastructure Example]
+image::part4/CTF_Infrastructure.png[CTF Infrastructure Example]
 
 == Setting up CTF score servers for Juice Shop
 
@@ -184,7 +184,7 @@ juice-shop-ctf
 The tool will now ask a series of questions. All questions have default
 answers available which you can choose by simply hitting `ENTER`.
 
-image::part1/cli_usage_screenshot.png[juice-shop-ctf CLI in action]
+image::part4/cli_usage_screenshot.png[juice-shop-ctf CLI in action]
 
 . *CTF framework to generate data for?* Offers a selectable choice
 between the supported CTF frameworks, which for
@@ -317,7 +317,7 @@ juice-shop-ctf --config myconfig.yml --output challenges.out
 
 === Running CTFd
 
-image::part1/ctfd_logo.png[CTFd logo]
+image::part4/ctfd_logo.png[CTFd logo]
 
 This setup guide assumes that you use CTFd {ctfdVersion}. To
 apply the generated `.csv`, follow the steps describing your preferred
@@ -363,17 +363,17 @@ default) and create an admin user and CTF name.
 Once you have CTFd up and running, you should see all the created data
 in the _Challenges_ tab:
 
-image::part1/ctfd_1.png[CTFd Challenge view]
+image::part4/ctfd_1.png[CTFd Challenge view]
 
-image::part1/ctfd_2.png[CTFd Scoreboard view]
+image::part4/ctfd_2.png[CTFd Scoreboard view]
 
-image::part1/ctfd_3.png[CTFd Statistics view]
+image::part4/ctfd_3.png[CTFd Statistics view]
 
-image::part1/ctfd_4.png[CTFd Team view]
+image::part4/ctfd_4.png[CTFd Team view]
 
 === Running FBCTF
 
-image::part1/fbctf_logo.jpg[FBCTF logo]
+image::part4/fbctf_logo.jpg[FBCTF logo]
 
 Please note that Facebook does not publish any versioned releases of
 FBCTF. They recommend to use the `master`-branch content from GitHub
@@ -390,17 +390,17 @@ The following screenshots were taken during a CTF event where Facebook's
 game server was used. Juice Shop instances were running in a Docker
 cluster and individually assigned to a participant via a load balancer.
 
-image::part1/fbctf_1.png[FBCTF World Map]
+image::part4/fbctf_1.png[FBCTF World Map]
 
-image::part1/fbctf_2.png[FBCTF Highlighted target country]
+image::part4/fbctf_2.png[FBCTF Highlighted target country]
 
-image::part1/fbctf_3.png[FBCTF Hacking Challenge]
+image::part4/fbctf_3.png[FBCTF Hacking Challenge]
 
-image::part1/fbctf_4.png[FBCTF Score Board]
+image::part4/fbctf_4.png[FBCTF Score Board]
 
 === Running RootTheBox
 
-image::part1/rtb_logo.png[RootTheBox logo]
+image::part4/rtb_logo.png[RootTheBox logo]
 
 . Follow either the
 https://github.com/moloch--/RootTheBox/wiki/Installation[Installation Tutorial]
@@ -417,15 +417,15 @@ The following screenshots show the look & feel of RootTheBox as it was
 imported from the XML which by default has all the banners and category
 logos embedded:
 
-image::part1/rtb_0.png[RootTheBox Welcome Screen]
+image::part4/rtb_0.png[RootTheBox Welcome Screen]
 
-image::part1/rtb_1.png[RootTheBox Missions]
+image::part4/rtb_1.png[RootTheBox Missions]
 
-image::part1/rtb_2.png[RootTheBox Failed Flag Submission]
+image::part4/rtb_2.png[RootTheBox Failed Flag Submission]
 
-image::part1/rtb_3.png[RootTheBox Successful Flag Submission]
+image::part4/rtb_3.png[RootTheBox Successful Flag Submission]
 
-image::part1/rtb_4.png[RootTheBox Score Board]
+image::part4/rtb_4.png[RootTheBox Score Board]
 
 == Using other CTF frameworks
 
