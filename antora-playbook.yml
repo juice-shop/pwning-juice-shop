@@ -2,6 +2,7 @@ site:
   title: Pwning OWASP Juice Shop
   url: https://pwning.owasp-juice.shop/antora
   start_page: index.adoc
+  robots: allow
 content:
   sources:
   - url: .
