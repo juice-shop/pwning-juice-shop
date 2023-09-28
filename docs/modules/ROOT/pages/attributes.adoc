@@ -5,6 +5,6 @@
 :juiceShopCtfVersion: v10.0.0
 :multiJuicerVersion: v6.1.0
 :juiceShopNumberOfChallenges: 106
-:nodeVersions: 16.x, 18.x and 20.x
+:nodeVersions: 16.x, 18.x and 20.x (except 20.6.0 due to [a bug](https://github.com/angular/angular-cli/issues/25782))
 :recommendedNodeVersion: 18.x
 :backupSchemaVersion: 1
