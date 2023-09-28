@@ -176,10 +176,17 @@ settings from one computer to another. Example:
 {
   "version": 1,
   "scoreBoard": {
-    "displayedDifficulties": [ 1, 2, 3 ],
+    "scoreBoardVersion": "v1",
+    "displayedDifficulties": [
+      1,
+      2,
+      3
+    ],
+    "showDisabledChallenges": false,
     "displayedChallengeCategories": [
       "Broken Access Control",
-      "Broken Anti Automation"
+      "Broken Anti Automation",
+      "XXE"
     ]
   },
   "banners": {
@@ -187,7 +194,9 @@ settings from one computer to another. Example:
     "cookieConsentStatus": "dismiss"
   },
   "language": "de_DE",
-  "continueCode": "rzJBXpa...bm45J2okY7LX4v7o"
+  "continueCode": "BzxDd5...G59p",
+  "continueCodeFindIt": "MQOwgngy...XvqMVbWYyn",
+  "continueCodeFixIt": "6On8VyX...jBEp5mN"
 }
 ----
 
