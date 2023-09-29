@@ -205,7 +205,17 @@ image::appendix/zero_star_feedback-carousel.png[Zero star feedback in carousel]
 
 == Find an accidentally deployed code sandbox
 
-// TODO Add solution for "Web3 Sandbox" challenge
+. Go to the _Sources_ tab of your browsers DevTools and open the
+`main.js` file.
+. If your browser offers pretty-printing of this minified messy code,
+best use this offer. In Chrome this can be done with the "{}"-button.
+. Search for `web3` or `sandbox` and iterate through each finding to come across
+one looking like a route mapping section:
++
+image::appendix/web3-sandbox_route.png[Route Mapping the the Web3 Sandbox]
+
+. Navigate to http://localhost:3000/#/web3-sandbox to solve the
+challenge.
 
 == ⭐⭐ Challenges
 
