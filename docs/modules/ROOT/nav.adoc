@@ -47,6 +47,7 @@
 ** xref:part4/troubleshooting.adoc[Troubleshooting]
 ** xref:part4/customization.adoc[Customization]
 ** xref:part4/ctf.adoc[Hosting a CTF event]
+** xref:part4/multi-juicer.adoc[Hosting platform for multiple users]
 ** xref:part4/trainers.adoc[Trainer's guide]
 ** xref:part4/integration.adoc[Integration]
 ** xref:part4/monitoring.adoc[Monitoring]

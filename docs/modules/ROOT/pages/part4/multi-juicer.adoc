@@ -1,0 +1,46 @@
+= Hosting platform for multiple users[[_multi_juicer]]
+include::../attributes.adoc[]
+
+image::appendix/multi-juicer_cover.svg[MultiJuicer cover]
+
+A solution to host and manage individual Juice Shop instances for
+multiple users is
+https://github.com/iteratec/multi-juicer/[MultiJuicer]. MultiJuicer is
+a Kubernetes based system to start up the required Juice Shop instances
+on demand. It will also clean up unused instances after a configured
+period of inactivity.
+
+MultiJuicer {multiJuicerVersion} comes with a custom-built load balancer. It allows every
+participant (or a CTF team) to use the same URL, but their traffic will
+always be sent to their own personal (or team-specific) instance.
+
+image::appendix/multi-juicer_high-level-architecture.png[MultiJuicer high level architecture]
+
+Registration at MultiJuicer is very straightforward for the users/teams.
+Messing with other instances is prevented by assigning a passcode to
+each of them which should only be shared among team members - or not at
+all for individuals.
+
+image::appendix/multi-juicer_register.png[MultiJuicer registration]
+
+MultiJuicer comes with a rudimentary Score Board of its own, which allows teams to compare their progress through
+the Juice Shop challenges.
+
+image::appendix/multi-juicer_scoreboard.png[MultiJuicer score board]
+
+Another helpful feature for trainers and CTf-organizers is the https://github.com/juice-shop/multi-juicer/blob/main/guides/monitoring-setup/monitoring.md[optional
+dashboard which automatically consumes and displays metrics] from each of
+its Juice Shop instances. It shows individual challenge progress along with other
+functional and technical stats and can be very helpful in
+troubleshooting as well.
+
+image:appendix/multi-juicer_dashboard.png[MultiJuicer dashboard with technical metrics]
+image:appendix/multi-juicer_dashboard1.png[MultiJuicer dashboard with business metrics]
+
+The MultiJuicer repository offers guidance on how to set up the system on different cloud provider platforms:
+
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/aws[AWS]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/azure[Azure]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/digital-ocean[Digital Ocean]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/k8s[Kubernetes]
+* https://github.com/juice-shop/multi-juicer/tree/main/guides/openshift[Openshift]
