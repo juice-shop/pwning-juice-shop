@@ -115,6 +115,11 @@ for a snapshot of the next version to be released (`develop` branch)
 |===
 | Description | Link composition | Condition | Examples
 
+| Link to a specific challenge of the Score Board
+| `/#/score-board?challenge=<name>`
+| Will scroll to the challenge, but only if it is visible as per the current filter settings.
+| http://localhost:3000/pass:[#]/score-board?challenge=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board?challenge=Score%20Board
+
 | Link to official hints for a specific challenge
 | `<hintUrl>`
 |
@@ -123,7 +128,7 @@ for a snapshot of the next version to be released (`develop` branch)
 | Link to official step-by-step solution for a specific challenge
 | `+https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html#<hash part of hintUrl>+`
 |
-| https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html#_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html#_perform_a_dom_xss_attack
+| https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.htmlpass:[#]_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.htmlpass:[#]_perform_a_dom_xss_attack
 
 | Direct link to a xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
 | `/#/hacking-instructor?challenge=<name>`
