@@ -115,10 +115,15 @@ for a snapshot of the next version to be released (`develop` branch)
 |===
 | Description | Link composition | Condition | Examples
 
-| Link to a specific challenge of the Score Board
+| Link to a specific challenge on the Score Board
 | `/#/score-board?challenge=<name>`
 | Will scroll to the challenge, but only if it is visible as per the current filter settings.
 | http://localhost:3000/pass:[#]/score-board?challenge=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board?challenge=Score%20Board
+
+| Link to a specific challenge on the Preview Score Board
+| `/#/score-board-preview?searchQuery=<name>`
+| Will filter the Score Board resulting in just the one matching challenge.
+| http://localhost:3000/pass:[#]/score-board-preview?searchQuery=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board-preview?searchQuery=Score%20Board
 
 | Link to official hints for a specific challenge
 | `<hintUrl>`
