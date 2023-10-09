@@ -1407,7 +1407,7 @@ texts_ have been changed into `NoSQL Injection!`
 === Enforce a redirect to a page you are not supposed to redirect to
 
 . Pick one of the redirect links in the application, e.g.
-http://localhost:3000/redirect?to=https://github.com/juice-shop/juice-shop
+http://localhost:3000/redirect?to=https://github.com/bkimminich/juice-shop
 from the _GitHub_-button in the navigation bar.
 . Trying to redirect to some unrecognized URL fails due to allowlist
 validation with `406 Error: Unrecognized target URL for redirect`.
@@ -1417,7 +1417,7 @@ undefined` where the `indexOf` indicates a severe flaw in the way the
 allowlist works.
 . Craft a redirect URL so that the target-URL in `to` comes with an own
 parameter containing a URL from the allowlist, e.g.
-http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/juice-shop/juice-shop
+http://localhost:3000/redirect?to=http://kimminich.de?pwned=https://github.com/bkimminich/juice-shop
 
 === Bypass a security control with a Poison Null Byte
 
