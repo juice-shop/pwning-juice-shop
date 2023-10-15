@@ -96,10 +96,7 @@ branch for a PR afterwards some time ago.
 
 In case you want to open a PR before actually being finished with your
 work (e.g. because you'd like to see some intermediate CI/CD results)
-please +
-put either "[.code]``[WIP]``" or `[`:construction:``]`` into the title. This will
-signal the https://github.com/marketplace/wip[WIP app] we're using on
-GitHub to mark this PR as not ready for merge.
+please tag the PR as _Draft_ during its creation or later in its settings. This will natively prevent premature merges on GitHub from happening, while allowing your current work status to get reviewed already.
 
 == Contribution guidelines
 

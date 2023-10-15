@@ -113,7 +113,9 @@ of the repository)
 . Run `cd vagrant && vagrant up`
 . Browse to http://192.168.56.110
 
-=== Amazon EC2 Instance
+=== Major Cloud Providers
+
+==== Amazon EC2 Instance
 
 You need to have an account at
 https://aws.amazon.com[Amazon Web Services] in order to create a
@@ -138,7 +140,7 @@ docker pull bkimminich/juice-shop
 docker run -d -p 80:3000 bkimminich/juice-shop
 ----
 
-==== AWS EC2 Launch Template
+===== AWS EC2 Launch Template
 
 . In the _EC2_ sidenav select _Launch Templates_ and click _Create
 launch template_
@@ -152,7 +154,7 @@ the script above into _User Data_
 . Launch one or multiple EC2 instances from your template
 . Browse to your instance's public DNS
 
-=== Azure Container Instance
+==== Azure Container Instance
 
 . Open and login (via `az login`) to your
 https://azure.github.io/projects/clis/[Azure CLI] *or* login to
@@ -167,7 +169,7 @@ bkimminich/juice-shop --dns-name-label <dns name label> --ports 3000
 . Your container will be available at `http://<dns name
 label>.<location name>.azurecontainer.io:3000`
 
-==== Azure Web App for Containers
+===== Azure Web App for Containers
 
 . Open your https://azure.github.io/projects/clis/[Azure CLI] *or*
 login to the https://portal.azure.com[Azure Portal], open the
@@ -183,7 +185,7 @@ webapp create --resource-group <group name> --plan <plan name> `
 `--name <app name> --deployment-container-image-name
 bkimminich/juice-shop`
 
-=== Google Compute Engine Instance
+==== Google Compute Engine Instance
 
 . Login to the Google Cloud Console and
 https://console.cloud.google.com/home/dashboard?cloudshell=true[open Cloud Shell].
@@ -203,7 +205,9 @@ gcloud compute firewall-rules create juice-rule --allow tcp:3000
 . Your container is now running and available at
 `http://<EXTERNAL_IP>:3000/`
 
-=== Heroku
+=== Other hosting providers
+
+==== Heroku
 
 image::part1/deploy-to-heroku.svg["Deploy to Heroku" button]
 
@@ -223,11 +227,20 @@ https://hello.heroku.com/webmail/36622/844098776/9fe33b8eda9eb79bca7ee569888b187
 
 image::part1/heroku-button-of-the-month.png["Heroku Button of the Month" November 2017]
 
-=== Gitpod
+==== Gitpod
 
 . Login to https://gitpod.io[gitpod.io] and use https://gitpod.io/#https://github.com/juice-shop/juice-shop/ to start a new workspace. If you want to spin up a forked repository, your URL needs to be adjusted accordingly.
 . After the Gitpod workspace is loaded, Gitpod tasks is still running to install `npm install`  and launch the website. Despite Gitpod showing your workspace state already as _Running_, you need to wait until the installation process is done, before the website becomes accessable. The _Open Preview Window (Internal Browser)_, will open automatically and refresh itself automatically when the server has started.
 . Your Juice Shop instance is now also available at `+https://3000-<GITPOD_WORKSPACE_ID>.<GITPOD_HOSTING_ZONE>.gitpod.io+`.
+
+==== Railway
+
+image::part1/deploy-on-railway.svg["Deploy on Railway" button]
+
+. Sign up for an account on https://railway.app/[Railway] and log in to your account.
+. Visit https://railway.app/new/template/6JBGcJ to deploy Juice Shop on your Railway account.
+
+_A step-by-step guide can be found in https://alphasec.io/practice-hacking-skills-with-owasp-juice-shop/[this blog post]._
 
 == Installing a specific release version
 
