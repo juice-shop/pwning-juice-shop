@@ -399,10 +399,10 @@ the security question.
 
 === Take over the wallet containing our official Soul Bound Token
 
-. Go to the About Us section and check for the comment "Please send me the juicy chatbot NFT in my wallet at /juicy-nft"
-. Find the 12 word seedphrase of the crypto wallet in that comment "purpose betray marriage blame crunch monitor spin slide donate sport lift clutch"
+. Go to the About Us section and check for the comment "Please send me the juicy chatbot NFT in my wallet at /juicy-nft".
+. Find the 12 word seedphrase of the crypto wallet in that comment "purpose betray marriage blame crunch monitor spin slide donate sport lift clutch".
 . Visit `/juicy-nft` in the Juice Shop App.
-. You can see an input box to enter the private keys of the wallet to access the NFT
+. You can see an input box to enter the private keys of the wallet to access the NFT.
 . Use the seedphrase found in the comment to derive the private key of the first Ethereum wallet. You can visit https://iancoleman.io/bip39/ to get the same.
 . Enter the private key derived in the input box "0x5bcc3e9d38baa06e7bfaab80ae5957bbe8ef059e640311d7d6d465e6bc948e3e".
 
@@ -1049,11 +1049,11 @@ local system file!
 
 . Go to the photo wall and search for the photo that looks out of place posted by evmrox.
 . Visit /bee-haven on Juice Shop as mentioned on the posted comment.
-. Install https://metamask.io/download/[Metamask Browser Extension] if not done yet
+. Install https://metamask.io/download/[Metamask Browser Extension] if not done yet.
 . Get some Sepolia testnet ETH from any faucet https://sepoliafaucet.com .
-. You need to withdraw 1000 BEE tokens from the BEE Haven to mint the NFT
-. Withdraw any amount less than 255 tokens from the faucet until you get a 1000 BEE Balance, the faucet balance underflows to 255 as soon as the BEE balance becomes less than 0.
-. Mint the Honey Pot NFT
+. You need to withdraw 1000 BEE tokens from the BEE Haven to mint the NFT.
+. Withdraw any amount less than 255 tokens from the faucet until you get a 1000 BEE Balance, the faucet balance https://dreamlab.net/en/blog/post/ethereum-smart-contracts-vulnerabilities-integer-overflow-and-underflow/[underflows] to 255 as soon as the BEE balance becomes less than 0.
+. Mint the Honey Pot NFT.
 
 == ⭐⭐⭐⭐ Challenges
 
@@ -3037,17 +3037,14 @@ solution should trigger accordingly.
 
 === Withdraw more ETH from the new wallet than you deposited
 
-. Visit the Digital Wallet from the Orders & Payment Section in the Account dropdown
-. Find the link to the new crypto wallet at the right side of the container
+. Visit the Digital Wallet(/wallet) from the Orders & Payment Section in the Account dropdown.
+. Find the link to the new crypto wallet at the right side of the container.
 . Search for the name of the functions that interact with the Deposit and Withdraw functionality on the page, "eth deposit" and "withdraw" respectively and the address of the Juice Shop Wallet contract "0x413744D59d31AFDC2889aeE602636177805Bd7b0".
-. Use the Remix Online IDE or the Juice Shop Web3 Sandbox to write your own contract script for exploiting the contract.
+. Use the https://remix.ethereum.org/[Remix Online IDE] or the Juice Shop Web3 Sandbox to write your own contract script for exploiting the contract.
 . Make sure to use the same metamask wallet as connected on the Juice Shop Web3 Wallet page for the attack.
-. We need to write a script contract for a Reentrancy attack, the most common and vulnerable form of exploit for contracts.
-. Below is a sample contract for the same
+. We need to write a script contract for a https://scsfg.io/hackers/reentrancy/[Reentrancy attack], the most common and vulnerable form of exploit for contracts.
+. Below is a sample contract for the same:
 +
 image::appendix/web3-wallet.png[Sample Contract]
-. Compile and Deploy the contract on the Sepolia testnet
+. Compile and Deploy the contract on the Sepolia testnet.
 . Execute the attack function by depositing some ETH which successfully exploits the wallet.
-
-
-// TODO Add solution for "Wallet Depletion" challenge
