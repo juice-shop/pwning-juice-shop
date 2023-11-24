@@ -1,0 +1,20 @@
+= Vendor's guide[[_vendors_guide]]
+include::../attributes.adoc[]
+
+Juice Shop is not only suitable for explorative manual hacking, but can also be used as a "guinea pig" application for security tools such as SAST or DAST scanners.
+
+It is important to make a distinction between Juice Shop and the demo applications that many vendors provide to show their tool's features. **Juice Shop has not been built to showcase any security tool's capabilities.** On the contrary, it has originally highlighted some shortcomings of security scanners when it comes to analyzing Rich Internet Applications. In those, a lot of functionality happens only in the browser, invisible to traditional proxy-style security tools.
+
+It should also be noted, that **Juice Shop should not naively be used as a benchmarking application for security tools.** Naive usage in this sense could be running a number of DAST security tools against Juice Shop and then rating them based on the number of solved challenges on the Score Board.
+
+== Hacking challenge vs. underlying vulnerability
+
+Solving a hacking challenge in Juice Shop is a fundamentally different thing than finding the underlying vulnerability. The former often requires to use specific payloads, because only then Juice Shop can determine if an exploit was successful. Finding the vulnerability that made this exploit possible in the first place, does not require such a setup. To give an example:
+
+* The DOM XSS challenge can only be solved when the payload `+<iframe src="javascript:alert(`xss`)">+` is being submitted via the search field in the navigation bar
+* The underlying XSS vulnerability can either be found by submitting _any_ XSS payload and noticing that it's executed (DAST) or by finding a usage of the unsafe function `bypassSecurityTrustHtml()` in the `SearchResultComponent` of the source code (SAST) or in the minified `main.js` JavaScript at runtime (DAST)
+
+Another example:
+
+* There is a rather obvious SQL Injection vulnerability in `+models.sequelize.query(`SELECT * FROM Users WHERE email = '${req.body.email || ''}' AND password = '${security.hash(req.body.password || '')}' AND deletedAt IS NULL`, { model: UserModel, plain: true })+` in the `login.ts` file (SAST) and that vulnerability could also be identified at runtime e.g. by using the common `' or 1=1--` payload in the login form as a username (DAST)
+* Several challenges are based on this vulnerability: Login Admin, Login Bender and Login Jim. Of these three, only the Login Admin challenge could realistically be solved by a DAST scanner, because incidentally the user being logged in with the `' or 1=1--` payload would be the administrator.
