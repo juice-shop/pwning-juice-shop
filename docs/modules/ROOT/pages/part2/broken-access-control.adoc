@@ -271,4 +271,4 @@ notice this challenge as solved.
 
 == Find an accidentally deployed code sandbox
 
-// TODO Add hints for "Web3 Sandbox" challenge
+* It is just as easy as finding the Score Board.
