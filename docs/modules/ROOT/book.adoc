@@ -127,6 +127,8 @@ include::pages/part4/multi-juicer.adoc[Hosting platform for multiple users]
 
 include::pages/part4/trainers.adoc[Trainer's guide]
 
+include::pages/part4/vendors.adoc[Vendor's guide]
+
 include::pages/part4/integration.adoc[Integration]
 
 include::pages/part4/monitoring.adoc[Monitoring]
