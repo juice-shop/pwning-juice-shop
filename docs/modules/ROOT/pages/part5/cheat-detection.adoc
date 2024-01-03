@@ -181,8 +181,8 @@ solving the available hacking challenges:
 * >99.9% after executing all
 xref:part3/contribution.adoc#_integration_tests[Integration tests] in <1
 minute on the author's Windows 10 laptop
-* >90% after executing all
-xref:part3/codebase.adoc#_end_to_end_tests[End-to-end tests] in <20
+* >99.3% after executing all
+xref:part3/codebase.adoc#_end_to_end_tests[End-to-end tests] in <10
 minutes during GitHub CI/CD on Ubuntu
 
 == Limitations
