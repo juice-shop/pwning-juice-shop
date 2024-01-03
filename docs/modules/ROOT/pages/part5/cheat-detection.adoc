@@ -82,6 +82,10 @@ challenges
 * reading the privacy policy of the shop, which is merely a challenge
 making fun of the fact that almost nobody reads those in real life
 
+=== Expected preceding interactions
+
+While some challenges offer different attack paths, others have only one. Solving challenges of the latter type often involves some exploration of the web client, the API or other server-side endpoints. URLs which are _very likely_ to have been visited before a specific challenge will be honestly solved, are tracked and counted by the cheat detection. If no or only parts of these preceding interactions took place before a challenge was solved, the cheat score is increased by half the percentage of expected preceding interactions which were seen by the cheat detection.
+
 == Coding challenges
 
 For coding challenges the cheat score is also calculated based on expected solving time
