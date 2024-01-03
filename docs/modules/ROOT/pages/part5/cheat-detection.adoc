@@ -149,7 +149,7 @@ to choose from.
 
 == Total cheat score
 
-The server also keeps track of the average `cheatScore` across all
+The server also keeps track of the median `cheatScore` across all
 solved challenges in the `totalCheatScore` which is available via the
 xref:part4/monitoring.adoc#_prometheus_metrics[`juiceshop_cheat_score` metric] but
 also sent in each
@@ -174,7 +174,7 @@ activities that are
 xref:part1/rules.adoc#_things_considered_cheating[definitely considered cheating] while
 solving the available hacking challenges:
 
-* >89% after executing all
+* >99.9% after executing all
 xref:part3/contribution.adoc#_integration_tests[Integration tests] in <1
 minute on the author's Windows 10 laptop
 * >90% after executing all
