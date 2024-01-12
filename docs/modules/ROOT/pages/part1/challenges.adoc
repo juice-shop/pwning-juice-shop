@@ -10,7 +10,7 @@ application. Also, you should know when you actually solved a challenge
 successfully, so you can move on to another task. Both these cases are
 covered by the application's score board.
 
-On the score board you can view a list of all available challenges with
+On the score board you can view all available challenges with
 a brief description. Some descriptions are _very explicit_ hacking
 instructions. Others are just _vague hints_ that leave it up to you to
 find out what needs to be done.
@@ -18,10 +18,7 @@ find out what needs to be done.
 image::part1/score-board_partly.png[Partly solved Score Board]
 
 The challenges are rated with a difficulty level between ⭐ and
-⭐⭐⭐⭐⭐⭐, with more stars representing a higher difficulty. To make the
-list of challenges less daunting, they are clustered by difficulty. By
-default, only the 1-star challenges are unfolded. You can open or
-collapse all challenge blocks as you like. Collapsing a block has _no
+⭐⭐⭐⭐⭐⭐, with more stars representing a higher difficulty. You can use the _Difficulty_ filter to show or hide difficulty levels as you like. Hiding challenges has _no
 impact_ on whether you can _solve_ any of its challenges.
 
 The difficulty ratings have been continually adjusted over time based on
@@ -33,25 +30,24 @@ challenge takes very long, you might realize quickly that you are on a
 wrong track with your chosen hacking approach.
 
 Finally, each challenge states if it is currently _unsolved_ or
-_solved_. The current overall progress is represented in a progress bar
-on top of the score board. Especially in group hacking sessions this
-allows for a bit of competition between the participants.
+_solved_. The current overall progress is represented in percent in the _Hacking Challenges_ progress bar
+on top left, and in absolute numbers grouped by difficulty in the top right panel of the score board. Especially in group hacking sessions this
+allows for a bit of competition between the participants. You can use the _Status_ filter to change if only solved or unsolved or all challenges should be displayed. Especially after solving several challenges, hiding those helps to reduce the level of distraction on the Score Board.
 
 If not deliberately turned off (see xref:part4/customization.adoc#customization[Customization])
-you can hover over each _unsolved_ label to see a hint for that
-challenge. If a "book" icon is also displayed within the label, you can
+you can hover over the _Hint_ badge of each challenge to see a hint how to approach it. For some more assistance, you can also
 click on it to be redirected to the corresponding hints section in
 xref:part2/README.adoc#_challenge_hunting[Part 2] of this book.
 
 === Challenge Filters
 
-Additional to the filtering by difficulty, you can filter the Score
+Additional to the filtering by difficulty and status, you can filter the Score
 Board by xref:part1/categories.adoc#_vulnerability_categories[challenge categories], e.g. to focus your
-hacking efforts on specific vulnerabilities. You can also hide all
-solved challenges to reduce the level of distraction on the Score Board.
+hacking efforts on specific vulnerabilities. Use the toggle buttons under the dropdown filters to choose specific challenge categories, or select _All_ to show all of them.
 
-🐌 Selecting _Show all_ for all difficulties and all challenges might
-impact the load time of the Score Board significantly!
+image::part1/score-board_category-filters.png[Score Board category filters]
+
+In the example above, only challenges in the Cross-Site Scripting (XSS) or XML External Entity (XXE) category would be shown.
 
 === Challenge Tags
 
@@ -92,6 +88,16 @@ through some source code of the application or that of a third party
 * *Internet Traffic* marks challenges strictly depending on the server being able to connect with the Internet via e.g. WebSocket or JSON-RPC
 
 image::part1/tags.png[Tag breakdown]
+
+You can filter challenges by tags using the _Tags_ filter, which works similar to the previously described dropdown filters for difficulty and status.
+
+== Free-text search
+
+On top of the various dropdown and toggle filters, you can also filter the challenges on the Score Board with the free-text _Search_ field. While you type into it, the Score Board will filter on-the-fly for challenges with your search string in either challenge name or description.
+
+image::part1/score-board_search-filter.png[Score board filtered by free-text search]
+
+In the example above, the Score Board shows three challenges with `crypt` in either their name and/or description.
 
 == Success notifications
 
@@ -161,9 +167,12 @@ restart, your score board will be blank.
 
 == Manual progress and settings backup
 
-With the round _Backup_ and _Restore_ buttons on the Score Board you can
-save and later restore your hacking progress as well as language, Score
-Board filters, banner dismissal to a `JSON` file.
+When clicking the cog button on the Score Board, you open an _Additional Score Board Settings_ dialog.
+
+image::part1/score-board_settings.png[Button to open additional settings for the Score Board]
+
+With its _Save Backup_ and _Restore Backup_ buttons you can
+save and later restore your hacking progress as well as language, and banner dismissal status to a `JSON` file.
 
 image::part1/manual_backup.png[Manual backup and restore buttons on Score Board]
 
@@ -175,20 +184,6 @@ settings from one computer to another. Example:
 ----
 {
   "version": 1,
-  "scoreBoard": {
-    "scoreBoardVersion": "v1",
-    "displayedDifficulties": [
-      1,
-      2,
-      3
-    ],
-    "showDisabledChallenges": false,
-    "displayedChallengeCategories": [
-      "Broken Access Control",
-      "Broken Anti Automation",
-      "XXE"
-    ]
-  },
   "banners": {
     "welcomeBannerStatus": "dismiss",
     "cookieConsentStatus": "dismiss"
