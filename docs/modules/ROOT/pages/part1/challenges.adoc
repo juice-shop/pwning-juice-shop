@@ -278,7 +278,7 @@ For many (solved) challenges an additional button is available on the
 Score Board which +
 will open a dialog containing the actual code snippet responsible for
 the security vulnerability behind the particular challenge. Note that by default
-this button is only enabled for solved hacking challenges. For challenge where
+this button is only enabled for solved hacking challenges. For challenges where
 no such button is shown, there is no coding challenge available.
 
 image::part1/code_snippet1.png[Coding challenge button for a challenge on the Score Board]
@@ -303,8 +303,8 @@ feedback.
 
 image::part1/code_snippet4.png[One of four possible fixes for a coding challenge]
 
-The progress with coding challenges is not factored into the percentage bar at the top
-of the Score Board. For each coding challenge the current status is represented
+The progress with coding challenges is separately tracked in its own _Coding Challenges_ percentage bar at the top
+of the Score Board. In the absolute progress shown in the _Challenges Solved_ panel, coding challenges are included with both their phases. For each individual coding challenge, the current status is represented
 by the button to launch it. Once the "Find It" and "Fix It" part are solved, the
 button turns green. While only the "Find It" part was solved, a small green "1/2"-badge
 indicates having made it half-way.
@@ -336,11 +336,15 @@ play with payloads you do not fully understand. Furthermore, be aware
 all stored XSS vulnerabilities can - by their nature - be abused to
 perform harmful attacks on unsuspecting visitors.
 
+image::part1/dangerous-challenges_banner.png[Heroku-related dangerous challenges banner]
+
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) when a containerized
 environment is detected. By default, this applies to Docker, Heroku, and Gitpod. Dangerous
 challenges are marked as 'unavailable' in the scoreboard as can be seen
-in the screenshot above.
+in the screenshot below.
+
+image::part1/dangerous-challenge_disabled.png[Disabled challenge on Heroku]
 
 To re-enable all challenges you can set the environment variable
 `NODE_ENV=unsafe`, or you can set `safetyOverride: true` in your own
