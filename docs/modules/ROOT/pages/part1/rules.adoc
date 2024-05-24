@@ -263,7 +263,7 @@ Gitter with your GitHub account.
 If you prefer, you can also use the project's Slack channel at
 https://owasp.slack.com/messages/project-juiceshop. You just need to
 self-invite you to OWASP's Slack first at
-https://owasp-slack.herokuapp.com. If you like it a bit more
+https://owasp.org/slack/invite. If you like it a bit more
 nostalgic, you can also join and post to the project Google
 group/mailing list at
 https://groups.google.com/a/owasp.org/forum/#!forum/juice-shop-project.
