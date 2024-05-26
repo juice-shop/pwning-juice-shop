@@ -8,3 +8,4 @@
 :nodeVersions: 18.x, 20.x (except 20.6.0 due to a bug) and 21.x
 :recommendedNodeVersion: 20.x
 :backupSchemaVersion: 1
+:maxNodeVersionWithXmlBinaries: 20.x
