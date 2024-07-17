@@ -81,7 +81,7 @@ recommended Node.js version {recommendedNodeVersion}.
 . Install https://www.docker.com/[Docker] on your computer.
 . On the command line run `docker pull bkimminich/juice-shop` to
 download the `latest` image described above.
-. Run `docker run -d -p 3000:3000 bkimminich/juice-shop` to launch the
+. Run `docker run -d -p 127.0.0.1:3000:3000 bkimminich/juice-shop` to launch the
 container with that image.
 . Browse to http://localhost:3000.
 
