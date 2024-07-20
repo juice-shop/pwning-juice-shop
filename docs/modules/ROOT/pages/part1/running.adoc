@@ -115,6 +115,38 @@ of the repository)
 . Run `cd vagrant && vagrant up`
 . Browse to http://192.168.56.110
 
+=== Kubernetes
+
+The following will allow you to run Juice Shop in a Kubernetes Pod.
+
+----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: owasp-juice
+spec:
+  selector:
+    matchLabels:
+      app: juice
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: juice
+    spec:
+      containers:
+      - name: juice
+        image: bkimminich/juice-shop
+        ports:
+        - containerPort: 3000
+----
+
+Access the Web GUI with the `port-forward` command.
+
+----
+kubectl port-forward pod/NAME_OF_JUICE_POD 3000:3000
+----
+
 === Major Cloud Providers
 
 ==== Amazon EC2 Instance
