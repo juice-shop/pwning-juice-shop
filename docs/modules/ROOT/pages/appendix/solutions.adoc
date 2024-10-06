@@ -403,9 +403,10 @@ company. It can be seen that logo shows the name `ITsec`.
 the security question.
 . Choose a new password and click on _Change_.
 
-== Register a user with an empty email and password
+=== Register a user with an empty email and password
 
 // TODO Add solution for "Empty User Registration" challenge
+🚧 Work in progress...
 
 === Take over the wallet containing our official Soul Bound Token
 
