@@ -243,16 +243,25 @@ gcloud compute firewall-rules create juice-rule --allow tcp:3000
 
 ==== Heroku
 
-image::part1/deploy-to-heroku.svg["Deploy to Heroku" button]
+To manually deploy OWASP Juice Shop on Heroku, follow these steps:
 
-. Click the
-_Deploy to Heroku_ button in the
-https://github.com/juice-shop/juice-shop#heroku[_Setup_ section of the `README.adoc` on GitHub]
+. Install the Heroku CLI:
 
-If you have forked the Juice Shop repository on GitHub, the _Deploy to
-Heroku_ button will deploy your forked version of the application. To
-deploy the latest official version you must use the button of the
-original repository at https://github.com/juice-shop/juice-shop.
+    - Download and install from the https://devcenter.heroku.com/articles/heroku-cli[Official Heroku CLI Installation Guide].
+    - Enable MFA in your Heroku account.
+    - Log in via the command line: `heroku login -i`, using your Heroku email (username) and API key (password).
+
+. Clone your Juice Shop Repository and navigate to the juice-shop directory.
+
+. Run `heroku create` to create a Heroku Application. 
+
+. Deploy Juice Shop to Heroku: `git add . && git commit -m "Deploy OWASP Juice Shop" && git push heroku master`
+
+. Access the deployed Juice Shop instance in the browser `heroku open`
+
+_Note:_ The `git add` and `git commit` steps are only required the first time or when new changes are made to the local repository.  If you have already committed the changes you can skip those steps and directly run `git push heroku master`
+
+_Note:_ If you have forked the Juice Shop repository, these steps will deploy your forked version of the application. To deploy the latest official version, clone the original repository from https://github.com/juice-shop/juice-shop.
 
 _As a little related anecdote, the OWASP Juice Shop was crowned
 https://hello.heroku.com/webmail/36622/679286305/8049a634b1a01b0aa75c0966325856dc9a463b7f1beeb6a2f32cbb30248b5bc6[Heroku Button of the Month in November 2017]
