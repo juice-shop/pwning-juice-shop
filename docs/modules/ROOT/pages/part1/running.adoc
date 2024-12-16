@@ -253,7 +253,7 @@ To manually deploy OWASP Juice Shop on Heroku, follow these steps:
 
 . Clone your Juice Shop Repository and navigate to the juice-shop directory.
 
-. Run `heroku create` to create a Heroku Application. 
+. Run `heroku create` to create a Heroku Application.
 
 . Deploy Juice Shop to Heroku: `git add . && git commit -m "Deploy OWASP Juice Shop" && git push heroku master`
 
@@ -277,8 +277,6 @@ image::part1/heroku-button-of-the-month.png["Heroku Button of the Month" Novembe
 . Your Juice Shop instance is now also available at `+https://3000-<GITPOD_WORKSPACE_ID>.<GITPOD_HOSTING_ZONE>.gitpod.io+`.
 
 ==== Railway
-
-image::part1/deploy-on-railway.svg["Deploy on Railway" button]
 
 . Sign up for an account on https://railway.app/[Railway] and log in to your account.
 . Visit https://railway.app/new/template/6JBGcJ to deploy Juice Shop on your Railway account.
