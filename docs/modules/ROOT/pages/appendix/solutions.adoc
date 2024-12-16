@@ -1116,7 +1116,7 @@ page.
 . Bypassing the CSP requires to exploit a totally different attack
 vector on the profile page: The _Image URL_ field.
 . Set the _Image URL_ to some valid image URL, e.g.
-https://placekitten.com/300/300 and click _Link Image_ while
+https://placecats.com/300/300 and click _Link Image_ while
 inspecting the network traffic via your browser's DevTools.
 . Notice how the `Content-Security-Policy` response header has been
 changed in the subsequent call to http://localhost:3000/profile?
@@ -1901,10 +1901,10 @@ image symbol.
 image::appendix/delivery-boxes_apply_testDecal.png[Probing the behavior of testDecal]
 
 . As the logo references are relative, you cannot simply do e.g.
-http://localhost:3000/#/deluxe-membership?testDecal=https:%2F%2Fplacekitten.com%2Fg%2F400%2F500
+http://localhost:3000/#/deluxe-membership?testDecal=https:%2F%2Fplacecats.com%2Fg%2F400%2F500
 as this would result in the application to request the logos from
 the relative URL
-`+assets/public/images/https://placekitten.com/g/400/500+` which
+`+assets/public/images/https://placecats.com/g/400/500+` which
 obviously cannot work.
 . As you are dealing with a relative path, you can try if path
 traversal works, so you could get to the root of the web server e.g.
@@ -1926,7 +1926,7 @@ first!
 . Combining that redirect exploit with the forgotten `testDecal` and
 its susceptibility to path traversal will allow you to craft a URL
 like
-http://localhost:3000/#/deluxe-membership?testDecal=..%2F..%2F..%2F..%2Fredirect%3Fto%3Dhttps:%2F%2Fplacekitten.com%2Fg%2F400%2F500%3Fx%3Dhttps:%2F%2Fgithub.com%2Fbkimminich%2Fjuice-shop
+http://localhost:3000/#/deluxe-membership?testDecal=..%2F..%2F..%2F..%2Fredirect%3Fto%3Dhttps:%2F%2Fplacecats.com%2Fg%2F400%2F500%3Fx%3Dhttps:%2F%2Fgithub.com%2Fbkimminich%2Fjuice-shop
 where the most difficult part is to get the URL encoding just right
 to bypass the redirect allowlist and still get the intended image
 returned cross-domain.
@@ -2896,11 +2896,11 @@ executables.
 found on the http://localhost:3000/profile page.
 . The only promising input field for an SSRF attack is the _Gravatar
 URL_. Open your browser's DevTools and watch the _Network_ tab.
-. Type any URL (e.g. https://placekitten.com/100/100) into _Gravatr
+. Type any URL (e.g. https://placecats.com/100/100) into _Gravatr
 URL_ and click _Link Gravatar_. You will realize a request
 http://localhost:3000/profile/image/url with the
-chosen https://placekitten.com/100/100 as parameter `imageUrl`.
-. You will find no HTTP request to https://placekitten.com/100/100
+chosen https://placecats.com/100/100 as parameter `imageUrl`.
+. You will find no HTTP request to https://placecats.com/100/100
 going out from your browser, though. As the image was retrieved and
 associated with your profile, it must have been downloaded _by the
 Juice Shop server_.
