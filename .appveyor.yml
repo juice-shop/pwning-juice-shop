@@ -44,9 +44,9 @@ deploy:
   provider: FTP
   protocol: sftp
   host: ssh.strato.de
-  username: sftp_pwning-juice-shop-upload@kimminich.de
+  username: sftp_pwning-juice-shop@kimminich.de
   password:
-    secure: YJeC11uuy035zMT+b5w5aG3WITSYvaeFq6if8BqUZZk=
+    secure: U4XjimwWlcw7K+YEw8GfSNuWoWQJZk0+PAqXclKWz6k=
   folder: antora
   application: build.zip
   on:
