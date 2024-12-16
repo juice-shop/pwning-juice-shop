@@ -175,7 +175,7 @@ the navigation bar.
 
 === Perform a DOM XSS attack
 
-. Paste the attack string `<iframe src="javascript:alert(`xss`)">`
+. Paste the attack string `<iframe src="javascript:alert('xss')">`
 into the _Search..._ field.
 . Hit the Enter key.
 . An alert box with the text "xss" should appear.
