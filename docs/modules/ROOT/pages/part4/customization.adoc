@@ -216,17 +216,29 @@ Us_ or the _Photo Wall_.
 |===
 | Property | Description | Default
 
+| `blueSkyUrl`
+| URL used as the BlueSky link promising coupon codes on the _My Payment Options_ screen and on the _About Us_ screen.
+| `+'https://bsky.app/profile/owasp-juice.shop'+`
+
+| `mastodonUrl`
+| URL used as the Mastodon link on the _About Us_ screen.
+| `+'https://fosstodon.org/@owasp_juiceshop'+`
+
 | `twitterUrl`
-| URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.
+| URL used as the Twitter link on the _About Us_ screen.
 | `+'https://twitter.com/owasp_juiceshop'+`
 
 | `facebookUrl`
-| URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen.
+| URL used as the Facebook link on the _About Us_ screen.
 | `+'https://www.facebook.com/owasp.juiceshop'+`
 
 | `slackUrl`
 | URL used as the Slack link on the _About Us_ screen.
 | `+'https://owasp.org/slack/invite'+`
+
+| `redditUrl`
+| URL used as the Reddit link promising coupon codes on the _My Payment Options_ screen and on the _About Us_ screen.
+| `+'https://www.reddit.com/r/owasp_juiceshop'+`
 
 | `pressKitUrl`
 | URL used as the link to logos and media files on the _About Us_ screen.
@@ -664,6 +676,8 @@ application:
     defaultResponse: "Sorry I couldn't understand what you were trying to say"
     avatar: 'JuicyChatBot.png'
   social:
+    blueSkyUrl: 'https://bsky.app/profile/owasp-juice.shop'
+    mastodonUrl: 'https://fosstodon.org/@owasp_juiceshop'
     twitterUrl: 'https://twitter.com/owasp_juiceshop'
     facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
     slackUrl: 'https://owasp.org/slack/invite'
