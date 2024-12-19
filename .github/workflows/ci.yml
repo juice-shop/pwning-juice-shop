@@ -15,67 +15,41 @@ jobs:
     runs-on: windows-latest
 
     env:
-      # nodejs_version: 18
+      nodejs_version: 18
       ruby_version: 32
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Set up Git
-        run: git config --global core.autocrlf true
-
-      - name: Create npm directory
-        run: mkdir C:\Users\runneradmin\AppData\Roaming\npm
-
-      - name: Display Node.js and npm version
-        run: |
-          node --version
-          npm --version
-
       - name: Install Antora and Lunr extension
         run: |
           npx antora -v
           npm i @antora/lunr-extension
-
-      - name: Set up Ruby
-        run: |
-          set PATH=C:\Ruby%ruby_version%\bin;%PATH%
-          ruby -v
-          gem -v
-
       - name: Install Asciidoctor EPUB3
         run: |
           gem install asciidoctor-epub3
           asciidoctor-epub3 -v
-
       - name: Install Asciidoctor PDF
         run: |
           gem install asciidoctor-pdf
           asciidoctor-pdf -v
-
       - name: Clean build directory
         run: if exist build rd /Q /S build
-
       - name: Build Antora site
         run: npx antora antora-playbook.yml
-
       - name: Generate EPUB3
         run: |
           asciidoctor-epub3 -D output docs/modules/ROOT/book.adoc -t
           asciidoctor-epub3 -o output/book-ctf.epub -a is_ctf=1 docs/modules/ROOT/book.adoc -t
-
       - name: Generate PDF
         run: |
           asciidoctor-pdf -D output -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t
           asciidoctor-pdf -o output/book-ctf.pdf -a is_ctf=1 -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t
-
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build
           path: build
-
       - name: Upload EPUB and PDF
         uses: actions/upload-artifact@v3
         with:
@@ -85,7 +59,6 @@ jobs:
             output/book-ctf.epub
             output/book.pdf
             output/book-ctf.pdf
-
       - name: Deploy via SFTP
         uses: garygrossgarten/github-action-scp@release
         with:
@@ -94,7 +67,6 @@ jobs:
           host: ssh.strato.de
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-
       - name: Notify Slack
         if: always()
         uses: 8398a7/action-slack@v3
