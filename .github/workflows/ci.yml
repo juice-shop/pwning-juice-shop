@@ -33,8 +33,6 @@ jobs:
         run: |
           gem install asciidoctor-pdf
           asciidoctor-pdf -v
-      - name: Clean build directory
-        run: if exist build rd /Q /S build
       - name: Build Antora site
         run: npx antora antora-playbook.yml
       - name: Generate EPUB3
@@ -67,10 +65,14 @@ jobs:
           host: ssh.strato.de
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-      - name: Notify Slack
-        if: always()
-        uses: 8398a7/action-slack@v3
+  notify-slack:
+    if: github.repository == 'juice-shop/pwning-juice-shop' && github.event_name == 'push' && (success() || failure())
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Slack workflow notification"
+        uses: Gamesight/slack-workflow-status@26a36836c887f260477432e4314ec3490a84f309 #v1.2.0
         with:
-          status: ${{ job.status }}
-          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
