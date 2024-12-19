@@ -42,12 +42,11 @@ artifacts:
   - path: 'output/book-ctf.pdf'
 deploy:
   provider: FTP
-  protocol: sftp
-  host: ssh.strato.de
-  username: kimminich.de
+  protocol: ftps
+  host: ftp.strato.de
+  username: sftp_ebook@owasp-juice.shop
   password:
-    secure: Vu/o5fi8cCRsc9VmD4B/Xg==
-  folder: pwning-juice-shop/antora
+    secure: U4XjimwWlcw7K+YEw8GfSNuWoWQJZk0+PAqXclKWz6k=
   application: build.zip
   on:
     branch:
