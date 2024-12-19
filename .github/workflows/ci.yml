@@ -87,7 +87,7 @@ jobs:
             output/book-ctf.pdf
 
       - name: Deploy via SFTP
-        uses: garygrossgarten/github-action-scp@v1
+        uses: garygrossgarten/github-action-scp@release
         with:
           local: build.zip
           remote: sftp_ebook@owasp-juice.shop:/antora
