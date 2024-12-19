@@ -43,11 +43,6 @@ jobs:
         run: |
           asciidoctor-pdf -D output -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t
           asciidoctor-pdf -o output/book-ctf.pdf -a is_ctf=1 -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: build
       - name: Upload EPUB and PDF
         uses: actions/upload-artifact@v3
         with:
@@ -60,8 +55,8 @@ jobs:
       - name: Deploy via SFTP
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: build.zip
-          remote: sftp_ebook@owasp-juice.shop:/antora
+          local: build
+          remote: antora
           host: ssh.strato.de
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
