@@ -46,7 +46,7 @@ jobs:
       - name: Upload EPUB and PDF
         uses: actions/upload-artifact@v3
         with:
-          name: output
+          name: ebooks
           path: |
             output/book.epub
             output/book-ctf.epub
