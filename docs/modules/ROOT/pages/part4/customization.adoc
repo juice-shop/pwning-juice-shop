@@ -454,9 +454,9 @@ Juice Shop.
 | This XSS payload is expected during the xref:part2/xss.adoc#_use_the_bonus_payload_in_the_dom_xss_challenge[Bonus Payload] challenge.
 | `+'<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'+`
 
-| `safetyOverride`
-| Enables all xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. ☠️ *Use at your own risk!*
-| `false`
+| `safetyMode`
+| If set to `disabled`, it enables all xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. If set to auto, safety mode is enabled if JuiceShop consideres the envrironment its running in to be a production environent (which are more likely to be exposed to internet traffic).  ☠️ *Use at your own risk!*
+| `auto`
 
 | `showFeedbackButtons`
 | Shows or hides like/dislike buttons for solved hacking & coding challenges that open an accordingly pre-filled Google Form.
@@ -732,7 +732,7 @@ challenges:
   showMitigations: true
   codingChallengesEnabled: solved # Options: never  solved  always
   restrictToTutorialsFirst: false
-  safetyOverride: false
+  safetyMode: enabled
   overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
   xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
 hackingInstructor:
@@ -808,7 +808,7 @@ application:
     showOnFirstStart: false
 challenges:
   showHints: false
-  safetyOverride: true
+  safetyMode: disabled
 hackingInstructor:
   isEnabled: false
 ctf:
