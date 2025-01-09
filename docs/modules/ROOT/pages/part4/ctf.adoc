@@ -192,7 +192,7 @@ between the supported CTF frameworks, which for
  ** `CTFd` which is a very well-written and stable piece of Open Source
 Software. This is the default choice.
  ** `FBCTF` from Facebook which is visually more advanced though not as
-frequently updated at CTFd.
+frequently updated as CTFd.
  ** `RootTheBox` a very sophisticated framework which comes even with
 category logos and embedded Juice Shop theme.
 . *Juice Shop URL to retrieve challenges?* URL of a _running_ Juice
