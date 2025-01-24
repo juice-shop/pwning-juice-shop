@@ -215,13 +215,13 @@ plan your training accordingly.
 |===
 | Tool | Description | Effort to automate | Execution runtime | Challenges (Auto-solve?)
 
-| OWASP ZAP _Traditional Spider_ or  _Forced Browse_ with https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-small.txt[small (or bigger) OWASP DirBuster list]
+| ZAP _Traditional Spider_ or  _Forced Browse_ with https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-small.txt[small (or bigger) OWASP DirBuster list]
 | Finds `/ftp` folder with many misplaced files _and_ `/promotion` (and direct `/video`) path with jingle video
 | 🧠
 | ⏳⏳
 | Confidential Document(❌), Forgotten Developer Backup(❌), Forgotten Sales Backup(❌), Misplaced Signature File(❌), Login Support Team(❌), Video XSS(❌)
 
-| OWASP ZAP _Forced Browse_ with https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-big.txt[big OWASP DirBuster list]
+| ZAP _Forced Browse_ with https://raw.githubusercontent.com/daviddias/node-dirbuster/master/lists/directory-list-lowercase-2.3-big.txt[big OWASP DirBuster list]
 | Finds `/encryptionkeys` directory with `jwt.pub` _and_ `premium.key` key files
 | 🧠
 | ⏳⏳⏳

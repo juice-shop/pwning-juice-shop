@@ -200,7 +200,7 @@ and internet access to be able to pass.
 If you have a web proxy configured via `HTTP_PROXY` environment
 variable, the end-to-end tests https://docs.cypress.io/guides/references/proxy-configuration[will honor this setting]. This can be
 useful to e.g. run the tests through tools like
-https://www.zaproxy.org/[OWASP ZAP] or Burpsuite.
+https://www.zaproxy.org/[ZAP] or Burpsuite.
 
 === Manually testing packaged distributions
 

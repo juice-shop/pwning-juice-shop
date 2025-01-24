@@ -706,7 +706,7 @@ money from
 . If wallet isn't empty: a. If your wallet contains funds, you cannot
 start a dummy transaction to inspect the request structure because
 then you would be automatically upgraded to deluxe. b. Set up a proxy
-like OWASP ZAP, Fiddler aur Burp Suite. c. Click on the pay button d.
+like ZAP, Fiddler aur Burp Suite. c. Click on the pay button d.
 Intercept and edit the request as described above before forwarding
 it.
 
@@ -1080,7 +1080,7 @@ xref:part2/security-misconfiguration.adoc#_log_in_with_the_support_teams_origina
 and indicates that some support team is performing its duties from
 the public Internet and possibly with VPN access.
 . Guess luckily or run a brute force attack with e.g.
-https://github.com/zaproxy/zap-extensions/tree/beta/src/org/zaproxy/zap/extension/bruteforce[OWASP ZAPs DirBuster plugin]
+https://github.com/zaproxy/zap-extensions/tree/beta/src/org/zaproxy/zap/extension/bruteforce[ZAPs DirBuster plugin]
 for a possibly exposed directory containing the log files.
 . Following
 xref:part2/sensitive-data-exposure.adoc#_gain_access_to_any_access_log_file_of_the_server[the hint to drill down deeper than one level],
@@ -2848,9 +2848,9 @@ image::appendix/inspect-premium_challenge.png[DOM inspection of the Unlock Premi
 . This is a cipher text that came out of an AES-encryption using AES256
 in CBC mode.
 . To get the key and the IV, you should run a _Forced Directory
-Browsing_ attack against the application. You can use OWASP ZAP for
+Browsing_ attack against the application. You can use ZAP for
 this purpose.
- .. Of the word lists coming with OWASP ZAP only
+ .. Of the word lists coming with ZAP only
 `directory-list-2.3-big.txt` and
 `directory-list-lowercase-2.3-big.txt` contain the directory with
 the key file.

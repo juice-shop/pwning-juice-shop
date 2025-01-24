@@ -191,5 +191,5 @@ which are by default disabled in Docker environments and shared
 platforms like Heroku.
 * You may find it easier to find vulnerabilities using a pen test tool.
 We strongly recommend
-https://www.zaproxy.org/[OWASP ZAP (Zed Attack Proxy)] which is open
+https://www.zaproxy.org/[ZAP (Zed Attack Proxy)] which is open
 source and very powerful, yet beginner friendly.
