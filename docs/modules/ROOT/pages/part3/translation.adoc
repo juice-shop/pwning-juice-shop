@@ -52,8 +52,7 @@ files where `??` is a language code (e.g. `en` or `de`).
 === Adding another language
 
 If you do not find the language you would like to provide a translation
-for in the list, please contact the OWASP Juice Shop
-link:mailto:bjoern.kimminich@owasp.org[project leader] or
+for in the list, please contact link:mailto:bjoern.kimminich@owasp.org[Bjoern Kimminich] or
 https://github.com/juice-shop/juice-shop/issues/new[raise an issue on GitHub]
 asking for the missing language. It will be added asap!
 

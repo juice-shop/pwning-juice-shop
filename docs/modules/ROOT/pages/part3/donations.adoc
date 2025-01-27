@@ -86,4 +86,4 @@ For donation amounts of at least 1000 US$ your corporate logo (with
 link) will be added to the _Top Supporters_ section as well. The logo
 size can be at most 300x300 pixels. Logo and name placements are
 guaranteed for 1 year after the donation but might stay there longer at
-the discretion of the Project Leader.
+the discretion of the Project Leaders.

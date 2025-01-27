@@ -2193,7 +2193,7 @@ protection, the challenge is marked as solved.
 === Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 . Trying to find out who "Bjoern" might be should quickly lead you to
-the OWASP Juice Shop project leader and author of this ebook.
+the OWASP Juice Shop inventor and author of this ebook.
 . Visit https://www.facebook.com/bjoern.kimminich to immediately learn
 that he is from the town of _Uetersen_ in Germany.
 . Visit https://gist.github.com/9045923 or

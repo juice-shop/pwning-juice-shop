@@ -367,7 +367,7 @@ image::part3/release-workflow.png[Release Pipeline workflow on GitHub]
 A small percentage of Pull Requests to https://github.com/juice-shop/juice-shop are opened
 by GitHub users e.g. when "playing" with SCA / SAST tools or other automation tooling. Sometimes those
 users notice their mistake and close the PR right away, sometimes they don't. Independent of
-who closed the PR (i.e. the original submitter or a Juice Shop core team member) it will be
+who closed the PR (i.e. the original submitter or a Juice Shop Project Leader) it will be
 https://github.com/juice-shop/juice-shop/pulls?q=is%3Apr+label%3Aspam[marked with the *spam* label].
 
 ==== Ban stages
@@ -376,7 +376,7 @@ Users who open a *spam* PR will be put on a 7-day ban for interaction with the h
 organization. If a previously blocked user opens another *spam* PR, they will be blocked for
 30 days, or even permanently after a third reoccurence.
 
-These measures ensure that the core team can concentrate on the actual contributions to the project
+These measures ensure that the Project Leaders can concentrate on the actual contributions to the project
 and not be kept busy by handling accidental or intentional spammers.
 
 ==== Instant permanent ban
