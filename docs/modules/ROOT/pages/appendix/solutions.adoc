@@ -42,7 +42,7 @@ into the _Search..._ field and hit Enter
 
 . Follow the link to titled _Check out our boring terms of use if you
 are interested in such lame stuff_
-(http://localhost:3000/ftp/legal.adoc) on the _About Us_ page.
+(http://localhost:3000/ftp/legal.md) on the _About Us_ page.
 . Successfully attempt to browse the directory by changing the URL into
 http://localhost:3000/ftp
 +
@@ -2485,18 +2485,18 @@ image::appendix/tweet_zip-complaints.png[Tweet advertising ZIP uploads in File C
 https://res.cloudinary.com/snyk/image/upload/v1528192501/zip-slip-vulnerability/technical-whitepaper.pdf[Zip Slip] which
 exploits directory traversal filenames in file archives.
 . As the Legal Information file you need to override lives in
-http://localhost:3000/ftp/legal.adoc and uploading files via _File
+http://localhost:3000/ftp/legal.md and uploading files via _File
 Complaint_ does not give any feedback where they are stored, an
 iterative directory traversal approach is recommended.
-. Prepare a ZIP file (on Linux) with `zip exploit.zip ../ftp/legal.adoc`.
+. Prepare a ZIP file (on Linux) with `zip exploit.zip ../ftp/legal.md`.
 . Log in as any user at http://localhost:3000/#/login.
 . Click _Contact Us_ and _Complain?_ to get to the _File Complaint_
 screen at http://localhost:3000/#/complain.
 . Type in any message and attach your ZIP file, then click _Submit_.
 . The challenge will _not_ be solved. Repeat steps 5-7 but with `zip
-exploit.zip ../../ftp/legal.adoc` as the payload.
+exploit.zip ../../ftp/legal.md` as the payload.
 . The challenge will be marked as solved! When you visit
-http://localhost:3000/ftp/legal.adoc you will see your overwritten
+http://localhost:3000/ftp/legal.md you will see your overwritten
 Legal Information!
 
 ____
