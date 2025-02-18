@@ -216,17 +216,29 @@ Us_ or the _Photo Wall_.
 |===
 | Property | Description | Default
 
+| `blueSkyUrl`
+| URL used as the BlueSky link promising coupon codes on the _My Payment Options_ screen and on the _About Us_ screen.
+| `+'https://bsky.app/profile/owasp-juice.shop'+`
+
+| `mastodonUrl`
+| URL used as the Mastodon link on the _About Us_ screen.
+| `+'https://fosstodon.org/@owasp_juiceshop'+`
+
 | `twitterUrl`
-| URL used as the Twitter link promising coupon codes on the _About Us_ and _Your Basket_ screen.
+| URL used as the Twitter link on the _About Us_ screen.
 | `+'https://twitter.com/owasp_juiceshop'+`
 
 | `facebookUrl`
-| URL used as the Facebook link promising coupon codes on the _About Us_ and _Your Basket_ screen.
+| URL used as the Facebook link on the _About Us_ screen.
 | `+'https://www.facebook.com/owasp.juiceshop'+`
 
 | `slackUrl`
 | URL used as the Slack link on the _About Us_ screen.
 | `+'https://owasp.org/slack/invite'+`
+
+| `redditUrl`
+| URL used as the Reddit link promising coupon codes on the _My Payment Options_ screen and on the _About Us_ screen.
+| `+'https://www.reddit.com/r/owasp_juiceshop'+`
 
 | `pressKitUrl`
 | URL used as the link to logos and media files on the _About Us_ screen.
@@ -442,9 +454,9 @@ Juice Shop.
 | This XSS payload is expected during the xref:part2/xss.adoc#_use_the_bonus_payload_in_the_dom_xss_challenge[Bonus Payload] challenge.
 | `+'<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'+`
 
-| `safetyOverride`
-| Enables all xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. ☠️ *Use at your own risk!*
-| `false`
+| `safetyMode`
+| If set to `disabled`, it enables all xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. If set to auto, safety mode is enabled if JuiceShop consideres the envrironment its running in to be a production environent (which are more likely to be exposed to internet traffic).  ☠️ *Use at your own risk!*
+| `auto`
 
 | `showFeedbackButtons`
 | Shows or hides like/dislike buttons for solved hacking & coding challenges that open an accordingly pre-filled Google Form.
@@ -664,6 +676,8 @@ application:
     defaultResponse: "Sorry I couldn't understand what you were trying to say"
     avatar: 'JuicyChatBot.png'
   social:
+    blueSkyUrl: 'https://bsky.app/profile/owasp-juice.shop'
+    mastodonUrl: 'https://fosstodon.org/@owasp_juiceshop'
     twitterUrl: 'https://twitter.com/owasp_juiceshop'
     facebookUrl: 'https://www.facebook.com/owasp.juiceshop'
     slackUrl: 'https://owasp.org/slack/invite'
@@ -718,7 +732,7 @@ challenges:
   showMitigations: true
   codingChallengesEnabled: solved # Options: never  solved  always
   restrictToTutorialsFirst: false
-  safetyOverride: false
+  safetyMode: enabled
   overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
   xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
 hackingInstructor:
@@ -794,7 +808,7 @@ application:
     showOnFirstStart: false
 challenges:
   showHints: false
-  safetyOverride: true
+  safetyMode: disabled
 hackingInstructor:
   isEnabled: false
 ctf:

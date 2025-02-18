@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      nodejs_version: 18
+      ruby_version: 32
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Antora and Lunr extension
+        run: |
+          npx antora -v
+          npm i @antora/lunr-extension
+      - name: Install Asciidoctor EPUB3
+        run: |
+          gem install asciidoctor-epub3
+          asciidoctor-epub3 -v
+      - name: Install Asciidoctor PDF
+        run: |
+          gem install asciidoctor-pdf
+          asciidoctor-pdf -v
+      - name: Build Antora site
+        run: npx antora antora-playbook.yml
+      - name: Generate EPUB3
+        run: |
+          asciidoctor-epub3 -D output docs/modules/ROOT/book.adoc -t
+          asciidoctor-epub3 -o output/book-ctf.epub -a is_ctf=1 docs/modules/ROOT/book.adoc -t
+      - name: Generate PDF
+        run: |
+          asciidoctor-pdf -D output -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t
+          asciidoctor-pdf -o output/book-ctf.pdf -a is_ctf=1 -a compress -a pdf-theme=basic -a pdf-themesdir=resources/themes -a pdf-fontsdir=resources/fonts docs/modules/ROOT/book.adoc -t
+      - name: Upload EPUB and PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: ebooks
+          path: |
+            output/book.epub
+            output/book-ctf.epub
+            output/book.pdf
+            output/book-ctf.pdf
+      - name: Deploy via SFTP
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: build
+          remote: antora
+          host: ssh.strato.de
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+  notify-slack:
+    if: github.repository == 'juice-shop/pwning-juice-shop' && github.event_name == 'push' && (success() || failure())
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Slack workflow notification"
+        uses: Gamesight/slack-workflow-status@26a36836c887f260477432e4314ec3490a84f309 #v1.2.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
