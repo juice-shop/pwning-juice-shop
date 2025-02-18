@@ -274,7 +274,7 @@ endif::[]
 
 == Coding challenges
 
-For many (solved) challenges an additional button is available on the
+For {juiceShopNumberOfCodingChallenges} challenges, an additional button is available on the
 Score Board which +
 will open a dialog containing the actual code snippet responsible for
 the security vulnerability behind the particular challenge. Note that by default
