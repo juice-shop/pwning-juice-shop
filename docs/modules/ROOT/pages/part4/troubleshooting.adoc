@@ -151,14 +151,14 @@ _(Should no longer occur with v12.0.2 or later)_
 forwarding from Host `127.0.0.1:3000` to `0.0.0.0:3000` for TCP for
 the `default` VM in VirtualBox.
 
-=== Heroku
+=== [.line-through]#Heroku#
 
-* The
+* [.line-through]#The
 https://github.com/juice-shop/juice-shop#deploy-on-heroku-free-0month-dyno["Deploy to Heroku" button on the `README`]
 only works from browsers where no plugins or settings interfere with
-`Referer` HTTP headers
+`Referer` HTTP headers# _("Deploy to Heroku" button is no longer provided since Heroku abandoned their free tier dynos)_
 
-=== SQLite
+=== [.line-through]#SQLite#
 
 * [.line-through]#If all startup checks show `(OK)` but you see `SequelizeDatabaseError:
 SQLITE_ERROR: no such table: <some table name>` errors right
