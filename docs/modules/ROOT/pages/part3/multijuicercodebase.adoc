@@ -1,0 +1,4 @@
+= MultiJuicer Codebase
+
+This document serves as the main entry point for the MultiJuicer codebase. It provides an overview of the codebase, its structure, and how to navigate it as a contributor. We recommend reading through the
+xref:part3/contribution.adoc[contributing guide of Juice Shop to learn about the common standards and practices].
