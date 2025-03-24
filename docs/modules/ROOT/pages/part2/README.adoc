@@ -253,6 +253,10 @@ ifeval::[{is_ctf} == 1]
 | Determine the answer to John's security question by looking at an upload of him to the Photo Wall and use it to reset his password via the Forgot Password mechanism.
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_johns_security_question[💡]
 
+| Memory Bomb
+| Drop some explosive data into a vulnerable file-handling endpoint.
+| xref:part2/insecure-deserialization.adoc#_drop_some_explosive_data_into_a_vulnerable_file_handling_endpoint[💡]
+
 | Mint the Honey Pot
 | Mint the Honey Pot NFT by gathering BEEs from the bee haven.
 | xref:part2/improper-input-validation.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[💡]
@@ -735,6 +739,11 @@ ifeval::[{is_ctf} == 0]
 | Close multiple "Challenge solved"-notifications in one go.
 | xref:part2/miscellaneous.adoc#_close_multiple_challenge_solved_notifications_in_one_go[💡]
 | xref:appendix/solutions.adoc#_close_multiple_challenge_solved_notifications_in_one_go[📕]
+
+| Memory Bomb
+| Drop some explosive data into a vulnerable file-handling endpoint.
+| xref:part2/insecure-deserialization.adoc#_drop_some_explosive_data_into_a_vulnerable_file_handling_endpoint[💡]
+| xref:appendix/solutions.adoc#_drop_some_explosive_data_into_a_vulnerable_file_handling_endpoint[📕]
 
 | Meta Geo Stalking
 | Determine the answer to John's security question by looking at an upload of him to the Photo Wall and use it to reset his password via the Forgot Password mechanism.

