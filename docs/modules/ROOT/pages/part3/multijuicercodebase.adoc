@@ -1,4 +1,74 @@
-= MultiJuicer Codebase
+= MultiJuicer Codebase 101 & Contributor's Guide
 
-This document serves as the main entry point for the MultiJuicer codebase. It provides an overview of the codebase, its structure, and how to navigate it as a contributor. We recommend reading through the
-xref:part3/contribution.adoc[contributing guide of Juice Shop to learn about the common standards and practices].
+This document serves as the main entry point for the MultiJuicer 
+codebase. It provides an overview of the codebase, its structure, 
+and how to navigate it as a contributor. We recommend reading 
+through the xref:part3/contribution.adoc[contributing guide of Juice Shop 
+to learn about the common standards and practices].
+
+== Table of Contents
+
+1. <<what-is-multijuicer,What is MultiJuicer?>>
+2. <<high-level-architecture,High-Level Architecture>>
+
+== What is MultiJuicer? [[what-is-multijuicer]]
+
+As described in the main `readme.md`, MultiJuicer solves the 
+challenge of running OWASP Juice Shop instances for multiple 
+users simultaneously, typically during CTFs or security training 
+sessions. It provides a central platform on Kubernetes that 
+dynamically provisions and manages isolated Juice Shop instances 
+for each team or participant.
+
+=== Core Features
+
+* **Dynamic Instance Provisioning:** Creates Juice Shop instances
+ on demand when a team joins.
+* **Load Balancing/Proxying:** Routes user traffic to their 
+specific Juice Shop instance based on a secure cookie.
+* **Progress Persistence:** Backs up solved challenges 
+(including FindIt/FixIt progress) to Kubernetes annotations,
+ allowing progress to survive pod restarts.
+* **Automated Cleanup:** Removes old, inactive instances 
+based on a configurable duration.
+* **Scoreboard & Admin UI:** Provides visibility into 
+team progress and administrative controls.
+
+== High-Level Architecture [[high-level-architecture]]
+
+MultiJuicer consists of three main backend components running in 
+Kubernetes, plus a frontend UI served by the Balancer:
+
+1. **Balancer:**
+   * The main user entry point.
+   * Serves the React-based UI for joining/creating teams and viewing 
+   status/scores.
+   * Handles API requests for team management (join, logout, reset passcode).
+   * Creates/manages Kubernetes `Deployment` and `Service` resources 
+   for each Juice Shop instance.
+   * Acts as a reverse proxy, routing authenticated user traffic to 
+   their corresponding Juice Shop instance.
+   * Provides an admin interface for managing instances.
+   * Calculates and caches scoreboard data.
+2. **Progress Watchdog:**
+   * Listens for webhook notifications sent by individual Juice Shop 
+   instances when a challenge is solved.
+   * Receives the solved challenge key, the standard `continueCode`, 
+   and the `continueCodeFindIt` / `continueCodeFixIt` codes.
+   * Patches the corresponding team's Kubernetes `Deployment` resource, 
+   updating annotations (`multi-juicer.owasp-juice.shop/...`) to 
+   store the list of solved challenges, the count, and the various 
+   continue codes.
+   * Includes a background sync mechanism to periodically check 
+   running Juice Shops and ensure annotation data matches the 
+   instance's state, applying backed-up progress if needed.
+3. **Cleaner:**
+   * Runs periodically as a Kubernetes `CronJob`.
+   * Lists all Juice Shop `Deployment` resources managed by MultiJuicer.
+   * Checks the `multi-juicer.owasp-juice.shop/lastRequest` annotation 
+   timestamp.
+   * If an instance has been inactive for longer than the configured 
+   duration (`MAX_INACTIVE_DURATION`), it deletes the corresponding 
+   `Deployment` and `Service`.
+
+image::part3/high-level-architecture.svg[MultiJuicer, High Level Architecture Diagram]
