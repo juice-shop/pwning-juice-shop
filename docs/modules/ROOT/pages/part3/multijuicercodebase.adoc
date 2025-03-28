@@ -27,7 +27,7 @@ for each team or participant.
 * **Load Balancing/Proxying:** Routes user traffic to their 
 specific Juice Shop instance based on a secure cookie.
 * **Progress Persistence:** Backs up solved challenges 
-(including FindIt/FixIt progress) to Kubernetes annotations,
+to Kubernetes annotations,
  allowing progress to survive pod restarts.
 * **Automated Cleanup:** Removes old, inactive instances 
 based on a configurable duration.
@@ -53,12 +53,9 @@ Kubernetes, plus a frontend UI served by the Balancer:
 2. **Progress Watchdog:**
    * Listens for webhook notifications sent by individual Juice Shop 
    instances when a challenge is solved.
-   * Receives the solved challenge key, the standard `continueCode`, 
-   and the `continueCodeFindIt` / `continueCodeFixIt` codes.
    * Patches the corresponding team's Kubernetes `Deployment` resource, 
    updating annotations (`multi-juicer.owasp-juice.shop/...`) to 
-   store the list of solved challenges, the count, and the various 
-   continue codes.
+   store the list of solved challenges, and the count
    * Includes a background sync mechanism to periodically check 
    running Juice Shops and ensure annotation data matches the 
    instance's state, applying backed-up progress if needed.
@@ -72,3 +69,33 @@ Kubernetes, plus a frontend UI served by the Balancer:
    `Deployment` and `Service`.
 
 image::part3/high-level-architecture.svg[MultiJuicer, High Level Architecture Diagram]
+
+== Repository Structure
+
+[source, shell]
+----
+└── multi-juicer
+    ├── balancer/            # The core Balancer component (Go backend + React UI)
+    │   ├── pkg/             # Shared Go packages for the balancer (bundle,                       passcode, scoring, etc.)
+    │   ├── routes/          # HTTP route handlers for the Go backend API and proxy
+    │   ├── ui/              # React frontend source code
+    │   ├── Dockerfile       # Builds the balancer image (includes UI build)
+    │   └── main.go          # Entry point for the balancer backend
+    ├── cleaner/             # The Cleaner component (Go)
+    │   ├── Dockerfile       # Builds the cleaner image
+    │   └── main.go          # Entry point and logic for the cleaner CronJob
+    ├── guides/              # Setup guides for different environments (AWS, Azure,              DigitalOcean, K8s, etc.)
+    ├── helm/                # Helm chart for deploying MultiJuicer
+    │   └── multi-juicer/    # The main chart directory
+    │       ├── templates/   # Kubernetes manifest templates for all components
+    │       ├── dashboards/  # Grafana dashboard definition
+    │       ├── Chart.yaml   # Chart metadata
+    │       └── values.yaml  # Default configuration values for the chart
+    ├── progress-watchdog/   # The Progress Watchdog component (Go)
+    │   ├── internal/        # Core logic (Kubernetes interaction, background sync, etc.)
+    │   ├── Dockerfile       # Builds the progress-watchdog image
+    │   └── main.go          # Entry point, webhook listener
+    ├── build-and-deploy.sh  # Helper script for local development builds/deploys
+    └── Taskfile.yaml        # Task definitions for development (linting, testing,           building)
+----
+
