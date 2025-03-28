@@ -99,3 +99,9 @@ image::part3/high-level-architecture.svg[MultiJuicer, High Level Architecture Di
     └── Taskfile.yaml        # Task definitions for development (linting, testing,           building)
 ----
 
+== Component Deep Dive
+
+=== Balancer
+
+* **Location:** `balancer/`
+* **Purpose:** User interaction hub, instance management, request proxying, admin interface, scoreboard provider.
