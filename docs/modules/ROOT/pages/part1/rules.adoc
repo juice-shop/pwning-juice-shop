@@ -308,12 +308,12 @@ source code (see above).
 Additionally it hosts the issue tracker of the project, which is used
 for idea management and task planning as well as bug tracking. You can
 of course submit an issue if you run into technical problems that are
-not covered by the link:[Troubleshooting section of the README.adoc]. You
+not covered in the xref:part4/troubleshooting.adoc[Troubleshooting] chapter. You
 just should not read issues labelled `challenge` as they might contain
 spoilers or solutions.
 
 Of course you are explicitly allowed to view
-https://github.com/juice-shop/juice-shop/blob/master/README.adoc[the repository's README.adoc page],
+https://github.com/juice-shop/juice-shop/blob/master/README.md[the repository's `README.md` page],
 which contains no spoilers but merely covers project introduction, setup
 and troubleshooting. Just do not "dig deeper" than that into the
 repository files and folders.
