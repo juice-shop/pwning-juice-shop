@@ -3061,9 +3061,9 @@ AngularCLI tool when it compiles the application, but is unfortunately not fully
  ** You could create a list of possible involved package names and then create different Zip Slip payloads for these, adding one and eventually two additional recursions into deeper directory levels.
  ** As long as `frontend` and `dist` are in your list, you will end up with the right permutation of `frontend/dist/frontend` on a depth level of 3 eventually.
 . Prepare a ZIP file with a `owasp_promo.vtt` inside that contains the
-prescribed payload of `</script><script>alert(`xss`)</script>`
+prescribed payload of ``</script><script>alert(\`xss`)</script>``
 with `zip exploit.zip
-../../frontend/dist/frontend/assets/public/video/owasp_promo.vtt`
+../../frontend/dist/frontend/assets/public/videos/owasp_promo.vtt`
 (on Linux).
 . Upload the ZIP file on http://localhost:3000/#/complain.
 . The challenge notification will not trigger immediately, as it
