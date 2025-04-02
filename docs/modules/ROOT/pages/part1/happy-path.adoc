@@ -12,7 +12,7 @@ Before commencing security testing, understanding the structure of the
 application is paramount. Without a thorough understanding of the
 layout of the application, it is unlikely that it will be tested
 thoroughly. Map the target application and understand the principal
-workflows.footnote:2_2_1[https://wiki.owasp.org/index.php/Map_execution_paths_through_application_(OTG-INFO-007)]
+workflows.footnote:2_2_1[https://wiki.owasp.org/index.php/Map_execution_paths_through_application_%28OTG-INFO-007%29]
 ____
 
 A good way to gain an understanding for the application, is to _actually
@@ -361,5 +361,5 @@ image::part1/language-selection.png[Language Selection]
 
 _If you want to know more about (or even help with) the localization of
 OWASP Juice Shop, please refer to the
-part3/translation.adoc#_helping_with_translations[Help with translation] chapter in part III of
+xref:part3/translation.adoc#_helping_with_translations[Help with translation] chapter in part III of
 this book._
