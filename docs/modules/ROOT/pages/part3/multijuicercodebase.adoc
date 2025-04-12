@@ -118,9 +118,80 @@ image::part3/high-level-architecture.svg[MultiJuicer, High Level Architecture Di
     └── Taskfile.yaml        # Task definitions for development (linting, testing,           building)
 ----
 
-== Component Deep Dive
+=== 4. Component Deep Dive
 
-=== Balancer
+==== Balancer
 
 * **Location:** `balancer/`
-* **Purpose:** User interaction hub, instance management, request proxying, admin interface, scoreboard provider.
+* **Purpose:** User interaction hub, instance management, request 
+proxying, admin interface, scoreboard provider.
+* **Technology:** Go (`net/http` mux, `client-go`), React (Vite, 
+Tailwind CSS, React Router, `react-intl`).
+* **Key Files/Logic:**
+  * `main.go`: Sets up HTTP routes using `routes.AddRoutes`, starts 
+  the scoring service worker (`scoring.StartingScoringWorker`), 
+  and runs the main HTTP server. Also starts a separate metrics 
+  server on `:8081`.
+  * `routes/routes.go`: Defines all HTTP endpoints and associates 
+  them with handlers. Uses `promhttp.InstrumentHandlerCounter` for metrics.
+  * `routes/join.go`:
+    * Handles `POST /balancer/api/teams/{team}/join`.
+    * Checks if team exists via `getDeployment`.
+    * If new team: Checks instance limit (`isMaxInstanceLimitReached`), 
+    generates passcode (`generatePasscode` using `bcrypt`), creates 
+    K8s Deployment (`createDeploymentForTeam`) and Service 
+    (`createServiceForTeam`). Sets `OwnerReferences` to link 
+    resources to the balancer deployment itself.
+    * If existing team: Validates provided passcode against the 
+    `passcode` annotation using `bcrypt.CompareHashAndPassword`.
+    * Handles special 'admin' team login against 
+    `MULTI_JUICER_CONFIG_ADMIN_PASSWORD` env var.
+    * Sets a signed cookie (`setSignedTeamCookie`) upon 
+    successful join/creation.
+  * `routes/proxy.go`:
+    * Handles all non-API/non-balancer routes (`/`).
+    * Verifies the signed team cookie using `teamcookie.GetTeamFromRequest`. 
+    Redirects to `/balancer` if invalid/missing.
+    * Checks if the instance is ready using `isInstanceUp` 
+    (checks `ReadyReplicas` on the Deployment). Caches the 'up' 
+    status briefly (`instanceUpCache`).
+    * If ready, updates the `lastRequest` annotation 
+    (`updateLastRequestTimestamp`) and proxies the request using 
+    `httputil.NewSingleHostReverseProxy` to the target determined 
+    by `bundle.GetJuiceShopUrlForTeam`.
+    * If not ready/missing, redirects the user to the status page 
+    with appropriate query parameters (`msg=instance-restarting` 
+    or `msg=instance-not-found`).
+  * `routes/teamStatus.go`, `routes/score-board.go`, 
+  `routes/individualScore.go`: Fetch data from the `scoring.ScoringService`
+   and return JSON responses. Support optional long-polling 
+   via `wait-for-update-after` query param.
+  * `routes/admin*.go`: Provide admin functionality (listing, 
+  deleting, restarting instances). Authenticated by checking 
+  for the 'admin' team cookie. Interact directly with the 
+  Kubernetes API via `clientset`.
+  * `routes/staticFiles.go`: Serves the React frontend build 
+  artifacts from `/balancer/ui/build/`, including handling 
+  client-side routing by serving `index.html` for specific paths.
+  * `pkg/bundle/bundle.go`: Central struct (`Bundle`) holding 
+  configuration (read from `/config/config.json` mounted from 
+  ConfigMap, and environment variables like `NAMESPACE`, 
+  `MULTI_JUICER_CONFIG_COOKIE_SIGNING_KEY`, `MULTI_JUICER_CONFIG_ADMIN_PASSWORD`), 
+  the Kubernetes `clientset`, logger, and utility functions 
+  (like `GetJuiceShopUrlForTeam`). Acts as a dependency 
+  injection mechanism. Also loads `/challenges.json` 
+  (copied during build) for scoring.
+  * `pkg/scoring/scoring.go`: `ScoringService` calculates 
+  team scores based on the `challenges` annotation on Deployments.
+   It maintains an in-memory cache (`currentScores`, `currentScoresSorted`)
+    and uses a Kubernetes `Watch` (`startScoringWatcher`) on
+     Deployments to update scores in near real-time. Provides 
+     methods like `GetTopScores`, `GetScoreForTeam`, and `WaitForUpdatesNewerThan` 
+     for long polling.
+  * `pkg/signutil/signutil.go` & `pkg/teamcookie/signutil.go`: 
+  Handle HMAC-SHA256 signing and verification of the team name 
+  stored in the cookie. Uses the `MULTI_JUICER_CONFIG_COOKIE_SIGNING_KEY`.
+  * `ui/src/`: Contains the React frontend code. Key pages include
+   `JoinPage.tsx`, `JoiningPage.tsx`, `TeamStatusPage.tsx`,
+    `ScoreOverview.tsx`, `IndividualScorePage.tsx`, and `AdminPage.tsx`.
+     Uses `react-router-dom` for routing and `react-intl` for internationalization.
