@@ -347,7 +347,7 @@ in the screenshot below.
 image::part1/dangerous-challenge_disabled.png[Disabled challenge on Heroku]
 
 To re-enable all challenges you can set the environment variable
-`NODE_ENV=unsafe`, or you can set `safetyOverride: true` in your own
+`NODE_ENV=unsafe`, or you can set `safetyMode: disabled` in your own
 xref:part4/customization.adoc#_yaml_configuration_file[YAML configuration file].
-Please use the unsafe mode at your own risk, especially on publicly
+☠️ *Please use the unsafe mode at your own risk*, especially on publicly
 hosted instances.
