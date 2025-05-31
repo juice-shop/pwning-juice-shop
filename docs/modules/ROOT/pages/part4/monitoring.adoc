@@ -16,6 +16,9 @@ Juice Shop collects functional and technical metrics using a
 https://prometheus.io[Prometheus] client module. Its endpoint is
 publicly accessible and there is even a challenge asking you to
 "xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[Find the endpoint that serves usage data to be scraped by a popular monitoring system]".
+Requests from Prometheus to the metrics endpoint will not trigger
+the challenge. To integrate with a different monitoring solution,
+you can customize the xref:part4/customization.adoc#_metricsIgnoredUserAgents[metricsIgnoredUserAgents] setting.
 
 To consume these metrics you need to set up a Prometheus server which is
 very straightforward:
