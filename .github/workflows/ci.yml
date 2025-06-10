@@ -15,7 +15,7 @@ jobs:
     runs-on: windows-latest
 
     env:
-      nodejs_version: 18
+      nodejs_version: 22
       ruby_version: 32
 
     steps:
