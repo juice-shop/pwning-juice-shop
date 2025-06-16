@@ -20,6 +20,10 @@ include::../attributes.adoc[]
 | Perform an unwanted information disclosure by accessing data cross-domain.
 | ⭐⭐⭐⭐⭐
 
+| Exposed Credentials
+| A developer was careless with hardcoding unused, but still valid credentials for a testing account on the client-side.
+| ⭐⭐
+
 | Exposed Metrics
 | Find the endpoint that serves usage data to be scraped by a popular monitoring system.
 | ⭐
@@ -38,6 +42,10 @@ include::../attributes.adoc[]
 
 | Leaked Access Logs
 | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.)
+| ⭐⭐⭐⭐⭐
+
+| Leaked API Key
+| Inform the shop about a leaked API key. (Mention the exact key in your comment)
 | ⭐⭐⭐⭐⭐
 
 | Leaked Unsafe Product
@@ -136,6 +144,10 @@ information. SQL Injection is not the solution here.
 * What ways are there to access data from a web application
 cross-domain?
 * This challenge uses an old way which is no longer recommended.
+
+== A developer was careless with hardcoding unused but still valid credentials
+
+// TODO Add hints for "Exposed Credentials" challenge
 
 == Find the endpoint that serves usage data to be scraped by a popular monitoring system
 
@@ -252,6 +264,10 @@ number of users attempted. This method avoids password lockouts, and
 it is often more effective at uncovering weak passwords than targeting
 specific users.footnote:3_10_5[https://resources.infosecinstitute.com/password-spraying/]
 ____
+
+== Inform the shop about a leaked API key
+
+// TODO Add hints for "Leaked API Key" challenge
 
 == Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 

@@ -1,12 +1,11 @@
 :ctfdVersion: 3.6 or higher
 :is_ctf: 0
 :rtbVersion: 3.3 or higher
-:juiceShopVersion: v17.3.0
+:juiceShopVersion: v18.0.0
 :juiceShopCtfVersion: v11.1.0
-:multiJuicerVersion: v8.1.0
-:juiceShopNumberOfChallenges: 109
+:multiJuicerVersion: v8.2.0
+:juiceShopNumberOfChallenges: 110
 :juiceShopNumberOfCodingChallenges: 31
 :nodeVersions: 18.x, 20.x, and 22.x
-:recommendedNodeVersion: 20.x
+:recommendedNodeVersion: 22.x
 :backupSchemaVersion: 1
-:maxNodeVersionWithXmlBinaries: 20.x

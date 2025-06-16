@@ -137,6 +137,10 @@ ifeval::[{is_ctf} == 1]
 | Successfully redeem an expired campaign coupon code.
 | xref:part2/improper-input-validation.adoc#_successfully_redeem_an_expired_campaign_coupon_code[💡]
 
+| Exposed Credentials
+| A developer was careless with hardcoding unused, but still valid credentials for a testing account on the client-side.
+| xref:part2/sensitive-data-exposure.adoc#_a_developer_was_careless_with_hardcoding_unused_but_still_valid_credentials[💡]
+
 | Exposed Metrics
 | Find the endpoint that serves usage data to be scraped by a popular monitoring system.
 | xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[💡]
@@ -200,6 +204,10 @@ ifeval::[{is_ctf} == 1]
 | Leaked Access Logs
 | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.)
 | xref:part2/sensitive-data-exposure.adoc#_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to[💡]
+
+| Leaked API Key
+| Inform the shop about a leaked API key. (Mention the exact key in your comment)
+| xref:part2/sensitive-data-exposure.adoc#_inform_the_shop_about_a_leaked_api_key[💡]
 
 | Leaked Unsafe Product
 | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.
@@ -368,6 +376,10 @@ ifeval::[{is_ctf} == 1]
 | Score Board
 | Find the carefully hidden 'Score Board' page.
 | xref:part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[💡]
+
+| Security Advisory
+| The Juice Shop is susceptible to a known vulnerability in a library, for which an advisory has already been issued, marking the Juice Shop as _known affected_. A fix is still pending. Inform the shop about a suitable checksum as proof that you did your due diligence.
+| xref:part2/miscellaneous.adoc#_the_juice_shop_is_susceptible_to_a_known_vulnerability_in_a_library_for_which_an_advisory_has_already_been_issued[💡]
 
 | Security Policy
 | Behave like any "white hat" should before getting into the action.
@@ -600,6 +612,11 @@ ifeval::[{is_ctf} == 0]
 | xref:part2/improper-input-validation.adoc#_successfully_redeem_an_expired_campaign_coupon_code[💡]
 | xref:appendix/solutions.adoc#_successfully_redeem_an_expired_campaign_coupon_code[📕]
 
+| Exposed Credentials
+| A developer was careless with hardcoding unused, but still valid credentials for a testing account on the client-side.
+| xref:part2/sensitive-data-exposure.adoc#_a_developer_was_careless_with_hardcoding_unused_but_still_valid_credentials[💡]
+| xref:appendix/solutions.adoc#_a_developer_was_careless_with_hardcoding_unused_but_still_valid_credentials[📕]
+
 | Exposed Metrics
 | Find the endpoint that serves usage data to be scraped by a popular monitoring system.
 | xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[💡]
@@ -679,6 +696,11 @@ ifeval::[{is_ctf} == 0]
 | Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.)
 | xref:part2/sensitive-data-exposure.adoc#_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to[💡]
 | xref:appendix/solutions.adoc#_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to[📕]
+
+| Leaked API Key
+| Inform the shop about a leaked API key. (Mention the exact key in your comment)
+| xref:part2/sensitive-data-exposure.adoc#_inform_the_shop_about_a_leaked_api_key[💡]
+| xref:appendix/solutions.adoc#_inform_the_shop_about_a_leaked_api_key[📕]
 
 | Leaked Unsafe Product
 | Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous.
@@ -889,6 +911,11 @@ ifeval::[{is_ctf} == 0]
 | Find the carefully hidden 'Score Board' page.
 | xref:part2/score-board.adoc#_find_the_carefully_hidden_score_board_page[💡]
 | xref:appendix/solutions.adoc#_find_the_carefully_hidden_score_board_page[📕]
+
+| Security Advisory
+| The Juice Shop is susceptible to a known vulnerability in a library, for which an advisory has already been issued, marking the Juice Shop as _known affected_. A fix is still pending. Inform the shop about a suitable checksum as proof that you did your due diligence.
+| xref:part2/miscellaneous.adoc#_the_juice_shop_is_susceptible_to_a_known_vulnerability_in_a_library_for_which_an_advisory_has_already_been_issued[💡]
+| xref:appendix/solutions.adoc#_the_juice_shop_is_susceptible_to_a_known_vulnerability_in_a_library_for_which_an_advisory_has_already_been_issued[📕]
 
 | Security Policy
 | Behave like any "white hat" should before getting into the action.
