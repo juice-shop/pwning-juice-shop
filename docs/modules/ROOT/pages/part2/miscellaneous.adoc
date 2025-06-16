@@ -24,6 +24,10 @@ include::../attributes.adoc[]
 | Find the carefully hidden 'Score Board' page.
 | ⭐
 
+| Security Advisory
+| The Juice Shop is susceptible to a known vulnerability in a library, for which an advisory has already been issued, marking the Juice Shop as _known affected_. A fix is still pending. Inform the shop about a suitable checksum as proof that you did your due diligence.
+| ⭐⭐⭐
+
 | Security Policy
 | Behave like any "white hat" should before getting into the action.
 | ⭐⭐
@@ -95,6 +99,10 @@ challenge for you
 This challenge was already covered in
 xref:part2/score-board.adoc#_finding_the_score_board[Finding the Score Board] at the beginning of
 xref:part2/README.adoc#_challenge_hunting[Part II - Challenge hunting].
+
+== The Juice Shop is susceptible to a known vulnerability in a library for which an advisory has already been issued
+
+// TODO Add hints for "Security Advisory" challenge
 
 == Behave like any "white hat" should before getting into the action
 

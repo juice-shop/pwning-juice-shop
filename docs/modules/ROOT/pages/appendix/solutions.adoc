@@ -219,6 +219,10 @@ challenge.
 
 == ⭐⭐ Challenges
 
+=== A developer was careless with hardcoding unused but still valid credentials
+
+// TODO Add solution for "Exposed Credentials" challenge
+
 === Access the administration section of the store
 
 . Open the `main.js` in your browser's developer tools and
@@ -1065,6 +1069,10 @@ local system file!
 . You need to withdraw 1000 BEE tokens from the BEE Haven to mint the NFT.
 . Withdraw any amount less than 255 tokens from the faucet until you get a 1000 BEE Balance, the faucet balance https://dreamlab.net/en/blog/post/ethereum-smart-contracts-vulnerabilities-integer-overflow-and-underflow/[underflows] to 255 as soon as the BEE balance becomes less than 0.
 . Mint the Honey Pot NFT.
+
+=== The Juice Shop is susceptible to a known vulnerability in a library for which an advisory has already been issued
+
+// TODO Add solution for "Security Advisory" challenge
 
 == ⭐⭐⭐⭐ Challenges
 
@@ -2364,6 +2372,10 @@ on GitHub: https://github.com/eslint/eslint-scope/issues/39
 . Submit your feedback with
 `+https://github.com/eslint/eslint-scope/issues/39+` in the comment to
 solve this challenge
+
+=== Inform the shop about a leaked API key
+
+// TODO Add solution for "Leaked API Key" challenge
 
 === Inform the shop about a typosquatting imposter that dug itself deep into the frontend
 
