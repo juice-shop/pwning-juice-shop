@@ -59,7 +59,7 @@ after you changed the source code.
 . Run `npm start` to launch the application.
 . Browse to http://localhost:3000
 
-_When installing Juice Shop from source, the `libxmljs` dependency will attempt to load pre-built binaries of a C\++ XML parser. These binaries are currently only available up to version {maxNodeVersionWithXmlBinaries} of Node.js. When using a newer Node.js version, `libxmljs` will instead attempt to build the C++ binary on-the-fly. Make sure to have the necessary build tools available, or switch to a Node.js version less or equal to {maxNodeVersionWithXmlBinaries} in range supported by Juice Shop._
+_When installing Juice Shop from source, the `libxmljs2` dependency will attempt to load pre-built binaries of a C\++ XML parser. These binaries are currently only available up to version {maxNodeVersionWithXmlBinaries} of Node.js. When using a newer Node.js version, `libxmljs2` will instead attempt to build the C++ binary on-the-fly. Make sure to have the necessary build tools available, or switch to a Node.js version less or equal to {maxNodeVersionWithXmlBinaries} in range supported by Juice Shop._
 
 ==== From pre-packaged distribution
 
