@@ -267,7 +267,17 @@ ____
 
 == Inform the shop about a leaked API key
 
-// TODO Add hints for "Leaked API Key" challenge
+____
+Public REST services without access control run the risk of being farmed leading to excessive bills for bandwidth or compute cycles. API keys can be used to mitigate this risk. They are also often used by organisation to monetize APIs; instead of blocking high-frequency calls, clients are given access in accordance to a purchased access plan.
+
+API keys can reduce the impact of denial-of-service attacks. However, when they are issued to third-party clients, they are relatively easy to compromise.footnote:3_10_8[https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html#api-keys]
+____
+
+* The API call is part of a scheduled process "behind the scenes", i.e. completely unrelated to the web application.
+* Check the Juice Shop's xref:part3/README.adoc#_social_media_channels[social media channels] for regularly scheduled content being posted, possibly even indicating that it was automatically created.
+* Find out which part of the content might come from the response of an API call
+* Find the place where the API call happens — as stated above, it is _not_ in the web application — and then look for the API key itself.
+
 
 == Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 

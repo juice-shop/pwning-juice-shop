@@ -15,12 +15,14 @@ jobs:
     runs-on: windows-latest
 
     env:
-      nodejs_version: 18
+      nodejs_version: 22
       ruby_version: 32
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Install Antora and Lunr extension
         run: |
           npx antora -v
