@@ -83,7 +83,7 @@ or a
 xref:part1/rules.adoc#_tools_for_http_request_tampering[tool for HTTP request tampering]
 to master this challenge.
 
-include::partial$hints/restfulXssChallenge.adoc
+include::partial$hints/restfulXssChallenge.adoc[]
 
 == Use the bonus payload in the DOM XSS challenge
 

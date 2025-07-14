@@ -84,7 +84,7 @@ xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[logged in
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
-include::partial$hints/adminSectionChallenge.adoc
+include::partial$hints/adminSectionChallenge.adoc[]
 
 == Change the name of a user by performing Cross-Site Request Forgery from another origin
 

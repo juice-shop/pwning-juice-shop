@@ -72,7 +72,7 @@ into a deployment unit of its own. Instead, the cheapest solution was
 chosen by simply leaving the admin features in the web shop itself and
 (allegedly) demanding a higher level of access to use them.
 
-include::partial$hints/registerAdminChallenge.adoc
+include::partial$hints/registerAdminChallenge.adoc[]
 
 == Obtain a Deluxe Membership without paying for it
 

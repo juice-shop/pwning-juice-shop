@@ -110,7 +110,7 @@ The Juice Shop application server is writing access logs, which can
 contain interesting information that competitors might also be
 interested in.
 
-include::partial$hints/accessLogDisclosureChallenge.adoc
+include::partial$hints/accessLogDisclosureChallenge.adoc[]
 
 == Access a confidential document
 
