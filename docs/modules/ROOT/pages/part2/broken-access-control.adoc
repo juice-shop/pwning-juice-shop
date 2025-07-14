@@ -84,6 +84,7 @@ xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[logged in
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
+// HINTS_START:adminSectionChallenge
 * Knowing it exists, you can simply _guess_ what URL the admin section
 might have.
 * Alternatively, you can try to find a reference or clue within the
@@ -92,6 +93,7 @@ parts of the application that are _not usually visible_ in the browser
 the score board link
 * There is some access control in place, but there are at least three
 ways to bypass it.
+// HINTS_END:adminSectionChallenge
 
 == Change the name of a user by performing Cross-Site Request Forgery from another origin
 

@@ -110,6 +110,7 @@ The Juice Shop application server is writing access logs, which can
 contain interesting information that competitors might also be
 interested in.
 
+// HINTS_START:accessLogDisclosureChallenge
 * Normally, server log files are written to disk on server side and are
 not accessible from the outside.
 * Which raises the question: Who would want a server access log to be
@@ -120,6 +121,7 @@ during the
 challenge might give you an idea who is interested in such a public
 exposure.
 * Drilling down one level into the file system might not be sufficient.
+// HINTS_END:accessLogDisclosureChallenge
 
 == Access a confidential document
 
