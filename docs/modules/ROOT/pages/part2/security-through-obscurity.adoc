@@ -73,7 +73,7 @@ royalties to a project, in contrast to an initial public offering
 which sells a share in the ownership of the company itself.footnote:3_9_2[https://en.wikipedia.org/wiki/Initial_coin_offering]
 ____
 
-include::partial$hints/tokenSaleChallenge[]
+include::partial$hints/tokenSaleChallenge.adoc[]
 
 == Prove that you actually read our privacy policy
 

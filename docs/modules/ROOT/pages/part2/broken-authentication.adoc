@@ -81,7 +81,7 @@ example, what is your oldest child's nickname -- but you don't have a
 child.footnote:3_3_1[http://goodsecurityquestions.com]
 ____
 
-include::partial$hints/resetPasswordBjoernOwaspChallenge[]
+include::partial$hints/resetPasswordBjoernOwaspChallenge.adoc[]
 
 ____
 Doxing (from dox, abbreviation of documents) or doxxing is the
