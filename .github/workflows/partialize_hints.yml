@@ -1,0 +1,22 @@
+name: Generate Asciidoc partials with hints from challenges.yml
+on:
+  push:
+    branches: [master, develop]
+    paths:
+      - 'docs/modules/ROOT/assets/data/challenges.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+      - name: Generate Asccidoc partials
+        run: ./docs/modules/ROOT/assets/data/extractHints.sh
+      - uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 #v5.0.1
+        with:
+          commit_message: "Generate Asciidoc partials from ${{ github.sha }}"
+          branch: ${{ github.head_ref }}
+          commit_options: '--signoff'
+          commit_user_name: JuiceShopBot
+          commit_user_email: 61591748+JuiceShopBot@users.noreply.github.com
+          commit_author: JuiceShopBot <61591748+JuiceShopBot@users.noreply.github.com>
