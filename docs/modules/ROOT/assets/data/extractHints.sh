@@ -1,38 +1,38 @@
 #!/bin/bash
 
-# Überprüfen ob die Eingabedatei existiert
+# Check if the input file exists
 if [ ! -f "challenges.yml" ]; then
-    echo "Error: challenges.yml nicht gefunden"
+    echo "Error: challenges.yml not found"
     exit 1
 fi
 
-# Hauptverarbeitung
+# Main processing
 in_hints=false
 hints_buffer=""
 current_key=""
 
 while IFS= read -r line || [ -n "$line" ]; do
-    # Wenn eine neue Challenge beginnt, die vorherige verarbeiten
+    # When a new challenge begins, process the previous one
     if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*$ ]]; then
-        # Speichere die vorherige Challenge wenn sie Hints hatte
+        # Save the previous challenge if it had hints
         if [ -n "$current_key" ] && [ -n "$hints_buffer" ]; then
             echo "${current_key}"
             echo -n "$hints_buffer" > "../../partials/hints/${current_key}.adoc"
         fi
-        # Reset der Variablen für die neue Challenge
+        # Reset variables for the new challenge
         hints_buffer=""
         current_key=""
         in_hints=false
         continue
     fi
 
-    # Key für aktuelle Challenge speichern
+    # Store key for current challenge
     if [[ "$line" =~ ^[[:space:]]*key:[[:space:]]*([^[:space:]]+)[[:space:]]*$ ]]; then
         current_key="${BASH_REMATCH[1]}"
         continue
     fi
 
-    # Hints-Sektion verarbeiten
+    # Process hints section
     if [[ "$line" =~ ^[[:space:]]*hints:[[:space:]]*$ ]]; then
         in_hints=true
         continue
@@ -46,7 +46,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     fi
 done < challenges.yml
 
-# Die letzte Challenge verarbeiten
+# Process the last challenge
 if [ -n "$current_key" ] && [ -n "$hints_buffer" ]; then
     echo "${current_key}"
     echo -n "$hints_buffer" > "../../partials/hints/${current_key}.adoc"
