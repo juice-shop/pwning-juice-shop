@@ -83,12 +83,7 @@ or a
 xref:part1/rules.adoc#_tools_for_http_request_tampering[tool for HTTP request tampering]
 to master this challenge.
 
-// HINTS_START:restfulXssChallenge
-* A matrix of known data entities and their supported HTTP verbs through
-the API can help you here
-* Careless developers might have exposed API methods that the client
-does not even need
-// HINTS_END:restfulXssChallenge
+include::partial$hints/restfulXssChallenge.adoc
 
 == Use the bonus payload in the DOM XSS challenge
 
