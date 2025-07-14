@@ -16,7 +16,6 @@ while IFS= read -r line || [ -n "$line" ]; do
     if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*$ ]]; then
         # Save the previous challenge if it had hints
         if [ -n "$current_key" ] && [ -n "$hints_buffer" ]; then
-            echo "${current_key}"
             echo -n "$hints_buffer" > "../../partials/hints/${current_key}.adoc"
         fi
         # Reset variables for the new challenge
@@ -48,6 +47,5 @@ done < challenges.yml
 
 # Process the last challenge
 if [ -n "$current_key" ] && [ -n "$hints_buffer" ]; then
-    echo "${current_key}"
     echo -n "$hints_buffer" > "../../partials/hints/${current_key}.adoc"
 fi
