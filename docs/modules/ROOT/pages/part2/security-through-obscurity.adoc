@@ -73,12 +73,7 @@ royalties to a project, in contrast to an initial public offering
 which sells a share in the ownership of the company itself.footnote:3_9_2[https://en.wikipedia.org/wiki/Initial_coin_offering]
 ____
 
-* Guessing or brute forcing the URL of the token sale page is very
-unlikely to succeed.
-* You should closely investigate the place where all paths within the
-application are defined.
-* Beating the employed obfuscation mechanism manually will take some
-time. Maybe there is an easier way to undo it?
+include::partial$hints/tokenSaleChallenge[]
 
 == Prove that you actually read our privacy policy
 
