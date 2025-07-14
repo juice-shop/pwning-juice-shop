@@ -12,8 +12,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate Asccidoc partials
         run: |
-          chmod +x ./docs/modules/ROOT/assets/data/extractHints.sh
-          ./docs/modules/ROOT/assets/data/extractHints.sh
+          cd docs/modules/ROOT/assets/data 
+          chmod +x ./extractHints.sh
+          ./extractHints.sh
       - uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 #v5.0.1
         with:
           commit_message: "Generate Asciidoc partials from ${{ github.sha }}"
