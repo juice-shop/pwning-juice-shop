@@ -1,0 +1,5 @@
+* Find out how the application handles unavailable products and try to find a loophole.
+* Find out how the application hides deleted products from its customers.
+* Try to craft an attack string that makes deleted products visible again.
+* You need to get the deleted product into your shopping cart and trigger the Checkout.
+* Neither of the above can be achieved through the application frontend and it might even require (half-)Blind SQL Injection.
