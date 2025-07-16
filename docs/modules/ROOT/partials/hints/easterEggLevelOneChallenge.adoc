@@ -1,0 +1,2 @@
+* If you solved one of the four file access challenges, you already know where to find the easter egg.
+* Simply reuse the trick that already worked for the files above.

@@ -1,0 +1,4 @@
+* Try to submit bad input to forms. Alternatively tamper with URL paths or parameters.
+* This challenge actually triggers from various possible error conditions.
+* You can try to submit bad input to forms to provoke an improper error handling.
+* Tampering with URL paths or parameters might also trigger an unforeseen error.
