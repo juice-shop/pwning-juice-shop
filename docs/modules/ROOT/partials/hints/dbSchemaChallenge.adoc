@@ -1,0 +1,5 @@
+* Find out where this information could come from. Then craft an attack string against an endpoint that offers an unnecessary way to filter data.
+* Find out which database system is in use and where it would usually store its schema definitions.
+* Craft a UNION SELECT attack string to join the relevant data from any such identified system table into the original result.
+* You might have to tackle some query syntax issues step-by-step, basically hopping from one error to the next.
+* As with "Order the Christmas special offer of 2014" this cannot be achieved through the application frontend.

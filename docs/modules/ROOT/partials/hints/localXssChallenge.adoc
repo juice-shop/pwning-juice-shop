@@ -1,0 +1,2 @@
+* Look for an input field where its content appears in the HTML when its form is submitted.
+* This challenge is almost indistinguishable from "Perform a reflected XSS attack" if you do not look "under the hood" to find out what the application actually does with the user input.

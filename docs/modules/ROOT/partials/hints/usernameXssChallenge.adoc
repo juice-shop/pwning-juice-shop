@@ -1,0 +1,4 @@
+* What is even "better" than a legacy page with a homegrown RegEx sanitizer? Having CSP injection issues on the exact same page as well!
+* Find a screen in the application that looks subtly odd and dated compared with all other screens.
+* Before trying any XSS attacks, you should understand how the page is setting its Content Security Policy.
+* For the subsequent XSS, make good use of the flaws in the homegrown sanitization based on a RegEx!
