@@ -1,0 +1,5 @@
+* You need to trick the hacking progress persistence feature into thinking you solved challenge #999.
+* Find out how saving and restoring progress is done behind the scenes.
+* Deduce from all available information (e.g. the package.json.bak) how the application encrypts and decrypts your hacking progress.
+* Other than the user’s passwords, the hacking progress involves an additional secret during its encryption.
+* What would be a really stupid mistake a developer might make when choosing such a secret?

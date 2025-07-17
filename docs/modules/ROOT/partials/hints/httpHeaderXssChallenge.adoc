@@ -1,0 +1,3 @@
+* Finding a piece of displayed information that could originate from an HTTP header is part of this challenge.
+* You might have to look into less common or even proprietary HTTP headers to find the leverage point.
+* Adding insult to injury, the HTTP header you need will never be sent by the application on its own.

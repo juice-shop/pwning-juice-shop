@@ -1,0 +1,5 @@
+* This challenge will make you go after a needle in a haystack.
+* As with so many other characters from Futurama this challenge is of course about logging in as Amy from that show.
+* Did you know that Amy is married to an alien named Kif?
+* The challenge description contains a few sentences which give away some information how Amy decided to strengthen her password.
+* Obviously, Amy - being a little dimwitted - did not put nearly enough effort and creativity into the password selection process.
