@@ -1,0 +1,5 @@
+* The underlying flaw of this challenge is a lot more human error than technical weakness.
+* The support team is located in a low-cost country and the team structure fluctuates a lot due to people leaving for jobs with even just slightly better wages.
+* To prevent abuse the password for the support team account itself is actually very strong.
+* To allow easy access during an incident, the support team utilizes a 3rd party tool which every support engineer can access to get the current account password from.
+* While it is also possible to use SQL Injection to log in as the support team, this will not solve the challenge.
