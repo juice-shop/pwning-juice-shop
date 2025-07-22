@@ -1,0 +1,2 @@
+* Look for a url parameter where its value appears in the page it is leading to.
+* Try probing for XSS vulnerabilities by submitting text wrapped in an HTML tag which is easy to spot on screen, e.g. <h1> or <strike>.

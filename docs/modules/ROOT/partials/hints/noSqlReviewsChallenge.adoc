@@ -1,0 +1,3 @@
+* Take a close look on how the equivalent of UPDATE-statements in MongoDB work.
+* This challenge requires another classic Injection attack.
+* It is also worth looking into how Query Operators work in MongoDB.

@@ -1,0 +1,5 @@
+* The "Comment" field in the "Customer Feedback" screen is where you want to put your focus on.
+* The Comment field in the Contact Us screen is where you want to put your focus on.
+* The attack payload <iframe src="javascript:alert(`xss)">` will not be rejected by any validator but stripped from the comment before persisting it.
+* Look for possible dependencies related to input processing in the package.json.bak you harvested earlier.
+* If an XSS alert shows up but the challenge does not appear as solved on the Score Board, you might not have managed to put the exact attack string <iframe src="javascript:alert(`xss)">` into the database?

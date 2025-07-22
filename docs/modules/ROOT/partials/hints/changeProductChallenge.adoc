@@ -1,0 +1,2 @@
+* Theoretically there are three possible ways to beat this challenge: a) broken admin functionality, b) holes in RESTful API or c) possibility for SQL Injection.
+* In practice two of these three ways should turn out to be dead ends.

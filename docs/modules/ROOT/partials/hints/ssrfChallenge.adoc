@@ -1,0 +1,4 @@
+* Reverse engineering something bad can make good things happen.
+* Using whatever you find inside the malware directly will not do you any good.
+* For this to count as an SSRF attack you need to make the Juice Shop server attack itself.
+* Do not try to find the source code for the malware on GitHub. Take it apart with classic reverse-engineering techniques instead.

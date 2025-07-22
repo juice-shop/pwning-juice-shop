@@ -1,0 +1,4 @@
+* "SSTi" is a clear indicator that this has nothing to do with anything Angular. Also, make sure to use only our non-malicious malware.
+* You can find the juicy malware via a very obvious Google search or by stumbling into a very ill-placed quarantine folder with the necessary URLs in it.
+* Making the server download and execute the malware is key to solving this challenge.
+* For this challenge you do not have to reverse engineer the malware in any way. That will be required later to solve the "Request a hidden resource on server through server" challenge.

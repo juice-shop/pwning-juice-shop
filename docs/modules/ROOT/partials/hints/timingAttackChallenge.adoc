@@ -1,0 +1,4 @@
+* Punctuality is the politeness of kings.
+* Every user is (almost) immediately associated with the review they "liked" to prevent abuse of that functionality.
+* Did you really think clicking the "like" button three times in a row really fast would be enough to solve a ⭐⭐⭐⭐⭐⭐ challenge?
+* The underlying flaw of this challenge is a Race Condition.

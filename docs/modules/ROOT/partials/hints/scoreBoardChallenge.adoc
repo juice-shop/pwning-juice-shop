@@ -1,0 +1,2 @@
+* Try to find a reference or clue behind the scenes. Or simply guess what URL the Score Board might have.
+* Guessing the URL is quite easy if you consider the structure of other frontend paths in the application.
