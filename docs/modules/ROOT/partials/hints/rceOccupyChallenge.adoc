@@ -1,0 +1,2 @@
+* Your attack payload must not trigger the protection against too many iterations and infinite loops.
+* This challenge uses the same leverage point as the "Perform a Remote Code Execution that would keep a less hardened application busy forever" challenge.

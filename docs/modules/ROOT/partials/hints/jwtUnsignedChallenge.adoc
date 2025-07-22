@@ -1,0 +1,5 @@
+* This challenge exploits a weird option that is supported when signing tokens with JWT.
+* You should begin with retrieving a valid JWT from the application’s Authorization request header.
+* A JWT is only given to users who have logged in. They have a limited validity, so better do not dawdle.
+* Try to convince the site to give you a valid token with the required payload while downgrading to no encryption at all.
+* Make sure your JWT is URL safe!

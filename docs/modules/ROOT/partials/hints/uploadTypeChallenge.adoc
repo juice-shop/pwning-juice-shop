@@ -1,0 +1,2 @@
+* You can attach a PDF or ZIP file to the "Complaint" form. Investigate how this upload actually works.
+* If you solved the "Upload a file larger than 100 kB" challenge, you should try to apply the same solution here

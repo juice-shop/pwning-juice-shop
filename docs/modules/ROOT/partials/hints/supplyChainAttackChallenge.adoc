@@ -1,0 +1,2 @@
+* This vulnerability will not affect any customer of the shop. It is aimed exclusively at its developers.
+* This is a research-heavy challenge which does not involve any actual hacking.
