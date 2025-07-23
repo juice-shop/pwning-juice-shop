@@ -1,0 +1,3 @@
+* Take a look at the meta data of the corresponding photo.
+* Make use of tools that can inspect the metadata of images.
+* Use this information to answer the security question of the John, who enjoys hiking in the park.

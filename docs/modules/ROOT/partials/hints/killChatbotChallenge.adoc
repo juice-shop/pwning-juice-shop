@@ -1,0 +1,4 @@
+* Think of a way to get a hold of the internal workings on the chatbot API.
+* In order to disable the chatbot for all users, you must first get an understanding of how it works under the hood.
+* The chatbot sure offers a lot of functionality. Could it be that juice-shop relies on a third party, possibly open source library for this?
+* Maybe you can try to gather clues from around juice shop and then go dumpster dive the internet to get a hold of the bot’s source.
