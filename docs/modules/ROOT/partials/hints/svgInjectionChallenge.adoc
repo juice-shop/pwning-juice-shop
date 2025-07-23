@@ -1,0 +1,5 @@
+* This challenge would formally have to be in several categories as the developers made multiple gaffes for this to be possible.
+* Loading this page with an empty browser cache and on a slow (or throttled) connection will give you an idea on what the delivery box image is made of. Of course inspecting the page source will tell you just as much.
+* You need to dive deep into the actual Angular code to understand this one.
+* This challenge requires the exploitation of another vulnerability which even has its own two challenges in its very own category
+* This challenge can only be solved by strictly using the mentioned "cross-domain kittens". No other kittens from anywhere else can solve this challenge.

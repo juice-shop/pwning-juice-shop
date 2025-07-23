@@ -1,0 +1,3 @@
+* Check the Photo Wall for an image that could not be loaded correctly.
+* You just have to (literally) inspect the problem to understand the basic issue.
+* It can also help to try out the Tweet-button of the entry and observe what happens.

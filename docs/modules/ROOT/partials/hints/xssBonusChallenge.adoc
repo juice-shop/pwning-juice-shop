@@ -1,0 +1,3 @@
+* First, solve the "Perform a DOM XSS attack" challenge.
+* Now it is just a question of copying and pasting the payload into the same vulnerable field.
+* Crank up the volume of your computer before submitting the payload! 🔊

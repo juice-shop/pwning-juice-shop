@@ -1,0 +1,3 @@
+* This one is actually similar to the XXE DoS challenge in every way except the data format being (ab)used.
+* You can only solve this challenge by keeping the server busy for >2sec with your attack.
+* The effectiveness of attack payloads for this challenge might depend on the operating system the Juice Shop is running on.

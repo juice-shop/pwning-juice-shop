@@ -1,0 +1,4 @@
+* You have to find a way to beat the allowlist of allowed redirect URLs.
+* You can find several places where redirects happen in the OWASP Juice Shop.
+* The application will only allow you to redirect to allowlisted (previously referred to as whitelisted) URLs.
+* Tampering with the redirect mechanism might give you some valuable information about how it works under to hood.

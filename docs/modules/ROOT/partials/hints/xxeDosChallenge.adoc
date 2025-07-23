@@ -1,0 +1,4 @@
+* It is not as easy as sending a large amount of data directly to the deprecated B2B interface.
+* The leverage point for this is obviously the same as for the XXE Data Access challenge.
+* You can only solve this challenge by keeping the server busy for >2sec with your attack.
+* The effectiveness of attack payloads for this challenge might depend on the operating system the Juice Shop is running on.

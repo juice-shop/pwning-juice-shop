@@ -1,0 +1,4 @@
+* Look closely at what happens when you attempt to upgrade your account.
+* Go to the payment page for a deluxe membership and try paying through different methods.
+* Try inspecting the requests that go out for each of these methods, using the browser’s developer tools.
+* Maybe playing around with the parameters in these requests could reveal something interesting.
