@@ -1602,6 +1602,10 @@
   difficulty: 4
   hint: 'You might have to do some OSINT on his social media personas to find out his honest answer to the security question.'
   hintUrl: 'https://pwning.owasp-juice.shop/companion-guide/latest/part2/sensitive-data-exposure.html#_reset_uvogins_password_via_the_forgot_password_mechanism'
+  hints:
+    - 'You might have to do some OSINT on his social media personas to find out his honest answer to the security question.'
+    - 'People often reuse aliases online. You might be able to find something by looking online for Uvogin’s name or slight variations of it based on his unique writing habits.'
+    - 'You might be able to find some existing OSINT tools to help you in this investigation.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
   key: resetPasswordUvoginChallenge
 -
@@ -1613,6 +1617,10 @@
   difficulty: 2
   hint: 'Take a look at the meta data of the corresponding photo.'
   hintUrl: 'https://pwning.owasp-juice.shop/companion-guide/latest/part2/sensitive-data-exposure.html#_determine_the_answer_to_johns_security_question'
+  hints:
+    - 'Take a look at the meta data of the corresponding photo.'
+    - 'Make use of tools that can inspect the metadata of images.'
+    - 'Use this information to answer the security question of the John, who enjoys hiking in the park.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
   key: geoStalkingMetaChallenge
 -
@@ -1624,6 +1632,8 @@
   difficulty: 2
   hint: 'Take a look at the details in the photo to determine the location of where it was taken.'
   hintUrl: 'https://pwning.owasp-juice.shop/companion-guide/latest/part2/sensitive-data-exposure.html#_determine_the_answer_to_emmas_security_question'
+  hints:
+    - 'Take a look at the details in the photo to determine the location of where it was taken.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Choosing_and_Using_Security_Questions_Cheat_Sheet.html'
   key: geoStalkingVisualChallenge
 -
@@ -1634,7 +1644,12 @@
   description: 'Permanently disable the support chatbot so that it can no longer answer customer queries.'
   difficulty: 5
   hint: 'Think of a way to get a hold of the internal workings on the chatbot API.'
-  hintUrl: 'https://pwning.owasp-juice.shop/companion-guide/latest/part2/improper-input-validation.html#_permanently_disable_the_support_chatbot'
+  hintUrl: 'https://pwning.owasp-juice.shop/companion-guide/snapshot/part2/vulnerable-components.html#_permanently_disable_the_support_chatbot'
+  hints:
+    - 'Think of a way to get a hold of the internal workings on the chatbot API.'
+    - 'In order to disable the chatbot for all users, you must first get an understanding of how it works under the hood.'
+    - 'The chatbot sure offers a lot of functionality. Could it be that juice-shop relies on a third party, possibly open source library for this?'
+    - 'Maybe you can try to gather clues from around juice shop and then go dumpster dive the internet to get a hold of the bot’s source.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html'
   key: killChatbotChallenge
 -
