@@ -74,27 +74,11 @@ another (especially via a wide-area network such as the Internet) is
 often referred to as remote code execution.footnote:3_6_3[https://en.wikipedia.org/wiki/Arbitrary_code_execution]
 ____
 
-* The feature you need to exploit for this challenge is not directly
-advertised anywhere.
-* As the Juice Shop is written in pure Javascript, there is one data
-format that is most probably used for serialization.
-* You should try to make the server busy for all eternity.
-* The challenge will be solved if you manage to trigger the protection
-of the application against a very specific DoS attack vector.
-* Similar to the
-xref:part2/injection.adoc#_let_the_server_sleep_for_some_time[Let the server sleep for some time]
-challenge (which accepted nothing but NoSQL Injection as a solution)
-this challenge will only accept proper RCE as a solution. It cannot be
-solved by simply hammering the server with requests. __That__ would
-probably just __kill__ your server instance.
+include::partial$hints/rceChallenge.adoc[]
 
 == Drop some explosive data into a vulnerable file-handling endpoint
 
-* This one is actually similar to the xref:part2/xxe.adoc#_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server[XXE DoS challenge] in every way except the data format being (ab)used.
-* You can only solve this challenge by keeping the server busy for >2sec
-with your attack.
-* The effectiveness of attack payloads for this challenge might depend
-on the operating system the Juice Shop is running on.
+include::partial$hints/yamlBombChallenge.adoc[]
 
 == Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
@@ -105,8 +89,4 @@ no terminating condition, having one that can never be met, or one
 that causes the loop to start over.footnote:3_6_4[https://en.wikipedia.org/wiki/Infinite_loop]
 ____
 
-* This challenge uses the same leverage point as
-<<_perform_a_remote_code_execution_that_would_keep_a_less_hardened_application_busy_forever,Perform a Remote Code Execution that would keep a less hardened application busy forever>>.
-* The application has a protection against too many iterations (i.e.
-_infinite loops_) which your attack must not trigger in order to solve
-this challenge.
+include::partial$hints/rceOccupyChallenge.adoc[]

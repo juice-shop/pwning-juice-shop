@@ -118,10 +118,7 @@ Somewhere in the application you can find a file that contains sensitive
 information about some - potentially hostile - takeovers the Juice Shop
 top management has planned.
 
-* Analyze and tamper with links in the application that deliver a file
-directly.
-* The file you are looking for is not protected in any way. Once you
-_found it_ you can also _access it_.
+include::partial$hints/directoryListingChallenge.adoc[]
 
 == Perform an unwanted information disclosure by accessing data cross-domain
 
@@ -130,15 +127,11 @@ data to be accessed cross domain. Usually the same-origin policy would
 prevent this but this endpoint has a special feature enabled which will
 allow cross domain access under certain circumstances.
 
-* Try to find and attack an endpoint that responds with user
-information. SQL Injection is not the solution here.
-* What ways are there to access data from a web application
-cross-domain?
-* This challenge uses an old way which is no longer recommended.
+include::partial$hints/emailLeakChallenge.adoc[]
 
 == A developer was careless with hardcoding unused but still valid credentials
 
-// TODO Add hints for "Exposed Credentials" challenge
+include::partial$hints/exposedCredentialsChallenge.adoc[]
 
 == Find the endpoint that serves usage data to be scraped by a popular monitoring system
 
@@ -156,10 +149,7 @@ Prometheus joined the Cloud Native Computing Foundation in 2016 as the
 second hosted project, after Kubernetes. footnote:3_10_6[https://prometheus.io/docs/introduction/overview/]
 ____
 
-* The Juice Shop serves its metrics on the default path expected by
-Prometheus
-* Guessing the path is probably just as quick as taking the RTFM route
-via https://prometheus.io/docs/introduction/first_steps
+include::partial$hints/exposedMetricsChallenge.adoc[]
 
 ____
 RTFM is an initialism for the expression "read the fucking manual".
@@ -174,13 +164,7 @@ place. Downloading this file will not only solve the _Access a
 developer's forgotten backup file_ challenge but might also prove
 crucial in several other challenges later on.
 
-* Analyze and tamper with links in the application that deliver a file
-directly.
-* The file is not directly accessible because a security mechanism
-prevents access to it.
-* You need to trick the security mechanism into thinking that the file
-has a valid file type.
-* For this challenge there is only _one approach_ to pull this trick.
+include::partial$hints/forgottenDevBackupChallenge.adoc[]
 
 == Access a salesman's forgotten backup file
 
@@ -189,12 +173,7 @@ coupon codes to the application. Downloading this file will not only
 solve the _Access a salesman's forgotten backup file_ challenge but
 might also prove useful in another challenge later on.
 
-* Analyze and tamper with links in the application that deliver a file
-directly.
-* The file is not directly accessible because a security mechanism
-prevents access to it.
-* You need to trick the security mechanism into thinking that the file
-has a valid file type.
+include::partial$hints/forgottenBackupChallenge.adoc[]
 
 == Steal someone else's personal data without using Injection
 
@@ -203,13 +182,7 @@ Export_ function for its registered customers. It is possible to exploit
 a flaw in the feature to retrieve more data than intended. Injection
 attacks will not count to solve this one.
 
-* You should not try to steal data from a "vanilla" user who never even
-ordered something at the shop.
-* As everything about this data export functionality happens on the
-server-side, it won't be possible to just tamper with some HTTP
-requests to solve this challenge.
-* Inspecting various server responses which contain user-specific data
-might give you a clue about the mistake the developers made.
+include::partial$hints/dataExportChallenge.adoc[]
 
 == Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
 
@@ -236,15 +209,7 @@ control (IPC) and extrusion prevention system (EPS), as opposed to
 intrusion prevention system. footnote:3_10_2[https://en.wikipedia.org/wiki/Data_loss_prevention_software]
 ____
 
-* As the challenge name implies, your task is to find some leaked access
-logs which happen to have a fairly common format.
-* A very popular help platform for developers might contain breadcrumbs
-towards solving this challenge
-* The actual log file was copied & paste onto a platform often used to
-share data quickly with externals or even just internal peers.
-* Once you found and harvested the important piece of information from
-the log, you could employ a technique called _Password Spraying_ to
-solve this challenge.
+include::partial$hints/dlpPasswordSprayingChallenge.adoc[]
 
 ____
 Password spraying refers to the attack method that takes a large
@@ -264,10 +229,7 @@ Public REST services without access control run the risk of being farmed leading
 API keys can reduce the impact of denial-of-service attacks. However, when they are issued to third-party clients, they are relatively easy to compromise.footnote:3_10_8[https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html#api-keys]
 ____
 
-* The API call is part of a scheduled process "behind the scenes", i.e. completely unrelated to the web application.
-* Check the Juice Shop's xref:part3/README.adoc#_social_media_channels[social media channels] for regularly scheduled content being posted, possibly even indicating that it was automatically created.
-* Find out which part of the content might come from the response of an API call
-* Find the place where the API call happens — as stated above, it is _not_ in the web application — and then look for the API key itself.
+include::partial$hints/leakedApiKeyChallenge.adoc[]
 
 
 == Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
@@ -277,15 +239,7 @@ Similar to
 this challenge further highlights the risks from a lack of data loss
 prevention.
 
-* You must first identify the "unsafe product" which ist not available
-any more in the shop.
-* Solving the
-xref:part2/injection.adoc#_order_the_christmas_special_offer_of_2014[Order the Christmas special offer of 2014]
-challenge might give it to you as by-catch.
-* The actual data you need to solve this challenge was leaked on the
-same platform that was involved in
-<<_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to,Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to>>
-* Google is a particularly good accomplice in this challenge.
+include::partial$hints/dlpPastebinDataLeakChallenge.adoc[]
 
 == Log in with Amy's original user credentials
 
@@ -296,14 +250,7 @@ challenge solutions.
 
 image::part2/amy_and_kif.jpg[Amy and Kif Kroker]
 
-* As with so many other characters from
-http://www.imdb.com/title/tt0149460/[Futurama] this challenge is of
-course about logging in as Amy from that show. In the picture above
-you see her together with her alien husband Kif.
-* The challenge description contains a few sentences which give away
-some information how Amy decided to strengthen her password.
-* Obviously, Amy - being a little dimwitted - did not put nearly enough
-effort and creativity into the password selection process.
+include::partial$hints/loginAmyChallenge.adoc[]
 
 == Log in with MC SafeSearch's original user credentials
 
@@ -311,13 +258,7 @@ Another user login challenge where only the original password is
 accepted as a solution. Employing SQL Injection or other attacks does
 not count.
 
-* MC SafeSearch is a rapper who produced the song
-https://www.youtube.com/watch?v=v59CX2DiX0Y["Protect Ya' Passwordz"]
-which explains password & sensitive data protection very nicely.
-* After watching
-https://www.youtube.com/watch?v=v59CX2DiX0Y[the music video of this song],
-you should agree that even ⭐⭐ is a slightly exaggerated difficulty
-rating for this challenge.
+include::partial$hints/loginRapperChallenge.adoc[]
 +
 image::part2/protect-ya-passwordz.jpg["Protect Ya Passwordz",link=https://www.youtube.com/watch?v=v59CX2DiX0Y]
 
@@ -328,9 +269,7 @@ account compromise. People these days are not careful with what they
 post online and are not aware of the possible consequences it can have
 when people exploit that.
 
-* Make use of tools that can inspect the metadata of images.
-* Use this information to answer the security question of the John, who
-enjoys hiking in the park.
+include::partial$hints/geoStalkingMetaChallenge.adoc[]
 
 == Access a misplaced SIEM signature file.
 
@@ -361,34 +300,25 @@ Sigma is for log files what Snort is for network traffic and YARA is
 for files.footnote:3_10_4[https://github.com/Neo23x0/sigma#what-is-sigma]
 ____
 
-* If you solved one of the other four file access challenges, you
-already know where the SIEM signature file is located
-* Simply reuse the trick that already worked for the files above
+include::partial$hints/misplacedSignatureFileChallenge.adoc[]
 
 == Take over the wallet containing our official Soul Bound Token
 
-// TODO Add hints for "NFT Takeover" challenge
+include::partial$hints/nftUnlockChallenge.adoc[]
 
 == Reset Uvogin's password via the Forgot Password mechanism
 
 With the amount of personal information that people tend to reveal
 online, security questions are hardly reliable anymore.
 
-* People often reuse aliases online. You might be able to find something
-by looking online for Uvogin's name or slight variations of it based
-on his unique writing habits
-* You might be able to find some existing OSINT tools to help you in
-this investigation
+include::partial$hints/resetPasswordUvoginChallenge.adoc[]
 
 == Deprive the shop of earnings by downloading the blueprint for one of its products
 
 Why waste money for a product when you can just as well get your hands
 on its blueprint in order to make it yourself?
 
-* The product you might want to give a closer look is the _OWASP Juice
-Shop Logo (3D-printed)_
-* For your inconvenience the blueprint was _not_ misplaced into the same
-place like so many others forgotten files covered in this chapter
+include::partial$hints/retrieveBlueprintChallenge.adoc[]
 
 ℹ️ _If you are running the Juice Shop with a custom theme and product
 inventory, the product to inspect will be a different one. The tooltip
@@ -401,5 +331,4 @@ visual clues within the image. A certain user has uploaded a picture of
 his old workplace. Take a look at what his security question is and see
 if you can find the answer by looking at his uploaded image.
 
-* Look at visual clues to determine what company is shown in the picture
-and use that to answer the security question.
+include::partial$hints/geoStalkingVisualChallenge.adoc[]

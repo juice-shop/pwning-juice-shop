@@ -22,12 +22,7 @@ include::../attributes.adoc[]
 This challenge is about _redirecting_ to an entirely disallowed
 different location.
 
-* You can find several places where redirects happen in the OWASP Juice
-Shop
-* The application will only allow you to redirect to _allowlisted_
-(previously referred to as _whitelisted_) URLs
-* Tampering with the redirect mechanism might give you some valuable
-information about how it works under to hood
+include::partial$hints/redirectChallenge.adoc[]
 
 ____
 White list validation involves defining exactly what _is_ authorized,
@@ -40,9 +35,4 @@ Some time ago the Juice Shop project accepted donations via Bitcoin,
 Dash and Ether. It never received any, so these were dropped at some
 point.
 
-* When removing references to those addresses from the code the
-developers have been a bit sloppy.
-* More particular, they have been sloppy in a way that even the Angular
-Compiler was not able to clean up after them automatically.
-* It is of course not sufficient to just visit any of the crypto
-currency links _directly_ to solve the challenge.
+include::partial$hints/redirectCryptoCurrencyChallenge.adoc[]

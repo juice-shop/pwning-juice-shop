@@ -43,19 +43,14 @@ This challenge is about nagging the support chatbot to hand out a coupon
 code that can subsequently be used to get a discount during the checkout
 process.
 
-* The bot is reluctant to give you a coupon as it's coming up with
-various excuses for not giving you one
-* Asking over and over again like a little kid might actually help you
-succeed in this case
+include::partial$hints/bullyChatbotChallenge.adoc[]
 
 == Close multiple "Challenge solved"-notifications in one go
 
 This "challenge" is nothing more than an opportunity to learn about a convenience feature that allows users to close
 multiple "Challenge solved"-notifications at once.
 
-* This challenge is most easily solvable immediately xref:part1/running.adoc#_self_healing_feature[after a server restart]
-* You can find all the information you need to solve this challenge in the xref:part1/challenges.adoc#_challenge_tracking[Challenge tracking] chapter
-* Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature
+include::partial$hints/closeNotificationsChallenge.adoc[]
 
 == Read our privacy policy
 
@@ -88,11 +83,7 @@ operations but also to private enterprises and commercial
 transactions.footnote:3_7_1[https://en.wikipedia.org/wiki/Privacy_policy]
 ____
 
-* When you work with the application you will most likely solve this
-challenge in the process
-* Any automated crawling or spidering tool you use might solve this
-challenge for you
-* There is no real hacking involved here
+include::partial$hints/privacyPolicyChallenge.adoc[]
 
 == Find the carefully hidden 'Score Board' page
 
@@ -102,7 +93,7 @@ xref:part2/README.adoc#_challenge_hunting[Part II - Challenge hunting].
 
 == The Juice Shop is susceptible to a known vulnerability in a library for which an advisory has already been issued
 
-// TODO Add hints for "Security Advisory" challenge
+include::partial$hints/csafChallenge.adoc[]
 
 == Behave like any "white hat" should before getting into the action
 
@@ -117,12 +108,8 @@ where heroic and antagonistic cowboys might traditionally wear a white
 and a black hat respectively.footnote:3_7_2[https://en.wikipedia.org/wiki/White_hat_(computer_security)]
 ____
 
-* This challenge asks you to act like an ethical hacker
-* As one of the good guys, would you just start attacking an application
-without consent of the owner?
-* You also might want to read the security policy or any bug bounty
-program that is in place
+include::partial$hints/securityPolicyChallenge.adoc[]
 
 == Withdraw more ETH from the new wallet than you deposited
 
-// TODO Add hints for "Wallet Depletion" challenge
+include::partial$hints/web3WalletChallenge.adoc[]

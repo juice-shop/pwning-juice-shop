@@ -91,11 +91,7 @@ The underlying vulnerability of this challenge is the same as for the
 <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>> challenge. The
 effect of the payload is much more entertaining, though.
 
-* First, solve the <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>>
-challenge
-* Now it is just a question of copying and pasting the payload into the
-same vulnerable field
-* Crank up the volume of your computer before submitting the payload! 🔊
+include::partial$hints/xssBonusChallenge.adoc[]
 
 == Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
@@ -103,12 +99,7 @@ In the xref:introduction/architecture.adoc#_architecture_overview[Architecture o
 told that the Juice Shop uses a modern __Single Page Application__
 frontend. That was not entirely true.
 
-* Find a screen in the application that looks subtly odd and dated
-compared with all other screens
-* Before trying any XSS attacks, you should understand how the page is
-setting its Content Security Policy
-* For the subsequent XSS, make good use of the flaws in the homegrown
-sanitization based on a RegEx!
+include::partial$hints/usernameXssChallenge.adoc[]
 
 ____
 Content Security Policy (CSP) is an added layer of security that helps
@@ -141,15 +132,7 @@ Proxy. Ensure that any input validation performed on the client is
 also performed on the server.footnote:3_13_4[https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet]
 ____
 
-* There are only some input fields in the Juice Shop forms that validate
-their input.
-* Even less of these fields are persisted in a way where their content
-is shown on another screen.
-* Bypassing client-side security can typically be done by
- ** either disabling it on the client (i.e. in the browser by
-manipulating the DOM tree)
- ** or by ignoring it completely and interacting with the backend
-instead.
+include::partial$hints/persistedXssUserChallenge.adoc[]
 
 == Perform a DOM XSS attack
 
@@ -170,10 +153,7 @@ function, is modified by a specially crafted request such that a DOM
 element that can be controlled by an attacker.footnote:3_13_3[https://wiki.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)]
 ____
 
-* This challenge is almost indistinguishable from
-<<_perform_a_reflected_xss_attack,Perform a reflected XSS attack>> if
-you do not look "under the hood" to find out what the application
-actually does with the user input
+include::partial$hints/localXssChallenge.adoc[]
 
 == Perform a persisted XSS attack through an HTTP header
 
@@ -181,12 +161,7 @@ This XSS challenge originates from an unsafely processed user input via
 an HTTP header. The difficulty lies in finding the attack path whereas
 the actual exploit is rather business as usual.
 
-* Finding a piece of information displayed in the UI that could
-originate from an HTTP header
-* You might have to look into less common or even proprietary HTTP
-headers to find the leverage point
-* Adding insult to injury, the HTTP header you need will never be sent
-by the application on its own
+include::partial$hints/httpHeaderXssChallenge.adoc[]
 
 == Perform a reflected XSS attack
 
@@ -200,10 +175,7 @@ the crafted URI or HTTP parameters, improperly processed by the
 application, and returned to the victim.footnote:3_13_2[https://wiki.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)]
 ____
 
-* Look for a URL parameter where its value appears on the page it is
-leading to
-* Try probing for XSS vulnerabilities by submitting text wrapped in an
-HTML tag which is easy to spot on screen, e.g. `<h1>` or `<strike>`.
+include::partial$hints/reflectedXssChallenge.adoc[]
 
 == Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -221,28 +193,11 @@ _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error
 approach._
 
-* The _Comment_ field in the _Contact Us_ screen is where you want to
-put your focus on
-* The attack payload `<iframe src="javascript:alert(`xss`)">` will
-_not be rejected_ by any validator but _stripped from the comment_
-before persisting it
-* Look for possible dependencies related to input processing in the
-`package.json.bak` you harvested earlier
-* If an `xss` alert shows up but the challenge does not appear as solved
-on the _Score Board_, you might not have managed to put the _exact_
-attack string `<iframe src="javascript:alert(`xss`)">` into the
-database?
+include::partial$hints/persistedXssFeedbackChallenge.adoc[]
 
 == Embed an XSS payload into our promo video
 
 As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.
 
-* Without utilizing the vulnerability behind another ⭐⭐⭐⭐⭐⭐ challenge
-it is not possible to plant the XSS payload for this challenge
-* The mentioned "marketing collateral" might have been publicly
-advertised by the Juice Shop but is not necessarily part of its
-sitemap yet
-* It might help to perform some online searches for structurally similar web projects once you get stuck.
-* This challenge will always partially keep you blindfolded, no matter
-how hard you do research and analysis.
+include::partial$hints/videoXssChallenge.adoc[]

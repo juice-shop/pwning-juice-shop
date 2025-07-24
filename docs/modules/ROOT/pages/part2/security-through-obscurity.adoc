@@ -81,14 +81,7 @@ User agreements and privacy policies are too often simply dismissed or
 blindly accepted. This challenge kind of forces you to reconsider that
 approach.
 
-* First you should obviously solve
-xref:part2/miscellaneous.adoc#_read_our_privacy_policy[Read our privacy policy].
-* It is fine to use the mouse cursor to not lose sight of the paragraph
-you are currently reading.
-* If you find some particularly hot sections in the policy you might
-want to melt them together similar to what you might have already
-uncovered in
-xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[Apply some advanced cryptanalysis to find the real easter egg].
+include::partial$hints/privacyPolicyProofChallenge.adoc[]
 
 == Rat out a notorious character hiding in plain sight in the shop
 
@@ -131,9 +124,4 @@ The change is so subtle that someone who is not specifically looking
 for it is unlikely to notice the change.footnote:3_9_3[https://en.wikipedia.org/wiki/Steganography]
 ____
 
-* There is not the slightest chance that you can spot the hidden
-character with the naked eye.
-* The effective difficulty of this challenge depends a lot on what tools
-you pick to tackle it.
-* This challenge cannot be solved by just reading our "Lorem
-Ipsum"-texts carefully.
+include::partial$hints/hiddenImageChallenge.adoc[]

@@ -88,7 +88,7 @@ include::partial$hints/adminSectionChallenge.adoc[]
 
 == Change the name of a user by performing Cross-Site Request Forgery from another origin
 
-This challenges requires you to craft the code for the Cross-Site
+This challenge requires you to craft the code for the Cross-Site
 Request Forgery (CSRF) attack within http://htmledit.squarefree.com,
 which represents another
 https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy[origin]
@@ -96,13 +96,7 @@ than the Juice Shop. You can enter your HTML and Script code in the
 upper half of the page, while the result is instantly displayed in the
 lower half.
 
-* Take a look at what happens when you change the username within the
-http://localhost:3000/profile[profile page].
-* Search for information about CSRF attacks and look out for examples
-that can be applied to this challenge.
-* Write the code for the CSRF attack within
-http://htmledit.squarefree.com and verify that it changes your
-username.
+include::partial$hints/csrfChallenge.adoc[]
 
 _Please also be aware that the challenge is designed to be solved only with
 the specified online HTML editor. This means that Juice Shop will not
@@ -135,9 +129,7 @@ or DVD menu screen. The name is used to evoke the idea of a
 traditional Easter egg hunt.footnote:3_1_2[https://en.wikipedia.org/wiki/Easter_egg_(media)]
 ____
 
-* If you solved one of the other four file access challenges, you
-already know where the easter egg is located
-* Simply reuse the trick that already worked for the files above
+include::partial$hints/easterEggLevelOneChallenge.adoc[]
 
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found *the real* easter
@@ -151,8 +143,7 @@ If you successfully solved above
 <<_access_the_administration_section_of_the_store,admin section challenge>>
 deleting the 5-star feedback is very easy.
 
-* Nothing happens when you try to delete feedback entries? Check the
-JavaScript console for errors!
+include::partial$hints/feedbackChallenge.adoc[]
 
 == Post some feedback in another user's name
 
@@ -162,12 +153,7 @@ associated with the current user. When not logged in, the feedback will
 be posted anonymously. This challenge is about vilifying another user by
 posting a (most likely negative) feedback in his or her name!
 
-* This challenge can be solved via the user interface or by intercepting
-the communication with the RESTful backend.
-* To find the client-side leverage point, closely analyze the HTML form
-used for feedback submission.
-* The backend-side leverage point is similar to some of the
-xref:part2/xss.adoc#_xss[XSS challenges] found in OWASP Juice Shop.
+include::partial$hints/forgedFeedbackChallenge.adoc[]
 
 == Post a product review as another user or edit any user's existing review
 
@@ -176,13 +162,7 @@ user has to be logged in before they can post any review for any of the
 products. This challenge is about vilifying another user by posting a
 (most likely bad) review in his or her name!
 
-* This challenge can be solved by using developers tool of your browser
-or with tools like postman.
-* Analyze the form used for review submission and try to find a leverage
-point.
-* This challenge is pretty similar to
-<<_post_some_feedback_in_another_users_name,Post some feedback in another user's name>>
-challenge.
+include::partial$hints/forgedReviewChallenge.adoc[]
 
 == Put an additional product into another user's shopping basket
 
@@ -191,13 +171,7 @@ was only about spying out other customers. For this challenge you need
 to get your hands dirty by putting a product into someone else's basket
 that cannot be already in there!
 
-* Check the HTTP traffic while placing products into your own shopping
-basket to find a leverage point.
-* Adding more instances of the same product to someone else's basket
-does not qualify as a solution. The same goes for stealing from
-someone else's basket.
-* This challenge requires a bit more sophisticated tampering than others
-of the same ilk.
+include::partial$hints/basketManipulateChallenge.adoc[]
 
 == Change the href of the link within the O-Saft product description
 
@@ -207,19 +181,7 @@ you are supposed to change that link so that it will send you to
 http://kimminich.de instead. It is important to exactly follow the
 challenge instruction to make it light up green on the score board:
 
-* Original link tag in the description: `+<a
-href="https://wiki.owasp.org/index.php/O-Saft"
-target="_blank">More...</a>+`
-* Expected link tag in the description: `+<a href="https://owasp.slack.com"
-target="_blank">More...</a>+`
-* _Theoretically_ there are three possible ways to beat this challenge:
- ** Finding an administrative functionality in the web application that
-lets you change product data
- ** Looking for possible holes in the RESTful API that would allow you
-to update a product
- ** Attempting an SQL Injection attack that sneaks in an `UPDATE`
-statement on product data
-* _In practice_ two of these three ways should turn out to be dead ends
+include::partial$hints/changeProductChallenge.adoc[]
 
 == Request a hidden resource on server through server
 
@@ -227,12 +189,7 @@ This Server-side Request Forgery challenge will come back to the malware
 you used in
 xref:part2/injection.adoc#_infect_the_server_with_juicy_malware_by_abusing_arbitrary_command_execution[Infect the server with juicy malware by abusing arbitrary command execution].
 
-* Using whatever you find inside the malware _directly_ will not do you
-any good.
-* For this to count as an SSRF attack you need to make the Juice Shop
-server _attack itself_.
-* Do not try to find the source code for the malware on GitHub. Take it
-apart with classic reverse-engineering techniques instead.
+include::partial$hints/ssrfChallenge.adoc[]
 
 ____
 In a Server-Side Request Forgery (SSRF) attack, the attacker can abuse
@@ -254,14 +211,8 @@ could also play a prank on the victim by manipulating the items or their
 quantity, hoping this will go unnoticed during checkout. This could lead
 to some arguments between the victim and the vendor.
 
-* Try out all existing functionality involving the shopping basket while
-having an eye on the HTTP traffic.
-* There might be a client-side association of user to basket that you
-can try to manipulate.
-* In case you manage to update the database via SQL Injection so that a
-user is linked to another shopping basket, the application will _not_
-notice this challenge as solved.
+include::partial$hints/basketAccessChallenge.adoc[]
 
 == Find an accidentally deployed code sandbox
 
-* It is just as easy as finding the Score Board.
+include::partial$hints/web3SandboxChallenge.adoc[]
