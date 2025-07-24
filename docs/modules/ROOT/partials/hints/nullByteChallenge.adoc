@@ -1,0 +1,4 @@
+* Analyze and tamper with links in the application until you get to an unprotected directory listing.
+* Some files in there are not directly accessible because a security mechanism prevents access.
+* The Poison Null Byte can trick the security mechanism into thinking that the file you want has a valid file type.
+* Depending on the files you try to retrieve you will probably solve "Access a developer’s forgotten backup file", "Access a salesman’s forgotten backup file", "Access a misplaced SIEM signature file, or "Find the hidden easter egg" along the way.

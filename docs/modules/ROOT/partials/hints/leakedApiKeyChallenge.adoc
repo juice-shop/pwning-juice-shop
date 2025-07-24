@@ -1,0 +1,4 @@
+* The API call is part of a scheduled process "behind the scenes", i.e. completely unrelated to the web application.
+* Check the Juice Shop’s social media channels for regularly scheduled content being posted, possibly even indicating that it was automatically created.
+* Find out which part of the content might come from the response of an API call.
+* Find the place where the API call happens — as stated above, it is not in the web application — and then look for the API key itself.
