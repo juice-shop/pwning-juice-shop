@@ -14,10 +14,7 @@ OWASP Juice Shop uses the popular https://angular.io/[Angular]
 framework as the core of its client-side. Thanks to
 https://material.angular.io/[Angular Material] - an Angular-specific
 implementation of Google's https://material.io/[Material Design] - the
-UI looks nicely familiar and is easy to use. It is also built to be
-responsive with the help of
-https://github.com/angular/flex-layout[Angular Flex-Layout], letting
-it adapt nicely to different screen sizes. The various icons used
+UI looks nicely familiar and is easy to use. The interface is also built to be responsive using CSS Flexbox and Grid, allowing it to adapt smoothly to different screen sizes. The various icons used
 throughout the frontend are from the vast
 https://fontawesome.com/[Font Awesome 5] collection.
 
@@ -254,13 +251,12 @@ ____
 Each screen within the application is defined in a HTML view template
 along with its <<_components,Component>> in the subfolders beneath
 `frontend/src/app/`. The views are written as HTML using
-https://material.angular.io/[Angular Material] for styling and
-https://github.com/angular/flex-layout[Angular Flex-Layout] for
+https://material.angular.io/[Angular Material] for styling and CSS Flexbox and Grid for
 responsiveness. Furthermore most views incorporate icons from the
 https://fontawesome.com/[Font Awesome 5] collection.
 
 ℹ️ Understanding the
-https://github.com/angular/flex-layout/wiki/API-Documentation#html-api-declarative[Declarative HTML APIs of the Angular Layout]
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout[CSS Flexbox] and https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout[Grid] and [https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Relationship_of_grid_layout_with_other_layout_methods]their relationship
 is crucial to be able to write UI elements or entire screens without
 breaking responsiveness!
 
