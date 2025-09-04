@@ -1,0 +1,2 @@
+* Look for possible dependencies related to security in the package.json.bak you probably harvested earlier during the Access a developer’s forgotten backup file challenge.
+* Do some research on the internet for known security issues in the most suspicious application dependencies.

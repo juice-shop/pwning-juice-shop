@@ -1,0 +1,5 @@
+* Try to create the needed user "out of thin air".
+* The user literally needs to be ephemeral as in "lasting for only a short time".
+* Registering normally with the user’s email address will then obviously not solve this challenge. The Juice Shop will not even let you register as acc0unt4nt@juice-sh.op, as this would make the challenge unsolvable for you.
+* Getting the user into the database some other way will also fail to solve this challenge. In case you somehow managed to do so, you need to restart the Juice Shop application in order to wipe the database and make the challenge solvable again.
+* The fact that this challenge is in the Injection category should already give away the intended approach.

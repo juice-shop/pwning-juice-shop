@@ -1,0 +1,3 @@
+* When you work with the application you will most likely solve this challenge in the process.
+* Any automated crawling or spidering tool you use might solve this challenge for you.
+* There is no real hacking involved here.

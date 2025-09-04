@@ -1,0 +1,5 @@
+* It is just slightly harder to find than the score board link.
+* Knowing it exists, you can simply guess what URL the admin section might have.
+* Alternatively, you can try to find a reference or clue within the parts of the application that are not usually visible in the browser.
+* It is probably just slightly harder to find and gain access to than the score board link.
+* There is some access control in place, but there are at least three ways to bypass it.

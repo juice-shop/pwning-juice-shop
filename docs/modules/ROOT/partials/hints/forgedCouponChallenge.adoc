@@ -1,0 +1,4 @@
+* Try either a) a knowledgeable brute force attack or b) reverse engineering or c) some research in the cloud.
+* One viable solution would be to reverse-engineer how coupon codes are generated and craft your own 80% coupon by using the same (or at least similar) implementation.
+* Another possible solution might be harvesting as many previous coupon as possible and look for patterns that might give you a leverage for a brute force attack.
+* If all else fails, you could still try to blindly brute force the coupon code field before checkout.

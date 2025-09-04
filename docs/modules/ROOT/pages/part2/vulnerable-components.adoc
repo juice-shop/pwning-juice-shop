@@ -77,12 +77,7 @@ your application does with files and think carefully about what
 processing and interpreters are involved.footnote:3_12_3[https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload]
 ____
 
-* Find all places in the application where file uploads are possible.
-* For at least one of these, the Juice Shop is depending on a library
-that suffers from an arbitrary file overwrite vulnerability.
-* You can find a hint toward the underlying vulnerability in the
-https://twitter.com/owasp_juiceshop[@owasp_juiceshop] Twitter
-timeline
+include::partial$hints/fileWriteChallenge.adoc[]
 
 == Forge an almost properly RSA-signed JWT token
 
@@ -92,17 +87,7 @@ this challenge requires you to make a valid JWT for a user that does not
 exist. What makes this challenge even harder is the requirement to have
 the JWT look like it was properly signed.
 
-* The three generic hints from
-<<_forge_an_essentially_unsigned_jwt_token,Forge an essentially unsigned JWT token>>
-also help with this challenge.
-* Instead of enforcing no encryption to be applied, try to apply a more
-sophisticated exploit against the JWT libraries used in the Juice
-Shop.
-* Getting your hands on the public RSA key the application employs for
-its JWTs is mandatory for this challenge.
-* Finding the corresponding private key should actually be impossible,
-but that obviously doesn't make this challenge unsolvable.
-* Make sure your JWT is URL safe!
+include::partial$hints/jwtUnsignedChallenge.adoc[]
 
 == Inform the shop about a typosquatting imposter that dug itself deep into the frontend
 
@@ -138,11 +123,7 @@ This challenge is about identifying and reporting (via the
 http://localhost:3000/#/contact form) a case of typosquatting hidden in
 the Juice Shop. It is supposedly hard to locate.
 
-* This challenge has nothing to do with URLs or domains.
-* Other than for
-<<_inform_the_shop_about_a_typosquatting_trick_it_has_been_a_victim_of,its legacy companion>>,
-combing through the `package.json.bak` does not help for this
-challenge.
+include::partial$hints/typosquattingAngularChallenge.adoc[]
 
 ℹ️ There is no actual malice or mischief included, as the typosquatter
 is completely harmless. Just keep in mind that in reality, a case like
@@ -155,13 +136,7 @@ Juice shop's handy dandy chatbot is cute and all, but can it defend
 itself against malicious attackers looking to rob the customers of its
 services?
 
-* In order to disable the chatbot for all users, you must first get an
-understanding of how it works under the hood
-* The chatbot sure offers a lot of functionality. Could it be that
-juice-shop relies on a third party, possibly open source library for
-this?
-* Maybe you can try to gather clues from around juice shop and then go
-dumpster dive the internet to get a hold of the bot's source
+include::partial$hints/killChatbotChallenge.adoc[]
 
 == Inform the shop about a typosquatting trick it has been a victim of
 
@@ -170,14 +145,7 @@ http://localhost:3000/#/contact form) a case of typosquatting that
 successfully sneaked into an older version of the Juice Shop. Luckily,
 it is not in use any more in {juiceShopVersion}.
 
-* Just like
-<<_inform_the_shop_about_a_typosquatting_imposter_that_dug_itself_deep_into_the_frontend,its frontend companion>>
-this challenge also has nothing to do with URLs or domains.
-* Investigating the
-xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[forgotten developer's backup file]
-might bring some insight.
-* https://iamakulov.com/notes/npm-malicious-packages/[Malicious packages in npm]
-is a worthwhile read on https://iamakulov.com[Ivan Akulov's blog].
+include::partial$hints/typosquattingNpmChallenge.adoc[]
 
 == Gain read access to an arbitrary local file on the web server
 
@@ -189,10 +157,7 @@ A *file inclusion vulnerability* is a type of web vulnerability that is most com
 *Local file inclusion (LFI)* is similar to a remote file inclusion vulnerability except instead of including remote files, only local files i.e. files on the current server can be included for execution. This issue can still lead to remote code execution by including a file that contains attacker-controlled data such as the web server's access logs.footnote:3_12_5[https://en.wikipedia.org/wiki/File_inclusion_vulnerability]
 ____
 
-* You should read up on Local File Read (LFR) vulnerabilities in popular NodeJS template engines
-* Look for an easily forgettable endpoint in Juice Shop to test out the LFR attack
-* `500 Internal Server Error` is always an interesting status code
-* Fuzzing can also help with this challenge
+include::partial$hints/lfrChallenge.adoc[]
 
 == Inform the development team about a danger to some of their credentials
 
@@ -211,14 +176,7 @@ computer _does not_ put you at any actual risk! This challenge does
 _neither_ install a backdoor or Trojan nor does it bring any other
 harmful code to your system!
 
-* The shop's end users are not the targets here. The developers of the
-shop are!
-* This is a research-heavy challenge which does not involve any actual
-hacking.
-* Solving
-xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file]
-before attempting this challenge will save you from a lot of
-frustration.
+include::partial$hints/supplyChainAttackChallenge.adoc[]
 
 == Forge an essentially unsigned JWT token
 
@@ -236,13 +194,7 @@ This challenge involves forging a valid JWT for a user that does not
 exist in the database but make the application believe it is still
 legit.
 
-* You should begin with retrieving a valid JWT from the application's
-`Authorization` request header.
-* A JWT is only given to users who have logged in. They have a limited
-validity, so better do not dawdle.
-* Try to convince the site to give you a _valid_ token with the required
-payload while downgrading to _no_ encryption at all.
-* Make sure your JWT is URL safe!
+include::partial$hints/jwtForgedChallenge.adoc[]
 
 == Inform the shop about a vulnerable library it is using
 
@@ -252,11 +204,4 @@ with the difference, that here not the __general use__ of the library is
 the issue. The application is just using __a version__ of a library that
 contains known vulnerabilities.
 
-* Use the _Contact Us_ form to submit a feedback mentioning the
-vulnerable library including its exact version.
-* Look for possible dependencies related to security in the
-`package.json.bak` you probably harvested earlier during the
-xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file]
-challenge.
-* Do some research on the internet for known security issues in the most
-suspicious application dependencies.
+include::partial$hints/knownVulnerableComponentChallenge.adoc[]

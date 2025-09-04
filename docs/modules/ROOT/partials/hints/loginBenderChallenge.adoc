@@ -1,0 +1,3 @@
+* The challenge description probably gave away what form you should attack.
+* You need to know (or smart-guess) Bender’s email address so you can launch a targeted attack.
+* In case you try some other approach than SQL Injection, you will notice that Bender’s password hash is not very useful.

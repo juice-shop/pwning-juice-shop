@@ -1,0 +1,3 @@
+* The challenge description probably gave away what form you should attack.
+* You need to know (or smart-guess) Jim’s email address so you can launch a targeted attack.
+* If you harvested Jim’s password hash, you can try to attack that instead of using SQL Injection.

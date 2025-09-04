@@ -1,0 +1,2 @@
+* Analyze and tamper with links in the application that deliver a file directly.
+* The file you are looking for is not protected in any way. Once you found it you can also access it.

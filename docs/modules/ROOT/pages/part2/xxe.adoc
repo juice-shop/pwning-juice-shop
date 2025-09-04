@@ -77,12 +77,7 @@ incredibly dangerous ill-configured XML parsers actually are._
 In this challenge you are tasked to disclose a local file from the
 server the Juice Shop backend is hosted on.
 
-* You already found the leverage point for this challenge if you solved
-xref:part2/security-misconfiguration.adoc#_use_a_deprecated_b2b_interface_that_was_not_properly_shut_down[Use a deprecated B2B interface that was not properly shut down].
-* This challenge sounds a lot harder than it actually is, which
-amplifies how bad the underlying vulnerability is.
-* Doing some research on typical XEE attack patterns basically gives
-away the solution for free.
+include::partial$hints/xxeFileDisclosureChallenge.adoc[]
 
 == Give the server something to chew on for quite a while
 
@@ -92,10 +87,4 @@ this challenge is about performing a stripped-down __denial-of-service__
 attack. But this one is going against an entirely different leverage
 point.
 
-* The leverage point for this is obviously the same as for the
-<<_retrieve_the_content_of_cwindowssystem_ini_or_etcpasswd_from_the_server,XXE Tier 1>>
-challenge above.
-* You can only solve this challenge by keeping the server busy for >2sec
-with your attack.
-* The effectiveness of attack payloads for this challenge might depend
-on the operating system the Juice Shop is running on.
+include::partial$hints/xxeDosChallenge.adoc[]

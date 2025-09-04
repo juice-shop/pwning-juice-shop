@@ -1,0 +1,3 @@
+* Try to guess what URL the endpoint might have.
+* The Juice Shop serves its metrics on the default path expected by Prometheus
+* Guessing the path is probably just as quick as taking the RTFM route via https://prometheus.io/docs/introduction/first_steps

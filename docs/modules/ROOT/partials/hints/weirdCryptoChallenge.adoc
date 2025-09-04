@@ -1,0 +1,2 @@
+* Report one of five possible answers via the "Customer Feedback" form.
+* Cryptographic functions only used in the "Apply some advanced cryptanalysis to find the real easter egg" challenge do not count as they are only a developer’s prank and not a serious security problem.

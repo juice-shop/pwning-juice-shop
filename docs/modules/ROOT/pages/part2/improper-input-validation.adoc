@@ -72,10 +72,7 @@ into a deployment unit of its own. Instead, the cheapest solution was
 chosen by simply leaving the admin features in the web shop itself and
 (allegedly) demanding a higher level of access to use them.
 
-* Register as an ordinary user to learn what API endpoints are involved
-in this use case
-* Think of the simplest possible implementations of a distinction
-between regular users and administrators
+include::partial$hints/registerAdminChallenge.adoc[]
 
 == Obtain a Deluxe Membership without paying for it
 
@@ -84,41 +81,29 @@ customers only. There sure seem to be a lot of ways for a potential
 power user to give their money to juice shop. Perhaps, one of these
 payment methods could have some unforseen loopholes
 
-* Go to the payment page for a deluxe membership and try paying through
-different methods
-* Try inspecting the requests that go out for each of these methods,
-using the browser's developer tools
-* Maybe playing around with the parameters in these requests could
-reveal something interesting
+include::partial$hints/freeDeluxeChallenge.adoc[]
 
 == Register a user with an empty email and password
 
-// TODO Add hints for "Empty User Registration" challenge
+include::partial$hints/emptyUserRegistration.adoc[]
 
 == Successfully redeem an expired campaign coupon code
 
 Apart from the monthly coupon codes found on Twitter the Juice Shop also
 offered some seasonal special campaign at least once.
 
-* Look for clues about the past campaign or holiday event somewhere in
-the application
-* Solving this challenge does not require actual time traveling
+include::partial$hints/manipulateClockChallenge.adoc[]
 
 == Mint the Honey Pot NFT by gathering BEEs from the bee haven
 
-// TODO Add hints for "Mint the Honey Pot" challenge
+include::partial$hints/nftMintChallenge.adoc[]
 
 == Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
 Who wouldn't want to see Bjoern's cat fighting fiercely with a furry
 green plush toy?
 
-* When you visit the _Photo Wall_ you will notice a broken image on one
-of the entries
-* You just have to (literally) inspect the problem to understand the
-basic issue
-* It can also help to try out the _Tweet_-button of the entry and
-observe what happens
+include::partial$hints/missingEncodingChallenge.adoc[]
 
 image::part2/broken_image-photo_wall.png[Broken image on photo wall]
 
@@ -127,9 +112,7 @@ image::part2/broken_image-photo_wall.png[Broken image on photo wall]
 It is probably every web shop's nightmare that customers might figure
 out away to _receive_ money instead of _paying_ for their purchase.
 
-* You literally need to make the shop owe you any amount of money
-* Investigate the shopping basket closely to understand how it prevents
-you from creating orders that would fulfil the challenge
+include::partial$hints/negativeOrderChallenge.adoc[]
 
 == Bypass a security control with a Poison Null Byte
 
@@ -144,19 +127,7 @@ certain byte, the string will terminate at that point, nulling the
 rest of the string, such as a file extension.footnote:3_4_2[http://hakipedia.com/index.php/Poison_Null_Byte]
 ____
 
-* Analyze and tamper with links in the application until you get to an
-unprotected directory listing.
-* Some files in there are not directly accessible because a security
-mechanism prevents access.
-* The _Poison Null Byte_ can trick the security mechanism into thinking
-that the file you want has a valid file type.
-* Depending on the files you try to retrieve you will probably solve
-xref:part2/sensitive-data-exposure.adoc#_access_a_developers_forgotten_backup_file[Access a developer's forgotten backup file],
-xref:part2/sensitive-data-exposure.adoc#_access_a_salesmans_forgotten_backup_file[Access a salesman's forgotten backup file],
-xref:part2/sensitive-data-exposure.adoc#_access_a_misplaced_siem_signature_file[Access a misplaced SIEM signature file.]
-or
-xref:part2/broken-access-control.adoc#_find_the_hidden_easter_egg[Find the hidden easter egg]
-along the way.
+include::partial$hints/nullByteChallenge.adoc[]
 
 == Follow the DRY principle while registering a user
 
@@ -169,12 +140,7 @@ authoritative representation within a system.
 ______
 ____
 
-* The obvious repetition in the _User Registration_ form is the _Repeat
-Password_ field
-* Try to register with either an empty or different value in _Repeat
-Password_
-* You can solve this challenge by cleverly interacting with the UI or
-bypassing it altogether
+include::partial$hints/passwordRepeatChallenge.adoc[]
 
 == Upload a file larger than 100 kB
 
@@ -186,26 +152,20 @@ confirmation document to the online complaint. To prevent abuse of this
 functionality, the application only allows file uploads of 100 kB or
 less.
 
-* First you should try to understand how the file upload is actually
-handled on the client and server side
-* With this understanding you need to find a "weak spot" in the right
-place and have to craft an exploit for it
+include::partial$hints/uploadSizeChallenge.adoc[]
 
 == Upload a file that has no .pdf or .zip extension
 
 In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
 
-* If you solved the
-<<_upload_a_file_larger_than_100_kb,Upload a file larger than 100 kB>>
-challenge, you should try to apply the same solution here
+include::partial$hints/uploadTypeChallenge.adoc[]
 
 == Give a devastating zero-star feedback to the store
 
 You might have realized that it is not possible to submit customer
 feedback on the _Contact Us_ screen until you entered a comment and
 selected a star rating from 1 to 5. This challenge is about tricking the
-application into accepting a feedback with 0 stars.
+application into accepting feedback with 0 stars.
 
-* Before you invest time bypassing the API, you might want to play
-around with the UI a bit
+include::partial$hints/zeroStarsChallenge.adoc[]

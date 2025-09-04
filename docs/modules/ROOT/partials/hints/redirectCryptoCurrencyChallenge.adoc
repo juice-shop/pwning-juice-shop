@@ -1,0 +1,3 @@
+* When removing references to those addresses from the code the developers have been a bit sloppy.
+* More particular, they have been sloppy in a way that even the Angular Compiler was not able to clean up after them automatically.
+* It is of course not sufficient to just visit any of the crypto currency links directly to solve the challenge.

@@ -1,0 +1,4 @@
+* Observe the flow of product review posting and editing and see if you can exploit it.
+* This challenge can be solved by using developers tool of your browser or with tools like postman.
+* Analyze the form used for review submission and try to find a leverage point.
+* This challenge is pretty similar to "Post some feedback in another user’s name" challenge.

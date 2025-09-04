@@ -1,0 +1,4 @@
+* You need to trick a security mechanism into thinking that the file you want has a valid file type.
+* Analyze and tamper with links in the application that deliver a file directly.
+* The file is not directly accessible because a security mechanism prevents access to it.
+* You need to trick the security mechanism into thinking that the file has a valid file type.

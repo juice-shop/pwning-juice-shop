@@ -1,0 +1,6 @@
+* This challenge is explicitly not about acquiring the RSA private key used for JWT signing.
+* The three generic hints from Forge an essentially unsigned JWT token also help with this challenge.
+* Instead of enforcing no encryption to be applied, try to apply a more sophisticated exploit against the JWT libraries used in the Juice Shop.
+* Getting your hands on the public RSA key the application employs for its JWTs is mandatory for this challenge.
+* Finding the corresponding private key should actually be impossible, but that obviously doesn’t make this challenge unsolvable.
+* Make sure your JWT is URL safe!

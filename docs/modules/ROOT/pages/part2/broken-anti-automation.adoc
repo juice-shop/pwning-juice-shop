@@ -62,17 +62,7 @@ correctly as close to 100 percent of the time as possible. Computers
 must fail as close to 100 percent of the time as possible.footnote:3_2_2[https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks]
 ____
 
-* You could prepare 10 browser tabs, solving every CAPTCHA and filling
-out the each feedback form. Then you'd need to very quickly switch
-through the tabs and submit the forms in under 20 seconds total.
-* Should the Juice Shop ever decide to change the challenge into
-_"Submit 100 or more customer feedbacks within 60 seconds"_ or worse,
-you'd probably have a hard time keeping up with any tab-switching
-approach.
-* Investigate closely how the CAPTCHA mechanism works and try to find
-either a bypass or some automated way of solving it dynamically.
-* Wrap this into a script (in whatever programming language you prefer)
-that repeats this 10 times.
+include::partial$hints/captchaBypassChallenge.adoc[]
 
 == Retrieve the language file that never made it into production
 
@@ -90,13 +80,7 @@ menu.
 
 image::part3/languages.png[Language selection dropdown]
 
-* First you should find out how the languages are technically changed in
-the user interface.
-* Guessing will most definitely not work in this challenge.
-* You should rather choose between the following two ways to beat this
-challenge:
- ** _Apply brute force_ (and don't give up to quickly) to find it.
- ** _Investigate online_ what languages are actually available.
+include::partial$hints/extraLanguageChallenge.adoc[]
 
 ____
 A brute force attack can manifest itself in many different ways, but
@@ -120,11 +104,7 @@ Juice Shop decided to give its customers the ability to give a "like" to
 their favorite reviews. Of course, each user should be able to do so
 only once for each review.
 
-* Every user is (almost) immediately associated with the review they
-"liked" to prevent abuse of that functionality
-* Did you really think clicking the "like" button three times in a row
-_really fast_ would be enough to solve a ⭐⭐⭐⭐⭐⭐ challenge?
-* The underlying flaw of this challenge is a Race Condition
+include::partial$hints/timingAttackChallenge.adoc[]
 
 ____
 A race condition or race hazard is the behavior of an electronics,
@@ -154,11 +134,4 @@ This password reset challenge is different from those from the
 xref:part2/broken-authentication.adoc#_broken_authentication[Broken Authentication] category as it is next
 to impossible to solve without using a brute force approach.
 
-* Finding out who Morty actually is, will help to reduce the solution
-space.
-* You can assume that Morty answered his security question truthfully
-but employed some obfuscation to make it more secure.
-* Morty's answer is less than 10 characters long and does not include
-any special characters.
-* Unfortunately, _Forgot your password?_ is protected by a rate limiting
-mechanism that prevents brute forcing. You need to beat this somehow.
+include::partial$hints/resetPasswordMortyChallenge.adoc[]

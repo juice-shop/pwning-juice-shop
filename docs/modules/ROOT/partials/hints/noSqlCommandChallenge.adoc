@@ -1,0 +1,4 @@
+* This challenge is essentially a stripped-down Denial of Service (DoS) attack.
+* As stated in the Architecture overview, OWASP Juice Shop uses a MongoDB derivate as its NoSQL database.
+* The categorization into the NoSQL Injection category totally gives away the expected attack vector for this challenge. Trying any others will not solve the challenge, even if they might yield the same result.
+* In particular, flooding the application with requests will not solve this challenge. That would probably just kill your server instance.

@@ -30,7 +30,7 @@ possible explanations:
 . There is a URL that leads to the Score Board but it is not
 hyperlinked to
 
-* Knowing it exists, you can simply _guess_ what URL the Score Board
-might have.
-* Alternatively, you can try to find a reference or clue within the
-parts of the application that are _not usually visible_ in the browser
+--
+* Try to find a reference or clue behind the scenes. Or simply guess what URL the Score Board might have.
+* Guessing the URL is quite easy if you consider the structure of other frontend paths in the application.
+

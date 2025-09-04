@@ -1,0 +1,4 @@
+* Take a close look on how the $where query operator works in MongoDB.
+* This challenge requires a classic Injection attack.
+* Find an API endpoint with the intent of delivering a single order to the user and work with that.
+* Reading up on how MongoDB queries work is really helpful here.

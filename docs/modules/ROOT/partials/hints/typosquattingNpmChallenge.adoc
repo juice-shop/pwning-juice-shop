@@ -1,0 +1,2 @@
+* Investigating the forgotten developer’s backup file might bring some insight.
+* "Malicious packages in npm" is a worthwhile read on Ivan Akulov’s blog.

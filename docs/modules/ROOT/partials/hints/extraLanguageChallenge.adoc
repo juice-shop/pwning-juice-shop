@@ -1,0 +1,4 @@
+* First you should find out how the languages are technically changed in the user interface.
+* Guessing will most definitely not work in this challenge.
+* Brute force is not the only option for this challenge, but a perfectly viable one.
+* Investigate online what languages are actually available.

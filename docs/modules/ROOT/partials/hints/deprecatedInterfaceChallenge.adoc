@@ -1,0 +1,4 @@
+* The developers who disabled the interface think they could go invisible by just closing their eyes.
+* The old B2B interface was replaced with a more modern version recently.
+* When deprecating the old interface, not all of its parts were cleanly removed from the code base.
+* Simply using the deprecated interface suffices to solve this challenge. No attack or exploit is necessary.

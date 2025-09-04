@@ -1,0 +1,4 @@
+* This challenge asks you to act like an ethical hacker.
+* Undoubtedly you want to read our security policy before conducting any research on our application.
+* As one of the good guys, would you just start attacking an application without consent of the owner?
+* You also might want to read the security policy or any bug bounty program that is in place.

@@ -1,0 +1,5 @@
+* The feature you need to exploit for this challenge is not directly advertised anywhere.
+* As the Juice Shop is written in pure Javascript, there is one data format that is most probably used for serialization.
+* You should try to make the server busy for all eternity.
+* The challenge will be solved if you manage to trigger the protection of the application against a very specific DoS attack vector.
+* Similar to the "Let the server sleep for some time" challenge (which accepted nothing but NoSQL Injection as a solution) this challenge will only accept proper RCE as a solution. It cannot be solved by simply hammering the server with requests. That would probably just kill your server instance.

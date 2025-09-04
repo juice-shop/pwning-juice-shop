@@ -1,0 +1,3 @@
+* The leverage point for this challenge is the deprecated B2B interface.
+* This challenge sounds a lot harder than it actually is, which amplifies how bad the underlying vulnerability is.
+* Doing some research on typical XEE attack patterns basically gives away the solution for free.

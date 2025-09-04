@@ -1,0 +1,3 @@
+* There are only some input fields in the Juice Shop forms that validate their input.
+* Even less of these fields are persisted in a way where their content is shown on another screen.
+* Bypassing client-side security can typically be done by either disabling it on the client (i.e. in the browser by manipulating the DOM tree) or by ignoring it completely and interacting with the backend instead.

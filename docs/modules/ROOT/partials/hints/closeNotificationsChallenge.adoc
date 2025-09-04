@@ -1,0 +1,3 @@
+* Either check the official documentation or inspect a notification UI element directly.
+* This challenge is most easily solvable immediately after a server restart.
+* Alternatively you can also inspect any "Challenge solved"-notification in your browser to understand its convenience feature.

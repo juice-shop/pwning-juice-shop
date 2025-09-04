@@ -133,14 +133,7 @@ ____
 To solve this challenge you need _to order_ a product that is not
 supposed to be available any more.
 
-* Find out how the application _hides_ deleted products from its
-customers.
-* Try to craft an attack string that makes deleted products visible
-again.
-* You need to get the deleted product into your shopping cart and
-trigger the _Checkout_.
-* Neither of the above can be achieved through the application frontend
-and it might even require (half-)Blind SQL Injection.
+include::partial$hints/christmasSpecialChallenge.adoc[]
 
 == Exfiltrate the entire DB schema definition via SQL Injection
 
@@ -149,33 +142,14 @@ possible about your database schema. This subsequently allows much more
 targeted, stealthy and devastating SQL Injections, like
 <<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>.
 
-* Find out which database system is in use and where it would usually
-store its schema definitions.
-* Craft a `UNION SELECT` attack string to join the relevant data from
-any such identified system table into the original result.
-* You might have to tackle some query syntax issues step-by-step,
-basically hopping from one error to the next
-* As with
-<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
-this cannot be achieved through the application frontend.
+include::partial$hints/dbSchemaChallenge.adoc[]
 
 == Log in with the (non-existing) accountant without ever registering that user
 
 In ths challenge you need to log in with a user that has
 accountant-level permissions, but does not really exist.
 
-* The user literally needs to be _ephemeral_ as in
-https://dictionary.cambridge.org/de/worterbuch/englisch/ephemeral["lasting for only a short time"].
-* Registering normally with the user's email address will then obviously
-not solve this challenge. The Juice Shop will not even let you
-register as `acc0unt4nt@juice-sh.op`, as this would make the challenge
-unsolvable for you.
-* Getting the user into the database some other way will also fail to
-solve this challenge. In case you somehow managed to do so, you need
-to restart the Juice Shop application in order to wipe the database
-and make the challenge solvable again.
-* The fact that this challenge is in the _Injection_ category should
-already give away the intended approach.
+include::partial$hints/ephemeralAccountantChallenge.adoc[]
 
 image::part2/nice_try-error.png[Nice try error when registering ephemeral accountant user]
 
@@ -185,41 +159,21 @@ What would a vulnerable web application be without an administrator user
 account whose (supposedly) privileged access rights a successful hacker
 can abuse?
 
-* The challenge description probably gave away what form you should
-attack.
-* If you happen to know the email address of the admin already, you can
-launch a targeted attack.
-* You might be lucky with a dedicated attack pattern even if you have no
-clue about the admin email address.
-* If you harvested the admin's password hash, you can of course try to
-attack that instead of using SQL Injection.
-* Alternatively you can solve this challenge as a _combo_ with the
-xref:part2/broken-authentication.adoc#_log_in_with_the_administrators_user_credentials_without_previously_changing_them_or_applying_sql_injection[Log in with the administrator's user credentials without previously changing them or applying SQL Injection]
-challenge.
+include::partial$hints/loginAdminChallenge.adoc[]
 
 == Log in with Bender's user account
 
 Bender is a regular customer, but mostly hangs out in the Juice Shop to
 troll it for its lack of alcoholic beverages.
 
-* The challenge description probably gave away what form you should
-attack.
-* You need to know (or smart-guess) Bender's email address so you can
-launch a targeted attack.
-* In case you try some other approach than SQL Injection, you will
-notice that Bender's password hash is not very useful.
+include::partial$hints/loginBenderChallenge.adoc[]
 
 == Log in with Jim's user account
 
 Jim is a regular customer. He prefers juice from fruits that no man has
 ever tasted before.
 
-* The challenge description probably gave away what form you should
-attack.
-* You need to know (or smart-guess) Jim's email address so you can
-launch a targeted attack.
-* If you harvested Jim's password hash, you can try to attack that
-instead of using SQL Injection.
+include::partial$hints/loginJimChallenge.adoc[]
 
 == Let the server sleep for some time
 
@@ -272,26 +226,14 @@ you from accessing email, websites, online accounts (banking, etc.),
 or other services that rely on the affected computer.footnote:3_5_3[https://www.us-cert.gov/ncas/tips/ST04-015]
 ____
 
-* As stated in the
-xref:introduction/architecture.adoc#_architecture_overview[Architecture overview], OWASP Juice
-Shop uses a MongoDB derivate as its NoSQL database.
-* The categorization into the _NoSQL Injection_ category totally gives
-away the expected attack vector for this challenge. Trying any others
-will not solve the challenge, even if they might yield the same
-result.
-* In particular, flooding the application with requests will *not*
-solve this challenge. _That_ would probably just _kill_ your server
-instance.
+include::partial$hints/noSqlCommandChallenge.adoc[]
 
 == All your orders are belong to us
 
 This challenge is about retrieving all user's order data from the NoSQL
 DB in a single data extraction using an Injection attack.
 
-* This challenge requires a classic Injection attack.
-* Find an API endpoint with the intent of delivering a single order to
-the user and work with that.
-* Reading up on how MongoDB queries work is really helpful here.
+include::partial$hints/noSqlOrdersChallenge.adoc[]
 
 == Update multiple product reviews at the same time
 
@@ -299,12 +241,7 @@ The UI and API only offer ways to update individual product reviews.
 This challenge is about manipulating an update so that it will affect
 multiple reviews are the same time.
 
-* This challenge requires another classic Injection attack.
-* Take a close look on how the equivalent of UPDATE-statements in
-MongoDB work.
-* It is also worth looking into how
-https://docs.mongodb.com/manual/reference/operator/query/[Query Operators]
-work in MongoDB.
+include::partial$hints/noSqlReviewsChallenge.adoc[]
 
 == Infect the server with juicy malware by abusing arbitrary command execution
 
@@ -316,14 +253,7 @@ risk of compromise of the underlying system._
 In this challenge you must exploit a Server-side Template Injection
 (SSTi) to "infect" the server with a specially crafted "malware".
 
-* You can find the juicy malware via a _very obvious_ Google search or
-by stumbling into a very ill-placed quarantine folder with the
-necessary URLs in it.
-* Making the server download and execute the malware is key to solving
-this challenge.
-* For this challenge you do not have to reverse engineer the malware in
-any way. That will be required later to solve
-xref:part2/broken-access-control.adoc#_request_a_hidden_resource_on_server_through_server[Request a hidden resource on server through server].
+include::partial$hints/sstiChallenge.adoc[]
 
 ____
 Server-side template injection occurs when user input is unsafely
@@ -360,14 +290,4 @@ your application is vulnerable to a certain type of SQL Injection
 attacks, hackers can have the same effect while comfortably sitting in a
 café with free WiFi.
 
-* Try to find an endpoint where you can influence data being retrieved
-from the server.
-* Craft a `UNION SELECT` attack string to join data from another table
-into the original result.
-* You might have to tackle some query syntax issues step-by-step,
-basically hopping from one error to the next
-* As with
-<<_order_the_christmas_special_offer_of_2014,Order the Christmas special offer of 2014>>
-and
-<<_exfiltrate_the_entire_db_schema_definition_via_sql_injection,Exfiltrate the entire DB schema definition via SQL Injection>>
-this cannot be achieved through the application frontend.
+include::partial$hints/unionSqlInjectionChallenge.adoc[]

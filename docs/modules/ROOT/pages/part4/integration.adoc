@@ -25,8 +25,6 @@ consumable JSON format:
          "category":"XSS",
          "description":"Perform a <i>persisted</i> XSS attack with <code>&lt;iframe src=\"javascript:alert(`xss`)\"&gt;</code> without using the frontend application at all. <em>(This challenge is <strong>not available</strong> on Heroku!)</em>",
          "difficulty":3,
-         "hint":"You need to work with the server-side API directly. Try different HTTP verbs on different entities exposed through the API.",
-         "hintUrl":"https://pwning.owasp-juice.shop/part2/xss.html#perform-a-persisted-xss-attack-without-using-the-frontend-application-at-all",
          "solved":false,
          "disabledEnv":"Heroku",
          "createdAt":"2020-03-23T12:00:34.258Z",
@@ -39,8 +37,6 @@ consumable JSON format:
          "category":"Sensitive Data Exposure",
          "description":"Gain access to any access log file of the server.",
          "difficulty":4,
-         "hint":"Who would want a server access log to be accessible through a web application?",
-         "hintUrl":"https://pwning.owasp-juice.shop/part2/sensitive-data-exposure.html#gain-access-to-any-access-log-file-of-the-server",
          "solved":false,
          "disabledEnv":null,
          "createdAt":"2020-03-23T12:00:34.259Z",
@@ -90,10 +86,16 @@ first place.
 -
   name: 'Some Name'
   category: 'Category of the challenge'
+  tags:
+    - First tag
+    - Second tag
   description: 'Here the actual task for the attacker is described.'
   difficulty: 1 # a number between 1 and 6
-  hint: 'A text hint to display on the Score Board when hovering over the challenge'
-  hintUrl: 'https://pwning.owasp-juice.shop/part2/<category>.html#<shortened description>'
+  hints:
+    - 'The first hint that can be unlocked via the Score Board'
+    - 'The second hint to unlock. Challenges should have at least 2-3 hints.'
+    - 'The final hint to unlock. More than 6 hints are discouraged.'
+  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Optional_Url_to_a_relevant_Owasp_Cheat_Sheet_or_similar_document.html'
   key: someNameChallenge
   disabledEnv: # (optional) to disable challenges dangerous or incompatible in certain environments
     - Docker
@@ -115,25 +117,10 @@ for a snapshot of the next version to be released (`develop` branch)
 |===
 | Description | Link composition | Condition | Examples
 
-| Link to a specific challenge on the legacy Score Board
-| `/#/score-board-legacy?challenge=<name>`
-| Will scroll to the challenge, but only if it is visible as per the current filter settings.
-| http://localhost:3000/pass:[#]/score-board-legacy?challenge=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board-legacy?challenge=Score%20Board
-
 | Link to a specific challenge on the Score Board
 | `+/#/score-board?searchQuery=<name>+` (or `+/#/score-board?challenge=<name>+` as an alias)
 | Will filter the Score Board resulting in just the one matching challenge.
 | http://localhost:3000/pass:[#]/score-board?searchQuery=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board?searchQuery=Score%20Board (or as their aliases http://localhost:3000/pass:[#]/score-board?challenge=DOM%20XSS and http://preview.owasp-juice.shop/pass:[#]/score-board?challenge=Score%20Board)
-
-| Link to official hints for a specific challenge
-| `<hintUrl>`
-|
-| https://pwning.owasp-juice.shop/companion-guide/latest/part2/score-board.html#_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/companion-guide/latest/part2/xss.html#_perform_a_dom_xss_attack
-
-| Link to official step-by-step solution for a specific challenge
-| `+https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html#<hash part of hintUrl>+`
-|
-| https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.htmlpass:[#]_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.htmlpass:[#]_perform_a_dom_xss_attack
 
 | Direct link to a xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
 | `/#/hacking-instructor?challenge=<name>`
@@ -175,6 +162,8 @@ Juice Shop will send a `POST` request to the configured
 ----
 { "solution":
   { "challenge": "<'key' of the solved challenge from ./data/static/challenges.yml>",
+    "hintsAvailable": "<number of available hints for the solved challenge>",
+    "hintsUnlocked": "<number of hints the user had unlocked before solving the challenge>",
     "cheatScore": "<probability of 0..1 that this solution has been cheated>",
     "totalCheatScore": "<average probability of 0..1 that solutions up until now have been cheated>",
     "issuedOn": "<yyyy-MM-ddThh:mm:ssZ>"
@@ -197,6 +186,8 @@ Juice Shop will send a `POST` request to the configured
 {
     "solution": {
         "challenge": "key",
+        "hintsAvailable": 5,
+        "hintsUnlocked": 2,
         "cheatScore": 0,
         "totalCheatScore": 0,
         "issuedOn": "2020-12-15T18:24:33.027Z"
@@ -207,7 +198,7 @@ Juice Shop will send a `POST` request to the configured
         "os": "Linux (5.4.0-1031-azure)",
         "appName": "OWASP Juice Shop",
         "config": "default",
-        "version": "12.3.0-SNAPSHOT"
+        "version": "19.0.0-SNAPSHOT"
     }
 }
 ----

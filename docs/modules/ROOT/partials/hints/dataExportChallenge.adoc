@@ -1,0 +1,4 @@
+* Trick the regular Data Export to give you more than actually belongs to you.
+* You should not try to steal data from a "vanilla" user who never even ordered something at the shop.
+* As everything about this data export functionality happens on the server-side, it won’t be possible to just tamper with some HTTP requests to solve this challenge.
+* Inspecting various server responses which contain user-specific data might give you a clue about the mistake the developers made.

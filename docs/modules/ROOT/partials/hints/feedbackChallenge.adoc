@@ -1,0 +1,2 @@
+* Once you found admin section of the application, this challenge is almost trivial.
+* Nothing happens when you try to delete feedback entries? Check the JavaScript console for errors!

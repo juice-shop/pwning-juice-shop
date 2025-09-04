@@ -1,0 +1,5 @@
+* You should read up on vulnerabilities in popular NodeJs template engines.
+* You should read up on Local File Read (LFR) vulnerabilities in popular NodeJS template engines.
+* Look for an easily forgettable endpoint in Juice Shop to test out the LFR attack.
+* 500 Internal Server Error is always an interesting status code.
+* Fuzzing can also help with this challenge.
