@@ -200,42 +200,21 @@ Shop server where the tool will retrieve the existing challenges from
 via the `/api/Challenges` API. Defaults to
 `+https://juice-shop.herokuapp.com+` which always hosts the latest
 official released version of OWASP Juice Shop.
-. **Secret key or URL to ctf.key file?** Either a secret key to use for the CTF flag codes _or_ a URL to a file containing such a key. Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See <<_overriding_the_ctf_key,Overriding the `ctf.key`>> for more information.
+. **Secret key or URL to ctf.key file?** Either a single secret key to use for the CTF flag codes _or_ a URL to a file containing such a key _or_ a comma-separated list of keys (only for CTFd). Defaults to `https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key` which is the key file provided with the latest official OWASP Juice Shop release. See <<_overriding_the_ctf_key,Overriding the `ctf.key`>> for more information.
 . *URL to country-mapping.yml file?* URL of a mapping configuration
 of challenges to countries, which is only asked when `FBCTF` was
 selected. Defaults to
 `+https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml+`
 . *Insert a text hint along with each challenge?* Offers a selectable
 choice between
- ** `No text hints` will not add any hint texts to the challenges. This
+ ** `No hints` will not add any hints to the challenges. This
 is the default choice.
- ** `Free text hints` will add the `Challenge.hint` property from the
-Juice Shop database as hint to the corresponding challenge on the
-CTF score server. Viewing this hint is free.
- ** `Paid text hints` adds a hint per challenge like described above.
-Viewing this hint costs the team 10% of that challenge's score
-value.
-. *Insert a hint URL along with each challenge?* Offers a selectable
-choice between
- ** `No hint URLs` will not add any hint URLs to the challenges. This
-is the default choice.
- ** `Free hint URLs` will add the `Challenge.hintUrl` property from the
-Juice Shop database as a hint to the corresponding challenge on the
-CTF score server. Viewing this hint is free.
- ** `Paid hint URLs` adds a hint per challenge like described above.
-Viewing this hint costs the team 20% of that challenge's score
-value.
-. *Insert a code snippet as hint for each challenge?* Offers a
-selectable choice between
- ** `No hint snippets` will not add any code snippets as hints to the
-challenges. This is the default choice.
- ** `Free hint snippets` will add the response from REST endpoint
-`/snippets/<challengeKey>` from the Juice Shop server as a hint to
-the corresponding challenge on the CTF score server. Viewing this
-hint is free.
- ** `Paid hint snippets` adds a hint per challenge like described
-above. Viewing this hint costs the team 30% of that challenge's
-score value.
+ ** `Free hints` will add the `Challenge.hint[]` items from the
+Juice Shop database as hints to the corresponding challenge on the
+CTF score server. Viewing these hints is free.
+ ** `Paid hints` adds the hints per challenge like described above.
+Viewing each of these hints costs the team 10% of that challenge's score
+value on CTFd and RTB. On FBCTF only a single hint per challenge is supported, so the hints are merged into one and the costs added up.
 
 The category of each challenge is identical to its
 xref:part1/categories.adoc#_vulnerability_categories[category in the Juice Shop] database. The score value
@@ -243,31 +222,31 @@ and optional costs for hints of each challenge are calculated by the
 `juice-shop-ctf-cli` program as follows:
 
 |===
-| Difficulty | Score value | Paid hint costs (Text / URL / Snippet)
+| Difficulty | Score value | Paid costs (per hint)
 
 | ⭐
 | 100 points
-| (10 / 20 / 30 points)
+| 10
 
 | ⭐⭐
 | 250 points
-| (25 / 50 / 75 points)
+| 25
 
 | ⭐⭐⭐
 | 450 points
-| (45 / 90 / 135 points)
+| 45
 
 | ⭐⭐⭐⭐
 | 700 points
-| (70 / 140 / 210 points)
+| 70
 
 | ⭐⭐⭐⭐⭐
 | 1000 points
-| (100 / 200 / 300 points)
+| 100
 
 | ⭐⭐⭐⭐⭐⭐
 | 1350 points
-| (135 / 260 / 395 points)
+| 135
 |===
 
 The generated output of the tool will finally be written into in the
@@ -294,11 +273,9 @@ format:
 ----
 ctfFramework: CTFd | FBCTF | RootTheBox
 juiceShopUrl: https://juice-shop.herokuapp.com
-ctfKey: https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key # can also be actual key instead URL
+ctfKey: https://raw.githubusercontent.com/juice-shop/juice-shop/master/ctf.key # can also be actual key instead URL or comma-separated list of keys (only for CTFd)
 countryMapping: https://raw.githubusercontent.com/juice-shop/juice-shop/master/config/fbctf.yml # ignored for CTFd and RootTheBox
-insertHints: none | free | paid # "paid" handled as "free" for CTFd
-insertHintUrls: none | free | paid # optional for FBCTF; "paid" handled as "free" for CTFd
-insertHintSnippets: none | free | paid # optional for FBCTF; "paid" handled as "free" for CTFd
+insertHints: none | free | paid
 ----
 
 You can then pass this YAML file into the CLI the generator with the

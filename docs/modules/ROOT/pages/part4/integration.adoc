@@ -86,13 +86,16 @@ first place.
 -
   name: 'Some Name'
   category: 'Category of the challenge'
+  tags:
+    - First tag
+    - Second tag
   description: 'Here the actual task for the attacker is described.'
   difficulty: 1 # a number between 1 and 6
   hints:
     - 'The first hint that can be unlocked via the Score Board'
     - 'The second hint to unlock. Challenges should have at least 2-3 hints.'
     - 'The final hint to unlock. More than 6 hints are discouraged.'
-  hintUrl: 'https://pwning.owasp-juice.shop/part2/<category>.html#<shortened description>'
+  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Optional_Url_to_a_relevant_Owasp_Cheat_Sheet_or_similar_document.html'
   key: someNameChallenge
   disabledEnv: # (optional) to disable challenges dangerous or incompatible in certain environments
     - Docker
@@ -114,20 +117,10 @@ for a snapshot of the next version to be released (`develop` branch)
 |===
 | Description | Link composition | Condition | Examples
 
-| Link to a specific challenge on the legacy Score Board
-| `/#/score-board-legacy?challenge=<name>`
-| Will scroll to the challenge, but only if it is visible as per the current filter settings.
-| http://localhost:3000/pass:[#]/score-board-legacy?challenge=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board-legacy?challenge=Score%20Board
-
 | Link to a specific challenge on the Score Board
 | `+/#/score-board?searchQuery=<name>+` (or `+/#/score-board?challenge=<name>+` as an alias)
 | Will filter the Score Board resulting in just the one matching challenge.
 | http://localhost:3000/pass:[#]/score-board?searchQuery=DOM%20XSS or http://preview.owasp-juice.shop/pass:[#]/score-board?searchQuery=Score%20Board (or as their aliases http://localhost:3000/pass:[#]/score-board?challenge=DOM%20XSS and http://preview.owasp-juice.shop/pass:[#]/score-board?challenge=Score%20Board)
-
-| Link to official step-by-step solution for a specific challenge
-| `+https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.html#<hash part of hintUrl>+`
-|
-| https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.htmlpass:[#]_find_the_carefully_hidden_score_board_page or https://pwning.owasp-juice.shop/companion-guide/latest/appendix/solutions.htmlpass:[#]_perform_a_dom_xss_attack
 
 | Direct link to a xref:part1/challenges.adoc#_hacking_instructor[Hacking Instructor] tutorial for a specific challenge
 | `/#/hacking-instructor?challenge=<name>`
