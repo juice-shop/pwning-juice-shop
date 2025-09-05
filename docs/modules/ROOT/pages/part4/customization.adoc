@@ -431,7 +431,7 @@ Juice Shop.
 | `true`
 
 | `showHints`
-| Shows or hides hints for each challenge on hovering over/clicking its _"unsolved"_ badge on the score board.
+| Shows or hides hints for each challenge on hovering over/clicking a corresponding badge on the score board.
 | `true`
 
 | `showMitigations`

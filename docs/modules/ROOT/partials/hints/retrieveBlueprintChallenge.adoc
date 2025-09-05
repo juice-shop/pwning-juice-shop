@@ -1,2 +1,3 @@
-* The product you might want to give a closer look is the OWASP Juice Shop Logo (3D-printed).
+* Check for products which seem like a natural fit for being based on a blueprint.
+* You might want to pay attention to the images of the identified product candidates.
 * For your inconvenience the blueprint was not misplaced into the same place like so many others forgotten files covered in this chapter.

@@ -34,10 +34,16 @@ _solved_. The current overall progress is represented in percent in the _Hacking
 on top left, and in absolute numbers grouped by difficulty in the top right panel of the score board. Especially in group hacking sessions this
 allows for a bit of competition between the participants. You can use the _Status_ filter to change if only solved or unsolved or all challenges should be displayed. Especially after solving several challenges, hiding those helps to reduce the level of distraction on the Score Board.
 
+image::part1/multi-hints1.png[No hint unlocked yet]
+
 If not deliberately turned off (see xref:part4/customization.adoc#customization[Customization])
-you can hover over the _Hint_ badge of each challenge to see a hint how to approach it. For some more assistance, you can also
-click on it to be redirected to the corresponding hints section in
-xref:part2/README.adoc#_challenge_hunting[Part 2] of this book.
+you can click on _Hints_ button of each challenge to unlock a hint how to approach it.
+
+image::part1/multi-hints2.png[First of multiple hints unlocked]
+
+Most challenges offer multiple hints that can be unlocked by further clicks on the button. To view the unlocked hints, just hover over the button.
+
+image::part1/multi-hints3.png[Final hint unlocked]
 
 === Challenge Filters
 

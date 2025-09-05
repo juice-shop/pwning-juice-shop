@@ -2485,7 +2485,7 @@ that the bot uses to remember usernames. The command
 *this.factory.run(`users.addUser("$\{token}", "$\{name}")`)* is
 equivalent to an eval statement inside the VM context. This can be
 exploited by including `"` and `)` in one's username
-. If one sets their username to *admin"); process=null;
+. If one sets their username to *admin"); processQuery=null;
 users.addUser("1337", "test*, the final statement that gets executed
 would be
 +
