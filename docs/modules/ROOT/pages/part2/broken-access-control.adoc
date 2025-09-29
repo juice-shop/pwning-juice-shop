@@ -98,10 +98,10 @@ lower half.
 
 include::partial$hints/csrfChallenge.adoc[]
 
-_Please also be aware that the challenge is designed to be solved only with
+NOTE: Please also be aware that the challenge is designed to be solved only with
 the specified online HTML editor. This means that Juice Shop will not
 recognize the challenge as solved when you are using another origin,
-such as for example JSFiddle or CodePen._
+such as, for example, JSFiddle or CodePen.
 
 == ⚠️ Important information about browser compatibility
 
@@ -131,11 +131,11 @@ ____
 
 include::partial$hints/easterEggLevelOneChallenge.adoc[]
 
-_When you open the easter egg file, you might be a little disappointed,
+NOTE: When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found *the real* easter
 egg! Of course finding *that* is
 xref:part2/cryptographic-issues.adoc#_apply_some_advanced_cryptanalysis_to_find_the_real_easter_egg[a follow-up challenge]
-to this one._
+to this one.
 
 == Get rid of all 5-star customer feedback
 
