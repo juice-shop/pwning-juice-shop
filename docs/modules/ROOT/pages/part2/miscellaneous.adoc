@@ -43,14 +43,14 @@ This challenge is about nagging the support chatbot to hand out a coupon
 code that can subsequently be used to get a discount during the checkout
 process.
 
-include::ROOT:partial$hints/bullyChatbotChallenge.adoc[]
+include::../../partials/hints/bullyChatbotChallenge.adoc[]
 
 == Close multiple "Challenge solved"-notifications in one go
 
 This "challenge" is nothing more than an opportunity to learn about a convenience feature that allows users to close
 multiple "Challenge solved"-notifications at once.
 
-include::ROOT:partial$hints/closeNotificationsChallenge.adoc[]
+include::../../partials/hints/closeNotificationsChallenge.adoc[]
 
 == Read our privacy policy
 
@@ -83,7 +83,7 @@ operations but also to private enterprises and commercial
 transactions.footnote:3_7_1[https://en.wikipedia.org/wiki/Privacy_policy]
 ____
 
-include::ROOT:partial$hints/privacyPolicyChallenge.adoc[]
+include::../../partials/hints/privacyPolicyChallenge.adoc[]
 
 == Find the carefully hidden 'Score Board' page
 
@@ -93,7 +93,7 @@ xref:part2/README.adoc#_challenge_hunting[Part II - Challenge hunting].
 
 == The Juice Shop is susceptible to a known vulnerability in a library for which an advisory has already been issued
 
-include::ROOT:partial$hints/csafChallenge.adoc[]
+include::../../partials/hints/csafChallenge.adoc[]
 
 == Behave like any "white hat" should before getting into the action
 
@@ -108,8 +108,8 @@ where heroic and antagonistic cowboys might traditionally wear a white
 and a black hat respectively.footnote:3_7_2[https://en.wikipedia.org/wiki/White_hat_(computer_security)]
 ____
 
-include::ROOT:partial$hints/securityPolicyChallenge.adoc[]
+include::../../partials/hints/securityPolicyChallenge.adoc[]
 
 == Withdraw more ETH from the new wallet than you deposited
 
-include::ROOT:partial$hints/web3WalletChallenge.adoc[]
+include::../../partials/hints/web3WalletChallenge.adoc[]

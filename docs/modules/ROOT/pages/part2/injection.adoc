@@ -133,7 +133,7 @@ ____
 To solve this challenge you need _to order_ a product that is not
 supposed to be available any more.
 
-include::ROOT:partial$hints/christmasSpecialChallenge.adoc[]
+include::../../partials/hints/christmasSpecialChallenge.adoc[]
 
 == Exfiltrate the entire DB schema definition via SQL Injection
 
@@ -142,14 +142,14 @@ possible about your database schema. This subsequently allows much more
 targeted, stealthy and devastating SQL Injections, like
 <<_retrieve_a_list_of_all_user_credentials_via_sql_injection,Retrieve a list of all user credentials via SQL Injection>>.
 
-include::ROOT:partial$hints/dbSchemaChallenge.adoc[]
+include::../../partials/hints/dbSchemaChallenge.adoc[]
 
 == Log in with the (non-existing) accountant without ever registering that user
 
 In ths challenge you need to log in with a user that has
 accountant-level permissions, but does not really exist.
 
-include::ROOT:partial$hints/ephemeralAccountantChallenge.adoc[]
+include::../../partials/hints/ephemeralAccountantChallenge.adoc[]
 
 image::part2/nice_try-error.png[Nice try error when registering ephemeral accountant user]
 
@@ -159,21 +159,21 @@ What would a vulnerable web application be without an administrator user
 account whose (supposedly) privileged access rights a successful hacker
 can abuse?
 
-include::ROOT:partial$hints/loginAdminChallenge.adoc[]
+include::../../partials/hints/loginAdminChallenge.adoc[]
 
 == Log in with Bender's user account
 
 Bender is a regular customer, but mostly hangs out in the Juice Shop to
 troll it for its lack of alcoholic beverages.
 
-include::ROOT:partial$hints/loginBenderChallenge.adoc[]
+include::../../partials/hints/loginBenderChallenge.adoc[]
 
 == Log in with Jim's user account
 
 Jim is a regular customer. He prefers juice from fruits that no man has
 ever tasted before.
 
-include::ROOT:partial$hints/loginJimChallenge.adoc[]
+include::../../partials/hints/loginJimChallenge.adoc[]
 
 == Let the server sleep for some time
 
@@ -226,14 +226,14 @@ you from accessing email, websites, online accounts (banking, etc.),
 or other services that rely on the affected computer.footnote:3_5_3[https://www.us-cert.gov/ncas/tips/ST04-015]
 ____
 
-include::ROOT:partial$hints/noSqlCommandChallenge.adoc[]
+include::../../partials/hints/noSqlCommandChallenge.adoc[]
 
 == All your orders are belong to us
 
 This challenge is about retrieving all user's order data from the NoSQL
 DB in a single data extraction using an Injection attack.
 
-include::ROOT:partial$hints/noSqlOrdersChallenge.adoc[]
+include::../../partials/hints/noSqlOrdersChallenge.adoc[]
 
 == Update multiple product reviews at the same time
 
@@ -241,7 +241,7 @@ The UI and API only offer ways to update individual product reviews.
 This challenge is about manipulating an update so that it will affect
 multiple reviews are the same time.
 
-include::ROOT:partial$hints/noSqlReviewsChallenge.adoc[]
+include::../../partials/hints/noSqlReviewsChallenge.adoc[]
 
 == Infect the server with juicy malware by abusing arbitrary command execution
 
@@ -253,7 +253,7 @@ risk of compromise of the underlying system._
 In this challenge you must exploit a Server-side Template Injection
 (SSTi) to "infect" the server with a specially crafted "malware".
 
-include::ROOT:partial$hints/sstiChallenge.adoc[]
+include::../../partials/hints/sstiChallenge.adoc[]
 
 ____
 Server-side template injection occurs when user input is unsafely
@@ -290,4 +290,4 @@ your application is vulnerable to a certain type of SQL Injection
 attacks, hackers can have the same effect while comfortably sitting in a
 café with free WiFi.
 
-include::ROOT:partial$hints/unionSqlInjectionChallenge.adoc[]
+include::../../partials/hints/unionSqlInjectionChallenge.adoc[]

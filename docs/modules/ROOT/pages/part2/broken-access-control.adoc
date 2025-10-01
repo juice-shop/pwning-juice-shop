@@ -84,7 +84,7 @@ xref:part2/injection.adoc#_log_in_with_the_administrators_user_account[logged in
 you might have noticed that not even for him there is a corresponding
 option available in the main menu.
 
-include::ROOT:partial$hints/adminSectionChallenge.adoc[]
+include::../../partials/hints/adminSectionChallenge.adoc[]
 
 == Change the name of a user by performing Cross-Site Request Forgery from another origin
 
@@ -96,7 +96,7 @@ than the Juice Shop. You can enter your HTML and Script code in the
 upper half of the page, while the result is instantly displayed in the
 lower half.
 
-include::ROOT:partial$hints/csrfChallenge.adoc[]
+include::../../partials/hints/csrfChallenge.adoc[]
 
 _Please also be aware that the challenge is designed to be solved only with
 the specified online HTML editor. This means that Juice Shop will not
@@ -129,7 +129,7 @@ or DVD menu screen. The name is used to evoke the idea of a
 traditional Easter egg hunt.footnote:3_1_2[https://en.wikipedia.org/wiki/Easter_egg_(media)]
 ____
 
-include::ROOT:partial$hints/easterEggLevelOneChallenge.adoc[]
+include::../../partials/hints/easterEggLevelOneChallenge.adoc[]
 
 _When you open the easter egg file, you might be a little disappointed,
 as the developers taunt you about not having found *the real* easter
@@ -143,7 +143,7 @@ If you successfully solved above
 <<_access_the_administration_section_of_the_store,admin section challenge>>
 deleting the 5-star feedback is very easy.
 
-include::ROOT:partial$hints/feedbackChallenge.adoc[]
+include::../../partials/hints/feedbackChallenge.adoc[]
 
 == Post some feedback in another user's name
 
@@ -153,7 +153,7 @@ associated with the current user. When not logged in, the feedback will
 be posted anonymously. This challenge is about vilifying another user by
 posting a (most likely negative) feedback in his or her name!
 
-include::ROOT:partial$hints/forgedFeedbackChallenge.adoc[]
+include::../../partials/hints/forgedFeedbackChallenge.adoc[]
 
 == Post a product review as another user or edit any user's existing review
 
@@ -162,7 +162,7 @@ user has to be logged in before they can post any review for any of the
 products. This challenge is about vilifying another user by posting a
 (most likely bad) review in his or her name!
 
-include::ROOT:partial$hints/forgedReviewChallenge.adoc[]
+include::../../partials/hints/forgedReviewChallenge.adoc[]
 
 == Put an additional product into another user's shopping basket
 
@@ -171,7 +171,7 @@ was only about spying out other customers. For this challenge you need
 to get your hands dirty by putting a product into someone else's basket
 that cannot be already in there!
 
-include::ROOT:partial$hints/basketManipulateChallenge.adoc[]
+include::../../partials/hints/basketManipulateChallenge.adoc[]
 
 == Change the href of the link within the O-Saft product description
 
@@ -181,7 +181,7 @@ you are supposed to change that link so that it will send you to
 http://kimminich.de instead. It is important to exactly follow the
 challenge instruction to make it light up green on the score board:
 
-include::ROOT:partial$hints/changeProductChallenge.adoc[]
+include::../../partials/hints/changeProductChallenge.adoc[]
 
 == Request a hidden resource on server through server
 
@@ -189,7 +189,7 @@ This Server-side Request Forgery challenge will come back to the malware
 you used in
 xref:part2/injection.adoc#_infect_the_server_with_juicy_malware_by_abusing_arbitrary_command_execution[Infect the server with juicy malware by abusing arbitrary command execution].
 
-include::ROOT:partial$hints/ssrfChallenge.adoc[]
+include::../../partials/hints/ssrfChallenge.adoc[]
 
 ____
 In a Server-Side Request Forgery (SSRF) attack, the attacker can abuse
@@ -211,8 +211,8 @@ could also play a prank on the victim by manipulating the items or their
 quantity, hoping this will go unnoticed during checkout. This could lead
 to some arguments between the victim and the vendor.
 
-include::ROOT:partial$hints/basketAccessChallenge.adoc[]
+include::../../partials/hints/basketAccessChallenge.adoc[]
 
 == Find an accidentally deployed code sandbox
 
-include::ROOT:partial$hints/web3SandboxChallenge.adoc[]
+include::../../partials/hints/web3SandboxChallenge.adoc[]
