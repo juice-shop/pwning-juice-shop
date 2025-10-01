@@ -48,7 +48,7 @@ http://localhost:3000/ftp
 +
 image::appendix/ftp_directory.png[FTP directory browser]
 
-. Open http://localhost:3000/ftp/acquisitions.adoc to solve the
+. Open http://localhost:3000/ftp/acquisitions.md to solve the
 challenge.
 
 === Provoke an error that is neither very gracefully nor consistently handled
