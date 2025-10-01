@@ -72,7 +72,7 @@ into a deployment unit of its own. Instead, the cheapest solution was
 chosen by simply leaving the admin features in the web shop itself and
 (allegedly) demanding a higher level of access to use them.
 
-include::partial$hints/registerAdminChallenge.adoc[]
+include::ROOT:partial$hints/registerAdminChallenge.adoc[]
 
 == Obtain a Deluxe Membership without paying for it
 
@@ -81,29 +81,29 @@ customers only. There sure seem to be a lot of ways for a potential
 power user to give their money to juice shop. Perhaps, one of these
 payment methods could have some unforseen loopholes
 
-include::partial$hints/freeDeluxeChallenge.adoc[]
+include::ROOT:partial$hints/freeDeluxeChallenge.adoc[]
 
 == Register a user with an empty email and password
 
-include::partial$hints/emptyUserRegistration.adoc[]
+include::ROOT:partial$hints/emptyUserRegistration.adoc[]
 
 == Successfully redeem an expired campaign coupon code
 
 Apart from the monthly coupon codes found on Twitter the Juice Shop also
 offered some seasonal special campaign at least once.
 
-include::partial$hints/manipulateClockChallenge.adoc[]
+include::ROOT:partial$hints/manipulateClockChallenge.adoc[]
 
 == Mint the Honey Pot NFT by gathering BEEs from the bee haven
 
-include::partial$hints/nftMintChallenge.adoc[]
+include::ROOT:partial$hints/nftMintChallenge.adoc[]
 
 == Retrieve the photo of Bjoern's cat in "melee combat-mode"
 
 Who wouldn't want to see Bjoern's cat fighting fiercely with a furry
 green plush toy?
 
-include::partial$hints/missingEncodingChallenge.adoc[]
+include::ROOT:partial$hints/missingEncodingChallenge.adoc[]
 
 image::part2/broken_image-photo_wall.png[Broken image on photo wall]
 
@@ -112,7 +112,7 @@ image::part2/broken_image-photo_wall.png[Broken image on photo wall]
 It is probably every web shop's nightmare that customers might figure
 out away to _receive_ money instead of _paying_ for their purchase.
 
-include::partial$hints/negativeOrderChallenge.adoc[]
+include::ROOT:partial$hints/negativeOrderChallenge.adoc[]
 
 == Bypass a security control with a Poison Null Byte
 
@@ -127,7 +127,7 @@ certain byte, the string will terminate at that point, nulling the
 rest of the string, such as a file extension.footnote:3_4_2[http://hakipedia.com/index.php/Poison_Null_Byte]
 ____
 
-include::partial$hints/nullByteChallenge.adoc[]
+include::ROOT:partial$hints/nullByteChallenge.adoc[]
 
 == Follow the DRY principle while registering a user
 
@@ -140,7 +140,7 @@ authoritative representation within a system.
 ______
 ____
 
-include::partial$hints/passwordRepeatChallenge.adoc[]
+include::ROOT:partial$hints/passwordRepeatChallenge.adoc[]
 
 == Upload a file larger than 100 kB
 
@@ -152,14 +152,14 @@ confirmation document to the online complaint. To prevent abuse of this
 functionality, the application only allows file uploads of 100 kB or
 less.
 
-include::partial$hints/uploadSizeChallenge.adoc[]
+include::ROOT:partial$hints/uploadSizeChallenge.adoc[]
 
 == Upload a file that has no .pdf or .zip extension
 
 In addition to the maximum file size, the Juice Shop also verifies that
 the uploaded file is actually a PDF. All other file types are rejected.
 
-include::partial$hints/uploadTypeChallenge.adoc[]
+include::ROOT:partial$hints/uploadTypeChallenge.adoc[]
 
 == Give a devastating zero-star feedback to the store
 
@@ -168,4 +168,4 @@ feedback on the _Contact Us_ screen until you entered a comment and
 selected a star rating from 1 to 5. This challenge is about tricking the
 application into accepting feedback with 0 stars.
 
-include::partial$hints/zeroStarsChallenge.adoc[]
+include::ROOT:partial$hints/zeroStarsChallenge.adoc[]

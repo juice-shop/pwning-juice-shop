@@ -62,7 +62,7 @@ correctly as close to 100 percent of the time as possible. Computers
 must fail as close to 100 percent of the time as possible.footnote:3_2_2[https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks]
 ____
 
-include::partial$hints/captchaBypassChallenge.adoc[]
+include::ROOT:partial$hints/captchaBypassChallenge.adoc[]
 
 == Retrieve the language file that never made it into production
 
@@ -80,7 +80,7 @@ menu.
 
 image::part3/languages.png[Language selection dropdown]
 
-include::partial$hints/extraLanguageChallenge.adoc[]
+include::ROOT:partial$hints/extraLanguageChallenge.adoc[]
 
 ____
 A brute force attack can manifest itself in many different ways, but
@@ -104,7 +104,7 @@ Juice Shop decided to give its customers the ability to give a "like" to
 their favorite reviews. Of course, each user should be able to do so
 only once for each review.
 
-include::partial$hints/timingAttackChallenge.adoc[]
+include::ROOT:partial$hints/timingAttackChallenge.adoc[]
 
 ____
 A race condition or race hazard is the behavior of an electronics,
@@ -134,4 +134,4 @@ This password reset challenge is different from those from the
 xref:part2/broken-authentication.adoc#_broken_authentication[Broken Authentication] category as it is next
 to impossible to solve without using a brute force approach.
 
-include::partial$hints/resetPasswordMortyChallenge.adoc[]
+include::ROOT:partial$hints/resetPasswordMortyChallenge.adoc[]

@@ -73,7 +73,7 @@ royalties to a project, in contrast to an initial public offering
 which sells a share in the ownership of the company itself.footnote:3_9_2[https://en.wikipedia.org/wiki/Initial_coin_offering]
 ____
 
-include::partial$hints/tokenSaleChallenge.adoc[]
+include::ROOT:partial$hints/tokenSaleChallenge.adoc[]
 
 == Prove that you actually read our privacy policy
 
@@ -81,7 +81,7 @@ User agreements and privacy policies are too often simply dismissed or
 blindly accepted. This challenge kind of forces you to reconsider that
 approach.
 
-include::partial$hints/privacyPolicyProofChallenge.adoc[]
+include::ROOT:partial$hints/privacyPolicyProofChallenge.adoc[]
 
 == Rat out a notorious character hiding in plain sight in the shop
 
@@ -124,4 +124,4 @@ The change is so subtle that someone who is not specifically looking
 for it is unlikely to notice the change.footnote:3_9_3[https://en.wikipedia.org/wiki/Steganography]
 ____
 
-include::partial$hints/hiddenImageChallenge.adoc[]
+include::ROOT:partial$hints/hiddenImageChallenge.adoc[]

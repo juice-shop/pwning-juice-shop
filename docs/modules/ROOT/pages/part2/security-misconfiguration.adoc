@@ -33,7 +33,7 @@ delivery boxes can be seen - all with the Juice Shop logo on them.
 
 image::part2/deluxe-membership_page.png[Vanilla Deluxe Membership page]
 
-include::partial$hints/svgInjectionChallenge.adoc[]
+include::ROOT:partial$hints/svgInjectionChallenge.adoc[]
 
 == Use a deprecated B2B interface that was not properly shut down
 
@@ -42,7 +42,7 @@ application, but it also has some enterprise customers for which it
 would be inconvenient to order large quantities of juice through the
 webshop UI. For those customers there is a dedicated B2B interface.
 
-include::partial$hints/deprecatedInterfaceChallenge.adoc[]
+include::ROOT:partial$hints/deprecatedInterfaceChallenge.adoc[]
 
 == Provoke an error that is neither very gracefully nor consistently handled
 
@@ -65,7 +65,7 @@ messages. Often, this information can be leveraged to launch or even
 automate more powerful attacks.footnote:3_8_1[https://wiki.owasp.org/index.php/Top_10_2007-Information_Leakage]
 ____
 
-include::partial$hints/errorHandlingChallenge.adoc[]
+include::ROOT:partial$hints/errorHandlingChallenge.adoc[]
 
 If you see the success notification for this challenge but no error
 message on screen, the error was probably logged on the JavaScript
@@ -81,4 +81,4 @@ and then threw it over the fence to an operations and support team to
 run and troubleshoot the application. Not the slightest sign of
 https://en.wikipedia.org/wiki/DevOps[DevOps] culture here.
 
-include::partial$hints/loginSupportChallenge.adoc[]
+include::ROOT:partial$hints/loginSupportChallenge.adoc[]

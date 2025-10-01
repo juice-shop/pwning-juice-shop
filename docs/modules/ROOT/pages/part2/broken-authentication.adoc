@@ -81,7 +81,7 @@ example, what is your oldest child's nickname -- but you don't have a
 child.footnote:3_3_1[http://goodsecurityquestions.com]
 ____
 
-include::partial$hints/resetPasswordBjoernOwaspChallenge.adoc[]
+include::ROOT:partial$hints/resetPasswordBjoernOwaspChallenge.adoc[]
 
 ____
 Doxing (from dox, abbreviation of documents) or doxxing is the
@@ -108,7 +108,7 @@ solve the challenge, even if the password is successfully changed in the
 process. Beating Bender's security question to change his password also
 does not suffice to solve this challenge!
 
-include::partial$hints/changePasswordBenderChallenge.adoc[]
+include::ROOT:partial$hints/changePasswordBenderChallenge.adoc[]
 
 ____
 A rainbow table is a precomputed table for reversing cryptographic
@@ -128,7 +128,7 @@ This challenge is about loggin in with the account of a user who
 previously insisted on his "right to be forgotten" in accordance with
 Art. 17 GDPR.
 
-include::partial$hints/ghostLoginChallenge.adoc[]
+include::ROOT:partial$hints/ghostLoginChallenge.adoc[]
 
 == Log in with Bjoern's Gmail account
 
@@ -147,7 +147,7 @@ You can always use the official demo instance at
 http://demo.owasp-juice.shop to play with Google login and learn how
 it works there, then apply what you learned on your local instance.
 
-include::partial$hints/oauthUserPasswordChallenge.adoc[]
+include::ROOT:partial$hints/oauthUserPasswordChallenge.adoc[]
 
 The unremarkable side note _*without* hacking his Google account_ in
 the challenge description is _not a joke_. Please do not try to break
@@ -163,28 +163,28 @@ if you use the original password of the administrator. If you changed
 the password previously, do not despair: The original password will
 __always__ be accepted to make sure you can solve this challenge.
 
-include::partial$hints/weakPasswordChallenge.adoc[]
+include::ROOT:partial$hints/weakPasswordChallenge.adoc[]
 
 == Reset Bender's password via the Forgot Password mechanism
 
 This challenge is about finding the answer to user Bender's security
 question. It is probably slightly harder to find out than Jim's answer.
 
-include::partial$hints/resetPasswordBenderChallenge.adoc[]
+include::ROOT:partial$hints/resetPasswordBenderChallenge.adoc[]
 
 == Reset the password of Bjoern's internal account via the Forgot Password mechanism
 
 This challenge is about finding the answer to the security question of
 Bjoern's internal user account `bjoern@juice-sh.op`.
 
-include::partial$hints/resetPasswordBjoernChallenge.adoc[]
+include::ROOT:partial$hints/resetPasswordBjoernChallenge.adoc[]
 
 == Reset Jim's password via the Forgot Password mechanism
 
 This challenge is about finding the answer to user Jim's security
 question.
 
-include::partial$hints/resetPasswordJimChallenge.adoc[]
+include::ROOT:partial$hints/resetPasswordJimChallenge.adoc[]
 
 == Solve the 2FA challenge for user "wurstbrot"
 
@@ -216,4 +216,4 @@ ____
 In the Juice Shop one customer was very security-aware and set up 2FA
 for his account. He goes by the hilarious username _wurstbrot_.footnote:3_3_5[https://www.dict.cc/?s=wurstbrot]
 
-include::partial$hints/twoFactorAuthUnsafeSecretStorageChallenge.adoc[]
+include::ROOT:partial$hints/twoFactorAuthUnsafeSecretStorageChallenge.adoc[]

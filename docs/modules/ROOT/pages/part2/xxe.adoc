@@ -77,7 +77,7 @@ incredibly dangerous ill-configured XML parsers actually are._
 In this challenge you are tasked to disclose a local file from the
 server the Juice Shop backend is hosted on.
 
-include::partial$hints/xxeFileDisclosureChallenge.adoc[]
+include::ROOT:partial$hints/xxeFileDisclosureChallenge.adoc[]
 
 == Give the server something to chew on for quite a while
 
@@ -87,4 +87,4 @@ this challenge is about performing a stripped-down __denial-of-service__
 attack. But this one is going against an entirely different leverage
 point.
 
-include::partial$hints/xxeDosChallenge.adoc[]
+include::ROOT:partial$hints/xxeDosChallenge.adoc[]
