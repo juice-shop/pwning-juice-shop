@@ -102,8 +102,7 @@ please tag the PR as _Draft_ during its creation or later in its settings. This 
 
 The minimum requirements for code contributions are:
 
-. The code _must_ be compliant with the configured ESLint rules based
-on the http://standardjs.com[JS Standard Code Style].
+. The code _must_ be compliant with the configured ESLint rules forked from the http://standardjs.com[JS Standard Code Style].
 . All new and changed code _should_ have a corresponding unit and/or
 integration test.
 . New and changed challenges _must_ have a corresponding e2e test.
@@ -113,6 +112,7 @@ locally before opening a Pull Request.
 https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--s[signed off]
 to indicate the contributor's agreement with the
 https://developercertificate.org/[Developer Certificate of Origin].
+. Low-effort contributions (e.g. typo fixes, text changes) or any forms of potential "contribution farming" _must not_ be submitted as PRs. Doing so more than once _might be_ <<_handling_of_spam_prs,considered spamming and handled accordingly>>.
 
 === Linting
 
@@ -136,7 +136,7 @@ If PRs deviate from this coding style, they will break the CI/CD
 pipeline and will not be merged until refactored to match the coding
 rules.
 
-In case your PR is failing from style guide issues try running `npm run
+TIP: In case your PR is failing from style guide issues try running `npm run
 lint:fix` over your code - this will fix many syntax issues
 automatically without breaking your code.
 
@@ -247,7 +247,7 @@ the usual port `3000`. Whenever you change code in the `frontend/src`
 folder, the UI will recompile the affected bit and auto-reload the
 browser window for you.
 
-Please note that the backend is still running on http://localhost:3000
+NOTE: Please note that the backend is still running on http://localhost:3000
 in this mode and that changes in the backend code are not automatically
 applied.
 
@@ -277,7 +277,7 @@ if you see errors on `npm start` or ESLint complains about missing
 plugins.
 . That's it! You're ready for developing on OWASP Juice Shop!
 
-🚨 Please note that the client-side <<_unit_tests,Unit tests>> and
+IMPORTANT: Please note that the client-side <<_unit_tests,Unit tests>> and
 <<_end_to_end_tests,End-to-end tests>> will not work on GitHub Codespaces
 due to the lack of a Chrome installation in the underlying container.
 
@@ -364,7 +364,7 @@ image::part3/release-workflow.png[Release Pipeline workflow on GitHub]
 
 === Handling of spam PRs
 
-A small percentage of Pull Requests to https://github.com/juice-shop/juice-shop are opened
+On top of the occasional low-effort-contribution PR, a http://stats.owasp-juice.shop/#spamChart[significant number of Pull Requests] to https://github.com/juice-shop/juice-shop are opened
 by GitHub users e.g. when "playing" with SCA / SAST tools or other automation tooling. Sometimes those
 users notice their mistake and close the PR right away, sometimes they don't. Independent of
 who closed the PR (i.e. the original submitter or a Juice Shop Project Leader) it will be
@@ -372,16 +372,15 @@ https://github.com/juice-shop/juice-shop/pulls?q=is%3Apr+label%3Aspam[marked wit
 
 ==== Ban stages
 
-Users who open a *spam* PR will be put on a 7-day ban for interaction with the https://github.com/juice-shop
-organization. If a previously blocked user opens another *spam* PR, they will be blocked for
-30 days, or even permanently after a third reoccurence.
+The Project Leaders must be able to concentrate on the actual contributions to the project
+and not be kept busy by dealing with accidental or intentional spammers. Therefore the following applies:
 
-These measures ensure that the Project Leaders can concentrate on the actual contributions to the project
-and not be kept busy by handling accidental or intentional spammers.
+WARNING: Users who open a *spam* PR will be put on a 30-day ban for interaction with the https://github.com/juice-shop
+organization. If a previously blocked user opens another *spam* PR, they will be blocked permanently!
 
 ==== Instant permanent ban
 
-Submitting obviously non-accidental *spam*
+Submitting non-accidental *spam*
 PRs - especially during events like Hacktoberfest or Google Summer of Code - can lead to a
 permanent ban right away. The same applies for PRs with obviously malicious or abusive intent as
 detailed in the Juice Shop's https://github.com/juice-shop/juice-shop/blob/master/CODE_OF_CONDUCT.adoc[Code of Conduct].
