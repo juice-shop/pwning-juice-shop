@@ -8,10 +8,6 @@ include::../attributes.adoc[]
 |===
 | Name | Description | Difficulty
 
-| Access Log
-| Gain access to any access log file of the server.
-| ⭐⭐⭐⭐
-
 | Confidential Document
 | Access a confidential document.
 | ⭐
@@ -24,10 +20,6 @@ include::../attributes.adoc[]
 | A developer was careless with hardcoding unused, but still valid credentials for a testing account on the client-side.
 | ⭐⭐
 
-| Exposed Metrics
-| Find the endpoint that serves usage data to be scraped by a popular monitoring system.
-| ⭐
-
 | Forgotten Developer Backup
 | Access a developer's forgotten backup file.
 | ⭐⭐⭐⭐
@@ -39,10 +31,6 @@ include::../attributes.adoc[]
 | GDPR Data Theft
 | Steal someone else's personal data without using Injection.
 | ⭐⭐⭐⭐
-
-| Leaked Access Logs
-| Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to. (Creating a new account with the same password does not qualify as a solution.)
-| ⭐⭐⭐⭐⭐
 
 | Leaked API Key
 | Inform the shop about a leaked API key. (Mention the exact key in your comment)
@@ -64,10 +52,6 @@ include::../attributes.adoc[]
 | Determine the answer to John's security question by looking at an upload of him to the Photo Wall and use it to reset his password via the Forgot Password mechanism.
 | ⭐⭐
 
-| Misplaced Signature File
-| Access a misplaced SIEM signature file.
-| ⭐⭐⭐⭐
-
 | NFT Takeover
 | Take over the wallet containing our official Soul Bound Token (NFT).
 | ⭐⭐
@@ -84,33 +68,6 @@ include::../attributes.adoc[]
 | Determine the answer to Emma's security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.
 | ⭐⭐⭐⭐
 |===
-
-== Gain access to any access log file of the server
-
-____
-An access log is a list of all the requests for individual files that
-people have requested from a Web site. These files will include the
-HTML files and their imbedded graphic images and any other associated
-files that get transmitted. The access log (sometimes referred to as
-the "raw data") can be analyzed and summarized by another program.
-
-In general, an access log can be analyzed to tell you:
-
-The number of visitors (unique first-time requests) to a home page The
-origin of the visitors in terms of their associated server's domain
-name (for example, visitors from .edu, .com, and .gov sites and from
-the online services) How many requests for each page at the site,
-which can be presented with the pages with most requests listed first
-Usage patterns in terms of time of day, day of week, and seasonally
-Access log keepers and analyzers can be found as shareware on the Web
-or may come with a Web server.footnote:3_10_1[https://searchsecurity.techtarget.com/definition/access-log]
-____
-
-The Juice Shop application server is writing access logs, which can
-contain interesting information that competitors might also be
-interested in.
-
-include::../../partials/hints/accessLogDisclosureChallenge.adoc[]
 
 == Access a confidential document
 
@@ -132,29 +89,6 @@ include::../../partials/hints/emailLeakChallenge.adoc[]
 == A developer was careless with hardcoding unused but still valid credentials
 
 include::../../partials/hints/exposedCredentialsChallenge.adoc[]
-
-== Find the endpoint that serves usage data to be scraped by a popular monitoring system
-
-The popular monitoring system being referred to in the challenge
-description is https://github.com/prometheus/prometheus[Prometheus]:
-
-____
-Prometheus is an open-source systems monitoring and alerting toolkit
-originally built at SoundCloud. Since its inception in 2012, many
-companies and organizations have adopted Prometheus, and the project
-has a very active developer and user community. It is now a standalone
-open source project and maintained independently of any company. To
-emphasize this, and to clarify the project's governance structure,
-Prometheus joined the Cloud Native Computing Foundation in 2016 as the
-second hosted project, after Kubernetes. footnote:3_10_6[https://prometheus.io/docs/introduction/overview/]
-____
-
-include::../../partials/hints/exposedMetricsChallenge.adoc[]
-
-____
-RTFM is an initialism for the expression "read the fucking manual".
-footnote:3_10_7[https://en.wikipedia.org/wiki/RTFM]
-____
 
 == Access a developer's forgotten backup file
 
@@ -184,43 +118,6 @@ attacks will not count to solve this one.
 
 include::../../partials/hints/dataExportChallenge.adoc[]
 
-== Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to
-
-The company behind the Juice Shop failed miserably at implementing any
-data loss prevention measures for itself. This challenge simulates a
-seemingly harmless data leak that - upon closer inspection -
-subsequently allows an account takeover.
-
-____
-*Data loss prevention software* detects potential data breaches/data
-ex-filtration transmissions and prevents them by monitoring, detecting
-and blocking sensitive data while in use (endpoint actions), in motion
-(network traffic), and at rest (data storage).
-
-The terms "data loss" and "data leak" are related and are often used
-interchangeably. Data loss incidents turn into data leak incidents in
-cases where media containing sensitive information is lost and
-subsequently acquired by an unauthorized party. However, a data leak
-is possible without losing the data on the originating side. Other
-terms associated with data leakage prevention are information leak
-detection and prevention (ILDP), information leak prevention (ILP),
-content monitoring and filtering (CMF), information protection and
-control (IPC) and extrusion prevention system (EPS), as opposed to
-intrusion prevention system. footnote:3_10_2[https://en.wikipedia.org/wiki/Data_loss_prevention_software]
-____
-
-include::../../partials/hints/dlpPasswordSprayingChallenge.adoc[]
-
-____
-Password spraying refers to the attack method that takes a large
-number of usernames and loops them with a single password. We can use
-multiple iterations using a number of different passwords, but the
-number of passwords attempted is usually low when compared to the
-number of users attempted. This method avoids password lockouts, and
-it is often more effective at uncovering weak passwords than targeting
-specific users.footnote:3_10_5[https://resources.infosecinstitute.com/password-spraying/]
-____
-
 == Inform the shop about a leaked API key
 
 ____
@@ -235,7 +132,7 @@ include::../../partials/hints/leakedApiKeyChallenge.adoc[]
 == Identify an unsafe product that was removed from the shop and inform the shop which ingredients are dangerous
 
 Similar to
-<<_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to,Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to>>
+xref:part2/observability-failures.adoc#_dumpster_dive_the_internet_for_a_leaked_password_and_log_in_to_the_original_user_account_it_belongs_to[Dumpster dive the Internet for a leaked password and log in to the original user account it belongs to]
 this challenge further highlights the risks from a lack of data loss
 prevention.
 
@@ -270,37 +167,6 @@ post online and are not aware of the possible consequences it can have
 when people exploit that.
 
 include::../../partials/hints/geoStalkingMetaChallenge.adoc[]
-
-== Access a misplaced SIEM signature file.
-
-____
-Security information and event management (SIEM) technology supports
-threat detection and security incident response through the real-time
-collection and historical analysis of security events from a wide
-variety of event and contextual data sources. It also supports
-compliance reporting and incident investigation through analysis of
-historical data from these sources. The core capabilities of SIEM
-technology are a broad scope of event collection and the ability to
-correlate and analyze events across disparate sources.footnote:3_10_3[https://www.gartner.com/it-glossary/security-information-and-event-management-siem/]
-____
-
-The misplaced signature file is actually a rule file for
-https://github.com/Neo23x0/sigma[Sigma], a generic signature format
-for SIEM systems:
-
-____
-Sigma is a generic and open signature format that allows you to
-describe relevant log events in a straight forward manner. The rule
-format is very flexible, easy to write and applicable to any type of
-log file. The main purpose of this project is to provide a structured
-form in which researchers or analysts can describe their once
-developed detection methods and make them shareable with others.
-
-Sigma is for log files what Snort is for network traffic and YARA is
-for files.footnote:3_10_4[https://github.com/Neo23x0/sigma#what-is-sigma]
-____
-
-include::../../partials/hints/misplacedSignatureFileChallenge.adoc[]
 
 == Take over the wallet containing our official Soul Bound Token
 
