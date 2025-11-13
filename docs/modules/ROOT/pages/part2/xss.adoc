@@ -83,7 +83,7 @@ or a
 xref:part1/rules.adoc#_tools_for_http_request_tampering[tool for HTTP request tampering]
 to master this challenge.
 
-include::partial$hints/restfulXssChallenge.adoc[]
+include::../../partials/hints/restfulXssChallenge.adoc[]
 
 == Use the bonus payload in the DOM XSS challenge
 
@@ -91,7 +91,7 @@ The underlying vulnerability of this challenge is the same as for the
 <<_perform_a_dom_xss_attack,Perform a DOM XSS attack>> challenge. The
 effect of the payload is much more entertaining, though.
 
-include::partial$hints/xssBonusChallenge.adoc[]
+include::../../partials/hints/xssBonusChallenge.adoc[]
 
 == Bypass the Content Security Policy and perform an XSS attack on a legacy page
 
@@ -99,7 +99,7 @@ In the xref:introduction/architecture.adoc#_architecture_overview[Architecture o
 told that the Juice Shop uses a modern __Single Page Application__
 frontend. That was not entirely true.
 
-include::partial$hints/usernameXssChallenge.adoc[]
+include::../../partials/hints/usernameXssChallenge.adoc[]
 
 ____
 Content Security Policy (CSP) is an added layer of security that helps
@@ -132,7 +132,7 @@ Proxy. Ensure that any input validation performed on the client is
 also performed on the server.footnote:3_13_4[https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet]
 ____
 
-include::partial$hints/persistedXssUserChallenge.adoc[]
+include::../../partials/hints/persistedXssUserChallenge.adoc[]
 
 == Perform a DOM XSS attack
 
@@ -153,7 +153,7 @@ function, is modified by a specially crafted request such that a DOM
 element that can be controlled by an attacker.footnote:3_13_3[https://wiki.owasp.org/index.php/Testing_for_DOM-based_Cross_site_scripting_(OTG-CLIENT-001)]
 ____
 
-include::partial$hints/localXssChallenge.adoc[]
+include::../../partials/hints/localXssChallenge.adoc[]
 
 == Perform a persisted XSS attack through an HTTP header
 
@@ -161,7 +161,7 @@ This XSS challenge originates from an unsafely processed user input via
 an HTTP header. The difficulty lies in finding the attack path whereas
 the actual exploit is rather business as usual.
 
-include::partial$hints/httpHeaderXssChallenge.adoc[]
+include::../../partials/hints/httpHeaderXssChallenge.adoc[]
 
 == Perform a reflected XSS attack
 
@@ -175,7 +175,7 @@ the crafted URI or HTTP parameters, improperly processed by the
 application, and returned to the victim.footnote:3_13_2[https://wiki.owasp.org/index.php/Testing_for_Reflected_Cross_site_scripting_(OWASP-DV-001)]
 ____
 
-include::partial$hints/reflectedXssChallenge.adoc[]
+include::../../partials/hints/reflectedXssChallenge.adoc[]
 
 == Perform a persisted XSS attack bypassing a server-side security mechanism
 
@@ -193,11 +193,11 @@ _When you actually understand a security mechanism you have a lot higher
 chance to beat or trick it somehow, than by using a trial and error
 approach._
 
-include::partial$hints/persistedXssFeedbackChallenge.adoc[]
+include::../../partials/hints/persistedXssFeedbackChallenge.adoc[]
 
 == Embed an XSS payload into our promo video
 
 As with the previous one, the difficulty of this challenge is based on
 how hard it is to successfully place the XSS payload in the application.
 
-include::partial$hints/videoXssChallenge.adoc[]
+include::../../partials/hints/videoXssChallenge.adoc[]

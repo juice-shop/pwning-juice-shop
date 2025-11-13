@@ -22,7 +22,7 @@ include::../attributes.adoc[]
 This challenge is about _redirecting_ to an entirely disallowed
 different location.
 
-include::partial$hints/redirectChallenge.adoc[]
+include::../../partials/hints/redirectChallenge.adoc[]
 
 ____
 White list validation involves defining exactly what _is_ authorized,
@@ -35,4 +35,4 @@ Some time ago the Juice Shop project accepted donations via Bitcoin,
 Dash and Ether. It never received any, so these were dropped at some
 point.
 
-include::partial$hints/redirectCryptoCurrencyChallenge.adoc[]
+include::../../partials/hints/redirectCryptoCurrencyChallenge.adoc[]

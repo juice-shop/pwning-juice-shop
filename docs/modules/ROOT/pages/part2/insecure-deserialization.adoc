@@ -74,11 +74,11 @@ another (especially via a wide-area network such as the Internet) is
 often referred to as remote code execution.footnote:3_6_3[https://en.wikipedia.org/wiki/Arbitrary_code_execution]
 ____
 
-include::partial$hints/rceChallenge.adoc[]
+include::../../partials/hints/rceChallenge.adoc[]
 
 == Drop some explosive data into a vulnerable file-handling endpoint
 
-include::partial$hints/yamlBombChallenge.adoc[]
+include::../../partials/hints/yamlBombChallenge.adoc[]
 
 == Perform a Remote Code Execution that occupies the server for a while without using infinite loops
 
@@ -89,4 +89,4 @@ no terminating condition, having one that can never be met, or one
 that causes the loop to start over.footnote:3_6_4[https://en.wikipedia.org/wiki/Infinite_loop]
 ____
 
-include::partial$hints/rceOccupyChallenge.adoc[]
+include::../../partials/hints/rceOccupyChallenge.adoc[]

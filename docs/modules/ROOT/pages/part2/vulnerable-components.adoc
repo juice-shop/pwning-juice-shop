@@ -77,7 +77,7 @@ your application does with files and think carefully about what
 processing and interpreters are involved.footnote:3_12_3[https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload]
 ____
 
-include::partial$hints/fileWriteChallenge.adoc[]
+include::../../partials/hints/fileWriteChallenge.adoc[]
 
 == Forge an almost properly RSA-signed JWT token
 
@@ -87,7 +87,7 @@ this challenge requires you to make a valid JWT for a user that does not
 exist. What makes this challenge even harder is the requirement to have
 the JWT look like it was properly signed.
 
-include::partial$hints/jwtUnsignedChallenge.adoc[]
+include::../../partials/hints/jwtUnsignedChallenge.adoc[]
 
 == Inform the shop about a typosquatting imposter that dug itself deep into the frontend
 
@@ -123,7 +123,7 @@ This challenge is about identifying and reporting (via the
 http://localhost:3000/#/contact form) a case of typosquatting hidden in
 the Juice Shop. It is supposedly hard to locate.
 
-include::partial$hints/typosquattingAngularChallenge.adoc[]
+include::../../partials/hints/typosquattingAngularChallenge.adoc[]
 
 ℹ️ There is no actual malice or mischief included, as the typosquatter
 is completely harmless. Just keep in mind that in reality, a case like
@@ -136,7 +136,7 @@ Juice shop's handy dandy chatbot is cute and all, but can it defend
 itself against malicious attackers looking to rob the customers of its
 services?
 
-include::partial$hints/killChatbotChallenge.adoc[]
+include::../../partials/hints/killChatbotChallenge.adoc[]
 
 == Inform the shop about a typosquatting trick it has been a victim of
 
@@ -145,7 +145,7 @@ http://localhost:3000/#/contact form) a case of typosquatting that
 successfully sneaked into an older version of the Juice Shop. Luckily,
 it is not in use any more in {juiceShopVersion}.
 
-include::partial$hints/typosquattingNpmChallenge.adoc[]
+include::../../partials/hints/typosquattingNpmChallenge.adoc[]
 
 == Gain read access to an arbitrary local file on the web server
 
@@ -157,7 +157,7 @@ A *file inclusion vulnerability* is a type of web vulnerability that is most com
 *Local file inclusion (LFI)* is similar to a remote file inclusion vulnerability except instead of including remote files, only local files i.e. files on the current server can be included for execution. This issue can still lead to remote code execution by including a file that contains attacker-controlled data such as the web server's access logs.footnote:3_12_5[https://en.wikipedia.org/wiki/File_inclusion_vulnerability]
 ____
 
-include::partial$hints/lfrChallenge.adoc[]
+include::../../partials/hints/lfrChallenge.adoc[]
 
 == Inform the development team about a danger to some of their credentials
 
@@ -176,7 +176,7 @@ computer _does not_ put you at any actual risk! This challenge does
 _neither_ install a backdoor or Trojan nor does it bring any other
 harmful code to your system!
 
-include::partial$hints/supplyChainAttackChallenge.adoc[]
+include::../../partials/hints/supplyChainAttackChallenge.adoc[]
 
 == Forge an essentially unsigned JWT token
 
@@ -194,7 +194,7 @@ This challenge involves forging a valid JWT for a user that does not
 exist in the database but make the application believe it is still
 legit.
 
-include::partial$hints/jwtForgedChallenge.adoc[]
+include::../../partials/hints/jwtForgedChallenge.adoc[]
 
 == Inform the shop about a vulnerable library it is using
 
@@ -204,4 +204,4 @@ with the difference, that here not the __general use__ of the library is
 the issue. The application is just using __a version__ of a library that
 contains known vulnerabilities.
 
-include::partial$hints/knownVulnerableComponentChallenge.adoc[]
+include::../../partials/hints/knownVulnerableComponentChallenge.adoc[]

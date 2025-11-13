@@ -38,7 +38,7 @@ during checkout. The challenge is to get a discount of at least 80% on
 an order. As no coupons with this high a discount are published, it is
 up to you to forge your own.
 
-include::partial$hints/forgedCouponChallenge.adoc[]
+include::../../partials/hints/forgedCouponChallenge.adoc[]
 
 == Solve challenge #999
 
@@ -52,7 +52,7 @@ In order to not mess with the _real challenges_ accidentally, the
 challenge is to fake a signal to the application that you successfully
 solved challenge #999 - which does not exist.
 
-include::partial$hints/continueCodeChallenge.adoc[]
+include::../../partials/hints/continueCodeChallenge.adoc[]
 
 == Apply some advanced cryptanalysis to find the real easter egg
 
@@ -64,7 +64,7 @@ egg. This follow-up challenge is basically about finding a secret URL
 that - when accessed - will reward you with an easter egg that deserves
 the name.
 
-include::partial$hints/easterEggLevelTwoChallenge.adoc[]
+include::../../partials/hints/easterEggLevelTwoChallenge.adoc[]
 
 == Unlock Premium Challenge to access exclusive content
 
@@ -85,7 +85,7 @@ Bitcoins!
 That is why the actual challenge here is to unlock and solve the
 "premium" challenge _bypassing the paywall_ in front of it.
 
-include::partial$hints/premiumPaywallChallenge.adoc[]
+include::../../partials/hints/premiumPaywallChallenge.adoc[]
 
 ____
 Side note: The Bitcoin address behind the taunting _Unlock_ button is
@@ -134,4 +134,4 @@ says "trust us, we have had experts look at this,`" chances are they
 weren't experts!footnote:3_4_1[https://wiki.owasp.org/index.php/Guide_to_Cryptography]
 ____
 
-include::partial$hints/weirdCryptoChallenge.adoc[]
+include::../../partials/hints/weirdCryptoChallenge.adoc[]
