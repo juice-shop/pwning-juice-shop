@@ -86,6 +86,8 @@ include::pages/part2/broken-anti-automation.adoc[Broken Anti-Automation]
 
 include::pages/part2/cryptographic-issues.adoc[Cryptographic Issues]
 
+include::pages/part2/observability-failures.adoc[Observability Failures]
+
 include::pages/part2/miscellaneous.adoc[Miscellaneous]
 
 :leveloffset: -1

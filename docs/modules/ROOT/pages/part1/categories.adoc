@@ -70,7 +70,7 @@ image::part1/categories.png[Category breakdown]
 | -
 
 | Security Misconfiguration
-| https://owasp.org/Top10/2025/A09_2025-Logging_and_Alerting_Failures/[A9:2025], https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/[A2:2025], https://owasp.org/Top10/A05_2021-Security_Misconfiguration/[A5:2021], https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/[A9:2021], https://owasp.org/www-project-api-security[API7:2019], https://owasp.org/www-project-api-security[API9:2019], https://owasp.org/www-project-api-security[API10:2019]
+| https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/[A2:2025], https://owasp.org/Top10/A05_2021-Security_Misconfiguration/[A5:2021], https://owasp.org/www-project-api-security[API7:2019], https://owasp.org/www-project-api-security[API9:2019], https://owasp.org/www-project-api-security[API10:2019]
 | https://cwe.mitre.org/data/definitions/209.html[CWE-209]
 | http://projects.webappsec.org/w/page/13246959/Server%20Misconfiguration[WASC-14], http://projects.webappsec.org/w/page/13246914/Application%20Misconfiguration[WASC-15]
 
@@ -98,4 +98,9 @@ image::part1/categories.png[Category breakdown]
 | https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/[A2:2025], https://owasp.org/Top10/A05_2021-Security_Misconfiguration/[A5:2021], https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A4-XML_External_Entities_%28XXE%29[A4:2017]
 | https://cwe.mitre.org/data/definitions/611.html[CWE-611]
 | http://projects.webappsec.org/w/page/13247003/XML%20External%20Entities[WASC-43]
+
+| Observability Failures
+| https://owasp.org/Top10/2025/A09_2025-Logging_and_Alerting_Failures/[A9:2025], https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/[A9:2021]
+| https://cwe.mitre.org/data/definitions/532.html[CWE-532], https://cwe.mitre.org/data/definitions/117.html[CWE-117]
+|
 |===

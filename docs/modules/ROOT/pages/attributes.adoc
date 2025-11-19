@@ -1,7 +1,7 @@
 :ctfdVersion: 3.7 or higher
 :is_ctf: 0
 :rtbVersion: 3.3 or higher
-:juiceShopVersion: v19.0.0
+:juiceShopVersion: v19.1.0
 :juiceShopCtfVersion: v12.0.0
 :multiJuicerVersion: v8.2.0
 :juiceShopNumberOfChallenges: 110
