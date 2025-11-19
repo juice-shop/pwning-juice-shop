@@ -23,10 +23,16 @@ all for individuals.
 
 image::part4/multi-juicer_register.png[MultiJuicer registration]
 
-MultiJuicer comes with a rudimentary Score Board of its own, which allows teams to compare their progress through
-the Juice Shop challenges.
+MultiJuicer comes with a Score Board of its own, which allows teams to compare their progress through
+the Juice Shop challenges. Teams can even drill down into their own team-specific or challenge-specific details.
 
 image::part4/multi-juicer_scoreboard.png[MultiJuicer score board]
+image::part4/multi-juicer_scoreboard_team.png[MultiJuicer score board for team]
+image::part4/multi-juicer_scoreboard_challenge.png[MultiJuicer score board for challenge]
+
+For administrators, MultiJuicer provides a convenient overview of all active teams along with their challenge progress, current xref:part5/cheat-detection.adoc[cheat score], and the possibility to reset or delete their Juice Shop instance.
+
+image::part4/multi-juicer_admin_view.png[MultiJuicer admin view with cheat scores per team]
 
 Another helpful feature for trainers and CTf-organizers is the https://github.com/juice-shop/multi-juicer/blob/main/guides/monitoring-setup/monitoring.md[optional
 dashboard which automatically consumes and displays metrics] from each of
