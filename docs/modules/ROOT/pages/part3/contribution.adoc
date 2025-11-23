@@ -112,7 +112,8 @@ locally before opening a Pull Request.
 https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--s[signed off]
 to indicate the contributor's agreement with the
 https://developercertificate.org/[Developer Certificate of Origin].
-. Low-effort contributions (e.g. typo fixes, text changes) or any forms of potential "contribution farming" _must not_ be submitted as PRs. Doing so more than once _might be_ <<_handling_of_spam_prs,considered spamming and handled accordingly>>.
+. All PRs _should have_ a dedicated scope (e.g. not mixing code refactorings with delivering a new feature) and reasonable size
+. Particularly low-effort contributions (e.g. incomplete typo fixes in a single file, trivial text changes, code formatting) or any forms of potential "contribution farming" _must not_ be submitted as PRs. Doing so more than once _might be_ <<_handling_of_spam_prs,considered spamming and handled accordingly>>.
 
 === Linting
 
