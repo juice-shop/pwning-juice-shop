@@ -25,17 +25,17 @@ image::part1/categories.png[Category breakdown]
 | Category | OWASP | CWE | WASC
 
 | Broken Access Control
-| https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/[A1:2025], https://owasp.org/Top10/A01_2021-Broken_Access_Control/[A1:2021], https://owasp.org/www-project-api-security[API1:2019], https://owasp.org/www-project-api-security[API5:2019]
+| https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/[A1:2025], https://owasp.org/Top10/2025/A06_2025-Insecure_Design/[A6:2025], https://owasp.org/Top10/A01_2021-Broken_Access_Control/[A1:2021], https://owasp.org/www-project-api-security[API1:2019], https://owasp.org/www-project-api-security[API5:2019]
 | https://cwe.mitre.org/data/definitions/22.html[CWE-22], https://cwe.mitre.org/data/definitions/285.html[CWE-285], https://cwe.mitre.org/data/definitions/639.html[CWE-639], https://cwe.mitre.org/data/definitions/918.html[CWE-918]
 | http://projects.webappsec.org/w/page/13246940/Insufficient%20Authorization[WASC-02], http://projects.webappsec.org/w/page/13246919/Cross%20Site%20Request%20Forgery[WASC-09], http://projects.webappsec.org/w/page/13246922/Directory%20Indexing[WASC-16]
 
 | Broken Anti-Automation
-| https://wiki.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29[OWASP-AT-004], https://owasp.org/www-project-api-security[API4:2019], https://wiki.owasp.org/index.php/Testing_for_Race_Conditions_%28OWASP-AT-010%29[OWASP-AT-010], https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-009_CAPTCHA_Defeat.html[OAT-009], https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-015_Denial_of_Service.html[OAT-015], https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-008_Credential_Stuffing.html[OAT-008]
+| https://owasp.org/Top10/2025/A06_2025-Insecure_Design/[A6:2025], https://wiki.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29[OWASP-AT-004], https://owasp.org/www-project-api-security[API4:2019], https://wiki.owasp.org/index.php/Testing_for_Race_Conditions_%28OWASP-AT-010%29[OWASP-AT-010], https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-009_CAPTCHA_Defeat.html[OAT-009], https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-015_Denial_of_Service.html[OAT-015], https://owasp.org/www-project-automated-threats-to-web-applications/assets/oats/EN/OAT-008_Credential_Stuffing.html[OAT-008]
 | http://cwe.mitre.org/data/definitions/362.html[CWE-362]
 | http://projects.webappsec.org/w/page/13246915/Brute%20Force[WASC-11], http://projects.webappsec.org/w/page/13246938/Insufficient%20Anti-automation[WASC-21]
 
 | Broken Authentication
-| https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/[A7:2025], https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/[A7:2021], https://owasp.org/www-project-api-security[API2:2019], https://owasp.org/www-project-top-10-privacy-risks[P6:2021]
+| https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/[A7:2025], https://owasp.org/Top10/2025/A06_2025-Insecure_Design/[A6:2025], https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/[A7:2021], https://owasp.org/www-project-api-security[API2:2019], https://owasp.org/www-project-top-10-privacy-risks[P6:2021]
 | https://cwe.mitre.org/data/definitions/287.html[CWE-287], https://cwe.mitre.org/data/definitions/352.html[CWE-352]
 | http://projects.webappsec.org/w/page/13246939/Insufficient%20Authentication[WASC-01], http://projects.webappsec.org/w/page/13246942/Insufficient%20Password%20Recovery[WASC-49]
 
@@ -70,7 +70,7 @@ image::part1/categories.png[Category breakdown]
 | -
 
 | Security Misconfiguration
-| https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/[A2:2025], https://owasp.org/Top10/A05_2021-Security_Misconfiguration/[A5:2021], https://owasp.org/www-project-api-security[API7:2019], https://owasp.org/www-project-api-security[API9:2019], https://owasp.org/www-project-api-security[API10:2019]
+| https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/[A2:2025], https://owasp.org/Top10/2025/A10_2025-Mishandling_of_Exceptional_Conditions/[A10:2025],  https://owasp.org/Top10/A05_2021-Security_Misconfiguration/[A5:2021], https://owasp.org/www-project-api-security[API7:2019], https://owasp.org/www-project-api-security[API9:2019], https://owasp.org/www-project-api-security[API10:2019]
 | https://cwe.mitre.org/data/definitions/209.html[CWE-209]
 | http://projects.webappsec.org/w/page/13246959/Server%20Misconfiguration[WASC-14], http://projects.webappsec.org/w/page/13246914/Application%20Misconfiguration[WASC-15]
 
