@@ -145,6 +145,15 @@ install` afterwards. Make sure to check if the file to copy from
 exists on your disk and if the target folder for the copy is there.#
 _(Should no longer occur with v12.0.2 or later)_
 
+=== Windows
+
+* If `npm install` fails with native module build errors on Windows, make sure you have the necessary tools for `node-gyp`: Visual Studio Build Tools (with C++ desktop development workload), Windows SDK, and Python (check the https://github.com/nodejs/node-gyp#installation[`node-gyp` installation instructions] for the currently supported version)
+* The `npm install --global windows-build-tools` package is no longer maintained and doesn't work reliably with newer Node.js versions
+* *Recommended alternatives to avoid build issues entirely:*
+** Use WSL2 (Windows Subsystem for Linux) with Ubuntu for a native Linux environment
+** Use Docker to sidestep native compilation
+** Download a xref:part1/running.adoc#_from_pre_packaged_distribution[pre-packaged distribution] from the GitHub releases page
+
 === Docker
 
 * If using Docker Toolbox on Windows make sure that you also enable port
