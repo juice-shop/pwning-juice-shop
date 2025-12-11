@@ -145,6 +145,17 @@ install` afterwards. Make sure to check if the file to copy from
 exists on your disk and if the target folder for the copy is there.#
 _(Should no longer occur with v12.0.2 or later)_
 
+=== Windows
+
+* Windows users often hit build errors during `npm install`, especially with native modules like `sqlite3` and `libxmljs2`. This happens because these modules need to be compiled from source, which requires build tools that don't come with Windows out of the box.
+* If you're getting build failures, make sure you have the necessary tools for `node-gyp`:
+** Visual Studio Build Tools (with C++ desktop development workload)
+** Windows SDK  
+** Python (check the https://github.com/nodejs/node-gyp#installation[`node-gyp` installation instructions] for the currently supported version)
+* The `npm install --global windows-build-tools` package used to help with this, but it's no longer maintained and doesn't work reliably with newer Node.js versions.
+* *Best option:* Use WSL2 (Windows Subsystem for Linux) with Ubuntu. This gives you a proper Linux environment on your Windows machine and completely avoids the `node-gyp` headaches. It's the smoothest way to run Juice Shop on Windows.
+* *Alternative:* Use Docker, which also sidesteps native compilation issues entirely.
+
 === Docker
 
 * If using Docker Toolbox on Windows make sure that you also enable port
