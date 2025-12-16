@@ -458,10 +458,6 @@ Juice Shop.
 | If set to `disabled`, it enables all xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges] regardless of any harm they might cause when running in a containerized environment. If set to `auto`, safety mode is enabled if Juice Shop considers the envrironment its running in to be a production environent (which are more likely to be exposed to internet traffic). When set to `enabled`, safety mode is enabled in any environment. ☠️ *Change at your own risk!*
 | `auto`
 
-| `showFeedbackButtons`
-| Shows or hides like/dislike buttons for solved hacking & coding challenges that open an accordingly pre-filled Google Form.
-| `true`
-
 [[_metricsIgnoredUserAgents]]
 | `metricsIgnoredUserAgents`
 | List of user agent substrings. Requests to the `/metrics` endpoint containing any of these substrings in their User-Agent header will not trigger the xref:part2/sensitive-data-exposure.adoc#_find_the_endpoint_that_serves_usage_data_to_be_scraped_by_a_popular_monitoring_system[Exposed Metrics] challenge. This allows integration with monitoring tools without automatically solving the challenge.
