@@ -1,0 +1,68 @@
+= Universities
+
+OWASP Juice Shop is an excellent platform for universities to engage students and faculty in practical software security education. This page outlines how universities can get involved with the project, particularly targeting software engineering students and professors interested in hands-on learning opportunities.
+
+== Why Get Involved?
+
+Contributing to OWASP Juice Shop offers unique educational benefits:
+
+* **Real-World Experience**: Students gain practical experience working on a live open-source project used by security professionals worldwide.
+* **University Credits**: Many universities recognize contributions to open-source projects as valid academic work, allowing students to earn course credits.
+* **Skill Development**: Hands-on involvement in coding, testing, and security best practices.
+
+== Ways to Contribute
+
+=== Coding New Challenges
+
+Software engineering students can contribute by developing new security challenges that demonstrate real-world vulnerabilities. This involves:
+
+* Understanding common web application security flaws
+* Implementing challenge logic in the backend
+* Creating corresponding frontend components
+* Writing comprehensive documentation
+
+=== Updating the UI
+
+Frontend development opportunities include:
+
+* Improving the user interface for better usability
+* Implementing responsive design features
+* Enhancing accessibility
+* Adding new visual elements for challenges
+
+=== Backend Development
+
+Backend contributions focus on:
+
+* API development and optimization
+* Database schema improvements
+* Security feature implementation
+* Performance enhancements
+
+== Getting Started
+
+To begin contributing:
+
+1. Review the xref:part3/contribution.adoc[contribution guidelines]
+2. Set up the development environment as described in the xref:part3/codebase.adoc[codebase overview]
+3. Join the community discussions on GitHub
+4. Start with beginner-friendly issues labeled "good first issue"
+
+== Academic Integration
+
+Professors can integrate OWASP Juice Shop into their curricula by:
+
+* Assigning contribution tasks as course projects
+* Using the platform for security labs and exercises
+* Encouraging student-led research on web application vulnerabilities
+* Organizing university CTF events using Juice Shop
+
+== Contact and Support
+
+For questions about university involvement or academic partnerships, please reach out through:
+
+* GitHub Issues for technical discussions
+* The OWASP Juice Shop Slack channel
+* Email contact through the project maintainers
+
+We welcome universities of all sizes and encourage diverse participation in making web application security education more accessible.

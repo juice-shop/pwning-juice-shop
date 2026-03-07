@@ -40,6 +40,7 @@
 ** xref:part3/feedback.adoc[Provide feedback]
 ** xref:part3/donations.adoc[Donations]
 ** xref:part3/contribution.adoc[Contribute to development]
+** xref:part3/universities.adoc[Universities]
 ** xref:part3/codebase.adoc[Codebase 101]
 ** xref:part3/translation.adoc[Help with translation]
 
