@@ -11,8 +11,14 @@ plenty of ways to stay tuned.
 |===
 | Channel | Link
 
-| Twitter
-| https://twitter.com/owasp_juiceshop
+| Bluesky
+| https://bsky.app/profile/owasp-juice.shop
+
+| Mastodon
+| https://fosstodon.org/@owasp_juiceshop
+
+| Twitter/X
+| https://x.com/owasp_juiceshop
 
 | Facebook
 | https://www.facebook.com/owasp.juiceshop
