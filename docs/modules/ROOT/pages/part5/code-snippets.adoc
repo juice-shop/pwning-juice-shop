@@ -211,19 +211,14 @@ challenges that might share some but not all code.
 
 === REST endpoints
 
-The Score Board retrieves the actual code snippets via two REST
-endpoints:
-
-* `/snippets` returns the list of all challenge keys where code snippets
-are available in JSON format (e.g.
-`+{"challenges":["directoryListingChallenge",...,"xssBonusChallenge"]}+`)
-* `/snippets/<challengeKey>` returns the actual code snippet plus the
+The Score Board retrieves the actual code snippet via REST
+endpoints `/snippets/<challengeKey>` which returns the actual code snippet plus the
 list of vulnerable lines in JSON format (e.g. `+{"snippet":"filterTable
 () {\n let queryParam: string = ... }\n }","vulnLines":[6]}+`)
 
 ==== Error handling
 
-The following errors can occur when calling the REST endpoints:
+The following errors can occur when calling the REST endpoint:
 
 |===
 | Endpoint | HTTP status code | Error
