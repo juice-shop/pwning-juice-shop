@@ -1,14 +1,20 @@
-= Universities
+= University's Guide
 
-OWASP Juice Shop is an excellent platform for universities to engage students and faculty in practical software security education. This page outlines how universities can get involved with the project, particularly targeting software engineering students and professors interested in hands-on learning opportunities.
+Co-authored by https://github.com/fcerullo-cycubix[Fabio Cerullo]
+
+OWASP Juice Shop is an excellent platform for universities to engage students and faculty in practical software security education. This chapter outlines how universities can get involved with the project, particularly targeting software engineering students and professors interested in hands-on learning opportunities.
 
 == Why Get Involved?
 
-Contributing to OWASP Juice Shop offers unique educational benefits:
+Contributing to OWASP Juice Shop offers various educational benefits. Many universities recognize contributions to open-source projects as valid academic work, allowing students to earn course credits by doing so. Furthermore, working on an open source projects provides hands-on involvement in coding, testing, and security best practices. Those benefits could be considered rather generic. OWASP Juice Shop has some unique feats which let it stand out above many other open source projects when it comes to collaboration and involvement:
 
-* **Real-World Experience**: Students gain practical experience working on a live open-source project used by security professionals worldwide.
-* **University Credits**: Many universities recognize contributions to open-source projects as valid academic work, allowing students to earn course credits.
-* **Skill Development**: Hands-on involvement in coding, testing, and security best practices.
+=== World-wide usage in enterprises and academia
+
+Juice Shop is used by security professionals, trainers, lecturers, and developers world-wide. Becoming an active contributor to the projects comes with recognition in the industry and provides real value to a massively popular and highly used learning tool. It is especially worth noting, that Juice Shop is already used at many universities in their security curriculae. Thus, improving the project is making it even more long-term useful to professors and lecturers who use it.
+
+=== Sophisticated automation of quality control
+
+From the get-go the author of OWASP Juice Shop took care to have good test coverage, code linting and other checks available in an automated way. Our CI/CD pipeline makes it quite hard to break functionality of the project accidentally without getting noticed. This is a perfect environment for students to gain experience in and it hopefully also motivates them to write better code and more automated tests themselves. 
 
 == Ways to Contribute
 
