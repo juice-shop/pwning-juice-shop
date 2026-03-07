@@ -5,7 +5,7 @@
 :juiceShopCtfVersion: v12.0.0
 :multiJuicerVersion: v9.2.0
 :juiceShopNumberOfChallenges: 111
-:juiceShopNumberOfCodingChallenges: 31
+:juiceShopNumberOfCodingChallenges: 33
 :nodeVersions: 20.x, 22.x and 24.x
 :recommendedNodeVersion: 22.x
 :backupSchemaVersion: 1
