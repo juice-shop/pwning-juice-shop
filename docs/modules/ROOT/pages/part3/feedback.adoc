@@ -46,23 +46,3 @@ the OWASP Juice Shop team, project leader or community!
 
 Your honest feedback is always appreciated, no matter if it is positive
 or negative!
-
-== Challenge feedback
-
-You can provide feedback on all solved xref:part1/challenges.adoc#_challenge_tracking[hacking] and xref:part1/challenges.adoc#_coding_challenges[coding challenges] directly from the
-xref:part1/challenges.adoc#_the_score_board[Score Board] and Coding Challenge modal dialog. Clicking the respective like/dislike button
-will send you to a Google Form pre-filled with the challenge information and your positive or negative
-verdict.
-
-image:part3/challenge_feedback1.png[Feedback buttons on Score Board]
-image:part3/challenge_feedback2.png[Feedback buttons on Coding Challenge modal dialog]
-
-You can just submit the Google Form right away, or you can add some extra free text feedback
-before doing so.
-
-image:part3/challenge_feedback3.png[Pre-filled Google Form for hacking challenge feedback]
-image:part3/challenge_feedback4.png[Pre-filled Google Form for coding challenge feedback]
-
-To prevent spamming and duplicate feedback, you have to be signed in with a Google account to
-submit the form. Neither your email address nor any other personal information will be submitted
-along with the form.
