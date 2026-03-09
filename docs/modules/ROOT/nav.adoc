@@ -42,6 +42,7 @@
 ** xref:part3/contribution.adoc[Contribute to development]
 ** xref:part3/codebase.adoc[Codebase 101]
 ** xref:part3/translation.adoc[Help with translation]
+** xref:part3/universities.adoc[University engagement]
 
 * Part IV - Advanced user guides
 

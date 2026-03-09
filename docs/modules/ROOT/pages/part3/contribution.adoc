@@ -145,7 +145,7 @@ automatically without breaking your code.
 ----
 npm test                           # run all unit tests
 npm run frisby                     # run all API integration tests
-npm start & npm run cypress:open & # run all end-to-end tests
+npm start & npm run cypress:run &  # run all end-to-end tests
 ----
 
 Pull Requests are verified to pass all the following test stages during
@@ -190,7 +190,7 @@ challenges are solvable on the score board.
 
 [,bash]
 ----
-npm start & npm run cypress:open &
+npm start & npm run cypress:run &
 ----
 
 The end-to-end tests require a locally installed Google Chrome browser

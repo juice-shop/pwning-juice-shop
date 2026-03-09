@@ -144,7 +144,8 @@ NOTE: We will cover only a fraction of the available functionality from
 the user menu in the following sub-sections. It is recommended to
 explore the rest on your own before diving into any hacking exercises.
 
-image::part1/user-menu.png[User Menu]
+image::part1/user-menu.png[User Menu with "Orders & Payments" expanded]
+image::part1/user-menu2.png[User Menu with "Privacy & Security" expanded]
 
 [discrete]
 ==== User Profile

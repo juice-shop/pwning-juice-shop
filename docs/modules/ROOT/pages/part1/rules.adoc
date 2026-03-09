@@ -123,15 +123,6 @@ validation logic. It can also be helpful when trying to bypass certain
 input validation or access restriction mechanisms, that are not properly
 checked _on the server_ once more.
 
-An API testing plugin like
-https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop[PostMan]
-for Chrome allows you to communicate with the RESTful backend of a web
-application directly. Skipping the UI can often be useful to circumvent
-client-side security mechanisms or simply get certain tasks done faster.
-Here you can create requests for all available HTTP verbs (`GET`,
-`POST`, `PUT`, `DELETE` etc.) with all kinds of content-types, request
-headers etc.
-
 If you feel more at home on the command line, `curl` will do the trick
 just as fine as the recommended browser plugins.
 
