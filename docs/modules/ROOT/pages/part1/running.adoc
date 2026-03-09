@@ -29,6 +29,8 @@ recommended spec._
 
 == Run options
 
+IMPORTANT: Juice Shop requires an external AI/LLM provider for its chatbot feature. See <<_aillm_provider>> for setup instructions.
+
 In the following sections you find step-by-step instructions to deploy a
 running instance of OWASP Juice Shop for your personal hacking
 endeavours.
@@ -358,3 +360,23 @@ If you want to centrally host Juice Shop instances for multiple users
 you find more information in section
 xref:part4/trainers.adoc#_hosting_individual_instances_for_multiple_users[Hosting individual instances for multiple users]
 of the trainer's guide.
+
+== Setting up external dependencies
+
+=== AI/LLM Provider
+
+Juice Shop's _Support Chat_ chatbot requires an external LLM provider to function. By default, it connects to a local https://ollama.com[Ollama] instance at `http://localhost:11434/v1`.
+
+To set up Ollama:
+
+. Install Ollama either via the https://ollama.com[Desktop App] or via the https://ollama.com/download[CLI installation instructions].
+. Pull the default model either via the Desktop App's model search or using the CLI:
++
+----
+ollama pull qwen3.5:9b
+----
+. Start Ollama (if not already running) and then launch Juice Shop as usual.
+
+NOTE: `qwen3.5:9b` is the recommended default model. It is the smallest model we found to work reliably enough to be useful, and should still run on most machines, even if slowly.
+
+You can configure an alternative OpenAI-compatible endpoint and model via the xref:part4/customization.adoc#_chatbot_subsection[chatBot customization properties] `llmApiUrl` and `model`. For authenticated endpoints, set the `LLM_API_KEY` environment variable with your API key.
