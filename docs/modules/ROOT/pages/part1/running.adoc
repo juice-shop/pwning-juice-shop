@@ -365,7 +365,7 @@ of the trainer's guide.
 
 === AI/LLM Provider
 
-Juice Shop's _Support Chat_ chatbot requires an external LLM provider to function. By default, it connects to a local https://ollama.com[Ollama] instance at `http://localhost:11434/v1`.
+Juice Shop's _AI Chat_ requires an external LLM provider to function. By default, it connects to a local https://ollama.com[Ollama] instance at `http://localhost:11434/v1`.
 
 To set up Ollama:
 
@@ -380,3 +380,14 @@ ollama pull qwen3.5:9b
 NOTE: `qwen3.5:9b` is the recommended default model. It is the smallest model we found to work reliably enough to be useful, and should still run on most machines, even if slowly.
 
 You can configure an alternative OpenAI-compatible endpoint and model via the xref:part4/customization.adoc#_chatbot_subsection[chatBot customization properties] `llmApiUrl` and `model`. For authenticated endpoints, set the `LLM_API_KEY` environment variable with your API key.
+
+=== Alchemy Ethereum Testnet
+
+Two of Juice Shop's Web3 challenges require a connection to an Ethereum testnet via the https://alchemy.com[Alchemy] API. In order to reliably solve these challenges, you need to set up an Alchemy account and configure the API key in your Juice Shop instance:
+
+. Sign up for an account on https://alchemy.com/ and log in to your dashboard.
+. Create an app in the Alchemy dashboard or use the one that is created by default.
+. In the _Endpoints_ section, enable **Ethereum Sepolia** (`https://eth-sepolia.g.alchemy.com`) as a network.
+. Copy your _API Key_ and set it as an environment variable `ALCHEMY_API_KEY` for your Juice Shop instance
+
+
