@@ -386,23 +386,20 @@ users notice their mistake and close the PR right away, sometimes they don't. In
 who closed the PR (i.e. the original submitter or a Juice Shop Project Leader) it will be
 https://github.com/juice-shop/juice-shop/pulls?q=is%3Apr+label%3Aspam[marked with the *spam* label].
 
-==== Ban stages
+==== Banning of spammers
 
 The Project Leaders must be able to concentrate on the actual contributions to the project
-and not be kept busy by dealing with accidental or intentional spammers. Therefore the following applies:
+and not be kept busy by dealing with accidental or intentional spammers. Therefore, the following applies:
 
-WARNING: Users who open a *spam* PR will be put on a 30-day ban for interaction with the https://github.com/juice-shop
-organization. If a previously blocked user opens another *spam* PR, they will be blocked permanently!
-
-==== Instant permanent ban
-
-Submitting non-accidental *spam*
-PRs - especially during events like Hacktoberfest or Google Summer of Code - can lead to a
-permanent ban right away. The same applies for PRs with obviously malicious or abusive intent as
-detailed in the Juice Shop's https://github.com/juice-shop/juice-shop/blob/master/CODE_OF_CONDUCT[Code of Conduct].
+[IMPORTANT]
+.Users who open a *spam* PR will be put on an *indefinite ban* for interaction with the entire https://github.com/juice-shop organization.
+====
+There is no distinction between submitting e.g. accidental SAST-tool experiments, non-accidental low-effort PRs, contribution farming during events like Hacktoberfest or Google Summer of Code, or PRs with obviously malicious or abusive intent as
+detailed in the Juice Shop's https://github.com/juice-shop/juice-shop/blob/master/CODE_OF_CONDUCT[Code of Conduct]. There is only one banlist for all of these cases, and the ban is applied immediately after a PR is labelled as *spam* without any further warning.
+====
 
 ==== Redemption from banishment
 
-In the unlikely case that a user ended on the ban list by mistake or without comprehensible
+In the unlikely case that a user ended on the banlist by (human or automation) mistake or without comprehensible
 cause, they may contact link:mailto:bjoern.kimminich@owasp.org[bjoern.kimminich@owasp.org]
-and request to be removed from the ban list.
+and request to be removed from the banlist.
