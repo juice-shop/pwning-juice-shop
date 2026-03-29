@@ -105,6 +105,11 @@ image::introduction/JuiceShop_RetroLogo.png[Original JuiceShop logo]
 In 2017 the logo received a facelift and a spin-off when the Juice Shop
 introduced its Capture-the-flag extension (which is discussed in its own chapter xref:part4/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] later in this book).
 
+image:introduction/JuiceShop_Logo_2017.png[OWASP Juice Shop logo from 2017]
+image:introduction/JuiceShopCTF_Logo_2017.png[OWASP Juice Shop CTF logo from 2017]
+
+In 2026 the logos received their first update since 2017. The shapes in the artwork were kept exactly the same, only the color palette was updated to a more vibrant and "popping" one.
+
 image:introduction/JuiceShop_Logo.png[OWASP Juice Shop logo]
 image:introduction/JuiceShopCTF_Logo.png[OWASP Juice Shop CTF logo]
 
