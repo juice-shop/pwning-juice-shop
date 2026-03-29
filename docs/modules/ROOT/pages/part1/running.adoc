@@ -381,6 +381,8 @@ NOTE: `qwen3.5:9b` is the recommended default model. It is the smallest model we
 
 You can configure an alternative OpenAI-compatible endpoint and model via the xref:part4/customization.adoc#_chatbot_subsection[chatBot customization properties] `llmApiUrl` and `model`. For authenticated endpoints, set the `LLM_API_KEY` environment variable with your API key.
 
+NOTE: For the author the `stepfun/step-3.5-flash:free` model on `https://openrouter.ai/api/v1`. worked very well. It responded very fast even in tool-call-heavy conversations. After signing up, you can https://openrouter.ai/workspaces/default/keys[create an API key in the OpenRouter dashboard].
+
 === Alchemy Ethereum Testnet
 
 Two of Juice Shop's Web3 challenges require a connection to an Ethereum testnet via the https://alchemy.com[Alchemy] API. In order to reliably solve these challenges, you need to set up an Alchemy account and configure the API key in your Juice Shop instance:
