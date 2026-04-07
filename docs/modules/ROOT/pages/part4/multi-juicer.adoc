@@ -50,3 +50,4 @@ The MultiJuicer repository offers guidance on how to set up the system on differ
 * https://github.com/juice-shop/multi-juicer/tree/main/guides/digital-ocean[Digital Ocean]
 * https://github.com/juice-shop/multi-juicer/tree/main/guides/k8s[Kubernetes]
 * https://github.com/juice-shop/multi-juicer/tree/main/guides/openshift[Openshift]
+* xref:part4/lego-tower.adoc[Raspberry Pi (Juice Shop Lego Tower)]
