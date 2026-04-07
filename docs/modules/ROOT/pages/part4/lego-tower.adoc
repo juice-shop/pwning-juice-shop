@@ -116,11 +116,10 @@ The WISP router acts as a bridge between the host WiFi (e.g., at a conference) a
 
 The WiFi router manages the internal network and provides WiFi for the participants.
 
-==== Operation Mode
-The router must be set to **Router Mode** (default) to provide internet access and DHCP for all devices.
-
 ==== Internet Settings
 Set the **Internet Connection Type** to **Dynamic IP** so it can receive an address from the WISP router or the host network via LAN.
+
+image::part4/tplink_connection-type.png[TP-Link Internet Connection Type]
 
 ==== Wireless Settings
 Configure the wireless network as follows:
@@ -129,20 +128,17 @@ Configure the wireless network as follows:
 - **Security:** `WPA2-PSK[AES]`
 - **Password:** `MultiJuicer`
 
+image::part4/tplink_wireless-settings.png[TP-Link Wireless Settings]
+
+==== Operation Mode
+The router must be set to **Router Mode** (default) to provide internet access and DHCP for all devices.
+
+image::part4/tplink_operation-mode.png[TP-Link Operation Mode]
+
 ==== DHCP Server & Address Reservation
-To ensure the Raspberry Pis always have the same IP address (required for k3s stability), use **Address Reservation** under the **Advanced > Network > DHCP Server** settings.
+To ensure the Raspberry Pis always have the same IP address (required for k3s stability), use **Address Reservation** under the **Advanced > Network > DHCP Server** settings. Make sure the **DHCP Server** is enabled and configure the **Address Reservation** for each Raspberry Pi using their MAC addresses.
 
-For example:
-|===
-|Device Name |MAC Address |Reserved IP Address
-
-|raspi-banana |XX-XX-XX-XX-XX-XX |192.168.0.100
-|raspi-apple  |XX-XX-XX-XX-XX-XX |192.168.0.101
-|raspi-lemon  |XX-XX-XX-XX-XX-XX |192.168.0.102
-|raspi-orange |XX-XX-XX-XX-XX-XX |192.168.0.103
-|===
-
-In the example above, the DHCP IP Address Pool should then be configured from `192.168.0.100` to `192.168.0.249`.
+image::part4/tplink_dhcp-server.png[TP-Link DHCP Address Reservation]
 
 == Verification
 
