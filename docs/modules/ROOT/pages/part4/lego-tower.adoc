@@ -94,13 +94,13 @@ The following schematic illustrates how to connect the network cables:
                      [R1]   [R2] [R3]  [R4] (Raspberry Pis)
 ----
 
-- The four 0,5m cables connect the Raspberry Pis with the ports `1` to `4` of the switch.
-- The 1m cable connects any of the WiFi router's ports `1` to `4` (yellow) with the switch's port `5`.
+- The four 0,5m cables connect the Raspberry Pis with the ports `1` to `4` of the PoE switch.
+- The 1m cable connects any of the WiFi router's ports `1` to `4` (yellow) with the PoE switch's port `5`.
 - If using a WISP router, connect it to the WiFi router's `WAN` port with the second 1m cable. Otherwise, connect the venue's Internet LAN cable to the WiFi router's `WAN` port.
 
 [CAUTION]
 ====
-When connecting the power supply to the Wifi router and switch, make sure to not mix up their PSUs! The WiFi router's PSU is 12V/1A, while the switch's PSU is 53.5V/1.3A. Both unfortunately have the same plug size. **Using the switch's PSU on the WiFi router will fry its circuits!** The author has _"successfully tested"_ this, so please be careful.
+When connecting the power supply to the Wifi router and PoE switch, make sure to not mix up their PSUs! The WiFi router's PSU is 12V/1A, while the PoE switch's PSU is 53.5V/1.3A. Both unfortunately have the same plug size. **Using the PoE switch's PSU on the WiFi router will fry its circuits!** The author has _"successfully tested"_ this, so please be careful.
 ====
 
 === WISP router (External Gateway)
