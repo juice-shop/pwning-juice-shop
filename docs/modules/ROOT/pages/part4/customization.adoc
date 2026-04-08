@@ -202,6 +202,14 @@ _Support Chat_.
 | `llmApiUrl`
 | URL of the OpenAI-compatible API endpoint for the chat bot LLM. Can be pointed at any compatible provider.
 | `'http://localhost:11434/v1'`
+
+| `llmMaxRetries`
+| Number of connection attempts to the OpenAI-compatible API endpoint before giving up and returning an error.
+| `2`
+
+| `sampleQuestions`
+| List of questions randomly chosen from when clicking the _Get a suggestion_ button of the chatbot. Each can be the key of a localized string in `frontend/src/assets/i18n/en.json` or custom free-text.
+| `- 'CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY' - 'CHATBOT_PROMPT_RECOMMENDATION_POPULAR' - 'CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE' - 'CHATBOT_PROMPT_RECOMMENDATION_START_DAY' - 'CHATBOT_PROMPT_RECOMMENDATION_SEASONAL'`
 |===
 
 NOTE: Any OpenAI-compatible endpoint can be used by changing `llmApiUrl` (e.g. OpenAI, Azure OpenAI, or self-hosted alternatives). API keys for authenticated endpoints are set via the `LLM_API_KEY` environment variable.
@@ -760,6 +768,13 @@ application:
     avatar: 'JuicyChatBot.png'
     model: 'qwen3.5:9b'
     llmApiUrl: 'http://localhost:11434/v1'
+    llmMaxRetries: 2
+    sampleQuestions:
+      - 'CHATBOT_PROMPT_RECOMMENDATION_SUMMER_PARTY'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_POPULAR'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_SUGAR_FREE'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_START_DAY'
+      - 'CHATBOT_PROMPT_RECOMMENDATION_SEASONAL'
   social:
     blueSkyUrl: 'https://bsky.app/profile/owasp-juice.shop'
     mastodonUrl: 'https://fosstodon.org/@owasp_juiceshop'
