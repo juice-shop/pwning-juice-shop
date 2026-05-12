@@ -197,7 +197,7 @@ _Support Chat_.
 
 | `model`
 | The LLM model identifier used by the chat bot.
-| `'qwen3.5:9b'`
+| `'gemma4:e4b'`
 
 | `llmApiUrl`
 | URL of the OpenAI-compatible API endpoint for the chat bot LLM. Can be pointed at any compatible provider.
