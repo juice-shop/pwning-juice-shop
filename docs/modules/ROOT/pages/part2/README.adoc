@@ -29,6 +29,10 @@ ifeval::[{is_ctf} == 1]
 | Gain access to any access log file of the server.
 | xref:part2/sensitive-data-exposure.adoc#_gain_access_to_any_access_log_file_of_the_server[💡]
 
+| AI Debugging
+| Reveal some behind-the-scenes information on the chatbot as a non-admin user.
+| xref:part2/broken-access-control.adoc#_reveal_some_behind_the_scenes_information_on_the_chatbot_as_a_non_admin_user[💡]
+
 | Admin Registration
 | Register as a user with administrator privileges.
 | xref:part2/improper-input-validation.adoc#_register_as_a_user_with_administrator_privileges[💡]
@@ -68,6 +72,10 @@ ifeval::[{is_ctf} == 1]
 | CAPTCHA Bypass
 | Submit 10 or more customer feedbacks within 10 seconds.
 | xref:part2/broken-anti-automation.adoc#_submit_10_or_more_customer_feedbacks_within_10_seconds[💡]
+
+| Chatbot Prompt Injection
+| Trick the chatbot into generating a coupon code for you despite its coupon policy saying otherwise.
+| xref:part2/injection.adoc#_trick_the_chatbot_into_generating_a_coupon_code_for_you[💡]
 
 | Change Bender's Password
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password.
@@ -188,6 +196,10 @@ ifeval::[{is_ctf} == 1]
 | GDPR Data Theft
 | Steal someone else's personal data without using Injection.
 | xref:part2/sensitive-data-exposure.adoc#_steal_someone_elses_personal_data_without_using_injection[💡]
+
+| Greedy Chatbot Manipulation
+| Convince the chatbot to give you a coupon of 50% or more. Because apparently a 10% max policy is just a suggestion when you ask nicely enough.
+| xref:part2/injection.adoc#_convince_the_chatbot_to_give_you_a_coupon_of_50_or_more[💡]
 
 | HTTP-Header XSS
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` through an HTTP header.
@@ -477,6 +489,11 @@ ifeval::[{is_ctf} == 0]
 | xref:part2/sensitive-data-exposure.adoc#_gain_access_to_any_access_log_file_of_the_server[💡]
 | xref:appendix/solutions.adoc#_gain_access_to_any_access_log_file_of_the_server[📕]
 
+| AI Debugging
+| Reveal some behind-the-scenes information on the chatbot as a non-admin user.
+| xref:part2/broken-access-control.adoc#_reveal_some_behind_the_scenes_information_on_the_chatbot_as_a_non_admin_user[💡]
+| xref:appendix/solutions.adoc#_reveal_some_behind_the_scenes_information_on_the_chatbot_as_a_non_admin_user[📕]
+
 | Admin Registration
 | Register as a user with administrator privileges.
 | xref:part2/improper-input-validation.adoc#_register_as_a_user_with_administrator_privileges[💡]
@@ -526,6 +543,11 @@ ifeval::[{is_ctf} == 0]
 | Submit 10 or more customer feedbacks within 10 seconds.
 | xref:part2/broken-anti-automation.adoc#_submit_10_or_more_customer_feedbacks_within_10_seconds[💡]
 | xref:appendix/solutions.adoc#_submit_10_or_more_customer_feedbacks_within_10_seconds[📕]
+
+| Chatbot Prompt Injection
+| Trick the chatbot into generating a coupon code for you despite its coupon policy saying otherwise.
+| xref:part2/injection.adoc#_trick_the_chatbot_into_generating_a_coupon_code_for_you[💡]
+| xref:appendix/solutions.adoc#_trick_the_chatbot_into_generating_a_coupon_code_for_you[📕]
 
 | Change Bender's Password
 | Change Bender's password into _slurmCl4ssic_ without using SQL Injection or Forgot Password.
@@ -676,6 +698,11 @@ ifeval::[{is_ctf} == 0]
 | Steal someone else's personal data without using Injection.
 | xref:part2/sensitive-data-exposure.adoc#_steal_someone_elses_personal_data_without_using_injection[💡]
 | xref:appendix/solutions.adoc#_steal_someone_elses_personal_data_without_using_injection[📕]
+
+| Greedy Chatbot Manipulation
+| Convince the chatbot to give you a coupon of 50% or more. Because apparently a 10% max policy is just a suggestion when you ask nicely enough.
+| xref:part2/injection.adoc#_convince_the_chatbot_to_give_you_a_coupon_of_50_or_more[💡]
+| xref:appendix/solutions.adoc#_convince_the_chatbot_to_give_you_a_coupon_of_50_or_more[📕]
 
 | HTTP-Header XSS
 | Perform a _persisted_ XSS attack with `<iframe src="javascript:alert(`xss`)">` through an HTTP header.

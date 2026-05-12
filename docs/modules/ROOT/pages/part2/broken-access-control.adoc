@@ -30,6 +30,10 @@ ____
 |===
 | Name | Description | Difficulty
 
+| AI Debugging
+| Reveal some behind-the-scenes information on the chatbot as a non-admin user.
+| ⭐⭐
+
 | Admin Section
 | Access the administration section of the store.
 | ⭐⭐
@@ -74,6 +78,15 @@ ____
 | Find an accidentally deployed code sandbox for writing smart contracts on the fly.
 | ⭐
 |===
+
+[[_reveal_some_behind_the_scenes_information_on_the_chatbot_as_a_non_admin_user]]
+== Reveal some behind-the-scenes information on the chatbot as a non-admin user
+
+The support chatbot has a debugging feature that is intended to be used only
+by administrators. This feature shows the internal tool calls and system
+messages, providing valuable insight into what the AI is doing behind the scenes.
+
+include::../../partials/hints/aiDebuggingChallenge.adoc[]
 
 == Access the administration section of the store
 

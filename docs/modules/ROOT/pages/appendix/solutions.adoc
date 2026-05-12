@@ -421,6 +421,14 @@ the security question.
 . Use the seedphrase found in the comment to derive the private key of the first Ethereum wallet. You can visit https://iancoleman.io/bip39/ to get the same.
 . Enter the private key derived in the input box "0x5bcc3e9d38baa06e7bfaab80ae5957bbe8ef059e640311d7d6d465e6bc948e3e".
 
+=== Reveal some behind-the-scenes information on the chatbot as a non-admin user
+
+🚧 Work in progress...
+
+=== Trick the chatbot into generating a coupon code for you
+
+🚧 Work in progress...
+
 
 == ⭐⭐⭐ Challenges
 
@@ -1073,6 +1081,10 @@ local system file!
 === The Juice Shop is susceptible to a known vulnerability in a library for which an advisory has already been issued
 
 // TODO Add solution for "Security Advisory" challenge
+
+=== Convince the chatbot to give you a coupon of 50% or more
+
+🚧 Work in progress...
 
 == ⭐⭐⭐⭐ Challenges
 
