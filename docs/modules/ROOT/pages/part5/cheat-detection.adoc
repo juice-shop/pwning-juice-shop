@@ -173,17 +173,12 @@ An example of the `totalCheatScore` metric can be seen below:
 juiceshop_cheat_score{app="juiceshop"} 0.1201909090909091
 ----
 
-The following values for `totalCheatScore` were measured during
-activities that are
+The following value for `totalCheatScore` was measured during
+a activity that is
 xref:part1/rules.adoc#_things_considered_cheating[definitely considered cheating] while
-solving the available hacking challenges:
-
-* >99.9% after executing all
-xref:part3/contribution.adoc#_integration_tests[Integration tests] in <1
-minute on the author's Windows 10 laptop
-* >99.3% after executing all
-xref:part3/codebase.adoc#_end_to_end_tests[End-to-end tests] in <10
-minutes during GitHub CI/CD on Ubuntu
+solving the available hacking challenges: It reached **>98.9%** after executing all
+xref:part3/codebase.adoc#_end_to_end_tests[End-to-end tests] in **<9
+minutes** on the author's Windows 11 laptop.
 
 == Limitations
 
