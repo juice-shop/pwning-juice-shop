@@ -10,6 +10,7 @@ build/
 # IntelliJ
 .idea/
 *.iml
+.junie/
 
 # NPM
 node_modules/
