@@ -63,7 +63,7 @@ After this command runs successfully, the epub file will be availible at output/
 
 - `docs/modules/ROOT/book.adoc` contains the structuring of pdf and epub versoining.
 
-- `antora-playbook.yml` is the backbone of antora. Antora looks for everything written over there and follows the commands. Different versioning for `master` and `develop` branches is defined in the `content.sources` section to avoid manual updates in `docs/antora.yml`. UI is being rendered as default UI with some overwriting through supplement-ui.
+- `antora-playbook.yml` is the backbone of antora. Antora looks for everything written over there and follows the commands. Different versioning is mentioned in content.sources.branch. UI is being rendered as default UI with some overwriting through supplement-ui.
 
 - `supplement-ui/` is where any changes for the antora-ui should be made. It will overwrite the default antora-ui.
 
