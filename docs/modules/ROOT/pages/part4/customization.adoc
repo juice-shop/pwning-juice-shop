@@ -111,7 +111,7 @@ within the application.
 | `favicon_v2.ico`
 
 | `theme`
-| Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green` and `deeporange-indigo`. See <<_material_color_themes,Material Color Themes>> for a sample screenshot of each theme.
+| Name of the color theme used to render the UI. Options are `bluegrey-lightgreen`, `blue-lightblue`, `deeppurple-amber`, `indigo-pink`, `pink-bluegrey`, `purple-green`, `deeporange-indigo`, `lime-green`, and `neon-fire`. See <<_material_color_themes,Material Color Themes>> for a sample screenshot of each theme.
 | `bluegrey-lightgreen`
 
 | `showVersionNumber`
@@ -960,6 +960,12 @@ schemes. The table below shows sample screenshots for each of these.
 
 | `deeporange-indigo`
 | image:part4/material-theme_deeporange-indigo.png[]
+
+| `lime-green`
+| image:part4/material-theme_lime-green.png[]
+
+| `neon-fire`
+| image:part4/material-theme_neon-fire.png[]
 |===
 
 == Provided customizations
