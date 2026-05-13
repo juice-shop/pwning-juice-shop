@@ -7,12 +7,7 @@ content:
   sources:
   - url: .
     start_path: docs
-    branches: master
-    version: latest
-  - url: .
-    start_path: docs
-    branches: develop
-    version: snapshot
+    branches: [master, develop]
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
