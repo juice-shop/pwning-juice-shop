@@ -373,11 +373,11 @@ To set up Ollama:
 . Pull the default model either via the Desktop App's model search or using the CLI:
 +
 ----
-ollama pull qwen3.5:9b
+ollama pull gemma4:e4b
 ----
 . Start Ollama (if not already running) and then launch Juice Shop as usual.
 
-NOTE: `qwen3.5:9b` is the recommended default model. It is the smallest model we found to work reliably enough to be useful, and should still run on most machines, even if slowly.
+NOTE: `gemma4:e4b` is the recommended default model. It is the smallest model we found to work reliably enough to be useful, and should still run on most machines, even if slowly.
 
 You can configure an alternative OpenAI-compatible endpoint and model via the xref:part4/customization.adoc#_chatbot_subsection[chatBot customization properties] `llmApiUrl` and `model`. For authenticated endpoints, set the `LLM_API_KEY` environment variable with your API key.
 
