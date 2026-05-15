@@ -49,7 +49,7 @@ image::part1/multi-hints3.png[Final hint unlocked]
 
 Additional to the filtering by difficulty and status, you can filter the Score
 Board by xref:part1/categories.adoc#_vulnerability_categories[challenge categories], e.g. to focus your
-hacking efforts on specific vulnerabilities. Use the toggle buttons under the dropdown filters to choose specific challenge categories, or select _All_ to show all of them.
+hacking efforts on specific vulnerabilities. Use the toggle buttons under the dropdown filters to choose specific challenge categories, or select __All__ to show all of them.
 
 image::part1/score-board_category-filters.png[Score Board category filters]
 
@@ -133,7 +133,7 @@ this flag. The code is only relevant if you are participating in a CTF
 event. Please refer to chapter xref:part4/ctf.adoc#_hosting_a_ctf_event[Hosting a CTF event] for more
 information this topic.
 
-image::part1/notification_with_flag.png["Challenge solved!" notification with flag code]
+image::part4/notification_with_flag.png["Challenge solved!" notification with flag code]
 
 Apart from the success notifications, OWASP Juice Shop also fires a
 confetti cannon on each side of the screen whenever a user solves a
