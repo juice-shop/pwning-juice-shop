@@ -25,16 +25,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Set Antora version
-        run: |
-          $version = "local"
-          if ("${{ github.ref_name }}" -eq "master") { $version = "latest" }
-          elseif ("${{ github.ref_name }}" -eq "develop") { $version = "snapshot" }
-          echo "ANTORA_VERSION=$version" >> $env:GITHUB_ENV
-          echo "ANTORA_BRANCHES=${{ github.ref_name }}" >> $env:GITHUB_ENV
-      - name: Inject version into antora.yml
-        run: |
-          (Get-Content docs/antora.yml) -replace "version: '.*'", "version: '$env:ANTORA_VERSION'" | Set-Content docs/antora.yml
       - name: Install Antora and Lunr extension
         run: |
           npx antora -v
