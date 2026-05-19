@@ -185,7 +185,7 @@ with lots of attack patterns built in and offer active as well as
 passive attacks that can be scripted automatically or while you are
 surfing the target application.
 
-The open-source https://www.zaproxy.org/[OWASP Zed Attack Proxy (ZAP)]
+The open-source https://www.zaproxy.org/[Zed Attack Proxy (ZAP)]
 is such a software and offers many useful hacking tools for free:
 
 ____
@@ -196,8 +196,6 @@ for developers and functional testers who are new to penetration
 testing. ZAP provides automated scanners as well as a set of tools
 that allow you to find security vulnerabilities manually.footnote:2_3_2[https://github.com/zaproxy/zap-core-help/wiki]
 ____
-
-image::part1/zap.png[ZAP Logo]
 
 ==== Pentesting Linux distributions
 
