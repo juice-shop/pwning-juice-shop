@@ -60,9 +60,7 @@ image::part1/search-results.png[Search Results]
 [discrete]
 === User login
 
-You might notice that there seems to be no way to actually purchase any
-of the products. This functionality exists, but is not available to
-anonymous users. You first have to log in to the shop with your user
+While you can put items into the shopping cart as an anonymous user, you will eventually not be able to submit an order without an account. You first have to log in to the shop with your user
 credentials on the `+#/login+` page. There you can either log in with your
 existing credentials (if you are a returning customer) or with your
 Google account.
@@ -93,9 +91,7 @@ image::part1/forgot-password.png[User Registration]
 [discrete]
 === Choosing products to purchase
 
-After logging in to the application you will notice a "shopping
-cart"-icon in every row of the products table. Unsurprisingly this will
-let you add one or more products into your shopping basket. The _Your
+Using the "Add to Basket"-button on any item in the products table lets you add that product into your shopping basket. Clicking it multiple times will let you add more items of the same type, unless you reach a purchase-per-user limit or run into a stock shortage. The _Your
 Basket_ button in the navigation bar will bring you to the `+#/basket+`
 page, where you can do several things before actually confirming your
 purchase:
@@ -188,6 +184,8 @@ existing balance. All the bonuses on your purchase are directly credited
 to your wallet.
 
 image::part1/wallet.png[Wallet]
+
+NOTE: You can switch to a Web3 wallet with the "Try out our new Crypto Wallet"-link. You need to have one installed in your browser e.g. via MetaMask plugin to do so. This is only needed if you would like to do the Web3 challenges of Juice Shop.
 
 [discrete]
 ==== Order History
