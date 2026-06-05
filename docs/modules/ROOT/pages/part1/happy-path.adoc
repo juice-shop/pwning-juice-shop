@@ -195,6 +195,14 @@ previous orders and the status of their delivery.
 
 image::part1/order-history.png[Order History]
 
+You can drill down into a specific order by clicking the truck-icon. Aprt from the products in that order you will now also see its delivery status, expected delivery date, and how many bonus points you earned.
+
+image::part1/track-orders-result.png[Track Orders Result]
+
+NOTE: Just as there was no "real" payment was happening, you will hopefully
+understand that there is no "real" order delivery happening - no matter
+what the order tracking dialog suggested.
+
 [discrete]
 ===== Privacy Policy
 
@@ -260,23 +268,6 @@ For greater amounts of pomace the customer can alternatively order a
 truck to come by and pick it up at a chosen future date.
 
 image::part1/recycling-pickup.png[Request Recycling Pickup]
-
-[discrete]
-==== Order Tracking
-
-Equipped with an order number from your confirmation PDF, you can invoke
-the `+#/track-order+` functionality by clicking _Track Orders_.
-
-image::part1/track-orders.png[Track Orders]
-
-After entering a valid order number, you will be shown the products from
-your order along with a delivery status and expected delivery date.
-
-image::part1/track-orders-result.png[Track Orders Result]
-
-NOTE: Just as there was no "real" payment was happening, you will hopefully
-understand that there is no "real" order delivery happening - no matter
-what the order tracking dialog suggested.
 
 [discrete]
 === Menu
