@@ -52,10 +52,10 @@ Shop client are structured using the example of `FeedbackService`. It
 wraps the `/api/Feedback` API which offers a `GET`, `POST` and `DELETE`
 endpoint to find, create and delete `Feedback` of users:
 
-[,javascript]
+[,typescript]
 ----
 import { environment } from '../../environments/environment'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { catchError, map } from 'rxjs/operators'
 
@@ -63,28 +63,23 @@ import { catchError, map } from 'rxjs/operators'
   providedIn: 'root'
 })
 export class FeedbackService {
+  private readonly http = inject(HttpClient)
 
-  private hostServer = environment.hostServer
-  private host = this.hostServer + '/api/Feedbacks'
-
-  constructor (private http: HttpClient) { }
+  private readonly hostServer = environment.hostServer
+  private readonly host = this.hostServer + '/api/Feedbacks'
 
   find (params?: any) {
-    return this.http.get(this.host + '/' , {
-      params: params
-    }).pipe(map((response: any) => response.data), catchError((err) => {
-      throw err
-    }))
+    return this.http.get(this.host + '/', {
+      params
+    }).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 
-  save (params) {
-    return this.http.post(this.host + '/', params).pipe(map((response: any) =>
-      response.data), catchError((err) => { throw err }))
+  save (params: any) {
+    return this.http.post(this.host + '/', params).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 
-  del (id) {
-    return this.http.delete(this.host + '/' + id).pipe(map((response: any) =>
-      response.data), catchError((err) => { throw err }))
+  del (id: number) {
+    return this.http.delete(`${this.host}/${id}`).pipe(map((response: any) => response.data), catchError((err) => { throw err }))
   }
 }
 ----
@@ -135,18 +130,20 @@ very simple `getNewCaptcha()` and `resetForm()` functions in the code
 snippet below. Helper functions should always be located as close to the
 calling code as possible.
 
-[,javascript]
+[,typescript]
 ----
 import { FeedbackService } from '../Services/feedback.service'
 import { CaptchaService } from '../Services/captcha.service'
 import { UserService } from '../Services/user.service'
-import { FormControl, Validators } from '@angular/forms'
-import { Component, OnInit } from '@angular/core'
-import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { UntypedFormControl, Validators } from '@angular/forms'
+import { Component, type OnInit, inject } from '@angular/core'
+import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPaperPlane, faStar } from '@fortawesome/free-solid-svg-icons'
+import { FormSubmitService } from '../Services/form-submit.service'
+import { TranslateService } from '@ngx-translate/core'
+import { SnackBarHelperService } from '../Services/snack-bar-helper.service'
 
 library.add(faStar, faPaperPlane)
-dom.watch()
 
 @Component({
   selector: 'app-contact',
@@ -154,64 +151,74 @@ dom.watch()
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  private readonly userService = inject(UserService)
+  private readonly captchaService = inject(CaptchaService)
+  private readonly feedbackService = inject(FeedbackService)
+  private readonly formSubmitService = inject(FormSubmitService)
+  private readonly translate = inject(TranslateService)
+  private readonly snackBarHelperService = inject(SnackBarHelperService)
 
-  public authorControl: FormControl =
-    new FormControl({ value: '', disabled: true }, [])
-  public feedbackControl: FormControl =
-    new FormControl('', [Validators.required, Validators.maxLength(160)])
-  public captchaControl: FormControl =
-    new FormControl('', [Validators.required])
-  public userIdControl: FormControl = new FormControl('', [])
-  public rating: number = 0
+  public authorControl: UntypedFormControl = new UntypedFormControl({ value: '', disabled: true }, [])
+  public feedbackControl: UntypedFormControl = new UntypedFormControl('', [Validators.required, Validators.maxLength(160)])
+  public captchaControl: UntypedFormControl = new UntypedFormControl('', [Validators.required, Validators.pattern('-?[\\d]*')])
+  public userIdControl: UntypedFormControl = new UntypedFormControl('', [])
+  public rating = 0
   public feedback: any = undefined
   public captcha: any
   public captchaId: any
   public confirmation: any
   public error: any
 
-  constructor (
-    private userService: UserService,
-    private captchaService: CaptchaService,
-    private feedbackService: FeedbackService) { }
-
-  ngOnInit () {
-    this.userService.whoAmI().subscribe((data: any) => {
-      this.feedback = {}
-      this.userIdControl.setValue(data.id)
-      this.feedback.UserId = data.id
-      this.authorControl.setValue(data.email || 'anonymous')
-    }, (err) => {
-      this.feedback = undefined
-      console.log(err)
+  ngOnInit (): void {
+    this.userService.whoAmI(['id', 'email']).subscribe({
+      next: (data: any) => {
+        this.feedback = {}
+        this.userIdControl.setValue(data.id)
+        this.feedback.UserId = data.id
+        this.authorControl.setValue(data.email ? `***${data.email.slice(3)}` : 'anonymous')
+      },
+      error: (err) => {
+        this.feedback = undefined
+        console.log(err)
+      }
     })
     this.getNewCaptcha()
+    this.formSubmitService.attachEnterKeyHandler('feedback-form', 'submitButton', () => { this.save() })
   }
 
   getNewCaptcha () {
-    this.captchaService.getCaptcha().subscribe((data: any) => {
-      this.captcha = data.captcha
-      this.captchaId = data.captchaId
-    }, (err) => err)
+    this.captchaService.getCaptcha().subscribe({
+      next: (data: any) => {
+        this.captcha = data.captcha
+        this.captchaId = data.captchaId
+      },
+      error: (err) => err
+    })
   }
 
   save () {
     this.feedback.captchaId = this.captchaId
     this.feedback.captcha = this.captchaControl.value
-    this.feedback.comment = this.feedbackControl.value
+    this.feedback.comment = `${this.feedbackControl.value} (${this.authorControl.value})`
     this.feedback.rating = this.rating
     this.feedback.UserId = this.userIdControl.value
-    this.feedbackService.save(this.feedback).subscribe((savedFeedback) => {
-      this.error = null
-      this.confirmation = 'Thank you for your feedback' +
-        (savedFeedback.rating === 5 ? ' and your 5-star rating!' : '.')
-      this.feedback = {}
-      this.ngOnInit()
-      this.resetForm()
-    }, (error) => {
-      this.error = error.error
-      this.confirmation = null
-      this.feedback = {}
-      this.resetForm()
+    this.feedbackService.save(this.feedback).subscribe({
+      next: (savedFeedback) => {
+        const messageKey = savedFeedback.rating === 5 ? 'FEEDBACK_FIVE_STAR_THANK_YOU' : 'FEEDBACK_THANK_YOU'
+        this.translate.get(messageKey).subscribe({
+          next: (msg) => { this.snackBarHelperService.open(msg) },
+          error: (translationId) => { this.snackBarHelperService.open(translationId) }
+        })
+        this.feedback = {}
+        this.ngOnInit()
+        this.resetForm()
+      },
+      error: (err) => {
+        console.log(err)
+        this.snackBarHelperService.open(err.error, 'errorBar')
+        this.feedback = {}
+        this.resetCaptcha()
+      }
     })
   }
 
@@ -222,11 +229,15 @@ export class ContactComponent implements OnInit {
     this.feedbackControl.markAsUntouched()
     this.feedbackControl.markAsPristine()
     this.feedbackControl.setValue('')
+    this.rating = 0
+    this.resetCaptcha()
+  }
+
+  resetCaptcha () {
     this.captchaControl.markAsUntouched()
     this.captchaControl.markAsPristine()
     this.captchaControl.setValue('')
   }
-
 }
 ----
 
@@ -270,61 +281,64 @@ _Contact Us_ screen.
 <div class="center-container">
   <mat-card appearance="outlined" class="mat-elevation-z6">
     <div class="mdc-card">
-      <h1 translate>SECTION_CUSTOMER_FEEDBACK</h1>
+      <h1 class="mat-headline-medium" translate>SECTION_CUSTOMER_FEEDBACK</h1>
 
       <div class="form-container" id="feedback-form">
 
         <input hidden type="text" id="userId" ngDefaultControl [formControl]="userIdControl"/>
 
-        <mat-form-field appearance="outline" color="accent">
+        <mat-form-field appearance="outline" color="tertiary">
           <mat-label translate>LABEL_AUTHOR</mat-label>
           <input ngDefaultControl [formControl]="authorControl" matInput type="text" aria-label="Field with the name of the author">
         </mat-form-field>
 
-        <mat-form-field appearance="outline" color="accent">
+        <mat-form-field appearance="outline" color="tertiary">
           <mat-label translate>LABEL_COMMENT</mat-label>
           <mat-hint translate>
             <i class="fas fa-exclamation-circle"></i>
-            <em style="margin-left:5px;" translate>{{ 'MAX_TEXTAREA_LENGTH' | translate: {length: '160'} }}</em>
+            <em class="feedback-hint" translate>{{ 'MAX_TEXTAREA_LENGTH' | translate: {length: '160'} }}</em>
           </mat-hint>
           <textarea #comment id="comment" ngDefaultControl [formControl]="feedbackControl" matInput
-                    matAutosizeMinRows="4" matAutosizeMaxRows="4" matTextareaAutosize cols="50" maxlength="160"
-                    placeholder="{{ 'WRITE_REVIEW_PLACEHOLDER' | translate}}"
-                    aria-label="Field for entering the comment or the feedback"></textarea>
+            matAutosizeMinRows="4" matAutosizeMaxRows="4" matTextareaAutosize cols="50" maxlength="160"
+            placeholder="{{ 'WRITE_REVIEW_PLACEHOLDER' | translate}}"
+            aria-label="Field for entering the comment or the feedback"></textarea>
           <mat-hint align="end">{{comment.value?.length || 0}}/160</mat-hint>
-          <mat-error *ngIf="feedbackControl.invalid && feedbackControl.errors.required" translate>MANDATORY_COMMENT
-          </mat-error>
+          @if (feedbackControl.invalid && feedbackControl.errors.required) {
+            <mat-error translate>MANDATORY_COMMENT</mat-error>
+          }
         </mat-form-field>
 
         <div class="rating-container">
-          <label style="font-weight:500; margin-right: 8px; float:left;" translate>LABEL_RATING</label>
+          <label class="rating-label" translate>LABEL_RATING</label>
           <mat-slider id="rating" min="1" max="5" step="1" showTickMarks discrete [displayWith]="formatRating" aria-label="Slider for selecting the star rating">
             <input matSliderThumb [(ngModel)]="rating" />
           </mat-slider>
         </div>
 
-        <div style="margin-bottom: 10px; margin-top: 10px; ">
-          <label style="font-weight:500;">CAPTCHA:</label>&nbsp;&nbsp;<span style="font-size:small;"
-                                                                            translate>LABEL_WHAT_IS</span>&nbsp;
-          <code id="captcha" aria-label="CAPTCHA code which must be solved">{{captcha}}</code>&nbsp;<label
-          style="font-size:small;">?</label>
+        <div class="captcha-info">
+          <label class="captcha-label">CAPTCHA:</label>&nbsp;&nbsp;
+          <span class="captcha-note" translate>LABEL_WHAT_IS</span>&nbsp;
+          <code id="captcha" aria-label="CAPTCHA code which must be solved">{{captcha}}</code>&nbsp;
+          <label class="captcha-note">?</label>
         </div>
-        <mat-form-field appearance="outline" color="accent">
+        <mat-form-field appearance="outline" color="tertiary">
           <mat-label translate>LABEL_RESULT</mat-label>
           <input id="captchaControl" ngDefaultControl [formControl]="captchaControl" matInput type="text"
-                placeholder="{{ 'MANDATORY_CAPTCHA' | translate}}"
-                aria-label="Field for the result of the CAPTCHA code" pattern="-?[\d]*">
-          <mat-error *ngIf="captchaControl.invalid && captchaControl.errors.required" translate>MANDATORY_CAPTCHA
-          </mat-error>
-          <mat-error *ngIf="captchaControl.invalid && captchaControl.errors.pattern" translate>INVALID_CAPTCHA
-          </mat-error>
+            placeholder="{{ 'MANDATORY_CAPTCHA' | translate}}"
+            aria-label="Field for the result of the CAPTCHA code" pattern="-?[\d]*">
+          @if (captchaControl.invalid && captchaControl.errors.required) {
+            <mat-error translate>MANDATORY_CAPTCHA</mat-error>
+          }
+          @if (captchaControl.invalid && captchaControl.errors.pattern) {
+            <mat-error translate>INVALID_CAPTCHA</mat-error>
+          }
         </mat-form-field>
 
       </div>
 
       <button type="submit" id="submitButton" mat-raised-button color="primary"
-              [disabled]="authorControl.invalid || feedbackControl.invalid || captchaControl.invalid || !rating"
-              (click)="save()" aria-label="Button to send the review">
+        [disabled]="authorControl.invalid || feedbackControl.invalid || captchaControl.invalid || !rating"
+        (click)="save()" aria-label="Button to send the review">
         <mat-icon>send</mat-icon>
         {{'BTN_SUBMIT' | translate}}
       </button>
@@ -437,23 +451,23 @@ For e.g. the `User` model the generated endpoints are:
  ** `DELETE` requests to delete a user record
 
 Apart from the `User` model also the `Product`, `Feedback`,
-`BasketItem`, `Challenge`, `Complaint`, `Recycle`, `SecurityQuestion`, `SecurityAnswer`, `Address`, `PrivacyRequest`, `Card` and `Quantity` models are exposed in this fashion.
+`BasketItem`, `Challenge`, `Complaint`, `Recycle`, `SecurityQuestion`, `SecurityAnswer`, `Address`, `PrivacyRequest`, `Card`, `Quantity` and `Hint` models are exposed in this fashion.
 
 Not all HTTP verbs are accepted by every endpoint. Furthermore, some
 endpoints are protected against anonymous access and can only be used by
 an authenticated user. This is described later in section
 <<_access_control_on_routes,Access control on routes>>.
 
-[,javascript]
+[,typescript]
 ----
-finale.initialize({ app, sequelize })
+finale.initialize({ app, sequelize: seq })
 
 const autoModels = [
   { name: 'User', exclude: ['password', 'totpSecret'], model: UserModel },
   { name: 'Product', exclude: [], model: ProductModel },
   { name: 'Feedback', exclude: [], model: FeedbackModel },
   { name: 'BasketItem', exclude: [], model: BasketItemModel },
-  { name: 'Challenge', exclude: [], model: ChallengeModel },
+  { name: 'Challenge', exclude: [], model: ChallengeModel, include: [ChallengeDependencyModel] },
   { name: 'Complaint', exclude: [], model: ComplaintModel },
   { name: 'Recycle', exclude: [], model: RecycleModel },
   { name: 'SecurityQuestion', exclude: [], model: SecurityQuestionModel },
@@ -461,14 +475,17 @@ const autoModels = [
   { name: 'Address', exclude: [], model: AddressModel },
   { name: 'PrivacyRequest', exclude: [], model: PrivacyRequestModel },
   { name: 'Card', exclude: [], model: CardModel },
-  { name: 'Quantity', exclude: [], model: QuantityModel }
+  { name: 'Quantity', exclude: [], model: QuantityModel },
+  { name: 'Hint', exclude: [], model: HintModel }
 ]
 
-for (const { name, exclude, model } of autoModels) {
+for (const { name, exclude, model, include } of autoModels) {
   const resource = finale.resource({
     model,
     endpoints: [`/api/${name}s`, `/api/${name}s/:id`],
-    excludeAttributes: exclude
+    excludeAttributes: exclude,
+    pagination: false,
+    include
   })
   // ...
 }
@@ -489,14 +506,14 @@ Each middleware exposes a single function which encapsulates their
 responsibility. For example, the `angular.ts` middleware delivers the
 `index.html` page to the client:
 
-[,javascript]
+[,typescript]
 ----
-import path = require('path')
-import { Request, Response, NextFunction } from 'express'
+import path from 'node:path'
+import { type Request, type Response, type NextFunction } from 'express'
 
-const utils = require('../lib/utils')
+import * as utils from '../lib/utils'
 
-module.exports = function serveAngularClient () {
+export function serveAngularClient () {
   return ({ url }: Request, res: Response, next: NextFunction) => {
     if (!utils.startsWith(url, '/api') && !utils.startsWith(url, '/rest')) {
       res.sendFile(path.resolve('frontend/dist/frontend/index.html'))
@@ -510,38 +527,39 @@ module.exports = function serveAngularClient () {
 If a hand-written middleware is involved in a hacking challenge, it must
 assess on its own if the challenge has been solved. For example, in the
 `basket.ts` middleware where successfully accessing another user's
-shopping basket is verified in the `utils.solveIf()` function call:
+shopping basket is verified in the `challengeUtils.solveIf()` function call:
 
-[,javascript]
+[,typescript]
 ----
-import { Request, Response, NextFunction } from 'express'
+import { type Request, type Response, type NextFunction } from 'express'
 import { ProductModel } from '../models/product'
 import { BasketModel } from '../models/basket'
+import * as challengeUtils from '../lib/challengeUtils'
 
-const utils = require('../lib/utils')
-const security = require('../lib/insecurity')
-const challenges = require('../data/datacache').challenges
+import * as utils from '../lib/utils'
+import * as security from '../lib/insecurity'
+import { challenges } from '../data/datacache'
 
-module.exports = function retrieveBasket () {
-  return (req: Request, res: Response, next: NextFunction) => {
-    const id = req.params.id
-    BasketModel.findOne({ where: { id }, include: [{ model: ProductModel, paranoid: false, as: 'Products' }] })
-            .then((basket: BasketModel | null) => {
-              /* jshint eqeqeq:false */
-              utils.solveIf(challenges.basketAccessChallenge, () => {
-                const user = security.authenticatedUsers.from(req)
-                return user && id && id !== 'undefined' && id !== 'null' && id !== 'NaN' && user.bid && user.bid != id // eslint-disable-line eqeqeq
-              })
-              if (basket?.Products && basket.Products.length > 0) {
-                for (let i = 0; i < basket.Products.length; i++) {
-                  basket.Products[i].name = req.__(basket.Products[i].name)
-                }
-              }
+export function retrieveBasket () {
+  return async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = req.params.id
+      const basket = await BasketModel.findOne({ where: { id }, include: [{ model: ProductModel, paranoid: false, as: 'Products' }] })
+      /* jshint eqeqeq:false */
+      challengeUtils.solveIf(challenges.basketAccessChallenge, () => {
+        const user = security.authenticatedUsers.from(req)
+        return user && id && id !== 'undefined' && id !== 'null' && id !== 'NaN' && user.bid && user?.bid != parseInt(id, 10) // eslint-disable-line eqeqeq
+      })
+      if (((basket?.Products) != null) && basket.Products.length > 0) {
+        for (let i = 0; i < basket.Products.length; i++) {
+          basket.Products[i].name = req.__(basket.Products[i].name)
+        }
+      }
 
-              res.json(utils.queryResultToJson(basket))
-            }).catch((error: Error) => {
+      res.json(utils.queryResultToJson(basket))
+    } catch (error) {
       next(error)
-    })
+    }
   }
 }
 ----
@@ -613,59 +631,75 @@ app.route('/api/Users/:id')
 
 === Custom libraries
 
-Two important and widely used custom libraries reside in the `lib`
-folder, one containing useful utilities (`lib/utils.ts`) and the other
-encapsulating many of the broken security features (`lib/insecurity.js`)
+Several custom libraries reside in the `lib`
+folder. The most important ones are `lib/utils.ts` containing useful utilities, `lib/challengeUtils.ts` which handles marking challenges as solved and dispatching notifications, and `lib/insecurity.ts` which encapsulates many of the broken security features
 of the application.
 
-==== Useful utilities
+==== Challenge utilities
 
-The main responsibility of the `utils.ts` module is setting challenges
+The main responsibility of the `challengeUtils.ts` module is setting challenges
 as solved and sending associated notifications, optionally including a
-CTF flag code. It can also retrieve any challenge by its name and check
+CTF flag code. It can also retrieve any challenge by its name or id and check
 if a passed challenge is not yet solved, to avoid unnecessary (and
-sometimes expensive) repetitive solving of the same challenge.
+sometimes expensive) repetitive solving of the same challenge. It additionally
+takes care of the _Find It_ and _Fix It_ phases of coding challenges and
+computes cheat scores via the `antiCheat` module.
 
-[,javascript]
+[,typescript]
 ----
-exports.solve = function (challenge, isRestore) {
-  const self = this
+export const solve = function (challenge: any, isRestore = false, isCheating = false) {
   challenge.solved = true
-  challenge.save().then(solvedChallenge => {
-    solvedChallenge.description = entities.decode(sanitizeHtml(solvedChallenge.description, {
-      allowedTags: [],
-      allowedAttributes: []
-    }))
-    console.log(colors.green('Solved') + ' challenge ' + colors.cyan(solvedChallenge.name) + ' (' + solvedChallenge.description + ')')
-    self.sendNotification(solvedChallenge, isRestore)
+  challenge.save().then(async (solvedChallenge: { difficulty: number, key: string, name: string, id: number }) => {
+    logger.info(`${isRestore ? colors.grey('Restored') : colors.green('Solved')} ${solvedChallenge.difficulty}-star ${colors.cyan(solvedChallenge.key)} (${solvedChallenge.name})`)
+    sendNotification(solvedChallenge, isRestore)
+    if (!isRestore) {
+      const cheatScore = calculateCheatScore(challenge, isCheating)
+      const hintsAvailable = await HintModel.count({ where: { ChallengeId: solvedChallenge.id } })
+      const hintsUnlocked = await HintModel.count({ where: { ChallengeId: solvedChallenge.id, unlocked: true } })
+      if (process.env.SOLUTIONS_WEBHOOK) {
+        webhook.notify(solvedChallenge, cheatScore, hintsAvailable, hintsUnlocked).catch((error: unknown) => {
+          logger.error('Webhook notification failed: ' + colors.red(utils.getErrorMessage(error)))
+        })
+      }
+    }
   })
 }
 
-exports.sendNotification = function (challenge, isRestore) {
-  if (!this.notSolved(challenge)) {
-    const flag = this.ctfFlag(challenge.name)
-    const notification = {
-      name: challenge.name,
-      challenge: challenge.name + ' (' + challenge.description + ')',
-      flag: flag,
-      hidden: !config.get('application.showChallengeSolvedNotifications'),
-      isRestore: isRestore
+export const sendNotification = function (challenge: { difficulty?: number, key: any, name: any, description?: any }, isRestore: boolean) {
+  if (!notSolved(challenge)) {
+    const flag = utils.ctfFlag(challenge.name)
+    const challengeKey = challenge.key as ChallengeKey
+    const fullChallenge = challenges[challengeKey]
+    let hasCodingChallenge = false
+    if (fullChallenge) {
+      hasCodingChallenge = Boolean(fullChallenge.hasCodingChallenge) ?? false
     }
+    const notification = {
+      key: challenge.key,
+      name: challenge.name,
+      challenge: challenge.name + ' (' + entities.decode(sanitizeHtml(challenge.description, { allowedTags: [], allowedAttributes: {} })) + ')',
+      flag,
+      hidden: !config.get('challenges.showSolvedNotifications'),
+      isRestore,
+      codingChallenge: config.get('challenges.codingChallengesEnabled') !== 'never' && hasCodingChallenge
+    }
+    const wasPreviouslyShown = notifications.some(({ key }) => key === challenge.key)
     notifications.push(notification)
-    if (global.io) {
-      global.io.emit('challenge solved', notification)
+    if (globalWithSocketIO.io && (isRestore || !wasPreviouslyShown)) {
+      globalWithSocketIO.io.emit('challenge solved', notification)
     }
   }
 }
 ----
 
-It also offers some basic `String` and `Date` utilities along with data
-(un-)wrapper functions and a method for the synchronous file download
+The `utils.ts` module offers some basic `String` and `Date` utilities along with data
+(un-)wrapper functions, helpers to compute the CTF flag, determine challenge enablement,
+and a method for the synchronous file download
 used during xref:part4/customization.adoc#customization[Customization].
 
-==== security features
+==== Security features
 
-The `insecurity.js` module offers all security-relevant utilities of the
+The `insecurity.ts` module offers all security-relevant utilities of the
 application, but of course mostly in some broken or flawed way:
 
 * Hashing functions both weak (`hash()`) and relatively strong
@@ -682,8 +716,11 @@ authentication token (JWT) in `authenticatedUsers`
 `discountFromCoupon()`
 * A allowlist of allowed redirect URLs and a corresponding check
 function `isRedirectAllowed()`
-* CAPTCHA verification via `verifyCaptcha()` which compares the user's
-answer against the requested CAPTCHA from the database
+* HTTP request scoped helpers like `appendUserId()` and role checks (`isDeluxe()`, `isCustomer()`, `isAccounting()`)
+
+CAPTCHA verification has moved out of `insecurity.ts` and is now exposed as
+`verifyCaptcha()` from `routes/captcha.ts`, which compares the user's answer against
+the requested CAPTCHA from the database.
 
 == Storage Tier
 
@@ -745,8 +782,8 @@ image::part3/erm-diagram.png[ERM Diagram]
 
 === Non-relational database
 
-Not all data of the Juice Shop resides in a relational schema. The user's product reviews are stored in a collection `reviews` within a non-relational in-memory
-https://github.com/c58/marsdb[MarsDB] instance. All customer `orders` are also persisted in this fashion. An example user `reviews` entry might look like the following inside MarsDB:
+Not all data of the Juice Shop resides in a relational schema. The user's product reviews are stored in a collection `posts` within a non-relational in-memory
+https://github.com/c58/marsdb[MarsDB] instance. All customer `orders` are also persisted in this fashion. An example user `posts` entry might look like the following inside MarsDB:
 
 ----
 {"message":"One of my favorites!","author":"admin@juice-sh.op","product":1,"_id":"PaZjAKKMaxWieSF65"}
@@ -767,9 +804,9 @@ automatically executed on every server start after the SQLite file and
 in-memory MarsDB have been cleared. It populates all tables with some
 initial data which makes the application usable out-of-the-box:
 
-[,javascript]
+[,typescript]
 ----
-module.exports = async () => {
+export default async () => {
   const creators = [
     createSecurityQuestions,
     createUsers,
@@ -785,7 +822,8 @@ module.exports = async () => {
     createQuantity,
     createWallet,
     createDeliveryMethods,
-    createMemories
+    createMemories,
+    prepareFilesystem
   ]
 
   for (const creator of creators) {
@@ -834,7 +872,7 @@ integration between components which can't be captured in a unit test.
 End-to-end tests are made to find these problems.footnote:4_1_5[https://docs.angularjs.org/guide/e2e-testing]
 ____
 
-The folder `cypress/integration/e2e` contains an extensive suite of end-to-end tests
+The folder `test/cypress/e2e` contains an extensive suite of end-to-end tests
 which *automatically solves _every_ challenge* in the Juice Shop
 application. Whenever a new challenge is added, a corresponding
 end-to-end test needs to be included, to prove that it can be exploited.
