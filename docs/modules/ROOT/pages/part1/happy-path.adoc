@@ -252,7 +252,6 @@ image::part1/2fa-configuration.png[2FA Configuration]
 
 This page displays the IP from which your account was last logged in.
 
-// TODO Update screenshot for v20.0.0
 image::part1/last-login-ip.png[Last Login IP]
 
 [discrete]
@@ -308,7 +307,6 @@ In the _AI Chat_ you can talk to an LLM-powered chatbot
 and get answers to questions like product prices, deluxe membership
 benefits, and more.
 
-// TODO Update screenshot for v20.0.0
 image::part1/support-chat.png[Support Chat]
 
 [discrete]
