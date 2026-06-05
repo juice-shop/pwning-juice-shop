@@ -31,7 +31,7 @@ The Juice Shop offers a _Deluxe Membership_ that comes with reduced
 delivery fees and other perks. On the page advertising it, a heap of
 delivery boxes can be seen - all with the Juice Shop logo on them.
 
-image::part2/deluxe-membership_page.png[Vanilla Deluxe Membership page]
+image::part1/deluxe-membership.png[Vanilla Deluxe Membership page]
 
 include::../../partials/hints/svgInjectionChallenge.adoc[]
 

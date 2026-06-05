@@ -6,7 +6,7 @@ The user interface of OWASP Juice Shop is fully translated into several
 languages. For many more languages there is a partial translation
 available:
 
-image::part3/languages.png[Language selection dropdown]
+image::part1/language-selection.png[Language selection dropdown]
 
 Since release v9.1.0 translation of backend strings such as product
 names & descriptions, challenge descriptions and hints as well as

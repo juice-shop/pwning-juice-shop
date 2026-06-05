@@ -75,7 +75,7 @@ happening on the network. Most actions on the UI result in
 `XMLHttpRequest` (`XHR`) objects being sent and responded to by the
 server.
 
-image::part2/xhr-api_requests.png[XHR requests to the backend API]
+image::part1/devtools_network.png[XHR requests to the backend API]
 
 For the XSS Tier 3 challenge it is necessary to work with the
 server-side API directly. You will need a command line tool like `curl`

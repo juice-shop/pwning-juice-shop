@@ -78,7 +78,7 @@ Shop's user interface is available in different languages. One extra
 language is actually available that you will not find in the selection
 menu.
 
-image::part3/languages.png[Language selection dropdown]
+image::part1/language-selection.png[Language selection dropdown]
 
 include::../../partials/hints/extraLanguageChallenge.adoc[]
 
