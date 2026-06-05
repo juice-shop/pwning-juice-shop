@@ -83,7 +83,7 @@ image::part1/user-registration.png[User Registration]
 [discrete]
 === Forgot Password
 
-By providing your email address, the answer to your security question
+By providing your email address, the answer to your security question,
 and a new password, you can recover an otherwise inaccessible account.
 
 image::part1/forgot-password.png[User Registration]
@@ -106,7 +106,7 @@ image::part1/your-basket.png[Your Basket]
 === Checkout
 
 During checkout, you will be guided through a series of steps to set
-your delivery address, desired delivery method and credit card.
+your delivery address, desired delivery method, and credit card.
 
 image:part1/select-address.png[Delivery address selection]
 image:part1/delivery-method.png[Delivery method selection]
@@ -206,7 +206,7 @@ what the order tracking dialog suggested.
 [discrete]
 ===== Privacy Policy
 
-This page informs you about the policies regarding the collection, use
+This page informs you about the policies regarding the collection, use,
 and disclosure of personal data when you use the OWASP Juice Shop and
 the choices you have when it comes to your data.
 
@@ -252,6 +252,7 @@ image::part1/2fa-configuration.png[2FA Configuration]
 
 This page displays the IP from which your account was last logged in.
 
+// TODO Update screenshot for v20.0.0
 image::part1/last-login-ip.png[Last Login IP]
 
 [discrete]
@@ -291,9 +292,9 @@ mathematical problem before being allowed to submit your feedback.
 image::part1/contact-us.png[Contact Us]
 
 [discrete]
-==== Complain
+==== Complaint
 
-The _Complain?_ menu item is shown only to logged in users. It brings
+The _Complaint?_ menu item is shown only to logged in users. It brings
 you to the `+#/complain+` page where you can leave a free text _Message_
 and attach an _Invoice_ file in case you had some issues with a recent
 order at the Juice Shop.
@@ -301,12 +302,13 @@ order at the Juice Shop.
 image::part1/file-complaint.png[File Complaint]
 
 [discrete]
-==== Support Chat
+==== AI Chat
 
-In the _Support Chat_ you can talk to an (almost) AI-powered chat bot
+In the _AI Chat_ you can talk to an LLM-powered chatbot
 and get answers to questions like product prices, deluxe membership
-benefits and more.
+benefits, and more.
 
+// TODO Update screenshot for v20.0.0
 image::part1/support-chat.png[Support Chat]
 
 [discrete]
@@ -334,7 +336,7 @@ image::part1/photo-wall.png[Photo Wall]
 ==== Deluxe Membership
 
 The OWASP Juice Shop offers a deluxe membership to its customers which
-provides them with exclusive offers, free fast delivery and an
+provides them with exclusive offers, free fast delivery, and an
 unrestricted purchase of the items they like.
 
 image::part1/deluxe-membership.png[Deluxe Membership]
