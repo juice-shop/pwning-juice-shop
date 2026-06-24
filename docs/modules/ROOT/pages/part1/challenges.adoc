@@ -346,7 +346,7 @@ image::part1/dangerous-challenges_banner.png[Heroku-related dangerous challenges
 
 For safety reasons all potentially dangerous challenges are disabled
 (along with their underlying vulnerabilities) when a containerized
-environment is detected. By default, this applies to Docker, Heroku, and Gitpod. Dangerous
+environment is detected. By default, this applies to Docker and Heroku. Dangerous
 challenges are marked as 'unavailable' in the scoreboard as can be seen
 in the screenshot below.
 
