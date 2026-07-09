@@ -43,6 +43,10 @@ libraries or other 3rd party components the application uses internally.
 | Forge an essentially unsigned JWT token that impersonates the (non-existing) user _jwtn3d@juice-sh.op_.
 | ⭐⭐⭐⭐⭐
 
+| Vulnerable Infrastructure
+| Inform the shop about the use of a known vulnerable infrastructure component. (Identify the component as specifically as possible in your complaint)
+| ⭐⭐⭐
+
 | Vulnerable Library
 | Inform the shop about a high-severity vulnerability. (Mention the exact library name and version in your comment)
 | ⭐⭐⭐⭐
@@ -195,6 +199,16 @@ exist in the database but make the application believe it is still
 legit.
 
 include::../../partials/hints/jwtForgedChallenge.adoc[]
+
+[[_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component]]
+== Inform the shop about the use of a known vulnerable infrastructure component
+
+This challenge is about identifying and reporting (via the
+http://localhost:3000/#/complain form) a case of a vulnerable component in the
+underlying infrastructure of the Juice Shop that the attacker should not even
+know about.
+
+include::../../partials/hints/vulnerableDockerImageChallenge.adoc[]
 
 == Inform the shop about a high-severity vulnerability
 

@@ -1090,6 +1090,10 @@ local system file!
 
 🚧 Work in progress...
 
+=== Inform the shop about the use of a known vulnerable infrastructure component
+
+🚧 Work in progress...
+
 == ⭐⭐⭐⭐ Challenges
 
 === Gain access to any access log file of the server

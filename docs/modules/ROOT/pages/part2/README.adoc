@@ -453,6 +453,10 @@ ifeval::[{is_ctf} == 1]
 | Determine the answer to Emma's security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[💡]
 
+| Vulnerable Infrastructure
+| Inform the shop about the use of a known vulnerable infrastructure component. (Identify the component as specifically as possible in your complaint)
+| xref:part2/vulnerable-components.adoc#_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component[💡]
+
 | Vulnerable Library
 | Inform the shop about a high-severity vulnerability. (Mention the exact library name and version in your comment)
 | xref:part2/vulnerable-components.adoc#_inform_the_shop_about_a_vulnerable_library_it_is_using[💡]
@@ -1026,6 +1030,11 @@ ifeval::[{is_ctf} == 0]
 | Determine the answer to Emma's security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[💡]
 | xref:appendix/solutions.adoc#_determine_the_answer_to_emmas_security_question[📕]
+
+| Vulnerable Infrastructure
+| Inform the shop about the use of a known vulnerable infrastructure component. (Identify the component as specifically as possible in your complaint)
+| xref:part2/vulnerable-components.adoc#_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component[💡]
+| xref:appendix/solutions.adoc#_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component[📕]
 
 | Vulnerable Library
 | Inform the shop about a high-severity vulnerability. (Mention the exact library name and version in your comment)
