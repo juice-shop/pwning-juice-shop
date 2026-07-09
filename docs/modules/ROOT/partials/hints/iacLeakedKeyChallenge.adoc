@@ -1,4 +1,4 @@
 * Brute forcing the password will not work. The password is too strong.
 * There might be another way to authenticate besides using the correct password.
 * Look for sensitive information that was accidentally deployed alongside the application.
-* The Terraform IaC files accessible from the web application contain sensitive information that can be used to forge authentication tokens.
+* Some Terraform file accessible from the web application contains sensitive information that can be used to forge authentication tokens.
