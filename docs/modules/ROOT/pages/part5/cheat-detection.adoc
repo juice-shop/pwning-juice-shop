@@ -176,7 +176,7 @@ juiceshop_cheat_score{app="juiceshop"} 0.1201909090909091
 The following value for `totalCheatScore` was measured during
 a activity that is
 xref:part1/rules.adoc#_things_considered_cheating[definitely considered cheating] while
-solving the available hacking challenges: It reached **>98.9%** after executing all
+solving the available hacking challenges: It reached **>99.3%** after executing all
 xref:part3/codebase.adoc#_end_to_end_tests[End-to-end tests] in **<9
 minutes** on the author's Windows 11 laptop.
 
