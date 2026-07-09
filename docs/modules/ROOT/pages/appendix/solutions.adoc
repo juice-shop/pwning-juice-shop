@@ -429,6 +429,10 @@ the security question.
 
 🚧 Work in progress...
 
+=== Access the misplaced Infrastructure as Code files
+
+🚧 Work in progress...
+
 
 == ⭐⭐⭐ Challenges
 
@@ -1731,6 +1735,10 @@ http://localhost:3000/#/privacy-security/last-login-ip see the
 alert popup.
 +
 image::appendix/xss5_lastLoginIp.png[XSS in Last Login IP address]
+
+=== Log in with the cloud admin's user account
+
+🚧 Work in progress...
 
 == ⭐⭐⭐⭐⭐ Challenges
 
