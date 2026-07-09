@@ -86,6 +86,10 @@ making fun of the fact that almost nobody reads those in real life
 
 While some challenges offer different attack paths, others have only one. Solving challenges of the latter type often involves some exploration of the web client, the API or other server-side endpoints. URLs which are _very likely_ to have been visited before a specific challenge will be honestly solved, are tracked and counted by the cheat detection. If no or only parts of these preceding interactions took place before a challenge was solved, the cheat score is increased by half the percentage of these expected interactions which did not happen.
 
+=== Source file comparison
+
+For challenges where the answer is a specific entry in a file exposed by the web application, a source file comparison mechanism is applied. It uses the Sørensen–Dice coefficient to detect high similarity (75% or more) between a user's submission and the exposed source files. This check specifically targets submissions over 100 characters to prevent copy-pasting the entire file as a solution. Detected cheats result in a maximum cheat score being recorded for that challenge solved.
+
 == Coding challenges
 
 For coding challenges the cheat score is also calculated based on expected solving time
