@@ -1,0 +1,3 @@
+* The developers probably used some kind of tool to automate their cloud deployment and containerization.
+* Such tools typically store their configuration in a directory with a very predictable name.
+* Try common directory names that popular deployment automation and infrastructure tools use by convention.

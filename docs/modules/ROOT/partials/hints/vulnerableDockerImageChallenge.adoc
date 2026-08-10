@@ -1,0 +1,4 @@
+* The shop accidentally exposed some infrastructure configuration files alongside the web application.
+* Look for Docker-related files in the infrastructure directory.
+* Check all referenced third-party images across the Dockerfile and docker-compose.yml and research if any of them have known vulnerabilities or are end-of-life.
+* Not every outdated-looking version number is actually vulnerable. Do your research on official CVE databases or vendor advisories.
