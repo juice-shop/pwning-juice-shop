@@ -240,6 +240,10 @@ ifeval::[{is_ctf} == 1]
 | Log in with Bjoern's Gmail account without previously changing his password, applying SQL Injection, or hacking his Google account.
 | xref:part2/broken-authentication.adoc#_log_in_with_bjoerns_gmail_account[💡]
 
+| Login Cloud Admin
+| Log in with the cloud admin's user account _without_ using SQL Injection.
+| xref:part2/sensitive-data-exposure.adoc#_log_in_with_the_cloud_admins_user_account[💡]
+
 | Login Jim
 | Log in with Jim's user account.
 | xref:part2/injection.adoc#_log_in_with_jims_user_account[💡]
@@ -271,6 +275,10 @@ ifeval::[{is_ctf} == 1]
 | Mint the Honey Pot
 | Mint the Honey Pot NFT by gathering BEEs from the bee haven.
 | xref:part2/improper-input-validation.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[💡]
+
+| Misplaced IaC Files
+| Access the misplaced Infrastructure as Code files that were accidentally included in the web application deliverable.
+| xref:part2/security-misconfiguration.adoc#_access_the_misplaced_infrastructure_as_code_files[💡]
 
 | Misplaced Signature File
 | Access a misplaced SIEM signature file.
@@ -443,6 +451,10 @@ ifeval::[{is_ctf} == 1]
 | Visual Geo Stalking
 | Determine the answer to Emma's security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[💡]
+
+| Vulnerable Infrastructure
+| Inform the shop about the use of a known vulnerable infrastructure component. (Identify the component as specifically as possible in your complaint)
+| xref:part2/vulnerable-components.adoc#_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component[💡]
 
 | Vulnerable Library
 | Inform the shop about a high-severity vulnerability. (Mention the exact library name and version in your comment)
@@ -752,6 +764,11 @@ ifeval::[{is_ctf} == 0]
 | xref:part2/broken-authentication.adoc#_log_in_with_bjoerns_gmail_account[💡]
 | xref:appendix/solutions.adoc#_log_in_with_bjoerns_gmail_account[📕]
 
+| Login Cloud Admin
+| Log in with the cloud admin's user account _without_ using SQL Injection.
+| xref:part2/sensitive-data-exposure.adoc#_log_in_with_the_cloud_admins_user_account[💡]
+| xref:appendix/solutions.adoc#_log_in_with_the_cloud_admins_user_account[📕]
+
 | Login Jim
 | Log in with Jim's user account.
 | xref:part2/injection.adoc#_log_in_with_jims_user_account[💡]
@@ -791,6 +808,11 @@ ifeval::[{is_ctf} == 0]
 | Mint the Honey Pot NFT by gathering BEEs from the bee haven.
 | xref:part2/improper-input-validation.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[💡]
 | xref:appendix/solutions.adoc#_mint_the_honey_pot_nft_by_gathering_bees_from_the_bee_haven[📕]
+
+| Misplaced IaC Files
+| Access the misplaced Infrastructure as Code files that were accidentally included in the web application deliverable.
+| xref:part2/security-misconfiguration.adoc#_access_the_misplaced_infrastructure_as_code_files[💡]
+| xref:appendix/solutions.adoc#_access_the_misplaced_infrastructure_as_code_files[📕]
 
 | Misplaced Signature File
 | Access a misplaced SIEM signature file.
@@ -1006,6 +1028,11 @@ ifeval::[{is_ctf} == 0]
 | Determine the answer to Emma's security question by looking at an upload of her to the Photo Wall and use it to reset her password via the Forgot Password mechanism.
 | xref:part2/sensitive-data-exposure.adoc#_determine_the_answer_to_emmas_security_question[💡]
 | xref:appendix/solutions.adoc#_determine_the_answer_to_emmas_security_question[📕]
+
+| Vulnerable Infrastructure
+| Inform the shop about the use of a known vulnerable infrastructure component. (Identify the component as specifically as possible in your complaint)
+| xref:part2/vulnerable-components.adoc#_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component[💡]
+| xref:appendix/solutions.adoc#_inform_the_shop_about_the_use_of_a_known_vulnerable_infrastructure_component[📕]
 
 | Vulnerable Library
 | Inform the shop about a high-severity vulnerability. (Mention the exact library name and version in your comment)

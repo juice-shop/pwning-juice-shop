@@ -420,6 +420,11 @@ image::appendix/session_storage.png[Basket ID in Session Storage]
 If the challenge is not immediately solved, you might have to
 `F5`-reload to relay the `bid` change to the Angular client.
 
+=== Access the misplaced Infrastructure as Code files
+
+🚧 Work in progress...
+
+
 == ⭐⭐⭐ Challenges
 
 === Change the href of the link within the O-Saft product description
@@ -1080,6 +1085,10 @@ Uploading a non-PDF file larger than 100 kB will solve
 <<_upload_a_file_larger_than_100_kb,Upload a file larger than 100 kB>>
 simultaneously.
 
+=== Inform the shop about the use of a known vulnerable infrastructure component
+
+🚧 Work in progress...
+
 == ⭐⭐⭐⭐ Challenges
 
 === Access a developer's forgotten backup file
@@ -1690,6 +1699,15 @@ emails!
 `campaign`.
 +
 image::appendix/minified_js-campaigncode.png[Campaign code in minified JavaScript]
+image::appendix/xss5_lastLoginIp.png[XSS in Last Login IP address]
+
+=== Log in with the cloud admin's user account
+
+🚧 Work in progress...
+
+== ⭐⭐⭐⭐⭐ Challenges
+
+=== Learn about the Token Sale before its official announcement
 
 . You will find a `this.campaigns` assignment of an object containing
 various campaign codes. Depending on when you are reading this book,

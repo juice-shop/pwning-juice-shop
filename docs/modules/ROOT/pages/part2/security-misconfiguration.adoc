@@ -20,6 +20,10 @@ include::../attributes.adoc[]
 | Provoke an error that is neither very gracefully nor consistently handled.
 | ⭐
 
+| Misplaced IaC Files
+| Access the misplaced Infrastructure as Code files that were accidentally included in the web application deliverable.
+| ⭐⭐
+
 | Login Support Team
 | Log in with the support team's original user credentials without applying SQL Injection or any other bypass.
 | ⭐⭐⭐⭐⭐⭐
@@ -71,6 +75,15 @@ If you see the success notification for this challenge but no error
 message on screen, the error was probably logged on the JavaScript
 console of the browser. You were supposed to have it open all the time
 anyway, remember?
+
+== Access the misplaced Infrastructure as Code files
+
+Infrastructure as Code (IaC) is a great way to automate the deployment
+of cloud resources. Even if they do not by mistake contain hard-coded secrets,
+they should be treated as sensitive because they contain information
+about the cloud environment and its security posture.
+
+include::../../partials/hints/misplacedIacFiles.adoc[]
 
 == Log in with the support team's original user credentials
 

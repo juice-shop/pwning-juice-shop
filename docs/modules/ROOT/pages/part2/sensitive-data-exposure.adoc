@@ -44,6 +44,10 @@ include::../attributes.adoc[]
 | Log in with Amy's original user credentials. (This could take 93.83 billion trillion trillion centuries to brute force, but luckily she did not read the "One Important Final Note")
 | ⭐⭐⭐
 
+| Login Cloud Admin
+| Log in with the cloud admin's user account _without_ using SQL Injection.
+| ⭐⭐⭐⭐
+
 | Login MC SafeSearch
 | Log in with MC SafeSearch's original user credentials without applying SQL Injection or any other bypass.
 | ⭐⭐
@@ -152,6 +156,14 @@ challenge solutions.
 image::part2/amy_and_kif.jpg[Amy and Kif Kroker]
 
 include::../../partials/hints/loginAmyChallenge.adoc[]
+
+== Log in with the cloud admin's user account
+
+This challenge is another one where you need to find some credentials or
+a way to authenticate as a specific user without being able to just
+exploit a technical vulnerability like SQL Injection.
+
+include::../../partials/hints/iacLeakedKeyChallenge.adoc[]
 
 == Log in with MC SafeSearch's original user credentials
 
