@@ -1,6 +1,6 @@
 name: companion-guide
 title: "Pwning OWASP Juice Shop"
-version: 'snapshot'
+version: 'latest'
 asciidoc:
   attributes:
     page-lang: en@
