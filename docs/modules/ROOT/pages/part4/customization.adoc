@@ -972,29 +972,14 @@ schemes. The table below shows sample screenshots for each of these.
 
 == Provided customizations
 
-The following fully re-themed customizations are provided out of the box
-by OWASP Juice Shop for demonstration purposes:
+Several fully re-themed customizations are provided out of the box
+by OWASP Juice Shop for demonstration purposes. We also offer an https://github.com/juice-shop/juice-shop-tutorials/blob/master/customization/README.md[18-step customzation tutorial] to create your own. Some out-of-the-box examples provided with OWASP Juice Shop:
 
-* https://github.com/juice-shop/juice-shop/blob/master/config/7ms.yml[7 Minute Security]:
-Full conversion https://7ms.us-theme for the first podcast that
-picked up the Juice Shop way before it was famous! 😎
-* https://github.com/juice-shop/juice-shop/blob/master/config/mozilla.yml[Mozilla-CTF]:
-Another full conversion theme harvested and refined from the
-https://hacks.mozilla.org/2018/03/hands-on-web-security-capture-the-flag-with-owasp-juice-shop[Mozilla Austin CTF-event]!
-🦊
-* https://github.com/juice-shop/juice-shop/blob/master/config/addo.yml[AllDayDeflOps]:
-This full conversion had its live debut at the
-https://www.alldaydevops.com/[All Day DevOps 2019] conference and
-was released the same day! 🎀
-* https://github.com/juice-shop/juice-shop/blob/master/config/bodgeit.yml[The BodgeIt Store]:
-An homage to
-https://github.com/psiinon/bodgeit[our server-side rendered ancestor].
-May it rest in JSPs! 💀
-* https://github.com/juice-shop/juice-shop/blob/master/config/juicebox.yml[OWASP Juice Box]:
-If you find _jo͞osbäks_ much easier to pronounce than _jo͞osSHäp_,
-this customization is for you. 🧃
+image::part4/theme_mozilla.png[Mozilla-CTF theme]
 
-Furthermore these convenience customizations are provided out-of-the-box
+image::part4/theme_oss.png[OpenSecuritySummit Store theme]
+
+Furthermore, the following convenience customizations are provided out-of-the-box
 to simplify usage of OWASP Juice Shop in specific use cases and
 situations:
 
@@ -1017,10 +1002,6 @@ Keeps everything at default settings except _enabling_ all
 xref:part1/challenges.adoc#_potentially_dangerous_challenges[potentially dangerous challenges]
 even in containerized environments. ☠️ *Use at your own risk!*
 
-image::part4/theme_mozilla.png[Mozilla-CTF theme]
-
-image::part4/theme_bodgeit.png[BodgeIt Store theme]
-
 == Proprietary customization
 
 Below you find screenshots of a custom theme the author of this book created for awareness and demo sessions at work. It was presented to various groups and individuals, from Project Manager rounds over workers council members up to the company CEO at that time.
@@ -1030,7 +1011,12 @@ image::part4/theme_kn1.png[Product list in Kuehne+Nagel theme]
 image::part4/theme_kn2.png[Shopping basket in Kuehne+Nagel theme]
 
 image:part4/theme_kn3.png[2FA setup in Kuehne+Nagel theme]
-image:part4/theme_kn4.png[Customer feedback in Kuehne+Nagel theme]
+
+image:part4/theme_kn4.png[Photo wall in Kuehne+Nagel theme]
+
+image:part4/theme_kn5.png[Deluxe membership in Kuehne+Nagel theme]
+
+image:part4/theme_kn6.png[Chatbot in Kuehne+Nagel theme]
 
 == Limitations
 
