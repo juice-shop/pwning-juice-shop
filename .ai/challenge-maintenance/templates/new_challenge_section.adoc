@@ -1,6 +1,16 @@
-// Use this template when adding a new challenge detailed section to a category .adoc file
-// NOTE: {Description} should be unique prose, not a copy of the YAML description or a mash-up of hints.
-// IMPORTANT: Only include the hint partial if it already exists. Score Board has no hints and no partial.
+// Template: New Challenge Section in Category Page (docs/modules/ROOT/pages/part2/<category>.adoc)
+//
+// Rules:
+// 1. {anchor_name}: Lowercase, spaces replaced by underscores, special characters stripped (e.g., [[_access_a_confidential_document]]).
+// 2. {Section Header}: Clear instructional title (usually the first sentence of the challenge description).
+// 3. {Description}: Original, high-quality descriptive prose explaining context. Never copy 1:1 from challenges.yml or concatenate hints.
+// 4. Hints Include:
+//    - If partial exists in docs/modules/ROOT/partials/hints/{challengeKey}.adoc:
+//        include::../../partials/hints/{challengeKey}.adoc[]
+//    - If partial does NOT exist yet on disk:
+//        // include::../../partials/hints/{challengeKey}.adoc[]
+//        🚧 Work in progress...
+//    - EXCEPTION: scoreBoardChallenge never has hints, hint partials, or an include directive.
 [[_{anchor_name}]]
 == {Section Header}
 

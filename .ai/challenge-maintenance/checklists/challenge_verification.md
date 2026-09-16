@@ -1,42 +1,51 @@
 # Challenge Documentation Verification Checklist
 
-Follow these steps to verify that the documentation is in sync with `challenges.yml` and clean up any leftovers.
+This checklist is the mandatory validation gate for challenge maintenance operations. Run these checks to verify synchronization between the authoritative source of truth (`docs/modules/ROOT/assets/data/challenges.yml`) and all documentation targets before finalizing changes.
 
-## 1. Inventory Check
-- [ ] Load all challenges from `docs/modules/ROOT/assets/data/challenges.yml`.
-- [ ] List all challenge names and keys.
+## 1. Inventory & Data Integrity
+- [ ] Load all challenge entries from canonical `docs/modules/ROOT/assets/data/challenges.yml`.
+- [ ] Verify all required challenge fields exist (`key`, `name`, `category`, `description`, `difficulty`).
+- [ ] Flag any schema deviations or unmapped categories before proceeding with documentation edits.
 
-## 2. Master List Verification (`README.adoc`)
-- [ ] Verify that every challenge from the inventory is present in the "Challenge hunting" table.
-- [ ] Verify that every challenge from the inventory is present in the "Challenge hunting (CTF mapping)" table.
-- [ ] Ensure both tables are sorted alphabetically by challenge name.
-- [ ] Check for "Ghost Challenges": Entries in the tables that are not in the inventory. Remove them.
+## 2. Master List Verification (`docs/modules/ROOT/pages/part2/README.adoc`)
+- [ ] **CTF Mode Table (`ifeval::[{is_ctf} == 1]`)**:
+  - [ ] Every challenge from inventory is present with correct `Name`, `Description`, and `xref:part2/<category>.adoc#_{anchor_name}[💡]`.
+  - [ ] Table is sorted in strict alphabetical order by challenge `Name`.
+- [ ] **Normal Mode Table (`ifeval::[{is_ctf} == 0]`)**:
+  - [ ] Every challenge from inventory is present with correct `Name`, `Description`, `xref:part2/<category>.adoc#_{anchor_name}[💡]`, and `xref:appendix/solutions.adoc#_{anchor_name}[📕]`.
+  - [ ] Table is sorted in strict alphabetical order by challenge `Name`.
+- [ ] **Ghost Challenge Removal**: Remove any entries in both tables that do not exist in `challenges.yml`.
 
-## 3. Category Files Verification (`part2/*.adoc`)
-- [ ] For each challenge, verify it is listed in the summary table of its respective category file.
-- [ ] Verify that the category file has a detailed section (Header + Description + Hints Include) for the challenge.
-- [ ] Ensure the detailed section has a correctly named anchor.
-- [ ] Verify that the description in the detailed section is high-quality prose and NOT a verbatim copy of the YAML description or a mash-up of hints.
-- [ ] Remove any detailed sections for challenges that no longer exist.
+## 3. Category Files Verification (`docs/modules/ROOT/pages/part2/*.adoc`)
+- [ ] **Summary Table**:
+  - [ ] Every category challenge is present with matching `Name`, `Description`, and star difficulty rating (⭐ to ⭐⭐⭐⭐⭐⭐).
+  - [ ] Summary table is sorted in strict alphabetical order by challenge `Name`.
+- [ ] **Challenge Section**:
+  - [ ] Every challenge has a dedicated section header (`== {Section Header}`) preceded by anchor `[[_{anchor_name}]]`.
+  - [ ] Anchor matches the exact anchor referenced in `part2/README.adoc`.
+  - [ ] Description prose provides educational context and is NOT a verbatim copy of `challenges.yml` or a concatenation of hints.
+  - [ ] Hint include directive is present: `include::../../partials/hints/{challengeKey}.adoc[]` (active only if partial exists; commented out with `🚧 Work in progress...` if missing).
+  - [ ] `scoreBoardChallenge` has NO hint include or hint partial.
+- [ ] **Ghost Section Removal**: Remove sections for challenges that no longer exist in `challenges.yml`.
 
-## 4. Hints Verification (`partials/hints/*.adoc`)
-- [ ] Verify that a hint file `{challengeKey}.adoc` exists for every challenge EXCEPT 'Score Board' (`scoreBoardChallenge`).
-- [ ] Ensure hint files are NOT modified by AI agents. They are managed by the `partialize_hints.yml` pipeline.
-- [ ] Identify and delete orphan hint files (those whose key is not in the inventory).
+## 4. Hint Partials Boundary Audit (`docs/modules/ROOT/partials/hints/*.adoc`)
+- [ ] Verify that AI agents have made NO direct modifications (create, edit, delete) to files in `docs/modules/ROOT/partials/hints/`.
+- [ ] Confirm `scoreBoardChallenge` has NO hint partial.
+- [ ] Any missing or orphaned hint partials are left for the automated `partialize_hints.yml` pipeline (`./partializeHints.sh`).
 
-## 5. Solutions Verification (`solutions.adoc`)
-- [ ] Verify that every challenge has a subsection in `docs/modules/ROOT/pages/appendix/solutions.adoc`.
-- [ ] Verify that challenges are in the correct difficulty section (⭐ to ⭐⭐⭐⭐⭐⭐).
-- [ ] Ensure subsections are sorted alphabetically within each difficulty level.
-- [ ] Check for missing solution placeholders: Every entry should have either a solution or a `// TODO Add solution for {challengeKey}`.
-- [ ] Standardize TODOs: Use `// TODO Add solution for {challengeKey}` for consistency.
+## 5. Solutions Guide Verification (`docs/modules/ROOT/pages/appendix/solutions.adoc`)
+- [ ] Every challenge from inventory has a corresponding `=== {Section Header}` subsection under its correct difficulty heading (`== ⭐... Challenges`).
+- [ ] Subsections within each difficulty level are sorted in strict alphabetical order.
+- [ ] Every subsection contains either verified step-by-step instructions or the standardized placeholder:
+  `// TODO Add solution for {challengeKey}`
+- [ ] Remove solution subsections for challenges no longer in `challenges.yml`.
 
-## 6. Tags Verification (`part1/challenges.adoc`)
-- [ ] List all unique tags used in `challenges.yml`.
-- [ ] Verify that every tag is documented in `docs/modules/ROOT/pages/part1/challenges.adoc`.
-- [ ] Ensure the tag list is sorted alphabetically.
+## 6. Tags Catalog Verification (`docs/modules/ROOT/pages/part1/challenges.adoc`)
+- [ ] List all unique tags present across `challenges.yml`.
+- [ ] Verify every tag is documented in `docs/modules/ROOT/pages/part1/challenges.adoc`.
+- [ ] Verify the documented tags list is sorted in strict alphabetical order.
 
-## 7. Cross-Reference Audit
-- [ ] Check for broken `xref` links in `README.adoc`.
-- [ ] Check for broken `<<anchor>>` links throughout the documentation.
-- [ ] Ensure `ifeval` blocks (like for the 'Tutorial' tag) are correctly preserved and functional.
+## 7. Cross-Reference & Link Audit
+- [ ] Verify that all `xref` links in `part2/README.adoc` resolve to valid anchors in category pages and `solutions.adoc`.
+- [ ] Verify that all intra-document anchors (`<<_anchor_name,Label>>`) resolve correctly.
+- [ ] Ensure conditional blocks (`ifeval::[...]` and `endif::[]`) remain properly formatted and balanced.
