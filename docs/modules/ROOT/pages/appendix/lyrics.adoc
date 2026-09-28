@@ -63,3 +63,14 @@ You can [D] order tasty beverages in [A] any quantity
 [G] Juice [D] Shop, [G walk-up to A] Juice [Bm] Shop
 Just don't [D] test the site with Burp Suite or you [G] won't like [A] what you [D] see
 ----
+
+== Jingle ringtone (RTTTL)
+
+The sung melody of the jingle (transposed three octaves up) as monophonic ringtone in
+https://en.wikipedia.org/wiki/Ring_Tone_Transfer_Language[RTTTL] format to be played e.g. by the
+https://github.com/neverfa11ing/FlipperMusicRTTTL[Flipper Zero Music Player].
+Copy the line into a txt file under `apps_data/music_player` on the Flipper SD card.
+
+----
+JuiceShop:d=8,o=6,b=188:d#.,32p,4e,16p.,4f#,p,4f#,4f#.,16p.,4e.,16p.,d.,16p.,16c#.,d#,32p,4c#,32p,d.,32p,a#5,p.,a5.,4p.,16p.,4d#,p,32p,e,2f#,32p,16f#.,p.,4f#,4p.,16p,c#.,32p,d#.,16p.,4e.,p,32p,16f,p,32p,4e,16p.,16g5.,16p.,4c#,4e,32p,d#,32p,4f#,16p.,f#.,32p,4f#,32p,f.,4d#,32p,d#.,16p,c#.,4p,32p,4d.,16p.,4a#5,32p,4a5,32p,16g#,4p.,16p.,d#,4e,f#,g#,16p,4g#,32p,b.,p,a.,32p,16f,p,32p,c#.,32p,e,p,32p,e,4f,16p.,4e,c#.,p,2c#,4p.,32p,16d#,16p.,a#.,4b.,16p,a.,p.,2a,2p,16a.,4b,32p,4c#7,4p,d7,4d7,16p,4c#7,16p.,4b,32p,4a.,16p,a.,16p,2a,16p,16a.,32p,4a,16p.,c#.,16p,4f,4e,32p,e.,32p,16d.,p,32p,4e,4e,2p,p,a,4b.,16p,g#.,p.,4a.,2p,16p.,a,4b,32p,4c#7.,p,32p,d7.,32p,4d7,16p,c#7.,32p,4b,16p,4a,16p.,a,4a.,16p.,a,p.,a.,32p,4d,f.,32p,4f,16p,f,32p,e.,16p.,e.,p,2d,16p.,c#.
+----
