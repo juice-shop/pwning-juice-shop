@@ -103,11 +103,11 @@ within the application.
 | `'OWASP Juice Shop'`
 
 | `logo`
-| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as a logo.
+| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URLfootnote:server_urls[Only pure server-side URLs pointing directly to the raw file resource are supported. URLs relying on e.g. client-side processing such as fragment identifiers or those requiring interactive session authentication and cookies will cause download failures when the server attempts to fetch the asset.] of an image which will first be downloaded to that folder and then used as a logo.
 | `JuiceShop_Logo.png`
 
 | `favicon`
-| Filename in `frontend/dist/frontend/assets/public` _or_ a URL of an image in `.ico` format which will first be download to that folder and then used as a favicon.
+| Filename in `frontend/dist/frontend/assets/public` _or_ a URLfootnote:server_urls[] of an image in `.ico` format which will first be download to that folder and then used as a favicon.
 | `favicon_v2.ico`
 
 | `theme`
@@ -192,7 +192,7 @@ _Support Chat_.
 | `Juicy the Smart Assistant`
 
 | `avatar`
-| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as a chat bot avatar.
+| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URLfootnote:server_urls[] of an image which will first be download to that folder and then used as a chat bot avatar.
 | `'JuicyChatBot.png'`
 
 | `model`
@@ -364,11 +364,11 @@ challenge.
 | Property | Description | Default
 
 | `video`
-| Name of a file with `video/mp4` content type in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.
+| Name of a file with `video/mp4` content type in `frontend/dist/frontend/assets/public/videos` _or_ URLfootnote:server_urls[] of an image to download to that folder and then use as the promotion video.
 | `owasp_promo.mp4`
 
 | `subtitles`
-| Name of a https://www.w3.org/TR/webvtt1/[Web Video Text Tracks Format] file in `frontend/dist/frontend/assets/public/videos` _or_ URL of an image to download to that folder and then use as the promotion video.
+| Name of a https://www.w3.org/TR/webvtt1/[Web Video Text Tracks Format] file in `frontend/dist/frontend/assets/public/videos` _or_ URLfootnote:server_urls[] of an image to download to that folder and then use as the promotion video.
 | `owasp_promo.vtt`
 |===
 
@@ -384,7 +384,7 @@ Defines the customizations for the 3D-rendered planet easter egg.
 | `Orangeuze`
 
 | `overlayMap`
-| Filename in `frontend/dist/frontend/assets/private` _or_ URL of an image to download to that folder and then use as an overlay texture for the 3D planet "easter egg".
+| Filename in `frontend/dist/frontend/assets/private` _or_ URLfootnote:server_urls[] of an image to download to that folder and then use as an overlay texture for the 3D planet "easter egg".
 | `orangemap2k.jpg`
 |===
 
@@ -495,7 +495,7 @@ mode.
 | `true`
 
 | `avatarImage`
-| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URL of an image which will first be download to that folder and then used as an avatar in the tutorial speech bubbles.
+| Filename in `frontend/dist/frontend/assets/public/images` _or_ a URLfootnote:server_urls[] of an image which will first be download to that folder and then used as an avatar in the tutorial speech bubbles.
 | `juicyBot.png`
 |===
 
@@ -538,7 +538,7 @@ list* of default products.
 | `null`
 
 | `image`
-| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URL of an image to download to that folder and then use as a product image.
+| Filename in `frontend/dist/frontend/assets/public/images/products` _or_ URLfootnote:server_urls[] of an image to download to that folder and then use as a product image.
 | optional
 | `undefined.png`
 
@@ -558,7 +558,7 @@ list* of default products.
 |
 
 | `fileForRetrieveBlueprintChallenge`
-| Filename in `frontend/dist/frontend/assets/public/images/products` __or__ URL of a file download to that folder and then use as the target for the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server. +
+| Filename in `frontend/dist/frontend/assets/public/images/products` __or__ URLfootnote:server_urls[] of a file download to that folder and then use as the target for the xref:part2/sensitive-data-exposure.adoc#_deprive_the_shop_of_earnings_by_downloading_the_blueprint_for_one_of_its_products[Retrieve Blueprint] challenge. If a filename is specified but the file does not exist in `frontend/dist/frontend/assets/public/images/products` the challenge is still solvable by just requesting it from the server. +
 *Tip:* To make this challenge realistically solvable, include some kind of hint to the blueprint file's name/type in the product image's `Exif` metadata.
 | must be defined on exactly one product
 | `JuiceShop.stl` on _OWASP Juice Shop Logo (3D-printed)_
@@ -608,7 +608,7 @@ challenge.
 | Property | Description | Conditions
 
 | `image`
-| Filename in `frontend/dist/frontend/assets/public/images/uploads/` _or_ URL of an image to download to that folder and then use as a _Photo Wall_ image.
+| Filename in `frontend/dist/frontend/assets/public/images/uploads/` _or_ URLfootnote:server_urls[] of an image to download to that folder and then use as a _Photo Wall_ image.
 | mandatory
 
 | `caption`
