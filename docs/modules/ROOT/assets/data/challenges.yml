@@ -1591,3 +1591,30 @@
     - 'Not every outdated-looking version number is actually vulnerable. Do your research on official CVE databases or vendor advisories.'
   mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html'
   key: vulnerableDockerImageChallenge
+-
+  name: 'Passkey Bypass'
+  category: 'Broken Authentication'
+  tags:
+    - Passkey
+  description: 'Log in as <i>passkey-user</i> with their passkey, but without ever having access to it.'
+  difficulty: 5
+  hints:
+    - 'As always, first learn how the feature under attack is used and behaves under normal conditions. Register a passkey for your own account and use it to log in.'
+    - 'Make sure you understand which part of a passkey login actually proves that you hold the private key.'
+    - 'The shop relies on a well-established library to check what your authenticator sends. That alone does not guarantee the shop does anything with the result.'
+    - 'You will not be able to produce a valid signature. Maybe you do not have to.'
+  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
+  key: passkeySignatureChallenge
+-
+  name: 'Passkey Hijack'
+  category: 'Broken Access Control'
+  tags:
+    - Passkey
+  description: 'Take over the existing passkey of <i>passkey-user</i> and use it to properly log in to their account.'
+  difficulty: 5
+  hints:
+    - 'As always, first learn how the feature under attack is used and behaves under normal conditions. Register a passkey for your own account and observe what is sent to the server.'
+    - 'Every passkey is identified by an ID. Some login flows are more talkative about these IDs than others.'
+    - 'What would the shop do if it was asked to register a passkey it already knows?'
+  mitigationUrl: 'https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html'
+  key: passkeyCredentialOverwriteChallenge
