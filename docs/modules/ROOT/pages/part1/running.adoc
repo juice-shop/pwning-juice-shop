@@ -6,21 +6,20 @@ include::../attributes.adoc[]
 
 To run a single instance of Juice Shop the following memory and CPU
 requirements apply. These resources are needed for the Juice Shop
-application process itself, and they are based on
-
-* a 30-day average
-process CPU and RAM usage of the official public demo instance running `v14.0.1` of Juice Shop
-* a training with ~30 participants on a xref:part4/trainers.adoc#_hosting_individual_instances_for_multiple_users[MultiJuicer] cluster hosted on OpenShift with Juice Shop `v14.0.1`
+application process itself, and they are based on empirical metrics
+collected from 101 active instances during a workshop on a
+xref:part4/trainers.adoc#_hosting_individual_instances_for_multiple_users[MultiJuicer]
+cluster with `v20.3.0` in October 2026.
 
 Please note that any additional resources needed by your environment (e.g. Docker or Vagrant) come on top.
 
 * *Minimum* system specification
  ** `256 MB` RAM
- ** `200 millicpu` CPU
+ ** `50 millicpu` CPU
  ** `300 MB` free disk space
 * *Recommended* system specification
  ** `384 MB` RAM
- ** `400 millicpu` CPU
+ ** `150 millicpu` CPU
  ** `800 MB` free disk space
 
 🗄️ _If installing <<_from_sources,from sources>> without the `--depth 1` option, an additional `700
