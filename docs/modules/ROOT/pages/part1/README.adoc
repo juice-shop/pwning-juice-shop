@@ -13,7 +13,7 @@ author himself has seen it run on
 * various cloud platforms
 
 Chance is pretty high that you will be able to get it running on your
-computer as well. This part of the book will help your install and run
+computer as well. This part of the book will help you install and run
 the Juice Shop as well as guide you through the application and some
 fundamental rules and hints for hacking it.
 
