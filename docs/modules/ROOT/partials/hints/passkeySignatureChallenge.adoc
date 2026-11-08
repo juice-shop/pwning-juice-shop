@@ -1,0 +1,4 @@
+* As always, first learn how the feature under attack is used and behaves under normal conditions. Register a passkey for your own account and use it to log in.
+* Make sure you understand which part of a passkey login actually proves that you hold the private key.
+* The shop relies on a well-established library to check what your authenticator sends. That alone does not guarantee the shop does anything with the result.
+* You will not be able to produce a valid signature. Maybe you do not have to.
