@@ -104,3 +104,28 @@ image::part1/categories.png[Category breakdown]
 | https://cwe.mitre.org/data/definitions/532.html[CWE-532], https://cwe.mitre.org/data/definitions/117.html[CWE-117]
 |
 |===
+
+[discrete]
+=== OWASP Top 10 for Agentic Applications
+
+The following mappings are limited to AI/LLM challenges that demonstrate an
+agentic risk. They are related-risk mappings, not claims that every challenge
+in the broader category tests an agentic application. See the official
+https://genai.owasp.org/top-10-for-agentic-applications-2026/[OWASP Top 10 for
+Agentic Applications 2026] for the complete taxonomy.
+
+|===
+| Juice Shop challenge | OWASP Agentic Top 10
+
+| Chatbot Prompt Injection
+| https://genai.owasp.org/agentic-applications-2026/asi01-agent-goal-hijack/[ASI01: Agent Goal Hijack] and https://genai.owasp.org/agentic-applications-2026/asi02-tool-misuse-and-exploitation/[ASI02: Tool Misuse and Exploitation]
+
+| Greedy Chatbot Manipulation
+| https://genai.owasp.org/agentic-applications-2026/asi02-tool-misuse-and-exploitation/[ASI02: Tool Misuse and Exploitation]
+
+| AI Debugging
+| No direct mapping: this challenge tests application-level access control, not agent identity or delegated privileges.
+
+| System Prompt Extraction
+| No direct mapping: prompt disclosure alone does not demonstrate an agentic risk.
+|===
